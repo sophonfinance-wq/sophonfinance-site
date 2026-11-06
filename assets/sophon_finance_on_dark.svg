@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="240" viewBox="0 0 960 240" role="img" aria-labelledby="title desc">
+  <title id="title">Sophon Finance wordmark for dark surfaces</title>
+  <desc id="desc">Original counterflow ledger symbol, Sophon Finance wordmark, and sophonfinance.com URL.</desc>
+  <g id="counterflow-ledger-mark">
+    <path fill="#36D2F0" d="M59 64.3H139.5L176.5 101.3L143.4 134.4H114.1L145.3 103.3L129.7 87.7H59Z"/>
+    <path fill="#F7FBFF" d="M176.5 167.7H96L59 130.7L92.1 97.6H121.4L90.2 128.7L105.8 144.3H176.5Z"/>
+  </g>
+  <rect x="216" y="47" width="4" height="146" rx="2" fill="#36D2F0"/>
+  <text x="246" y="105" fill="#F7FBFF" font-family="Segoe UI, Arial, sans-serif" font-size="76" font-weight="600" letter-spacing="7">SOPHON</text>
+  <text x="250" y="156" fill="#F7FBFF" font-family="Segoe UI, Arial, sans-serif" font-size="31" font-weight="600" letter-spacing="10">FINANCE</text>
+  <text x="250" y="204" fill="#BDD0E7" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="400">sophonfinance.com</text>
+</svg>
