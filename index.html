@@ -1,1441 +1,414 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Sophon Finance Systems — Fast Finance Tax, Accounting &amp; Audit Machines</title>
-<meta name="description" content="Fast Finance machines for tax, accounting and audit. Each one reads the client's files, does the work and hands your team a draft where every figure traces to its source. Your people approve every output.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fast Finance | Digital AI Accounting Firm | SophonFinance.com</title>
+<meta name="description" content="Fast Finance is a digital AI accounting firm. Tax filings, month-end accounting review and audit workpapers, prepared by machine from your own files and approved by your people.">
 <link rel="canonical" href="https://sophonfinance.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sophonfinance.com/">
-<meta property="og:site_name" content="Sophon Finance Systems">
-<meta property="og:title" content="Automate the work. Keep the judgment.">
-<meta property="og:description" content="Fast Finance Tax, Accounting and Audit machines. Watch each one do the work, start to finish.">
-<meta property="og:image" content="https://sophonfinance.com/videos/hero-machines-poster.jpg">
+<meta property="og:site_name" content="Fast Finance">
+<meta property="og:title" content="Fast Finance | Digital AI Accounting Firm">
+<meta property="og:description" content="Tax, accounting and audit, prepared by machine and approved by your people.">
+<meta property="og:image" content="https://sophonfinance.com/videos/founder-reel-poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#ffffff">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23ffffff'/%3E%3Cpath d='M10 30 L19 21 L27 26 L38 14' fill='none' stroke='%230f62fe' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='38' cy='14' r='3' fill='%230f62fe'/%3E%3Crect x='10' y='35' width='28' height='3' fill='%23161616'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#12141a">
+<link rel="icon" href="assets/fast-finance-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  /* ============ TOKENS — IBM Carbon-inspired, light ============ */
-  :root {
-    --bg:#ffffff;
-    --bg-alt:#f4f4f4;          /* gray-10 */
-    --bg-tile:#ffffff;
-    --border:#e0e0e0;          /* gray-20 */
-    --border-strong:#c6c6c6;   /* gray-30 */
-    --text:#161616;            /* gray-100 */
-    --text-2:#525252;          /* gray-70 */
-    --text-3:#6f6f6f;          /* gray-60 */
-    --blue:#0f62fe;            /* interactive */
-    --blue-hover:#0043ce;
-    --blue-tint:#edf5ff;       /* blue-10 */
-    --green:#198038;           /* verification only */
-    --green-tint:#defbe6;
-    --inverse:#161616;         /* dark component surfaces (terminal) */
-    --inverse-2:#262626;
-    --sans:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-    --mono:'IBM Plex Mono', ui-monospace, Consolas, Menlo, monospace;
-    --wrap:1200px;
-    --ease:cubic-bezier(.2,.6,.2,1);
-  }
+:root{
+  --ink:#12182b; --dark:#12141a; --text:#2f3440; --text-2:#5b6275; --line:#dfe2e8; --gray:#f2f3f5;
+  --blue:#2e6ae6; --blue-d:#1f55c4; --blue-l:#7aa5ff;
+  --head:'Jost','Segoe UI',Arial,sans-serif; --body:'Source Sans 3','Segoe UI',Arial,sans-serif;
+  --wrap:1200px; --gut:20px;
+}
+@media (min-width:768px){ :root{ --gut:32px; } }
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{ margin:0; background:#fff; color:var(--text); font-family:var(--body); font-size:17px; line-height:1.6; overflow-x:hidden; }
+img,video{ display:block; max-width:100%; }
+a{ color:var(--blue); text-decoration:none; }
+a:hover{ color:var(--blue-d); }
+h1,h2,h3{ font-family:var(--head); font-weight:300; color:var(--ink); margin:0; letter-spacing:.2px; }
+.wrap{ max-width:var(--wrap); margin:0 auto; padding:0 var(--gut); }
+.acc{ color:var(--blue); }
+:focus-visible{ outline:2px solid var(--blue); outline-offset:3px; }
+.skip{ position:absolute; left:-9999px; }
+.skip:focus{ left:12px; top:12px; z-index:100; background:#fff; padding:8px 12px; }
 
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { font-family:var(--sans); color:var(--text); background:var(--bg); line-height:1.6;
-    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility;
-    font-kerning:normal; font-feature-settings:"kern" 1; overflow-x:hidden; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
-  h1, h2, h3 { text-rendering:optimizeLegibility; }
-  .stat b, .count, .tnum, .flag-num, .num { font-variant-numeric:tabular-nums lining-nums; }
-  img, svg { max-width:100%; }
-  .wrap { max-width:var(--wrap); margin:0 auto; padding:0 32px; }
-  ::selection { background:var(--blue); color:#fff; }
-  a { color:var(--blue); }
-  :focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
+.btn{ display:inline-flex; align-items:center; gap:10px; min-height:48px; padding:12px 22px; background:var(--blue); color:#fff; border:0;
+  font:600 13.5px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; cursor:pointer; transition:background .15s; }
+.btn:hover{ background:var(--blue-d); color:#fff; }
+.btn svg{ width:16px; height:16px; flex:none; }
+.more{ font:600 13.5px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; }
+.more::after{ content:" \00BB"; }
 
-  .skip { position:absolute; left:-9999px; top:0; background:var(--blue); color:#fff; padding:10px 18px;
-    z-index:200; font-weight:600; text-decoration:none; }
-  .skip:focus { left:0; }
+/* header */
+.top{ position:sticky; top:0; z-index:50; background:#fff; box-shadow:0 1px 0 var(--line), 0 6px 18px -12px rgba(18,24,43,.25); }
+.top-in{ display:flex; align-items:center; justify-content:space-between; gap:20px; height:78px; }
+.logo{ display:flex; align-items:center; gap:12px; color:var(--ink); }
+.logo svg{ width:44px; height:44px; flex:none; }
+.logo b{ display:block; font:500 24px/1 var(--head); color:var(--ink); letter-spacing:.3px; }
+.logo span span{ display:block; font:500 10px/1 var(--head); letter-spacing:.24em; color:var(--text-2); margin-top:6px; }
+.nav{ display:flex; align-items:center; gap:30px; }
+.nav a{ font:500 13px/1 var(--head); letter-spacing:.12em; text-transform:uppercase; color:var(--ink); }
+.nav a:hover{ color:var(--blue); }
+.nav .btn{ color:#fff; min-height:42px; padding:10px 16px; font-size:12.5px; }
+.burger{ display:none; background:none; border:0; padding:8px; cursor:pointer; }
+@media (max-width:980px){
+  .burger{ display:block; }
+  .nav{ position:absolute; top:78px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0; padding:8px var(--gut) 18px; box-shadow:0 12px 20px -14px rgba(0,0,0,.3); display:none; }
+  .nav.open{ display:flex; }
+  .nav a{ padding:14px 0; border-bottom:1px solid var(--line); }
+  .nav .btn{ margin-top:14px; justify-content:center; }
+  .logo b{ font-size:21px; }
+}
 
-  /* reveal — subtle, IBM-restrained */
-  .js .reveal { opacity:0; transform:translateY(14px); transition:opacity .55s var(--ease), transform .55s var(--ease); }
-  .js .reveal.in { opacity:1; transform:none; }
-  .js .d1{transition-delay:.08s} .js .d2{transition-delay:.16s}
+/* hero: founder film with a dark bar over its lower edge */
+.hero{ position:relative; }
+.hero-media{ position:relative; height:clamp(320px, 48vw, 640px); background:#1b1f28; overflow:hidden; }
+.hero-media video{ width:100%; height:100%; object-fit:cover; object-position:50% 40%; }
+.hero-bar{ position:relative; z-index:2; margin:-128px auto 0; max-width:var(--wrap); background:var(--dark); color:#fff;
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; padding:40px 48px; }
+.hero-bar h1{ color:#fff; font-size:clamp(30px, 3.6vw, 48px); line-height:1.12; }
+.hero-bar h1 .acc{ color:var(--blue-l); }
+@media (max-width:760px){ .hero-bar{ margin:-56px 12px 0; padding:28px 22px; } .hero-bar .btn{ width:100%; justify-content:center; } }
 
-  /* ============ NAV ============ */
-  .nav { position:sticky; top:0; z-index:80; background:rgba(255,255,255,.96);
-    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
-  .nav-in { display:flex; align-items:center; justify-content:space-between; height:60px; gap:16px; }
-  .brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); }
-  .brand-mark { flex:none; width:30px; height:30px; display:block; }
-  /* brand-mark micro-animation: the chart line draws itself on load, the peak dot
-     pops in, then every ~7s a glint of light travels up the line and the dot pings.
-     The dark baseline never moves — the line climbs, the foundation holds. */
-  .brand-mark .bm-line { stroke-dasharray:100; stroke-dashoffset:0; animation:bmdraw .9s cubic-bezier(.4,0,.2,1) .15s backwards; }
-  @keyframes bmdraw { from { stroke-dashoffset:100; } to { stroke-dashoffset:0; } }
-  .brand-mark .bm-dot { transform-box:fill-box; transform-origin:center; animation:bmdot .45s cubic-bezier(.34,1.56,.64,1) .95s backwards; }
-  @keyframes bmdot { from { transform:scale(0); } to { transform:scale(1); } }
-  .brand-mark .bm-glint { stroke-dasharray:16 184; stroke-dashoffset:16; opacity:0; animation:bmglint 7s linear 2.4s infinite; }
-  @keyframes bmglint {
-    0% { stroke-dashoffset:16; opacity:0; }
-    2% { opacity:.95; }
-    20% { stroke-dashoffset:-100; opacity:.95; }
-    23% { opacity:0; }
-    100% { stroke-dashoffset:-100; opacity:0; }
-  }
-  .brand-mark .bm-ping { opacity:0; transform-box:fill-box; transform-origin:center; animation:bmping 7s ease-out 2.4s infinite; }
-  @keyframes bmping {
-    0%, 16% { opacity:0; transform:scale(1); }
-    19% { opacity:.75; transform:scale(1.15); }
-    31% { opacity:0; transform:scale(2.7); }
-    100% { opacity:0; transform:scale(2.7); }
-  }
-  @media (prefers-reduced-motion:reduce){
-    .brand-mark .bm-line, .brand-mark .bm-dot { animation:none; }
-    .brand-mark .bm-glint, .brand-mark .bm-ping { animation:none; opacity:0; }
-  }
-  .brand-word { font-weight:600; font-size:18px; letter-spacing:.2px; white-space:nowrap; line-height:1.15; }
-  .brand-word span { font-weight:300; }
-.brand-text{display:flex;flex-direction:column;justify-content:center;gap:2px;min-width:0}
-.brand-tag{font-family:var(--mono,'IBM Plex Mono',ui-monospace,monospace);font-size:9.5px;
-  font-weight:500;letter-spacing:.9px;line-height:1;color:var(--blue,#0f62fe);
-  white-space:nowrap}
-.brand .brand-word{white-space:nowrap}
-@media (max-width:760px){.brand-word{font-size:16px}
-  .brand-tag{font-size:8.5px;letter-spacing:.8px}}
-  .nav-links { display:flex; align-items:center; gap:2px; }
-  .nav-links a:not(.btn) { color:var(--blue); text-decoration:none; font-size:14px; font-weight:400; padding:8px 14px; }
-  .nav-links a:not(.btn):hover { background:var(--bg-alt); }
-  .nav-links .btn { margin-left:14px; }
-  .nav-toggle { display:none; background:none; border:none; width:44px; height:44px; cursor:pointer;
-    align-items:center; justify-content:center; }
+/* services: vertical tabs + autoplaying video */
+.svc{ padding:84px 0 88px; }
+.svc h2{ font-size:clamp(28px, 3.2vw, 42px); line-height:1.15; margin-bottom:40px; }
+.svc-grid{ display:grid; grid-template-columns:300px 1fr; gap:44px; align-items:start; }
+.tabs{ display:flex; flex-direction:column; gap:6px; }
+.tab{ display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; text-align:left; background:var(--gray); color:var(--ink); border:0; padding:18px 20px;
+  font:600 13.5px/1.2 var(--body); letter-spacing:.08em; text-transform:uppercase; cursor:pointer; transition:background .15s, color .15s; }
+.tab:hover{ background:#e6e8ec; }
+.tab[aria-selected="true"]{ background:var(--blue); color:#fff; }
+.tab .chev{ font:400 20px/1 var(--head); }
+.tab-note{ font-size:14.5px; color:var(--text-2); margin:18px 2px 0; }
+.panel h3{ font-size:26px; font-weight:400; margin:0 0 6px; }
+.panel .sub{ color:var(--text-2); margin:0 0 18px; }
+.player{ position:relative; background:#0b0c10; box-shadow:0 18px 40px -22px rgba(18,24,43,.55); }
+.player video{ width:100%; height:auto; aspect-ratio:16/9; background:#0b0c10; }
+.snd{ position:absolute; top:14px; right:14px; z-index:2; display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:9px 14px; background:var(--blue); color:#fff; border:0;
+  font:600 12.5px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; cursor:pointer; }
+.snd:hover{ background:var(--blue-d); }
+.snd svg{ width:17px; height:17px; }
+.snd[hidden]{ display:none; }
+.pbar{ display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 0 0; font-size:14.5px; color:var(--text-2); }
+.pbar button{ background:none; border:0; padding:6px 0; color:var(--blue); font:600 12.5px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; cursor:pointer; }
+.incl{ margin:24px 0 0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); }
+.incl li{ padding:16px 18px 4px 0; font-size:15.5px; }
+.incl li + li{ padding-left:18px; border-left:1px solid var(--line); }
+.incl b{ display:block; font-family:var(--head); font-weight:500; color:var(--ink); font-size:16px; margin-bottom:4px; }
+@media (max-width:980px){
+  .svc{ padding:56px 0 64px; }
+  .svc-grid{ grid-template-columns:1fr; gap:22px; }
+  .tabs{ gap:4px; }
+  .tab{ padding:14px 16px; font-size:12.5px; }
+  .tab-note{ display:none; }
+  .incl{ grid-template-columns:1fr; }
+  .incl li, .incl li + li{ padding:12px 0; border-left:0; border-bottom:1px solid var(--line); }
+}
 
-  /* ============ BUTTONS — square, Carbon-style ============ */
-  .btn { display:inline-flex; align-items:center; justify-content:space-between; gap:32px; text-decoration:none;
-    font-family:var(--sans); font-weight:400; font-size:15px; padding:14px 18px 14px 18px; border:1px solid transparent;
-    transition:background .15s, border-color .15s, color .15s; min-height:48px; }
-  .btn svg { flex:none; }
-  .btn-p { background:var(--blue); color:#fff; }
-  .btn-p:hover { background:var(--blue-hover); }
-  .btn-t { background:transparent; color:var(--blue); border-color:var(--blue); }
-  .btn-t:hover { background:var(--blue); color:#fff; }
-  .btn-w { background:#fff; color:var(--blue); }
-  .btn-w:hover { background:var(--blue-tint); }
-  .btn-wo { background:transparent; color:#fff; border-color:#fff; }
-  .btn-wo:hover { background:rgba(255,255,255,.14); }
-  .btn-sm { min-height:40px; padding:9px 14px; font-size:14px; gap:20px; }
+/* about band */
+.about{ background:var(--gray); padding:80px 0; }
+.about p.big{ font-family:var(--head); font-weight:300; font-size:clamp(22px, 2.3vw, 30px); line-height:1.45; color:var(--ink); margin:0 0 22px; max-width:30em; }
 
-  /* ============ SECTION PRIMITIVES ============ */
-  section { padding:72px 0; }
-  section.alt { background:var(--bg-alt); }
-  .kicker { font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:.6px; color:var(--blue); }
-  h2 { font-size:clamp(28px, 3.4vw, 42px); font-weight:300; letter-spacing:-.2px; line-height:1.18; margin:10px 0 12px; color:var(--text); }
-  h2 strong { font-weight:600; }
-  .lead { font-size:16.5px; max-width:46em; color:var(--text-2); font-weight:400; }
-  .sec-head { max-width:820px; margin-bottom:14px; }
+/* leadership */
+.lead-sec{ padding:88px 0; }
+.lead-grid{ display:grid; grid-template-columns:420px 1fr; gap:56px; align-items:center; }
+.lead-photo img{ width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; }
+.lead-sec h2{ font-size:clamp(28px, 3.2vw, 40px); line-height:1.15; margin-bottom:8px; }
+.lead-sec .role{ font:600 13px/1 var(--body); letter-spacing:.1em; text-transform:uppercase; color:var(--blue); margin:0 0 22px; }
+.lead-sec p{ margin:0 0 16px; max-width:34em; }
+@media (max-width:900px){ .lead-sec{ padding:56px 0; } .lead-grid{ grid-template-columns:1fr; gap:26px; } .lead-photo{ max-width:420px; } }
 
-  /* ============ HERO ============ */
-  .hero { padding:96px 0 104px; min-height:520px; display:flex; align-items:center; position:relative; overflow:hidden; }
-  /* Top/bottom edge fades removed: the hero film reads as a clean full-bleed band with no white feathering at the borders. */
-  .hero-grid > div:first-child { position:relative; z-index:2; }
-  .hero-video { position:absolute; inset:0; z-index:0; }
-  .hero-video video { width:100%; height:100%; object-fit:cover; object-position:50% 38%; }
-  .hero-wash { position:absolute; inset:0; z-index:1;
-    background:linear-gradient(90deg, rgba(255,255,255,.73) 0%, rgba(255,255,255,.65) 34%, rgba(255,255,255,.43) 58%, rgba(255,255,255,.19) 100%); }
-  @media (max-width:820px){ .hero-wash { background:rgba(255,255,255,.65); } }
-  @media (prefers-reduced-motion:reduce){ .hero-video video { display:none; } }
-  .cinema { position:relative; overflow:hidden; height:min(68vh,616px); min-height:374px; }
-  /* Top/bottom edge fades removed: the film reads as a clean full-bleed band with no white feathering at the borders. */
-  .cinema video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 38%; }
-  .cinema .cinema-wash { position:absolute; inset:0; background:linear-gradient(90deg, rgba(255,255,255,.52) 0%, rgba(255,255,255,.42) 34%, rgba(255,255,255,.28) 58%, rgba(255,255,255,.12) 100%); } @media (max-width:820px){ .cinema .cinema-wash { background:rgba(255,255,255,.44); } }
-  .cinema .cinema-words { position:absolute; inset:0; z-index:2; display:flex; align-items:center; justify-content:center; pointer-events:none; }
-  .cinema .cinema-words span { font-family:var(--sans); font-weight:600; text-transform:uppercase; font-size:clamp(30px,6.4vw,76px); letter-spacing:.16em; color:var(--text); padding-left:.16em;
-    text-shadow:0 2px 34px rgba(255,255,255,.6), 0 1px 2px rgba(255,255,255,.75); opacity:0; transform:translateY(10px) scale(.99);
-    transition:opacity .6s ease, transform .6s ease; will-change:opacity, transform; }
-  .cinema .cinema-words span.show { opacity:1; transform:translateY(0) scale(1); }
-  .cinema .cinema-words span::after { content:""; display:block; height:2px; width:44%; margin:.42em auto 0; background:var(--blue); opacity:.85; }
-  @media (prefers-reduced-motion:reduce){ .cinema .cinema-words span { transition:opacity .3s linear; transform:none; } }
-  .final { position:relative; overflow:hidden; }
-  .final > .wrap { position:relative; z-index:2; }
-  .contact-video { position:absolute; inset:0; z-index:0; }
-  .contact-video video { width:100%; height:100%; object-fit:cover; object-position:50% 38%; }
-  /* Layered wash: the technical film reads through faintly, text stays fully legible.
-     Brand-blue base + deep navy shadow rising from the bottom + a soft top vignette. */
-  .contact-video .contact-wash { position:absolute; inset:0; background:
-    radial-gradient(120% 90% at 50% 112%, rgba(6,16,50,.55), transparent 62%),
-    linear-gradient(180deg, rgba(23,58,180,.84) 0%, rgba(29,78,216,.70) 46%, rgba(13,35,120,.84) 100%); }
-  .final .kicker, .final h2, .final .lead, .final .fine { text-shadow:0 1px 14px rgba(8,18,60,.45); }
-  @media (prefers-reduced-motion:reduce){ .contact-video video { display:none; } }
-  @media (prefers-reduced-motion:reduce){ .cinema video { display:none; } .cinema { background:url("assets/hero2-poster.jpg") center/cover; } }
-  .hero-grid { display:grid; grid-template-columns:minmax(0,1.05fr); gap:0; align-items:center; max-width:660px; }
-  h1 { font-size:clamp(38px, 4.6vw, 60px); font-weight:300; letter-spacing:-.4px; line-height:1.12; color:var(--text); }
-  h1 strong { font-weight:600; color:var(--blue); }
-  .hero-sub { font-size:17px; color:var(--text-2); max-width:34em; margin:20px 0 24px; }
-  .hero-sub b { color:var(--text); font-weight:600; }
-  .hero-ctas { display:flex; flex-wrap:wrap; gap:1px; }
-  .hero-ctas .btn { min-width:230px; }
-  .hero-ctas .cta-label-mobile { display:none; }
+/* dark split with a blue box over a photo */
+.split{ position:relative; background:var(--dark); color:#fff; overflow:hidden; }
+.split-photo{ position:absolute; top:0; right:0; bottom:0; width:42%; background:#2a2f3a url("img/analyst.jpg") center/cover no-repeat; }
+.split-in{ position:relative; display:grid; grid-template-columns:1fr 1.05fr; gap:48px; align-items:center; padding-top:96px; padding-bottom:96px; }
+.split h2{ color:#fff; font-size:clamp(30px, 3.4vw, 46px); line-height:1.15; }
+.split-box{ background:var(--blue); padding:40px 40px 34px; font-size:17px; line-height:1.65; box-shadow:0 24px 50px -24px rgba(0,0,0,.6); }
+.split-box p{ margin:0 0 16px; }
+.split-box a{ color:#fff; }
+.split-box a:hover{ color:#dfe8ff; }
+@media (max-width:900px){
+  .split-photo{ position:relative; width:100%; height:240px; }
+  .split-in{ grid-template-columns:1fr; gap:26px; padding-top:44px; padding-bottom:56px; }
+  .split-box{ padding:28px 24px; }
+}
 
-  /* stats band */
-  .stats { border-bottom:1px solid var(--border); background:var(--bg); }
-  .stats-in { display:grid; grid-template-columns:repeat(4,1fr); }
-  .stat { padding:28px 28px 26px; border-left:1px solid var(--border); }
-  .stat:first-child { border-left:none; padding-left:0; }
-  .stat b { display:block; font-size:40px; font-weight:300; color:var(--text); line-height:1.05; font-variant-numeric:tabular-nums; }
-  .stat b .unit { font-size:24px; }
-  .stat .cap { display:block; font-size:13px; color:var(--text-2); margin-top:8px; line-height:1.45; }
-  .stat .src { display:block; font-family:var(--mono); font-size:10.5px; color:var(--text-3); margin-top:8px; letter-spacing:.3px; }
+/* contact */
+.contact{ padding:84px 0; }
+.c-grid{ display:grid; grid-template-columns:1fr 1.15fr; gap:56px; align-items:start; }
+.contact h2{ font-size:clamp(28px, 3.2vw, 40px); line-height:1.15; margin-bottom:16px; }
+.contact .lead{ color:var(--text-2); margin:0 0 22px; max-width:28em; }
+.contact dl{ margin:0; display:grid; grid-template-columns:auto 1fr; gap:8px 18px; font-size:16px; }
+.contact dt{ font:600 12.5px/1.9 var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); }
+.contact dd{ margin:0; }
+form.cf{ background:var(--gray); padding:30px; display:grid; gap:14px; }
+.cf .two{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.cf label{ display:grid; gap:6px; font:600 12px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); }
+.cf input, .cf textarea, .cf select{ width:100%; font:400 16px/1.4 var(--body); color:var(--text); background:#fff; border:1px solid #cfd3db; padding:12px 14px; border-radius:0; }
+.cf textarea{ min-height:120px; resize:vertical; }
+.cf input:focus, .cf textarea:focus, .cf select:focus{ outline:2px solid var(--blue); outline-offset:-1px; border-color:var(--blue); }
+.cf .fine{ font-size:13.5px; color:var(--text-2); margin:0; }
+.hp{ position:absolute; left:-9999px; }
+@media (max-width:900px){ .contact{ padding:56px 0; } .c-grid{ grid-template-columns:1fr; gap:32px; } .cf .two{ grid-template-columns:1fr; } form.cf{ padding:22px; } .cf .btn{ width:100%; justify-content:center; } }
 
-  /* credential strip */
-  .cred { position:relative; overflow:hidden; padding:clamp(84px,17vh,170px) 0; }
-  /* Top/bottom edge fades removed: the credential film reads as a clean full-bleed band with no white feathering at the borders. */
-  .cred-video { position:absolute; inset:0; z-index:0; }
-  .cred-video video { width:100%; height:100%; object-fit:cover; object-position:50% 50%; }
-  .cred-wash { position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,255,255,.76) 0%, rgba(255,255,255,.62) 100%); }
-  @media (max-width:820px){ .cred-wash { background:rgba(255,255,255,.72); } }
-  .cred .cred-in span { text-shadow:0 1px 10px rgba(255,255,255,.9), 0 1px 2px rgba(255,255,255,.7); }
-  @media (prefers-reduced-motion:reduce){ .cred-video video { display:none; } .cred-video { background:url("assets/cred-poster.jpg") center/cover; } }
-  .cred-mark { position:absolute; z-index:2; right:clamp(14px,4vw,38px); bottom:11px; display:flex; align-items:center; gap:7px; opacity:.58; pointer-events:none; }
-  .cred-mark svg { width:17px; height:17px; flex:none; }
-  .cred-mark .cm-tx { display:flex; flex-direction:column; line-height:1; }
-  .cred-mark .cm-tx b { font-family:var(--sans); font-weight:600; font-size:10.5px; letter-spacing:.2px; color:var(--text); }
-  .cred-mark .cm-tx small { font-family:var(--mono); font-weight:400; font-size:8px; letter-spacing:.4px; color:var(--text-3); margin-top:2px; }
-  .cred-in { position:relative; z-index:2; display:flex; flex-wrap:wrap; gap:8px 0; align-items:center; justify-content:center; }
-  @media (max-width:640px){
-    .cred-mark { position:static; flex-direction:column; justify-content:center; gap:10px; margin:26px auto 0; opacity:.72; }
-    .cred-mark svg { width:34px; height:34px; }
-    .cred-mark .cm-tx { align-items:center; text-align:center; }
-    .cred-mark .cm-tx b { font-size:12px; letter-spacing:.4px; }
-    .cred-mark .cm-tx small { font-size:9px; margin-top:4px; }
-  }
-  .cred span { font-size:13.5px; color:var(--text-2); padding:0 22px; position:relative; }
-  .cred span:first-child { padding-left:0; }
-  .cred span + span::before { content:''; position:absolute; left:0; top:50%; transform:translateY(-50%);
-    width:1px; height:14px; background:var(--border-strong); }
-  .cred b { color:var(--text); font-weight:600; }
-  .cred a { color:var(--blue); text-decoration:none; font-weight:500; }
-  .cred a:hover { text-decoration:underline; }
-  .stat .src a { color:var(--blue); text-decoration:none; border-bottom:1px solid var(--blue); transition:color .15s, border-color .15s; }
-  .stat .src a:hover { color:#0043ce; border-color:#0043ce; }
-
-  /* ============ FLAGSHIP ENGINES ============ */
-  .flag { border:1px solid var(--border); background:#fff; margin-top:28px; }
-  /* Padding is sized to the label, not to the digit stream behind it. At 42px
-     vertical the strip stood 119px tall around 34px of content — 71% empty — and
-     taller still on a phone where the three parts wrap. The stream's rows are
-     placed in percentages, so they simply sit closer together in a shorter box. */
-  .flag-head { position:relative; overflow:hidden; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
-    padding:22px 28px; border-bottom:1px solid var(--border); }
-  .flag-head > .flag-id, .flag-head > .flag-tag, .flag-head > .flag-more { position:relative; z-index:2; }
-  .flag-head .flag-id h3, .flag-head .flag-num, .flag-head .flag-tag { text-shadow:0 1px 14px rgba(255,255,255,.95), 0 1px 2px rgba(255,255,255,.8); }
-  /* Engine-header data stream. Replaces the old background film: faint mono digits
-     drifting left-to-right in brand blue. Deliberately quiet -- it reads as ambient
-     computation behind the label, never as content competing with it. Alpha is held
-     at .085 so the composited surface stays within a hair of #fff and the header's
-     own contrast ratios are unchanged. */
-  .dstream { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none;
-    -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
-    mask-image:linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%); }
-  .dstream i { position:absolute; left:0; white-space:nowrap; font-family:var(--mono);
-    font-size:11px; line-height:1; letter-spacing:.14em; color:rgba(15,98,254,.085);
-    will-change:transform; animation:dstream-run linear infinite; }
-  .dstream i::after { content:attr(data-r); padding-left:2.2em; }
-  .dstream i:nth-child(1){ top:8%;  animation-duration:52s; }
-  .dstream i:nth-child(2){ top:26%; animation-duration:71s; animation-delay:-9s;  color:rgba(15,98,254,.065); }
-  .dstream i:nth-child(3){ top:44%; animation-duration:44s; animation-delay:-21s; }
-  .dstream i:nth-child(4){ top:62%; animation-duration:63s; animation-delay:-5s;  color:rgba(15,98,254,.06); }
-  .dstream i:nth-child(5){ top:80%; animation-duration:57s; animation-delay:-33s; }
-  @keyframes dstream-run { from { transform:translate3d(-50%,0,0); } to { transform:translate3d(0,0,0); } }
-  @media (prefers-reduced-motion:reduce){ .dstream i { animation:none; transform:translate3d(-25%,0,0); } }
-  /* Section-scale variant: same treatment spread over a full section rather than a
-     header strip. Lighter still, because it sits behind body copy and a control map. */
-  .dstream-lg i { font-size:12px; color:rgba(15,98,254,.055); }
-  .dstream-lg i:nth-child(1) { top:4%;  animation-duration:78s; animation-delay:-3s;  }
-  .dstream-lg i:nth-child(2) { top:12%; animation-duration:96s; animation-delay:-28s; color:rgba(15,98,254,.042); }
-  .dstream-lg i:nth-child(3) { top:20%; animation-duration:66s; animation-delay:-11s; }
-  .dstream-lg i:nth-child(4) { top:29%; animation-duration:88s; animation-delay:-41s; color:rgba(15,98,254,.038); }
-  .dstream-lg i:nth-child(5) { top:37%; animation-duration:74s; animation-delay:-17s; }
-  .dstream-lg i:nth-child(6) { top:46%; animation-duration:102s; animation-delay:-55s; color:rgba(15,98,254,.042); }
-  .dstream-lg i:nth-child(7) { top:54%; animation-duration:69s; animation-delay:-8s;  }
-  .dstream-lg i:nth-child(8) { top:63%; animation-duration:91s; animation-delay:-36s; color:rgba(15,98,254,.038); }
-  .dstream-lg i:nth-child(9) { top:71%; animation-duration:81s; animation-delay:-23s; }
-  .dstream-lg i:nth-child(10){ top:80%; animation-duration:99s; animation-delay:-47s; color:rgba(15,98,254,.042); }
-  .dstream-lg i:nth-child(11){ top:88%; animation-duration:72s; animation-delay:-14s; }
-  .dstream-lg i:nth-child(12){ top:95%; animation-duration:86s; animation-delay:-60s; color:rgba(15,98,254,.038); }
-  .flag-id { display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
-  .flag-num { font-family:var(--mono); font-size:12px; font-weight:500; color:var(--blue); letter-spacing:.5px; }
-  .flag-id h3 { font-size:21px; font-weight:600; letter-spacing:-.2px; }
-  .flag-id h3 a { color:inherit; text-decoration:none; }
-  .flag-id h3 a:hover { color:var(--blue); }
-  .flag-more { font-size:13.5px; font-weight:500; color:var(--blue); text-decoration:none; white-space:nowrap; }
-  .flag-more:hover { text-decoration:underline; }
-  .tile h3 a { color:inherit; text-decoration:none; }
-  .tile h3 a:hover { color:var(--blue); }
-  .flag-tag { font-size:13.5px; color:var(--text-3); }
-  /* card background film (mini-hero behind headers/blocks) */
-  .filmbg { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
-  .filmbg video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-  .filmbg::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,.58) 30%, rgba(255,255,255,.52) 70%, rgba(255,255,255,.88) 100%); }
-  @media (prefers-reduced-motion:reduce){ .filmbg video { display:none; } }
-  .tile, #close-depth .cov-group { position:relative; overflow:hidden; }
-  .tile > *:not(.filmbg), #close-depth .cov-group > *:not(.filmbg) { position:relative; z-index:1; }
-  /* section-wide background film — same overlay as .filmbg, applied to a whole
-     section rather than a card. The section's own tint is dropped so the film
-     reads through; content is lifted above it. */
-  section.has-film { position:relative; overflow:hidden; }
-  section.alt.has-film { background:transparent; }
-  section.has-film > .wrap { position:relative; z-index:1; }
-  /* Overlay alpha is set by contrast, not taste. --text-3 (#6f6f6f) and the blue
-     kicker sit at 4.57:1 and 4.55:1 on solid --bg-alt, i.e. right on the WCAG AA
-     4.5:1 line, so the film may not darken the surface at all. At .90 over the
-     graded plate the darkest 5% of footage still measures 4.60:1 and 4.58:1.
-     Do not lower these values without re-measuring. */
-  section.has-film > .filmbg::after { background:linear-gradient(180deg, rgba(255,255,255,.93) 0%, rgba(255,255,255,.90) 22%, rgba(255,255,255,.90) 78%, rgba(255,255,255,.93) 100%); }
-  @media (prefers-reduced-motion:reduce){ section.has-film > .filmbg video { display:none; } section.alt.has-film { background:var(--bg-alt); } }
-  /* --vis-max is shared with the flow layer further down: the artwork is capped
-     and centred inside a wider figure, and the layer must take the exact same box
-     or every anchor lands off the drawing. Change the cap here only. */
-  .flag-vis { background:#fff; --vis-max:920px; }
-  .flag-vis img, .flag-vis video { display:block; width:100%; max-width:var(--vis-max); height:auto; margin:0 auto; }
-  .flag-body { display:grid; grid-template-columns:1fr 1.1fr 1fr; }
-  .flag-col { padding:24px 28px; }
-  .flag-col + .flag-col { border-left:1px solid var(--border); }
-  .flag-col h4 { font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.8px;
-    text-transform:uppercase; color:var(--text-3); margin-bottom:12px; }
-  .flag-col.does h4 { color:var(--blue); }
-  .flag-col.gets h4 { color:var(--green); }
-  .flag-item { display:flex; align-items:flex-start; gap:10px; padding:6px 0; font-size:14px; color:var(--text-2); }
-  .flag-item svg { flex:none; margin-top:5px; }
-  .flag-item b { color:var(--text); font-weight:600; }
-  .flag-foot { display:flex; flex-wrap:wrap; gap:6px 28px; padding:14px 28px; border-top:1px solid var(--border);
-    background:var(--bg-alt); font-size:13px; color:var(--text-2); align-items:baseline; }
-  .flag-foot .lbl { font-family:var(--mono); font-size:10.5px; letter-spacing:.8px; text-transform:uppercase; color:var(--text-3); }
-  .flag-foot .gate { margin-left:auto; }
-  .flag-foot .gate b { color:var(--green); font-weight:600; }
-
-  /* ============ PORTFOLIO GRID ============ */
-  .fleet { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border);
-    border:1px solid var(--border); margin-top:32px; }
-  .tile { background:#fff; padding:24px 24px 22px; display:flex; flex-direction:column; min-height:190px; }
-  .tile-vis { margin:-24px -24px 18px; }
-  .tile-vis img, .tile-vis video { display:block; width:100%; height:auto; }
-  .tile .tnum { font-family:var(--mono); font-size:11.5px; font-weight:500; color:var(--blue); letter-spacing:.5px; }
-  .tile h3 { font-size:16.5px; font-weight:600; margin:10px 0 6px; letter-spacing:-.1px; }
-  .tile p { font-size:13.5px; color:var(--text-2); flex:1; }
-  .tile .run { font-family:var(--mono); font-size:11px; color:var(--text-3); margin-top:14px; letter-spacing:.2px; }
-  .tile.hot { background:var(--blue-tint); }
-  .tile.hot a { font-size:14px; font-weight:500; color:var(--blue); text-decoration:none; margin-top:14px; display:inline-flex; align-items:center; gap:8px; }
-  .tile.hot a:hover { text-decoration:underline; }
-
-  /* Every diagram host anchors the flow layer below. */
-  .tile-vis, .flag-vis, .loop-hero { position:relative; }
-
-  /* ============ DIAGRAM FLOW ============ */
-  /* What the engine does, stated as motion on the diagram itself: a signal runs
-     from each input into the engine and out to each result it produces, and the
-     stations it passes light as it arrives. The artwork itself never moves — a
-     render that drifts or orbits fights the labels pinned to it. One pass on
-     first sight, then the layer removes itself and the tile is the still again.
-     Anchors are held in JS in percent, read off each render, so they hold at
-     every width. Styling only here; the sequence is timed in script. */
-  .dgm { position:absolute; inset:0; z-index:3; pointer-events:none; }
-  /* take the artwork's box, not the figure's — see --vis-max above */
-  .flag-vis .dgm { max-width:var(--vis-max); margin-inline:auto; }
-  .dgm svg { position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
-  .dgm path { fill:none; vector-effect:non-scaling-stroke; stroke-linecap:round; }
-  .dgm .dgm-guide { stroke:rgba(15,98,254,.22); stroke-width:1.1; stroke-dasharray:2.4 3.6; opacity:0; }
-  .dgm .dgm-bead { stroke:var(--blue); stroke-width:2.6; opacity:0; }
-  .dgm i, .dgm b { position:absolute; border-radius:50%; opacity:0; }
-  .dgm i { width:8px; height:8px; margin:-4px 0 0 -4px; background:var(--blue);
-    box-shadow:0 0 7px 1px rgba(15,98,254,.5); }
-  .dgm b { width:10px; height:10px; margin:-5px 0 0 -5px; background:var(--red, #da1e28);
-    box-shadow:0 0 8px 1px rgba(218,30,40,.45); }
-  @media (prefers-reduced-motion:reduce){ .dgm { display:none !important; } }
-
-
-  /* ============ SELF-HEALING ============ */
-  /* ============ SELF-HEALING FLOW ============ */
-  .flow { margin:34px 0 24px; }
-  .flow-pipe { position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
-  .flow-track { position:absolute; left:0; right:0; top:50%; height:2px; transform:translateY(-50%); width:100%; z-index:0; overflow:visible; }
-  .flow-track .ft-base { stroke:var(--border); stroke-width:2; vector-effect:non-scaling-stroke; }
-  .flow-track .ft-pulse { stroke:var(--blue); stroke-width:2.5; vector-effect:non-scaling-stroke; stroke-linecap:round; stroke-dasharray:26 974; animation:pipeFlow 3.2s linear infinite; }
-  .fnode { position:relative; z-index:1; background:#fff; border:1px solid var(--border); padding:14px 16px; transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
-  .fnode i { font-style:normal; font-family:var(--mono); font-size:10px; letter-spacing:.8px; color:var(--text-3); display:block; margin-bottom:3px; }
-  .fnode b { display:block; font-size:14px; font-weight:600; color:var(--text); line-height:1.25; }
-  .fnode:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(15,42,92,.08); }
-  .fnode.hot { border-color:var(--blue); } .fnode.hot i { color:var(--blue); }
-  .fnode.dec { border-color:var(--navy); box-shadow:inset 0 0 0 1px var(--navy); } .fnode.dec i { color:var(--navy); }
-  .flow-branch { display:block; width:100%; height:54px; margin-top:-1px; overflow:visible; }
-  .flow-branch .fb-base { fill:none; stroke:var(--border); stroke-width:2; vector-effect:non-scaling-stroke; }
-  .flow-branch .fb-trunk { fill:none; stroke:var(--blue); stroke-width:2.5; vector-effect:non-scaling-stroke; stroke-linecap:round; stroke-dasharray:18 300; animation:branchTrunk 2.2s linear infinite; }
-  .flow-branch .fb { fill:none; stroke-width:2.5; vector-effect:non-scaling-stroke; stroke-dasharray:7 8; animation:branchFlow 1s linear infinite; }
-  .flow-branch .fb.ok { stroke:var(--green); } .flow-branch .fb.fix { stroke:var(--blue); animation-delay:.15s; } .flow-branch .fb.esc { stroke:#b0850f; animation-delay:.3s; }
-  .flow-outs { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  .fout { position:relative; background:#fff; border:1px solid var(--border); border-top-width:3px; padding:17px 18px 18px; transition:transform .18s ease, box-shadow .18s ease; }
-  .fout .fdot { position:absolute; top:-8px; left:50%; transform:translateX(-50%); width:12px; height:12px; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px var(--border); }
-  .fout b { display:block; font-size:14px; font-weight:600; margin:1px 0 5px; }
-  .fout span { display:block; font-size:13px; color:var(--text-2); line-height:1.5; }
-  .fout:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(15,42,92,.09); }
-  .fout.ok { border-top-color:var(--green); } .fout.ok b { color:var(--green); } .fout.ok .fdot { background:var(--green); box-shadow:0 0 0 1px var(--green); }
-  .fout.fix { border-top-color:var(--blue); } .fout.fix b { color:var(--blue); } .fout.fix .fdot { background:var(--blue); box-shadow:0 0 0 1px var(--blue); }
-  .fout.esc { border-top-color:#b0850f; } .fout.esc b { color:#8a6a00; } .fout.esc .fdot { background:#b0850f; box-shadow:0 0 0 1px #b0850f; }
-  /* auto verification system — Higgsfield visual panels */
-  .loop-hero { margin:34px auto 6px; max-width:1040px; }
-  .loop-hero img { display:block; width:100%; height:auto; }
-  .loop-steps { list-style:none; display:flex; flex-wrap:wrap; justify-content:center; margin:2px 0 36px; padding:0; }
-  .loop-steps li { position:relative; flex:1 1 0; min-width:150px; text-align:center; padding:0 16px; }
-  .loop-steps li + li::before { content:""; position:absolute; left:-5px; top:12px; width:9px; height:9px; border-top:2px solid var(--border-strong); border-right:2px solid var(--border-strong); transform:rotate(45deg); }
-  .loop-steps li span { display:block; font-family:var(--mono); font-size:11px; letter-spacing:.7px; text-transform:uppercase; color:var(--blue); }
-  .loop-steps li small { display:block; font-size:12.5px; color:var(--text-2); margin-top:5px; line-height:1.35; }
-  .loop-outs { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-  .lout { background:#fff; border:1px solid var(--border); border-top-width:3px; padding:0 0 20px; transition:transform .18s ease, box-shadow .18s ease; }
-  .lout:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(15,42,92,.09); }
-  .lout figure { margin:0; background:var(--bg-alt); border-bottom:1px solid var(--border); height:clamp(130px,16vw,190px); overflow:hidden; }
-  .lout figure img, .lout figure video { display:block; width:100%; height:100%; object-fit:cover; }
-  /* outcome mini-diagrams: hand-typeset inline SVG, natural height — never crops */
-  .lout figure.ldg { height:auto; padding:16px 14px 8px; overflow:visible; }
-  .lout figure.ldg svg { display:block; width:100%; height:auto; }
-  .lout h4 { font-size:15px; font-weight:600; margin:16px 20px 6px; }
-  .lout p { font-size:13px; color:var(--text-2); line-height:1.5; margin:0 20px; }
-  .lout.ok { border-top-color:var(--green); } .lout.ok h4 { color:var(--green); }
-  .lout.fix { border-top-color:var(--blue); } .lout.fix h4 { color:var(--blue); }
-  .lout.esc { border-top-color:#b0850f; } .lout.esc h4 { color:#8a6a00; }
-  @keyframes pipeFlow { to { stroke-dashoffset:-1000; } }
-  @keyframes branchTrunk { to { stroke-dashoffset:-318; } }
-  @keyframes branchFlow { to { stroke-dashoffset:-15; } }
-  @media (prefers-reduced-motion: reduce) { .flow-track .ft-pulse { display:none; } .flow-branch .fb-trunk { display:none; } .flow-branch .fb { animation:none; stroke-dasharray:none; } }
-
-  /* ============ CONTROLS ============ */
-  .controls-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border);
-    border:1px solid var(--border); margin-top:32px; }
-  .ctl { background:#fff; padding:22px 24px; }
-  .ctl-vis { margin:-22px -24px 16px; position:relative; overflow:hidden; }
-  .ctl-vis img, .ctl-vis video { display:block; width:100%; height:auto; }
-  /* pulsing LED glow overlay for still tiles */
-  .vis-glow { position:absolute; left:var(--gx); top:var(--gy); width:8%; aspect-ratio:1; transform:translate(-50%,-50%);
-    border-radius:50%; pointer-events:none;
-    background:radial-gradient(circle, rgba(37,99,235,.9) 0%, rgba(37,99,235,.35) 42%, rgba(37,99,235,0) 70%);
-    filter:blur(2px); opacity:.4; animation:glowPulse 2.8s ease-in-out infinite; animation-delay:var(--gd, 0s); }
-  .vis-glow.amber { background:radial-gradient(circle, rgba(217,119,6,.85) 0%, rgba(217,119,6,.3) 42%, rgba(217,119,6,0) 70%); }
-  @keyframes glowPulse { 0%,100% { opacity:.28; transform:translate(-50%,-50%) scale(.8); } 50% { opacity:1; transform:translate(-50%,-50%) scale(1.18); } }
-  @media (prefers-reduced-motion: reduce) { .vis-glow { animation:none; opacity:.45; } }
-  .ctl .cid { font-family:var(--mono); font-size:11px; font-weight:500; color:var(--blue); letter-spacing:.6px; }
-  .ctl h3 { font-size:15.5px; font-weight:600; margin:8px 0 5px; }
-  .ctl p { font-size:13.5px; color:var(--text-2); line-height:1.55; }
-  .controls-note { display:flex; align-items:center; gap:9px; margin-top:16px; font-size:13px; color:var(--text-2); flex-wrap:wrap; }
-
-  /* ============ ENGINEERING ============ */
-  .eng-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:start; margin-top:36px; }
-  .terminal { background:var(--inverse); overflow:hidden; }
-  .term-bar { display:flex; align-items:center; gap:7px; padding:11px 16px; border-bottom:1px solid #393939; }
-  .term-bar i { width:9px; height:9px; border-radius:50%; background:#525252; }
-  .term-bar span { font-family:var(--mono); font-size:11px; color:#8d8d8d; margin-left:8px; }
-  .term-body { padding:18px 20px 22px; font-family:var(--mono); font-size:12.5px; line-height:1.9; color:#c6c6c6; }
-  /* commands wrap with a hanging indent (no clipped lines on mobile); long URLs may break anywhere */
-  .term-body .cmd { color:#fff; white-space:pre-wrap; overflow-wrap:anywhere; padding-left:18px; text-indent:-18px; }
-  .term-body .cmd::before { content:'$ '; color:#78a9ff; }
-  .term-body .ok-line { color:#42be65; }
-  .term-body .dim { color:#8d8d8d; }
-  .term-body .tcur { display:inline-block; width:8px; height:1.05em; background:#c6c6c6; vertical-align:text-bottom; margin-left:1px; animation:tblink 1.06s steps(1) infinite; }
-  @keyframes tblink { 50% { opacity:0; } }
-  .term-bar .term-ci { margin-left:auto; font-family:var(--mono); font-size:11px; letter-spacing:.4px; color:#42be65; white-space:nowrap; }
-  .term-bar .term-copy { background:none; border:1px solid #393939; border-radius:2px; color:#8d8d8d; font-family:var(--mono); font-size:10.5px; letter-spacing:.4px; padding:3px 9px; margin-left:10px; cursor:pointer; transition:color .15s, border-color .15s; }
-  .term-bar .term-copy:hover { color:#fff; border-color:#8d8d8d; }
-  @media (prefers-reduced-motion:reduce){ .term-body .tcur { animation:none; } }
-  @media (max-width:640px){ .term-body { font-size:11.5px; padding:14px 14px 18px; } .term-bar span { font-size:10px; } }
-  .eng-points .pt { padding:16px 0; border-bottom:1px solid var(--border); }
-  .eng-points .pt:first-child { padding-top:0; }
-  .eng-points h3 { font-size:15.5px; font-weight:600; margin-bottom:4px; }
-  .eng-points p { font-size:14px; color:var(--text-2); }
-  .eng-points p a { color:var(--blue); font-weight:500; }
-  .eng-cta { margin-top:22px; display:flex; gap:1px; flex-wrap:wrap; }
-
-  /* ============ PROCESS ============ */
-  .steps { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border);
-    border:1px solid var(--border); margin-top:32px; counter-reset:step; }
-  .step { background:#fff; padding:22px 22px 20px; }
-  .step-vis { margin:-22px -22px 14px; position:relative; overflow:hidden; }
-  .step-vis img, .step-vis video { display:block; width:100%; height:auto; }
-  .step .n { font-family:var(--mono); font-size:12px; color:var(--blue); font-weight:500; }
-  .step .tag { display:inline-block; font-family:var(--mono); font-size:10px; letter-spacing:.6px; text-transform:uppercase;
-    color:var(--blue); background:var(--blue-tint); padding:3px 8px; margin:10px 0 8px; }
-  .step h3 { font-size:15px; font-weight:600; margin-bottom:4px; }
-  .step p { font-size:13px; color:var(--text-2); line-height:1.5; }
-  .process-fine { margin-top:18px; font-size:14px; color:var(--text-2); }
-  .process-fine b { color:var(--text); font-weight:600; }
-
-  /* founder line */
-  .founder { display:flex; gap:0; align-items:stretch; border:1px solid var(--border); background:#fff;
-    padding:0; margin-top:48px; }
-  .founder > div:last-child { padding:30px 34px; border-top:2px solid var(--blue); }
-  .founder-photo { flex:none; width:216px; position:relative; }
-  .founder-photo img { display:block; width:100%; height:100%; min-height:216px; object-fit:cover; object-position:center 22%; }
-  .founder h3 { font-size:16px; font-weight:600; }
-  .founder .role { font-family:var(--mono); font-size:11px; letter-spacing:.5px; color:var(--blue); margin:2px 0 8px; }
-  .founder p { font-size:14px; color:var(--text-2); max-width:70em; }
-  .founder p a { color:var(--blue); font-weight:500; }
-
-  /* ============ FINAL CTA — blue band ============ */
-  .final { background:var(--blue); color:#fff; padding:76px 0; }
-  .final .kicker { color:#a6c8ff; }
-  .final h2 { color:#fff; font-weight:300; }
-  .final h2 strong { font-weight:600; }
-  .final .lead { color:#d0e2ff; margin-bottom:30px; }
-  .final-ctas { display:flex; gap:1px; flex-wrap:wrap; }
-  .final-ctas .btn { min-width:250px; }
-  .final .fine { font-size:13px; color:#a6c8ff; margin-top:18px; }
-
-  /* ============ FOOTER ============ */
-  footer { padding:28px 0; background:var(--bg); border-top:1px solid var(--border); }
-  .foot { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
-    font-size:13px; color:var(--text-3); }
-  .foot-left { display:flex; align-items:center; gap:9px; color:var(--text-2); }
-  .foot a { color:var(--blue); text-decoration:none; font-weight:500; }
-  .foot a:hover { color:#0043ce; text-decoration:underline; }
-  .foot-note { width:100%; font-size:12px; color:var(--text-3); border-top:1px solid var(--border);
-    padding-top:14px; margin-top:4px; line-height:1.6; }
-
-  /* mobile sticky CTA */
-  /* booking modal */
-  .bookov { position:fixed; inset:0; z-index:120; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(22,22,22,.55); }
-  .bookov.open { display:flex; }
-  .bookp { background:#fff; width:100%; max-width:520px; max-height:92vh; overflow:auto; padding:34px 34px 30px; position:relative; }
-  .bookp .kicker { margin-bottom:4px; }
-  .bookp h3 { font-size:clamp(22px,2.6vw,28px); font-weight:300; letter-spacing:-.2px; line-height:1.2; margin:0 0 8px; }
-  .bookp h3 strong { font-weight:600; }
-  .bookp .bk-sub { font-size:14px; color:var(--text-2); line-height:1.55; margin:0 0 22px; }
-  .bookp label { display:block; font-family:var(--mono); font-size:11px; letter-spacing:.6px; text-transform:uppercase; color:var(--text-3); margin:14px 0 6px; }
-  .bookp input, .bookp textarea { width:100%; font-family:var(--sans); font-size:15px; color:var(--text); background:var(--bg-alt); border:none; border-bottom:1px solid var(--border-strong); padding:12px 14px; outline:none; transition:border-color .15s, box-shadow .15s; border-radius:0; -webkit-appearance:none; }
-  .bookp input:focus, .bookp textarea:focus { border-bottom-color:var(--blue); box-shadow:inset 0 -1px 0 var(--blue); }
-  .bookp textarea { min-height:96px; resize:vertical; }
-  .bookp .btn-p { width:100%; margin-top:22px; }
-  .bookp .bk-note { font-size:12px; color:var(--text-3); margin-top:14px; line-height:1.5; }
-  .bookx { position:absolute; top:12px; right:12px; width:40px; height:40px; background:none; border:none; cursor:pointer; color:var(--text-2); font-size:22px; line-height:1; z-index:2; }
-  .bookx:hover { color:var(--text); }
-  /* booking: duration chooser + live scheduler */
-  .bookp.sched { max-width:660px; }
-  .bk-opts { display:flex; flex-direction:column; gap:12px; margin:20px 0 6px; }
-  .bk-opt { text-align:left; display:block; width:100%; background:var(--bg-alt); border:1px solid var(--border-strong); padding:16px 18px; cursor:pointer; transition:border-color .15s, box-shadow .15s; }
-  .bk-opt:hover { border-color:var(--blue); box-shadow:inset 0 0 0 1px var(--blue); }
-  .bk-opt-t { display:block; font-size:16px; font-weight:600; color:var(--text); }
-  .bk-opt-d { display:block; font-size:13px; color:var(--text-2); line-height:1.5; margin:4px 0 9px; }
-  .bk-opt-go { display:block; font-family:var(--mono); font-size:12px; color:var(--blue); letter-spacing:.4px; }
-  .bk-alt { display:inline-block; background:none; border:none; cursor:pointer; font-family:var(--sans); font-size:13px; color:var(--blue); padding:9px 0 2px; margin-top:6px; text-decoration:none; }
-  .bk-alt:hover { text-decoration:underline; }
-  .bk-back { background:none; border:none; cursor:pointer; font-family:var(--mono); font-size:12px; letter-spacing:.4px; color:var(--text-2); padding:2px 0 10px; }
-  .bk-back:hover { color:var(--text); }
-  .bk-frame { width:100%; height:min(64vh,564px); border:1px solid var(--border); overflow:hidden; background:var(--bg-alt); }
-  .bk-frame iframe { width:100%; height:100%; border:0; display:block; }
-  .bk-meet { display:inline-flex; align-items:center; gap:7px; font-size:12.5px; color:var(--text-2); margin:2px 0 0; }
-  .bk-meet svg { width:15px; height:15px; }
-  @media (max-width:560px){ .bookov { padding:0; align-items:flex-end; } .bookp, .bookp.sched { max-width:none; max-height:94vh; padding:28px 22px 24px; } .bk-frame { height:74vh; } }
-  /* ===== assistant pet (Sophie) ===== */
-  #ask-launch { position:fixed; left:20px; bottom:20px; z-index:90; width:60px; height:60px; border-radius:50%; border:1px solid var(--border); background:#fff; box-shadow:0 6px 24px rgba(15,42,92,.16); cursor:pointer; padding:0; display:flex; align-items:center; justify-content:center; transition:transform .18s ease, box-shadow .18s ease; }
-  #ask-launch:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(15,98,254,.24); }
-  #ask-launch svg { width:42px; height:42px; overflow:visible; }
-  #ask-launch::after { content:""; position:absolute; inset:-5px; border-radius:50%; border:2px solid var(--blue); opacity:0; animation:askpulse 3.4s ease-out infinite; pointer-events:none; }
-  @keyframes askpulse { 0%{opacity:.45; transform:scale(1);} 70%{opacity:0; transform:scale(1.28);} 100%{opacity:0;} }
-  .ask-bob { animation:askbob 3.4s ease-in-out infinite; transform-origin:50% 60%; }
-  @keyframes askbob { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-1.6px);} }
-  .ask-eye { transform-origin:center; transform-box:fill-box; animation:askblink 5.4s infinite; }
-  @keyframes askblink { 0%,93%,100%{transform:scaleY(1);} 96.5%{transform:scaleY(.12);} }
-  #ask-launch .ask-badge { position:absolute; top:-2px; right:-2px; width:15px; height:15px; border-radius:50%; background:var(--green); border:2px solid #fff; }
-  #ask-panel { position:fixed; left:20px; bottom:92px; z-index:110; width:min(372px,calc(100vw - 40px)); max-height:min(72vh,640px); background:#fff; border:1px solid var(--border); box-shadow:0 20px 64px rgba(15,42,92,.24); display:none; flex-direction:column; overflow:hidden; }
-  #ask-panel.open { display:flex; }
-  .ask-head { display:flex; align-items:center; gap:11px; padding:14px 15px; border-bottom:1px solid var(--border); background:var(--bg-alt); }
-  .ask-head svg { width:34px; height:34px; flex:none; }
-  .ask-head .ask-id b { font-size:14px; font-weight:600; display:block; line-height:1.25; }
-  .ask-head .ask-id span { font-family:var(--mono); font-size:10px; color:var(--green); letter-spacing:.3px; }
-  .ask-head .askx { margin-left:auto; background:none; border:none; cursor:pointer; font-size:22px; line-height:1; color:var(--text-3); width:34px; height:34px; }
-  .ask-head .askx:hover { color:var(--text); }
-  .ask-body { flex:1; overflow-y:auto; padding:15px; display:flex; flex-direction:column; gap:11px; }
-  .ask-msg { max-width:90%; font-size:14px; line-height:1.5; padding:10px 13px; word-wrap:break-word; }
-  .ask-msg.bot { background:var(--bg-alt); color:var(--text); align-self:flex-start; }
-  .ask-msg.me { background:var(--blue); color:#fff; align-self:flex-end; }
-  .ask-links { display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; }
-  .ask-link { display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:600; color:var(--blue); text-decoration:none; border:1px solid var(--blue); padding:7px 11px; cursor:pointer; background:#fff; font-family:var(--sans); }
-  .ask-link:hover { background:var(--blue); color:#fff; }
-  .ask-chips { display:flex; flex-wrap:wrap; gap:7px; }
-  .ask-chip { font-size:12.5px; color:var(--blue); background:#fff; border:1px solid var(--border-strong); padding:7px 11px; cursor:pointer; font-family:var(--sans); text-align:left; }
-  .ask-chip:hover { border-color:var(--blue); background:var(--blue-tint); }
-  .ask-foot { display:flex; gap:8px; padding:11px 13px; border-top:1px solid var(--border); }
-  .ask-foot input { flex:1; font-family:var(--sans); font-size:14px; padding:10px 12px; background:var(--bg-alt); border:none; border-bottom:1px solid var(--border-strong); outline:none; -webkit-appearance:none; border-radius:0; }
-  .ask-foot input:focus { border-bottom-color:var(--blue); box-shadow:inset 0 -1px 0 var(--blue); }
-  .ask-foot button { background:var(--blue); border:none; color:#fff; cursor:pointer; padding:0 15px; display:flex; align-items:center; }
-  .ask-foot button:hover { background:var(--blue-hover); }
-  @media (max-width:520px){
-    #ask-launch { width:54px; height:54px; }
-    body.scrolled #ask-launch { bottom:76px; }
-    #ask-panel { left:10px; right:10px; width:auto; bottom:84px; max-height:70vh; }
-    body.scrolled #ask-panel { bottom:138px; }
-  }
-  @media (prefers-reduced-motion:reduce){ #ask-launch::after, .ask-bob, .ask-eye { animation:none; } }
-  .mcta { position:fixed; left:0; right:0; bottom:0; z-index:70; display:none; }
-  .mcta a { display:flex; align-items:center; justify-content:center; gap:10px; background:var(--blue); color:#fff;
-    font-weight:500; font-size:15px; padding:15px; text-decoration:none; }
-
-  /* ============ RESPONSIVE ============ */
-  @media (max-width:1020px) {
-    .hero-grid { grid-template-columns:1fr; gap:36px; }
-    .flag-body { grid-template-columns:1fr; }
-    .flag-col + .flag-col { border-left:none; border-top:1px solid var(--border); }
-    .fleet { grid-template-columns:1fr 1fr; }
-    .controls-grid { grid-template-columns:1fr 1fr; }
-    .eng-grid { grid-template-columns:1fr; }
-    .steps { grid-template-columns:repeat(2,1fr); }
-    .flow-outs { grid-template-columns:1fr; }
-    .loop-outs { grid-template-columns:1fr; gap:14px; }
-    .loop-steps { flex-direction:column; align-items:center; gap:12px; }
-    .loop-steps li { padding:0; }
-    .loop-steps li + li::before { display:none; }
-    .flow-pipe { grid-template-columns:1fr; gap:9px; }
-    .flow-track, .flow-branch { display:none; }
-    .fout { border-top-width:1px; border-left-width:3px; }
-    .fout.ok { border-left-color:var(--green); } .fout.fix { border-left-color:var(--blue); } .fout.esc { border-left-color:#b0850f; }
-    .fout .fdot { display:none; }
-    .stats-in { grid-template-columns:1fr 1fr; }
-    .stat:nth-child(3) { border-left:none; padding-left:0; }
-    .stat { padding:22px 22px 20px; }
-  }
-  /* The full nav measures about 860px with the brand and the CTA, so between the
-     old 820px collapse point and roughly 900px it ran off the right edge and gave
-     the page a horizontal scrollbar. Collapse it to the menu button a little
-     earlier; everything else keeps its own breakpoints. */
-  @media (max-width:900px) {
-    .nav-links { position:fixed; top:60px; right:0; left:0; flex-direction:column; align-items:stretch;
-      background:#fff; border-bottom:1px solid var(--border); padding:8px 24px 18px; display:none; }
-    .nav-links.open { display:flex; }
-    .nav-links a:not(.btn) { padding:14px 4px; font-size:15px; border-bottom:1px solid var(--border); }
-    .nav-links .btn { margin:14px 0 0; }
-    .nav-toggle { display:inline-flex; }
-  }
-  @media (max-width:820px) {
-    .nav-links { position:fixed; top:60px; right:0; left:0; flex-direction:column; align-items:stretch;
-      background:#fff; border-bottom:1px solid var(--border); padding:8px 24px 18px; display:none; }
-    .nav-links.open { display:flex; }
-    .nav-links a:not(.btn) { padding:14px 4px; font-size:15px; border-bottom:1px solid var(--border); }
-    .nav-links .btn { margin:14px 0 0; }
-    .nav-toggle { display:inline-flex; }
-    section { padding:56px 0; }
-    .hero { padding:44px 0 48px; }
-    body.scrolled .mcta { display:block; }
-    footer { padding-bottom:84px; }
-  }
-  @media (max-width:600px) {
-    .wrap { padding:0 18px; }
-    section { padding:44px 0; }
-    .lead { font-size:15.5px; }
-    /* Fifty-plus tiles in a single column made the portfolio ~24,000px tall on a
-       phone — around thirty screens between the heading and the next section,
-       which is why the bottom of it never got read. Two up, with the description
-       clamped: the engine's name and its diagram stay whole, and the full text is
-       on the datasheet the title already links to. */
-    .fleet { grid-template-columns:1fr 1fr; }
-    .tile { padding:14px 14px 13px; min-height:0; }
-    .tile-vis { margin:-14px -14px 11px; }
-    .tile .tnum { font-size:10.5px; }
-    .tile h3 { font-size:14px; margin:7px 0 5px; letter-spacing:-.15px; }
-    /* flex:1 from the base rule stretches this box, and a stretched height beats
-       -webkit-line-clamp: the ellipsis lands on line three and the rest of the
-       paragraph still renders under it, clipped mid-glyph. Let it size to its
-       lines instead. */
-    .tile p { font-size:12.5px; line-height:1.46; flex:0 1 auto;
-      display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
-    /* the command is unreadable wrapped into a half-width column */
-    .tile .run { display:none; }
-    .tile.hot p { -webkit-line-clamp:5; }
-    .tile.hot a { font-size:13px; }
-    .controls-grid { grid-template-columns:1fr; }
-    .steps { grid-template-columns:1fr; }
-    .stats-in { grid-template-columns:1fr 1fr; }
-    .stat { border-left:none; padding:18px 14px 16px; }
-    .stat b { font-size:30px; }
-    .stat b .unit { font-size:18px; }
-    .final-ctas .btn { width:100%; }
-    .hero-ctas { display:grid; grid-template-columns:minmax(0,1fr) 116px; gap:6px; max-width:430px; }
-    .hero-ctas .btn { width:auto; min-width:0; min-height:46px; padding:10px 12px; gap:8px; font-size:14px; }
-    .hero-ctas .cta-label-desktop { display:none; }
-    .hero-ctas .cta-label-mobile { display:inline; }
-    .flag-head, .flag-col, .flag-foot { padding-left:20px; padding-right:20px; }
-    /* the three parts stack here, so the gaps already separate them — the block
-       padding only needs to hold the strip off the rule above and below */
-    .flag-head { padding-top:18px; padding-bottom:18px; gap:9px; }
-    .flag-foot .gate { margin-left:0; }
-    .founder { flex-direction:column; } .founder-photo { width:100%; } .founder-photo img { height:auto; min-height:0; aspect-ratio:3/2; object-position:center 18%; }
-  }
-
-  /* inside the close engine — control coverage */
-  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-  /* ---- close-depth: the control room. One faded blueprint film behind the whole
-     section (cd-bg), a schematic drawing sheet (cov-map) that carries the 29/8/21/0
-     story, and seven white "module" cards with LED status chips on top. ---- */
-  #close-depth { position:relative; overflow:hidden; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-  #close-depth > .wrap { position:relative; z-index:1; }
-  #close-depth .cd-bg { position:absolute; inset:0; z-index:0; pointer-events:none; }
-  /* The heavy white wash that used to sit here existed to tame a background video.
-     That video is gone; the data stream behind this section is already whisper-faint
-     (.055 alpha), so only the blueprint grid remains. */
-  #close-depth .cd-bg::after { content:""; position:absolute; inset:0; pointer-events:none; background:
-    repeating-linear-gradient(0deg, rgba(15,98,254,.05) 0 1px, transparent 1px 56px),
-    repeating-linear-gradient(90deg, rgba(15,98,254,.05) 0 1px, transparent 1px 56px); }
-  #close-depth .cov-map { background:rgba(255,255,255,.88); border:1px solid var(--border); padding:24px 22px 14px; margin:28px 0 0; }
-  #close-depth .cov-map svg { display:block; width:100%; height:auto; }
-  #close-depth .cov-map .map-m { display:none; }
-  #close-depth .cov-map-note { font-size:13px; color:var(--text-3); margin-top:12px; padding-top:10px; border-top:1px solid var(--border); }
-  #close-depth .cov-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-top:26px; }
-  #close-depth .cov-group { background:#fff; border:1px solid var(--border); padding:0 0 8px; box-shadow:0 1px 0 rgba(15,42,92,.05); }
-  #close-depth .cg-head { display:flex; align-items:center; gap:8px; padding:11px 13px 9px; border-bottom:1px solid var(--border); }
-  #close-depth .cg-ic { width:18px; height:18px; flex:0 0 auto; color:var(--blue); }
-  #close-depth .cov-group h4 { font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.6px; text-transform:uppercase; color:var(--text-2); margin:0; }
-  #close-depth .cg-id { margin-left:auto; font-family:var(--mono); font-size:10px; letter-spacing:.5px; color:var(--text-3); white-space:nowrap; }
-  #close-depth .cg-chips { padding:12px 13px 4px; }
-  #close-depth .cov-chip { display:inline-flex; align-items:center; gap:7px; font-size:13px; line-height:1.3; padding:6px 11px; margin:0 6px 6px 0; border:1px solid var(--border-strong); border-radius:2px; color:var(--text-2); background:#fff; font-family:var(--sans); cursor:pointer; transition:border-color .15s var(--ease), box-shadow .15s var(--ease); }
-  #close-depth .cov-chip::before { content:""; width:7px; height:7px; flex:0 0 auto; border:1.4px solid #8d8d8d; border-radius:1px; background:transparent; }
-  #close-depth .cov-chip:hover { border-color:var(--blue); color:var(--blue-hover); box-shadow:inset 0 0 0 1px var(--blue); }
-  #close-depth .cov-chip[aria-expanded="true"] { border-color:var(--blue); background:var(--blue); color:#fff; }
-  #close-depth .cov-chip[aria-expanded="true"]::before { border-color:#fff; }
-  #close-depth .cov-chip[aria-expanded="true"].new::after { background:#fff; color:var(--green); }
-  #close-depth .cov-chip.draft { border-color:#a6c8ff; color:var(--blue-hover); background:var(--blue-tint); }
-  #close-depth .cov-chip.draft::before { border-color:var(--blue); background:var(--blue); border-radius:50%; }
-  #close-depth .cov-chip.draft:hover { border-color:var(--blue); }
-  #close-depth .cov-chip.draft[aria-expanded="true"] { background:var(--blue); color:#fff; }
-  #close-depth .cov-chip.draft[aria-expanded="true"]::before { background:#fff; border-color:#fff; }
-  #close-depth .cov-detail { margin-top:18px; border:1px solid var(--border-strong); border-left:3px solid var(--blue); background:var(--bg-tile); padding:24px 26px 20px; }
-  #close-depth .cov-detail .cd-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 14px; margin-bottom:6px; }
-  #close-depth .cov-detail h3 { font-size:19px; font-weight:600; letter-spacing:-.1px; }
-  #close-depth .cov-detail .cd-mode { font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.5px; padding:3px 8px; border-radius:2px; }
-  #close-depth .cov-detail .cd-mode.draft { background:var(--blue-tint); color:var(--blue-hover); border:1px solid #a6c8ff; }
-  #close-depth .cov-detail .cd-mode.val { background:var(--bg-alt); color:var(--text-2); border:1px solid var(--border-strong); }
-  #close-depth .cov-detail .cd-what { font-size:14.5px; color:var(--text-2); max-width:62em; }
-  #close-depth .cov-detail .cd-label { font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.6px; text-transform:uppercase; color:var(--text-3); margin:16px 0 8px; }
-  #close-depth .cov-detail ul { list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:6px 22px; }
-  #close-depth .cov-detail li { font-size:13.5px; color:var(--text-2); padding-left:16px; position:relative; }
-  #close-depth .cov-detail li::before { content:""; position:absolute; left:0; top:.55em; width:7px; height:7px; border:1.6px solid var(--blue); border-radius:1px; }
-  #close-depth .cov-detail .cd-gate { margin-top:14px; font-size:13.5px; color:var(--text-2); }
-  #close-depth .cov-detail .cd-gate b { color:var(--text); }
-  #close-depth .cov-detail .cd-links { display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:16px; padding-top:14px; border-top:1px solid var(--border); }
-  #close-depth .cov-detail .cd-links a { font-family:var(--mono); font-size:12.5px; text-decoration:none; }
-  #close-depth .cov-detail .cd-links a:hover { text-decoration:underline; }
-  #close-depth .cov-detail .cd-links .cd-note { font-family:var(--mono); font-size:12px; color:var(--text-3); }
-  #close-depth .cov-detail .cd-close { margin-left:auto; background:none; border:none; cursor:pointer; color:var(--text-3); font-size:20px; line-height:1; padding:2px 6px; }
-  #close-depth .cov-detail .cd-close:hover { color:var(--text); }
-  #close-depth .cov-detail .cd-vis { position:relative; margin:16px 0 2px; border:1px solid var(--border); background:#fff; aspect-ratio:16/9; max-height:340px; overflow:hidden; }
-  #close-depth .cov-detail .cd-vis img, #close-depth .cov-detail .cd-vis video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
-  #close-depth .cov-detail .cd-vis video { z-index:2; }
-  #close-depth .cd-links .cd-run { font-weight:600; }
-  @media (max-width:640px){ #close-depth .cov-detail .cd-vis { max-height:240px; } }
-  @media (max-width:640px){ #close-depth .cov-detail { padding:18px 16px 16px; } }
-  #close-depth .cov-chip.new::after { content:"NEW"; font-family:var(--mono); font-size:9px; font-weight:600; letter-spacing:.4px; color:#fff; background:var(--green); padding:1px 4px; border-radius:2px; }
-  @media (max-width:820px){
-    #close-depth .cov-grid { gap:12px; }
-    /* the 960-unit desktop sheet gets illegible below ~820px — swap to the portrait map early */
-    #close-depth .cov-map .map-d { display:none; }
-    #close-depth .cov-map .map-m { display:block; max-width:430px; margin:0 auto; }
-  }
-  @media (max-width:640px){
-    #close-depth .cov-map { padding:16px 12px 10px; margin-top:22px; }
-    #close-depth .cov-map-note { font-size:10.5px; }
-    #close-depth .cov-grid { margin-top:20px; }
-    #close-depth .cg-chips { padding:11px 12px 4px; }
-    #close-depth .cov-chip { font-size:12.5px; padding:5px 10px; }
-  }
-
-  /* ---- story: the why film ---- */
-  /* Hand the hero directly into a compact film introduction, then keep the
-     picture itself clear for the film's own on-screen typography. */
-  .hero { min-height:0; padding:16px 0 0; }
-  #story { padding:0 0 16px; }
-  #story .sec-head { margin:18px 0 12px; }
-  #story .sec-head h2 { font-size:clamp(26px, 2.8vw, 36px); margin:6px 0 7px; }
-  #story .sec-head .lead { font-size:15.5px; }
-  .whyfilm { width:100%; max-width:none; margin-top:0; }
-  .whyfilm-stage { position:relative; isolation:isolate; width:100%; }
-  /* no edge feather: the film sits crisp against the page, full resolution to every edge */
-  .whyfilm video { position:relative; z-index:0; display:block; width:100%; height:auto; background:var(--bg); border:0; box-shadow:none; }
-  .film-sound { position:absolute; left:50%; bottom:16%; transform:translateX(-50%);
-    z-index:2; display:inline-flex; align-items:center; gap:9px; cursor:pointer;
-    font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:.2px;
-    color:#fff; background:rgba(10,16,32,.62); border:1px solid rgba(255,255,255,.35);
-    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
-    border-radius:999px; padding:11px 18px; line-height:1;
-    box-shadow:0 6px 24px rgba(0,0,0,.28); transition:opacity .25s, transform .25s, background .15s; }
-  .film-sound svg { width:17px; height:17px; }
-  .film-sound:hover { background:rgba(15,98,254,.85); }
-  .film-sound:focus-visible { outline:2px solid #fff; outline-offset:2px; }
-  .film-sound[hidden] { display:none; }
-  @media (max-width:640px){
-    .hero { padding-top:8px; }
-    .hero-sub { margin:18px 0 22px; }
-    #story { padding-bottom:8px; }
-    #story .sec-head { margin:14px 0 10px; }
-    #story .sec-head h2 { font-size:25px; margin:5px 0 6px; }
-    #story .sec-head .lead { font-size:14px; line-height:1.4; }
-  }
-  @media (max-width:520px){ .film-sound { font-size:13px; padding:10px 15px; bottom:19%; } }
-  .whyfilm figcaption { max-width:var(--wrap); margin:14px auto 0; font-size:14.5px; color:var(--text-2); line-height:1.6; }
-  .whyfilm figcaption b { color:var(--text); }
-  .whyfilm .filmsrc { display:block; margin-top:8px; font-family:var(--mono); font-size:10.5px; color:var(--text-3); letter-spacing:.3px; }
-  .whyfilm .filmsrc code { font-family:var(--mono); }
-
-  /* ---- with-you: audiences, plan, package ---- */
-  .serve, .plan { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:28px; }
-  .serve > div, .plan .step { background:var(--bg); border:1px solid var(--border); padding:22px 24px; }
-  .serve h3, .plan h3 { font-size:15.5px; font-weight:600; color:var(--text); margin-bottom:8px; }
-  .serve p, .plan p { font-size:14.5px; color:var(--text-2); line-height:1.6; }
-  .plan .n { display:block; font-family:var(--mono); font-size:12px; color:var(--blue); letter-spacing:.6px; margin-bottom:8px; }
-  .pkg { margin-top:28px; background:var(--bg); border:1px solid var(--border); border-left:3px solid var(--blue); padding:26px 28px; }
-  .pkg h3 { font-size:19px; font-weight:600; color:var(--text); max-width:36em; }
-  .pkg ul { list-style:none; margin:14px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:8px 28px; }
-  .pkg li { padding:9px 0 9px 26px; position:relative; font-size:14.5px; color:var(--text-2); line-height:1.55; border-top:1px solid var(--border); }
-  .pkg li::before { content:""; position:absolute; left:2px; top:15px; width:12px; height:7px; border-left:2px solid var(--blue); border-bottom:2px solid var(--blue); transform:rotate(-45deg); }
-  @media (max-width:960px) { .serve, .plan { grid-template-columns:1fr; } }
-  @media (max-width:760px) { .vs { grid-template-columns:1fr; } .pkg ul { grid-template-columns:1fr; } }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior:auto; }
-    *, *::before, *::after { animation:none !important; transition:none !important; }
-    .js .reveal { opacity:1 !important; transform:none !important; }
-  }
-</style>
-
-<style>
-/* ===== Fast Finance additions (same tokens as the template) ===== */
-.hero { min-height:0; padding:72px 0 84px; display:block; background:linear-gradient(180deg, #edf5ff 0%, #f7faff 55%, #ffffff 100%); border-bottom:1px solid var(--border); }
-.hero .hero-grid { display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:56px; align-items:center; max-width:var(--wrap); }
-.hero .kicker { display:block; margin-bottom:14px; }
-.hero h1 { font-size:clamp(36px,3.5vw,50px); line-height:1.08; }
-.hero-media { margin:0; }
-.hero-frame { background:#fff; border:1px solid var(--border); box-shadow:0 2px 6px rgba(0,0,0,.05), 0 34px 70px -30px rgba(15,40,110,.40); }
-.hero-frame video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#eef1f6; }
-.hero-media figcaption { font-family:var(--mono); font-size:11.5px; color:var(--text-3); margin-top:12px; letter-spacing:.2px; }
-@media (max-width:960px){ .hero { padding:40px 0 48px; } .hero .hero-grid { grid-template-columns:1fr; gap:32px; } }
-@media (max-width:640px){ .hero-ctas { display:flex; flex-direction:column; gap:8px; max-width:none; } .hero-ctas .btn { width:100%; min-width:0; } }
-.sec-head .lead { max-width:44em; }
-#services { padding:80px 0 72px; }
-.svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-top:34px; }
-.svc { background:var(--bg); padding:30px 28px 26px; display:flex; flex-direction:column; text-decoration:none; color:var(--text); position:relative; transition:background .15s; }
-.svc::after { content:""; position:absolute; left:0; right:0; bottom:0; height:3px; background:var(--blue); transform:scaleX(0); transform-origin:left; transition:transform .25s var(--ease); }
-.svc:hover { background:#fafafa; }
-.svc:hover::after, .svc:focus-visible::after { transform:scaleX(1); }
-.svc-logo { height:46px; width:auto; margin-bottom:22px; }
-.svc h3 { font-size:22px; font-weight:400; margin:0 0 10px; }
-.svc p { font-size:15px; color:var(--text-2); line-height:1.55; margin:0 0 16px; }
-.svc ul { list-style:none; margin:0 0 24px; padding:0; border-top:1px solid var(--border); }
-.svc li { font-size:14px; padding:9px 0; border-bottom:1px solid var(--border); color:var(--text); }
-.svc-go { margin-top:auto; display:inline-flex; align-items:center; gap:10px; color:var(--blue); font-size:15px; }
-@media (max-width:900px){ .svc-grid { grid-template-columns:1fr; } }
-
-#machines { padding:72px 0 80px; background:var(--bg-alt); }
-.pivot { display:flex; gap:0; border-bottom:1px solid var(--border-strong); margin-top:28px; overflow-x:auto; scrollbar-width:none; }
-.pivot::-webkit-scrollbar { display:none; }
-.pv-tab { flex:none; background:none; border:0; border-bottom:3px solid transparent; margin-bottom:-1px; padding:14px 22px 12px 0; margin-right:30px; font:400 17px/1.2 var(--sans); color:var(--text-2); cursor:pointer; display:flex; align-items:baseline; gap:10px; }
-.pv-tab:hover { color:var(--text); }
-.pv-tab[aria-selected="true"] { color:var(--text); border-bottom-color:var(--blue); font-weight:600; }
-.pv-len { font-family:var(--mono); font-size:12px; color:var(--text-3); font-weight:400; }
-@media (max-width:640px){ .pv-tab { margin-right:18px; padding-right:0; font-size:15px; } .pv-tab:last-child { margin-right:0; } .pv-len { display:none; } }
-.pv-head { display:grid; grid-template-columns:auto 1fr; gap:36px; align-items:start; margin:34px auto 26px; }
-.pv-logo { height:58px; width:auto; margin-top:4px; }
-.pv-title { font-size:clamp(24px,2.6vw,32px); font-weight:300; line-height:1.2; margin:0 0 10px; }
-.pv-title strong { font-weight:600; }
-@media (max-width:900px){ .pv-head { grid-template-columns:1fr; gap:16px; } .pv-logo { height:48px; } }
-.pv-stage { max-width:1520px; margin:0 auto; padding:0 32px; }
-.pv-player { background:#0b0f17; box-shadow:0 2px 6px rgba(0,0,0,.06), 0 30px 70px -30px rgba(15,30,70,.45); }
-.pv-player video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#0b0f17; }
-.pv-bar { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-top:12px; }
-.pv-meta { font-family:var(--mono); font-size:12px; color:var(--text-3); letter-spacing:.2px; }
-.pv-fs { display:inline-flex; align-items:center; gap:10px; min-height:44px; padding:10px 18px; background:var(--inverse); color:#fff; border:0; font:400 15px/1 var(--sans); cursor:pointer; }
-.pv-fs:hover { background:#393939; }
-.pv-cols { display:grid; grid-template-columns:repeat(3,1fr); margin-top:34px; border-top:1px solid var(--border-strong); }
-.pv-cols > div { padding:22px 26px 6px 0; }
-.pv-cols > div + div { padding-left:26px; border-left:1px solid var(--border); }
-.pv-cols h4 { font-size:15px; font-weight:600; margin:0 0 10px; }
-.pv-cols ul { margin:0; padding:0 0 0 18px; color:var(--text-2); font-size:15px; }
-.pv-cols li { margin:5px 0; }
-@media (max-width:900px){ .pv-stage { padding:0; } .pv-bar { padding:0 16px; } .pv-cols { grid-template-columns:1fr; } .pv-cols > div, .pv-cols > div + div { padding:18px 0 4px; border-left:0; border-bottom:1px solid var(--border); } }
-
-#approach { padding:80px 0; }
-.steps { list-style:none; margin:34px 0 0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--border-strong); }
-.step { padding:24px 28px 26px 0; border-bottom:1px solid var(--border); }
-.step:not(:nth-child(3n+1)) { padding-left:28px; border-left:1px solid var(--border); }
-.step-n { font-family:var(--mono); font-size:13px; color:var(--blue); display:block; margin-bottom:12px; }
-.step h3 { font-size:19px; font-weight:400; margin:0 0 8px; }
-.step p { font-size:15px; color:var(--text-2); line-height:1.55; margin:0; }
-@media (max-width:900px){ .steps { grid-template-columns:1fr; } .step, .step:not(:nth-child(3n+1)) { padding:20px 0; border-left:0; } }
-
-#deliverables { padding:80px 0; background:var(--inverse); color:#f4f4f4; }
-#deliverables .kicker { color:#78a9ff; }
-#deliverables h2 { color:#fff; }
-#deliverables .lead { color:#c6c6c6; }
-.dl-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#393939; border:1px solid #393939; margin-top:34px; }
-.dl { background:var(--inverse); padding:28px 26px; }
-.dl-n { font-family:var(--mono); font-size:13px; color:#78a9ff; display:block; margin-bottom:14px; }
-.dl h3 { color:#fff; font-size:20px; font-weight:400; margin:0 0 10px; }
-.dl p { color:#c6c6c6; font-size:15px; line-height:1.55; margin:0; }
-@media (max-width:900px){ .dl-grid { grid-template-columns:1fr; } }
-
-#faq { padding:80px 0; }
-.faq-grid { display:grid; grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:56px; align-items:start; }
-.faq { border-bottom:1px solid var(--border); }
-.faq:first-child { border-top:1px solid var(--border); }
-.faq summary { list-style:none; cursor:pointer; padding:20px 44px 20px 0; position:relative; font-size:18px; font-weight:400; }
-.faq summary::-webkit-details-marker { display:none; }
-.faq summary:hover { color:var(--blue); }
-.faq-i { position:absolute; right:6px; top:50%; width:14px; height:14px; margin-top:-7px; }
-.faq-i::before, .faq-i::after { content:""; position:absolute; left:0; right:0; top:6px; height:2px; background:currentColor; transition:transform .2s; }
-.faq-i::after { transform:rotate(90deg); }
-.faq[open] .faq-i::after { transform:rotate(0); }
-.faq p { color:var(--text-2); font-size:15.5px; line-height:1.6; margin:0 0 22px; max-width:46em; }
-@media (max-width:900px){ .faq-grid { grid-template-columns:1fr; gap:10px; } }
-
-.scanband { padding:56px 0; background:var(--bg-alt); border-top:1px solid var(--border); }
-.scan-in { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px; }
-.scan-in h2 { font-size:clamp(24px,2.6vw,32px); margin:6px 0 6px; }
-.scan-codes { display:flex; gap:16px; flex-wrap:wrap; }
-.scan-c { background:#fff; border:1px solid var(--border); padding:12px 12px 10px; text-align:center; width:156px; }
-.scan-c img { width:130px; height:130px; margin:0 auto 8px; image-rendering:pixelated; display:block; }
-.scan-c b { display:block; font-size:13px; font-weight:600; }
-.final .final-ctas { display:flex; flex-wrap:wrap; gap:12px; }
-.foot-links a { color:var(--text-2); text-decoration:none; margin-right:18px; }
-.foot-links a:hover { color:var(--blue); }
-@media (max-width:640px){ .wrap { padding:0 16px; } }
+/* footer */
+footer{ background:var(--dark); color:#b9bfcc; font-size:15px; }
+.f-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:36px; padding-top:56px; padding-bottom:40px; }
+footer .logo b{ color:#fff; }
+footer .logo span span{ color:#8e95a5; }
+footer h4{ font:500 12.5px/1 var(--head); letter-spacing:.16em; text-transform:uppercase; color:#fff; margin:6px 0 16px; }
+footer ul{ list-style:none; margin:0; padding:0; display:grid; gap:9px; }
+footer a{ color:#d6dae3; }
+footer a:hover{ color:#fff; }
+.f-about{ margin:16px 0 0; max-width:24em; }
+.codes{ display:flex; gap:12px; }
+.codes figure{ margin:0; text-align:center; }
+.codes img{ width:92px; height:92px; background:#fff; padding:5px; image-rendering:pixelated; }
+.codes figcaption{ font-size:12px; color:#8e95a5; margin-top:6px; }
+.f-base{ border-top:1px solid #2a2e38; padding-top:18px; padding-bottom:28px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; font-size:13px; color:#8e95a5; }
+@media (max-width:900px){ .f-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .f-grid{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<!-- ================= NAV ================= -->
-<div class="nav">
-  <div class="wrap nav-in">
-    <a class="brand" href="#top" aria-label="Sophon Finance Systems — home">
-      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
-        <path class="bm-line" pathLength="100" d="M10 30 L19 21 L27 26 L38 14" fill="none" stroke="#0f62fe" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path class="bm-glint" pathLength="100" d="M10 30 L19 21 L27 26 L38 14" fill="none" stroke="#d0e2ff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle class="bm-dot" cx="38" cy="14" r="3" fill="#0f62fe"/>
-        <circle class="bm-ping" cx="38" cy="14" r="3" fill="none" stroke="#0f62fe" stroke-width="1.4"/>
-        <rect x="10" y="35" width="28" height="3" fill="#161616"/>
-      </svg>
-      <span class="brand-text"><span class="brand-word">Sophon <span>Finance Systems</span></span><span class="brand-tag">TAX &middot; ACCOUNTING &middot; AUDIT AUTOMATION</span></span>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="logo" href="/" aria-label="Fast Finance home">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><g transform="skewX(-14) translate(9 0)"><rect x="15" y="9" width="6.5" height="30" fill="#12182b"/><rect x="15" y="9" width="22" height="6.5" fill="#12182b"/><rect x="15" y="21.5" width="16" height="6" fill="#12182b"/><rect x="3" y="9" width="8.5" height="6.5" fill="#2e6ae6"/><rect x="6" y="21.5" width="5.5" height="6" fill="#2e6ae6"/></g></svg>
+      <span><b>Fast Finance</b><span>SOPHONFINANCE.COM</span></span>
     </a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#12182b" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
-    <nav class="nav-links" id="navlinks" aria-label="Main">
+    <nav class="nav" id="nav" aria-label="Main">
       <a href="#services">Services</a>
-      <a href="#machines">Machines</a>
-      <a href="#approach">Approach</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn-p btn-sm" href="#book" data-book>Book a consultation
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#about">About</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="#contact">Schedule a consultation</a>
     </nav>
-  </div>
-</div>
-
-<main id="main">
-
-<!-- ================= HERO ================= -->
-<header class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="kicker">Fast Finance &middot; created by ENASAL | SophonFinance.com</p>
-      <h1>Automate the work.<br><strong>Keep the judgment.</strong></h1>
-      <p class="hero-sub">Fast Finance machines for <b>tax, accounting and audit</b>. Each one reads the client&rsquo;s files, does the work, and hands your team a draft where <b>every figure traces to its source</b>. Your people approve every output.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-p" href="#machines" data-open="tax">Watch the machines
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-t" href="#book" data-book>Book a free consultation
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-    <figure class="hero-media">
-      <div class="hero-frame">
-        <video id="heroVid" autoplay muted loop playsinline preload="auto" poster="videos/hero-machines-poster.jpg" data-mobile="videos/hero-machines-mobile.mp4" aria-label="The Tax, Accounting and Audit machines at work">
-          <source src="videos/hero-machines.mp4" type="video/mp4">
-        </video>
-      </div>
-      <figcaption>Real runs of the Tax, Accounting and Audit machines &middot; invented company</figcaption>
-    </figure>
   </div>
 </header>
 
-<!-- ================= SERVICES ================= -->
-<section id="services">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="kicker">Our services</p>
-      <h2>Three service lines. <strong>One machine for each.</strong></h2>
-      <p class="lead">Every Fast Finance machine works the same way: it reads the client&rsquo;s own files, does the work, and leaves the decisions to a person.</p>
-    </div>
-    <div class="svc-grid">
-      <a class="svc reveal" href="#machines" data-open="tax">
-        <img src="assets/Fast-Finance-Tax-Machine-color.svg" alt="" width="184" height="48" class="svc-logo">
-        <h3>Tax</h3>
-        <p>Partnership, state and payroll filings prepared from the client&rsquo;s own books, with every rule checked against the official source.</p>
-        <ul><li>Form 1065 and K-1s</li><li>Washington excise returns</li><li>Quarterly payroll filings</li></ul>
-        <span class="svc-go">Watch it work <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="svc reveal d1" href="#machines" data-open="accounting">
-        <img src="assets/Fast-Finance-Accounting-Machine-color.svg" alt="" width="184" height="48" class="svc-logo">
-        <h3>Accounting &amp; Finance</h3>
-        <p>Month-end review of every vendor invoice against the books, the policy book and the vendor file, before the close.</p>
-        <ul><li>Invoice-to-ledger matching</li><li>Asset capitalization checks</li><li>Coding, approval and W-9 checks</li></ul>
-        <span class="svc-go">Watch it work <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="svc reveal d2" href="#machines" data-open="audit">
-        <img src="assets/Fast-Finance-Audit-Machine-color.svg" alt="" width="184" height="48" class="svc-logo">
-        <h3>Audit &amp; Assurance</h3>
-        <p>Year-end audit workpapers and draft findings for the CPA, every amount a formula back to the document it came from.</p>
-        <ul><li>Materiality and sampling</li><li>Unrecorded bills and journal testing</li><li>Bank and escrow confirmations</li></ul>
-        <span class="svc-go">Watch it work <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-    </div>
-  </div>
-</section>
+<main id="main">
 
-<!-- ================= MACHINES (pivot) ================= -->
-<section id="machines" aria-labelledby="machines-h">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="kicker">See the machines at work</p>
-      <h2 id="machines-h">Watch a full run, <strong>start to finish.</strong></h2>
-      <p class="lead">Each training video is a real run, recorded on the machine and shortened. Pick a machine, then press play or watch full screen.</p>
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-media">
+      <video id="hv" autoplay muted loop playsinline preload="auto" poster="videos/founder-reel-poster.jpg" data-mobile="videos/founder-reel-mobile.mp4" aria-label="Sophon Hang leading a Fast Finance working session">
+        <source src="videos/founder-reel.mp4" type="video/mp4">
+      </video>
     </div>
-    <div class="pivot" role="tablist" aria-label="Fast Finance machines">
-        <button class="pv-tab" role="tab" id="tab-tax" aria-controls="panel-tax" aria-selected="true" tabindex="0" data-tab="tax">
-          <span class="pv-name">Tax Machine</span><span class="pv-len">2:22</span>
-        </button>
-        <button class="pv-tab" role="tab" id="tab-accounting" aria-controls="panel-accounting" aria-selected="false" tabindex="-1" data-tab="accounting">
-          <span class="pv-name">Accounting Machine</span><span class="pv-len">3:33</span>
-        </button>
-        <button class="pv-tab" role="tab" id="tab-audit" aria-controls="panel-audit" aria-selected="false" tabindex="-1" data-tab="audit">
-          <span class="pv-name">Audit Machine</span><span class="pv-len">2:58</span>
-        </button>
+    <div class="hero-bar">
+      <h1>The digital AI <span class="acc">accounting firm.</span></h1>
+      <a class="btn" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Schedule a free consultation</a>
     </div>
-  </div>
-    <div class="pv-panel" role="tabpanel" id="panel-tax" aria-labelledby="tab-tax">
-      <div class="wrap pv-head">
-        <img class="pv-logo" src="assets/Fast-Finance-Tax-Machine-color.svg" alt="Fast Finance Tax Machine" width="230" height="60">
+  </section>
+
+  <section class="svc" id="services">
+    <div class="wrap">
+      <h2>Tax, accounting and audit, <span class="acc">prepared by machine.</span></h2>
+      <div class="svc-grid">
         <div>
-          <h3 class="pv-title">Prepares the filing. <strong>Checks every rule.</strong></h3>
-          <p class="lead">Choose a filing from the calendar. The machine reads the trial balance, ledgers and prior return, checks each rule against the official IRS or state page, and writes a draft for a person to review and sign.</p>
+          <div class="tabs" role="tablist" aria-label="Services">
+            <button class="tab" role="tab" aria-selected="true" aria-controls="panel" id="t0">Tax services <span class="chev" aria-hidden="true">&rsaquo;</span></button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="panel" id="t1" tabindex="-1">Accounting services <span class="chev" aria-hidden="true">&rsaquo;</span></button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1">Audit services <span class="chev" aria-hidden="true">&rsaquo;</span></button>
+          </div>
+          <p class="tab-note">Each video is a real run of the machine, shortened. The company, people and figures in it are invented.</p>
         </div>
-      </div>
-      <div class="pv-stage">
-        <div class="pv-player">
-          <video id="v-tax" controls playsinline preload="metadata" poster="videos/tax-machine-poster.jpg" aria-label="Fast Finance Tax Machine training video">
-            <source src="videos/tax-machine-training.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="pv-bar">
-          <span class="pv-meta">Training video &middot; 2:22 &middot; real product, invented company &middot; 1080p</span>
-          <button class="pv-fs" type="button" data-video="v-tax"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span>Watch full screen</span></button>
-        </div>
-      </div>
-      <div class="wrap">
-        <div class="pv-cols">
-          <div><h4>Filings it prepares</h4><ul><li>Form 1065 and Schedules K-1</li><li>Washington combined excise: B&amp;O, sales and use tax</li><li>Quarterly payroll: Form 941, ESD unemployment, Paid Leave and WA Cares, L&amp;I</li></ul></div>
-          <div><h4>What one run produces</h4><ul><li>Linked Excel workpapers, every amount a formula to its source cell</li><li>The draft return as a PDF, marked unsigned</li><li>Rule checks quoting the official IRS and state pages</li></ul></div>
-          <div><h4>What stays with your team</h4><ul><li>Open items stay open, each with the question to answer</li><li>Differences are shown, never plugged</li><li>Nothing is signed or filed</li></ul></div>
-        </div>
-      </div>
-    </div>
-    <div class="pv-panel" role="tabpanel" id="panel-accounting" aria-labelledby="tab-accounting" hidden>
-      <div class="wrap pv-head">
-        <img class="pv-logo" src="assets/Fast-Finance-Accounting-Machine-color.svg" alt="Fast Finance Accounting Machine" width="230" height="60">
-        <div>
-          <h3 class="pv-title">Every invoice, <strong>matched to the books.</strong></h3>
-          <p class="lead">Month-end invoice review. The machine reads each invoice PDF, matches it to the bill as booked, and checks the full cost of assets, the job and cost coding, the entity, the approver and the vendor file.</p>
-        </div>
-      </div>
-      <div class="pv-stage">
-        <div class="pv-player">
-          <video id="v-accounting" controls playsinline preload="none" poster="videos/accounting-machine-poster.jpg" aria-label="Fast Finance Accounting Machine training video">
-            <source src="videos/accounting-machine-training.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="pv-bar">
-          <span class="pv-meta">Training video &middot; 3:33 &middot; real product, invented company &middot; 1080p</span>
-          <button class="pv-fs" type="button" data-video="v-accounting"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span>Watch full screen</span></button>
-        </div>
-      </div>
-      <div class="wrap">
-        <div class="pv-cols">
-          <div><h4>What it reads</h4><ul><li>27 vendor invoice PDFs and what was keyed from them</li><li>The ledger, chart of accounts, jobs and cost codes</li><li>The vendor file, the policy book and 120 past bills</li></ul></div>
-          <div><h4>What the demo run found</h4><ul><li>15 findings, each tied to a policy clause</li><li>$9,531.88 between ledger and invoices, explained to $0.00</li><li>Asset cost sent to expense and a bill entered twice</li></ul></div>
-          <div><h4>What one run produces</h4><ul><li>AP review workpapers, every figure a live formula to the evidence</li><li>An unsigned draft memo with findings and draft entries</li><li>Nothing is posted or paid</li></ul></div>
+        <div class="panel" id="panel" role="tabpanel" aria-labelledby="t0">
+          <h3 id="pTitle">Fast Finance Tax Machine</h3>
+          <p class="sub" id="pSub">Partnership, state and payroll filings prepared from the client&rsquo;s own books, with every rule checked against the official source.</p>
+          <div class="player">
+            <video id="v" autoplay muted playsinline controls preload="auto" poster="videos/tax-machine-poster.jpg">
+              <source src="videos/tax-machine-training.mp4" type="video/mp4">
+            </video>
+            <button class="snd" id="snd" type="button" aria-label="Turn the sound on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>Sound on</button>
+          </div>
+          <div class="pbar"><span id="pLen">Training video &middot; 2:22</span><button type="button" id="fs">Full screen</button></div>
+          <ul class="incl" id="pIncl"></ul>
         </div>
       </div>
     </div>
-    <div class="pv-panel" role="tabpanel" id="panel-audit" aria-labelledby="tab-audit" hidden>
-      <div class="wrap pv-head">
-        <img class="pv-logo" src="assets/Fast-Finance-Audit-Machine-color.svg" alt="Fast Finance Audit Machine" width="230" height="60">
-        <div>
-          <h3 class="pv-title">Year-end workpapers, <strong>built from the evidence.</strong></h3>
-          <p class="lead">The machine sets materiality, draws and vouches the sample, searches for unrecorded bills, tests the journal entries and ties cash to the bank&rsquo;s own letter. It gives no opinion. The CPA concludes.</p>
-        </div>
-      </div>
-      <div class="pv-stage">
-        <div class="pv-player">
-          <video id="v-audit" controls playsinline preload="none" poster="videos/audit-machine-poster.jpg" aria-label="Fast Finance Audit Machine training video">
-            <source src="videos/audit-machine-training.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="pv-bar">
-          <span class="pv-meta">Training video &middot; 2:58 &middot; real product, invented company &middot; 1080p</span>
-          <button class="pv-fs" type="button" data-video="v-audit"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span>Watch full screen</span></button>
-        </div>
-      </div>
-      <div class="wrap">
-        <div class="pv-cols">
-          <div><h4>The procedures</h4><ul><li>Materiality from the recomputed trial balance</li><li>Sample draw, vouching and the search for unrecorded bills</li><li>Journal entry testing, confirmations and analytics</li></ul></div>
-          <div><h4>What one run produces</h4><ul><li>14 workpaper tabs with tickmarks and 16 evidence tabs</li><li>Draft findings PDF, one evidence page per figure</li><li>A hash-checked record of every file relied on</li></ul></div>
-          <div><h4>What stays with the CPA</h4><ul><li>Every open item stays open until the CPA decides it</li><li>No opinion, no posted adjustment</li><li>Nothing is signed or sent</li></ul></div>
-        </div>
-      </div>
-    </div>
-</section>
+  </section>
 
-<!-- ================= STATS ================= -->
-<div class="stats" role="complementary" aria-label="From the demonstration runs">
-  <div class="wrap stats-in">
-    <div class="stat"><b><span class="count" data-count="27">27</span></b>
-      <span class="cap">vendor invoices matched to the books in one Accounting run</span>
-      <span class="src">Accounting Machine &middot; October demo run</span></div>
-    <div class="stat"><b><span class="count" data-count="2125">2,125</span></b>
-      <span class="cap">ledger lines recomputed before materiality is set</span>
-      <span class="src">Audit Machine &middot; FY2026 demo run</span></div>
-    <div class="stat"><b><span class="count" data-count="1061">1,061</span></b>
-      <span class="cap">journal entries tested for risk traits in one audit</span>
-      <span class="src">Audit Machine &middot; FY2026 demo run</span></div>
-    <div class="stat"><b><span class="count" data-count="0">0</span></b>
-      <span class="cap">outputs posted, paid, signed or filed without a person</span>
-      <span class="src">all three machines</span></div>
-  </div>
-</div>
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="big">Fast Finance is a digital AI accounting firm. Our machines prepare tax filings, review the month-end books and build audit workpapers from your own files, and every figure traces back to the document it came from.</p>
+      <a class="more" href="#contact">Schedule a free consultation</a>
+    </div>
+  </section>
 
-<!-- ================= APPROACH ================= -->
-<section id="approach">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="kicker">Our approach</p>
-      <h2>The same six stages, <strong>every run.</strong></h2>
-      <p class="lead">Tax, accounting or audit, each machine follows one method, so a reviewer always knows where to look.</p>
+  <section class="lead-sec" id="leadership">
+    <div class="wrap lead-grid">
+      <div class="lead-photo"><img src="img/sophon-portrait.jpg" alt="Sophon Hang, founder of Fast Finance" width="800" height="800" loading="lazy"></div>
+      <div>
+        <h2>Sophon Hang</h2>
+        <p class="role">Founder &middot; Fast Finance</p>
+        <p>Sophon founded Fast Finance to give accounting teams machines that do the preparation work and leave the judgment with people.</p>
+        <p>Sophon designs and builds the Fast Finance Tax, Accounting and Audit machines.</p>
+        <a class="more" href="#contact">Talk with Sophon</a>
+      </div>
     </div>
-    <ol class="steps">
-        <li class="step reveal"><span class="step-n">01</span><h3>Read the client&rsquo;s files</h3><p>Trial balance, ledgers, invoices, statements and prior work, opened read-only.</p></li>
-        <li class="step reveal"><span class="step-n">02</span><h3>Do the work</h3><p>Match, calculate, sample and test, the same way every run.</p></li>
-        <li class="step reveal"><span class="step-n">03</span><h3>Check against the rules</h3><p>Official IRS and state pages, the client&rsquo;s policy book or the audit plan.</p></li>
-        <li class="step reveal"><span class="step-n">04</span><h3>Trace every figure</h3><p>Each amount links to the exact document and cell it came from.</p></li>
-        <li class="step reveal"><span class="step-n">05</span><h3>Package for review</h3><p>Workpapers, a draft memo or return, and the list of open items.</p></li>
-        <li class="step reveal"><span class="step-n">06</span><h3>Your team decides</h3><p>Nothing is posted, paid, signed or filed until a person approves it.</p></li>
-    </ol>
-  </div>
-</section>
+  </section>
 
-<!-- ================= DELIVERABLES ================= -->
-<section id="deliverables">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="kicker">What you receive</p>
-      <h2>A review-ready package, <strong>not a black box.</strong></h2>
-      <p class="lead">Every run ends with three things your reviewer can open, check and sign off.</p>
+  <section class="split" aria-labelledby="splitH">
+    <div class="split-photo" role="img" aria-label="Analyst reviewing figures on several monitors"></div>
+    <div class="wrap split-in">
+      <h2 id="splitH">Your people keep<br>the signature.</h2>
+      <div class="split-box">
+        <p>Fast Finance prepares the work. It never posts, pays, signs or files.</p>
+        <p>Each engagement ends with linked Excel workpapers, a draft return or memo, and a list of open items for your reviewer. Nothing leaves draft until a person approves it.</p>
+        <a class="more" href="#contact">Schedule a free consultation</a>
+      </div>
     </div>
-    <div class="dl-grid">
-      <div class="dl reveal"><span class="dl-n">01</span><h3>Linked Excel workpapers</h3><p>Summary, findings and draft entries up front, evidence tabs behind them. Every amount is a live formula back to the source cell, so a reviewer can follow any number.</p></div>
-      <div class="dl reveal d1"><span class="dl-n">02</span><h3>A draft memo or return</h3><p>A PDF your reviewer can read in one sitting: the findings with their rules, the figures, and the open items. Always marked as a draft and unsigned.</p></div>
-      <div class="dl reveal d2"><span class="dl-n">03</span><h3>The evidence trail</h3><p>The original files, the calculations and a hash-checked record of everything the run relied on, so the package can be re-verified later.</p></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= FAQ ================= -->
-<section id="faq">
-  <div class="wrap faq-grid">
-    <div class="sec-head reveal">
-      <p class="kicker">Questions</p>
-      <h2>Frequently <strong>asked.</strong></h2>
-      <p class="lead">Anything else, ask us in the consultation.</p>
+  <section class="contact" id="contact">
+    <div class="wrap c-grid">
+      <div>
+        <h2>Schedule a <span class="acc">free consultation.</span></h2>
+        <p class="lead">Tell us about the filing, the month-end close or the audit you want handled. We reply within one business day.</p>
+        <dl>
+          <dt>Email</dt><dd><a href="mailto:contact@sophonfinance.com">contact@sophonfinance.com</a></dd>
+          <dt>Web</dt><dd>SophonFinance.com</dd>
+        </dl>
+      </div>
+      <form class="cf" action="https://formsubmit.co/cff69027fd01c775ac2e18c12b674597" method="POST">
+        <input type="hidden" name="_subject" value="New consultation request — Fast Finance">
+        <input type="hidden" name="_next" value="https://sophonfinance.com/thanks.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_autoresponse" value="Thank you for contacting Fast Finance. We received your request and will reply within one business day.&#10;&#10;Fast Finance · SophonFinance.com · contact@sophonfinance.com">
+        <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="two">
+          <label>Name<input name="name" required autocomplete="name"></label>
+          <label>Work email<input type="email" name="email" required autocomplete="email"></label>
+        </div>
+        <div class="two">
+          <label>Company<input name="company" autocomplete="organization"></label>
+          <label>Service
+            <select name="service"><option>Tax services</option><option>Accounting services</option><option>Audit services</option><option>Not sure yet</option></select>
+          </label>
+        </div>
+        <label>How can we help?<textarea name="message" required></textarea></label>
+        <div><button class="btn" type="submit">Request consultation</button></div>
+        <p class="fine">Please don&rsquo;t include client data in this form.</p>
+      </form>
     </div>
-    <div>
-      <details class="faq reveal"><summary>Is the data in the videos real?<span class="faq-i" aria-hidden="true"></span></summary><p>No. HANGS Construction, its people, documents and figures are invented for demonstration. The machines, their calculations and the runs you see are real; the videos shorten them.</p></details>
-      <details class="faq reveal"><summary>Does a machine file, post, pay or sign anything?<span class="faq-i" aria-hidden="true"></span></summary><p>No. Each machine writes drafts. Open items stay open until a person answers them, and signing and filing stay with your team and your licensed professionals.</p></details>
-      <details class="faq reveal"><summary>How long does a run take?<span class="faq-i" aria-hidden="true"></span></summary><p>The real work takes from about a second to under a minute. On screen a run is slowed down so a person can read along, and the real working time is shown separately at the end.</p></details>
-      <details class="faq reveal"><summary>Where does it run?<span class="faq-i" aria-hidden="true"></span></summary><p>On a computer you control. Each machine reads the client&rsquo;s folder read-only and keeps its own records of every run.</p></details>
-      <details class="faq reveal"><summary>Can it work on our own files?<span class="faq-i" aria-hidden="true"></span></summary><p>That&rsquo;s what the consultation is for. We look at one process with you, a filing, the month-end invoice review or an audit area, and scope a first phase.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SCAN CODES ================= -->
-<div class="scanband">
-  <div class="wrap scan-in">
-    <div class="reveal">
-      <p class="kicker">Share it</p>
-      <h2>Fast Finance, <strong>created by ENASAL | SophonFinance.com</strong></h2>
-      <p class="lead">Scan with your phone camera.</p>
-    </div>
-    <div class="scan-codes reveal d1">
-      <div class="scan-c"><img src="assets/enasal_qr.png" alt="ENASAL scan code" width="130" height="130"><b>ENASAL</b></div>
-      <div class="scan-c"><img src="assets/sophon_finance_qr.png" alt="SophonFinance.com scan code" width="130" height="130"><b>SophonFinance.com</b></div>
-    </div>
-  </div>
-</div>
-
-<!-- ================= FINAL CTA ================= -->
-<section class="final" id="contact">
-  <div class="wrap">
-    <p class="kicker reveal">Start the conversation</p>
-    <h2 class="reveal">Show us where <strong>the hours go.</strong></h2>
-    <p class="lead reveal d1">Tell us about the filing, the month-end review or the audit area. We&rsquo;ll tell you plainly what a machine can take over, what it can&rsquo;t, and what a scoped first phase would cost.</p>
-    <div class="final-ctas reveal d2">
-      <a class="btn btn-w" href="#book" data-book>Book a free consultation
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn-wo" href="mailto:contact@sophonfinance.com">contact@sophonfinance.com</a>
-    </div>
-    <p class="fine reveal d2">No software purchase &middot; fixed-scope pricing after observation &middot; your people keep approval authority</p>
-  </div>
-</section>
+  </section>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer>
-  <div class="wrap foot">
-    <div class="foot-left">
-      <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M10 30 L19 21 L27 26 L38 14" fill="none" stroke="#0f62fe" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="38" cy="14" r="3" fill="#0f62fe"/>
-        <rect x="10" y="35" width="28" height="3" fill="#161616"/>
-      </svg>
-      <span>&copy; 2026 Sophon Finance Systems</span>
+  <div class="wrap f-grid">
+    <div>
+      <a class="logo" href="/" aria-label="Fast Finance home">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><g transform="skewX(-14) translate(9 0)"><rect x="15" y="9" width="6.5" height="30" fill="#ffffff"/><rect x="15" y="9" width="22" height="6.5" fill="#ffffff"/><rect x="15" y="21.5" width="16" height="6" fill="#ffffff"/><rect x="3" y="9" width="8.5" height="6.5" fill="#7aa5ff"/><rect x="6" y="21.5" width="5.5" height="6" fill="#7aa5ff"/></g></svg>
+        <span><b>Fast Finance</b><span>SOPHONFINANCE.COM</span></span>
+      </a>
+      <p class="f-about">A digital AI accounting firm for tax, accounting and audit.</p>
     </div>
-    <div class="foot-links">
-      <a href="#services">Services</a><a href="#machines">Machines</a><a href="#approach">Approach</a><a href="mailto:contact@sophonfinance.com">Email</a>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services" data-open="0">Tax services</a></li>
+        <li><a href="#services" data-open="1">Accounting services</a></li>
+        <li><a href="#services" data-open="2">Audit services</a></li>
+      </ul>
     </div>
-    <div class="foot-note">Fast Finance machines are created by ENASAL | SophonFinance.com. The company, people, documents and figures in the videos are invented for demonstration. Sophon Finance Systems provides automation engineering; review, signing and filing authority always remain with your team and your licensed professionals.</div>
+    <div>
+      <h4>Firm</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="mailto:contact@sophonfinance.com">contact@sophonfinance.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Scan</h4>
+      <div class="codes">
+        <figure><img src="assets/enasal_qr.png" alt="ENASAL scan code" width="92" height="92"><figcaption>ENASAL</figcaption></figure>
+        <figure><img src="assets/sophon_finance_qr.png" alt="SophonFinance.com scan code" width="92" height="92"><figcaption>SophonFinance.com</figcaption></figure>
+      </div>
+    </div>
+  </div>
+  <div class="wrap f-base">
+    <span>&copy; 2026 Fast Finance &middot; SophonFinance.com</span>
+    <span>Fast Finance machines created by ENASAL | SophonFinance.com &middot; Training videos use an invented company.</span>
   </div>
 </footer>
 
-<div class="mcta"><a href="#book" data-book>Book a free consultation</a></div>
-
-<!-- ================= BOOKING MODAL ================= -->
-<div class="bookov" id="book" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
-  <div class="bookp">
-    <button class="bookx" type="button" aria-label="Close" id="bookClose">&#215;</button>
-
-    <!-- View 1: pick a call length and self-book against the live calendar (shown only when scheduling is configured) -->
-    <div id="bookChoose" hidden>
-      <p class="kicker">Free consultation</p>
-      <h3>Book a <strong>call with Sophon.</strong></h3>
-      <p class="bk-sub">Pick a time straight from my live calendar &mdash; a <b>Google&nbsp;Meet</b> video link lands in your inbox the moment you book. Prefer a phone call? Just note it when you book.</p>
-      <div class="bk-opts">
-        <button type="button" class="bk-opt" data-dur="30">
-          <span class="bk-opt-t">30-minute intro call</span>
-          <span class="bk-opt-d">A quick read on where your team's hours go and whether a machine fits.</span>
-          <span class="bk-opt-go">Pick a time &rarr;</span>
-        </button>
-        <button type="button" class="bk-opt" data-dur="60">
-          <span class="bk-opt-t">60-minute working session</span>
-          <span class="bk-opt-d">A deeper walk through one process &mdash; a filing, the month-end review or an audit area &mdash; and a scoped first phase.</span>
-          <span class="bk-opt-go">Pick a time &rarr;</span>
-        </button>
-      </div>
-      <p class="bk-meet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 10l4.55-2.28A1 1 0 0121 8.62v6.76a1 1 0 01-1.45.9L15 14M4 7h9a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V9a2 2 0 012-2z"/></svg> Video by Google Meet &middot; times shown in your timezone</p>
-      <button type="button" class="bk-alt" id="bkToForm">Prefer we email you instead? Send a note &rarr;</button>
-    </div>
-
-    <!-- View 2: the chosen Google Appointment Schedule, embedded -->
-    <div id="bookSched" hidden>
-      <button type="button" class="bk-back" id="bkBack">&larr; Back</button>
-      <p class="kicker" id="bkSchedKick">Book a time</p>
-      <div class="bk-frame"><iframe id="bkFrame" title="Book a time with Sophon Finance Systems" src="" loading="lazy"></iframe></div>
-      <a class="bk-alt" id="bkNewtab" href="#" target="_blank" rel="noopener">Trouble loading? Open the booking page in a new tab &#8599;</a>
-    </div>
-
-    <!-- View 3: the email form (default, and the fallback before scheduling is set up) -->
-    <div id="bookForm">
-    <p class="kicker">Free consultation</p>
-    <h3 id="bookTitle">Show us where <strong>the hours go.</strong></h3>
-    <p class="bk-sub">Tell us a little about the work that consumes your team's month. We'll reply personally within one business day &mdash; what a machine can take over, what it can't, and what a scoped first phase would cost.</p>
-    <form action="https://formsubmit.co/cff69027fd01c775ac2e18c12b674597" method="POST">
-      <input type="hidden" name="_subject" value="New consultation request — sophonfinance.com">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://sophonfinance.com/thanks.html">
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-      <input type="hidden" name="_autoresponse" value="Thank you for contacting Sophon Finance Systems. We received your request and will reply personally within one business day.&#10;&#10;What happens next: we look at the work you described — a tax filing, the month-end invoice review or an audit area — and tell you plainly what a Fast Finance machine can take over, what it can't, and what a scoped first phase would cost. Your people keep approval authority at every step.&#10;&#10;Watch the Tax, Accounting and Audit machines at https://sophonfinance.com&#10;&#10;Sophon Finance Systems · contact@sophonfinance.com&#10;Automate the work. Keep the judgment.">
-      <label for="bkName">Your name</label>
-      <input id="bkName" type="text" name="name" required autocomplete="name" placeholder="Jane Rivera">
-      <label for="bkEmail">Work email</label>
-      <input id="bkEmail" type="email" name="email" required autocomplete="email" placeholder="jane@company.com">
-      <label for="bkCo">Company</label>
-      <input id="bkCo" type="text" name="company" autocomplete="organization" placeholder="Company, Inc.">
-      <label for="bkMsg">What would you like a machine to take on?</label>
-      <textarea id="bkMsg" name="message" placeholder="e.g. our partnership returns, the month-end AP review, year-end audit workpapers&hellip;"></textarea>
-      <button class="btn btn-p" type="submit">Request my free consultation
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-      <p class="bk-note">You'll get an instant confirmation email and a personal reply within one business day. Please don't include client data.</p>
-    </form>
-    </div><!-- /#bookForm -->
-  </div>
-</div>
-<script>(function(){
-  var ov=document.getElementById('book');
-  if(!ov) return;
-
-  // ── Live self-scheduling via Google Calendar Appointment Schedules. ──────────
-  // Paste your two booking-page URLs below (create them in Google Calendar →
-  // "Appointment schedules", with Google Meet as the location — see the setup
-  // notes). Use the URL from each schedule's "Embed" / share option. While BOTH
-  // are blank the modal just shows the email form (current behavior), so nothing
-  // breaks before you set it up. Set one or both to switch on self-booking.
-  var BOOK30 = ""; // 30-minute intro call  — Google Appointment Schedule URL
-  var BOOK60 = ""; // 60-minute working session — Google Appointment Schedule URL
-
-  var urls = { "30": BOOK30, "60": BOOK60 };
-  var hasSched = !!(BOOK30 || BOOK60);
-  var choose=document.getElementById('bookChoose'),
-      sched=document.getElementById('bookSched'),
-      formv=document.getElementById('bookForm'),
-      bp=ov.querySelector('.bookp'),
-      frame=document.getElementById('bkFrame'),
-      newtab=document.getElementById('bkNewtab'),
-      schedKick=document.getElementById('bkSchedKick');
-  var LABELS = { "30":"30-minute intro call", "60":"60-minute working session" };
-
-  function view(v){
-    choose.hidden = (v!=='choose');
-    sched.hidden  = (v!=='sched');
-    formv.hidden  = (v!=='form');
-    if(bp) bp.classList.toggle('sched', v==='sched');
-    if(v!=='sched' && frame){ frame.src='about:blank'; } // stop the embed when not shown
-  }
-  // Hide any duration whose URL isn't configured; if none, we won't use the chooser.
-  ov.querySelectorAll('.bk-opt').forEach(function(b){ if(!urls[b.getAttribute('data-dur')]) b.hidden=true; });
-
-  function openSched(dur){
-    var u=urls[dur]; if(!u) return;
-    if(frame) frame.src=u;
-    if(newtab) newtab.href=u;
-    if(schedKick) schedKick.textContent=LABELS[dur]||'Book a time';
-    view('sched');
-  }
-
-  function open(e){
-    if(e && e.preventDefault) e.preventDefault();
-    view(hasSched ? 'choose' : 'form');
-    ov.classList.add('open'); document.body.style.overflow='hidden';
-    setTimeout(function(){
-      var f = hasSched ? ov.querySelector('.bk-opt:not([hidden])') : document.getElementById('bkName');
-      if(f) f.focus();
-    },60);
-  }
-  function close(){ ov.classList.remove('open'); document.body.style.overflow=''; if(frame) frame.src='about:blank'; }
-
-  ov.querySelectorAll('.bk-opt').forEach(function(b){ b.addEventListener('click', function(){ openSched(b.getAttribute('data-dur')); }); });
-  var toForm=document.getElementById('bkToForm'); if(toForm) toForm.addEventListener('click', function(){ view('form'); var n=document.getElementById('bkName'); if(n) n.focus(); });
-  var back=document.getElementById('bkBack'); if(back) back.addEventListener('click', function(){ view('choose'); });
-
-  document.querySelectorAll('[data-book]').forEach(function(a){ a.addEventListener('click', open); });
-  if(location.hash==='#book') setTimeout(open, 300);
-  document.getElementById('bookClose').addEventListener('click', close);
-  ov.addEventListener('click', function(e){ if(e.target===ov) close(); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && ov.classList.contains('open')) close(); });
-})();</script>
-
 <script>
-(function () {
-  document.body.classList.add('js');
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+(function(){
+  var S = [
+    { key:'tax', title:'Fast Finance Tax Machine', len:'2:22',
+      sub:'Partnership, state and payroll filings prepared from the client’s own books, with every rule checked against the official source.',
+      incl:[['Filings','Form 1065 and K-1s, Washington excise returns, quarterly payroll'],['Delivered','Linked Excel workpapers and the draft return, unsigned'],['Review','Open items stay open for your reviewer to decide']] },
+    { key:'accounting', title:'Fast Finance Accounting Machine', len:'3:33',
+      sub:'Month-end review of every vendor invoice against the books, the policy book and the vendor file, before the close.',
+      incl:[['Checks','Invoice to ledger, full asset cost, job and cost coding, approvals, W-9s'],['Delivered','AP review workpapers and an unsigned draft memo with draft entries'],['Review','Nothing is posted or paid']] },
+    { key:'audit', title:'Fast Finance Audit Machine', len:'2:58',
+      sub:'Year-end audit workpapers and draft findings for the CPA, every amount a formula back to the document it came from.',
+      incl:[['Procedures','Materiality, sampling, unrecorded bills, journal testing, confirmations'],['Delivered','Workpapers with tickmarks and a draft findings PDF'],['Review','No opinion is given; the CPA concludes']] }
+  ];
+  function play(el){ var p = el.play(); if (p && p.catch) p.catch(function(){}); }
+
+  // Hero film: smaller file on phones; still frame if the visitor prefers reduced motion
+  var hv = document.getElementById('hv');
+  var small = Math.min(screen.width, screen.height) <= 820 || (navigator.connection && navigator.connection.saveData);
+  if (small && hv.dataset.mobile) { hv.querySelector('source').src = hv.dataset.mobile; hv.load(); }
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { hv.removeAttribute('autoplay'); hv.pause(); } else play(hv);
+
+  // Services panel
+  var v = document.getElementById('v'), snd = document.getElementById('snd');
+  var tabs = [].slice.call(document.querySelectorAll('.tab')), cur = 0;
+  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function show(i, load){
+    cur = i; var s = S[i];
+    tabs.forEach(function(t, j){ var on = j === i; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
+    document.getElementById('panel').setAttribute('aria-labelledby', 't' + i);
+    document.getElementById('pTitle').textContent = s.title;
+    document.getElementById('pSub').textContent = s.sub;
+    document.getElementById('pLen').textContent = 'Training video · ' + s.len;
+    document.getElementById('pIncl').innerHTML = s.incl.map(function(x){ return '<li><b>' + esc(x[0]) + '</b>' + esc(x[1]) + '</li>'; }).join('');
+    if (load) {
+      v.poster = 'videos/' + s.key + '-machine-poster.jpg';
+      v.querySelector('source').src = 'videos/' + s.key + '-machine-training.mp4';
+      v.load(); play(v);
+    }
+  }
+  show(0);
+  play(v); // autoplay starts muted; browsers allow sound only after the visitor acts
+  snd.addEventListener('click', function(){ v.muted = false; v.volume = 1; play(v); });
+  v.addEventListener('volumechange', function(){ snd.hidden = !v.muted; });
+  v.addEventListener('ended', function(){ show((cur + 1) % S.length, true); });
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ show(i, true); });
+    t.addEventListener('keydown', function(e){
+      var n = (e.key === 'ArrowDown' || e.key === 'ArrowRight') ? 1 : (e.key === 'ArrowUp' || e.key === 'ArrowLeft') ? -1 : 0;
+      if (n){ e.preventDefault(); var k = (i + n + tabs.length) % tabs.length; show(k, true); tabs[k].focus(); }
+    });
+  });
+  document.querySelectorAll('[data-open]').forEach(function(a){ a.addEventListener('click', function(){ show(+a.getAttribute('data-open'), true); }); });
+  document.getElementById('fs').addEventListener('click', function(){
+    try { if (v.requestFullscreen) v.requestFullscreen(); else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen(); else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen(); } catch(e){}
+  });
 
   // Mobile menu
-  var toggle = document.querySelector('.nav-toggle'), links = document.getElementById('navlinks');
-  if (toggle && links) {
-    toggle.addEventListener('click', function () {
-      var open = links.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    });
-    links.addEventListener('click', function (e) { if (e.target.closest('a')) { links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); } });
-  }
-
-  // Hero loop: smaller file on phones, still image when motion is reduced
-  var hv = document.getElementById('heroVid');
-  if (hv) {
-    var small = Math.min(screen.width, screen.height) <= 820 || (navigator.connection && navigator.connection.saveData);
-    if (small && hv.dataset.mobile) { hv.querySelector('source').src = hv.dataset.mobile; hv.load(); }
-    if (reduced) { hv.removeAttribute('autoplay'); hv.pause(); }
-    else { var p = hv.play(); if (p && p.catch) p.catch(function () {}); }
-  }
-
-  // Machines pivot (tabs)
-  var tabs = [].slice.call(document.querySelectorAll('.pv-tab'));
-  function select(key, focus) {
-    tabs.forEach(function (t) {
-      var on = t.dataset.tab === key;
-      t.setAttribute('aria-selected', on ? 'true' : 'false');
-      t.tabIndex = on ? 0 : -1;
-      var panel = document.getElementById('panel-' + t.dataset.tab);
-      if (panel) {
-        panel.hidden = !on;
-        var v = panel.querySelector('video');
-        if (v && !on && !v.paused) v.pause();
-        if (v && on && v.preload === 'none') v.preload = 'metadata';
-      }
-      if (on && focus) t.focus();
-    });
-  }
-  tabs.forEach(function (t, i) {
-    t.addEventListener('click', function () { select(t.dataset.tab); history.replaceState(null, '', '#' + t.dataset.tab); });
-    t.addEventListener('keydown', function (e) {
-      var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-      if (n) { e.preventDefault(); select(tabs[(i + n + tabs.length) % tabs.length].dataset.tab, true); }
-    });
-  });
-  document.querySelectorAll('[data-open]').forEach(function (a) {
-    a.addEventListener('click', function () { select(a.dataset.open); });
-  });
-  var h = (location.hash || '').slice(1);
-  if (['tax', 'accounting', 'audit'].indexOf(h) > -1) { select(h); var m = document.getElementById('machines'); if (m) setTimeout(function () { m.scrollIntoView(); }, 50); }
-
-  // One training video at a time; full-screen buttons
-  var vids = [].slice.call(document.querySelectorAll('.pv-player video'));
-  vids.forEach(function (v) { v.addEventListener('play', function () { vids.forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); }); });
-  document.querySelectorAll('.pv-fs').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var v = document.getElementById(b.dataset.video); if (!v) return;
-      try {
-        if (v.requestFullscreen) v.requestFullscreen();
-        else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
-        else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
-      } catch (e) {}
-      var p = v.play(); if (p && p.catch) p.catch(function () {});
-    });
-  });
-
-  // Reveal on scroll, nav state, counters
-  var hero = document.querySelector('.hero');
-  if (!('IntersectionObserver' in window) || reduced) {
-    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
-    return;
-  }
-  var io = new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-  if (hero) new IntersectionObserver(function (es) { es.forEach(function (e) { document.body.classList.toggle('scrolled', !e.isIntersecting); }); }, { threshold: 0.05 }).observe(hero);
-  var cio = new IntersectionObserver(function (es) {
-    es.forEach(function (e) {
-      if (!e.isIntersecting) return; cio.unobserve(e.target);
-      var el = e.target, end = +el.dataset.count, t0 = null;
-      if (!end) return;
-      function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1100); el.textContent = Math.round(end * (1 - Math.pow(1 - k, 3))).toLocaleString('en-US'); if (k < 1) requestAnimationFrame(step); }
-      requestAnimationFrame(step);
-    });
-  }, { threshold: 0.4 });
-  document.querySelectorAll('.count').forEach(function (el) { cio.observe(el); });
+  var burger = document.getElementById('burger'), nav = document.getElementById('nav');
+  burger.addEventListener('click', function(){ var o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', o); });
+  nav.addEventListener('click', function(e){ if (e.target.closest('a')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); } });
 })();
 </script>
 </body>
