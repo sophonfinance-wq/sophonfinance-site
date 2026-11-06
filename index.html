@@ -128,7 +128,13 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(46,106,230,.18); touch-action:
 .reel video{ width:100%; height:auto; aspect-ratio:9/16; object-fit:cover; background:#0b0c10; }
 .reel figcaption{ display:flex; justify-content:space-between; gap:8px; font-size:14px; color:var(--text-2); margin-top:8px; }
 .reel figcaption b{ color:var(--ink); font-weight:600; }
-@media (max-width:980px){ .case{ grid-template-columns:1fr; gap:22px; } .reels{ grid-template-columns:repeat(2,1fr); } }
+.case + .case{ margin-top:48px; }
+.reels.h{ grid-template-columns:1fr 1fr; }
+.reels.h .reel video{ aspect-ratio:16/9; }
+.reels.h .reel:first-child{ grid-column:1/-1; }
+.reels.lw{ grid-template-columns:2fr 1fr 1fr; }
+.reel.site img{ width:100%; height:auto; aspect-ratio:9/8; object-fit:cover; object-position:top center; border:1px solid var(--line); }
+@media (max-width:980px){ .case{ grid-template-columns:1fr; gap:22px; } .reels{ grid-template-columns:repeat(2,1fr); } .reels.lw{ grid-template-columns:1fr 1fr; } .reels.lw .site{ grid-column:1/-1; } .reel.site img{ aspect-ratio:16/10; } }
 
 /* team: dark split, film with a slow drift, blue box */
 .team{ position:relative; background:var(--dark); color:#fff; overflow:hidden; }
@@ -290,6 +296,42 @@ footer a:hover{ color:#fff; }
           <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/mm-allday.jpg" aria-label="Model Macros All Day spot"><source src="videos/marketing/mm-allday.mp4" type="video/mp4"></video><figcaption><b>All Day spot</b><span>0:15</span></figcaption></figure>
           <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/mm-film.jpg" aria-label="Introducing Malik brand film"><source src="videos/marketing/mm-film.mp4" type="video/mp4"></video><figcaption><b>Brand film</b><span>0:39</span></figcaption></figure>
           <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/mm-app.jpg" aria-label="Model Macros app preview"><source src="videos/marketing/mm-app.mp4" type="video/mp4"></video><figcaption><b>App preview</b><span>0:39</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="case">
+        <div>
+          <p class="case-tag">Client work &middot; Corporate software</p>
+          <h3>GoPlay</h3>
+          <p>Product films for GoPlay&rsquo;s accounting software, written for finance teams.</p>
+          <ul>
+            <li>A problem-led spot: &ldquo;Would you catch this error?&rdquo;</li>
+            <li>Short product films for web and paid social</li>
+            <li>Landscape and vertical cuts</li>
+          </ul>
+        </div>
+        <div class="reels h">
+          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/gp-catch.jpg" aria-label="GoPlay: Would you catch this error?"><source src="videos/marketing/gp-catch.mp4" type="video/mp4"></video><figcaption><b>Would you catch this error?</b><span>0:45</span></figcaption></figure>
+          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/gp-sharper.jpg" aria-label="GoPlay: Give your spreadsheets a sharper eye"><source src="videos/marketing/gp-sharper.mp4" type="video/mp4"></video><figcaption><b>A sharper eye</b><span>0:15</span></figcaption></figure>
+          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/gp-spreadsheet.jpg" aria-label="GoPlay: Less spreadsheet work"><source src="videos/marketing/gp-spreadsheet.mp4" type="video/mp4"></video><figcaption><b>Less spreadsheet work</b><span>0:18</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="case">
+        <div>
+          <p class="case-tag">Brand work &middot; Consumer</p>
+          <h3>Laser White Smile</h3>
+          <p>Brand, website and short-form ads for a teeth-whitening brand.</p>
+          <ul>
+            <li>The getlaserwhite.com storefront</li>
+            <li>Product shots and model spots</li>
+          </ul>
+          <a class="more" href="https://getlaserwhite.com" target="_blank" rel="noopener">Visit getlaserwhite.com</a>
+        </div>
+        <div class="reels lw">
+          <figure class="reel site"><a href="https://getlaserwhite.com" target="_blank" rel="noopener"><img src="videos/marketing/lw-site.jpg" alt="The getlaserwhite.com home page" width="1440" height="900" loading="lazy"></a><figcaption><b>Website</b><span>getlaserwhite.com</span></figcaption></figure>
+          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/lw-pen.jpg" aria-label="Laser White Smile whitening pen product shot"><source src="videos/marketing/lw-pen.mp4" type="video/mp4"></video><figcaption><b>Product shot</b><span>0:06</span></figcaption></figure>
+          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/lw-model.jpg" aria-label="Laser White Smile model spot"><source src="videos/marketing/lw-model.mp4" type="video/mp4"></video><figcaption><b>Model spot</b><span>0:07</span></figcaption></figure>
         </div>
       </div>
     </div>
