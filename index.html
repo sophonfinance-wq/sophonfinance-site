@@ -490,13 +490,18 @@ form.cf{ background:var(--gray); border:1px solid var(--line); border-radius:18p
 
 /* footer */
 footer{ background:#f3faf8; color:var(--text-2); font-size:15px; border-top:1px solid var(--line); }
-.f-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:32px; padding-top:38px; padding-bottom:28px; }
+.f-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px; padding-top:38px; padding-bottom:28px; }
 footer h4{ font:500 12.5px/1 var(--head); letter-spacing:.16em; text-transform:uppercase; color:var(--ink); margin:6px 0 16px; }
 footer ul{ list-style:none; margin:0; padding:0; display:grid; gap:0; }
 footer li a{ display:inline-block; padding:10px 0; }
 footer a{ color:var(--ink); }
 footer a:hover{ color:var(--blue); }
-.f-about{ margin:16px 0 0; max-width:24em; }
+.f-about{ margin:16px 0 0; max-width:24em; display:grid; gap:3px; }
+.f-loc{ display:inline-flex; align-items:center; gap:6px; margin-top:6px; color:var(--ink); font-weight:600; }
+.f-loc svg{ width:15px; height:15px; color:var(--blue); flex:none; }
+/* Scan: its own section under the columns */
+.f-scan{ grid-column:1 / -1; border-top:1px solid var(--line); padding-top:22px; text-align:center; }
+.f-scan .codes{ justify-content:center; gap:20px; }
 .codes{ display:flex; gap:12px; }
 .codes figure{ margin:0; text-align:center; }
 .codes img{ width:92px; height:92px; background:#fff; padding:5px; border:1px solid var(--line); border-radius:8px; image-rendering:pixelated; }
@@ -505,12 +510,13 @@ footer a:hover{ color:var(--blue); }
 @media (max-width:900px){ .f-grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:560px){
   .f-grid{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px 16px; padding-top:28px; padding-bottom:20px; }
-  .f-grid > div:nth-child(1), .f-grid > div:nth-child(2){ grid-column:1 / -1; }
-  .f-grid > div:nth-child(2) ul{ grid-template-columns:1fr 1fr; column-gap:16px; }
+  .f-grid > div{ grid-column:1 / -1; }
+  .f-grid > div:nth-child(2) ul, .f-grid > div:nth-child(3) ul{ grid-template-columns:1fr 1fr; column-gap:16px; }
+  .f-scan{ padding-top:18px; }
   footer h4{ margin:0 0 8px; font-size:11.5px; }
   footer li a{ padding:5px 0; font-size:14.5px; }
   .f-about{ margin-top:10px; font-size:14px; }
-  .codes{ gap:8px; } .codes img{ width:64px; height:64px; padding:4px; } .codes figcaption{ font-size:10.5px; margin-top:4px; }
+  .f-scan .codes{ gap:18px; } .codes img{ width:84px; height:84px; padding:5px; } .codes figcaption{ font-size:11.5px; margin-top:5px; }
 }
 
 /* iPhone landscape: keep the video inside the screen, slimmer header */
@@ -754,7 +760,7 @@ footer a:hover{ color:var(--blue); }
         <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg>
         <span><b>Fast Finance</b><span>AI Engineering Firm</span></span>
       </a>
-      <p class="f-about">AI tax, accounting, audit, tech and marketing. Rainier Square, Seattle.</p>
+      <p class="f-about"><span>AI tax, accounting and audit.</span><span>Tech, AI and marketing.</span><span class="f-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>Rainier Square, Seattle</span></p>
     </div>
     <div>
       <h4>Services</h4>
@@ -776,7 +782,7 @@ footer a:hover{ color:var(--blue); }
         <li><a href="mailto:contact@sophonfinance.com">Email us</a></li>
       </ul>
     </div>
-    <div>
+    <div class="f-scan">
       <h4>Scan</h4>
       <div class="codes">
         <figure><img loading="lazy" src="assets/enasal_qr.png" alt="ENASAL scan code" width="92" height="92"><figcaption>ENASAL</figcaption></figure>
