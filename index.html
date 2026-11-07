@@ -96,18 +96,12 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(46,106,230,.18); touch-action:
 .snd[hidden]{ display:none; }
 .pbar{ display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 0 0; font-size:14.5px; color:#8e95a5; }
 .pbar button{ background:none; border:0; min-height:44px; padding:6px 0 6px 12px; color:var(--blue-l); font:600 12.5px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; cursor:pointer; }
-.incl{ margin:22px 0 0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--dark-3); }
-.incl li{ padding:16px 18px 2px 0; font-size:15.5px; color:#c9ceda; }
-.incl li + li{ padding-left:18px; border-left:1px solid var(--dark-3); }
-.incl b{ display:block; font-family:var(--head); font-weight:500; color:#fff; font-size:16px; margin-bottom:4px; }
 @media (max-width:980px){
   .svc{ padding:36px 0 48px; }
   .svc-head .btn{ width:100%; justify-content:center; }
   .svc-grid{ grid-template-columns:1fr; gap:20px; }
   .tab{ padding:14px 16px; font-size:12.5px; }
   .tab-note{ display:none; }
-  .incl{ grid-template-columns:1fr; }
-  .incl li, .incl li + li{ padding:12px 0; border-left:0; border-bottom:1px solid var(--dark-3); }
 }
 
 /* about band */
@@ -202,7 +196,7 @@ footer a:hover{ color:#fff; }
 }
 .contact dd a{ display:inline-block; padding:10px 0; margin:-10px 0; }
 
-/* Phones: the training video comes right after the headline; the machine list follows it */
+/* Phones: the training video comes right after the headline; the service tabs follow it */
 @media (max-width:980px){
   .svc-grid > .panel{ order:1; }
   .svc-grid > div:first-child{ order:2; }
@@ -262,7 +256,6 @@ footer a:hover{ color:#fff; }
             <button class="snd" id="snd" type="button" aria-label="Turn the sound on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>Sound on</button>
           </div>
           <div class="pbar"><span id="pLen">Training video &middot; 2:22</span><button type="button" id="fs">Full screen</button></div>
-          <ul class="incl" id="pIncl"></ul>
         </div>
       </div>
     </div>
@@ -416,14 +409,11 @@ footer a:hover{ color:#fff; }
 (function(){
   var S = [
     { key:'tax', title:'Fast Finance Tax Machine', len:'2:22',
-      sub:'Partnership, state and payroll filings prepared from the client’s own books, with every rule checked against the official source.',
-      incl:[['Filings','Form 1065 and K-1s, Washington excise returns, quarterly payroll'],['Delivered','Linked Excel workpapers and the draft return, unsigned'],['Review','Open items stay open for your reviewer to decide']] },
+      sub:'Partnership, state and payroll filings prepared from the client’s own books, with every rule checked against the official source.' },
     { key:'accounting', title:'Fast Finance Accounting Machine', len:'3:33',
-      sub:'Month-end review of every vendor invoice against the books, the policy book and the vendor file, before the close.',
-      incl:[['Checks','Invoice to ledger, full asset cost, job and cost coding, approvals, W-9s'],['Delivered','AP review workpapers and an unsigned draft memo with draft entries'],['Review','Nothing is posted or paid']] },
+      sub:'Month-end review of every vendor invoice against the books, the policy book and the vendor file, before the close.' },
     { key:'audit', title:'Fast Finance Audit Machine', len:'2:58',
-      sub:'Year-end audit workpapers and draft findings for the CPA, every amount a formula back to the document it came from.',
-      incl:[['Procedures','Materiality, sampling, unrecorded bills, journal testing, confirmations'],['Delivered','Workpapers with tickmarks and a draft findings PDF'],['Review','No opinion is given; the CPA concludes']] }
+      sub:'Year-end audit workpapers and draft findings for the CPA, every amount a formula back to the document it came from.' }
   ];
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var small = Math.min(screen.width, screen.height) <= 820 || (navigator.connection && navigator.connection.saveData);
@@ -432,7 +422,6 @@ footer a:hover{ color:#fff; }
   // Main training video
   var v = document.getElementById('v'), snd = document.getElementById('snd');
   var tabs = [].slice.call(document.querySelectorAll('.tab')), cur = 0;
-  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
   function show(i, load){
     cur = i; var s = S[i];
     tabs.forEach(function(t, j){ var on = j === i; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
@@ -440,7 +429,6 @@ footer a:hover{ color:#fff; }
     document.getElementById('pTitle').textContent = s.title;
     document.getElementById('pSub').textContent = s.sub;
     document.getElementById('pLen').textContent = 'Training video · ' + s.len;
-    document.getElementById('pIncl').innerHTML = s.incl.map(function(x){ return '<li><b>' + esc(x[0]) + '</b>' + esc(x[1]) + '</li>'; }).join('');
     if (load) {
       v.poster = 'videos/' + s.key + '-machine-poster.jpg';
       v.querySelector('source').src = 'videos/' + s.key + '-machine-training.mp4';
