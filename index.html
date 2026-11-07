@@ -978,7 +978,9 @@ footer a:hover{ color:var(--blue); }
       { id:'tax-seattle', label:'Seattle B&O', note:'City tax, quarterly', sub:'Prepares the City of Seattle business license tax return, separate from the state return.' },
       { id:'tax-pfml', label:'Paid leave', note:'WA PFML + WA Cares', sub:'Prepares the Washington Paid Family and Medical Leave and WA Cares quarterly report.' },
       { id:'tax-lni', label:'Workers\' comp', note:'WA L&I, quarterly', sub:'Prepares the Washington L&I workers\' compensation quarterly report.' },
-      { id:'tax-940', label:'Form 940', note:'Federal unemployment', sub:'Prepares the annual federal unemployment return, Form 940, tied to the 941s.' } ] },
+      { id:'tax-940', label:'Form 940', note:'Federal unemployment', sub:'Prepares the annual federal unemployment return, Form 940, tied to the 941s.' },
+      { id:'tax-w2', label:'W-2 / W-3', note:'Year-end wages', sub:'Prepares year-end W-2s and the W-3, tied to the four quarterly 941s.' },
+      { id:'tax-1099', label:'1099-NEC', note:'Contractor forms', sub:'Prepares the year\'s contractor 1099s: who gets one, W-9 and TIN checks, and backup withholding.' } ] },
     accounting: { name:'Accounting Machine', ic:'assets/icons/acc.jpg', ready:true, pick:0, subjects:[
       { id:'accounting',         label:'AP review',           note:'Vendor invoices',    sub:'Reviews a month of vendor invoices.' },
       { id:'accounting-bankrec', label:'Bank reconciliation', note:'Month end',          sub:'Reconciles a month of bank activity to the books.' },
@@ -990,7 +992,10 @@ footer a:hover{ color:var(--blue); }
       { id:'audit-cash',         label:'Cash audit',          note:'Bank confirmations', sub:'Tests cash with bank confirmations and reconciliations.' },
       { id:'audit-review', label:'Quarterly review', note:'Review engagement', sub:'Reviews the quarter: analytics, inquiries and covenants, with findings for the CPA.' },
       { id:'audit-covenant', label:'Loan covenants', note:'Agreed-upon procedures', sub:'Checks the bank\'s loan covenants, procedure by procedure, and reports what it found.' },
-      { id:'audit-assets', label:'Equipment & leases', note:'Assets and ASC 842', sub:'Tests equipment additions, depreciation and lease accounting, with findings for the CPA.' } ] }
+      { id:'audit-assets', label:'Equipment & leases', note:'Assets and ASC 842', sub:'Tests equipment additions, depreciation and lease accounting, with findings for the CPA.' },
+      { id:'audit-wip', label:'WIP testing', note:'Job schedule', sub:'Tests the job schedule: percent complete, change orders, estimates and over/under billings.' },
+      { id:'audit-ar', label:'AR confirmations', note:'Customer balances', sub:'Confirms customer balances, follows up non-replies and tests retainage and the allowance.' },
+      { id:'audit-liabilities', label:'Unrecorded bills', note:'Search for liabilities', sub:'Searches after year end for bills and accruals that belong in the year.' } ] }
   };
   var dSubj = document.getElementById('demoSubj');
   function demoSubjects(m){
