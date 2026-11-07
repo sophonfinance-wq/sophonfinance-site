@@ -682,6 +682,7 @@ footer a:hover{ color:var(--blue); }
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"F1 Finance","alternateName":"SophonFinance.com","url":"https://sophonfinance.com/","logo":"https://sophonfinance.com/assets/apple-touch-icon.png","image":"https://sophonfinance.com/assets/og.jpg","email":"contact@sophonfinance.com","description":"Digital AI accounting firm and AI engineering firm. AI machines for tax, accounting and audit; technology and AI division; marketing division.","address":[{"@type":"PostalAddress","streetAddress":"Rainier Square, 4th Ave & Union St","addressLocality":"Seattle","addressRegion":"WA","addressCountry":"US"}],"areaServed":"US","founder":{"@type":"Person","name":"Sophonnarith Hang"},"knowsAbout":["Tax preparation","Accounting","Audit","AI engineering","Local AI architecture","Mobile apps","Marketing"]}
 </script>
+<link rel="stylesheet" href="assets/analyze/analyze.css?v=1"><!-- "Try it on your own files" card + results view -->
 </head>
 <body>
 <div class="ff-splash" aria-hidden="true">
@@ -1041,7 +1042,9 @@ footer a:hover{ color:var(--blue); }
       { id:'audit-assets', label:'Equipment & leases', note:'Assets and ASC 842', sub:'Tests equipment additions, depreciation and lease accounting, with findings for the CPA.' },
       { id:'audit-wip', label:'WIP testing', note:'Job schedule', sub:'Tests the job schedule: percent complete, change orders, estimates and over/under billings.' },
       { id:'audit-ar', label:'AR confirmations', note:'Customer balances', sub:'Confirms customer balances, follows up non-replies and tests retainage and the allowance.' },
-      { id:'audit-liabilities', label:'Unrecorded bills', note:'Search for liabilities', sub:'Searches after year end for bills and accruals that belong in the year.' } ] }
+      { id:'audit-liabilities', label:'Unrecorded bills', note:'Search for liabilities', sub:'Searches after year end for bills and accruals that belong in the year.' },
+      { id:'audit-payroll', label:'Payroll testing', note:'Rates and accruals', sub:'Tests payroll: samples to time and rate records, recomputes pay, and ties to the GL and the 941s.' },
+      { id:'audit-controls', label:'Control walkthroughs', note:'Key controls', sub:'Walks through the key controls in purchasing, billing, payroll and the close, and reports deficiencies.' } ] }
   };
   var dSubj = document.getElementById('demoSubj');
   function demoSubjects(m){
@@ -1187,5 +1190,7 @@ footer a:hover{ color:var(--blue); }
 </script>
 <script src="assets/chat.js?v=f1c" defer></script>
 <script src="assets/fx.js" defer></script>
+<!-- "Try it on your own files": small shell; libraries load only when a visitor uses it -->
+<script src="assets/analyze/analyze.js?v=1" defer></script>
 </body>
 </html>
