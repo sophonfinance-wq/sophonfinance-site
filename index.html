@@ -810,7 +810,7 @@ footer a:hover{ color:var(--blue); }
   // "Welcome to Fast Finance" (Higgsfield, voice Celine). Browsers that block sound before a tap start it muted;
   // then the first tap anywhere, or "Sound on", turns the sound and the welcome on.
   var MED = 0.75, intro = !document.documentElement.classList.contains('ffs-seen') && !reduced, greeted = false;
-  var hi = intro ? new Audio('assets/welcome.mp3') : null; if (hi) hi.preload = 'auto';
+  var hi = intro ? new Audio('assets/welcome-enasal.mp3') : null; if (hi) hi.preload = 'auto';
   var speaking = false;
   function greet(){
     if (!hi || greeted || cur !== 0) return; greeted = true; speaking = true;
