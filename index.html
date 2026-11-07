@@ -187,7 +187,13 @@ section h2 .acc{ position:relative; }
 .panel .sub, .info .sub{ color:var(--text-2); margin:0; max-width:46em; font-size:15px; }
 .tab-note{ font-size:14px; color:#8e95a5; margin:14px 0 0; }
 .player{ position:relative; border-radius:16px; overflow:hidden; background:#eef0f5; box-shadow:0 0 0 1px rgba(14,147,132,.20), 0 30px 70px -30px rgba(14,147,132,.38), 0 18px 40px -28px rgba(15,39,48,.35); }
-.player video{ width:100%; height:auto; aspect-ratio:16/9; background:#eef0f5; }
+.player video{ width:100%; height:auto; aspect-ratio:16/9; background:#eef0f5; transform-origin:50% 50%; transition:transform 1.4s cubic-bezier(.2,.7,.2,1); }
+/* the Fast Finance end card: zoom in close and hold there so visitors can read it and scan the codes */
+.player video.card-zoom{ transform:scale(1.9); }
+.replay{ position:absolute; left:14px; bottom:14px; z-index:2; display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:9px 16px; background:#fff; color:var(--blue-d); border:1px solid var(--line); border-radius:999px; font:600 13px/1 var(--body); letter-spacing:.06em; text-transform:uppercase; cursor:pointer; box-shadow:0 8px 20px -10px rgba(15,39,48,.35); }
+.replay svg{ width:16px; height:16px; }
+.replay[hidden]{ display:none; }
+@media (max-width:600px){ .replay{ left:8px; bottom:8px; min-height:32px; padding:6px 11px; font-size:11px; gap:6px; } .replay svg{ width:13px; height:13px; } }
 .snd{ position:absolute; top:14px; right:14px; z-index:2; display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:9px 16px; background:var(--blue); color:#fff; border:0; border-radius:999px;
   font:600 12.5px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; cursor:pointer; }
 .snd:hover{ background:var(--blue-d); }
@@ -260,7 +266,7 @@ section h2 .acc{ position:relative; }
 }
 
 /* our own logos under the video */
-.ours-wrap{ padding-bottom:max(22px, env(safe-area-inset-bottom)); }
+.ours-wrap{ padding-bottom:22px; }
 .ours{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px 28px; margin-top:0; padding:16px 20px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.7); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); }
 .ours-ff{ display:inline-flex; align-items:center; gap:12px; }
 .ours-ff svg{ width:40px; height:40px; }
@@ -506,7 +512,7 @@ footer a:hover{ color:var(--blue); }
 .codes figure{ margin:0; text-align:center; }
 .codes img{ width:92px; height:92px; background:#fff; padding:5px; border:1px solid var(--line); border-radius:8px; image-rendering:pixelated; }
 .codes figcaption{ font-size:12px; color:var(--text-2); margin-top:6px; }
-.f-base{ border-top:1px solid var(--line); padding-top:18px; padding-bottom:28px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; font-size:13px; color:var(--text-2); }
+.f-base{ border-top:1px solid var(--line); padding-top:18px; padding-bottom:max(28px, calc(env(safe-area-inset-bottom) + 16px)); display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; font-size:13px; color:var(--text-2); }
 @media (max-width:900px){ .f-grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:560px){
   .f-grid{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px 16px; padding-top:28px; padding-bottom:20px; }
@@ -571,6 +577,7 @@ footer a:hover{ color:var(--blue); }
               <source type="video/mp4">
             </video>
             <button class="snd" id="snd" type="button" aria-label="Turn the sound on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>Sound on</button>
+            <button class="replay" id="replay" type="button" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>Replay</button>
           </div>
         </div>
         <div class="tabs" role="tablist" aria-label="Services">
@@ -790,10 +797,6 @@ footer a:hover{ color:var(--blue); }
       </div>
     </div>
   </div>
-  <div class="wrap f-base">
-    <span>&copy; 2026 Fast Finance &middot; Seattle, Washington &middot; SophonFinance.com</span>
-    <span>Fast Finance machines created by ENASAL | SophonFinance.com &middot; Training videos use an invented company. &middot; Logos are trademarks of their owners and show where our engineers previously worked; no endorsement is implied.</span>
-  </div>
   <div class="wrap ours-wrap">
     <div class="ours" aria-label="Our brands">
       <span class="ours-by">Machines created by</span>
@@ -802,21 +805,25 @@ footer a:hover{ color:var(--blue); }
       <img src="assets/sophon_finance_on_light.svg" alt="SophonFinance.com" class="ours-sophon">
     </div>
   </div>
+  <div class="wrap f-base">
+    <span>&copy; 2026 Fast Finance &middot; Seattle, Washington &middot; SophonFinance.com</span>
+    <span>Fast Finance machines created by ENASAL | SophonFinance.com &middot; Training videos use an invented company. &middot; Logos are trademarks of their owners and show where our engineers previously worked; no endorsement is implied.</span>
+  </div>
 </footer>
 
 <script>
 (function(){
   var S = [
     { title:'Tax Machine', len:'2:25', kind:'Training video', sub:'Partnership, state and payroll returns.',
-      src:'videos/tax-machine-training.mp4', srcM:'videos/tax-machine-training-720.mp4', poster:'videos/tax-machine-poster.jpg' },
+      card:2.8, src:'videos/tax-machine-training.mp4', srcM:'videos/tax-machine-training-720.mp4', poster:'videos/tax-machine-poster.jpg' },
     { title:'Accounting Machine', len:'3:35', kind:'Training video', sub:'Month-end invoice review.',
-      src:'videos/accounting-machine-training.mp4', srcM:'videos/accounting-machine-training-720.mp4', poster:'videos/accounting-machine-poster.jpg' },
+      card:2.8, src:'videos/accounting-machine-training.mp4', srcM:'videos/accounting-machine-training-720.mp4', poster:'videos/accounting-machine-poster.jpg' },
     { title:'Audit Machine', len:'3:00', kind:'Training video', sub:'Year-end audit workpapers.',
-      src:'videos/audit-machine-training.mp4', srcM:'videos/audit-machine-training-720.mp4', poster:'videos/audit-machine-poster.jpg' },
+      card:2.8, src:'videos/audit-machine-training.mp4', srcM:'videos/audit-machine-training-720.mp4', poster:'videos/audit-machine-poster.jpg' },
     { title:'Tech Services', len:'0:10', kind:'Showcase', music:true, sub:'Custom software, automation and integrations.',
       src:'videos/tech-services.mp4', srcM:'videos/tech-services-720.mp4', poster:'videos/tech-services-poster.jpg' },
     { title:'AI Services', len:'0:17', kind:'Showcase', music:true, sub:'Local AI architecture for large corporations, built to cut expenses.',
-      src:'videos/ai-services.mp4', srcM:'videos/ai-services-720.mp4', poster:'videos/ai-services-poster.jpg' },
+      card:1.8, src:'videos/ai-services.mp4', srcM:'videos/ai-services-720.mp4', poster:'videos/ai-services-poster.jpg' },
     { title:'App Services', len:'0:39', kind:'Showcase', sub:'Mobile apps for iPhone and Android.',
       src:'videos/marketing/mm-app.mp4', srcM:'videos/marketing/mm-app.mp4', poster:'videos/marketing/mm-app.jpg' }
   ];
@@ -836,6 +843,7 @@ footer a:hover{ color:var(--blue); }
     document.getElementById('pSub').textContent = s.sub;
     document.getElementById('pLen').textContent = s.kind + ' · ' + s.len;
     if (load) {
+      zoomCard(false);
       v.poster = s.poster;
       v.querySelector('source').src = small ? s.srcM : s.src;
       // A tap on any tab plays that video from the start with the sound on (the tap lets browsers allow sound)
@@ -882,7 +890,12 @@ footer a:hover{ color:var(--blue); }
   } else show(0, true); // later visits: autoplay starts muted at 0:00
   snd.addEventListener('click', soundOn);
   v.addEventListener('volumechange', function(){ snd.hidden = !v.muted; });
-  v.addEventListener('ended', function(){ show((cur + 1) % S.length, true); });
+  // End card: in its last seconds the video zooms in on the Fast Finance card and stays there (no jump to the next video)
+  var zoomed = false, replay = document.getElementById('replay');
+  function zoomCard(on){ if (!!zoomed === on || !replay) return; zoomed = on; v.classList.toggle('card-zoom', on); v.controls = !on; replay.hidden = !on; }
+  v.addEventListener('timeupdate', function(){ var c = S[cur].card; if (c && v.duration) zoomCard(v.duration - v.currentTime <= c); });
+  v.addEventListener('ended', function(){ if (S[cur].card) zoomCard(true); else show((cur + 1) % S.length, true); });
+  replay.addEventListener('click', function(){ zoomCard(false); try { v.currentTime = 0; } catch (e) {} play(v); });
   tabs.forEach(function(t, i){
     t.addEventListener('click', function(){ show(i, 'user'); });
     t.addEventListener('keydown', function(e){
