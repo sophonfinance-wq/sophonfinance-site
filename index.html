@@ -286,7 +286,7 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 
 /* who we are */
 .team h2{ margin:0 0 20px; }
-.team-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
+.team-grid{ display:grid; grid-template-columns:1.15fr 1fr; gap:28px; align-items:center; }
 .bios{ display:grid; gap:16px; }
 .bio{ display:grid; grid-template-columns:120px 1fr; gap:20px; align-items:start; background:rgba(255,255,255,.85); border:1px solid var(--line); border-radius:18px; padding:20px; box-shadow:0 18px 40px -30px rgba(12,59,67,.45); }
 .bio-pic{ width:120px; height:120px; border-radius:16px; object-fit:cover; object-position:center 20%; }
@@ -305,6 +305,12 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .team-grid .team-film{ margin-top:0; }
 @media (max-width:980px){ .team-grid{ grid-template-columns:1fr; } }
 @media (max-width:520px){ .bio{ grid-template-columns:1fr; padding:18px 16px; } .bio-pic{ width:96px; height:96px; } .bio-facts li{ grid-template-columns:82px 1fr; gap:10px; } .bf{ font-size:11px; } .bt{ font-size:14px; white-space:nowrap; } }
+
+.creds{ list-style:none; margin:0; padding:20px; display:grid; grid-template-columns:1fr 1fr; gap:12px 22px; align-content:start; background:rgba(255,255,255,.85); border:1px solid var(--line); border-radius:18px; box-shadow:0 18px 40px -30px rgba(12,59,67,.45); }
+.creds li{ display:grid; grid-template-columns:92px 1fr; align-items:center; gap:12px; }
+.creds .bt{ white-space:nowrap; }
+.creds .bf img{ height:15px; width:auto; max-width:76px; }
+@media (max-width:560px){ .creds{ grid-template-columns:1fr; padding:16px; gap:10px; } .creds li{ grid-template-columns:82px 1fr; gap:10px; } .creds .bt{ font-size:14px; } .creds .bf{ font-size:11px; } }
 
 /* contact */
 .contact{ padding:48px 0; }
@@ -375,7 +381,7 @@ footer a:hover{ color:var(--blue); }
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#services">Services</a>
       <a href="#marketing">Marketing</a>
-      <a href="#team">Team</a>
+      <a href="#team">Credentials</a>
       <a href="#contact">Contact</a>
       <a class="btn" href="#contact">Schedule a consultation</a>
     </nav>
@@ -422,17 +428,6 @@ footer a:hover{ color:var(--blue); }
           <p class="pr-big">Our AI machines do your tax, accounting and audit work.</p>
           <a class="more" href="#contact">Schedule a free consultation</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="trust" aria-label="Our engineers">
-    <div class="wrap">
-      <div class="t-stats">
-        <div><b>30+ years</b><span>of engineering experience</span></div>
-        <div><b>Every industry</b><span>We have worked across them all</span></div>
-        <div><b>Fully insured</b><span>For every engagement</span></div>
-        <div><b><img src="assets/enasal-logo-dark.png" alt="ENASAL" class="lg-enasal"></b><span>AI engineering partners with ENASAL AI Engineering</span></div>
       </div>
     </div>
   </section>
@@ -491,25 +486,18 @@ footer a:hover{ color:var(--blue); }
 
   <section class="team" id="team" aria-labelledby="teamH">
     <div class="wrap team-in">
-      <h2 id="teamH">Who we are</h2>
+      <h2 id="teamH">Our credentials</h2>
       <div class="team-grid">
-        <div class="bios">
-          <article class="bio">
-            <img class="bio-pic" src="img/sophon.jpg" alt="Sophonnarith Hang" width="160" height="160" loading="lazy">
-            <div class="bio-body">
-              <h3>Sophonnarith Hang</h3>
-              <p class="bio-role">Founder, Fast Finance &middot; AI engineer &middot; Accountant</p>
-              <ul class="bio-facts">
-                <li><span class="bf">20 yrs</span><span class="bt">Accounting and finance</span></li>
-                <li><span class="bf bf-w"><img src="assets/logos/kpmg.svg" alt="KPMG"></span><span class="bt">KPMG-trained, Big Four</span></li>
-                <li><span class="bf">F100 &middot; F500</span><span class="bt">Fortune 100 and 500</span></li>
-                <li><span class="bf bf-w"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span><span class="bt">Builds our AI machines</span></li>
-                <li><span class="bf">Founder</span><span class="bt">Entrepreneur, business owner</span></li>
-              </ul>
-              <a class="bio-link" href="https://sophonfinance.com"><span class="bf-i"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span>SophonFinance.com</a>
-            </div>
-          </article>
-        </div>
+        <ul class="creds">
+          <li><span class="bf">20 yrs</span><span class="bt">Accounting and finance</span></li>
+          <li><span class="bf bf-w"><img src="assets/logos/kpmg.svg" alt="KPMG"></span><span class="bt">KPMG-trained, Big Four</span></li>
+          <li><span class="bf">F100 &middot; F500</span><span class="bt">Fortune 100 and 500</span></li>
+          <li><span class="bf">30+ yrs</span><span class="bt">Engineering experience</span></li>
+          <li><span class="bf bf-w"><img src="assets/enasal-logo-dark.png" alt="ENASAL"></span><span class="bt">AI engineering partners</span></li>
+          <li><span class="bf bf-w"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4 5.6v6.1c0 4.6 3.2 8.7 8 9.8 4.8-1.1 8-5.2 8-9.8V5.6z" fill="#0c3b43"/><path d="m8.2 12.2 2.6 2.6 5-5.2" fill="none" stroke="#5fd0c3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="bt">Fully insured</span></li>
+          <li><span class="bf">All</span><span class="bt">Every industry</span></li>
+          <li><span class="bf bf-w"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span><span class="bt">Our own AI machines</span></li>
+        </ul>
         <div class="team-film">
           <video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/team-reel-poster.jpg" data-mobile="videos/team-reel-mobile.mp4" aria-label="The Fast Finance team at work">
             <source src="videos/team-reel.mp4" type="video/mp4">
@@ -577,7 +565,7 @@ footer a:hover{ color:var(--blue); }
       <h4>Firm</h4>
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#team">Team</a></li>
+        <li><a href="#team">Credentials</a></li>
         <li><a href="mailto:contact@sophonfinance.com">contact@sophonfinance.com</a></li>
       </ul>
     </div>
