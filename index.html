@@ -800,8 +800,11 @@ footer a:hover{ color:var(--blue); }
     if (load) {
       v.poster = s.poster;
       v.querySelector('source').src = small ? s.srcM : s.src;
-      if (s.music && load === 'user') { v.muted = false; v.volume = 0.85; } // a tap on Tech or AI plays the music
-      v.load(); if (load !== 'intro' && (!reduced || load === 'user')) play(v);
+      // A tap on any tab plays that video from the start with the sound on (the tap lets browsers allow sound)
+      if (load === 'user') { v.muted = false; v.volume = speaking ? 0.3 : (s.music ? 0.85 : MED); }
+      v.load();
+      if (load === 'user') { var p = v.play(); if (p && p.catch) p.catch(function(){ v.muted = true; play(v); }); }
+      else if (load !== 'intro' && !reduced) play(v);
       snd.hidden = !v.muted;
     }
   }
