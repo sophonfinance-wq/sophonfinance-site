@@ -199,7 +199,8 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 }
 
 /* our own logos under the video */
-.ours{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px 28px; margin-top:22px; padding:16px 20px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.7); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); }
+.ours-wrap{ padding-bottom:max(22px, env(safe-area-inset-bottom)); }
+.ours{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px 28px; margin-top:0; padding:16px 20px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.7); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); }
 .ours-ff{ display:inline-flex; align-items:center; gap:12px; }
 .ours-ff svg{ width:40px; height:40px; }
 .ours-ff b{ display:block; font:600 19px/1 var(--head); letter-spacing:.07em; color:#0c3b43; }
@@ -394,14 +395,6 @@ footer a:hover{ color:var(--blue); }
           </div>
           <div class="pbar"><span id="pLen">Training video &middot; 2:22</span><button type="button" id="fs">Full screen</button></div>
         </div>
-        <div class="ours" aria-label="Our brands">
-          <span class="ours-ff"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg><span><b>FAST FINANCE</b><small>AI ENGINEERING FIRM</small></span></span>
-          <i class="ours-div" aria-hidden="true"></i>
-          <span class="ours-by">Machines created by</span>
-          <img src="assets/enasal-logo-dark.png" alt="ENASAL" class="ours-enasal">
-          <i class="ours-div" aria-hidden="true"></i>
-          <img src="assets/sophon_finance_on_light.svg" alt="SophonFinance.com" class="ours-sophon">
-        </div>
         <div class="promise">
           <p><b>We build AI machines that do your tax, accounting and audit work.</b></p>
           <p>They prepare it. Your people approve it.</p>
@@ -560,6 +553,16 @@ footer a:hover{ color:var(--blue); }
   <div class="wrap f-base">
     <span>&copy; 2026 Fast Finance &middot; SophonFinance.com</span>
     <span>Fast Finance machines created by ENASAL | SophonFinance.com &middot; Training videos use an invented company. &middot; Logos are trademarks of their owners and show where our engineers previously worked; no endorsement is implied.</span>
+  </div>
+  <div class="wrap ours-wrap">
+    <div class="ours" aria-label="Our brands">
+      <span class="ours-ff"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg><span><b>FAST FINANCE</b><small>AI ENGINEERING FIRM</small></span></span>
+      <i class="ours-div" aria-hidden="true"></i>
+      <span class="ours-by">Machines created by</span>
+      <img src="assets/enasal-logo-dark.png" alt="ENASAL" class="ours-enasal">
+      <i class="ours-div" aria-hidden="true"></i>
+      <img src="assets/sophon_finance_on_light.svg" alt="SophonFinance.com" class="ours-sophon">
+    </div>
   </div>
 </footer>
 
