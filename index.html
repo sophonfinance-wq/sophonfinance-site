@@ -21,7 +21,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<script>try{if(sessionStorage.getItem("ffIntro")||matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("no-intro")}catch(e){}</script>
 <style>
 :root{
   --ink:#0f2730; --dark:#0f2730; --dark-2:#16343d; --dark-3:#24474f; --text:#2c3a40; --text-2:#5b6d73; --line:#dbe9e7; --gray:#f1f8f7; --teal-50:#eaf7f5; --teal-100:#d5f0ec;
@@ -50,14 +49,6 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .btn svg{ width:16px; height:16px; flex:none; }
 .more{ display:inline-block; padding:12px 0; font:600 13.5px/1.2 var(--body); letter-spacing:.08em; text-transform:uppercase; }
 .more::after{ content:" \00BB"; }
-
-/* intro trailer: plays once per visit, then fades into the page */
-.ff-intro{ position:fixed; inset:0; z-index:300; background:#fff; display:flex; align-items:center; justify-content:center; transition:opacity .7s ease; }
-.ff-intro video{ width:100%; height:100%; object-fit:cover; background:#fff; }
-@media (orientation:portrait){ .ff-intro video{ object-fit:contain; } }
-.ff-intro.done{ opacity:0; pointer-events:none; }
-.no-intro .ff-intro{ display:none; }
-.skip-intro{ position:absolute; right:max(18px, env(safe-area-inset-right)); bottom:max(18px, env(safe-area-inset-bottom)); min-height:42px; padding:10px 18px; border:0; border-radius:999px; background:rgba(12,59,67,.82); color:#fff; font:600 12.5px/1 var(--body); letter-spacing:.1em; text-transform:uppercase; cursor:pointer; }
 
 /* header */
 .top{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,.86); -webkit-backdrop-filter:saturate(1.4) blur(14px); backdrop-filter:saturate(1.4) blur(14px); box-shadow:0 1px 0 var(--line), 0 6px 18px -12px rgba(15,39,48,.25); }
@@ -262,10 +253,6 @@ footer a:hover{ color:var(--blue); }
 </style>
 </head>
 <body>
-<div class="ff-intro" id="intro" aria-hidden="true">
-  <video id="introV" muted playsinline webkit-playsinline preload="auto" poster="videos/trailer-poster.jpg"></video>
-  <button class="skip-intro" id="skipIntro" type="button">Skip intro</button>
-</div>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="top">
@@ -498,20 +485,6 @@ footer a:hover{ color:var(--blue); }
   // Main training video
   var v = document.getElementById('v'), snd = document.getElementById('snd');
 
-  // Intro trailer: once per visit; the page video waits until it is done
-  (function(){
-    var box = document.getElementById('intro'), iv = document.getElementById('introV');
-    if (!box || document.documentElement.classList.contains('no-intro')) { if (box) box.remove(); return; }
-    var finished = false; window.__introOn = true;
-    function finish(){ if (finished) return; finished = true; try{ sessionStorage.setItem('ffIntro','1'); }catch(e){}
-      box.classList.add('done'); window.__introOn = false; setTimeout(function(){ box.remove(); }, 750); play(v); }
-    v.pause(); v.removeAttribute('autoplay');
-    iv.src = (Math.min(screen.width, screen.height) <= 820) ? 'videos/trailer-mobile.mp4' : 'videos/trailer.mp4';
-    iv.addEventListener('ended', finish); iv.addEventListener('error', finish);
-    document.getElementById('skipIntro').addEventListener('click', finish);
-    var p = iv.play(); if (p && p.catch) p.catch(finish);
-    setTimeout(finish, 13000);
-  })();
   var tabs = [].slice.call(document.querySelectorAll('.tab')), cur = 0;
   function show(i, load){
     cur = i; var s = S[i];
@@ -523,11 +496,11 @@ footer a:hover{ color:var(--blue); }
     if (load) {
       v.poster = 'videos/' + s.key + '-machine-poster.jpg';
       v.querySelector('source').src = 'videos/' + s.key + '-machine-training.mp4';
-      v.load(); if (!window.__introOn) play(v);
+      v.load(); play(v);
     }
   }
   show(0);
-  if (!reduced && !document.getElementById('intro')) play(v); // autoplay starts muted; browsers allow sound only after the visitor acts
+  if (!reduced) play(v); // autoplay starts muted; browsers allow sound only after the visitor acts
   snd.addEventListener('click', function(){ v.muted = false; v.volume = 1; play(v); });
   v.addEventListener('volumechange', function(){ snd.hidden = !v.muted; });
   v.addEventListener('ended', function(){ show((cur + 1) % S.length, true); });
