@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-demos="off">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -192,6 +192,44 @@ section h2 .acc{ position:relative; }
 .player video.card-zoom{ transform:scale(1.9); }
 .replay{ position:absolute; left:14px; bottom:14px; z-index:2; display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:9px 16px; background:#fff; color:var(--blue-d); border:1px solid var(--line); border-radius:999px; font:600 13px/1 var(--body); letter-spacing:.06em; text-transform:uppercase; cursor:pointer; box-shadow:0 8px 20px -10px rgba(15,39,48,.35); }
 .replay svg{ width:16px; height:16px; }
+/* Try the machines: demo shortcuts replace Tech, AI and App in the tab grid, and the demo sits under the banner */
+html[data-demos="off"] .demo-only{ display:none !important; }
+html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos="on"] .tab-app{ display:none !important; }
+.dtab{ text-decoration:none; background:linear-gradient(180deg,#fff,#f1fbf9); border-color:#cdeae5; }
+.dtab:hover{ border-color:var(--blue-l); }
+.dtab .tl{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.dm{ display:inline-flex; align-items:center; gap:4px; padding:4px 9px 4px 7px; border-radius:999px; background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; font:600 11px/1 var(--body); font-style:normal; letter-spacing:.12em; text-transform:uppercase; box-shadow:0 4px 10px -5px rgba(14,147,132,.8); }
+.dm svg{ width:10px; height:10px; }
+.demo{ padding:40px 0 36px; background:linear-gradient(180deg,#fff 0%,#f3faf8 100%); border-top:1px solid var(--line); }
+.demo h2{ font-size:clamp(26px, 3vw, 40px); line-height:1.15; margin-bottom:8px; }
+.demo .intro{ color:var(--text-2); margin:0 0 16px; font-size:17px; }
+.demo-sw{ display:inline-flex; gap:4px; padding:4px; background:var(--teal-50); border:1px solid var(--line); border-radius:999px; }
+.demo-sw button{ appearance:none; border:0; background:none; cursor:pointer; padding:10px 20px; border-radius:999px; font:600 13px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--ink); }
+.demo-sw button[aria-selected="true"]{ background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; box-shadow:0 6px 16px -8px rgba(14,147,132,.7); }
+.demo-box{ position:relative; margin-top:14px; height:min(78vh, 780px); border-radius:18px; overflow:hidden; background:#fff; box-shadow:0 0 0 1px rgba(14,147,132,.20), 0 30px 70px -34px rgba(14,147,132,.45), 0 18px 40px -30px rgba(15,39,48,.35); }
+.demo-box iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; background:#fff; }
+.demo-cover{ position:absolute; inset:0; display:grid; place-items:center; padding:20px; background:radial-gradient(700px 360px at 80% -10%, rgba(20,184,166,.16), transparent 60%), radial-gradient(600px 320px at 0% 110%, rgba(95,208,195,.18), transparent 60%), #f7fcfb; }
+.demo-box.live .demo-cover{ display:none; }
+.demo-card{ display:grid; justify-items:center; gap:8px; text-align:center; max-width:340px; }
+.demo-ic{ width:84px; height:84px; border-radius:22px; overflow:hidden; background:#fff; box-shadow:0 0 0 1px var(--line), 0 14px 30px -14px rgba(12,59,67,.45); margin-bottom:6px; }
+.demo-ic img{ width:100%; height:100%; object-fit:cover; }
+.demo-card b{ font:500 26px/1.15 var(--head); color:var(--ink); }
+.demo-card > span:not(.demo-ic){ color:var(--text-2); font-size:16px; }
+.demo-go{ margin-top:10px; display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border:0; border-radius:999px; cursor:pointer; background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; font:600 14px/1 var(--body); letter-spacing:.1em; text-transform:uppercase; box-shadow:0 14px 30px -14px rgba(14,147,132,.9); }
+.demo-go[hidden], .demo-full[hidden]{ display:none; }
+.demo-go svg{ width:15px; height:15px; }
+.demo-card small{ color:var(--text-2); font-size:14px; }
+.demo-full{ margin-top:6px; }
+@media (max-width:600px){
+  .dtab .tl{ flex-direction:column; gap:6px; }
+  .dm{ font-size:9.5px; padding:3px 7px 3px 6px; }
+  .demo{ padding:28px 0 26px; }
+  .demo .intro{ font-size:16px; margin-bottom:12px; }
+  .demo-sw{ display:flex; }
+  .demo-sw button{ flex:1; padding:10px 6px; font-size:12px; }
+  .demo-box{ height:78vh; height:calc(100svh - 120px); margin-left:calc(-1 * var(--gut)); margin-right:calc(-1 * var(--gut)); border-radius:0; }
+}
+
 /* App pop-out: the vertical film expands to almost the full phone screen */
 .pop{ position:fixed; inset:0; z-index:2147483000; display:grid; place-items:center; padding:14px 12px; background:rgba(234,247,245,.84); -webkit-backdrop-filter:blur(16px) saturate(1.3); backdrop-filter:blur(16px) saturate(1.3); opacity:0; transition:opacity .35s ease; }
 .pop[hidden]{ display:none; }
@@ -244,7 +282,7 @@ section h2 .acc{ position:relative; }
 
 /* trust band: where the engineers come from */
 .trust{ background:#fff; border-top:1px solid var(--line); padding:26px 0 28px; }
-.topband{ zoom:.9; margin-top:12px; background:linear-gradient(180deg,#f2faf8,#fbfdfd); border:1px solid var(--line); border-radius:16px; }
+.topband{ zoom:.9; margin:0 0 12px; background:linear-gradient(180deg,#f2faf8,#fbfdfd); border:1px solid var(--line); border-radius:16px; }
 .topbar{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px 38px; padding:12px 16px; margin:0; }
 .t-label{ text-align:center; font:600 12px/1.3 var(--body); letter-spacing:.14em; text-transform:uppercase; color:var(--text-2); margin:0; }
 .t-logos{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:16px 48px; }
@@ -585,6 +623,18 @@ footer a:hover{ color:var(--blue); }
   <section class="svc" id="services" aria-labelledby="h1">
     <div class="wrap wrap-wide">
       <div class="stage">
+        <div class="topband">
+        <div class="topbar">
+        <p class="t-label">Our AI engineers previously worked at</p>
+        <ul class="t-logos">
+          <li><img src="assets/logos/kpmg.svg" alt="KPMG" class="lg-kpmg"></li>
+          <li><img src="assets/logos/microsoft.svg" alt="Microsoft" class="lg-ms"></li>
+          <li><img src="assets/logos/general-dynamics.svg" alt="General Dynamics" class="lg-gd"></li>
+          <li><img src="assets/logos/uber.svg" alt="Uber" class="lg-uber"></li>
+        <li class="ins"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4 5.6v6.1c0 4.6 3.2 8.7 8 9.8 4.8-1.1 8-5.2 8-9.8V5.6z" fill="#0c3b43"/><path d="m8.2 12.2 2.6 2.6 5-5.2" fill="none" stroke="#5fd0c3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fully insured &middot; Every industry</span></li>
+        </ul>
+        </div>
+        </div>
         <div class="panel" id="panel" role="tabpanel" aria-labelledby="t0">
           <div class="player">
             <video id="v" autoplay muted playsinline webkit-playsinline controls preload="auto" poster="videos/tax-machine-poster.jpg">
@@ -601,18 +651,9 @@ footer a:hover{ color:var(--blue); }
           <button class="tab tab-tech" role="tab" aria-selected="false" aria-controls="panel" id="t3" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/tech.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Tech<span class="lg">&nbsp;services</span></b></span></button>
           <button class="tab tab-ai" role="tab" aria-selected="false" aria-controls="panel" id="t4" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/ai.jpg" alt="" width="72" height="72"></span><span class="tl"><b>AI<span class="lg">&nbsp;services</span></b></span></button>
           <button class="tab tab-app" role="tab" aria-selected="false" aria-controls="panel" id="t5" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/app.jpg" alt="" width="72" height="72"></span><span class="tl"><b>App<span class="lg">&nbsp;services</span></b></span></button>
-        </div>
-        <div class="topband">
-        <div class="topbar">
-        <p class="t-label">Our AI engineers previously worked at</p>
-        <ul class="t-logos">
-          <li><img src="assets/logos/kpmg.svg" alt="KPMG" class="lg-kpmg"></li>
-          <li><img src="assets/logos/microsoft.svg" alt="Microsoft" class="lg-ms"></li>
-          <li><img src="assets/logos/general-dynamics.svg" alt="General Dynamics" class="lg-gd"></li>
-          <li><img src="assets/logos/uber.svg" alt="Uber" class="lg-uber"></li>
-        <li class="ins"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4 5.6v6.1c0 4.6 3.2 8.7 8 9.8 4.8-1.1 8-5.2 8-9.8V5.6z" fill="#0c3b43"/><path d="m8.2 12.2 2.6 2.6 5-5.2" fill="none" stroke="#5fd0c3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fully insured &middot; Every industry</span></li>
-        </ul>
-        </div>
+          <a class="tab dtab demo-only" href="#demo" data-demo="tax"><span class="ti" aria-hidden="true"><img src="assets/icons/tax.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Tax</b><i class="dm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Demo</i></span></a>
+          <a class="tab dtab demo-only" href="#demo" data-demo="accounting"><span class="ti" aria-hidden="true"><img src="assets/icons/acc.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Accounting</b><i class="dm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Demo</i></span></a>
+          <a class="tab dtab demo-only" href="#demo" data-demo="audit"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Audit</b><i class="dm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Demo</i></span></a>
         </div>
         <div class="info" hidden>
           <div>
@@ -622,6 +663,31 @@ footer a:hover{ color:var(--blue); }
           <div class="pbar"><span id="pLen">Training video &middot; 2:25</span><button type="button" id="fs">Full screen</button></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="demo demo-only" id="demo" aria-labelledby="demoH">
+    <div class="wrap">
+      <h2 id="demoH">Try the <span class="acc">machines.</span></h2>
+      <p class="intro">The real machines, replaying a recorded run on an invented company.</p>
+      <div class="demo-sw" role="tablist" aria-label="Machines">
+        <button role="tab" data-m="tax" aria-selected="true">Tax</button>
+        <button role="tab" data-m="accounting" aria-selected="false">Accounting</button>
+        <button role="tab" data-m="audit" aria-selected="false">Audit</button>
+      </div>
+      <div class="demo-box" id="demoBox">
+        <iframe id="demoFrame" title="Fast Finance machine demo" allow="fullscreen"></iframe>
+        <div class="demo-cover" id="demoCover">
+          <div class="demo-card">
+            <span class="demo-ic" aria-hidden="true"><img id="demoIc" src="assets/icons/tax.jpg" alt="" width="72" height="72"></span>
+            <b id="demoName">Tax Machine</b>
+            <span id="demoSub">Prepares a partnership return, Form 1065.</span>
+            <button class="demo-go" id="demoGo" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Start the demo</button>
+            <small id="demoSoon" hidden>This demo is being prepared.</small>
+          </div>
+        </div>
+      </div>
+      <a class="more demo-full" id="demoFull" href="demo/#tax">Open full screen</a>
     </div>
   </section>
 
@@ -850,7 +916,8 @@ footer a:hover{ color:var(--blue); }
   // Main training video
   var v = document.getElementById('v'), snd = document.getElementById('snd');
 
-  var tabs = [].slice.call(document.querySelectorAll('.tab')), cur = 0;
+  var tabs = [].slice.call(document.querySelectorAll('.tab[role="tab"]')), cur = 0;
+  var demosOn = document.documentElement.getAttribute('data-demos') === 'on';
   function show(i, load){
     cur = i; var s = S[i];
     tabs.forEach(function(t, j){ var on = j === i; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
@@ -908,6 +975,38 @@ footer a:hover{ color:var(--blue); }
   } else show(0, true); // later visits: autoplay starts muted at 0:00
   snd.addEventListener('click', soundOn);
   v.addEventListener('volumechange', function(){ snd.hidden = !v.muted; });
+  // Try the machines
+  var DEMO = {
+    tax:        { name:'Tax Machine',        sub:'Prepares a partnership return, Form 1065.', ic:'assets/icons/tax.jpg', ready:false },
+    accounting: { name:'Accounting Machine', sub:'Reviews a month of vendor invoices.',       ic:'assets/icons/acc.jpg', ready:false },
+    audit:      { name:'Audit Machine',      sub:'Builds year-end audit workpapers.',          ic:'assets/icons/aud.jpg', ready:false }
+  };
+  var dBox = document.getElementById('demoBox'), dFrame = document.getElementById('demoFrame'), dCur = 'tax';
+  var dSw = [].slice.call(document.querySelectorAll('.demo-sw button'));
+  function demoPick(m, start){
+    dCur = m; var d = DEMO[m];
+    dSw.forEach(function(b){ b.setAttribute('aria-selected', b.getAttribute('data-m') === m); });
+    document.getElementById('demoName').textContent = d.name;
+    document.getElementById('demoSub').textContent = d.sub;
+    document.getElementById('demoIc').src = d.ic;
+    document.getElementById('demoFull').href = 'demo/#' + m;
+    document.getElementById('demoGo').hidden = !d.ready;
+    document.getElementById('demoSoon').hidden = d.ready;
+    document.getElementById('demoFull').hidden = !d.ready;
+    if (start && d.ready) { dFrame.src = 'demo/' + m + '/index.html'; dBox.classList.add('live'); }
+    else { dFrame.removeAttribute('src'); dBox.classList.remove('live'); }
+  }
+  dSw.forEach(function(b){ b.addEventListener('click', function(){ demoPick(b.getAttribute('data-m'), dBox.classList.contains('live')); }); });
+  document.getElementById('demoGo').addEventListener('click', function(){ demoPick(dCur, true); });
+  [].slice.call(document.querySelectorAll('.dtab')).forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault(); if (!v.paused) v.pause();
+      demoPick(a.getAttribute('data-demo'), true);
+      document.getElementById('demo').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block:'start' });
+    });
+  });
+  demoPick('tax', false);
+
   // App pop-out
   var pop = document.getElementById('pop'), popV = document.getElementById('popV');
   function openPop(){
@@ -926,7 +1025,7 @@ footer a:hover{ color:var(--blue); }
   var zoomed = false, replay = document.getElementById('replay');
   function zoomCard(on){ if (!!zoomed === on || !replay) return; zoomed = on; v.classList.toggle('card-zoom', on); v.controls = !on; replay.hidden = !on; }
   v.addEventListener('timeupdate', function(){ var c = S[cur].card; if (c && v.duration) zoomCard(v.duration - v.currentTime <= c); });
-  v.addEventListener('ended', function(){ if (S[cur].card) zoomCard(true); else show((cur + 1) % S.length, true); });
+  v.addEventListener('ended', function(){ if (S[cur].card) zoomCard(true); else show((cur + 1) % (demosOn ? 3 : S.length), true); });
   replay.addEventListener('click', function(){ zoomCard(false); try { v.currentTime = 0; } catch (e) {} play(v); });
   tabs.forEach(function(t, i){
     t.addEventListener('click', function(){ show(i, 'user'); });
