@@ -793,12 +793,38 @@ footer a:hover{ color:var(--blue); }
       v.poster = s.poster;
       v.querySelector('source').src = small ? s.srcM : s.src;
       if (s.music && load === 'user') { v.muted = false; v.volume = 0.85; } // a tap on Tech or AI plays the music
-      v.load(); if (!reduced || load === 'user') play(v);
+      v.load(); if (load !== 'intro' && (!reduced || load === 'user')) play(v);
       snd.hidden = !v.muted;
     }
   }
-  show(0, true); // autoplay starts muted; browsers allow sound only after the visitor acts
-  snd.addEventListener('click', function(){ v.muted = false; v.volume = 1; play(v); });
+
+  // First entry: after the trailer, the Tax video plays from the start with sound at mid-high volume (75%), and a voice says
+  // "Welcome to Fast Finance" (Higgsfield, voice Celine). Browsers that block sound before a tap start it muted;
+  // then the first tap anywhere, or "Sound on", turns the sound and the welcome on.
+  var MED = 0.75, intro = !document.documentElement.classList.contains('ffs-seen') && !reduced, greeted = false;
+  var hi = intro ? new Audio('assets/welcome.mp3') : null; if (hi) hi.preload = 'auto';
+  function greet(){
+    if (!hi || greeted || cur !== 0) return; greeted = true;
+    var back = function(){ if (!v.muted) v.volume = MED; };
+    v.volume = 0.3; hi.onended = back; var p = hi.play(); if (p && p.catch) p.catch(back);
+  }
+  function soundOn(){ v.muted = false; v.volume = MED; play(v); greet(); }
+  function onFirstTap(){ document.removeEventListener('pointerdown', onFirstTap, true); document.removeEventListener('keydown', onFirstTap, true); if (v.muted) soundOn(); }
+  if (intro) {
+    v.autoplay = false; // hold at 0:00 behind the trailer
+    show(0, 'intro');
+    setTimeout(function(){ // as the curtains open
+      if (cur !== 0) return;
+      v.autoplay = true;
+      v.muted = false; v.volume = MED;
+      var p = v.play();
+      if (p && p.then) p.then(greet, function(){
+        v.muted = true; play(v);
+        document.addEventListener('pointerdown', onFirstTap, true); document.addEventListener('keydown', onFirstTap, true);
+      });
+    }, 4100);
+  } else show(0, true); // later visits: autoplay starts muted at 0:00
+  snd.addEventListener('click', soundOn);
   v.addEventListener('volumechange', function(){ snd.hidden = !v.muted; });
   v.addEventListener('ended', function(){ show((cur + 1) % S.length, true); });
   tabs.forEach(function(t, i){
