@@ -32,7 +32,7 @@
     { id: 'techdiv', k: ['tech', 'technology', 'division', 'thushara', 'thush', 'cto', 'cloud', 'developer', 'developers', 'engineering'],
       a: 'Our <b>Technology and Artificial Intelligence Division</b> is led by Thushara Wijeratna, founder of Enasal: local AI architecture, AI agents and applications, workflow automation, data-to-answers search, mobile apps, and cloud platforms built to scale. <a href="#tech">See the division</a>' },
     { id: 'office', k: ['office', 'offices', 'where', 'located', 'location', 'address', 'bellevue', 'seattle', 'washington', 'remote', 'local'],
-      a: 'Our office is in <b>Bellevue, Washington</b>, and we work with companies anywhere in the US. <a href="#contact">Book a consultation</a>' },
+      a: 'Our offices are at <b>Rainier Square, 4th &amp; Union, Seattle</b> and in <b>Bellevue, Washington</b>. We work with companies anywhere in the US. <a href="#contact">Book a consultation</a>' },
     { id: 'speed', k: ['fast', 'speed', 'long', 'quick', 'quickly', 'turnaround', 'time', 'minutes', 'days', 'hours'],
       a: 'Fast. A full Tax Machine run takes about five minutes, and the month-end invoice review about eight and a half. The training videos show real runs, shortened for viewing.' },
     { id: 'people', k: ['replace', 'accountant', 'accountants', 'sign', 'signature', 'human', 'humans', 'people', 'person', 'review', 'approve', 'control', 'staff', 'jobs'],
