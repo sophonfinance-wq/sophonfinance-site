@@ -656,9 +656,9 @@ footer a:hover{ color:var(--blue); }
       src:'videos/accounting-machine-training.mp4', srcM:'videos/accounting-machine-training-720.mp4', poster:'videos/accounting-machine-poster.jpg' },
     { title:'Audit Machine', len:'3:00', kind:'Training video', sub:'Year-end audit workpapers.',
       src:'videos/audit-machine-training.mp4', srcM:'videos/audit-machine-training-720.mp4', poster:'videos/audit-machine-poster.jpg' },
-    { title:'Tech Services', len:'0:10', kind:'Showcase', sub:'Custom software, automation and integrations.',
+    { title:'Tech Services', len:'0:10', kind:'Showcase', music:true, sub:'Custom software, automation and integrations.',
       src:'videos/tech-services.mp4', srcM:'videos/tech-services-720.mp4', poster:'videos/tech-services-poster.jpg' },
-    { title:'AI Services', len:'0:11', kind:'Showcase', sub:'Local AI architecture for large corporations, built to cut expenses.',
+    { title:'AI Services', len:'0:11', kind:'Showcase', music:true, sub:'Local AI architecture for large corporations, built to cut expenses.',
       src:'videos/ai-services.mp4', srcM:'videos/ai-services-720.mp4', poster:'videos/ai-services-poster.jpg' },
     { title:'App Services', len:'0:39', kind:'Showcase', sub:'Mobile apps for iPhone and Android.',
       src:'videos/marketing/mm-app.mp4', srcM:'videos/marketing/mm-app.mp4', poster:'videos/marketing/mm-app.jpg' }
@@ -681,7 +681,9 @@ footer a:hover{ color:var(--blue); }
     if (load) {
       v.poster = s.poster;
       v.querySelector('source').src = small ? s.srcM : s.src;
+      if (s.music && load === 'user') { v.muted = false; v.volume = 0.85; } // a tap on Tech or AI plays the music
       v.load(); if (!reduced || load === 'user') play(v);
+      snd.hidden = !v.muted;
     }
   }
   show(0, true); // autoplay starts muted; browsers allow sound only after the visitor acts
