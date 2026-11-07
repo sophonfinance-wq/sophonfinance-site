@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<script>try{if(sessionStorage.getItem("ffIntro")||matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("no-intro")}catch(e){}</script>
 <style>
 :root{
   --ink:#0f2730; --dark:#0f2730; --dark-2:#16343d; --dark-3:#24474f; --text:#2c3a40; --text-2:#5b6d73; --line:#dbe9e7; --gray:#f1f8f7; --teal-50:#eaf7f5; --teal-100:#d5f0ec;
@@ -50,6 +51,14 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .more{ display:inline-block; padding:12px 0; font:600 13.5px/1.2 var(--body); letter-spacing:.08em; text-transform:uppercase; }
 .more::after{ content:" \00BB"; }
 
+/* intro trailer: plays once per visit, then fades into the page */
+.intro{ position:fixed; inset:0; z-index:300; background:#fff; display:flex; align-items:center; justify-content:center; transition:opacity .7s ease; }
+.intro video{ width:100%; height:100%; object-fit:cover; background:#fff; }
+@media (orientation:portrait){ .intro video{ object-fit:contain; } }
+.intro.done{ opacity:0; pointer-events:none; }
+.no-intro .intro{ display:none; }
+.skip-intro{ position:absolute; right:max(18px, env(safe-area-inset-right)); bottom:max(18px, env(safe-area-inset-bottom)); min-height:42px; padding:10px 18px; border:0; border-radius:999px; background:rgba(12,59,67,.82); color:#fff; font:600 12.5px/1 var(--body); letter-spacing:.1em; text-transform:uppercase; cursor:pointer; }
+
 /* header */
 .top{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,.86); -webkit-backdrop-filter:saturate(1.4) blur(14px); backdrop-filter:saturate(1.4) blur(14px); box-shadow:0 1px 0 var(--line), 0 6px 18px -12px rgba(15,39,48,.25); }
 .top-in{ display:flex; align-items:center; justify-content:space-between; gap:20px; height:76px; }
@@ -72,7 +81,7 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 }
 
 /* ===== Services hero: the training videos come first ===== */
-.svc{ position:relative; background:radial-gradient(1100px 520px at 88% -12%, rgba(20,184,166,.16), transparent 62%), radial-gradient(900px 460px at -8% 6%, rgba(95,208,195,.20), transparent 60%), linear-gradient(180deg,#f0faf8 0,#fff 560px); color:var(--text); padding:40px 0 64px; }
+.svc{ position:relative; background:radial-gradient(1100px 520px at 88% -12%, rgba(20,184,166,.16), transparent 62%), radial-gradient(900px 460px at -8% 6%, rgba(95,208,195,.20), transparent 60%), linear-gradient(180deg,#f0faf8 0,#fff 560px); color:var(--text); padding:26px 0 34px; }
 .svc::before, .about::before, .team::before{ content:""; position:absolute; inset:0; pointer-events:none;
   background-image:radial-gradient(rgba(14,147,132,.22) 1px, transparent 1.3px); background-size:22px 22px; }
 .svc::before{ -webkit-mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,.5) 40%,transparent 80%); mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,.5) 40%,transparent 80%); }
@@ -134,7 +143,7 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 }
 
 /* trust band: where the engineers come from */
-.trust{ background:#fff; border-top:1px solid var(--line); padding:44px 0 48px; }
+.trust{ background:#fff; border-top:1px solid var(--line); padding:26px 0 28px; }
 .topbar{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px 40px; padding:0 0 22px; margin:0 0 26px; border-bottom:1px solid var(--line); }
 .t-label{ text-align:center; font:600 12px/1.3 var(--body); letter-spacing:.14em; text-transform:uppercase; color:var(--text-2); margin:0; }
 .t-logos{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:16px 48px; }
@@ -149,7 +158,7 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .t-stats span{ display:block; margin-top:8px; color:var(--text-2); font-size:15.5px; }
 @media (max-width:980px) and (min-width:701px){ .t-stats{ grid-template-columns:1fr 1fr; } }
 @media (max-width:700px){
-  .trust{ padding:34px 0 30px; }
+  .trust{ padding:20px 0 22px; }
   .t-logos{ gap:14px 26px; }
   .lg-kpmg{ height:26px; } .lg-ms{ height:20px; } .lg-gd{ height:11px; } .lg-uber{ height:19px; } .lg-enasal{ height:26px; }
   .topbar{ gap:12px; padding-bottom:16px; margin-bottom:18px; }
@@ -160,14 +169,14 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 }
 
 /* about band */
-.about{ background:linear-gradient(135deg,#e6f6f3 0%,#f4fbfa 60%,#eaf7f5 100%); padding:72px 0; }
-.about p.big{ font-family:var(--head); font-weight:300; font-size:clamp(22px, 2.3vw, 30px); line-height:1.45; color:var(--ink); margin:0 0 22px; max-width:32em; }
+.about{ background:linear-gradient(135deg,#e6f6f3 0%,#f4fbfa 60%,#eaf7f5 100%); padding:40px 0; }
+.about p.big{ font-family:var(--head); font-weight:300; font-size:clamp(22px, 2.3vw, 30px); line-height:1.45; color:var(--ink); margin:0 0 10px; max-width:32em; }
 
 /* marketing division */
-.mkt{ padding:84px 0; }
+.mkt{ padding:44px 0 48px; }
 .mkt h2{ font-size:clamp(28px, 3.2vw, 42px); line-height:1.15; margin-bottom:10px; }
-.mkt .intro{ color:var(--text-2); max-width:40em; margin:0 0 36px; font-size:18px; }
-.case{ display:grid; grid-template-columns:300px 1fr; gap:40px; align-items:start; border-top:1px solid var(--line); padding-top:32px; }
+.mkt .intro{ color:var(--text-2); max-width:40em; margin:0 0 22px; font-size:18px; }
+.case{ display:grid; grid-template-columns:300px 1fr; gap:40px; align-items:start; border-top:1px solid var(--line); padding-top:24px; }
 .case-tag{ font:600 12.5px/1 var(--body); letter-spacing:.1em; text-transform:uppercase; color:var(--blue); margin:0 0 10px; }
 .case h3{ font-size:28px; font-weight:400; margin:0 0 12px; }
 .mm-logo{ font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif !important; font-size:46px !important; line-height:1 !important; letter-spacing:.01em; color:#111 !important; }
@@ -179,7 +188,7 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .reel video{ width:100%; height:auto; aspect-ratio:9/16; object-fit:cover; background:#0b0c10; border-radius:12px; }
 .reel figcaption{ display:flex; justify-content:space-between; gap:8px; font-size:14px; color:var(--text-2); margin-top:8px; }
 .reel figcaption b{ color:var(--ink); font-weight:600; }
-.case + .case{ margin-top:48px; }
+.case + .case{ margin-top:30px; }
 .reels.h{ grid-template-columns:1fr 1fr; }
 .reels.h .reel video{ aspect-ratio:16/9; }
 .reels.h .reel:first-child{ grid-column:1/-1; }
@@ -193,7 +202,7 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .team-film video{ width:100%; height:100%; object-fit:cover; animation:drift 18s ease-in-out infinite alternate; transform-origin:60% 45%; }
 @keyframes drift{ from{ transform:scale(1.03); } to{ transform:scale(1.14) translateX(-2%); } }
 @media (prefers-reduced-motion:reduce){ .team-film video{ animation:none; } }
-.team-in{ position:relative; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; padding-top:96px; padding-bottom:96px; }
+.team-in{ position:relative; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; padding-top:60px; padding-bottom:60px; }
 .team h2{ color:var(--ink); font-size:clamp(30px, 3.4vw, 46px); line-height:1.15; }
 .team-box{ position:relative; z-index:1; background:linear-gradient(135deg,#0e9384,#13a896); color:#fff; border-radius:18px; padding:38px 38px 32px; font-size:17px; line-height:1.65; box-shadow:0 24px 50px -24px rgba(15,39,48,.4); margin-right:-8%; }
 .team-box p{ margin:0 0 16px; }
@@ -201,12 +210,12 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .team-box a:hover{ color:#dfe8ff; }
 @media (max-width:900px){
   .team-film{ position:relative; width:100%; height:240px; }
-  .team-in{ grid-template-columns:1fr; gap:24px; padding-top:40px; padding-bottom:52px; }
+  .team-in{ grid-template-columns:1fr; gap:20px; padding-top:28px; padding-bottom:32px; }
   .team-box{ margin-right:0; padding:26px 22px; }
 }
 
 /* contact */
-.contact{ padding:84px 0; }
+.contact{ padding:48px 0; }
 .c-grid{ display:grid; grid-template-columns:1fr 1.15fr; gap:56px; align-items:start; }
 .contact h2{ font-size:clamp(28px, 3.2vw, 40px); line-height:1.15; margin-bottom:16px; }
 .contact .lead{ color:var(--text-2); margin:0 0 22px; max-width:28em; }
@@ -221,11 +230,11 @@ form.cf{ background:var(--gray); border:1px solid var(--line); border-radius:18p
 .cf input:focus, .cf textarea:focus, .cf select:focus{ outline:2px solid var(--blue); outline-offset:-1px; border-color:var(--blue); }
 .cf .fine{ font-size:13.5px; color:var(--text-2); margin:0; }
 .hp{ position:absolute; left:-9999px; }
-@media (max-width:900px){ .contact{ padding:56px 0; } .c-grid{ grid-template-columns:1fr; gap:32px; } .cf .two{ grid-template-columns:1fr; } form.cf{ padding:22px; } .cf .btn{ width:100%; justify-content:center; } }
+@media (max-width:900px){ .contact{ padding:36px 0; } .c-grid{ grid-template-columns:1fr; gap:32px; } .cf .two{ grid-template-columns:1fr; } form.cf{ padding:22px; } .cf .btn{ width:100%; justify-content:center; } }
 
 /* footer */
 footer{ background:#f3faf8; color:var(--text-2); font-size:15px; border-top:1px solid var(--line); }
-.f-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:36px; padding-top:56px; padding-bottom:40px; }
+.f-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:32px; padding-top:38px; padding-bottom:28px; }
 footer h4{ font:500 12.5px/1 var(--head); letter-spacing:.16em; text-transform:uppercase; color:var(--ink); margin:6px 0 16px; }
 footer ul{ list-style:none; margin:0; padding:0; display:grid; gap:0; }
 footer li a{ display:inline-block; padding:10px 0; }
@@ -253,6 +262,10 @@ footer a:hover{ color:var(--blue); }
 </style>
 </head>
 <body>
+<div class="intro" id="intro" aria-hidden="true">
+  <video id="introV" muted playsinline webkit-playsinline preload="auto" poster="videos/trailer-poster.jpg"></video>
+  <button class="skip-intro" id="skipIntro" type="button">Skip intro</button>
+</div>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="top">
@@ -484,6 +497,21 @@ footer a:hover{ color:var(--blue); }
 
   // Main training video
   var v = document.getElementById('v'), snd = document.getElementById('snd');
+
+  // Intro trailer: once per visit; the page video waits until it is done
+  (function(){
+    var box = document.getElementById('intro'), iv = document.getElementById('introV');
+    if (!box || document.documentElement.classList.contains('no-intro')) { if (box) box.remove(); return; }
+    var finished = false; window.__introOn = true;
+    function finish(){ if (finished) return; finished = true; try{ sessionStorage.setItem('ffIntro','1'); }catch(e){}
+      box.classList.add('done'); window.__introOn = false; setTimeout(function(){ box.remove(); }, 750); play(v); }
+    v.pause(); v.removeAttribute('autoplay');
+    iv.src = (Math.min(screen.width, screen.height) <= 820) ? 'videos/trailer-mobile.mp4' : 'videos/trailer.mp4';
+    iv.addEventListener('ended', finish); iv.addEventListener('error', finish);
+    document.getElementById('skipIntro').addEventListener('click', finish);
+    var p = iv.play(); if (p && p.catch) p.catch(finish);
+    setTimeout(finish, 13000);
+  })();
   var tabs = [].slice.call(document.querySelectorAll('.tab')), cur = 0;
   function show(i, load){
     cur = i; var s = S[i];
@@ -495,11 +523,11 @@ footer a:hover{ color:var(--blue); }
     if (load) {
       v.poster = 'videos/' + s.key + '-machine-poster.jpg';
       v.querySelector('source').src = 'videos/' + s.key + '-machine-training.mp4';
-      v.load(); play(v);
+      v.load(); if (!window.__introOn) play(v);
     }
   }
   show(0);
-  if (!reduced) play(v); // autoplay starts muted; browsers allow sound only after the visitor acts
+  if (!reduced && !document.getElementById('intro')) play(v); // autoplay starts muted; browsers allow sound only after the visitor acts
   snd.addEventListener('click', function(){ v.muted = false; v.volume = 1; play(v); });
   v.addEventListener('volumechange', function(){ snd.hidden = !v.muted; });
   v.addEventListener('ended', function(){ show((cur + 1) % S.length, true); });
