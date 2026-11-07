@@ -128,7 +128,7 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 @media (min-width:981px){ .wrap-wide{ padding-left:24px; padding-right:24px; } }
 /* The stage holds the headline, the video and its controls; on desktop it never gets taller than the screen */
 .stage{ max-width:1720px; margin:0 auto; }
-.svc h1{ color:var(--ink); font-size:clamp(30px, 3.4vw, 46px); line-height:1.1; margin:0 0 24px; }
+.svc h1{ color:var(--ink); font-size:clamp(30px, 3.4vw, 46px); line-height:1.1; margin:0 0 20px; }
 .svc h1 .acc{ color:var(--blue); }
 .tabs{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px; }
 .tab{ display:flex; align-items:center; justify-content:center; width:100%; min-height:52px; text-align:center; background:rgba(255,255,255,.72); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); color:var(--ink); border:1px solid var(--line); border-radius:12px; padding:14px 12px;
@@ -166,9 +166,9 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 /* Phones: the video runs edge to edge; the tabs use short names */
 @media (max-width:600px){
   .topbar .t-logos{ flex-wrap:wrap; justify-content:center; gap:5px 2.2vw; }
-  .topbar .lg-kpmg{ height:4vw; } .topbar .lg-ms{ height:3.05vw; } .topbar .lg-gd{ height:1.65vw; } .topbar .lg-uber{ height:2.9vw; }
+  .topbar .lg-kpmg{ height:3.8vw; } .topbar .lg-ms{ height:2.9vw; } .topbar .lg-gd{ height:1.57vw; } .topbar .lg-uber{ height:2.75vw; }
   .topbar .t-label{ font-size:9.5px; letter-spacing:.12em; }
-  .topbar .t-logos .ins svg{ width:15px; height:15px; } .topbar .t-logos .ins span{ font-size:9.5px; }
+  .topbar .t-logos .ins svg{ width:14px; height:14px; } .topbar .t-logos .ins span{ font-size:9px; }
   .topbar .t-logos .ins{ flex-basis:100%; justify-content:center; padding:0; border:0; }
   .info{ flex-direction:row !important; align-items:center !important; gap:10px !important; margin-top:12px !important; padding:12px 14px; background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:0 8px 20px -16px rgba(12,59,67,.35); }
   .info > div:first-child{ flex:1; min-width:0; }
@@ -188,15 +188,16 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 
 /* trust band: where the engineers come from */
 .trust{ background:#fff; border-top:1px solid var(--line); padding:26px 0 28px; }
-.topbar{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px 40px; padding:0 0 22px; margin:0 0 26px; border-bottom:1px solid var(--line); }
+.topband{ background:linear-gradient(180deg,#eef8f6,#f6fbfa); border-bottom:1px solid var(--line); }
+.topbar{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px 38px; padding:10px 0; margin:0; }
 .t-label{ text-align:center; font:600 12px/1.3 var(--body); letter-spacing:.14em; text-transform:uppercase; color:var(--text-2); margin:0; }
 .t-logos{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:16px 48px; }
 .t-logos img{ display:block; width:auto; }
-.lg-kpmg{ height:31px; } .lg-ms{ height:23px; } .lg-gd{ height:12.6px; } .lg-uber{ height:21.6px; }
+.lg-kpmg{ height:29.5px; } .lg-ms{ height:22px; } .lg-gd{ height:12px; } .lg-uber{ height:20.5px; }
 .lg-enasal{ height:34px; width:auto; margin:0 auto; display:block; }
 .t-logos .ins{ display:inline-flex; align-items:center; gap:8px; padding-left:22px; border-left:1px solid var(--line); }
-.t-logos .ins svg{ width:23px; height:23px; }
-.t-logos .ins span{ font:700 15.3px/1 var(--head); letter-spacing:.14em; text-transform:uppercase; color:#0c3b43; white-space:nowrap; }
+.t-logos .ins svg{ width:22px; height:22px; }
+.t-logos .ins span{ font:700 14.5px/1 var(--head); letter-spacing:.14em; text-transform:uppercase; color:#0c3b43; white-space:nowrap; }
 .t-fine{ text-align:center; font-size:12.5px; color:#8a9aa0; margin:18px 0 0; }
 .t-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:0; }
 .t-stats div{ position:relative; padding:24px 18px 22px; text-align:center; background:linear-gradient(180deg,#f2fbf9,#fff); border:1px solid var(--line); border-radius:16px; overflow:hidden; }
@@ -209,7 +210,7 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
   .t-logos{ gap:14px 26px; }
   .t-logos .ins{ padding-left:0; border-left:0; } .t-logos .ins svg{ width:18px; height:18px; } .t-logos .ins span{ font-size:11.7px; }
   .lg-kpmg{ height:23.4px; } .lg-ms{ height:18px; } .lg-gd{ height:10px; } .lg-uber{ height:17px; } .lg-enasal{ height:26px; }
-  .topbar{ gap:8px; padding-bottom:12px; margin-bottom:14px; }
+  .topbar{ gap:7px; padding:8px 0; }
   .t-stats{ grid-template-columns:1fr 1fr; gap:10px; margin-top:24px; }
   .t-stats div{ padding:18px 10px 16px; }
   .t-stats b{ font-size:22px; }
@@ -425,6 +426,20 @@ footer a:hover{ color:var(--blue); }
 </div>
 <a class="skip" href="#main">Skip to content</a>
 
+<div class="topband">
+  <div class="wrap">
+    <div class="topbar">
+    <p class="t-label">Our AI engineers previously worked at</p>
+    <ul class="t-logos">
+      <li><img src="assets/logos/kpmg.svg" alt="KPMG" class="lg-kpmg"></li>
+      <li><img src="assets/logos/microsoft.svg" alt="Microsoft" class="lg-ms"></li>
+      <li><img src="assets/logos/general-dynamics.svg" alt="General Dynamics" class="lg-gd"></li>
+      <li><img src="assets/logos/uber.svg" alt="Uber" class="lg-uber"></li>
+    <li class="ins"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4 5.6v6.1c0 4.6 3.2 8.7 8 9.8 4.8-1.1 8-5.2 8-9.8V5.6z" fill="#0c3b43"/><path d="m8.2 12.2 2.6 2.6 5-5.2" fill="none" stroke="#5fd0c3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fully insured &middot; Every industry</span></li>
+    </ul>
+    </div>
+  </div>
+</div>
 <header class="top">
   <div class="wrap top-in">
     <a class="logo" href="/" aria-label="Fast Finance home">
@@ -450,16 +465,6 @@ footer a:hover{ color:var(--blue); }
   <section class="svc" id="services" aria-labelledby="h1">
     <div class="wrap wrap-wide">
       <div class="stage">
-        <div class="topbar">
-    <p class="t-label">Our AI engineers previously worked at</p>
-        <ul class="t-logos">
-          <li><img src="assets/logos/kpmg.svg" alt="KPMG" class="lg-kpmg"></li>
-          <li><img src="assets/logos/microsoft.svg" alt="Microsoft" class="lg-ms"></li>
-          <li><img src="assets/logos/general-dynamics.svg" alt="General Dynamics" class="lg-gd"></li>
-          <li><img src="assets/logos/uber.svg" alt="Uber" class="lg-uber"></li>
-        <li class="ins"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4 5.6v6.1c0 4.6 3.2 8.7 8 9.8 4.8-1.1 8-5.2 8-9.8V5.6z" fill="#0c3b43"/><path d="m8.2 12.2 2.6 2.6 5-5.2" fill="none" stroke="#5fd0c3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fully insured &middot; Every industry</span></li>
-        </ul>
-        </div>
         <h1 id="h1"><span class="h1-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span><span class="sr">The digital AI accounting, marketing and tech firm.</span><span aria-hidden="true">The digital AI <span class="acc rot"><span>accounting firm.</span><span>marketing firm.</span><span>tech firm.</span></span></span></h1>
         <div class="panel" id="panel" role="tabpanel" aria-labelledby="t0">
           <div class="player">
