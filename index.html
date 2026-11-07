@@ -56,21 +56,21 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .more::after{ content:" \00BB"; }
 
 /* grand entrance: white curtains part after the logos, CSS only, once per visit */
-.ff-splash{ position:fixed; inset:0; z-index:300; pointer-events:none; animation:ffsGone 0s linear 5s forwards; }
+.ff-splash{ position:fixed; inset:0; z-index:300; pointer-events:none; animation:ffsGone 0s linear 5.5s forwards; }
 .ffs-seen .ff-splash{ display:none; }
 .ffs-c{ position:absolute; top:0; bottom:0; width:50.5%; background:radial-gradient(900px 520px at 100% 50%, rgba(95,208,195,.14), transparent 70%), #fff; }
-.ffs-c.l{ left:0; animation:ffsL 1.2s cubic-bezier(.7,0,.2,1) 3.75s forwards; box-shadow:12px 0 40px -20px rgba(12,59,67,0); }
-.ffs-c.r{ right:0; background:radial-gradient(900px 520px at 0% 50%, rgba(95,208,195,.14), transparent 70%), #fff; animation:ffsR 1.2s cubic-bezier(.7,0,.2,1) 3.75s forwards; }
+.ffs-c.l{ left:0; animation:ffsL 1.32s cubic-bezier(.7,0,.2,1) 4.125s forwards; box-shadow:12px 0 40px -20px rgba(12,59,67,0); }
+.ffs-c.r{ right:0; background:radial-gradient(900px 520px at 0% 50%, rgba(95,208,195,.14), transparent 70%), #fff; animation:ffsR 1.32s cubic-bezier(.7,0,.2,1) 4.125s forwards; }
 .ffs-c.l::after, .ffs-c.r::after{ content:""; position:absolute; top:0; bottom:0; width:1px; background:linear-gradient(180deg, transparent, rgba(14,147,132,.35), transparent); }
 .ffs-c.l::after{ right:0; } .ffs-c.r::after{ left:0; }
-.ffs-in{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; animation:ffsFade .6s ease 3.35s forwards; }
-.ffs-lock{ position:relative; display:flex; align-items:center; gap:20px; }
-.ffs-lock svg{ width:78px; height:78px; animation:ffsMark 1.5s cubic-bezier(.2,.8,.2,1) .2s both; border-radius:12px; }
-.ffs-shine{ position:absolute; inset:-6px -10px; background:linear-gradient(105deg, transparent 38%, rgba(255,255,255,.9) 50%, transparent 62%); background-size:250% 100%; background-position:120% 0; mix-blend-mode:screen; animation:ffsShine 1.4s ease 1.6s forwards; }
-.ffs-word b{ display:block; font:600 36px/1 var(--head); color:#0c3b43; animation:ffsTrack 1.8s cubic-bezier(.2,.8,.2,1) .5s both; }
-.ffs-word span{ display:block; margin-top:10px; font:500 11px/1 var(--head); letter-spacing:.42em; color:#4f7a80; animation:ffsUp 1s ease 1.2s both; }
-.ffs-partner{ margin-top:34px; display:flex; align-items:center; gap:12px; font:500 11px/1 var(--body); letter-spacing:.24em; text-transform:uppercase; color:#6b8a90; animation:ffsUp 1s ease 1.9s both; }
-.ffs-partner img{ height:22px; width:auto; }
+.ffs-in{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; animation:ffsFade .66s ease 3.685s forwards; }
+.ffs-lock{ position:relative; display:flex; align-items:center; gap:min(22px, 4vw); }
+.ffs-lock svg{ width:min(104px, 24vw); height:min(104px, 24vw); animation:ffsMark 1.65s cubic-bezier(.2,.8,.2,1) .22s both; border-radius:12px; }
+.ffs-shine{ position:absolute; inset:-6px -10px; background:linear-gradient(105deg, transparent 38%, rgba(255,255,255,.9) 50%, transparent 62%); background-size:250% 100%; background-position:120% 0; mix-blend-mode:screen; animation:ffsShine 1.54s ease 1.76s forwards; }
+.ffs-word b{ display:block; font:600 min(46px, 10.4vw)/1 var(--head); color:#0c3b43; animation:ffsTrack 1.98s cubic-bezier(.2,.8,.2,1) .55s both; }
+.ffs-word span{ display:block; margin-top:12px; font:500 min(13px, 3.1vw)/1 var(--head); letter-spacing:.42em; color:#4f7a80; animation:ffsUp 1.1s ease 1.32s both; }
+.ffs-partner{ margin-top:min(48px, 9vw); display:flex; flex-direction:column; align-items:center; gap:16px; font:500 min(12.5px, 3vw)/1 var(--body); letter-spacing:.24em; text-transform:uppercase; color:#6b8a90; animation:ffsUp 1.1s ease 2.09s both; }
+.ffs-partner img{ height:min(104px, 24vw); width:auto; max-width:86vw; object-fit:contain; }
 @keyframes ffsMark{ from{ opacity:0; transform:scale(.9); filter:blur(6px); } to{ opacity:1; transform:none; filter:none; } }
 @keyframes ffsTrack{ from{ opacity:0; letter-spacing:.55em; filter:blur(4px); } to{ opacity:1; letter-spacing:.08em; filter:none; } }
 @keyframes ffsUp{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:none; } }
@@ -79,7 +79,7 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 @keyframes ffsL{ to{ transform:translateX(-101%); } }
 @keyframes ffsR{ to{ transform:translateX(101%); } }
 @keyframes ffsGone{ to{ visibility:hidden; } }
-@media (max-width:600px){ .ffs-lock{ gap:14px; } .ffs-lock svg{ width:56px; height:56px; } .ffs-word b{ font-size:25px; } .ffs-word span{ font-size:8.5px; letter-spacing:.36em; } .ffs-partner{ font-size:9.5px; letter-spacing:.18em; margin-top:26px; } .ffs-partner img{ height:18px; } }
+@media (max-width:600px){ .ffs-lock{ gap:14px; } .ffs-lock svg{ width:72px; height:72px; } .ffs-word b{ font-size:31px; } .ffs-word span{ font-size:10px; letter-spacing:.36em; margin-top:10px; } .ffs-partner{ font-size:10.5px; letter-spacing:.2em; margin-top:40px; gap:14px; } .ffs-partner img{ height:72px; } }
 
 /* headline: accounting, marketing, tech in a slow rotation */
 .sr{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
