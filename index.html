@@ -801,7 +801,7 @@ footer a:hover{ color:var(--blue); }
       v.poster = s.poster;
       v.querySelector('source').src = small ? s.srcM : s.src;
       // A tap on any tab plays that video from the start with the sound on (the tap lets browsers allow sound)
-      if (load === 'user') { v.muted = false; v.volume = speaking ? 0.3 : (s.music ? 0.85 : MED); }
+      if (load === 'user') { userTook = true; clearTimeout(wait); v.muted = false; v.volume = speaking ? 0.3 : (s.music ? 0.85 : MED); }
       v.load();
       if (load === 'user') { var p = v.play(); if (p && p.catch) p.catch(function(){ v.muted = true; play(v); }); }
       else if (load !== 'intro' && !reduced) play(v);
@@ -809,31 +809,37 @@ footer a:hover{ color:var(--blue); }
     }
   }
 
-  // First entry: after the trailer, the Tax video plays from the start with sound at mid-high volume (75%), and a voice says
-  // "Welcome to Fast Finance" (Higgsfield, voice Celine). Browsers that block sound before a tap start it muted;
-  // then the first tap anywhere, or "Sound on", turns the sound and the welcome on.
-  var MED = 0.75, intro = !document.documentElement.classList.contains('ffs-seen') && !reduced, greeted = false;
+  // First entry: a voice says "Welcome to Fast Finance" (Higgsfield, voice Celine) over the trailer. The Tax video waits
+  // at 0:00 and starts from the beginning with sound (75%) 3 seconds after the greeting ends.
+  // Browsers that block sound before a tap: the video plays muted after the trailer, the first tap plays the greeting,
+  // and 3 seconds after it the video restarts at 0:00 with sound. Tapping a tab first skips all of this.
+  var MED = 0.75, GAP = 3000, intro = !document.documentElement.classList.contains('ffs-seen') && !reduced;
   var hi = intro ? new Audio('assets/welcome-ff.mp3') : null; if (hi) hi.preload = 'auto';
-  var speaking = false;
-  function greet(){
-    if (!hi || greeted || cur !== 0) return; greeted = true; speaking = true;
-    var back = function(){ speaking = false; if (!v.muted) v.volume = MED; };
-    v.volume = 0.3; hi.onended = back;
-    var p = hi.play(); if (p && p.catch) p.catch(function(){ greeted = false; back(); armTap(); });
+  var greeted = false, speaking = false, userTook = false, wait = 0;
+  function withSound(){
+    wait = 0; if (userTook || cur !== 0) return;
+    v.autoplay = true;
+    try { v.currentTime = 0; } catch (e) {}
+    v.muted = false; v.volume = MED;
+    var muted = function(){ v.muted = true; play(v); armTap(); };
+    var p = v.play(); if (p && p.catch) p.catch(muted);
+    setTimeout(function(){ if (v.paused && !v.muted && !v.ended) muted(); }, 400); // Safari may pause a video unmuted without a tap
   }
-  function soundOn(){ v.muted = false; v.volume = speaking ? 0.3 : MED; play(v); greet(); }
-  function onFirstTap(){ document.removeEventListener('pointerdown', onFirstTap, true); document.removeEventListener('keydown', onFirstTap, true); if (v.muted) soundOn(); else greet(); }
+  function greet(){
+    if (!hi || greeted || userTook || cur !== 0) return; greeted = true; speaking = true;
+    hi.onended = function(){ speaking = false; if (!userTook && cur === 0) wait = setTimeout(withSound, GAP); };
+    var p = hi.play(); if (p && p.catch) p.catch(function(){ greeted = false; speaking = false; armTap(); });
+  }
+  function soundOn(){ clearTimeout(wait); v.muted = false; v.volume = speaking ? 0.3 : MED; play(v); }
+  function onFirstTap(){ document.removeEventListener('pointerdown', onFirstTap, true); document.removeEventListener('keydown', onFirstTap, true); if (!greeted) greet(); else if (v.muted && !wait) soundOn(); }
   function armTap(){ document.addEventListener('pointerdown', onFirstTap, true); document.addEventListener('keydown', onFirstTap, true); }
   if (intro) {
     v.autoplay = false; // hold at 0:00 behind the trailer
     show(0, 'intro');
     setTimeout(greet, 450); // the voice speaks over the trailer as the logo appears
-    setTimeout(function(){ // as the curtains open
-      if (cur !== 0) return;
-      v.autoplay = true;
-      v.muted = false; v.volume = speaking ? 0.3 : MED;
-      var p = v.play();
-      if (p && p.then) p.then(greet, function(){ v.muted = true; play(v); armTap(); });
+    setTimeout(function(){ // as the curtains open: if the greeting is blocked, show the video moving, muted
+      if (cur !== 0 || userTook || speaking || wait) return;
+      v.autoplay = true; v.muted = true; play(v);
     }, 4100);
   } else show(0, true); // later visits: autoplay starts muted at 0:00
   snd.addEventListener('click', soundOn);
