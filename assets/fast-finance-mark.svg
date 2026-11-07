@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Fast Finance">
   <title>Fast Finance</title>
-  <rect width="64" height="64" rx="9" fill="#0b1a36"/>
+  <rect width="64" height="64" rx="9" fill="#0c3b43"/>
   <path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/>
-  <rect x="44" y="41" width="6" height="9" fill="#4f86ff"/>
-  <rect x="36" y="45" width="6" height="5" fill="#4f86ff"/>
+  <rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/>
+  <rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/>
 </svg>
