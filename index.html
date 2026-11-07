@@ -737,13 +737,13 @@ footer a:hover{ color:var(--blue); }
           <div class="demo-card">
             <span class="demo-ic" aria-hidden="true"><img id="demoIc" src="assets/icons/tax.jpg" alt="" width="72" height="72"></span>
             <b id="demoName">Tax Machine</b>
-            <span id="demoSub">Prepares a partnership return, Form 1065.</span>
+            <span id="demoSub">Prepares the quarterly payroll tax return, Form 941.</span>
             <button class="demo-go" id="demoGo" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Start the demo</button>
             <small id="demoSoon" hidden>This demo is being prepared.</small>
           </div>
         </div>
       </div>
-      <a class="more demo-full" id="demoFull" href="demo/#tax">Open full screen</a>
+      <a class="more demo-full" id="demoFull" href="demo/#tax-941">Open full screen</a>
     </div>
   </section>
 
@@ -971,7 +971,6 @@ footer a:hover{ color:var(--blue); }
   // Try the machines
   var DEMO = {
     tax:        { name:'Tax Machine',        ic:'assets/icons/tax.jpg', ready:true, pick:0, subjects:[
-      { id:'tax',                label:'Form 1065',           note:'Partnership',        sub:'Prepares a partnership return, Form 1065.' },
       { id:'tax-941',            label:'Form 941',            note:'Quarterly payroll',  sub:'Prepares the quarterly payroll tax return, Form 941.' },
       { id:'tax-excise', label:'Sales & B&O tax', note:'WA excise, monthly', sub:'Prepares the Washington excise return: B&O, sales and use tax.' },
       { id:'tax-ui', label:'Unemployment', note:'WA ESD, quarterly', sub:'Prepares the Washington quarterly unemployment insurance report.' },
@@ -1117,7 +1116,7 @@ footer a:hover{ color:var(--blue); }
   nav.addEventListener('click', function(e){ if (e.target.closest('a')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); } });
 })();
 </script>
-<script src="assets/chat.js?v=f1" defer></script>
+<script src="assets/chat.js?v=f1b" defer></script>
 <script src="assets/fx.js" defer></script>
 </body>
 </html>
