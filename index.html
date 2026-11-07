@@ -298,7 +298,7 @@ section h2 .acc{ position:relative; }
 .td-grid{ align-items:start; }
 .td-card{ background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 10px 26px -22px rgba(12,59,67,.5); transition:border-color .2s, box-shadow .2s; }
 .td-card[open]{ border-color:var(--blue-l); box-shadow:0 18px 40px -26px rgba(14,147,132,.55); }
-.td-card summary{ list-style:none; cursor:pointer; position:relative; display:grid; grid-template-columns:44px minmax(0,1fr); grid-template-rows:auto auto; column-gap:14px; row-gap:3px; align-items:center; padding:16px 44px 16px 18px; }
+.td-card summary{ list-style:none; cursor:pointer; position:relative; display:grid; grid-template-columns:48px minmax(0,1fr); grid-template-rows:auto auto; column-gap:14px; row-gap:3px; align-items:center; padding:16px 44px 16px 18px; }
 .td-card summary::-webkit-details-marker{ display:none; }
 .td-card summary:hover b{ color:var(--blue); }
 .td-plus{ position:absolute; right:16px; top:50%; width:20px; height:20px; margin-top:-10px; border-radius:50%; background:var(--teal-50); }
@@ -312,7 +312,7 @@ section h2 .acc{ position:relative; }
 .td-more li::before{ content:""; position:absolute; left:0; top:4px; width:14px; height:14px; border-radius:50%; background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27m6 12.5 4 4 8-9%27 fill=%27none%27 stroke=%27white%27 stroke-width=%273.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E") center/10px no-repeat; }
 
 .td-more .more{ padding:8px 0 0; font-size:12.5px; }
-.td-i{ grid-row:1 / span 2; width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--teal-50); color:var(--blue); }
+.td-i{ grid-row:1 / span 2; width:48px; height:48px; overflow:hidden; border-radius:12px; display:grid; place-items:center; background:var(--teal-50); color:var(--blue); }
 .td-i svg{ width:22px; height:22px; }
 .td-grid b{ font:500 17px/1.2 var(--head); color:var(--ink); }
 .td-card summary > span:last-of-type{ font-size:14.5px; line-height:1.4; color:var(--text-2); }
@@ -321,7 +321,23 @@ section h2 .acc{ position:relative; }
 .td-partner img{ height:22px; width:auto; }
 .td-partner:hover{ border-color:var(--blue); color:var(--blue); }
 @media (max-width:980px){ .td-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (max-width:600px){ .techdiv{ padding:30px 0 32px; } .td-grid{ grid-template-columns:minmax(0,1fr); gap:9px; } .td-card summary{ padding:12px 40px 12px 14px; } .td-more{ padding:0 14px 14px; } .td-foot{ gap:10px 18px; } }
+.td-i img{ width:100%; height:100%; object-fit:contain; border-radius:inherit; mix-blend-mode:multiply; }
+.td-i:has(img){ background:#fff; }
+@media (max-width:600px){
+  .techdiv{ padding:28px 0 30px; } .techdiv .intro{ margin-bottom:14px; font-size:16px; }
+  .td-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+  .td-grid > li:has(.td-card[open]){ grid-column:1 / -1; }
+  .td-card{ border-radius:14px; }
+  .td-card summary{ grid-template-columns:40px minmax(0,1fr); column-gap:10px; padding:10px 28px 10px 10px; min-height:62px; }
+  .td-i{ width:40px; height:40px; border-radius:10px; }
+  .td-grid b{ font-size:14.5px; line-height:1.2; }
+  .td-card:not([open]) summary > span:last-of-type{ display:none; }
+  .td-card[open] summary > span:last-of-type{ grid-column:2; font-size:14px; }
+  .td-plus{ right:8px; width:16px; height:16px; margin-top:-8px; }
+  .td-plus::before, .td-plus::after{ left:4px; right:4px; top:7px; }
+  .td-more{ padding:0 12px 12px; }
+  .td-foot{ gap:10px 18px; margin-top:14px; }
+}
 
 /* marketing division */
 .mkt{ padding:44px 0 48px; }
@@ -542,27 +558,27 @@ footer a:hover{ color:var(--blue); }
       <p class="intro">We architect AI and software for large corporations.</p>
       <ul class="td-grid">
           <li><details class="td-card">
-            <summary><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></span><b>Local AI architecture</b><span>Private AI inside your environment, on the latest, lowest-cost models.</span><i class="td-plus" aria-hidden="true"></i></summary>
+            <summary><span class="td-i"><img src="assets/tech/i-local.jpg" alt="" width="72" height="72"></span><b>Local AI architecture</b><span>Private AI inside your environment, on the latest, lowest-cost models.</span><i class="td-plus" aria-hidden="true"></i></summary>
             <div class="td-more"><img class="td-art" src="assets/tech/local.jpg" alt="" width="480" height="360" loading="lazy"><ul><li>Runs in your cloud or servers</li><li>Data never leaves</li><li>Latest models, lowest cost</li><li>Handed over or run for you</li></ul><a class="more" href="#contact">Talk to us about this</a></div>
           </details></li>
           <li><details class="td-card">
-            <summary><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="4.5" cy="6" r="1.8"/><circle cx="19.5" cy="6" r="1.8"/><circle cx="4.5" cy="18" r="1.8"/><circle cx="19.5" cy="18" r="1.8"/><path d="M6 7.2 9.8 10M18 7.2 14.2 10M6 16.8 9.8 14M18 16.8 14.2 14"/></svg></span><b>AI agents and applications</b><span>Agents that work with your systems, data and people.</span><i class="td-plus" aria-hidden="true"></i></summary>
+            <summary><span class="td-i"><img src="assets/tech/i-agents.jpg" alt="" width="72" height="72"></span><b>AI agents and applications</b><span>Agents that work with your systems, data and people.</span><i class="td-plus" aria-hidden="true"></i></summary>
             <div class="td-more"><img class="td-art" src="assets/tech/agents.jpg" alt="" width="480" height="360" loading="lazy"><ul><li>Reads email, files and spreadsheets</li><li>Works in Slack, Excel and your ERP</li><li>People approve; every step logged</li></ul><a class="more" href="#contact">Talk to us about this</a></div>
           </details></li>
           <li><details class="td-card">
-            <summary><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h5l2-5 3 10 2-5h4"/></svg></span><b>Workflow automation</b><span>Repetitive, expensive processes turned into automated systems.</span><i class="td-plus" aria-hidden="true"></i></summary>
+            <summary><span class="td-i"><img src="assets/tech/i-workflow.jpg" alt="" width="72" height="72"></span><b>Workflow automation</b><span>Repetitive, expensive processes turned into automated systems.</span><i class="td-plus" aria-hidden="true"></i></summary>
             <div class="td-more"><img class="td-art" src="assets/tech/workflow.jpg" alt="" width="480" height="360" loading="lazy"><ul><li>One process, mapped and automated</li><li>Reconciliations, invoices, reports</li><li>Hours saved, measured</li></ul><a class="more" href="#contact">Talk to us about this</a></div>
           </details></li>
           <li><details class="td-card">
-            <summary><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="16" r="3"/><path d="m20.2 18.2 1.8 1.8"/></svg></span><b>Data to answers</b><span>Spreadsheets, PDFs and databases, searchable in plain language.</span><i class="td-plus" aria-hidden="true"></i></summary>
+            <summary><span class="td-i"><img src="assets/tech/i-data.jpg" alt="" width="72" height="72"></span><b>Data to answers</b><span>Spreadsheets, PDFs and databases, searchable in plain language.</span><i class="td-plus" aria-hidden="true"></i></summary>
             <div class="td-more"><img class="td-art" src="assets/tech/data.jpg" alt="" width="480" height="360" loading="lazy"><ul><li>Ask in plain English</li><li>Every answer cites its source</li><li>Works inside Slack</li></ul><a class="more" href="#contact">Talk to us about this</a></div>
           </details></li>
           <li><details class="td-card">
-            <summary><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><b>Mobile apps</b><span>iPhone and Android apps, from design to the app stores.</span><i class="td-plus" aria-hidden="true"></i></summary>
+            <summary><span class="td-i"><img src="assets/tech/i-apps.jpg" alt="" width="72" height="72"></span><b>Mobile apps</b><span>iPhone and Android apps, from design to the app stores.</span><i class="td-plus" aria-hidden="true"></i></summary>
             <div class="td-more"><img class="td-art" src="assets/tech/apps.jpg" alt="" width="480" height="360" loading="lazy"><ul><li>iPhone and Android</li><li>Design to App Store</li><li>Example: Model Macros</li></ul><a class="more" href="#contact">Talk to us about this</a></div>
           </details></li>
           <li><details class="td-card">
-            <summary><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.95A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></svg></span><b>Cloud and scale</b><span>High-throughput platforms, built from zero to one and scaled.</span><i class="td-plus" aria-hidden="true"></i></summary>
+            <summary><span class="td-i"><img src="assets/tech/i-cloud.jpg" alt="" width="72" height="72"></span><b>Cloud and scale</b><span>High-throughput platforms, built from zero to one and scaled.</span><i class="td-plus" aria-hidden="true"></i></summary>
             <div class="td-more"><img class="td-art" src="assets/tech/cloud.jpg" alt="" width="480" height="360" loading="lazy"><ul><li>High-throughput platforms</li><li>Zero to one, then scale</li><li>Monitoring and cost control</li></ul><a class="more" href="#contact">Talk to us about this</a></div>
           </details></li>
       </ul>
