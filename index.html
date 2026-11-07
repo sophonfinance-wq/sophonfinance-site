@@ -362,6 +362,23 @@ section h2 .acc{ position:relative; }
 .reels.lw{ grid-template-columns:2fr 1fr 1fr; }
 .reel.site img{ width:100%; height:auto; aspect-ratio:9/8; object-fit:cover; object-position:top center; border:1px solid var(--line); }
 @media (max-width:980px){ .case{ grid-template-columns:1fr; gap:22px; } .reels{ grid-template-columns:repeat(2,1fr); } .reels.lw{ grid-template-columns:1fr 1fr; } .reels.lw .site{ grid-column:1/-1; } .reel.site img{ aspect-ratio:16/10; } }
+/* Phones: compact, in proportion with the Tech tiles. All reels of a case sit in one row; a tap plays one full screen with sound */
+@media (max-width:600px){
+  .case{ gap:12px; padding-top:18px; }
+  .case + .case{ margin-top:22px; }
+  .case-tag{ font-size:11px; margin-bottom:8px; }
+  .mm-logo{ font-size:32px !important; margin-bottom:8px !important; }
+  .gp-logo{ margin:0 0 8px; }
+  .gp-logo img{ height:28px; }
+  .case p{ font-size:15.5px; margin-bottom:6px; }
+  .case .more{ padding:6px 0 0; font-size:12.5px; }
+  .reels, .reels.h{ grid-template-columns:repeat(4, minmax(0,1fr)); gap:8px; }
+  .reels.h{ grid-template-columns:repeat(3, minmax(0,1fr)); }
+  .reels.h .reel:first-child{ grid-column:auto; }
+  .reel video{ border-radius:9px; cursor:pointer; }
+  .reel figcaption{ display:block; font-size:11px; line-height:1.25; margin-top:5px; }
+  .reel figcaption span{ display:none; }
+}
 
 /* team: dark split, film with a slow drift, blue box */
 .team{ position:relative; background:linear-gradient(135deg,#eaf7f5,#f5fbfa); color:var(--text); overflow:hidden; }
@@ -859,6 +876,23 @@ footer a:hover{ color:var(--blue); }
   // Team film and marketing reels: play muted while on screen, pause when off screen
   var autos = [].slice.call(document.querySelectorAll('video.auto'));
   autos.forEach(function(el){ if (small && el.dataset.mobile) el.querySelector('source').src = el.dataset.mobile; });
+  // Phones: the small reels have no controls; a tap plays the reel full screen from the start with sound
+  if (matchMedia('(max-width:600px)').matches) {
+    [].slice.call(document.querySelectorAll('.reel video')).forEach(function(el){
+      el.removeAttribute('controls');
+      var back = function(){ el.muted = true; el.loop = true; play(el); };
+      el.addEventListener('webkitendfullscreen', back);
+      el.addEventListener('fullscreenchange', function(){ if (!document.fullscreenElement) back(); });
+      el.addEventListener('click', function(){
+        if (el.preload === 'none') { el.preload = 'auto'; el.load(); }
+        el.loop = false; el.muted = false; el.volume = 1;
+        try { el.currentTime = 0; } catch (e) {}
+        play(el);
+        if (el.webkitEnterFullscreen) { try { el.webkitEnterFullscreen(); } catch (e) {} }
+        else if (el.requestFullscreen) { var f = el.requestFullscreen(); if (f && f.catch) f.catch(function(){}); }
+      });
+    });
+  }
   if (!reduced && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function(es){
       es.forEach(function(e){
