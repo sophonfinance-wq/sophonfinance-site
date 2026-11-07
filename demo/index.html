@@ -37,6 +37,10 @@ a{ color:inherit; text-decoration:none; }
 .tabs button[aria-selected="true"]{ background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; box-shadow:0 6px 16px -8px rgba(14,147,132,.7); }
 .home{ flex:none; font:600 12.5px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--blue-d); padding:10px 4px; }
 
+.subj{ display:flex; justify-content:center; flex-wrap:wrap; gap:8px; padding:9px 16px; background:#fff; border-bottom:1px solid var(--line); }
+.subj button{ appearance:none; cursor:pointer; padding:8px 15px; border-radius:999px; border:1px solid var(--line); background:#fff; color:var(--ink); font:600 13.5px/1 var(--body); touch-action:manipulation; }
+.subj button small{ margin-left:6px; font:500 12px/1 var(--body); color:var(--text-2); }
+.subj button[aria-pressed="true"]{ border-color:#0e9384; box-shadow:0 0 0 1px #0e9384 inset; color:#0a7469; }
 .note{ margin:0; padding:7px 16px; text-align:center; font-size:13px; color:var(--text-2); background:#fff; border-bottom:1px solid var(--line); }
 .stage{ position:relative; flex:1; min-height:0; }
 .stage iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; background:#fff; }
@@ -52,6 +56,7 @@ a{ color:inherit; text-decoration:none; }
   .tabs{ order:3; width:100%; margin:0; justify-content:space-between; }
   .tabs button{ flex:1; padding:9px 6px; font-size:12px; }
   .note{ font-size:12px; padding:6px 12px; }
+  .subj{ gap:6px; padding:7px 12px; } .subj button{ flex:1; padding:8px 6px; font-size:12.5px; } .subj button small{ display:none; }
 }
 </style>
 </head>
@@ -68,6 +73,7 @@ a{ color:inherit; text-decoration:none; }
   </nav>
   <a class="home" href="../">&larr; Site</a>
 </header>
+<nav class="subj" id="subj" aria-label="Choose what the machine works on"></nav>
 <p class="note">A recorded run of the real machine on an invented demo company. Press the run button to watch it work.</p>
 <main class="stage" id="stage" role="tabpanel">
   <iframe id="frame" title="Fast Finance machine demo" allow="fullscreen"></iframe>
@@ -78,20 +84,35 @@ a{ color:inherit; text-decoration:none; }
   var M = ['tax', 'accounting', 'audit'];
   var NAMES = { tax:'Tax Machine', accounting:'Accounting Machine', audit:'Audit Machine' };
   var READY = { tax:true, accounting:true, audit:true }; // switched on as each demo is published
+  var SUBJ = {
+    tax:        [['tax','Form 1065','Partnership'], ['tax-941','Form 941','Quarterly payroll']],
+    accounting: [['accounting','AP review','Vendor invoices'], ['accounting-bankrec','Bank reconciliation','Month end']],
+    audit:      [['audit','Year-end audit','Full engagement'], ['audit-cash','Cash audit','Bank confirmations']]
+  };
+  var subjBar = document.getElementById('subj'), last = { tax:'tax', accounting:'accounting', audit:'audit' };
+  function machineOf(id){ for (var k in SUBJ) for (var i = 0; i < SUBJ[k].length; i++) if (SUBJ[k][i][0] === id) return k; return null; }
   var frame = document.getElementById('frame'), stage = document.getElementById('stage');
   var tabs = [].slice.call(document.querySelectorAll('.tabs button'));
-  function pick(m, push){
-    if (M.indexOf(m) < 0) m = 'tax';
+  function pick(id, push){
+    var m = machineOf(id) || 'tax';
+    if (!machineOf(id)) id = last[m];
+    last[m] = id;
+    subjBar.innerHTML = '';
+    SUBJ[m].forEach(function(x){
+      var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-pressed', x[0] === id);
+      b.appendChild(document.createTextNode(x[1])); var n = document.createElement('small'); n.textContent = x[2]; b.appendChild(n);
+      b.addEventListener('click', function(){ pick(x[0], true); }); subjBar.appendChild(b);
+    });
     tabs.forEach(function(t){ t.setAttribute('aria-selected', t.getAttribute('data-m') === m); });
     stage.setAttribute('aria-labelledby', 'm-' + m);
     frame.title = 'Fast Finance ' + NAMES[m] + ' demo';
     document.title = NAMES[m] + ' demo | Fast Finance';
-    var src = m + '/index.html';
+    var src = id + '/index.html';
     if (READY[m]) { stage.classList.remove('empty'); if (frame.getAttribute('src') !== src) frame.src = src; }
     else { stage.classList.add('empty'); frame.removeAttribute('src'); }
-    if (push) history.replaceState(null, '', '#' + m);
+    if (push) history.replaceState(null, '', '#' + id);
   }
-  tabs.forEach(function(t){ t.addEventListener('click', function(){ pick(t.getAttribute('data-m'), true); }); });
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ pick(last[t.getAttribute('data-m')], true); }); });
   pick((location.hash || '').slice(1) || (READY.tax ? 'tax' : 'accounting'), false);
   window.addEventListener('hashchange', function(){ pick(location.hash.slice(1), false); });
 })();

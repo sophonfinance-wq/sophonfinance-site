@@ -218,6 +218,12 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .demo .intro{ color:var(--text-2); margin:0 0 16px; font-size:17px; }
 .demo-sw{ display:inline-flex; gap:4px; padding:4px; background:var(--teal-50); border:1px solid var(--line); border-radius:999px; }
 .demo-sw button{ appearance:none; border:0; background:none; cursor:pointer; padding:10px 20px; border-radius:999px; font:600 13px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--ink); }
+.demo-subj{ display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 0; }
+.demo-subj button{ appearance:none; cursor:pointer; display:inline-flex; align-items:baseline; gap:7px; padding:9px 15px; border-radius:999px; border:1px solid var(--line); background:#fff; color:var(--ink); font:600 14px/1.1 var(--body); touch-action:manipulation; transition:border-color .2s, box-shadow .2s; }
+.demo-subj button small{ font:500 12.5px/1 var(--body); color:var(--text-2); }
+.demo-subj button[aria-pressed="true"]{ border-color:#0e9384; box-shadow:0 0 0 1px #0e9384 inset, 0 6px 16px -10px rgba(14,147,132,.7); color:#0a7469; }
+.demo-subj button[aria-pressed="true"] small{ color:#0a7469; }
+@media (max-width:600px){ .demo-subj{ gap:6px; margin-top:10px; } .demo-subj button{ flex:1; justify-content:center; flex-direction:column; align-items:center; gap:3px; padding:9px 8px; font-size:13.5px; } .demo-subj button small{ font-size:11.5px; } }
 .demo-sw button[aria-selected="true"]{ background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; box-shadow:0 6px 16px -8px rgba(14,147,132,.7); }
 .demo-box{ position:relative; margin-top:14px; height:min(78vh, 780px); border-radius:18px; overflow:hidden; background:#fff; box-shadow:0 0 0 1px rgba(14,147,132,.20), 0 30px 70px -34px rgba(14,147,132,.45), 0 18px 40px -30px rgba(15,39,48,.35); }
 .demo-box iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; background:#fff; }
@@ -715,6 +721,7 @@ footer a:hover{ color:var(--blue); }
         <button role="tab" data-m="accounting" aria-selected="false">Accounting</button>
         <button role="tab" data-m="audit" aria-selected="false">Audit</button>
       </div>
+      <div class="demo-subj" id="demoSubj" role="group" aria-label="Choose what the machine works on"></div>
       <div class="demo-box" id="demoBox">
         <div class="demo-bar">
           <div class="demo-bar-sw" role="tablist" aria-label="Machines">
@@ -962,28 +969,48 @@ footer a:hover{ color:var(--blue); }
   v.addEventListener('volumechange', function(){ snd.hidden = !v.muted; });
   // Try the machines
   var DEMO = {
-    tax:        { name:'Tax Machine',        sub:'Prepares a partnership return, Form 1065.', ic:'assets/icons/tax.jpg', ready:true },
-    accounting: { name:'Accounting Machine', sub:'Reviews a month of vendor invoices.',       ic:'assets/icons/acc.jpg', ready:true },
-    audit:      { name:'Audit Machine',      sub:'Builds year-end audit workpapers.',          ic:'assets/icons/aud.jpg', ready:true }
+    tax:        { name:'Tax Machine',        ic:'assets/icons/tax.jpg', ready:true, pick:0, subjects:[
+      { id:'tax',                label:'Form 1065',           note:'Partnership',        sub:'Prepares a partnership return, Form 1065.' },
+      { id:'tax-941',            label:'Form 941',            note:'Quarterly payroll',  sub:'Prepares the quarterly payroll tax return, Form 941.' } ] },
+    accounting: { name:'Accounting Machine', ic:'assets/icons/acc.jpg', ready:true, pick:0, subjects:[
+      { id:'accounting',         label:'AP review',           note:'Vendor invoices',    sub:'Reviews a month of vendor invoices.' },
+      { id:'accounting-bankrec', label:'Bank reconciliation', note:'Month end',          sub:'Reconciles a month of bank activity to the books.' } ] },
+    audit:      { name:'Audit Machine',      ic:'assets/icons/aud.jpg', ready:true, pick:0, subjects:[
+      { id:'audit',              label:'Year-end audit',      note:'Full engagement',    sub:'Builds year-end audit workpapers.' },
+      { id:'audit-cash',         label:'Cash audit',          note:'Bank confirmations', sub:'Tests cash with bank confirmations and reconciliations.' } ] }
   };
+  var dSubj = document.getElementById('demoSubj');
+  function demoSubjects(m){
+    var d = DEMO[m]; dSubj.innerHTML = '';
+    d.subjects.forEach(function(x, i){
+      var b = document.createElement('button'); b.type = 'button';
+      b.setAttribute('aria-pressed', i === d.pick);
+      b.appendChild(document.createTextNode(x.label));
+      var n = document.createElement('small'); n.textContent = x.note; b.appendChild(n);
+      b.addEventListener('click', function(){ d.pick = i; demoPick(m, dBox.classList.contains('live')); });
+      dSubj.appendChild(b);
+    });
+  }
   var dBox = document.getElementById('demoBox'), dFrame = document.getElementById('demoFrame'), dCur = 'tax';
   var dSw = [].slice.call(document.querySelectorAll('.demo-sw button, .demo-bar-sw button'));
   var phone = matchMedia('(max-width:600px)');
   function demoFull(on){ dBox.classList.toggle('is-full', on); document.documentElement.style.overflow = on ? 'hidden' : ''; }
   function demoPick(m, start){
-    dCur = m; var d = DEMO[m];
+    dCur = m; var d = DEMO[m], x = d.subjects[d.pick];
     dSw.forEach(function(b){ b.setAttribute('aria-selected', b.getAttribute('data-m') === m); });
+    demoSubjects(m);
     document.getElementById('demoName').textContent = d.name;
-    document.getElementById('demoSub').textContent = d.sub;
+    document.getElementById('demoSub').textContent = x.sub;
     document.getElementById('demoIc').src = d.ic;
-    document.getElementById('demoFull').href = 'demo/#' + m;
+    document.getElementById('demoFull').href = 'demo/#' + x.id;
     document.getElementById('demoGo').hidden = !d.ready;
     document.getElementById('demoSoon').hidden = d.ready;
     document.getElementById('demoFull').hidden = !d.ready;
-    if (start && d.ready) { dFrame.src = 'demo/' + m + '/index.html'; dBox.classList.add('live'); if (phone.matches) demoFull(true); }
+    if (start && d.ready) { dFrame.src = 'demo/' + x.id + '/index.html'; dBox.classList.add('live'); if (phone.matches) demoFull(true); }
     else { dFrame.removeAttribute('src'); dBox.classList.remove('live'); demoFull(false); }
   }
   dSw.forEach(function(b){ b.addEventListener('click', function(){ demoPick(b.getAttribute('data-m'), dBox.classList.contains('live')); }); });
+  demoSubjects(dCur);
   document.getElementById('demoGo').addEventListener('click', function(){ demoPick(dCur, true); });
   document.getElementById('demoX').addEventListener('click', function(){ demoPick(dCur, false); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && dBox.classList.contains('is-full')) demoPick(dCur, false); });
