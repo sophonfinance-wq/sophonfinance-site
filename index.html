@@ -280,17 +280,31 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .techdiv h2{ font-size:clamp(26px, 3vw, 40px); line-height:1.15; margin-bottom:8px; }
 .techdiv .intro{ color:var(--text-2); max-width:44em; margin:0 0 22px; font-size:17px; }
 .td-grid{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
-.td-grid li{ display:grid; grid-template-columns:44px minmax(0,1fr); grid-template-rows:auto auto; column-gap:14px; row-gap:3px; align-items:center; padding:16px 18px; background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 10px 26px -22px rgba(12,59,67,.5); }
+.td-grid{ align-items:start; }
+.td-card{ background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 10px 26px -22px rgba(12,59,67,.5); transition:border-color .2s, box-shadow .2s; }
+.td-card[open]{ border-color:var(--blue-l); box-shadow:0 18px 40px -26px rgba(14,147,132,.55); }
+.td-card summary{ list-style:none; cursor:pointer; position:relative; display:grid; grid-template-columns:44px minmax(0,1fr); grid-template-rows:auto auto; column-gap:14px; row-gap:3px; align-items:center; padding:16px 44px 16px 18px; }
+.td-card summary::-webkit-details-marker{ display:none; }
+.td-card summary:hover b{ color:var(--blue); }
+.td-plus{ position:absolute; right:16px; top:50%; width:20px; height:20px; margin-top:-10px; border-radius:50%; background:var(--teal-50); }
+.td-plus::before, .td-plus::after{ content:""; position:absolute; left:5px; right:5px; top:9px; height:2px; background:var(--blue); border-radius:2px; transition:transform .2s; }
+.td-plus::after{ transform:rotate(90deg); }
+.td-card[open] .td-plus::after{ transform:rotate(0deg); }
+.td-more{ padding:0 18px 16px 76px; }
+.td-more ul{ margin:0 0 6px; padding:0 0 0 16px; display:grid; gap:6px; }
+.td-more li{ font-size:14.5px; line-height:1.45; color:var(--text); }
+.td-more li::marker{ color:var(--blue); }
+.td-more .more{ padding:8px 0 0; font-size:12.5px; }
 .td-i{ grid-row:1 / span 2; width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--teal-50); color:var(--blue); }
 .td-i svg{ width:22px; height:22px; }
 .td-grid b{ font:500 17px/1.2 var(--head); color:var(--ink); }
-.td-grid li > span:last-child{ font-size:14.5px; line-height:1.4; color:var(--text-2); }
+.td-card summary > span:last-of-type{ font-size:14.5px; line-height:1.4; color:var(--text-2); }
 .td-foot{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 26px; margin-top:18px; }
 .td-partner{ display:inline-flex; align-items:center; gap:10px; padding:8px 14px 8px 10px; border:1px solid var(--line); border-radius:999px; background:#fff; color:var(--text-2); font:600 12px/1 var(--body); letter-spacing:.1em; text-transform:uppercase; }
 .td-partner img{ height:22px; width:auto; }
 .td-partner:hover{ border-color:var(--blue); color:var(--blue); }
 @media (max-width:980px){ .td-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (max-width:600px){ .techdiv{ padding:30px 0 32px; } .td-grid{ grid-template-columns:minmax(0,1fr); gap:9px; } .td-grid li{ padding:12px 14px; } .td-foot{ gap:10px 18px; } }
+@media (max-width:600px){ .techdiv{ padding:30px 0 32px; } .td-grid{ grid-template-columns:minmax(0,1fr); gap:9px; } .td-card summary{ padding:12px 40px 12px 14px; } .td-more{ padding:0 14px 14px 72px; } .td-foot{ gap:10px 18px; } }
 
 /* marketing division */
 .mkt{ padding:44px 0 48px; }
@@ -508,14 +522,32 @@ footer a:hover{ color:var(--blue); }
   <section class="techdiv" id="tech" aria-labelledby="techH">
     <div class="wrap">
       <h2 id="techH">Technology and Artificial Intelligence <span class="acc">Division.</span></h2>
-      <p class="intro">Led by Thushara Wijeratna, founder of Enasal. We architect AI and software for large corporations.</p>
+      <p class="intro">We architect AI and software for large corporations.</p>
       <ul class="td-grid">
-          <li><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></span><b>Local AI architecture</b><span>Private AI inside your environment, on the latest, lowest-cost models.</span></li>
-          <li><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="4.5" cy="6" r="1.8"/><circle cx="19.5" cy="6" r="1.8"/><circle cx="4.5" cy="18" r="1.8"/><circle cx="19.5" cy="18" r="1.8"/><path d="M6 7.2 9.8 10M18 7.2 14.2 10M6 16.8 9.8 14M18 16.8 14.2 14"/></svg></span><b>AI agents and applications</b><span>Agents that work with your systems, data and people.</span></li>
-          <li><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h5l2-5 3 10 2-5h4"/></svg></span><b>Workflow automation</b><span>Repetitive, expensive processes turned into automated systems.</span></li>
-          <li><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="16" r="3"/><path d="m20.2 18.2 1.8 1.8"/></svg></span><b>Data to answers</b><span>Spreadsheets, PDFs and databases, searchable in plain language.</span></li>
-          <li><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><b>Mobile apps</b><span>iPhone and Android apps, from design to the app stores.</span></li>
-          <li><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.95A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></svg></span><b>Cloud and scale</b><span>High-throughput platforms, built from zero to one and scaled.</span></li>
+          <li><details class="td-card">
+            <summary><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></span><b>Local AI architecture</b><span>Private AI inside your environment, on the latest, lowest-cost models.</span><i class="td-plus" aria-hidden="true"></i></summary>
+            <div class="td-more"><ul><li>The AI runs inside your own cloud account or servers, so company data never leaves your environment.</li><li>We pick the latest models for each task and balance quality against running cost.</li><li>Architecture covers the secure data layer, search over your documents, model serving, access control and audit logs.</li><li>We hand it over with documentation, or run and scale it for you.</li></ul><a class="more" href="#contact">Talk to us about this</a></div>
+          </details></li>
+          <li><details class="td-card">
+            <summary><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="4.5" cy="6" r="1.8"/><circle cx="19.5" cy="6" r="1.8"/><circle cx="4.5" cy="18" r="1.8"/><circle cx="19.5" cy="18" r="1.8"/><path d="M6 7.2 9.8 10M18 7.2 14.2 10M6 16.8 9.8 14M18 16.8 14.2 14"/></svg></span><b>AI agents and applications</b><span>Agents that work with your systems, data and people.</span><i class="td-plus" aria-hidden="true"></i></summary>
+            <div class="td-more"><ul><li>Agents read email, documents and spreadsheets and take actions in the systems you already use.</li><li>They connect to Slack, email, Excel, databases and your accounting or ERP system.</li><li>Anything final waits for a person to approve it, and every action is logged.</li></ul><a class="more" href="#contact">Talk to us about this</a></div>
+          </details></li>
+          <li><details class="td-card">
+            <summary><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h5l2-5 3 10 2-5h4"/></svg></span><b>Workflow automation</b><span>Repetitive, expensive processes turned into automated systems.</span><i class="td-plus" aria-hidden="true"></i></summary>
+            <div class="td-more"><ul><li>We map one repetitive process, prototype it on your real data, then put it into production.</li><li>Typical targets: reconciliations, invoice review, reporting packs and data entry.</li><li>We measure the hours before and after, so the saving is on record.</li></ul><a class="more" href="#contact">Talk to us about this</a></div>
+          </details></li>
+          <li><details class="td-card">
+            <summary><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="16" r="3"/><path d="m20.2 18.2 1.8 1.8"/></svg></span><b>Data to answers</b><span>Spreadsheets, PDFs and databases, searchable in plain language.</span><i class="td-plus" aria-hidden="true"></i></summary>
+            <div class="td-more"><ul><li>Ask questions in plain language across spreadsheets, PDFs, databases and internal knowledge.</li><li>Each answer points to the file, page or cell it came from.</li><li>Available inside Slack through ENASAL’s AI Slack app.</li></ul><a class="more" href="#contact">Talk to us about this</a></div>
+          </details></li>
+          <li><details class="td-card">
+            <summary><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><b>Mobile apps</b><span>iPhone and Android apps, from design to the app stores.</span><i class="td-plus" aria-hidden="true"></i></summary>
+            <div class="td-more"><ul><li>iPhone and Android apps from one codebase: design, build, testing and app store release.</li><li>Example: the Model Macros nutrition and fitness app in our marketing work.</li><li>Connected to your data and AI services where it helps.</li></ul><a class="more" href="#contact">Talk to us about this</a></div>
+          </details></li>
+          <li><details class="td-card">
+            <summary><span class="td-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.95A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></svg></span><b>Cloud and scale</b><span>High-throughput platforms, built from zero to one and scaled.</span><i class="td-plus" aria-hidden="true"></i></summary>
+            <div class="td-more"><ul><li>High-throughput platforms, taken from zero to one and then scaled.</li><li>Cloud architecture with monitoring and cost control built in.</li></ul><a class="more" href="#contact">Talk to us about this</a></div>
+          </details></li>
       </ul>
       <div class="td-foot">
         <a class="td-partner" href="https://app.enasal.dev" target="_blank" rel="noopener"><img src="assets/enasal-logo-dark.png" alt="ENASAL" loading="lazy"><span>AI engineering partner</span></a>
@@ -578,7 +610,7 @@ footer a:hover{ color:var(--blue); }
           <div class="cg cg-en">
             <a class="cg-head" href="https://app.enasal.dev" target="_blank" rel="noopener">
               <img src="assets/enasal-logo-dark.png" alt="ENASAL" class="cg-logo">
-              <span><b>Thushara Wijeratna</b><small>Founder, Enasal &middot; AI Engineer</small></span>
+              <span><b>Thush W.</b><small>Founder, Enasal &middot; AI Engineer</small></span>
             </a>
             <ul>
               <li><span class="bf"><b>30+</b><small>Years</small></span><span class="bt">Engineering experience</span></li>
