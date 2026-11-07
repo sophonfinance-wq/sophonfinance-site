@@ -17,13 +17,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#121418; --text:#2b2e34; --text-2:#62666f; --line:#e7e7ea; --teal-50:#f6f6f7;
-  --blue:#d71920; --blue-d:#a8121a; --blue-l:#e5383e;
+  --ink:#0f2730; --text:#2c3a40; --text-2:#5b6d73; --line:#dbe9e7; --teal-50:#eaf7f5;
+  --blue:#0e9384; --blue-d:#0a7469; --blue-l:#5fd0c3;
   --head:'Jost','Segoe UI',Arial,sans-serif; --body:'Source Sans 3','Segoe UI',Arial,sans-serif;
 }
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
-body{ margin:0; display:flex; flex-direction:column; background:#f8f8f9; color:var(--text); font-family:var(--body); -webkit-text-size-adjust:100%; }
+body{ margin:0; display:flex; flex-direction:column; background:#f3faf8; color:var(--text); font-family:var(--body); -webkit-text-size-adjust:100%; }
 a{ color:inherit; text-decoration:none; }
 
 .bar{ position:sticky; top:0; z-index:5; display:flex; align-items:center; gap:14px; padding:10px max(16px, env(safe-area-inset-left)) 10px max(16px, env(safe-area-inset-left)); background:rgba(255,255,255,.92); -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); box-shadow:0 1px 0 var(--line); }
@@ -34,13 +34,13 @@ a{ color:inherit; text-decoration:none; }
 
 .tabs{ display:flex; gap:6px; margin-left:auto; padding:4px; background:var(--teal-50); border:1px solid var(--line); border-radius:999px; }
 .tabs button{ appearance:none; border:0; background:none; cursor:pointer; padding:9px 16px; border-radius:999px; font:600 13px/1 var(--body); letter-spacing:.06em; text-transform:uppercase; color:var(--ink); white-space:nowrap; }
-.tabs button[aria-selected="true"]{ background:linear-gradient(95deg,#b3151c,#d71920 55%,#8f1015); color:#fff; box-shadow:0 6px 16px -8px rgba(215,25,32,.7); }
+.tabs button[aria-selected="true"]{ background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; box-shadow:0 6px 16px -8px rgba(14,147,132,.7); }
 .home{ flex:none; font:600 12.5px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--blue-d); padding:10px 4px; }
 
 .subj{ display:flex; justify-content:center; flex-wrap:wrap; gap:8px; padding:9px 16px; background:#fff; border-bottom:1px solid var(--line); }
 .subj button{ appearance:none; cursor:pointer; padding:8px 15px; border-radius:999px; border:1px solid var(--line); background:#fff; color:var(--ink); font:600 13.5px/1 var(--body); touch-action:manipulation; }
 .subj button small{ margin-left:6px; font:500 12px/1 var(--body); color:var(--text-2); }
-.subj button[aria-pressed="true"]{ border-color:#d71920; box-shadow:0 0 0 1px #d71920 inset; color:#a8121a; }
+.subj button[aria-pressed="true"]{ border-color:#0e9384; box-shadow:0 0 0 1px #0e9384 inset; color:#0a7469; }
 .note{ margin:0; padding:7px 16px; text-align:center; font-size:13px; color:var(--text-2); background:#fff; border-bottom:1px solid var(--line); }
 .stage{ position:relative; flex:1; min-height:0; }
 .stage iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; background:#fff; }
@@ -63,7 +63,7 @@ a{ color:inherit; text-decoration:none; }
 <body>
 <header class="bar">
   <a class="brand" href="../" aria-label="F1 Finance home">
-    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#111317"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#e5383e"/></g></svg>
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg>
     <span><b>F1 Finance</b><span>Try the machines</span></span>
   </a>
   <nav class="tabs" role="tablist" aria-label="Machines">
