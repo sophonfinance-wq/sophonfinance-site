@@ -25,6 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <script>try{if(sessionStorage.getItem("ffSplash")||matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("ffs-seen")}else{sessionStorage.setItem("ffSplash","1")}}catch(e){}</script>
+<script>document.documentElement.classList.add("fx")</script>
 <style>
 :root{
   --ink:#0f2730; --dark:#0f2730; --dark-2:#16343d; --dark-3:#24474f; --text:#2c3a40; --text-2:#5b6d73; --line:#dbe9e7; --gray:#f1f8f7; --teal-50:#eaf7f5; --teal-100:#d5f0ec;
@@ -89,6 +90,20 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 @media (prefers-reduced-motion:reduce){ .rot > span{ animation:none; } .rot > span:first-child{ opacity:1; } }
 
 .info[hidden]{ display:none !important; }
+/* scroll experience (assets/fx.js) */
+.fx-progress{ position:fixed; left:0; top:0; right:0; height:3px; z-index:120; transform:scaleX(0); transform-origin:0 50%; background:linear-gradient(90deg,#0e9384,#5fd0c3,#0aa5c8); box-shadow:0 0 12px rgba(95,208,195,.6); pointer-events:none; }
+.fx [data-r]{ opacity:0; transform:translateY(28px); filter:blur(6px); transition:opacity .8s cubic-bezier(.2,.7,.2,1) var(--rd,0ms), transform .8s cubic-bezier(.2,.7,.2,1) var(--rd,0ms), filter .8s ease var(--rd,0ms); }
+.fx [data-r].in{ opacity:1; transform:none; filter:none; }
+section h2 .acc{ position:relative; }
+.fx section h2 .acc::after{ content:""; position:absolute; left:0; right:.15em; bottom:-.08em; height:3px; border-radius:3px; background:linear-gradient(90deg,#0e9384,#5fd0c3); transform:scaleX(0); transform-origin:0 50%; transition:transform 1s cubic-bezier(.2,.7,.2,1) .25s; }
+.fx section h2.drawn .acc::after{ transform:scaleX(1); }
+.stage .player{ will-change:transform, opacity; transform-origin:50% 0; }
+.fx-spot{ position:relative; }
+.fx-spot::after{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; opacity:0; transition:opacity .25s; background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%), rgba(95,208,195,.22), transparent 65%); }
+.fx-spot:hover::after{ opacity:1; }
+.tab[aria-selected="true"].fx-spot::after{ background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.22), transparent 65%); }
+@media (prefers-reduced-motion:reduce){ .fx [data-r]{ opacity:1; transform:none; filter:none; transition:none; } }
+
 /* header: the headline is the brand line */
 .hl h1{ margin:0; font:300 clamp(17px, 1.9vw, 27px)/1.1 var(--head); color:var(--ink); white-space:nowrap; letter-spacing:0; }
 .hl h1 .acc{ color:var(--blue); }
@@ -815,5 +830,6 @@ footer a:hover{ color:var(--blue); }
 })();
 </script>
 <script src="assets/chat.js" defer></script>
+<script src="assets/fx.js" defer></script>
 </body>
 </html>
