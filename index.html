@@ -199,8 +199,8 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .tabs .dtab{ text-decoration:none; background:none; border:0; box-shadow:none; -webkit-backdrop-filter:none; backdrop-filter:none; min-height:0; padding:0; margin-top:-2px; justify-content:center; }
 .tabs .dtab::after{ display:none; }
 .dtab:hover .dm{ filter:brightness(1.06); }
-.dm{ display:inline-flex; align-items:center; justify-content:center; gap:6px; width:100%; padding:9px 12px; border-radius:999px; background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; font:600 12px/1 var(--body); font-style:normal; letter-spacing:.14em; text-transform:uppercase; box-shadow:0 6px 14px -8px rgba(14,147,132,.85); }
-.dm svg{ width:11px; height:11px; }
+.dm{ display:inline-flex; align-items:center; justify-content:center; gap:7px; width:100%; padding:11px 12px; border-radius:999px; background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; font:600 14px/1 var(--body); font-style:normal; letter-spacing:.14em; text-transform:uppercase; box-shadow:0 6px 14px -8px rgba(14,147,132,.85); }
+.dm svg{ width:13px; height:13px; }
 /* glowing pulse plus a light sheen so visitors notice the demos */
 .dm{ position:relative; overflow:hidden; animation:dmGlow 2.4s ease-in-out infinite; }
 .dm::after{ content:""; position:absolute; top:0; bottom:0; left:-60%; width:40%; background:linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent); transform:skewX(-20deg); animation:dmSheen 3.2s ease-in-out infinite; }
@@ -230,7 +230,7 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .demo-card small{ color:var(--text-2); font-size:14px; }
 .demo-full{ margin-top:6px; }
 @media (max-width:600px){
-  .dm{ font-size:11px; padding:8px 8px; gap:5px; letter-spacing:.12em; }
+  .dm{ font-size:13px; padding:10px 8px; gap:6px; letter-spacing:.12em; } .dm svg{ width:12px; height:12px; }
   .demo{ padding:28px 0 26px; }
   .demo .intro{ font-size:16px; margin-bottom:12px; }
   .demo-sw{ display:flex; }
