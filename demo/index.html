@@ -56,7 +56,7 @@ a{ color:inherit; text-decoration:none; }
   .tabs{ order:3; width:100%; margin:0; justify-content:space-between; }
   .tabs button{ flex:1; padding:9px 6px; font-size:12px; }
   .note{ font-size:12px; padding:6px 12px; }
-  .subj{ gap:6px; padding:7px 12px; } .subj button{ flex:1; padding:8px 6px; font-size:12.5px; } .subj button small{ display:none; }
+  .subj{ display:grid; grid-template-columns:1fr 1fr; gap:6px; padding:7px 12px; } .subj button{ flex:1; padding:8px 6px; font-size:12.5px; } .subj button small{ display:none; }
 }
 </style>
 </head>
@@ -85,7 +85,7 @@ a{ color:inherit; text-decoration:none; }
   var NAMES = { tax:'Tax Machine', accounting:'Accounting Machine', audit:'Audit Machine' };
   var READY = { tax:true, accounting:true, audit:true }; // switched on as each demo is published
   var SUBJ = {
-    tax:        [['tax','Form 1065','Partnership'], ['tax-941','Form 941','Quarterly payroll']],
+    tax:        [['tax','Form 1065','Partnership'], ['tax-941','Form 941','Quarterly payroll'], ['tax-excise','Sales & B&O tax','WA excise, monthly'], ['tax-ui','Unemployment','WA ESD, quarterly']],
     accounting: [['accounting','AP review','Vendor invoices'], ['accounting-bankrec','Bank reconciliation','Month end']],
     audit:      [['audit','Year-end audit','Full engagement'], ['audit-cash','Cash audit','Bank confirmations']]
   };

@@ -224,7 +224,7 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .demo-subj button small{ font:500 12.5px/1 var(--body); color:var(--text-2); }
 .demo-subj button[aria-pressed="true"]{ border-color:#0e9384; box-shadow:0 0 0 1px #0e9384 inset, 0 6px 16px -10px rgba(14,147,132,.7); color:#0a7469; }
 .demo-subj button[aria-pressed="true"] small{ color:#0a7469; }
-@media (max-width:600px){ .demo-subj{ gap:6px; margin-top:10px; } .demo-subj button{ flex:1; justify-content:center; flex-direction:column; align-items:center; gap:3px; padding:9px 8px; font-size:13.5px; } .demo-subj button small{ font-size:11.5px; } }
+@media (max-width:600px){ .demo-subj{ display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:10px; } .demo-subj button{ flex:1; justify-content:center; flex-direction:column; align-items:center; gap:3px; padding:9px 8px; font-size:13.5px; } .demo-subj button small{ font-size:11.5px; } }
 .demo-sw button[aria-selected="true"]{ background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; box-shadow:0 6px 16px -8px rgba(14,147,132,.7); }
 .demo-box{ position:relative; margin-top:14px; height:min(78vh, 780px); border-radius:18px; overflow:hidden; background:#fff; box-shadow:0 0 0 1px rgba(14,147,132,.20), 0 30px 70px -34px rgba(14,147,132,.45), 0 18px 40px -30px rgba(15,39,48,.35); }
 .demo-box iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; background:#fff; }
@@ -972,7 +972,9 @@ footer a:hover{ color:var(--blue); }
   var DEMO = {
     tax:        { name:'Tax Machine',        ic:'assets/icons/tax.jpg', ready:true, pick:0, subjects:[
       { id:'tax',                label:'Form 1065',           note:'Partnership',        sub:'Prepares a partnership return, Form 1065.' },
-      { id:'tax-941',            label:'Form 941',            note:'Quarterly payroll',  sub:'Prepares the quarterly payroll tax return, Form 941.' } ] },
+      { id:'tax-941',            label:'Form 941',            note:'Quarterly payroll',  sub:'Prepares the quarterly payroll tax return, Form 941.' },
+      { id:'tax-excise', label:'Sales & B&O tax', note:'WA excise, monthly', sub:'Prepares the Washington excise return: B&O, sales and use tax.' },
+      { id:'tax-ui', label:'Unemployment', note:'WA ESD, quarterly', sub:'Prepares the Washington quarterly unemployment insurance report.' } ] },
     accounting: { name:'Accounting Machine', ic:'assets/icons/acc.jpg', ready:true, pick:0, subjects:[
       { id:'accounting',         label:'AP review',           note:'Vendor invoices',    sub:'Reviews a month of vendor invoices.' },
       { id:'accounting-bankrec', label:'Bank reconciliation', note:'Month end',          sub:'Reconciles a month of bank activity to the books.' } ] },
