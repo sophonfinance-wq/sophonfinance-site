@@ -241,15 +241,22 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .demo-card small{ color:var(--text-2); font-size:14px; }
 .demo-full{ margin-top:6px; }
 .demo-bar{ display:none; }
-/* iPhone: a started demo fills the whole screen like an app, with a slim switcher and a close button */
+/* A started demo fills the whole screen on every device, with what is playing and a clear Exit button on top */
+.demo-box.is-full{ position:fixed; inset:0; z-index:2147483000; height:auto; margin:0; border-radius:0; display:flex; flex-direction:column; padding:env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left); background:#fff; box-shadow:none; }
+.demo-box.is-full .demo-bar{ display:flex; align-items:center; gap:12px; padding:8px 10px 8px 16px; background:#fff; border-bottom:1px solid var(--line); }
+.demo-box.is-full iframe{ position:relative; inset:auto; flex:1; width:100%; height:auto; }
+.demo-box:fullscreen{ width:100vw; height:100vh; }
+.demo-bar-t{ flex:1; min-width:0; display:flex; align-items:baseline; gap:10px; overflow:hidden; white-space:nowrap; }
+.demo-bar-t b{ font:600 15px/1.2 var(--head); color:var(--ink); }
+.demo-bar-t span{ font:500 14px/1.2 var(--body); color:var(--text-2); overflow:hidden; text-overflow:ellipsis; }
+.demo-x{ flex:none; display:inline-flex; align-items:center; gap:8px; min-height:42px; padding:0 16px; border-radius:999px; border:0; background:#0c3b43; color:#fff; font:600 13px/1 var(--body); letter-spacing:.1em; text-transform:uppercase; cursor:pointer; touch-action:manipulation; box-shadow:0 6px 16px -10px rgba(12,59,67,.8); }
+.demo-x:hover{ background:#0e9384; }
+.demo-x svg{ width:16px; height:16px; }
 @media (max-width:600px){
-  .demo-box.is-full{ position:fixed; inset:0; z-index:2147483000; height:auto; margin:0; border-radius:0; display:flex; flex-direction:column; padding-top:env(safe-area-inset-top); background:#fff; box-shadow:none; }
-  .demo-box.is-full .demo-bar{ display:flex; align-items:center; gap:8px; padding:8px 10px; background:#fff; border-bottom:1px solid var(--line); }
-  .demo-box.is-full iframe{ position:relative; inset:auto; flex:1; width:100%; height:auto; }
-  .demo-bar-sw{ flex:1; display:flex; gap:3px; padding:3px; background:var(--teal-50); border:1px solid var(--line); border-radius:999px; }
-  .demo-bar-sw button{ flex:1; appearance:none; border:0; background:none; cursor:pointer; padding:9px 4px; border-radius:999px; font:600 12px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--ink); touch-action:manipulation; }
-  .demo-bar-sw button[aria-selected="true"]{ background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; }
-  .demo-x{ flex:none; width:40px; height:40px; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--ink); font:300 28px/1 var(--head); cursor:pointer; touch-action:manipulation; }
+  .demo-box.is-full .demo-bar{ padding:7px 8px 7px 12px; gap:8px; }
+  .demo-bar-t{ flex-direction:column; align-items:flex-start; gap:2px; }
+  .demo-bar-t b{ font-size:13.5px; } .demo-bar-t span{ font-size:12.5px; max-width:100%; }
+  .demo-x{ min-height:40px; padding:0 14px; font-size:12px; }
 }
 @media (max-width:600px){
   .dm{ font-size:13px; padding:10px 8px; gap:6px; letter-spacing:.12em; } .dm svg{ width:12px; height:12px; }
@@ -725,12 +732,8 @@ footer a:hover{ color:var(--blue); }
       <div class="demo-subj" id="demoSubj" role="group" aria-label="Choose what the machine works on"></div>
       <div class="demo-box" id="demoBox">
         <div class="demo-bar">
-          <div class="demo-bar-sw" role="tablist" aria-label="Machines">
-            <button role="tab" data-m="tax" aria-selected="true">Tax</button>
-            <button role="tab" data-m="accounting" aria-selected="false">Accounting</button>
-            <button role="tab" data-m="audit" aria-selected="false">Audit</button>
-          </div>
-          <button class="demo-x" id="demoX" type="button" aria-label="Close the demo">&times;</button>
+          <span class="demo-bar-t"><b id="demoBarM">Tax Machine</b><span id="demoBarS">Form 941</span></span>
+          <button class="demo-x" id="demoX" type="button" aria-label="Exit the demo"><span>Exit</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
         </div>
         <iframe id="demoFrame" title="F1 Finance machine demo" allow="fullscreen"></iframe>
         <div class="demo-cover" id="demoCover">
@@ -743,7 +746,7 @@ footer a:hover{ color:var(--blue); }
           </div>
         </div>
       </div>
-      <a class="more demo-full" id="demoFull" href="demo/#tax-941">Open full screen</a>
+      <a class="more demo-full" id="demoFull" href="demo/#tax-941" hidden>Open full screen</a>
     </div>
   </section>
 
@@ -1007,14 +1010,21 @@ footer a:hover{ color:var(--blue); }
       b.setAttribute('aria-pressed', i === d.pick);
       b.appendChild(document.createTextNode(x.label));
       var n = document.createElement('small'); n.textContent = x.note; b.appendChild(n);
-      b.addEventListener('click', function(){ d.pick = i; demoPick(m, dBox.classList.contains('live')); });
+      b.addEventListener('click', function(){ d.pick = i; demoPick(m, true); });
       dSubj.appendChild(b);
     });
   }
   var dBox = document.getElementById('demoBox'), dFrame = document.getElementById('demoFrame'), dCur = 'tax';
-  var dSw = [].slice.call(document.querySelectorAll('.demo-sw button, .demo-bar-sw button'));
+  var dSw = [].slice.call(document.querySelectorAll('.demo-sw button'));
   var phone = matchMedia('(max-width:600px)');
-  function demoFull(on){ dBox.classList.toggle('is-full', on); document.documentElement.style.overflow = on ? 'hidden' : ''; }
+  var wantFs = false;
+  function demoFull(on){
+    dBox.classList.toggle('is-full', on); document.documentElement.style.overflow = on ? 'hidden' : '';
+    // true full screen where the browser allows it (desktop, Android, iPad); iPhone Safari fills the window instead
+    if (on && !document.fullscreenElement && dBox.requestFullscreen) { wantFs = true; var r = dBox.requestFullscreen({ navigationUI: 'hide' }); if (r && r.catch) r.catch(function(){ wantFs = false; }); }
+    if (!on && document.fullscreenElement) { wantFs = false; var x = document.exitFullscreen(); if (x && x.catch) x.catch(function(){}); }
+  }
+  document.addEventListener('fullscreenchange', function(){ if (!document.fullscreenElement && wantFs) { wantFs = false; if (dBox.classList.contains('is-full')) demoPick(dCur, false); } });
   function demoPick(m, start){
     dCur = m; var d = DEMO[m], x = d.subjects[d.pick];
     dSw.forEach(function(b){ b.setAttribute('aria-selected', b.getAttribute('data-m') === m); });
@@ -1025,11 +1035,12 @@ footer a:hover{ color:var(--blue); }
     document.getElementById('demoFull').href = 'demo/#' + x.id;
     document.getElementById('demoGo').hidden = !d.ready;
     document.getElementById('demoSoon').hidden = d.ready;
-    document.getElementById('demoFull').hidden = !d.ready;
-    if (start && d.ready) { dFrame.src = 'demo/' + x.id + '/index.html'; dBox.classList.add('live'); if (phone.matches) demoFull(true); }
+    document.getElementById('demoFull').hidden = true;
+    document.getElementById('demoBarM').textContent = d.name; document.getElementById('demoBarS').textContent = x.label + ' · ' + x.note;
+    if (start && d.ready) { var src = 'demo/' + x.id + '/index.html'; if (dFrame.getAttribute('src') !== src) dFrame.src = src; dBox.classList.add('live'); demoFull(true); }
     else { dFrame.removeAttribute('src'); dBox.classList.remove('live'); demoFull(false); }
   }
-  dSw.forEach(function(b){ b.addEventListener('click', function(){ demoPick(b.getAttribute('data-m'), dBox.classList.contains('live')); }); });
+  dSw.forEach(function(b){ b.addEventListener('click', function(){ demoPick(b.getAttribute('data-m'), false); }); });
   demoSubjects(dCur);
   document.getElementById('demoGo').addEventListener('click', function(){ demoPick(dCur, true); });
   document.getElementById('demoX').addEventListener('click', function(){ demoPick(dCur, false); });
