@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<script>try{if(sessionStorage.getItem("ffSplash")||matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("ffs-seen")}else{sessionStorage.setItem("ffSplash","1")}}catch(e){}</script>
 <style>
 :root{
   --ink:#0f2730; --dark:#0f2730; --dark-2:#16343d; --dark-3:#24474f; --text:#2c3a40; --text-2:#5b6d73; --line:#dbe9e7; --gray:#f1f8f7; --teal-50:#eaf7f5; --teal-100:#d5f0ec;
@@ -49,6 +50,20 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .btn svg{ width:16px; height:16px; flex:none; }
 .more{ display:inline-block; padding:12px 0; font:600 13.5px/1.2 var(--body); letter-spacing:.08em; text-transform:uppercase; }
 .more::after{ content:" \00BB"; }
+
+/* logo splash: about two seconds, once per visit, CSS only */
+.ff-splash{ position:fixed; inset:0; z-index:300; display:flex; align-items:center; justify-content:center; background:radial-gradient(700px 360px at 50% 50%, rgba(95,208,195,.16), transparent 70%), #fff; pointer-events:none; animation:ffsOut .5s ease 1.45s forwards; }
+.ffs-seen .ff-splash{ display:none; }
+.ffs-in{ position:relative; display:flex; align-items:center; gap:18px; }
+.ffs-in svg{ width:74px; height:74px; animation:ffsMark .6s cubic-bezier(.2,.9,.3,1.25) both; }
+.ffs-word b{ display:block; font:600 34px/1 var(--head); letter-spacing:.08em; color:#0c3b43; animation:ffsWord .5s ease .32s both; }
+.ffs-word span{ display:block; margin-top:9px; font:500 11px/1 var(--head); letter-spacing:.42em; color:#4f7a80; animation:ffsWord .5s ease .48s both; }
+.ffs-sweep{ position:absolute; left:8%; right:8%; top:50%; height:2px; background:linear-gradient(90deg, transparent, #5fd0c3, #0e9384, #5fd0c3, transparent); transform-origin:left center; animation:ffsSweep .9s ease .15s both; }
+@keyframes ffsMark{ from{ opacity:0; transform:scale(.55) rotate(-10deg); } to{ opacity:1; transform:none; } }
+@keyframes ffsWord{ from{ opacity:0; transform:translateX(-26px); filter:blur(5px); } to{ opacity:1; transform:none; filter:none; } }
+@keyframes ffsSweep{ 0%{ transform:scaleX(0); opacity:0; } 40%{ opacity:1; } 100%{ transform:scaleX(1); opacity:0; } }
+@keyframes ffsOut{ to{ opacity:0; visibility:hidden; } }
+@media (max-width:600px){ .ffs-in svg{ width:56px; height:56px; } .ffs-word b{ font-size:25px; } .ffs-word span{ font-size:9px; } }
 
 /* header */
 .top{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,.86); -webkit-backdrop-filter:saturate(1.4) blur(14px); backdrop-filter:saturate(1.4) blur(14px); box-shadow:0 1px 0 var(--line), 0 6px 18px -12px rgba(15,39,48,.25); }
@@ -253,6 +268,7 @@ footer a:hover{ color:var(--blue); }
 </style>
 </head>
 <body>
+<div class="ff-splash" aria-hidden="true"><i class="ffs-sweep"></i><div class="ffs-in"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg><div class="ffs-word"><b>FAST FINANCE</b><span>AI ENGINEERING FIRM</span></div></div></div>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="top">
