@@ -114,6 +114,20 @@ section h2 .acc{ position:relative; }
 .top .hl h1 .rot{ display:inline-grid; }
 .top .hl h1 .rot > span{ display:block; }
 .top .hl h1 .sr{ position:absolute; }
+/* the brand line reads as the page's hero title: bigger, bolder, the rotating word in a teal gradient */
+.top .hl h1{ font-weight:400; font-size:clamp(20px, 2.15vw, 31px); letter-spacing:-.01em; }
+.top .hl h1 .rot > span{ font-weight:600; background:linear-gradient(95deg,#0b7d71 0%,#0e9384 45%,#0aa5c8 100%); -webkit-background-clip:text; background-clip:text; color:transparent; padding-bottom:.08em; }
+.top .hl .h1-mark svg{ width:1.3em; height:1.3em; vertical-align:-.28em; margin-right:.4em; filter:drop-shadow(0 4px 10px rgba(12,59,67,.25)); }
+.top .hl h1{ display:flex; align-items:center; font-size:16px; }
+.top .hl .h1-mark svg{ width:48px; height:48px; vertical-align:0; margin-right:12px; display:block; }
+.top .hl h1 .hl-txt{ display:flex; flex-direction:column; }
+.top .hl h1 .hl-pre{ font:600 11.5px/1 var(--body); letter-spacing:.2em; text-transform:uppercase; color:var(--text-2); }
+.top .hl h1 .rot{ font-size:30px; line-height:1.05; margin-top:5px; }
+@media (max-width:980px){
+  .top .hl .h1-mark svg{ width:44px; height:44px; margin-right:11px; }
+  .top .hl h1 .hl-pre{ font-size:11px; }
+  .top .hl h1 .rot{ font-size:clamp(22px, 6.6vw, 28px); }
+}
 
 /* header */
 .top{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,.86); -webkit-backdrop-filter:saturate(1.4) blur(14px); backdrop-filter:saturate(1.4) blur(14px); box-shadow:0 1px 0 var(--line), 0 6px 18px -12px rgba(15,39,48,.25); }
@@ -127,6 +141,7 @@ section h2 .acc{ position:relative; }
 .nav a:hover{ color:var(--blue); }
 .nav .btn{ color:#fff; min-height:42px; padding:10px 18px; font-size:12.5px; }
 .burger{ display:none; background:none; border:0; padding:8px; cursor:pointer; }
+@media (min-width:981px) and (max-width:1180px){ .nav{ gap:22px; } }
 @media (max-width:980px){
   .burger{ display:block; }
   .nav{ position:absolute; top:76px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0; padding:8px var(--gut) 18px; box-shadow:0 12px 20px -14px rgba(0,0,0,.3); display:none; }
@@ -525,7 +540,7 @@ footer a:hover{ color:var(--blue); }
 
 <header class="top">
   <div class="wrap top-in">
-    <a class="logo hl" href="/" aria-label="Fast Finance home"><h1 id="h1"><span class="h1-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span><span class="sr">The digital AI accounting, marketing and tech firm.</span><span aria-hidden="true">The digital AI <span class="acc rot"><span>accounting firm.</span><span>marketing firm.</span><span>tech firm.</span></span></span></h1></a>
+    <a class="logo hl" href="/" aria-label="Fast Finance home"><h1 id="h1"><span class="h1-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span><span class="sr">The digital AI accounting, marketing and tech firm.</span><span class="hl-txt" aria-hidden="true"><span class="hl-pre">The digital AI</span> <span class="acc rot"><span>accounting firm.</span><span>marketing firm.</span><span>tech firm.</span></span></span></h1></a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0f2730" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -624,7 +639,7 @@ footer a:hover{ color:var(--blue); }
   <section class="mkt" id="marketing" aria-labelledby="mktH">
     <div class="wrap">
       <h2 id="mktH">Marketing <span class="acc">division.</span></h2>
-      <p class="intro">Brand films, ads and mobile apps for corporations, founders and personal brands.</p>
+      <p class="intro">Brand films, ads and mobile apps.</p>
       <div class="case">
         <div>
           <p class="case-tag">Client work &middot; Fitness</p>
