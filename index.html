@@ -383,9 +383,11 @@ a.cg-head:hover b{ color:var(--blue); }
 .c-grid{ display:grid; grid-template-columns:1fr 1.15fr; gap:56px; align-items:start; }
 .contact h2{ font-size:clamp(28px, 3.2vw, 40px); line-height:1.15; margin-bottom:16px; }
 .contact .lead{ color:var(--text-2); margin:0 0 22px; max-width:28em; }
-.contact dl{ margin:0; display:grid; grid-template-columns:auto 1fr; gap:8px 18px; font-size:16px; }
-.contact dt{ font:600 12.5px/1.9 var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); }
-.contact dd{ margin:0; }
+.contact dl{ margin:0; display:grid; grid-template-columns:44px 1fr; gap:12px 14px; align-items:center; font-size:16px; }
+.contact dt{ position:relative; }
+.ci{ display:grid; place-items:center; width:44px; height:44px; border-radius:12px; color:#fff; background:linear-gradient(135deg,#0c3b43,#0e9384); box-shadow:0 8px 18px -10px rgba(12,59,67,.6); }
+.ci svg{ width:21px; height:21px; }
+.contact dd{ margin:0; line-height:1.4; color:var(--ink); }
 form.cf{ background:var(--gray); border:1px solid var(--line); border-radius:18px; padding:30px; display:grid; gap:14px; }
 .cf .two{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
 .cf label{ display:grid; gap:6px; font:600 12px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); }
@@ -613,9 +615,9 @@ footer a:hover{ color:var(--blue); }
         <h2>Schedule a <span class="acc">free consultation.</span></h2>
         <p class="lead">Tell us about the filing, the month-end close, the audit or the campaign you want handled. We reply within one business day.</p>
         <dl>
-          <dt>Email</dt><dd><a href="mailto:contact@sophonfinance.com">contact@sophonfinance.com</a></dd>
-          <dt>Office</dt><dd>Rainier Square, 4th &amp; Union<br>Seattle, Washington</dd>
-          <dt>Web</dt><dd>SophonFinance.com</dd>
+          <dt><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span class="sr">Email</span></dt><dd><a href="mailto:contact@sophonfinance.com">contact@sophonfinance.com</a></dd>
+          <dt><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span><span class="sr">Office</span></dt><dd>Rainier Square, 4th &amp; Union<br>Seattle, Washington</dd>
+          <dt><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></svg></span><span class="sr">Web</span></dt><dd><a href="https://sophonfinance.com/">SophonFinance.com</a></dd>
         </dl>
       </div>
       <form class="cf" action="https://formsubmit.co/cff69027fd01c775ac2e18c12b674597" method="POST">
