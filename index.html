@@ -216,6 +216,9 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .tab{ --c:#0e9384; --c2:#14a896; --ct:#e3f5f2; justify-content:flex-start; gap:16px; text-align:left; min-height:88px; padding:14px 22px; border-radius:16px; }
 .tab-acc{ --c:#1769aa; --c2:#2389c9; --ct:#e4f0fa; }
 .tab-aud{ --c:#4a46b8; --c2:#6366d6; --ct:#ecebfb; }
+.tab-tech{ --c:#0b6f9c; --c2:#0aa5c8; --ct:#e2f4fa; }
+.tab-ai{ --c:#5a3fc8; --c2:#8b5cf6; --ct:#efe9fd; }
+.tab-app{ --c:#d4522f; --c2:#f08a4b; --ct:#fdeee6; }
 .ti{ flex:none; width:62px; height:62px; border-radius:16px; display:grid; place-items:center; background:#fff; overflow:hidden; box-shadow:0 0 0 1px var(--ct), 0 6px 14px -8px rgba(12,59,67,.35); }
 .ti img{ width:100%; height:100%; object-fit:cover; }
 .ti svg{ width:30px; height:30px; }
@@ -286,7 +289,7 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 
 /* who we are */
 .team h2{ margin:0 0 20px; }
-.team-grid{ display:grid; grid-template-columns:1fr 1.4fr; gap:24px; align-items:center; }
+.team-grid{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); gap:24px; align-items:center; }
 .bios{ display:grid; gap:16px; }
 .bio{ display:grid; grid-template-columns:120px 1fr; gap:20px; align-items:start; background:rgba(255,255,255,.85); border:1px solid var(--line); border-radius:18px; padding:20px; box-shadow:0 18px 40px -30px rgba(12,59,67,.45); }
 .bio-pic{ width:120px; height:120px; border-radius:16px; object-fit:cover; object-position:center 20%; }
@@ -303,30 +306,30 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .bio-link .bf-i{ display:inline-flex; } .bio-link .bf-i svg{ width:22px; height:22px; }
 .bio-link:hover{ border-color:var(--blue); color:var(--blue); }
 .team-grid .team-film{ margin-top:0; }
-@media (max-width:980px){ .team-grid{ grid-template-columns:1fr; } }
+@media (max-width:980px){ .team-grid{ grid-template-columns:minmax(0,1fr); } }
 @media (max-width:520px){ .bio{ grid-template-columns:1fr; padding:18px 16px; } .bio-pic{ width:96px; height:96px; } .bio-facts li{ grid-template-columns:82px 1fr; gap:10px; } .bf{ font-size:11px; } .bt{ font-size:14px; white-space:nowrap; } }
 
-.creds{ display:grid; grid-template-columns:1fr 1fr; gap:12px 16px; padding:14px; background:rgba(255,255,255,.88); border:1px solid var(--line); border-radius:18px; box-shadow:0 18px 40px -30px rgba(12,59,67,.45); }
+.creds{ min-width:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px 16px; padding:14px; background:rgba(255,255,255,.88); border:1px solid var(--line); border-radius:18px; box-shadow:0 18px 40px -30px rgba(12,59,67,.45); }
 .cg{ --g1:#0c3b43; --g2:#0e9384; }
 .cg-en{ --g1:#0b3a5c; --g2:#0aa5c8; }
 .cg-head{ display:flex; align-items:center; gap:9px; padding-bottom:9px; margin-bottom:9px; border-bottom:1px solid var(--line); color:inherit; }
 a.cg-head:hover b{ color:var(--blue); }
-.cg-head b{ display:block; font:500 13.5px/1.15 var(--head); color:var(--ink); }
-.cg-head small{ display:block; margin-top:2px; font:600 8.5px/1.3 var(--body); letter-spacing:.06em; text-transform:uppercase; color:var(--text-2); }
-.cg-logo{ height:21px; width:auto; flex:none; }
-.cg-tile svg{ width:26px; height:26px; display:block; }
+.cg-head b{ display:block; font:500 14.2px/1.15 var(--head); color:#111; }
+.cg-head small{ display:block; margin-top:2px; font:600 9px/1.3 var(--body); letter-spacing:.06em; text-transform:uppercase; color:var(--text-2); }
+.cg-logo{ height:22px; width:auto; flex:none; }
+.cg-tile svg{ width:27px; height:27px; display:block; }
 .creds ul{ list-style:none; margin:0; padding:0; display:grid; gap:6px; }
-.creds li{ display:grid; grid-template-columns:54px 1fr; align-items:center; gap:9px; }
-.creds .bf{ height:28px; border:0; border-radius:7px; flex-direction:column; gap:2px; background:linear-gradient(135deg, var(--g1), var(--g2)); color:#fff; box-shadow:0 6px 14px -9px var(--g1); }
-.creds .bf b{ font:700 10.5px/1 var(--head); letter-spacing:.03em; }
-.creds .bf small{ font:600 5.5px/1 var(--body); letter-spacing:.14em; text-transform:uppercase; opacity:.85; }
-.creds .bf svg{ width:14px; height:14px; }
-.creds .bf-w{ background:#fff; border:1px solid var(--line); box-shadow:none; }
-.creds .bf-w img{ height:11px; width:auto; max-width:44px; }
-.creds .bf-w svg{ width:17px; height:17px; }
-.creds .bt{ font-size:12px; line-height:1.25; color:var(--text); }
-.cg-shared{ grid-column:1 / -1; grid-template-columns:1fr 1fr !important; padding-top:10px; border-top:1px solid var(--line); --g1:#0f2730; --g2:#2a5560; }
-@media (max-width:640px){ .creds{ grid-template-columns:1fr; padding:14px; } .cg-shared{ grid-template-columns:1fr 1fr !important; } .creds .bt{ font-size:13px; } }
+.creds li{ display:grid; grid-template-columns:57px minmax(0,1fr); align-items:center; gap:9px; }
+.creds .bf{ height:30px; border:1px solid #e3ebea; border-radius:8px; flex-direction:column; gap:2px; background:#fff; color:#111; box-shadow:0 1px 2px rgba(15,39,48,.08), 0 4px 10px -4px rgba(15,39,48,.18); }
+.creds .bf b{ font:700 11px/1 var(--head); letter-spacing:.03em; color:#111; }
+.creds .bf small{ font:600 5.8px/1 var(--body); letter-spacing:.14em; text-transform:uppercase; color:#555; }
+.creds .bf svg{ width:15px; height:15px; }
+.creds .bf-w{ background:#fff; }
+.creds .bf-w img{ height:11.5px; width:auto; max-width:46px; }
+.creds .bf-w svg{ width:18px; height:18px; }
+.creds .bt{ font-size:12.6px; line-height:1.25; color:#111; }
+.cg-shared{ grid-column:1 / -1; grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important; padding-top:10px; border-top:1px solid var(--line); --g1:#0f2730; --g2:#2a5560; }
+@media (max-width:640px){ .creds{ grid-template-columns:minmax(0,1fr); padding:14px; } .cg-shared{ grid-template-columns:minmax(0,1fr) !important; } .creds .bt{ font-size:13px; } }
 
 /* contact */
 .contact{ padding:48px 0; }
@@ -423,7 +426,7 @@ footer a:hover{ color:var(--blue); }
         <div class="panel" id="panel" role="tabpanel" aria-labelledby="t0">
           <div class="player">
             <video id="v" autoplay muted playsinline webkit-playsinline controls preload="auto" poster="videos/tax-machine-poster.jpg">
-              <source src="videos/tax-machine-training.mp4" type="video/mp4">
+              <source type="video/mp4">
             </video>
             <button class="snd" id="snd" type="button" aria-label="Turn the sound on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>Sound on</button>
           </div>
@@ -432,6 +435,9 @@ footer a:hover{ color:var(--blue); }
           <button class="tab tab-tax" role="tab" aria-selected="true" aria-controls="panel" id="t0"><span class="ti" aria-hidden="true"><img src="assets/icons/tax.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Tax<span class="lg">&nbsp;services</span></b></span></button>
           <button class="tab tab-acc" role="tab" aria-selected="false" aria-controls="panel" id="t1" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/acc.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Accounting<span class="lg">&nbsp;services</span></b></span></button>
           <button class="tab tab-aud" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Audit<span class="lg">&nbsp;services</span></b></span></button>
+          <button class="tab tab-tech" role="tab" aria-selected="false" aria-controls="panel" id="t3" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/tech.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Tech<span class="lg">&nbsp;services</span></b></span></button>
+          <button class="tab tab-ai" role="tab" aria-selected="false" aria-controls="panel" id="t4" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/ai.jpg" alt="" width="72" height="72"></span><span class="tl"><b>AI<span class="lg">&nbsp;services</span></b></span></button>
+          <button class="tab tab-app" role="tab" aria-selected="false" aria-controls="panel" id="t5" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/app.jpg" alt="" width="72" height="72"></span><span class="tl"><b>App<span class="lg">&nbsp;services</span></b></span></button>
         </div>
         <div class="info">
           <div>
@@ -520,7 +526,7 @@ footer a:hover{ color:var(--blue); }
           <div class="cg cg-ff">
             <div class="cg-head">
               <span class="cg-tile"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span>
-              <span><b>Sophonnarith Hang</b><small>Founder, Fast Finance &middot; Partner, Enasal</small></span>
+              <span><b>Sophonnarith Hang</b><small>Founder, Fast Finance</small></span>
             </div>
             <ul>
               <li><span class="bf"><b>20</b><small>Years</small></span><span class="bt">Accounting and finance</span></li>
@@ -530,7 +536,7 @@ footer a:hover{ color:var(--blue); }
             </ul>
           </div>
           <ul class="cg-shared">
-            <li><span class="bf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4 5.6v6.1c0 4.6 3.2 8.7 8 9.8 4.8-1.1 8-5.2 8-9.8V5.6z" fill="#fff"/><path d="m8.2 12.2 2.6 2.6 5-5.2" fill="none" stroke="#0e9384" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="bt">Fully insured</span></li>
+            <li><span class="bf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4 5.6v6.1c0 4.6 3.2 8.7 8 9.8 4.8-1.1 8-5.2 8-9.8V5.6z" fill="#0c3b43"/><path d="m8.2 12.2 2.6 2.6 5-5.2" fill="none" stroke="#5fd0c3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="bt">Fully insured</span></li>
             <li><span class="bf"><b>30+</b><small>Years</small></span><span class="bt">Engineering experience</span></li>
             <li><span class="bf"><b>ALL</b><small>Sectors</small></span><span class="bt">Every industry</span></li>
             <li><span class="bf bf-w"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span><span class="bt">Our own AI machines</span></li>
@@ -569,7 +575,7 @@ footer a:hover{ color:var(--blue); }
         <div class="two">
           <label>Company<input name="company" autocomplete="organization"></label>
           <label>Service
-            <select name="service"><option>Tax services</option><option>Accounting services</option><option>Audit services</option><option>Marketing</option><option>Not sure yet</option></select>
+            <select name="service"><option>Tax services</option><option>Accounting services</option><option>Audit services</option><option>Tech services</option><option>AI services</option><option>App services</option><option>Marketing</option><option>Not sure yet</option></select>
           </label>
         </div>
         <label>How can we help?<textarea name="message" required></textarea></label>
@@ -588,7 +594,7 @@ footer a:hover{ color:var(--blue); }
         <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg>
         <span><b>Fast Finance</b><span>AI Engineering Firm</span></span>
       </a>
-      <p class="f-about">A digital AI accounting firm for tax, accounting and audit, with a marketing division. AI engineering partners with ENASAL AI Engineering.</p>
+      <p class="f-about">AI-built tax, accounting, audit, tech and marketing services.</p>
     </div>
     <div>
       <h4>Services</h4>
@@ -596,6 +602,9 @@ footer a:hover{ color:var(--blue); }
         <li><a href="#services" data-open="0">Tax services</a></li>
         <li><a href="#services" data-open="1">Accounting services</a></li>
         <li><a href="#services" data-open="2">Audit services</a></li>
+        <li><a href="#services" data-open="3">Tech services</a></li>
+        <li><a href="#services" data-open="4">AI services</a></li>
+        <li><a href="#services" data-open="5">App services</a></li>
         <li><a href="#marketing">Marketing</a></li>
       </ul>
     </div>
@@ -634,12 +643,18 @@ footer a:hover{ color:var(--blue); }
 <script>
 (function(){
   var S = [
-    { key:'tax', title:'Fast Finance Tax Machine', len:'2:25',
-      sub:'Partnership, state and payroll returns.' },
-    { key:'accounting', title:'Fast Finance Accounting Machine', len:'3:35',
-      sub:'Month-end invoice review.' },
-    { key:'audit', title:'Fast Finance Audit Machine', len:'3:00',
-      sub:'Year-end audit workpapers.' }
+    { title:'Tax Machine', len:'2:25', kind:'Training video', sub:'Partnership, state and payroll returns.',
+      src:'videos/tax-machine-training.mp4', srcM:'videos/tax-machine-training-720.mp4', poster:'videos/tax-machine-poster.jpg' },
+    { title:'Accounting Machine', len:'3:35', kind:'Training video', sub:'Month-end invoice review.',
+      src:'videos/accounting-machine-training.mp4', srcM:'videos/accounting-machine-training-720.mp4', poster:'videos/accounting-machine-poster.jpg' },
+    { title:'Audit Machine', len:'3:00', kind:'Training video', sub:'Year-end audit workpapers.',
+      src:'videos/audit-machine-training.mp4', srcM:'videos/audit-machine-training-720.mp4', poster:'videos/audit-machine-poster.jpg' },
+    { title:'Tech Services', len:'0:10', kind:'Showcase', sub:'Custom software, automation and integrations.',
+      src:'videos/tech-services.mp4', srcM:'videos/tech-services-720.mp4', poster:'videos/tech-services-poster.jpg' },
+    { title:'AI Services', len:'0:45', kind:'Showcase', sub:'AI agents, workflow automation and data answers.',
+      src:'videos/marketing/gp-catch.mp4', srcM:'videos/marketing/gp-catch.mp4', poster:'videos/marketing/gp-catch.jpg' },
+    { title:'App Services', len:'0:39', kind:'Showcase', sub:'Mobile apps for iPhone and Android.',
+      src:'videos/marketing/mm-app.mp4', srcM:'videos/marketing/mm-app.mp4', poster:'videos/marketing/mm-app.jpg' }
   ];
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var small = Math.min(screen.width, screen.height) <= 820 || (navigator.connection && navigator.connection.saveData);
@@ -653,28 +668,27 @@ footer a:hover{ color:var(--blue); }
     cur = i; var s = S[i];
     tabs.forEach(function(t, j){ var on = j === i; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
     document.getElementById('panel').setAttribute('aria-labelledby', 't' + i);
-    document.getElementById('pTitle').querySelector('b').textContent = s.title.replace('Fast Finance ','');
+    document.getElementById('pTitle').querySelector('b').textContent = s.title;
     document.getElementById('pSub').textContent = s.sub;
-    document.getElementById('pLen').textContent = 'Training video · ' + s.len;
+    document.getElementById('pLen').textContent = s.kind + ' · ' + s.len;
     if (load) {
-      v.poster = 'videos/' + s.key + '-machine-poster.jpg';
-      v.querySelector('source').src = 'videos/' + s.key + '-machine-training.mp4';
-      v.load(); play(v);
+      v.poster = s.poster;
+      v.querySelector('source').src = small ? s.srcM : s.src;
+      v.load(); if (!reduced || load === 'user') play(v);
     }
   }
-  show(0);
-  if (!reduced) play(v); // autoplay starts muted; browsers allow sound only after the visitor acts
+  show(0, true); // autoplay starts muted; browsers allow sound only after the visitor acts
   snd.addEventListener('click', function(){ v.muted = false; v.volume = 1; play(v); });
   v.addEventListener('volumechange', function(){ snd.hidden = !v.muted; });
   v.addEventListener('ended', function(){ show((cur + 1) % S.length, true); });
   tabs.forEach(function(t, i){
-    t.addEventListener('click', function(){ show(i, true); });
+    t.addEventListener('click', function(){ show(i, 'user'); });
     t.addEventListener('keydown', function(e){
       var n = (e.key === 'ArrowDown' || e.key === 'ArrowRight') ? 1 : (e.key === 'ArrowUp' || e.key === 'ArrowLeft') ? -1 : 0;
       if (n){ e.preventDefault(); var k = (i + n + tabs.length) % tabs.length; show(k, true); tabs[k].focus(); }
     });
   });
-  document.querySelectorAll('[data-open]').forEach(function(a){ a.addEventListener('click', function(){ show(+a.getAttribute('data-open'), true); }); });
+  document.querySelectorAll('[data-open]').forEach(function(a){ a.addEventListener('click', function(){ show(+a.getAttribute('data-open'), 'user'); }); });
   document.getElementById('fs').addEventListener('click', function(){
     try { if (v.requestFullscreen) v.requestFullscreen(); else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen(); else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen(); } catch(e){}
   });
