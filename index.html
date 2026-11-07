@@ -59,7 +59,13 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .ff-splash{ --h:min(72px, 11.5vw); position:fixed; inset:0; z-index:300; pointer-events:none; display:flex; align-items:center; justify-content:center; background:radial-gradient(1100px 600px at 50% 46%, rgba(95,208,195,.10), transparent 70%), #fff; animation:ffsOut 1.9s cubic-bezier(.4,0,.2,1) 11.1s forwards, ffsGone 0s linear 13s forwards; }
 .ffs-seen .ff-splash{ display:none; }
 .ffs-pair{ display:flex; align-items:center; gap:calc(var(--h) * .5); animation:ffsPairOut .7s ease 3s forwards; }
-.ffs-say{ position:absolute; left:50%; top:50%; width:min(15.5em, calc(100vw - 40px)); margin:0; transform:translate(-50%,-50%); font:400 clamp(27px, 7.6vw, 54px)/1.12 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; letter-spacing:-.012em; color:#15181c; text-align:left; opacity:0; animation:ffsSay 1.1s cubic-bezier(.2,.8,.2,1) 3.75s forwards; }
+.ffs-say{ position:absolute; left:50%; top:50%; width:min(15.5em, calc(100vw - 40px)); margin:0; transform:translate(-50%,-50%); font:400 clamp(27px, 7.6vw, 54px)/1.12 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; letter-spacing:-.012em; color:#15181c; text-align:left; opacity:0; animation:ffsSay 1.1s cubic-bezier(.2,.8,.2,1) 3.75s forwards, ffsSayOut 1.5s cubic-bezier(.5,0,.2,1) 11s forwards; }
+/* progress bar under the statement: fills while the voice reads it */
+.ffs-bar{ display:block; position:relative; margin-top:.85em; height:3px; border-radius:3px; background:rgba(12,59,67,.10); overflow:hidden; }
+.ffs-bar i{ position:absolute; inset:0; border-radius:inherit; background:linear-gradient(90deg,#0b7d71,#0e9384 40%,#5fd0c3 75%,#0aa5c8); transform-origin:0 50%; transform:scaleX(0); box-shadow:0 0 12px rgba(95,208,195,.7); animation:ffsBar 7.05s linear 3.85s forwards; }
+.ffs-bar i::after{ content:""; position:absolute; inset:0; background:linear-gradient(90deg, transparent, rgba(255,255,255,.75), transparent); background-size:40% 100%; background-repeat:no-repeat; animation:ffsSheen 1.4s linear infinite; }
+/* the first screen settles into place as the intro clears */
+html:not(.ffs-seen) .top, html:not(.ffs-seen) #services{ animation:ffsReveal 2.3s cubic-bezier(.16,.8,.2,1) 11.1s backwards; transform-origin:50% 30%; }
 .ffs-ff{ display:flex; align-items:center; gap:calc(var(--h) * .24); height:var(--h); animation:ffsIn 1.1s cubic-bezier(.2,.8,.2,1) .25s both; }
 .ffs-ff svg{ width:var(--h); height:var(--h); flex:none; border-radius:calc(var(--h) * .14); }
 .ffs-ff b{ display:flex; flex-direction:column; justify-content:center; gap:calc(var(--h) * .07); font:700 calc(var(--h) * .43)/.9 var(--head); letter-spacing:.07em; color:#0c3b43; white-space:nowrap; }
@@ -70,6 +76,10 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .ffs-logo{ --h:1.22em; display:inline-flex; align-items:center; gap:calc(var(--h) * .22); height:var(--h); vertical-align:-.3em; margin-right:.06em; }
 .ffs-logo svg{ width:var(--h); height:var(--h); flex:none; border-radius:calc(var(--h) * .14); }
 .ffs-logo b{ display:flex; flex-direction:column; justify-content:center; gap:calc(var(--h) * .06); font:700 calc(var(--h) * .42)/.9 var(--head); letter-spacing:.07em; color:#0c3b43; white-space:nowrap; }
+@keyframes ffsBar{ to{ transform:scaleX(1); } }
+@keyframes ffsSheen{ from{ background-position:-40% 0; } to{ background-position:140% 0; } }
+@keyframes ffsSayOut{ from{ opacity:1; filter:none; transform:translate(-50%,-50%); } to{ opacity:0; filter:blur(8px); transform:translate(-50%,-50%) scale(1.07); } }
+@keyframes ffsReveal{ from{ opacity:.35; transform:scale(1.05); } to{ opacity:1; transform:none; } }
 @keyframes ffsPairOut{ to{ opacity:0; filter:blur(4px); transform:scale(.98); } }
 @keyframes ffsSay{ from{ opacity:0; filter:blur(5px); transform:translate(-50%,calc(-50% + 10px)); } to{ opacity:1; filter:none; transform:translate(-50%,-50%); } }
 @keyframes ffsOut{ to{ opacity:0; } }
@@ -628,7 +638,7 @@ footer a:hover{ color:var(--blue); }
     <i class="ffs-rule"></i>
     <img class="ffs-en" src="assets/enasal-logo-dark.png" alt="">
   </div>
-  <p class="ffs-say"><span class="ffs-logo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg><b><span>FAST</span><span>FINANCE</span></b></span> is built with enterprise-grade security for the highest standards of compliance and safety, and more.</p>
+  <p class="ffs-say"><span class="ffs-logo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg><b><span>FAST</span><span>FINANCE</span></b></span> is built with enterprise-grade security for the highest standards of compliance and safety, and more.<span class="ffs-bar" aria-hidden="true"><i></i></span></p>
 </div>
 <a class="skip" href="#main">Skip to content</a>
 
@@ -921,6 +931,14 @@ footer a:hover{ color:var(--blue); }
   function greet(){
     if (!hi || greeted || userTook || cur !== 0) return; greeted = true; speaking = true;
     hi.onended = function(){ speaking = false; if (!userTook && cur === 0) wait = setTimeout(withSound, Math.max(GAP, INTRO_END - (Date.now() - t0))); };
+    hi.addEventListener('playing', function(){ // the intro is timed for the voice starting at 0.5s; if it starts a little late, slide the visuals to match
+      if (!document.getAnimations || !document.timeline) return;
+      document.getAnimations().forEach(function(a){
+        if (!a.animationName || !/^ffs/.test(a.animationName) || a.startTime == null) return;
+        var lag = (document.timeline.currentTime - a.startTime - 500) - hi.currentTime * 1000;
+        if (lag > 120 && lag < 1500) a.startTime += lag;
+      });
+    }, { once: true });
     var p = hi.play(); if (p && p.catch) p.catch(function(){ greeted = false; speaking = false; armTap(); });
   }
   function soundOn(){ clearTimeout(wait); v.muted = false; v.volume = speaking ? 0.3 : MED; play(v); }
