@@ -525,17 +525,14 @@ a.cg-head:hover b{ color:var(--blue); }
   .cg-head{ padding-bottom:8px; margin-bottom:10px; }
 }
 @media (max-width:640px){ .creds{ grid-template-columns:minmax(0,1fr); padding:14px; gap:16px; } .cg-shared{ grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important; } .creds .bt{ font-size:13px; } }
-/* Team: the reel plays behind the credentials, softened by a translucent white veil so the text reads first */
-.team-grid{ position:relative; display:block; border-radius:18px; overflow:hidden; isolation:isolate; background:#eef7f5; box-shadow:0 0 0 1px rgba(14,147,132,.18), 0 26px 60px -30px rgba(12,59,67,.45); }
-.team-grid .team-film{ position:absolute; inset:0; z-index:0; margin:0; height:auto; min-height:0; aspect-ratio:auto; border-radius:0; box-shadow:none; }
-.team-grid .team-film::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(250,253,252,.68)); }
-.team-grid .creds{ position:relative; z-index:1; background:transparent; border:0; box-shadow:none; padding:22px; }
-.team-grid .cg-head b, .team-grid .cg-head small, .team-grid .creds .bt{ text-shadow:0 0 8px rgba(255,255,255,.95), 0 0 2px #fff; }
-.team-grid .cg-head small{ color:#3c4f57; }
-@media (max-width:640px){ .team-grid .creds{ padding:16px 14px; } }
+.team-grid{ display:block; }
 
 /* contact */
-.contact{ padding:48px 0; }
+.contact{ position:relative; isolation:isolate; overflow:hidden; padding:48px 0; }
+/* the team reel plays softly behind the consultation section under a strong white veil */
+.contact-film{ position:absolute; inset:0; z-index:-1; pointer-events:none; }
+.contact-film video{ width:100%; height:100%; object-fit:cover; }
+.contact-film::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,255,255,.80), rgba(255,255,255,.86)); }
 .c-grid{ display:grid; grid-template-columns:1fr 1.15fr; gap:56px; align-items:start; }
 .contact h2{ font-size:clamp(28px, 3.2vw, 40px); line-height:1.15; margin-bottom:16px; }
 .contact .lead{ color:var(--text-2); margin:0 0 22px; max-width:28em; }
@@ -785,16 +782,16 @@ footer a:hover{ color:var(--blue); }
             </ul>
           </div>
         </div>
-        <div class="team-film">
-          <video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/team-reel-poster-v2.jpg" data-mobile="videos/team-reel-mobile-v2.mp4" aria-label="The Fast Finance team at work">
-            <source src="videos/team-reel-v2.mp4" type="video/mp4">
-          </video>
-        </div>
       </div>
     </div>
   </section>
 
   <section class="contact" id="contact">
+    <div class="contact-film" aria-hidden="true">
+      <video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/team-reel-poster-v2.jpg" data-mobile="videos/team-reel-mobile-v2.mp4" aria-label="The Fast Finance team at work">
+        <source src="videos/team-reel-v2.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="wrap c-grid">
       <div>
         <h2>Schedule a <span class="acc">free consultation.</span></h2>
