@@ -536,6 +536,14 @@ a.cg-head:hover b{ color:var(--blue); }
   .cg-head{ padding-bottom:8px; margin-bottom:10px; }
 }
 @media (max-width:640px){ .creds{ grid-template-columns:minmax(0,1fr); padding:14px; gap:16px; } .cg-shared{ grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important; } .creds .bt{ font-size:13px; } }
+/* Team: the reel plays behind the credentials, softened by a translucent white veil so the text reads first */
+.team-grid{ position:relative; display:block; border-radius:18px; overflow:hidden; isolation:isolate; background:#eef7f5; box-shadow:0 0 0 1px rgba(14,147,132,.18), 0 26px 60px -30px rgba(12,59,67,.45); }
+.team-grid .team-film{ position:absolute; inset:0; z-index:0; margin:0; height:auto; min-height:0; aspect-ratio:auto; border-radius:0; box-shadow:none; }
+.team-grid .team-film::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(250,253,252,.68)); }
+.team-grid .creds{ position:relative; z-index:1; background:transparent; border:0; box-shadow:none; padding:22px; }
+.team-grid .cg-head b, .team-grid .cg-head small, .team-grid .creds .bt{ text-shadow:0 0 8px rgba(255,255,255,.95), 0 0 2px #fff; }
+.team-grid .cg-head small{ color:#3c4f57; }
+@media (max-width:640px){ .team-grid .creds{ padding:16px 14px; } }
 
 /* contact */
 .contact{ padding:48px 0; }
