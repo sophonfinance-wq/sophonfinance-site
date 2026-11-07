@@ -767,6 +767,8 @@ footer a:hover{ color:var(--blue); }
         <button role="tab" data-m="audit" aria-selected="false">Audit</button>
       </div>
       <div class="demo-subj" id="demoSubj" role="group" aria-label="Choose what the machine works on"></div>
+      <!-- "Try it on your own files" card, filled by assets/analyze/analyze.js (files are analyzed in the browser only) -->
+      <div id="f1Analyze" class="f1a"></div>
       <div class="demo-box" id="demoBox">
         <div class="demo-bar">
           <span class="demo-bar-t"><b id="demoBarM">Tax Machine</b><span id="demoBarS">Form 941</span></span>
@@ -1028,7 +1030,9 @@ footer a:hover{ color:var(--blue); }
       { id:'accounting-reporting', label:'Financial statements', note:'Budget vs actual', sub:'Prepares the monthly statements, budget vs actual and covenant metrics for review.' },
       { id:'accounting-ar', label:'AR & collections', note:'Aging and retainage', sub:'Ages receivables by customer and job, applies cash, catches missed billings and drafts reminders.' },
       { id:'accounting-payroll', label:'Payroll rec', note:'Register to GL to bank', sub:'Ties payroll to the ledger, the tax reports and the bank, and catches pay errors.' },
-      { id:'accounting-fixedassets', label:'Fixed assets', note:'Roll-forward', sub:'Rolls the asset register forward, recomputes depreciation and catches capitalisation errors.' } ] },
+      { id:'accounting-fixedassets', label:'Fixed assets', note:'Roll-forward', sub:'Rolls the asset register forward, recomputes depreciation and catches capitalisation errors.' },
+      { id:'accounting-wip', label:'Job cost & WIP', note:'Over/under billings', sub:'Builds the job schedule: percent complete, earned revenue, over/under billings and fade.' },
+      { id:'accounting-cards', label:'Card & expenses', note:'Receipts and coding', sub:'Reconciles company cards to receipts and coding, and catches personal, duplicate and unapproved charges.' } ] },
     audit:      { name:'Audit Machine',      ic:'assets/icons/aud.jpg', ready:true, pick:0, subjects:[
       { id:'audit',              label:'Year-end audit',      note:'Full engagement',    sub:'Builds year-end audit workpapers.' },
       { id:'audit-cash',         label:'Cash audit',          note:'Bank confirmations', sub:'Tests cash with bank confirmations and reconciliations.' },
@@ -1045,6 +1049,7 @@ footer a:hover{ color:var(--blue); }
     d.subjects.forEach(function(x, i){
       var b = document.createElement('button'); b.type = 'button';
       b.setAttribute('aria-pressed', i === d.pick);
+      b.setAttribute('data-id', x.id); // read by assets/analyze/analyze.js to know the selected option
       b.appendChild(document.createTextNode(x.label));
       var n = document.createElement('small'); n.textContent = x.note; b.appendChild(n); b.style.setProperty('--i', i);
       b.addEventListener('click', function(){ d.pick = i; demoPick(m, true); });

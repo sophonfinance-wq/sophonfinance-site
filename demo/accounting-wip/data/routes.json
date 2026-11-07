@@ -1,0 +1,206 @@
+{
+"/api/runs/RUN/preparation": {
+"file": "json/api-runs-run-preparation-c579af6e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E01 Contracts": {
+"file": "json/api-runs-run-preparation-evidence-e01-contracts-d4cf39c0.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E02 Change Orders": {
+"file": "json/api-runs-run-preparation-evidence-e02-change-orders-1f73327d.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E03 Contracts GL": {
+"file": "json/api-runs-run-preparation-evidence-e03-contracts-gl-74a4e234.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E04 WIP Sep 30": {
+"file": "json/api-runs-run-preparation-evidence-e04-wip-sep-30-1ff8c401.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E05 WIP Sep 30 Balances": {
+"file": "json/api-runs-run-preparation-evidence-e05-wip-sep-30-balances-6847f575.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E06 Cost to Sep 30": {
+"file": "json/api-runs-run-preparation-evidence-e06-cost-to-sep-30-189354bf.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E07 October Job Cost": {
+"file": "json/api-runs-run-preparation-evidence-e07-october-job-cost-3b52a68e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E08 Job Totals": {
+"file": "json/api-runs-run-preparation-evidence-e08-job-totals-276d48c5.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E09 Budgets": {
+"file": "json/api-runs-run-preparation-evidence-e09-budgets-2be061a1.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E10 Estimates": {
+"file": "json/api-runs-run-preparation-evidence-e10-estimates-e13d4f00.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E11 Estimate Revisions": {
+"file": "json/api-runs-run-preparation-evidence-e11-estimate-revisions-881d7ee4.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E12 Pay Applications": {
+"file": "json/api-runs-run-preparation-evidence-e12-pay-applications-58ae9842.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E13 Change Order CO-01": {
+"file": "json/api-runs-run-preparation-evidence-e13-change-order-co-01-70f09236.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E14 SFC-1184 Invoice": {
+"file": "json/api-runs-run-preparation-evidence-e14-sfc-1184-invoice-81faff0d.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/CO Page 1": {
+"file": "json/api-runs-run-preparation-evidence-co-page-1-f650bbdf.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV Page 1": {
+"file": "json/api-runs-run-preparation-evidence-inv-page-1-b4f3181c.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E15 Procedures": {
+"file": "json/api-runs-run-preparation-evidence-e15-procedures-6b8da3aa.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Summary": {
+"file": "json/api-runs-run-preparation-worksheet-summary-6597996c.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/WIP Schedule": {
+"file": "json/api-runs-run-preparation-worksheet-wip-schedule-f7c03d7f.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Contract Value": {
+"file": "json/api-runs-run-preparation-worksheet-contract-value-1cc64d99.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Cost to Date": {
+"file": "json/api-runs-run-preparation-worksheet-cost-to-date-42023d95.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Estimates": {
+"file": "json/api-runs-run-preparation-worksheet-estimates-6ec1a4a8.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Fade and Gain": {
+"file": "json/api-runs-run-preparation-worksheet-fade-and-gain-ddbda090.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Proposed Entries": {
+"file": "json/api-runs-run-preparation-worksheet-proposed-entries-518648a2.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Findings": {
+"file": "json/api-runs-run-preparation-worksheet-findings-568ee16a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/E01 Contracts": {
+"file": "json/api-runs-run-preparation-worksheet-e01-contracts-60e95067.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/E02 Change Orders": {
+"file": "json/api-runs-run-preparation-worksheet-e02-change-orders-54b66457.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/workbook": {
+"file": "files/7fda540d/WIP Schedule Workpapers.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/return": {
+"file": "files/600cd15c/WIP Schedule Memo DRAFT.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/contracts": {
+"file": "files/310f1fa8/Contract Register - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/gl": {
+"file": "files/7ae8176d/Contracts GL - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/prior": {
+"file": "files/c418c794/WIP Schedule - September 30, 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/jobcost": {
+"file": "files/3c8675ac/Job Cost Ledger - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/estimates": {
+"file": "files/839ab26c/Estimates to Complete - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/billings": {
+"file": "files/f96da60a/Billing Register - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/co": {
+"file": "files/5bb0a08e/CO-01 Marlowe Ridge Dental.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/invoice": {
+"file": "files/025c2581/SFC-1184 Sumner Framing Co.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/procedures": {
+"file": "files/b1f8b42f/HANGS Contract Revenue Procedures v1.3.docx",
+"type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+},
+"/api/runs/RUN/output-page.png": {
+"file": "img/api-runs-run-output-page-png-f5beeb5e.png",
+"type": "image/png"
+},
+"/api/runs/RUN/output-summary": {
+"file": "json/api-runs-run-output-summary-05e012fc.json",
+"type": "application/json"
+},
+"/api/wip/documents/list": {
+"file": "json/api-wip-documents-list-8eb3c653.json",
+"type": "application/json"
+},
+"/api/wip/documents/preview?file=09 Procedures/HANGS Contract Revenue Procedures v1.3.docx": {
+"file": "json/api-wip-documents-preview-file-09-procedures-hangs-contract--b5d401d1.json",
+"type": "application/json"
+},
+"/api/wip/documents/preview?file=01 Contracts/Contract Register - October 2026.xlsx": {
+"file": "json/api-wip-documents-preview-file-01-contracts-contract-registe-a6b6e116.json",
+"type": "application/json"
+},
+"/api/wip/documents/preview?file=06 General Ledger/Contracts GL - October 2026.xlsx": {
+"file": "json/api-wip-documents-preview-file-06-general-ledger-contracts-g-dadfe007.json",
+"type": "application/json"
+},
+"/api/wip/documents/preview?file=05 Prior WIP/WIP Schedule - September 30, 2026.xlsx": {
+"file": "json/api-wip-documents-preview-file-05-prior-wip-wip-schedule-sep-6a869239.json",
+"type": "application/json"
+},
+"/api/wip/documents/page.png?file=08 Change Orders/CO-01 Marlowe Ridge Dental.pdf": {
+"file": "img/api-wip-documents-page-png-file-08-change-orders-co-01-marlo-ac831d76.png",
+"type": "image/png"
+},
+"/api/wip/documents/preview?file=02 Job Cost/Job Cost Ledger - October 2026.xlsx": {
+"file": "json/api-wip-documents-preview-file-02-job-cost-job-cost-ledger-o-bea97b40.json",
+"type": "application/json"
+},
+"/api/wip/documents/page.png?file=07 Source Documents/SFC-1184 Sumner Framing Co.pdf": {
+"file": "img/api-wip-documents-page-png-file-07-source-documents-sfc-1184-4dffe550.png",
+"type": "image/png"
+},
+"/api/wip/documents/preview?file=03 Estimates/Estimates to Complete - October 2026.xlsx": {
+"file": "json/api-wip-documents-preview-file-03-estimates-estimates-to-com-133783ce.json",
+"type": "application/json"
+},
+"/api/wip/documents/preview?file=04 Billings/Billing Register - October 2026.xlsx": {
+"file": "json/api-wip-documents-preview-file-04-billings-billing-register--313a9050.json",
+"type": "application/json"
+}
+}
