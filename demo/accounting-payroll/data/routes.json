@@ -1,0 +1,234 @@
+{
+"/api/runs/RUN/preparation": {
+"file": "json/api-runs-run-preparation-c579af6e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E01 October 10 Journal": {
+"file": "json/api-runs-run-preparation-evidence-e01-october-10-journal-20e35a43.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E02 October 24 Journal": {
+"file": "json/api-runs-run-preparation-evidence-e02-october-24-journal-bf8ebf6d.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E03 Journal Summary": {
+"file": "json/api-runs-run-preparation-evidence-e03-journal-summary-e7872461.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E04 Funding": {
+"file": "json/api-runs-run-preparation-evidence-e04-funding-27b76f6f.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E05 Employee Roster": {
+"file": "json/api-runs-run-preparation-evidence-e05-employee-roster-a3b07b55.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E06 GL Payroll Postings": {
+"file": "json/api-runs-run-preparation-evidence-e06-gl-payroll-postings-866befad.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E07 Liability Balances": {
+"file": "json/api-runs-run-preparation-evidence-e07-liability-balances-ce48ecb5.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E08 Tax Liability": {
+"file": "json/api-runs-run-preparation-evidence-e08-tax-liability-f779a297.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E09 Tax Deposits": {
+"file": "json/api-runs-run-preparation-evidence-e09-tax-deposits-999e2a75.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E10 Remittances": {
+"file": "json/api-runs-run-preparation-evidence-e10-remittances-e7549d31.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E11 Register October 24": {
+"file": "json/api-runs-run-preparation-evidence-e11-register-october-24-34f017da.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E12 Bank Payroll Debits": {
+"file": "json/api-runs-run-preparation-evidence-e12-bank-payroll-debits-527a49ed.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E13 Wage Schedule": {
+"file": "json/api-runs-run-preparation-evidence-e13-wage-schedule-7989b3c9.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E14 Withholding Order": {
+"file": "json/api-runs-run-preparation-evidence-e14-withholding-order-c254be3a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E15 Separation Notice": {
+"file": "json/api-runs-run-preparation-evidence-e15-separation-notice-cad68a27.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/REG Page 1": {
+"file": "json/api-runs-run-preparation-evidence-reg-page-1-9d0c0fa9.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/BANK Page 1": {
+"file": "json/api-runs-run-preparation-evidence-bank-page-1-17c5d378.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/BANK Page 2": {
+"file": "json/api-runs-run-preparation-evidence-bank-page-2-83a8ad8f.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/WAGE Page 1": {
+"file": "json/api-runs-run-preparation-evidence-wage-page-1-53f2bab3.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/IWO Page 1": {
+"file": "json/api-runs-run-preparation-evidence-iwo-page-1-a2294ab9.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/SEP Page 1": {
+"file": "json/api-runs-run-preparation-evidence-sep-page-1-49dabb6d.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E16 Payroll Procedures": {
+"file": "json/api-runs-run-preparation-evidence-e16-payroll-procedures-9aaa207e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Summary": {
+"file": "json/api-runs-run-preparation-worksheet-summary-6597996c.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Register to Ledger": {
+"file": "json/api-runs-run-preparation-worksheet-register-to-ledger-adbcc716.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Bank Funding": {
+"file": "json/api-runs-run-preparation-worksheet-bank-funding-161bf2e9.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Payroll Taxes": {
+"file": "json/api-runs-run-preparation-worksheet-payroll-taxes-eb376903.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Withholdings": {
+"file": "json/api-runs-run-preparation-worksheet-withholdings-1e22664d.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Employee Tests": {
+"file": "json/api-runs-run-preparation-worksheet-employee-tests-789ea4b7.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/October 24 by Employee": {
+"file": "json/api-runs-run-preparation-worksheet-october-24-by-employee-7ebbfeb0.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Proposed Entries": {
+"file": "json/api-runs-run-preparation-worksheet-proposed-entries-518648a2.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Findings": {
+"file": "json/api-runs-run-preparation-worksheet-findings-568ee16a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/E01 October 10 Journal": {
+"file": "json/api-runs-run-preparation-worksheet-e01-october-10-journal-af3d95d6.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/workbook": {
+"file": "files/7fda540d/Payroll Reconciliation Workpapers.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/return": {
+"file": "files/600cd15c/Payroll Reconciliation Memo DRAFT.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/journal": {
+"file": "files/2089902f/Brookline Payroll Journal - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/roster": {
+"file": "files/428f444f/Employee Roster - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/ledger": {
+"file": "files/5bc634f7/GL Payroll Accounts - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/taxes": {
+"file": "files/179ef029/Tax Liability and Remittances - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/register": {
+"file": "files/8763aefd/Payroll Register - Period Ending October 23.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/bank": {
+"file": "files/cbb31fc3/Cobalt Harbor Bank Statement x4417 - October 2026.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/wages": {
+"file": "files/d081f552/Union Wage and Fringe Schedule - June 1, 2026.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/order": {
+"file": "files/2ce2fe2d/Income Withholding Order E-115.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/separation": {
+"file": "files/a444145e/Separation Notice E-124 - October 9.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/policy": {
+"file": "files/332d5205/HANGS Payroll Procedures v1.2.docx",
+"type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+},
+"/api/runs/RUN/output-page.png": {
+"file": "img/api-runs-run-output-page-png-f5beeb5e.png",
+"type": "image/png"
+},
+"/api/runs/RUN/output-summary": {
+"file": "json/api-runs-run-output-summary-05e012fc.json",
+"type": "application/json"
+},
+"/api/payroll/documents/list": {
+"file": "json/api-payroll-documents-list-bf05490d.json",
+"type": "application/json"
+},
+"/api/payroll/documents/page.png?file=01 Registers/Payroll Register - Period Ending October 23.pdf": {
+"file": "img/api-payroll-documents-page-png-file-01-registers-payroll-reg-096d30b9.png",
+"type": "image/png"
+},
+"/api/payroll/documents/preview?file=01 Registers/Brookline Payroll Journal - October 2026.xlsx": {
+"file": "json/api-payroll-documents-preview-file-01-registers-brookline-pa-26d4d287.json",
+"type": "application/json"
+},
+"/api/payroll/documents/preview?file=02 HR/Employee Roster - October 2026.xlsx": {
+"file": "json/api-payroll-documents-preview-file-02-hr-employee-roster-oct-8044d31d.json",
+"type": "application/json"
+},
+"/api/payroll/documents/preview?file=06 Procedures/HANGS Payroll Procedures v1.2.docx": {
+"file": "json/api-payroll-documents-preview-file-06-procedures-hangs-payro-6346fc35.json",
+"type": "application/json"
+},
+"/api/payroll/documents/preview?file=03 General Ledger/GL Payroll Accounts - October 2026.xlsx": {
+"file": "json/api-payroll-documents-preview-file-03-general-ledger-gl-payr-33f1c821.json",
+"type": "application/json"
+},
+"/api/payroll/documents/page.png?file=04 Bank/Cobalt Harbor Bank Statement x4417 - October 2026.pdf": {
+"file": "img/api-payroll-documents-page-png-file-04-bank-cobalt-harbor-ba-e04587d9.png",
+"type": "image/png"
+},
+"/api/payroll/documents/preview?file=05 Provider/Tax Liability and Remittances - October 2026.xlsx": {
+"file": "json/api-payroll-documents-preview-file-05-provider-tax-liability-ab0cc1df.json",
+"type": "application/json"
+},
+"/api/payroll/documents/page.png?file=02 HR/Union Wage and Fringe Schedule - June 1, 2026.pdf": {
+"file": "img/api-payroll-documents-page-png-file-02-hr-union-wage-and-fri-549b4aea.png",
+"type": "image/png"
+},
+"/api/payroll/documents/page.png?file=02 HR/Income Withholding Order E-115.pdf": {
+"file": "img/api-payroll-documents-page-png-file-02-hr-income-withholding-dcb5efe2.png",
+"type": "image/png"
+},
+"/api/payroll/documents/page.png?file=02 HR/Separation Notice E-124 - October 9.pdf": {
+"file": "img/api-payroll-documents-page-png-file-02-hr-separation-notice--8f87b117.png",
+"type": "image/png"
+}
+}

@@ -1,0 +1,178 @@
+{
+"/api/runs/RUN/preparation": {
+"file": "json/api-runs-run-preparation-c579af6e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E01 Trial Balance": {
+"file": "json/api-runs-run-preparation-evidence-e01-trial-balance-8f78d1ef.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E02 GL Detail": {
+"file": "json/api-runs-run-preparation-evidence-e02-gl-detail-4a814538.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E03 Close Entries": {
+"file": "json/api-runs-run-preparation-evidence-e03-close-entries-ced045dc.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E04 Register": {
+"file": "json/api-runs-run-preparation-evidence-e04-register-e5fb9ce8.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E05 October Changes": {
+"file": "json/api-runs-run-preparation-evidence-e05-october-changes-2f433d6a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E06 AP Ledger Lines": {
+"file": "json/api-runs-run-preparation-evidence-e06-ap-ledger-lines-d127984f.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E07 Draft JE-2610-FA1": {
+"file": "json/api-runs-run-preparation-evidence-e07-draft-je-2610-fa1-5fe63a32.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E08 KRE-2219 Invoice": {
+"file": "json/api-runs-run-preparation-evidence-e08-kre-2219-invoice-16ff79e2.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E09 Bill of Sale FA-105": {
+"file": "json/api-runs-run-preparation-evidence-e09-bill-of-sale-fa-105-6eeb261e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV Page 1": {
+"file": "json/api-runs-run-preparation-evidence-inv-page-1-b4f3181c.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/SALE Page 1": {
+"file": "json/api-runs-run-preparation-evidence-sale-page-1-b140cffe.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E10 Fixed Asset Policy": {
+"file": "json/api-runs-run-preparation-evidence-e10-fixed-asset-policy-3a7655cd.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Summary": {
+"file": "json/api-runs-run-preparation-worksheet-summary-6597996c.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Roll-Forward": {
+"file": "json/api-runs-run-preparation-worksheet-roll-forward-6cf1ab29.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Additions": {
+"file": "json/api-runs-run-preparation-worksheet-additions-e61765bc.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Disposals": {
+"file": "json/api-runs-run-preparation-worksheet-disposals-3b56707a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Depreciation": {
+"file": "json/api-runs-run-preparation-worksheet-depreciation-7c0c99c8.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Register Corrected": {
+"file": "json/api-runs-run-preparation-worksheet-register-corrected-449b6b6d.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Proposed Entries": {
+"file": "json/api-runs-run-preparation-worksheet-proposed-entries-518648a2.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Findings": {
+"file": "json/api-runs-run-preparation-worksheet-findings-568ee16a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/E01 Trial Balance": {
+"file": "json/api-runs-run-preparation-worksheet-e01-trial-balance-be61a333.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/E02 GL Detail": {
+"file": "json/api-runs-run-preparation-worksheet-e02-gl-detail-482a492e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/workbook": {
+"file": "files/7fda540d/Fixed Asset Workpapers.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/return": {
+"file": "files/600cd15c/Fixed Asset Memo DRAFT.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/tb": {
+"file": "files/4f072080/Preliminary Trial Balance - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/close": {
+"file": "files/1d462692/October Close Depreciation Entries.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/register": {
+"file": "files/8763aefd/Fixed Asset Register - Updated November 6.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/ap": {
+"file": "files/802a2289/AP Ledger Lines - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/draft": {
+"file": "files/0e301906/Draft JE-2610-FA1 - October Capitalizations.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/invoice": {
+"file": "files/025c2581/KRE-2219 Kestrel Ridge Equipment.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/sale": {
+"file": "files/e2227e53/Bill of Sale FA-105 - October 28.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/policy": {
+"file": "files/332d5205/HANGS Fixed Asset Policy v2.0.docx",
+"type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+},
+"/api/runs/RUN/output-page.png": {
+"file": "img/api-runs-run-output-page-png-f5beeb5e.png",
+"type": "image/png"
+},
+"/api/runs/RUN/output-summary": {
+"file": "json/api-runs-run-output-summary-05e012fc.json",
+"type": "application/json"
+},
+"/api/fa/documents/list": {
+"file": "json/api-fa-documents-list-df1bb1d8.json",
+"type": "application/json"
+},
+"/api/fa/documents/preview?file=01 Ledger/Preliminary Trial Balance - October 2026.xlsx": {
+"file": "json/api-fa-documents-preview-file-01-ledger-preliminary-trial-ba-ff3866f2.json",
+"type": "application/json"
+},
+"/api/fa/documents/preview?file=02 Register/Fixed Asset Register - Updated November 6.xlsx": {
+"file": "json/api-fa-documents-preview-file-02-register-fixed-asset-regist-a1a79006.json",
+"type": "application/json"
+},
+"/api/fa/documents/preview?file=07 Policy/HANGS Fixed Asset Policy v2.0.docx": {
+"file": "json/api-fa-documents-preview-file-07-policy-hangs-fixed-asset-po-ebcd80ff.json",
+"type": "application/json"
+},
+"/api/fa/documents/preview?file=03 AP/AP Ledger Lines - October 2026.xlsx": {
+"file": "json/api-fa-documents-preview-file-03-ap-ap-ledger-lines-october--2a0de8d4.json",
+"type": "application/json"
+},
+"/api/fa/documents/preview?file=04 Draft Entry/Draft JE-2610-FA1 - October Capitalizations.xlsx": {
+"file": "json/api-fa-documents-preview-file-04-draft-entry-draft-je-2610-f-6c143b85.json",
+"type": "application/json"
+},
+"/api/fa/documents/page.png?file=05 Invoices/KRE-2219 Kestrel Ridge Equipment.pdf": {
+"file": "img/api-fa-documents-page-png-file-05-invoices-kre-2219-kestrel--1af4714a.png",
+"type": "image/png"
+},
+"/api/fa/documents/page.png?file=06 Disposals/Bill of Sale FA-105 - October 28.pdf": {
+"file": "img/api-fa-documents-page-png-file-06-disposals-bill-of-sale-fa--1f2b5165.png",
+"type": "image/png"
+},
+"/api/fa/documents/preview?file=01 Ledger/October Close Depreciation Entries.xlsx": {
+"file": "json/api-fa-documents-preview-file-01-ledger-october-close-deprec-4cafe941.json",
+"type": "application/json"
+}
+}

@@ -1,0 +1,202 @@
+{
+"/api/runs/RUN/preparation": {
+"file": "json/api-runs-run-preparation-c579af6e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E01 Open Invoices": {
+"file": "json/api-runs-run-preparation-evidence-e01-open-invoices-aebeeadd.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E02 Retainage by Job": {
+"file": "json/api-runs-run-preparation-evidence-e02-retainage-by-job-6949a51d.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E03 GL Balances": {
+"file": "json/api-runs-run-preparation-evidence-e03-gl-balances-d5b5fc47.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E04 GL Detail": {
+"file": "json/api-runs-run-preparation-evidence-e04-gl-detail-f573ff05.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E05 Receipts": {
+"file": "json/api-runs-run-preparation-evidence-e05-receipts-e9604077.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E06 Credit Memos": {
+"file": "json/api-runs-run-preparation-evidence-e06-credit-memos-a33469d1.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E07 Contracts": {
+"file": "json/api-runs-run-preparation-evidence-e07-contracts-d3c7b658.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E08 Change Orders": {
+"file": "json/api-runs-run-preparation-evidence-e08-change-orders-8c137fd9.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E09 Collections Notes": {
+"file": "json/api-runs-run-preparation-evidence-e09-collections-notes-6bec349c.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E10 Pay Application 6": {
+"file": "json/api-runs-run-preparation-evidence-e10-pay-application-6-988d41f5.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E11 Change Order CO-03": {
+"file": "json/api-runs-run-preparation-evidence-e11-change-order-co-03-b2ed5558.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E12 Credit Agreement CR-07": {
+"file": "json/api-runs-run-preparation-evidence-e12-credit-agreement-cr-07-e60894ba.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/PAY Page 1": {
+"file": "json/api-runs-run-preparation-evidence-pay-page-1-37591a83.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/CO Page 1": {
+"file": "json/api-runs-run-preparation-evidence-co-page-1-f650bbdf.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/CR Page 1": {
+"file": "json/api-runs-run-preparation-evidence-cr-page-1-c2f07e25.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E13 Credit Policy": {
+"file": "json/api-runs-run-preparation-evidence-e13-credit-policy-998146ae.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Summary": {
+"file": "json/api-runs-run-preparation-worksheet-summary-6597996c.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Aging by Customer": {
+"file": "json/api-runs-run-preparation-worksheet-aging-by-customer-58f2ceff.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Aging Detail": {
+"file": "json/api-runs-run-preparation-worksheet-aging-detail-d8a6c2fd.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Retainage": {
+"file": "json/api-runs-run-preparation-worksheet-retainage-d339435a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Cash and Credits": {
+"file": "json/api-runs-run-preparation-worksheet-cash-and-credits-c9db8954.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Change Orders": {
+"file": "json/api-runs-run-preparation-worksheet-change-orders-3c3f0b37.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Allowance": {
+"file": "json/api-runs-run-preparation-worksheet-allowance-0f1d4930.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Proposed Entries": {
+"file": "json/api-runs-run-preparation-worksheet-proposed-entries-518648a2.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Findings": {
+"file": "json/api-runs-run-preparation-worksheet-findings-568ee16a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Letters": {
+"file": "json/api-runs-run-preparation-worksheet-letters-2ad6ada1.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/workbook": {
+"file": "files/7fda540d/AR Review Workpapers.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/return": {
+"file": "files/600cd15c/AR Review Memo DRAFT.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/aging": {
+"file": "files/f969b7aa/AR Aging Detail - October 31, 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/ledger": {
+"file": "files/5bc634f7/GL Receivable Accounts - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/receipts": {
+"file": "files/ab3fe13a/Cash Receipts and Credit Memos - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/contracts": {
+"file": "files/310f1fa8/Contract and Change Order Log - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/notes": {
+"file": "files/40de8df6/Collections Notes - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/payapp": {
+"file": "files/b5613603/Bellhaven Pay Application 6 - October 2026.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/co": {
+"file": "files/5bb0a08e/Bellhaven Change Order CO-03 - Signed October 8.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/credit": {
+"file": "files/937f570c/Ridgecrest Credit Agreement CR-07 - October 12.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/policy": {
+"file": "files/332d5205/HANGS Credit and Collections Policy v1.3.docx",
+"type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+},
+"/api/runs/RUN/output-page.png": {
+"file": "img/api-runs-run-output-page-png-f5beeb5e.png",
+"type": "image/png"
+},
+"/api/runs/RUN/output-summary": {
+"file": "json/api-runs-run-output-summary-05e012fc.json",
+"type": "application/json"
+},
+"/api/ar/documents/list": {
+"file": "json/api-ar-documents-list-5d17843f.json",
+"type": "application/json"
+},
+"/api/ar/documents/preview?file=01 Aging/AR Aging Detail - October 31, 2026.xlsx": {
+"file": "json/api-ar-documents-preview-file-01-aging-ar-aging-detail-octob-bb98121d.json",
+"type": "application/json"
+},
+"/api/ar/documents/preview?file=02 General Ledger/GL Receivable Accounts - October 2026.xlsx": {
+"file": "json/api-ar-documents-preview-file-02-general-ledger-gl-receivabl-48ec58df.json",
+"type": "application/json"
+},
+"/api/ar/documents/preview?file=07 Policy/HANGS Credit and Collections Policy v1.3.docx": {
+"file": "json/api-ar-documents-preview-file-07-policy-hangs-credit-and-col-1380ade6.json",
+"type": "application/json"
+},
+"/api/ar/documents/preview?file=03 Cash Receipts/Cash Receipts and Credit Memos - October 2026.xlsx": {
+"file": "json/api-ar-documents-preview-file-03-cash-receipts-cash-receipts-f4ae4a94.json",
+"type": "application/json"
+},
+"/api/ar/documents/preview?file=04 Contracts/Contract and Change Order Log - October 2026.xlsx": {
+"file": "json/api-ar-documents-preview-file-04-contracts-contract-and-chan-ca95551d.json",
+"type": "application/json"
+},
+"/api/ar/documents/page.png?file=04 Contracts/Bellhaven Pay Application 6 - October 2026.pdf": {
+"file": "img/api-ar-documents-page-png-file-04-contracts-bellhaven-pay-ap-5015ab44.png",
+"type": "image/png"
+},
+"/api/ar/documents/page.png?file=04 Contracts/Bellhaven Change Order CO-03 - Signed October 8.pdf": {
+"file": "img/api-ar-documents-page-png-file-04-contracts-bellhaven-change-ae9af9ae.png",
+"type": "image/png"
+},
+"/api/ar/documents/page.png?file=05 Credits/Ridgecrest Credit Agreement CR-07 - October 12.pdf": {
+"file": "img/api-ar-documents-page-png-file-05-credits-ridgecrest-credit--fc7bc6f9.png",
+"type": "image/png"
+},
+"/api/ar/documents/preview?file=06 Collections/Collections Notes - October 2026.xlsx": {
+"file": "json/api-ar-documents-preview-file-06-collections-collections-not-fcc4bbe2.json",
+"type": "application/json"
+}
+}

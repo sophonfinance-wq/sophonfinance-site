@@ -985,7 +985,10 @@ footer a:hover{ color:var(--blue); }
       { id:'accounting-bankrec', label:'Bank reconciliation', note:'Month end',          sub:'Reconciles a month of bank activity to the books.' },
       { id:'accounting-close', label:'Month-end close', note:'Accruals and entries', sub:'Closes the month: accruals, recurring and adjusting entries, and the checklist.' },
       { id:'accounting-payrun', label:'Payment run', note:'Weekly vendor pay', sub:'Picks which approved bills to pay this week, checks for duplicates and holds, and prepares the batch.' },
-      { id:'accounting-reporting', label:'Financial statements', note:'Budget vs actual', sub:'Prepares the monthly statements, budget vs actual and covenant metrics for review.' } ] },
+      { id:'accounting-reporting', label:'Financial statements', note:'Budget vs actual', sub:'Prepares the monthly statements, budget vs actual and covenant metrics for review.' },
+      { id:'accounting-ar', label:'AR & collections', note:'Aging and retainage', sub:'Ages receivables by customer and job, applies cash, catches missed billings and drafts reminders.' },
+      { id:'accounting-payroll', label:'Payroll rec', note:'Register to GL to bank', sub:'Ties payroll to the ledger, the tax reports and the bank, and catches pay errors.' },
+      { id:'accounting-fixedassets', label:'Fixed assets', note:'Roll-forward', sub:'Rolls the asset register forward, recomputes depreciation and catches capitalisation errors.' } ] },
     audit:      { name:'Audit Machine',      ic:'assets/icons/aud.jpg', ready:true, pick:0, subjects:[
       { id:'audit',              label:'Year-end audit',      note:'Full engagement',    sub:'Builds year-end audit workpapers.' },
       { id:'audit-cash',         label:'Cash audit',          note:'Bank confirmations', sub:'Tests cash with bank confirmations and reconciliations.' },
