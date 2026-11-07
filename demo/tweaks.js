@@ -46,4 +46,48 @@
     }
   };
   new MutationObserver(accept).observe(document.documentElement, { childList: true, subtree: true });
+
+  // ---- 3. web-demo polish: replay wording, and hide controls that only work in the desktop machine ----
+  var hide = document.createElement('style');
+  hide.textContent =
+    '.sys-restore, .simple-filing:has(.simple-filing-badge.is-coming), a[href*="/api/hangs/accounting/export/"], .ff-hidden{ display:none !important; }' +
+    (/audit-covenant/.test(location.pathname) ? '.app-button[data-app="ledgerwyn"], .app-button[data-app="charterfold"], .app-button[data-app="vellumrow"], .app-button[data-app="quillpost"]{ display:none !important; }' : '');
+  (document.head || document.documentElement).appendChild(hide);
+  var WORDS = [
+    [/^Watch the Live (.+)$/, 'Watch the $1'],
+    [/^Watch Live (.+)$/, 'Watch the $1'],
+    [/^Live Calculations$/, 'Calculations'],
+    [/^Live Log$/, 'Run Log'],
+    [/^Live status$/i, 'Run status'],
+    [/^Live, (\d+) lines?$/, 'Run log, $1 lines'],
+    [/^Paused, reconnecting$/, 'Paused'],
+    [/^(Demo )?Engine (On|Off)$/, 'Web Demo'],
+    [/^Version [\d.]+, port \d+.*$/, 'Plays back one recorded run. Nothing is sent anywhere.'],
+    [/^No runs yet\. Press the key to start one\.$/, 'No runs yet.'],
+    [/^The engine ends the run and every process it started\..*$/, 'The playback stops here. You can start it again from the beginning.'],
+    [/^Engine$/, 'Method']
+  ];
+  var DEAD = /^(Restore Demo Data|Add Document|Import Invoice|Attach Document)$/;
+  var fixNode = function (n) {
+    if (n.nodeType === 3) {
+      var v = n.nodeValue, t = v.trim(); if (!t || t.length > 200) return;
+      for (var i = 0; i < WORDS.length; i++) { if (WORDS[i][0].test(t)) { n.nodeValue = v.replace(t, t.replace(WORDS[i][0], WORDS[i][1])); return; } }
+      return;
+    }
+    if (n.nodeType !== 1) return;
+    if ((n.tagName === 'BUTTON' || n.tagName === 'A' || n.tagName === 'LABEL') && DEAD.test((n.textContent || '').trim())) n.classList.add('ff-hidden');
+    var w = document.createTreeWalker(n, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT), c;
+    while ((c = w.nextNode())) { if (c.nodeType === 3) fixNode(c); else if ((c.tagName === 'BUTTON' || c.tagName === 'A' || c.tagName === 'LABEL') && DEAD.test((c.textContent || '').trim())) c.classList.add('ff-hidden'); }
+  };
+  var pending = [], queued = false;
+  var flush = function () { queued = false; var list = pending; pending = []; for (var i = 0; i < list.length; i++) fixNode(list[i]); };
+  new MutationObserver(function (ms) {
+    for (var i = 0; i < ms.length; i++) {
+      var m = ms[i];
+      if (m.type === 'characterData') pending.push(m.target);
+      else for (var j = 0; j < m.addedNodes.length; j++) pending.push(m.addedNodes[j]);
+    }
+    if (!queued) { queued = true; sT.call(window, flush, 30); }
+  }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
+  document.addEventListener('DOMContentLoaded', function () { fixNode(document.body); });
 })();
