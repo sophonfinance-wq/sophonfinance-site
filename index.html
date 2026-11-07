@@ -77,6 +77,14 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 @keyframes ffsGone{ to{ visibility:hidden; } }
 @media (max-width:600px){ .ffs-lock{ gap:14px; } .ffs-lock svg{ width:56px; height:56px; } .ffs-word b{ font-size:25px; } .ffs-word span{ font-size:8.5px; letter-spacing:.36em; } .ffs-partner{ font-size:9.5px; letter-spacing:.18em; margin-top:26px; } .ffs-partner img{ height:18px; } }
 
+/* headline: accounting, marketing, tech in a slow rotation */
+.sr{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.rot{ display:inline-grid; justify-items:start; vertical-align:bottom; }
+.rot > span{ grid-area:1/1; opacity:0; animation:rotw 9s ease-in-out infinite; }
+.rot > span:nth-child(2){ animation-delay:3s; } .rot > span:nth-child(3){ animation-delay:6s; }
+@keyframes rotw{ 0%{ opacity:0; transform:translateY(.28em); filter:blur(3px); } 7%{ opacity:1; transform:none; filter:none; } 30%{ opacity:1; transform:none; filter:none; } 37%{ opacity:0; transform:translateY(-.28em); filter:blur(3px); } 100%{ opacity:0; } }
+@media (prefers-reduced-motion:reduce){ .rot > span{ animation:none; } .rot > span:first-child{ opacity:1; } }
+
 /* header */
 .top{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,.86); -webkit-backdrop-filter:saturate(1.4) blur(14px); backdrop-filter:saturate(1.4) blur(14px); box-shadow:0 1px 0 var(--line), 0 6px 18px -12px rgba(15,39,48,.25); }
 .top-in{ display:flex; align-items:center; justify-content:space-between; gap:20px; height:76px; }
@@ -322,7 +330,7 @@ footer a:hover{ color:var(--blue); }
           <li><img src="assets/logos/uber.svg" alt="Uber" class="lg-uber"></li>
         </ul>
         </div>
-        <h1 id="h1"><span class="h1-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span>The digital AI <span class="acc">accounting firm.</span></h1>
+        <h1 id="h1"><span class="h1-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span><span class="sr">The digital AI accounting, marketing and tech firm.</span><span aria-hidden="true">The digital AI <span class="acc rot"><span>accounting firm.</span><span>marketing firm.</span><span>tech firm.</span></span></span></h1>
         <div class="panel" id="panel" role="tabpanel" aria-labelledby="t0">
           <div class="player">
             <video id="v" autoplay muted playsinline webkit-playsinline controls preload="auto" poster="videos/tax-machine-poster.jpg">
@@ -577,5 +585,6 @@ footer a:hover{ color:var(--blue); }
   nav.addEventListener('click', function(e){ if (e.target.closest('a')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); } });
 })();
 </script>
+<script src="assets/chat.js" defer></script>
 </body>
 </html>
