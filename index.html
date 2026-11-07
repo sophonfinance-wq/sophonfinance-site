@@ -54,9 +54,9 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(46,106,230,.18); touch-action:
 .top{ position:sticky; top:0; z-index:50; background:#fff; box-shadow:0 1px 0 var(--line), 0 6px 18px -12px rgba(18,24,43,.25); }
 .top-in{ display:flex; align-items:center; justify-content:space-between; gap:20px; height:76px; }
 .logo{ display:flex; align-items:center; gap:12px; color:var(--ink); }
-.logo svg{ width:44px; height:44px; flex:none; }
-.logo b{ display:block; font:500 24px/1 var(--head); color:var(--ink); letter-spacing:.3px; }
-.logo span span{ display:block; font:500 10px/1 var(--head); letter-spacing:.24em; color:var(--text-2); margin-top:6px; }
+.logo svg{ width:42px; height:42px; flex:none; }
+.logo b{ display:block; font:600 20px/1 var(--head); color:#0b1a36; letter-spacing:.07em; text-transform:uppercase; }
+.logo span span{ display:block; font:500 9.5px/1 var(--head); letter-spacing:.34em; color:#5a6886; margin-top:7px; text-transform:uppercase; }
 .nav{ display:flex; align-items:center; gap:30px; }
 .nav a{ font:500 13px/1 var(--head); letter-spacing:.12em; text-transform:uppercase; color:var(--ink); }
 .nav a:hover{ color:var(--blue); }
@@ -68,40 +68,66 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(46,106,230,.18); touch-action:
   .nav.open{ display:flex; }
   .nav a{ padding:14px 0; border-bottom:1px solid var(--line); }
   .nav .btn{ margin-top:14px; justify-content:center; }
-  .logo b{ font-size:21px; }
+  .logo b{ font-size:18px; }
 }
 
 /* ===== Services hero: the training videos come first ===== */
-.svc{ background:var(--dark); color:#c9ceda; padding:54px 0 64px; }
-.svc-head{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px 32px; margin-bottom:34px; }
-.svc h1{ color:#fff; font-size:clamp(32px, 3.8vw, 50px); line-height:1.1; }
-.svc h1 .acc{ color:var(--blue-l); }
-.svc-head p{ margin:12px 0 0; font-size:18px; color:#aab1c0; max-width:36em; }
-.svc-grid{ display:grid; grid-template-columns:280px 1fr; gap:36px; align-items:start; }
-.tabs{ display:flex; flex-direction:column; gap:6px; }
-.tab{ display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; text-align:left; background:var(--dark-2); color:#e4e7ee; border:1px solid var(--dark-3); padding:18px 20px;
+.svc{ background:linear-gradient(180deg,#f5f7fb 0,#fff 420px); color:var(--text); padding:40px 0 64px; }
+/* The stage holds the headline, the video and its controls; on desktop it never gets taller than the screen */
+.stage{ max-width:1400px; margin:0 auto; }
+@media (min-width:981px){ .stage{ max-width:min(1400px, calc((100vh - 190px) * 16 / 9)); } }
+.svc h1{ color:var(--ink); font-size:clamp(30px, 3.4vw, 46px); line-height:1.1; margin:0 0 24px; }
+.svc h1 .acc{ color:var(--blue); }
+.tabs{ display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:6px; }
+.tab{ display:flex; align-items:center; justify-content:center; width:100%; min-height:52px; text-align:center; background:#fff; color:var(--ink); border:1px solid var(--line); padding:14px 12px;
   font:600 13.5px/1.2 var(--body); letter-spacing:.08em; text-transform:uppercase; cursor:pointer; transition:background .15s, border-color .15s; }
-.tab:hover{ border-color:#4a5060; }
+.tab:hover{ border-color:#aab3c3; }
 .tab[aria-selected="true"]{ background:var(--blue); border-color:var(--blue); color:#fff; }
-.tab .chev{ font:400 20px/1 var(--head); }
-.tab-note{ font-size:14px; color:#8e95a5; margin:18px 2px 0; }
-.panel h2{ color:#fff; font-size:26px; font-weight:400; margin:0 0 6px; }
-.panel .sub{ color:#aab1c0; margin:0 0 16px; }
-.player{ position:relative; background:#000; box-shadow:0 26px 60px -28px rgba(0,0,0,.9); }
-.player video{ width:100%; height:auto; aspect-ratio:16/9; background:#000; }
+.info{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px 32px; margin-top:22px; }
+.panel h2{ color:var(--ink); font-size:26px; font-weight:400; margin:0 0 6px; }
+.panel .sub{ color:var(--text-2); margin:0; max-width:46em; }
+.tab-note{ font-size:14px; color:#8e95a5; margin:14px 0 0; }
+.player{ position:relative; background:#eef0f5; box-shadow:0 0 0 1px rgba(18,24,43,.07), 0 30px 60px -32px rgba(18,24,43,.45); }
+.player video{ width:100%; height:auto; aspect-ratio:16/9; background:#eef0f5; }
 .snd{ position:absolute; top:14px; right:14px; z-index:2; display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:9px 14px; background:var(--blue); color:#fff; border:0;
   font:600 12.5px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; cursor:pointer; }
 .snd:hover{ background:var(--blue-d); }
 .snd svg{ width:17px; height:17px; }
 .snd[hidden]{ display:none; }
-.pbar{ display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 0 0; font-size:14.5px; color:#8e95a5; }
-.pbar button{ background:none; border:0; min-height:44px; padding:6px 0 6px 12px; color:var(--blue-l); font:600 12.5px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; cursor:pointer; }
+.pbar{ display:flex; flex-direction:column; align-items:flex-end; flex:none; font-size:14.5px; color:var(--text-2); white-space:nowrap; }
+.pbar button{ background:none; border:0; min-height:44px; padding:6px 0 6px 12px; color:var(--blue); font:600 12.5px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; cursor:pointer; }
 @media (max-width:980px){
-  .svc{ padding:36px 0 48px; }
-  .svc-head .btn{ width:100%; justify-content:center; }
-  .svc-grid{ grid-template-columns:1fr; gap:20px; }
-  .tab{ padding:14px 16px; font-size:12.5px; }
-  .tab-note{ display:none; }
+  .svc{ padding:28px 0 44px; }
+  .svc h1{ margin-bottom:18px; }
+  .info{ flex-direction:column; margin-top:18px; }
+  .pbar{ flex-direction:row; justify-content:space-between; align-items:center; width:100%; }
+}
+/* Phones: the video runs edge to edge; the tabs use short names */
+@media (max-width:600px){
+  .stage .player{ margin:0 calc(-1 * max(var(--gut), env(safe-area-inset-left))); box-shadow:none; }
+  .tab{ font-size:12.5px; padding:12px 6px; min-height:48px; }
+  .tab .lg{ display:none; }
+  .snd{ top:8px; right:8px; min-height:34px; padding:7px 10px; font-size:11px; gap:6px; }
+  .snd svg{ width:14px; height:14px; }
+}
+
+/* trust band: where the engineers come from */
+.trust{ background:#fff; border-top:1px solid var(--line); padding:44px 0 48px; }
+.t-label{ text-align:center; font:600 12.5px/1.3 var(--body); letter-spacing:.14em; text-transform:uppercase; color:var(--text-2); margin:0 0 18px; }
+.t-names{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:14px 56px; }
+.t-names li{ font:600 clamp(18px, 2vw, 26px)/1.1 var(--head); letter-spacing:.12em; text-transform:uppercase; color:#3a4357; }
+.t-stats{ display:grid; grid-template-columns:repeat(4,1fr); margin-top:36px; border-top:1px solid var(--line); }
+.t-stats div{ padding:24px 20px 0; text-align:center; }
+.t-stats div + div{ border-left:1px solid var(--line); }
+.t-stats b{ display:block; font:500 clamp(26px, 2.8vw, 36px)/1.1 var(--head); color:var(--ink); }
+.t-stats span{ display:block; margin-top:8px; color:var(--text-2); font-size:15.5px; }
+@media (max-width:980px) and (min-width:701px){ .t-stats{ grid-template-columns:1fr 1fr; } .t-stats div:nth-child(3){ border-left:0; } .t-stats div:nth-child(n+3){ padding-top:24px; } }
+@media (max-width:700px){
+  .trust{ padding:34px 0 30px; }
+  .t-names{ gap:10px 26px; }
+  .t-stats{ grid-template-columns:1fr; margin-top:26px; }
+  .t-stats div{ padding:18px 0; }
+  .t-stats div + div{ border-left:0; border-top:1px solid var(--line); }
 }
 
 /* about band */
@@ -131,14 +157,14 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(46,106,230,.18); touch-action:
 @media (max-width:980px){ .case{ grid-template-columns:1fr; gap:22px; } .reels{ grid-template-columns:repeat(2,1fr); } .reels.lw{ grid-template-columns:1fr 1fr; } .reels.lw .site{ grid-column:1/-1; } .reel.site img{ aspect-ratio:16/10; } }
 
 /* team: dark split, film with a slow drift, blue box */
-.team{ position:relative; background:var(--dark); color:#fff; overflow:hidden; }
-.team-film{ position:absolute; top:0; right:0; bottom:0; width:50%; overflow:hidden; background:#1b1f28; }
+.team{ position:relative; background:var(--gray); color:var(--text); overflow:hidden; }
+.team-film{ position:absolute; top:0; right:0; bottom:0; width:50%; overflow:hidden; background:#e4e7ed; }
 .team-film video{ width:100%; height:100%; object-fit:cover; animation:drift 18s ease-in-out infinite alternate; transform-origin:60% 45%; }
 @keyframes drift{ from{ transform:scale(1.03); } to{ transform:scale(1.14) translateX(-2%); } }
 @media (prefers-reduced-motion:reduce){ .team-film video{ animation:none; } }
 .team-in{ position:relative; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; padding-top:96px; padding-bottom:96px; }
-.team h2{ color:#fff; font-size:clamp(30px, 3.4vw, 46px); line-height:1.15; }
-.team-box{ position:relative; z-index:1; background:var(--blue); padding:38px 38px 32px; font-size:17px; line-height:1.65; box-shadow:0 24px 50px -24px rgba(0,0,0,.6); margin-right:-8%; }
+.team h2{ color:var(--ink); font-size:clamp(30px, 3.4vw, 46px); line-height:1.15; }
+.team-box{ position:relative; z-index:1; background:var(--blue); color:#fff; padding:38px 38px 32px; font-size:17px; line-height:1.65; box-shadow:0 24px 50px -24px rgba(18,24,43,.4); margin-right:-8%; }
 .team-box p{ margin:0 0 16px; }
 .team-box a{ color:#fff; }
 .team-box a:hover{ color:#dfe8ff; }
@@ -167,21 +193,19 @@ form.cf{ background:var(--gray); padding:30px; display:grid; gap:14px; }
 @media (max-width:900px){ .contact{ padding:56px 0; } .c-grid{ grid-template-columns:1fr; gap:32px; } .cf .two{ grid-template-columns:1fr; } form.cf{ padding:22px; } .cf .btn{ width:100%; justify-content:center; } }
 
 /* footer */
-footer{ background:var(--dark); color:#b9bfcc; font-size:15px; }
+footer{ background:#f6f7f9; color:var(--text-2); font-size:15px; border-top:1px solid var(--line); }
 .f-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:36px; padding-top:56px; padding-bottom:40px; }
-footer .logo b{ color:#fff; }
-footer .logo span span{ color:#8e95a5; }
-footer h4{ font:500 12.5px/1 var(--head); letter-spacing:.16em; text-transform:uppercase; color:#fff; margin:6px 0 16px; }
+footer h4{ font:500 12.5px/1 var(--head); letter-spacing:.16em; text-transform:uppercase; color:var(--ink); margin:6px 0 16px; }
 footer ul{ list-style:none; margin:0; padding:0; display:grid; gap:0; }
 footer li a{ display:inline-block; padding:10px 0; }
-footer a{ color:#d6dae3; }
-footer a:hover{ color:#fff; }
+footer a{ color:var(--ink); }
+footer a:hover{ color:var(--blue); }
 .f-about{ margin:16px 0 0; max-width:24em; }
 .codes{ display:flex; gap:12px; }
 .codes figure{ margin:0; text-align:center; }
-.codes img{ width:92px; height:92px; background:#fff; padding:5px; image-rendering:pixelated; }
-.codes figcaption{ font-size:12px; color:#8e95a5; margin-top:6px; }
-.f-base{ border-top:1px solid #2a2e38; padding-top:18px; padding-bottom:28px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; font-size:13px; color:#8e95a5; }
+.codes img{ width:92px; height:92px; background:#fff; padding:5px; border:1px solid var(--line); image-rendering:pixelated; }
+.codes figcaption{ font-size:12px; color:var(--text-2); margin-top:6px; }
+.f-base{ border-top:1px solid var(--line); padding-top:18px; padding-bottom:28px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; font-size:13px; color:var(--text-2); }
 @media (max-width:900px){ .f-grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:560px){ .f-grid{ grid-template-columns:1fr; } }
 
@@ -191,17 +215,10 @@ footer a:hover{ color:#fff; }
   .nav{ top:56px; }
   .logo svg{ width:34px; height:34px; }
   .logo b{ font-size:19px; }
-  .player{ max-width:calc((100vh - 72px) * 16 / 9); margin:0 auto; }
-  .svc-head{ margin-bottom:18px; }
+  .stage .player{ max-width:calc((100vh - 72px) * 16 / 9); margin:0 auto; }
 }
 .contact dd a{ display:inline-block; padding:10px 0; margin:-10px 0; }
 
-/* Phones: the training video comes right after the headline; the service tabs follow it */
-@media (max-width:980px){
-  .svc-grid > .panel{ order:1; }
-  .svc-grid > div:first-child{ order:2; }
-  .svc-head p{ font-size:16px; }
-}
 </style>
 </head>
 <body>
@@ -210,8 +227,8 @@ footer a:hover{ color:#fff; }
 <header class="top">
   <div class="wrap top-in">
     <a class="logo" href="/" aria-label="Fast Finance home">
-      <svg viewBox="0 0 48 48" aria-hidden="true"><g transform="skewX(-14) translate(9 0)"><rect x="15" y="9" width="6.5" height="30" fill="#12182b"/><rect x="15" y="9" width="22" height="6.5" fill="#12182b"/><rect x="15" y="21.5" width="16" height="6" fill="#12182b"/><rect x="3" y="9" width="8.5" height="6.5" fill="#2e6ae6"/><rect x="6" y="21.5" width="5.5" height="6" fill="#2e6ae6"/></g></svg>
-      <span><b>Fast Finance</b><span>SOPHONFINANCE.COM</span></span>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0b1a36"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#4f86ff"/><rect x="36" y="45" width="6" height="5" fill="#4f86ff"/></svg>
+      <span><b>Fast Finance</b><span>AI Engineering Firm</span></span>
     </a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#12182b" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -230,29 +247,26 @@ footer a:hover{ color:#fff; }
 
   <section class="svc" id="services" aria-labelledby="h1">
     <div class="wrap">
-      <div class="svc-head">
-        <div>
-          <h1 id="h1">The digital AI <span class="acc">accounting firm.</span></h1>
-        </div>
-        <a class="btn" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Schedule a free consultation</a>
-      </div>
-      <div class="svc-grid">
-        <div>
-          <div class="tabs" role="tablist" aria-label="Services">
-            <button class="tab" role="tab" aria-selected="true" aria-controls="panel" id="t0">Tax services <span class="chev" aria-hidden="true">&rsaquo;</span></button>
-            <button class="tab" role="tab" aria-selected="false" aria-controls="panel" id="t1" tabindex="-1">Accounting services <span class="chev" aria-hidden="true">&rsaquo;</span></button>
-            <button class="tab" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1">Audit services <span class="chev" aria-hidden="true">&rsaquo;</span></button>
-          </div>
-          <p class="tab-note">Each training video is a real run of the machine, shortened. The company, people and figures in it are invented.</p>
-        </div>
+      <div class="stage">
+        <h1 id="h1">The digital AI <span class="acc">accounting firm.</span></h1>
         <div class="panel" id="panel" role="tabpanel" aria-labelledby="t0">
-          <h2 id="pTitle">Fast Finance Tax Machine</h2>
-          <p class="sub" id="pSub">Partnership, state and payroll filings prepared from the client&rsquo;s own books, with every rule checked against the official source.</p>
           <div class="player">
             <video id="v" autoplay muted playsinline webkit-playsinline controls preload="auto" poster="videos/tax-machine-poster.jpg">
               <source src="videos/tax-machine-training.mp4" type="video/mp4">
             </video>
             <button class="snd" id="snd" type="button" aria-label="Turn the sound on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>Sound on</button>
+          </div>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Services">
+          <button class="tab" role="tab" aria-selected="true" aria-controls="panel" id="t0">Tax<span class="lg">&nbsp;services</span></button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel" id="t1" tabindex="-1">Accounting<span class="lg">&nbsp;services</span></button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1">Audit<span class="lg">&nbsp;services</span></button>
+        </div>
+        <div class="info">
+          <div>
+            <h2 id="pTitle">Fast Finance Tax Machine</h2>
+            <p class="sub" id="pSub">Partnership, state and payroll returns.</p>
+            <p class="tab-note">Real runs, shortened. The demo company is invented.</p>
           </div>
           <div class="pbar"><span id="pLen">Training video &middot; 2:22</span><button type="button" id="fs">Full screen</button></div>
         </div>
@@ -260,9 +274,22 @@ footer a:hover{ color:#fff; }
     </div>
   </section>
 
+  <section class="trust" aria-label="Our engineers">
+    <div class="wrap">
+      <p class="t-label">Our AI engineers previously worked at</p>
+      <ul class="t-names"><li>KPMG</li><li>Microsoft</li><li>General Dynamics</li><li>Uber</li></ul>
+      <div class="t-stats">
+        <div><b>30+ years</b><span>of engineering experience</span></div>
+        <div><b>Every industry</b><span>We have worked across them all</span></div>
+        <div><b>Fully insured</b><span>For every engagement</span></div>
+        <div><b>ENASAL</b><span>AI engineering partners with ENASAL AI Engineering</span></div>
+      </div>
+    </div>
+  </section>
+
   <section class="about" id="about">
     <div class="wrap">
-      <p class="big">Fast Finance is a digital AI accounting firm. Our machines prepare tax filings, review the month-end books and build audit workpapers from your own files, and every figure traces back to the document it came from.</p>
+      <p class="big">Fast Finance is a digital AI accounting firm and an AI engineering partner of ENASAL AI Engineering. Our machines prepare tax filings, review the month-end books and build audit workpapers from your own files, and every figure traces back to the document it came from.</p>
       <a class="more" href="#contact">Schedule a free consultation</a>
     </div>
   </section>
@@ -368,10 +395,10 @@ footer a:hover{ color:#fff; }
   <div class="wrap f-grid">
     <div>
       <a class="logo" href="/" aria-label="Fast Finance home">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><g transform="skewX(-14) translate(9 0)"><rect x="15" y="9" width="6.5" height="30" fill="#ffffff"/><rect x="15" y="9" width="22" height="6.5" fill="#ffffff"/><rect x="15" y="21.5" width="16" height="6" fill="#ffffff"/><rect x="3" y="9" width="8.5" height="6.5" fill="#7aa5ff"/><rect x="6" y="21.5" width="5.5" height="6" fill="#7aa5ff"/></g></svg>
-        <span><b>Fast Finance</b><span>SOPHONFINANCE.COM</span></span>
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0b1a36"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#4f86ff"/><rect x="36" y="45" width="6" height="5" fill="#4f86ff"/></svg>
+        <span><b>Fast Finance</b><span>AI Engineering Firm</span></span>
       </a>
-      <p class="f-about">A digital AI accounting firm for tax, accounting and audit, with a marketing division.</p>
+      <p class="f-about">A digital AI accounting firm for tax, accounting and audit, with a marketing division. AI engineering partners with ENASAL AI Engineering.</p>
     </div>
     <div>
       <h4>Services</h4>
@@ -408,11 +435,11 @@ footer a:hover{ color:#fff; }
 (function(){
   var S = [
     { key:'tax', title:'Fast Finance Tax Machine', len:'2:22',
-      sub:'Partnership, state and payroll filings prepared from the client’s own books, with every rule checked against the official source.' },
+      sub:'Partnership, state and payroll returns.' },
     { key:'accounting', title:'Fast Finance Accounting Machine', len:'3:33',
-      sub:'Month-end review of every vendor invoice against the books, the policy book and the vendor file, before the close.' },
+      sub:'Month-end invoice review.' },
     { key:'audit', title:'Fast Finance Audit Machine', len:'2:58',
-      sub:'Year-end audit workpapers and draft findings for the CPA, every amount a formula back to the document it came from.' }
+      sub:'Year-end audit workpapers.' }
   ];
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var small = Math.min(screen.width, screen.height) <= 820 || (navigator.connection && navigator.connection.saveData);
