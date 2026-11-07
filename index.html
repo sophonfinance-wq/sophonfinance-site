@@ -88,6 +88,7 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 @keyframes rotw{ 0%{ opacity:0; transform:translateY(.28em); filter:blur(3px); } 7%{ opacity:1; transform:none; filter:none; } 30%{ opacity:1; transform:none; filter:none; } 37%{ opacity:0; transform:translateY(-.28em); filter:blur(3px); } 100%{ opacity:0; } }
 @media (prefers-reduced-motion:reduce){ .rot > span{ animation:none; } .rot > span:first-child{ opacity:1; } }
 
+.info[hidden]{ display:none !important; }
 /* header: the headline is the brand line */
 .hl h1{ margin:0; font:300 clamp(17px, 1.9vw, 27px)/1.1 var(--head); color:var(--ink); white-space:nowrap; letter-spacing:0; }
 .hl h1 .acc{ color:var(--blue); }
@@ -487,7 +488,7 @@ footer a:hover{ color:var(--blue); }
         </ul>
         </div>
         </div>
-        <div class="info">
+        <div class="info" hidden>
           <div>
             <h2 id="pTitle" class="mt"><span class="mt-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span><span class="mt-txt"><small>FAST FINANCE</small><b>Tax Machine</b></span></h2>
             <p class="sub" id="pSub">Partnership, state and payroll returns.</p>
