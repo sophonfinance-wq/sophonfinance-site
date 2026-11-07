@@ -54,7 +54,7 @@
   var css = document.createElement('style');
   css.textContent = [
     '.ffc-btn{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:250;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:12px 20px 12px 16px;border:0;border-radius:999px;background:linear-gradient(135deg,#0c3b43,#0e9384);color:#fff;font:600 13.5px/1 "Source Sans 3","Segoe UI",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;box-shadow:0 14px 34px -12px rgba(12,59,67,.6),0 0 0 4px rgba(95,208,195,.18)}',
-    '.ffc-btn svg{width:22px;height:22px}',
+    '.ffc-btn svg{width:22px;height:22px}.ffc-btn img{width:30px;height:30px;margin:-6px 0 -6px -6px;filter:drop-shadow(0 2px 5px rgba(0,0,0,.25))}',
     '.ffc-btn[aria-expanded="true"]{display:none}',
     '.ffc{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:251;width:380px;max-width:calc(100vw - 36px);height:560px;max-height:calc(100vh - 110px);display:none;flex-direction:column;background:#fff;border:1px solid #dbe9e7;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px -24px rgba(12,59,67,.45);font-family:"Source Sans 3","Segoe UI",Arial,sans-serif}',
     '.ffc.open{display:flex}',
@@ -87,7 +87,7 @@
   var wrap = document.createElement('div');
   wrap.innerHTML =
     '<button class="ffc-btn" id="ffcBtn" type="button" aria-expanded="false" aria-controls="ffc">' +
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg>Ask F1 Finance</button>' +
+      '<img src="assets/ui/chat.webp" alt="" aria-hidden="true" width="128" height="128">Ask F1 Finance</button>' +
     '<section class="ffc" id="ffc" role="dialog" aria-label="F1 Finance assistant">' +
       '<div class="ffc-head">' + TILE + '<div><b>F1 Finance</b><span>Ask about our services</span></div>' +
       '<button class="ffc-x" id="ffcX" type="button" aria-label="Close chat">&times;</button></div>' +

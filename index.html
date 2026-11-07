@@ -274,7 +274,16 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .demo-bar-t span{ font:500 14px/1.2 var(--body); color:var(--text-2); overflow:hidden; text-overflow:ellipsis; }
 .demo-x{ flex:none; display:inline-flex; align-items:center; gap:8px; min-height:42px; padding:0 16px; border-radius:999px; border:0; background:#0c3b43; color:#fff; font:600 13px/1 var(--body); letter-spacing:.1em; text-transform:uppercase; cursor:pointer; touch-action:manipulation; box-shadow:0 6px 16px -10px rgba(12,59,67,.8); }
 .demo-x:hover{ background:#0e9384; }
-.demo-x svg{ width:16px; height:16px; }
+.demo-x .ui-ic{ width:26px; height:26px; margin-right:-8px; }
+.ui-ic{ display:inline-block; flex:none; object-fit:contain; filter:drop-shadow(0 3px 6px rgba(12,59,67,.18)); }
+.snd .ui-ic{ width:26px; height:26px; margin:-4px 0 -4px -6px; }
+.dm .ui-ic{ width:24px; height:24px; margin:-6px 0 -6px -4px; filter:drop-shadow(0 2px 4px rgba(120,20,20,.25)); }
+.ci.ci-3d{ background:none !important; box-shadow:none !important; border:0 !important; }
+.ci.ci-3d .ui-ic{ width:40px; height:40px; }
+.ins .ui-ic{ width:28px; height:28px; }
+.btn-send{ display:inline-flex; align-items:center; justify-content:center; gap:10px; }
+.btn-send .ui-ic{ width:28px; height:28px; margin:-6px -6px -6px 0; filter:drop-shadow(0 2px 4px rgba(0,0,0,.18)); }
+@media (max-width:600px){ .ci.ci-3d .ui-ic{ width:34px; height:34px; } .ins .ui-ic{ width:20px; height:20px; } }
 @media (max-width:600px){
   .demo-box.is-full .demo-bar{ padding:7px 8px 7px 12px; gap:8px; }
   .demo-bar-t{ flex-direction:column; align-items:flex-start; gap:2px; }
@@ -713,7 +722,7 @@ footer a:hover{ color:var(--blue); }
           <li><img src="assets/logos/microsoft.svg" alt="Microsoft" class="lg-ms"></li>
           <li><img src="assets/logos/general-dynamics.svg" alt="General Dynamics" class="lg-gd"></li>
           <li><img src="assets/logos/uber.svg" alt="Uber" class="lg-uber"></li>
-        <li class="ins"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4 5.6v6.1c0 4.6 3.2 8.7 8 9.8 4.8-1.1 8-5.2 8-9.8V5.6z" fill="#0c3b43"/><path d="m8.2 12.2 2.6 2.6 5-5.2" fill="none" stroke="#5fd0c3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fully insured</span></li>
+        <li class="ins"><img class="ui-ic " src="assets/ui/shield.webp" alt="" aria-hidden="true" width="128" height="128"><span>Fully insured</span></li>
         </ul>
         </div>
         </div>
@@ -722,7 +731,7 @@ footer a:hover{ color:var(--blue); }
             <video id="v" autoplay muted playsinline webkit-playsinline controls preload="auto" poster="videos/tax-machine-poster.jpg">
               <source type="video/mp4">
             </video>
-            <button class="snd" id="snd" type="button" aria-label="Turn the sound on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>Sound on</button>
+            <button class="snd" id="snd" type="button" aria-label="Turn the sound on"><img class="ui-ic " src="assets/ui/sound.webp" alt="" aria-hidden="true" width="128" height="128">Sound on</button>
             <button class="replay" id="replay" type="button" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>Replay</button>
           </div>
         </div>
@@ -730,9 +739,9 @@ footer a:hover{ color:var(--blue); }
           <button class="tab tab-tax" role="tab" aria-selected="true" aria-controls="panel" id="t0"><span class="ti" aria-hidden="true"><img src="assets/icons/tax.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Tax<span class="lg">&nbsp;services</span></b></span></button>
           <button class="tab tab-acc" role="tab" aria-selected="false" aria-controls="panel" id="t1" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/acc.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Accounting<span class="lg">&nbsp;services</span></b></span></button>
           <button class="tab tab-aud" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Audit<span class="lg">&nbsp;services</span></b></span></button>
-          <a class="tab dtab demo-only" href="#demo" data-demo="tax" aria-label="Tax Machine demo"><i class="dm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Demo</i></a>
-          <a class="tab dtab demo-only" href="#demo" data-demo="accounting" aria-label="Accounting Machine demo"><i class="dm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Demo</i></a>
-          <a class="tab dtab demo-only" href="#demo" data-demo="audit" aria-label="Audit Machine demo"><i class="dm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Demo</i></a>
+          <a class="tab dtab demo-only" href="#demo" data-demo="tax" aria-label="Tax Machine demo"><i class="dm"><img class="ui-ic " src="assets/ui/play.webp" alt="" aria-hidden="true" width="128" height="128">Demo</i></a>
+          <a class="tab dtab demo-only" href="#demo" data-demo="accounting" aria-label="Accounting Machine demo"><i class="dm"><img class="ui-ic " src="assets/ui/play.webp" alt="" aria-hidden="true" width="128" height="128">Demo</i></a>
+          <a class="tab dtab demo-only" href="#demo" data-demo="audit" aria-label="Audit Machine demo"><i class="dm"><img class="ui-ic " src="assets/ui/play.webp" alt="" aria-hidden="true" width="128" height="128">Demo</i></a>
         </div>
         <div class="info" hidden>
           <div>
@@ -761,7 +770,7 @@ footer a:hover{ color:var(--blue); }
       <div class="demo-box" id="demoBox">
         <div class="demo-bar">
           <span class="demo-bar-t"><b id="demoBarM">Tax Machine</b><span id="demoBarS">Form 941</span></span>
-          <button class="demo-x" id="demoX" type="button" aria-label="Exit the demo"><span>Exit</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          <button class="demo-x" id="demoX" type="button" aria-label="Exit the demo"><span>Exit</span><img class="ui-ic " src="assets/ui/close.webp" alt="" aria-hidden="true" width="128" height="128"></button>
         </div>
         <iframe id="demoFrame" title="F1 Finance machine demo" allow="fullscreen"></iframe>
         <div class="demo-cover" id="demoCover">
@@ -857,8 +866,8 @@ footer a:hover{ color:var(--blue); }
         <h2>Schedule a <span class="acc">free consultation.</span></h2>
         <p class="lead">We reply within one business day.</p>
         <dl>
-          <dt><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span class="sr">Email</span></dt><dd><a href="mailto:contact@sophonfinance.com">contact@sophonfinance.com</a></dd>
-          <dt><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span><span class="sr">Office</span></dt><dd>Rainier Square, 4th &amp; Union<br>Seattle, Washington</dd>
+          <dt><span class="ci ci-3d"><img class="ui-ic " src="assets/ui/mail.webp" alt="" aria-hidden="true" width="128" height="128"></span><span class="sr">Email</span></dt><dd><a href="mailto:contact@sophonfinance.com">contact@sophonfinance.com</a></dd>
+          <dt><span class="ci ci-3d"><img class="ui-ic " src="assets/ui/pin.webp" alt="" aria-hidden="true" width="128" height="128"></span><span class="sr">Office</span></dt><dd>Rainier Square, 4th &amp; Union<br>Seattle, Washington</dd>
         </dl>
       </div>
       <form class="cf" action="https://formsubmit.co/cff69027fd01c775ac2e18c12b674597" method="POST">
@@ -879,7 +888,7 @@ footer a:hover{ color:var(--blue); }
           </label>
         </div>
         <label>How can we help?<textarea name="message" required></textarea></label>
-        <div><button class="btn" type="submit">Request consultation</button></div>
+        <div><button class="btn btn-send" type="submit">Request consultation<img class="ui-ic " src="assets/ui/send.webp" alt="" aria-hidden="true" width="128" height="128"></button></div>
         <p class="fine">Please don&rsquo;t include client data in this form.</p>
       </form>
     </div>
@@ -1171,7 +1180,7 @@ footer a:hover{ color:var(--blue); }
   nav.addEventListener('click', function(e){ if (e.target.closest('a')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); } });
 })();
 </script>
-<script src="assets/chat.js?v=f1b" defer></script>
+<script src="assets/chat.js?v=f1c" defer></script>
 <script src="assets/fx.js" defer></script>
 </body>
 </html>
