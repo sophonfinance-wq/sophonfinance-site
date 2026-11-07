@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Try the Machines | Fast Finance</title>
+<meta name="description" content="Try the Fast Finance Tax, Accounting and Audit machines in your browser. A recorded run of each real machine on an invented demo company.">
+<link rel="canonical" href="https://sophonfinance.com/demo/">
+<meta property="og:title" content="Try the Fast Finance machines">
+<meta property="og:description" content="Tax, Accounting and Audit machines, running in your browser.">
+<meta property="og:image" content="https://sophonfinance.com/assets/og.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../assets/fast-finance-mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f2730; --text:#2c3a40; --text-2:#5b6d73; --line:#dbe9e7; --teal-50:#eaf7f5;
+  --blue:#0e9384; --blue-d:#0a7469; --blue-l:#5fd0c3;
+  --head:'Jost','Segoe UI',Arial,sans-serif; --body:'Source Sans 3','Segoe UI',Arial,sans-serif;
+}
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{ margin:0; display:flex; flex-direction:column; background:#f3faf8; color:var(--text); font-family:var(--body); -webkit-text-size-adjust:100%; }
+a{ color:inherit; text-decoration:none; }
+
+.bar{ position:sticky; top:0; z-index:5; display:flex; align-items:center; gap:14px; padding:10px max(16px, env(safe-area-inset-left)) 10px max(16px, env(safe-area-inset-left)); background:rgba(255,255,255,.92); -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); box-shadow:0 1px 0 var(--line); }
+.brand{ display:flex; align-items:center; gap:10px; flex:none; }
+.brand svg{ width:38px; height:38px; display:block; }
+.brand b{ display:block; font:600 15px/1 var(--head); letter-spacing:.14em; text-transform:uppercase; color:var(--ink); }
+.brand span{ display:block; margin-top:4px; font:600 10px/1 var(--body); letter-spacing:.18em; text-transform:uppercase; color:var(--text-2); }
+
+.tabs{ display:flex; gap:6px; margin-left:auto; padding:4px; background:var(--teal-50); border:1px solid var(--line); border-radius:999px; }
+.tabs button{ appearance:none; border:0; background:none; cursor:pointer; padding:9px 16px; border-radius:999px; font:600 13px/1 var(--body); letter-spacing:.06em; text-transform:uppercase; color:var(--ink); white-space:nowrap; }
+.tabs button[aria-selected="true"]{ background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; box-shadow:0 6px 16px -8px rgba(14,147,132,.7); }
+.home{ flex:none; font:600 12.5px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--blue-d); padding:10px 4px; }
+
+.note{ margin:0; padding:7px 16px; text-align:center; font-size:13px; color:var(--text-2); background:#fff; border-bottom:1px solid var(--line); }
+.stage{ position:relative; flex:1; min-height:0; }
+.stage iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; background:#fff; }
+.soon{ position:absolute; inset:0; display:none; place-items:center; text-align:center; padding:24px; color:var(--text-2); }
+.soon b{ display:block; font:500 22px/1.2 var(--head); color:var(--ink); margin-bottom:6px; }
+.stage.empty .soon{ display:grid; }
+
+@media (max-width:640px){
+  .bar{ flex-wrap:wrap; gap:8px 10px; padding-top:8px; padding-bottom:8px; }
+  .brand svg{ width:32px; height:32px; }
+  .brand b{ font-size:13px; } .brand span{ font-size:9px; }
+  .home{ margin-left:auto; }
+  .tabs{ order:3; width:100%; margin:0; justify-content:space-between; }
+  .tabs button{ flex:1; padding:9px 6px; font-size:12px; }
+  .note{ font-size:12px; padding:6px 12px; }
+}
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../" aria-label="Fast Finance home">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg>
+    <span><b>Fast Finance</b><span>Try the machines</span></span>
+  </a>
+  <nav class="tabs" role="tablist" aria-label="Machines">
+    <button role="tab" id="m-tax" data-m="tax" aria-selected="true">Tax</button>
+    <button role="tab" id="m-accounting" data-m="accounting" aria-selected="false">Accounting</button>
+    <button role="tab" id="m-audit" data-m="audit" aria-selected="false">Audit</button>
+  </nav>
+  <a class="home" href="../">&larr; Site</a>
+</header>
+<p class="note">A recorded run of the real machine on an invented demo company. Press the run button to watch it work.</p>
+<main class="stage" id="stage" role="tabpanel">
+  <iframe id="frame" title="Fast Finance machine demo" allow="fullscreen"></iframe>
+  <div class="soon"><div><b>Coming soon</b>This machine's demo is being prepared.</div></div>
+</main>
+<script>
+(function(){
+  var M = ['tax', 'accounting', 'audit'];
+  var NAMES = { tax:'Tax Machine', accounting:'Accounting Machine', audit:'Audit Machine' };
+  var READY = { tax:false, accounting:true, audit:true }; // switched on as each demo is published
+  var frame = document.getElementById('frame'), stage = document.getElementById('stage');
+  var tabs = [].slice.call(document.querySelectorAll('.tabs button'));
+  function pick(m, push){
+    if (M.indexOf(m) < 0) m = 'tax';
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', t.getAttribute('data-m') === m); });
+    stage.setAttribute('aria-labelledby', 'm-' + m);
+    frame.title = 'Fast Finance ' + NAMES[m] + ' demo';
+    document.title = NAMES[m] + ' demo | Fast Finance';
+    var src = m + '/index.html';
+    if (READY[m]) { stage.classList.remove('empty'); if (frame.getAttribute('src') !== src) frame.src = src; }
+    else { stage.classList.add('empty'); frame.removeAttribute('src'); }
+    if (push) history.replaceState(null, '', '#' + m);
+  }
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ pick(t.getAttribute('data-m'), true); }); });
+  pick((location.hash || '').slice(1) || (READY.tax ? 'tax' : 'accounting'), false);
+  window.addEventListener('hashchange', function(){ pick(location.hash.slice(1), false); });
+})();
+</script>
+</body>
+</html>

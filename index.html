@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-demos="off">
+<html lang="en" data-demos="on">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -200,7 +200,7 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .dtab .tl{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
 .dm{ display:inline-flex; align-items:center; gap:4px; padding:4px 9px 4px 7px; border-radius:999px; background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; font:600 11px/1 var(--body); font-style:normal; letter-spacing:.12em; text-transform:uppercase; box-shadow:0 4px 10px -5px rgba(14,147,132,.8); }
 .dm svg{ width:10px; height:10px; }
-.demo{ padding:40px 0 36px; background:linear-gradient(180deg,#fff 0%,#f3faf8 100%); border-top:1px solid var(--line); }
+.demo{ scroll-margin-top:64px; padding:40px 0 36px; background:linear-gradient(180deg,#fff 0%,#f3faf8 100%); border-top:1px solid var(--line); }
 .demo h2{ font-size:clamp(26px, 3vw, 40px); line-height:1.15; margin-bottom:8px; }
 .demo .intro{ color:var(--text-2); margin:0 0 16px; font-size:17px; }
 .demo-sw{ display:inline-flex; gap:4px; padding:4px; background:var(--teal-50); border:1px solid var(--line); border-radius:999px; }
@@ -648,9 +648,9 @@ footer a:hover{ color:var(--blue); }
           <button class="tab tab-tax" role="tab" aria-selected="true" aria-controls="panel" id="t0"><span class="ti" aria-hidden="true"><img src="assets/icons/tax.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Tax<span class="lg">&nbsp;services</span></b></span></button>
           <button class="tab tab-acc" role="tab" aria-selected="false" aria-controls="panel" id="t1" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/acc.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Accounting<span class="lg">&nbsp;services</span></b></span></button>
           <button class="tab tab-aud" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Audit<span class="lg">&nbsp;services</span></b></span></button>
-          <a class="tab dtab demo-only" href="#demo" data-demo="tax"><span class="ti" aria-hidden="true"><img src="assets/icons/tax.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Tax</b><i class="dm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Demo</i></span></a>
-          <a class="tab dtab demo-only" href="#demo" data-demo="accounting"><span class="ti" aria-hidden="true"><img src="assets/icons/acc.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Accounting</b><i class="dm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Demo</i></span></a>
-          <a class="tab dtab demo-only" href="#demo" data-demo="audit"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Audit</b><i class="dm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Demo</i></span></a>
+          <a class="tab dtab demo-only" href="#demo" data-demo="tax" aria-label="Tax Machine demo"><span class="ti" aria-hidden="true"><img src="assets/icons/tax.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Tax</b><i class="dm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Demo</i></span></a>
+          <a class="tab dtab demo-only" href="#demo" data-demo="accounting" aria-label="Accounting Machine demo"><span class="ti" aria-hidden="true"><img src="assets/icons/acc.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Accounting</b><i class="dm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Demo</i></span></a>
+          <a class="tab dtab demo-only" href="#demo" data-demo="audit" aria-label="Audit Machine demo"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Audit</b><i class="dm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Demo</i></span></a>
         </div>
         <div class="info" hidden>
           <div>
@@ -931,8 +931,8 @@ footer a:hover{ color:var(--blue); }
   // Try the machines
   var DEMO = {
     tax:        { name:'Tax Machine',        sub:'Prepares a partnership return, Form 1065.', ic:'assets/icons/tax.jpg', ready:false },
-    accounting: { name:'Accounting Machine', sub:'Reviews a month of vendor invoices.',       ic:'assets/icons/acc.jpg', ready:false },
-    audit:      { name:'Audit Machine',      sub:'Builds year-end audit workpapers.',          ic:'assets/icons/aud.jpg', ready:false }
+    accounting: { name:'Accounting Machine', sub:'Reviews a month of vendor invoices.',       ic:'assets/icons/acc.jpg', ready:true },
+    audit:      { name:'Audit Machine',      sub:'Builds year-end audit workpapers.',          ic:'assets/icons/aud.jpg', ready:true }
   };
   var dBox = document.getElementById('demoBox'), dFrame = document.getElementById('demoFrame'), dCur = 'tax';
   var dSw = [].slice.call(document.querySelectorAll('.demo-sw button'));
@@ -958,7 +958,7 @@ footer a:hover{ color:var(--blue); }
       document.getElementById('demo').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block:'start' });
     });
   });
-  demoPick('tax', false);
+  demoPick(DEMO.tax.ready ? 'tax' : 'accounting', false);
 
   // App pop-out
   var pop = document.getElementById('pop'), popV = document.getElementById('popV');

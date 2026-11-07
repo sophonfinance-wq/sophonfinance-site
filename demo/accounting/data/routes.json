@@ -1,0 +1,710 @@
+{
+"/api/runs/RUN/preparation": {
+"file": "json/api-runs-run-preparation-c579af6e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E01 Capture Invoices": {
+"file": "json/api-runs-run-preparation-evidence-e01-capture-invoices-460a78fd.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E02 Capture Lines": {
+"file": "json/api-runs-run-preparation-evidence-e02-capture-lines-97d44b28.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E03 Ledger Bills": {
+"file": "json/api-runs-run-preparation-evidence-e03-ledger-bills-9716a12e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E04 Ledger Lines": {
+"file": "json/api-runs-run-preparation-evidence-e04-ledger-lines-df93c301.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E05 Vendor File": {
+"file": "json/api-runs-run-preparation-evidence-e05-vendor-file-645446b8.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E06 Bill History": {
+"file": "json/api-runs-run-preparation-evidence-e06-bill-history-5724205e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E07 Policy Book": {
+"file": "json/api-runs-run-preparation-evidence-e07-policy-book-c1a12e95.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV KRE-2207": {
+"file": "json/api-runs-run-preparation-evidence-inv-kre-2207-45139984.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV BPW-5188": {
+"file": "json/api-runs-run-preparation-evidence-inv-bpw-5188-e5eeec16.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV WLC-0388": {
+"file": "json/api-runs-run-preparation-evidence-inv-wlc-0388-08e80050.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV CPM-0412": {
+"file": "json/api-runs-run-preparation-evidence-inv-cpm-0412-a07dff2d.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV FSS-0162": {
+"file": "json/api-runs-run-preparation-evidence-inv-fss-0162-a2bc2522.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV LSI-0930": {
+"file": "json/api-runs-run-preparation-evidence-inv-lsi-0930-6411bc30.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV AER-7731": {
+"file": "json/api-runs-run-preparation-evidence-inv-aer-7731-73f61aa8.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV MLE-1402": {
+"file": "json/api-runs-run-preparation-evidence-inv-mle-1402-af081b8b.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV SWR-8134": {
+"file": "json/api-runs-run-preparation-evidence-inv-swr-8134-28d0e2c9.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV QBP-3077": {
+"file": "json/api-runs-run-preparation-evidence-inv-qbp-3077-0ddd2935.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV BCP-1009": {
+"file": "json/api-runs-run-preparation-evidence-inv-bcp-1009-2e5a0bcf.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/INV SWR-8135": {
+"file": "json/api-runs-run-preparation-evidence-inv-swr-8135-16afa0db.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Summary": {
+"file": "json/api-runs-run-preparation-worksheet-summary-6597996c.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Full Cost": {
+"file": "json/api-runs-run-preparation-worksheet-full-cost-2b7fed39.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Findings": {
+"file": "json/api-runs-run-preparation-worksheet-findings-568ee16a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Draft Entries": {
+"file": "json/api-runs-run-preparation-worksheet-draft-entries-5fbbf31e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Requests": {
+"file": "json/api-runs-run-preparation-worksheet-requests-afe18127.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/E01 Capture Invoices": {
+"file": "json/api-runs-run-preparation-worksheet-e01-capture-invoices-df08e7f5.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/E02 Capture Lines": {
+"file": "json/api-runs-run-preparation-worksheet-e02-capture-lines-5aad12d7.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/E03 Ledger Bills": {
+"file": "json/api-runs-run-preparation-worksheet-e03-ledger-bills-69d92ac0.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/E04 Ledger Lines": {
+"file": "json/api-runs-run-preparation-worksheet-e04-ledger-lines-57a2432f.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/E05 Vendor File": {
+"file": "json/api-runs-run-preparation-worksheet-e05-vendor-file-f3e0a7a3.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/workbook": {
+"file": "files/7fda540d/AP Review Workpapers.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/return": {
+"file": "files/600cd15c/AP Review Memo DRAFT.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/capture": {
+"file": "files/68f6177c/AP Capture Export - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/ledger": {
+"file": "files/5bc634f7/AP Ledger Export - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/vendors": {
+"file": "files/10d62485/Vendor File - W-9 Status.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/history": {
+"file": "files/5a4b0c8a/Bill History - November 2025 to September 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/policy": {
+"file": "files/332d5205/HANGS Finance Policy Book v3.2.docx",
+"type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+},
+"/api/runs/RUN/preparation/source/inv-kre-2207": {
+"file": "files/603ea4db/KRE-2207 Kestrel Ridge Equipment.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/inv-bpw-5188": {
+"file": "files/ada503e4/BPW-5188 Bluepine Concrete Works.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/inv-wlc-0388": {
+"file": "files/d0f82263/WLC-0388 Windrow Landscape Care.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/inv-cpm-0412": {
+"file": "files/d8d54b8f/CPM-0412 Copperline Modular.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/inv-fss-0162": {
+"file": "files/12b5ab49/FSS-0162 Fernhollow Site Services.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/inv-lsi-0930": {
+"file": "files/b98764c2/LSI-0930 Larkspur Survey Instruments.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/inv-aer-7731": {
+"file": "files/dd382471/AER-7731 Ashgrove Equipment Rentals.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/inv-mle-1402": {
+"file": "files/00a45edf/MLE-1402 Marrow Lane Electric.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/inv-swr-8134": {
+"file": "files/4db80ddd/SWR-8134 Stonewick Roofing.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/inv-qbp-3077": {
+"file": "files/2f195ba7/QBP-3077 Quarry Bend Plumbing.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/inv-bcp-1009": {
+"file": "files/b56b541d/BCP-1009 Brightwater Concrete Pumping.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/inv-swr-8135": {
+"file": "files/ba824f5b/SWR-8135 Stonewick Roofing.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/output-page.png": {
+"file": "img/api-runs-run-output-page-png-f5beeb5e.png",
+"type": "image/png"
+},
+"/api/runs/RUN/output-summary": {
+"file": "json/api-runs-run-output-summary-05e012fc.json",
+"type": "application/json"
+},
+"/api/ap/documents/list": {
+"file": "json/api-ap-documents-list-f878910c.json",
+"type": "application/json"
+},
+"/api/ap/documents/preview?file=02 Capture Export/AP Capture Export - October 2026.xlsx": {
+"file": "json/api-ap-documents-preview-file-02-capture-export-ap-capture-e-7ba8f2cb.json",
+"type": "application/json"
+},
+"/api/ap/documents/preview?file=03 Ledger Export/AP Ledger Export - October 2026.xlsx": {
+"file": "json/api-ap-documents-preview-file-03-ledger-export-ap-ledger-exp-6eb8268c.json",
+"type": "application/json"
+},
+"/api/ap/documents/preview?file=04 Vendor File/Vendor File - W-9 Status.xlsx": {
+"file": "json/api-ap-documents-preview-file-04-vendor-file-vendor-file-w-9-92e3333b.json",
+"type": "application/json"
+},
+"/api/ap/documents/preview?file=05 Policy Book/HANGS Finance Policy Book v3.2.docx": {
+"file": "json/api-ap-documents-preview-file-05-policy-book-hangs-finance-p-8231d979.json",
+"type": "application/json"
+},
+"/api/ap/documents/preview?file=06 Bill History/Bill History - November 2025 to September 2026.xlsx": {
+"file": "json/api-ap-documents-preview-file-06-bill-history-bill-history-n-ddd72d17.json",
+"type": "application/json"
+},
+"/api/ap/documents/page.png?file=01 Invoices/FSS-0161 Fernhollow Site Services.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-fss-0161-fernholl-36a7b7aa.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/TCF-2811 Tallow Creek Framing.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-tcf-2811-tallow-c-602e4288.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/BPW-5187 Bluepine Concrete Works.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-bpw-5187-bluepine-613350bc.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/AER-7704 Ashgrove Equipment Rentals.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-aer-7704-ashgrove-cb3a1341.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/KRE-2207 Kestrel Ridge Equipment.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-kre-2207-kestrel--6e7ecca0.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/MLE-1401 Marrow Lane Electric.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-mle-1401-marrow-l-e8c9f0ae.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/QBP-3076 Quarry Bend Plumbing.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-qbp-3076-quarry-b-717007fc.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/SWR-8133 Stonewick Roofing.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-swr-8133-stonewic-9e04e810.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/BPW-5188 Bluepine Concrete Works.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-bpw-5188-bluepine-e48503b5.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/WLC-0388 Windrow Landscape Care.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-wlc-0388-windrow--41d04298.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/HFC-26-0219 Harbor Field Counsel.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-hfc-26-0219-harbo-0504da69.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/CPM-0412 Copperline Modular.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-cpm-0412-copperli-ba51ef15.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/FSS-0162 Fernhollow Site Services.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-fss-0162-fernholl-228897ce.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/LSI-0930 Larkspur Survey Instruments.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-lsi-0930-larkspur-fd39f34b.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/TCF-2812 Tallow Creek Framing.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-tcf-2812-tallow-c-5e368e3d.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/AER-7731 Ashgrove Equipment Rentals.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-aer-7731-ashgrove-f434e133.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/NOS-5521 Northgate Office Systems.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-nos-5521-northgat-e8a20313.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/MLE-1402 Marrow Lane Electric.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-mle-1402-marrow-l-39c6350a.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/SWR-8134 Stonewick Roofing.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-swr-8134-stonewic-77c3bc90.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/QBP-3077 Quarry Bend Plumbing.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-qbp-3077-quarry-b-4bf949b9.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/BCP-1009 Brightwater Concrete Pumping.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-bcp-1009-brightwa-d2d1b769.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/AFR-1240 Alder and Finch Realty.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-afr-1240-alder-an-370f9fdc.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/FSS-0163 Fernhollow Site Services.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-fss-0163-fernholl-44e3c62f.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/MLE-1403 Marrow Lane Electric.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-mle-1403-marrow-l-59f85e83.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/TCF-2813 Tallow Creek Framing.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-tcf-2813-tallow-c-ab4d0ed3.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/QBP-3078 Quarry Bend Plumbing.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-qbp-3078-quarry-b-712f3ec9.png",
+"type": "image/png"
+},
+"/api/ap/documents/page.png?file=01 Invoices/SWR-8135 Stonewick Roofing.pdf": {
+"file": "img/api-ap-documents-page-png-file-01-invoices-swr-8135-stonewic-eb8b5117.png",
+"type": "image/png"
+},
+"/api/hangs/research": {
+"file": "json/api-hangs-research-14ce8381.json",
+"type": "application/json"
+},
+"/api/hangs/overview": {
+"file": "json/api-hangs-overview-df97af7b.json",
+"type": "application/json"
+},
+"/api/hangs/accounting/ledger": {
+"file": "json/api-hangs-accounting-ledger-8f76f557.json",
+"type": "application/json"
+},
+"/api/hangs/accounting/reports": {
+"file": "json/api-hangs-accounting-reports-69f69c17.json",
+"type": "application/json"
+},
+"/api/hangs/invoices": {
+"file": "json/api-hangs-invoices-c1bf51e6.json",
+"type": "application/json"
+},
+"/api/hangs/records": {
+"file": "json/api-hangs-records-01718b42.json",
+"type": "application/json"
+},
+"/api/hangs/mail": {
+"file": "json/api-hangs-mail-f551181a.json",
+"type": "application/json"
+},
+"/api/hangs/activity": {
+"file": "json/api-hangs-activity-c1d8faf7.json",
+"type": "application/json"
+},
+"/api/hangs/status": {
+"file": "json/api-hangs-status-3cb64311.json",
+"type": "application/json"
+},
+"/api/hangs/accounting/trial-balance": {
+"file": "json/api-hangs-accounting-trial-balance-bc5930d2.json",
+"type": "application/json"
+},
+"/api/hangs/accounting/trial-balance?from=2025-07-01&to=2026-06-30": {
+"file": "json/api-hangs-accounting-trial-balance-from-2025-07-01-to-2026-0-09d63c71.json",
+"type": "application/json"
+},
+"/api/hangs/accounting/journals-all": {
+"file": "json/api-hangs-accounting-journals-all-4e13c3c5.json",
+"type": "application/json"
+},
+"/api/hangs/accounting/export/trial-balance.xlsx": {
+"file": "files/b9c637e7/HANGS FY2026 Trial Balance.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/hangs/accounting/export/general-ledger.xlsx": {
+"file": "files/1092802a/HANGS FY2026 General Ledger.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/hangs/mail/m-questionnaire": {
+"file": "json/api-hangs-mail-m-questionnaire-db487a5e.json",
+"type": "application/json"
+},
+"/api/hangs/mail/m-extension": {
+"file": "json/api-hangs-mail-m-extension-80c42371.json",
+"type": "application/json"
+},
+"/api/hangs/mail/m-draft-request": {
+"file": "json/api-hangs-mail-m-draft-request-4d9af4cf.json",
+"type": "application/json"
+},
+"/api/hangs/mail/m-morgan-agreement": {
+"file": "json/api-hangs-mail-m-morgan-agreement-8401def0.json",
+"type": "application/json"
+},
+"/api/hangs/mail/m-sent-ack": {
+"file": "json/api-hangs-mail-m-sent-ack-82cccf3e.json",
+"type": "application/json"
+},
+"/api/hangs/mail/m-year-end": {
+"file": "json/api-hangs-mail-m-year-end-e67c764b.json",
+"type": "application/json"
+},
+"/api/hangs/mail/m-tcf-dup": {
+"file": "json/api-hangs-mail-m-tcf-dup-f304286c.json",
+"type": "application/json"
+},
+"/api/hangs/mail/m-swr": {
+"file": "json/api-hangs-mail-m-swr-4b09d6a3.json",
+"type": "application/json"
+},
+"/api/hangs/mail/m-tcf": {
+"file": "json/api-hangs-mail-m-tcf-88434659.json",
+"type": "application/json"
+},
+"/api/hangs/mail/m-hfc": {
+"file": "json/api-hangs-mail-m-hfc-7d54ab37.json",
+"type": "application/json"
+},
+"/api/hangs/mail/m-mle": {
+"file": "json/api-hangs-mail-m-mle-604a9227.json",
+"type": "application/json"
+},
+"/api/hangs/mail/m-fss": {
+"file": "json/api-hangs-mail-m-fss-ed2d37f8.json",
+"type": "application/json"
+},
+"/api/hangs/documents/company/preview": {
+"file": "json/api-hangs-documents-company-preview-31c6e2bd.json",
+"type": "application/json"
+},
+"/api/hangs/documents/company/file": {
+"file": "files/f2438fbb/HANGS entity information.docx",
+"type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+},
+"/api/hangs/documents/distribution/preview": {
+"file": "json/api-hangs-documents-distribution-preview-eec8e10e.json",
+"type": "application/json"
+},
+"/api/hangs/documents/distribution/file": {
+"file": "files/e109a7c1/FY2026 distribution journal.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/hangs/documents/email/preview": {
+"file": "json/api-hangs-documents-email-preview-aca5d53c.json",
+"type": "application/json"
+},
+"/api/hangs/documents/email/file": {
+"file": "files/6ae32cd4/Year end records.eml",
+"type": "message/rfc822"
+},
+"/api/hangs/documents/gl/preview": {
+"file": "json/api-hangs-documents-gl-preview-505aa9a4.json",
+"type": "application/json"
+},
+"/api/hangs/documents/gl/file": {
+"file": "files/1818b907/FY2026 general ledger.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/hangs/documents/inv-afr-1201-alder-and-finch-realty/preview": {
+"file": "json/api-hangs-documents-inv-afr-1201-alder-and-finch-realty-prev-4c9d7c7f.json",
+"type": "application/json"
+},
+"/api/hangs/documents/inv-afr-1201-alder-and-finch-realty/file": {
+"file": "files/338e59a3/AFR-1201 Alder and Finch Realty.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/inv-afr-1201-alder-and-finch-realty/page/1.png": {
+"file": "img/api-hangs-documents-inv-afr-1201-alder-and-finch-realty-page-ee877cc9.png",
+"type": "image/png"
+},
+"/api/hangs/documents/inv-afr-1202-alder-and-finch-realty/preview": {
+"file": "json/api-hangs-documents-inv-afr-1202-alder-and-finch-realty-prev-cfaf83db.json",
+"type": "application/json"
+},
+"/api/hangs/documents/inv-afr-1202-alder-and-finch-realty/file": {
+"file": "files/824a4b59/AFR-1202 Alder and Finch Realty.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/inv-afr-1202-alder-and-finch-realty/page/1.png": {
+"file": "img/api-hangs-documents-inv-afr-1202-alder-and-finch-realty-page-d4583ee2.png",
+"type": "image/png"
+},
+"/api/hangs/documents/inv-bpw-5120-bluepine-concrete-works/preview": {
+"file": "json/api-hangs-documents-inv-bpw-5120-bluepine-concrete-works-pre-a9344db3.json",
+"type": "application/json"
+},
+"/api/hangs/documents/inv-bpw-5120-bluepine-concrete-works/file": {
+"file": "files/da71fd16/BPW-5120 Bluepine Concrete Works.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/inv-bpw-5120-bluepine-concrete-works/page/1.png": {
+"file": "img/api-hangs-documents-inv-bpw-5120-bluepine-concrete-works-pag-a8f94213.png",
+"type": "image/png"
+},
+"/api/hangs/documents/inv-fss-0117-fernhollow-site-services/preview": {
+"file": "json/api-hangs-documents-inv-fss-0117-fernhollow-site-services-pr-9556e203.json",
+"type": "application/json"
+},
+"/api/hangs/documents/inv-fss-0117-fernhollow-site-services/file": {
+"file": "files/09e84006/FSS-0117 Fernhollow Site Services.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/inv-fss-0117-fernhollow-site-services/page/1.png": {
+"file": "img/api-hangs-documents-inv-fss-0117-fernhollow-site-services-pa-0a938097.png",
+"type": "image/png"
+},
+"/api/hangs/documents/inv-mle-1344-marrow-lane-electric/preview": {
+"file": "json/api-hangs-documents-inv-mle-1344-marrow-lane-electric-previe-719a58cf.json",
+"type": "application/json"
+},
+"/api/hangs/documents/inv-mle-1344-marrow-lane-electric/file": {
+"file": "files/29df02c8/MLE-1344 Marrow Lane Electric.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/inv-mle-1344-marrow-lane-electric/page/1.png": {
+"file": "img/api-hangs-documents-inv-mle-1344-marrow-lane-electric-page-1-a88dc9e7.png",
+"type": "image/png"
+},
+"/api/hangs/documents/inv-mle-1344-r1-marrow-lane-electric-revised/preview": {
+"file": "json/api-hangs-documents-inv-mle-1344-r1-marrow-lane-electric-rev-47801a50.json",
+"type": "application/json"
+},
+"/api/hangs/documents/inv-mle-1344-r1-marrow-lane-electric-revised/file": {
+"file": "files/3ff4c5ca/MLE-1344-R1 Marrow Lane Electric (revised).pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/inv-mle-1344-r1-marrow-lane-electric-revised/page/1.png": {
+"file": "img/api-hangs-documents-inv-mle-1344-r1-marrow-lane-electric-rev-189517c5.png",
+"type": "image/png"
+},
+"/api/hangs/documents/inv-qbp-2301-quarry-bend-plumbing/preview": {
+"file": "json/api-hangs-documents-inv-qbp-2301-quarry-bend-plumbing-previe-85fe34f6.json",
+"type": "application/json"
+},
+"/api/hangs/documents/inv-qbp-2301-quarry-bend-plumbing/file": {
+"file": "files/34450e2a/QBP-2301 Quarry Bend Plumbing.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/inv-qbp-2301-quarry-bend-plumbing/page/1.png": {
+"file": "img/api-hangs-documents-inv-qbp-2301-quarry-bend-plumbing-page-1-1a0c8300.png",
+"type": "image/png"
+},
+"/api/hangs/documents/inv-qbp-2302-quarry-bend-plumbing/preview": {
+"file": "json/api-hangs-documents-inv-qbp-2302-quarry-bend-plumbing-previe-7ce0fec1.json",
+"type": "application/json"
+},
+"/api/hangs/documents/inv-qbp-2302-quarry-bend-plumbing/file": {
+"file": "files/db6a86ae/QBP-2302 Quarry Bend Plumbing.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/inv-qbp-2302-quarry-bend-plumbing/page/1.png": {
+"file": "img/api-hangs-documents-inv-qbp-2302-quarry-bend-plumbing-page-1-aa07065e.png",
+"type": "image/png"
+},
+"/api/hangs/documents/inv-qbp-2944-quarry-bend-plumbing/preview": {
+"file": "json/api-hangs-documents-inv-qbp-2944-quarry-bend-plumbing-previe-d2853895.json",
+"type": "application/json"
+},
+"/api/hangs/documents/inv-qbp-2944-quarry-bend-plumbing/file": {
+"file": "files/e40965d2/QBP-2944 Quarry Bend Plumbing.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/inv-qbp-2944-quarry-bend-plumbing/page/1.png": {
+"file": "img/api-hangs-documents-inv-qbp-2944-quarry-bend-plumbing-page-1-814b47f4.png",
+"type": "image/png"
+},
+"/api/hangs/documents/inv-scan0007/preview": {
+"file": "json/api-hangs-documents-inv-scan0007-preview-faf09c9e.json",
+"type": "application/json"
+},
+"/api/hangs/documents/inv-scan0007/file": {
+"file": "files/9c31bdce/scan0007.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/inv-scan0007/page/1.png": {
+"file": "img/api-hangs-documents-inv-scan0007-page-1-png-98adffed.png",
+"type": "image/png"
+},
+"/api/hangs/documents/inv-swr-8052-stonewick-roofing/preview": {
+"file": "json/api-hangs-documents-inv-swr-8052-stonewick-roofing-preview-374b3eb2.json",
+"type": "application/json"
+},
+"/api/hangs/documents/inv-swr-8052-stonewick-roofing/file": {
+"file": "files/7590f0fb/SWR-8052 Stonewick Roofing.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/inv-swr-8052-stonewick-roofing/page/1.png": {
+"file": "img/api-hangs-documents-inv-swr-8052-stonewick-roofing-page-1-pn-36b6616a.png",
+"type": "image/png"
+},
+"/api/hangs/documents/inv-tcf-2764-1/preview": {
+"file": "json/api-hangs-documents-inv-tcf-2764-1-preview-36905489.json",
+"type": "application/json"
+},
+"/api/hangs/documents/inv-tcf-2764-1/file": {
+"file": "files/4cb16e93/TCF-2764 (1).pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/inv-tcf-2764-1/page/1.png": {
+"file": "img/api-hangs-documents-inv-tcf-2764-1-page-1-png-bb856289.png",
+"type": "image/png"
+},
+"/api/hangs/documents/inv-tcf-2764-tallow-creek-framing/preview": {
+"file": "json/api-hangs-documents-inv-tcf-2764-tallow-creek-framing-previe-3bcae383.json",
+"type": "application/json"
+},
+"/api/hangs/documents/inv-tcf-2764-tallow-creek-framing/file": {
+"file": "files/8edae085/TCF-2764 Tallow Creek Framing.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/inv-tcf-2764-tallow-creek-framing/page/1.png": {
+"file": "img/api-hangs-documents-inv-tcf-2764-tallow-creek-framing-page-1-f73ca7d5.png",
+"type": "image/png"
+},
+"/api/hangs/documents/invoice/preview": {
+"file": "json/api-hangs-documents-invoice-preview-9a0f57de.json",
+"type": "application/json"
+},
+"/api/hangs/documents/invoice/file": {
+"file": "files/aadf995d/HFC-26-0142 legal invoice.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/invoice/page/1.png": {
+"file": "img/api-hangs-documents-invoice-page-1-png-3fa3c091.png",
+"type": "image/png"
+},
+"/api/hangs/documents/legal/preview": {
+"file": "json/api-hangs-documents-legal-preview-a93ef9af.json",
+"type": "application/json"
+},
+"/api/hangs/documents/legal/file": {
+"file": "files/3f77fb20/Organization costs support.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/legal/page/1.png": {
+"file": "img/api-hangs-documents-legal-page-1-png-778cb794.png",
+"type": "image/png"
+},
+"/api/hangs/documents/memo/preview": {
+"file": "json/api-hangs-documents-memo-preview-9d5db785.json",
+"type": "application/json"
+},
+"/api/hangs/documents/memo/file": {
+"file": "files/a140c698/FY2026 adjustment notes.docx",
+"type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+},
+"/api/hangs/documents/ownership/preview": {
+"file": "json/api-hangs-documents-ownership-preview-dbdf6d42.json",
+"type": "application/json"
+},
+"/api/hangs/documents/ownership/file": {
+"file": "files/b56e267f/Partner details.docx",
+"type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+},
+"/api/hangs/documents/prior/preview": {
+"file": "json/api-hangs-documents-prior-preview-33b4c09b.json",
+"type": "application/json"
+},
+"/api/hangs/documents/prior/file": {
+"file": "files/ce6d48bd/FY2025 closing capital.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/hangs/documents/questionnaire/preview": {
+"file": "json/api-hangs-documents-questionnaire-preview-173638d4.json",
+"type": "application/json"
+},
+"/api/hangs/documents/questionnaire/file": {
+"file": "files/477af7b6/FY2026 tax questionnaire.docx",
+"type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+},
+"/api/hangs/documents/statements/preview": {
+"file": "json/api-hangs-documents-statements-preview-b7d650c0.json",
+"type": "application/json"
+},
+"/api/hangs/documents/statements/file": {
+"file": "files/d796b2ea/FY2026 financial statements.pdf",
+"type": "application/pdf"
+},
+"/api/hangs/documents/statements/page/1.png": {
+"file": "img/api-hangs-documents-statements-page-1-png-ff3fd9c7.png",
+"type": "image/png"
+},
+"/api/hangs/documents/statements/page/2.png": {
+"file": "img/api-hangs-documents-statements-page-2-png-3bfe72f6.png",
+"type": "image/png"
+},
+"/api/hangs/documents/tb/preview": {
+"file": "json/api-hangs-documents-tb-preview-cf014380.json",
+"type": "application/json"
+},
+"/api/hangs/documents/tb/file": {
+"file": "files/eb03ba7c/FY2026 trial balance.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+}
+}
