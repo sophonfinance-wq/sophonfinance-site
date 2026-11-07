@@ -1,11 +1,11 @@
-/* Fast Finance assistant: answers questions about the firm from a built-in knowledge base.
+/* F1 Finance assistant: answers questions about the firm from a built-in knowledge base.
    Anything it cannot answer is handed to the contact form. */
 (function () {
-  var TILE = '<svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg>';
+  var TILE = '<svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg>';
 
   var KB = [
     { id: 'about', k: ['what', 'services', 'service', 'offer', 'offering', 'help', 'everything', 'firm', 'company', 'about', 'sophon', 'sophonfinance', 'overview'],
-      a: 'Fast Finance is a digital AI accounting firm and an AI engineering firm. Our automated machines handle <b>tax</b>, <b>month-end accounting</b> and <b>audit</b> work, and our <b>marketing division</b> makes films, ads, apps and launch campaigns. If a process in your business runs on documents and numbers, we can automate it.',
+      a: 'F1 Finance is a digital AI accounting firm and an AI engineering firm. Our automated machines handle <b>tax</b>, <b>month-end accounting</b> and <b>audit</b> work, and our <b>marketing division</b> makes films, ads, apps and launch campaigns. If a process in your business runs on documents and numbers, we can automate it.',
       c: ['Tax services', 'Accounting', 'Audit', 'Marketing', 'Book a consultation'] },
     { id: 'tax', k: ['tax', 'taxes', 'return', 'returns', '1065', 'k-1', 'k1', 'irs', 'payroll', 'excise', 'filing', 'filings', 'partnership', 'form', 'forms'],
       a: 'The <b>Tax Machine</b> prepares partnership returns (Form 1065 and K-1s), state returns and quarterly payroll filings from your own books, checking each rule against the official source. It prepares the draft; your reviewer signs and files. <a href="#services" data-open="0">Watch the Tax Machine</a>' },
@@ -40,9 +40,9 @@
     { id: 'data', k: ['data', 'security', 'secure', 'privacy', 'private', 'confidential', 'safe', 'safety', 'compliance'],
       a: 'Every machine produces drafts for a person to approve. We go through your data and access requirements in the consultation. Please don&rsquo;t put client data in the website form.' },
     { id: 'enasal', k: ['enasal', 'partner', 'partners', 'partnership', 'built', 'creator', 'created'],
-      a: 'ENASAL AI Engineering is our AI engineering partner. The Fast Finance machines are created by ENASAL | SophonFinance.com.' },
+      a: 'ENASAL AI Engineering is our AI engineering partner. The F1 Finance machines are created by ENASAL | SophonFinance.com.' },
     { id: 'hi', k: ['hi', 'hello', 'hey', 'yo', 'sup', 'morning', 'afternoon', 'evening', 'thanks', 'thank'],
-      a: 'Hi! Ask me anything about Fast Finance: the machines, marketing, industries, the team or how to get started.',
+      a: 'Hi! Ask me anything about F1 Finance: the machines, marketing, industries, the team or how to get started.',
       c: ['What do you do?', 'Which industries?', 'Who are your engineers?', 'Book a consultation'] }
   ];
   var CHIP_Q = {
@@ -87,9 +87,9 @@
   var wrap = document.createElement('div');
   wrap.innerHTML =
     '<button class="ffc-btn" id="ffcBtn" type="button" aria-expanded="false" aria-controls="ffc">' +
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg>Ask Fast Finance</button>' +
-    '<section class="ffc" id="ffc" role="dialog" aria-label="Fast Finance assistant">' +
-      '<div class="ffc-head">' + TILE + '<div><b>Fast Finance</b><span>Ask about our services</span></div>' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg>Ask F1 Finance</button>' +
+    '<section class="ffc" id="ffc" role="dialog" aria-label="F1 Finance assistant">' +
+      '<div class="ffc-head">' + TILE + '<div><b>F1 Finance</b><span>Ask about our services</span></div>' +
       '<button class="ffc-x" id="ffcX" type="button" aria-label="Close chat">&times;</button></div>' +
       '<div class="ffc-log" id="ffcLog" aria-live="polite"></div>' +
       '<form class="ffc-form" id="ffcForm"><input id="ffcIn" type="text" autocomplete="off" placeholder="Ask a question" aria-label="Your question"><button type="submit">Send</button></form>' +
@@ -136,7 +136,7 @@
     box.classList.add('open'); btn.setAttribute('aria-expanded', 'true');
     if (!started) {
       started = true;
-      add('ffc-m bot', 'Hi, I&rsquo;m the Fast Finance assistant. We automate tax, accounting and audit work and run a marketing division, for any industry. What can we do for you?');
+      add('ffc-m bot', 'Hi, I&rsquo;m the F1 Finance assistant. We automate tax, accounting and audit work and run a marketing division, for any industry. What can we do for you?');
       chips(['What do you do?', 'Tax services', 'Accounting', 'Audit', 'Marketing', 'Which industries?', 'Are you insured?', 'Pricing', 'Book a consultation']);
     }
     if (window.matchMedia('(min-width:601px)').matches) setTimeout(function () { inp.focus(); }, 50);

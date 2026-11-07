@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fast Finance | Digital AI Accounting Firm | SophonFinance.com</title>
-<meta name="description" content="Fast Finance is a digital AI accounting firm. Tax filings, month-end accounting review and audit workpapers prepared by machine from your own files and approved by your people. Marketing division for brands and founders.">
+<title>F1 Finance | Digital AI Accounting Firm</title>
+<meta name="description" content="F1 Finance is a digital AI accounting firm. Tax filings, month-end accounting review and audit workpapers prepared by machine from your own files and approved by your people. Marketing division for brands and founders.">
 <link rel="canonical" href="https://sophonfinance.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sophonfinance.com/">
-<meta property="og:site_name" content="Fast Finance">
-<meta property="og:title" content="Fast Finance | Digital AI Accounting Firm">
-<meta property="og:description" content="AI machines that do tax, accounting and audit work. Technology and AI division, marketing division. Fast Finance, AI engineering firm.">
+<meta property="og:site_name" content="F1 Finance">
+<meta property="og:title" content="F1 Finance | Digital AI Accounting Firm">
+<meta property="og:description" content="AI machines that do tax, accounting and audit work. Technology and AI division, marketing division. F1 Finance, AI engineering firm.">
 <meta property="og:image" content="https://sophonfinance.com/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,7 +19,7 @@
 <meta name="theme-color" content="#12141a">
 <link rel="icon" href="assets/fast-finance-mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<meta name="apple-mobile-web-app-title" content="Fast Finance">
+<meta name="apple-mobile-web-app-title" content="F1 Finance">
 <meta name="format-detection" content="telephone=no">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
 <script>try{if(sessionStorage.getItem("ffSplash")||matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("ffs-seen")}else{sessionStorage.setItem("ffSplash","1")}}catch(e){}</script>
 <script>document.documentElement.classList.add("fx")</script>
 <style>
-:root{
+:root{ --race:#ff5b4f; --race-2:#f23d76; 
   --ink:#0f2730; --dark:#0f2730; --dark-2:#16343d; --dark-3:#24474f; --text:#2c3a40; --text-2:#5b6d73; --line:#dbe9e7; --gray:#f1f8f7; --teal-50:#eaf7f5; --teal-100:#d5f0ec;
   --blue:#0e9384; --blue-d:#0a7469; --blue-l:#5fd0c3;
   --head:'Jost','Segoe UI',Arial,sans-serif; --body:'Source Sans 3','Segoe UI',Arial,sans-serif;
@@ -55,24 +55,25 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .more{ display:inline-block; padding:12px 0; font:600 13.5px/1.2 var(--body); letter-spacing:.08em; text-transform:uppercase; }
 .more::after{ content:" \00BB"; }
 
-/* grand entrance: Fast Finance and Enasal side by side at equal size, then the security statement, then a slow fade into the page. CSS only, once per visit */
+/* grand entrance: F1 Finance and Enasal side by side at equal size, then the security statement, then a slow fade into the page. CSS only, once per visit */
 .ff-splash{ --h:min(72px, 11.5vw); position:fixed; inset:0; z-index:300; pointer-events:none; display:flex; align-items:center; justify-content:center; background:radial-gradient(1100px 600px at 50% 46%, rgba(95,208,195,.10), transparent 70%), #fff; animation:ffsOut 1.9s cubic-bezier(.4,0,.2,1) 10.4s forwards, ffsGone 0s linear 12.3s forwards; }
 .ffs-seen .ff-splash{ display:none; }
 .ffs-pair{ display:flex; align-items:center; gap:calc(var(--h) * .5); animation:ffsPairOut .7s ease 3s forwards; }
 .ffs-say{ position:absolute; left:50%; top:50%; width:min(15.5em, calc(100vw - 40px)); margin:0; transform:translate(-50%,-50%); font:400 clamp(27px, 7.6vw, 54px)/1.12 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; letter-spacing:-.012em; color:#15181c; text-align:left; opacity:0; animation:ffsSay 1.1s cubic-bezier(.2,.8,.2,1) 3.75s forwards, ffsSayOut 1.5s cubic-bezier(.5,0,.2,1) 10.3s forwards; }
 /* progress bar under the statement: fills while the voice reads it */
-.ffs-bar{ display:block; position:relative; margin-top:.85em; height:3px; border-radius:3px; background:rgba(12,59,67,.10); overflow:hidden; }
-.ffs-bar i{ position:absolute; inset:0; border-radius:inherit; background:linear-gradient(90deg,#0b7d71,#0e9384 40%,#5fd0c3 75%,#0aa5c8); transform-origin:0 50%; transform:scaleX(0); box-shadow:0 0 12px rgba(95,208,195,.7); animation:ffsBar 6.3s linear 3.85s forwards; }
+.ffs-bar{ display:block; position:relative; margin-top:.85em; height:4px; border-radius:2px; background:rgba(12,59,67,.10); margin-right:16px; }
+.ffs-bar::after{ content:""; position:absolute; right:-15px; top:-3px; width:10px; height:10px; background:conic-gradient(#0c3b43 25%, #fff 0 50%, #0c3b43 0 75%, #fff 0) 0 0/5px 5px; box-shadow:0 0 0 1px rgba(12,59,67,.25); }
+.ffs-bar i{ position:absolute; inset:0; border-radius:inherit; background:linear-gradient(90deg,#0b7d71,#0e9384 55%,#5fd0c3 85%,var(--race)); transform-origin:0 50%; transform:scaleX(0); box-shadow:0 0 12px rgba(95,208,195,.7); animation:ffsBar 6.3s linear 3.85s forwards; }
 .ffs-bar i::after{ content:""; position:absolute; inset:0; background:linear-gradient(90deg, transparent, rgba(255,255,255,.75), transparent); background-size:40% 100%; background-repeat:no-repeat; animation:ffsSheen 1.4s linear infinite; }
 /* the first screen settles into place as the intro clears */
 html:not(.ffs-seen) .top, html:not(.ffs-seen) #services{ animation:ffsReveal 2.3s cubic-bezier(.16,.8,.2,1) 10.4s backwards; transform-origin:50% 30%; }
 .ffs-ff{ display:flex; align-items:center; gap:calc(var(--h) * .24); height:var(--h); animation:ffsIn 1.1s cubic-bezier(.2,.8,.2,1) .25s both; }
 .ffs-ff svg{ width:var(--h); height:var(--h); flex:none; border-radius:calc(var(--h) * .14); }
 .ffs-ff b{ display:flex; flex-direction:column; justify-content:center; gap:calc(var(--h) * .07); font:700 calc(var(--h) * .43)/.9 var(--head); letter-spacing:.07em; color:#0c3b43; white-space:nowrap; }
-.ffs-rule{ width:1px; height:calc(var(--h) * 1.25); background:linear-gradient(180deg, transparent, #9fb3b6 18%, #9fb3b6 82%, transparent); transform:scaleY(0); animation:ffsRule .9s cubic-bezier(.2,.8,.2,1) .7s forwards; }
+.ffs-rule{ width:1.5px; height:calc(var(--h) * 1.25); background:linear-gradient(180deg, transparent, #0e9384 18%, var(--race) 82%, transparent); transform:skewX(-12deg) scaleY(0); animation:ffsRule .9s cubic-bezier(.2,.8,.2,1) .7s forwards; }
 .ffs-en{ height:var(--h); width:auto; animation:ffsIn 1.1s cubic-bezier(.2,.8,.2,1) 1.05s both; }
-@keyframes ffsIn{ from{ opacity:0; filter:blur(5px); transform:translateY(6px); } to{ opacity:1; filter:none; transform:none; } }
-@keyframes ffsRule{ to{ transform:scaleY(1); } }
+@keyframes ffsIn{ from{ opacity:0; filter:blur(6px); transform:translateX(-28px) skewX(-8deg); } to{ opacity:1; filter:none; transform:none; } }
+@keyframes ffsRule{ to{ transform:skewX(-12deg) scaleY(1); } }
 .ffs-logo{ --h:1.5em; display:flex; align-items:center; gap:calc(var(--h) * .22); height:var(--h); width:max-content; margin:0 0 .55em; }
 .ffs-logo svg{ width:var(--h); height:var(--h); flex:none; border-radius:calc(var(--h) * .14); }
 .ffs-logo b{ display:flex; flex-direction:column; justify-content:center; gap:calc(var(--h) * .06); font:700 calc(var(--h) * .42)/.9 var(--head); letter-spacing:.07em; color:#0c3b43; white-space:nowrap; }
@@ -95,11 +96,11 @@ html:not(.ffs-seen) .top, html:not(.ffs-seen) #services{ animation:ffsReveal 2.3
 
 .info[hidden]{ display:none !important; }
 /* scroll experience (assets/fx.js) */
-.fx-progress{ position:fixed; left:0; top:0; right:0; height:3px; z-index:120; transform:scaleX(0); transform-origin:0 50%; background:linear-gradient(90deg,#0e9384,#5fd0c3,#0aa5c8); box-shadow:0 0 12px rgba(95,208,195,.6); pointer-events:none; }
+.fx-progress{ position:fixed; left:0; top:0; right:0; height:3px; z-index:120; transform:scaleX(0); transform-origin:0 50%; background:linear-gradient(90deg,#0e9384,#5fd0c3 70%,var(--race)); box-shadow:0 0 12px rgba(95,208,195,.6); pointer-events:none; }
 .fx [data-r]{ opacity:0; transform:translateY(28px); filter:blur(6px); transition:opacity .8s cubic-bezier(.2,.7,.2,1) var(--rd,0ms), transform .8s cubic-bezier(.2,.7,.2,1) var(--rd,0ms), filter .8s ease var(--rd,0ms); }
 .fx [data-r].in{ opacity:1; transform:none; filter:none; }
 section h2 .acc{ position:relative; }
-.fx section h2 .acc::after{ content:""; position:absolute; left:0; right:.15em; bottom:-.08em; height:3px; border-radius:3px; background:linear-gradient(90deg,#0e9384,#5fd0c3); transform:scaleX(0); transform-origin:0 50%; transition:transform 1s cubic-bezier(.2,.7,.2,1) .25s; }
+.fx section h2 .acc::after{ content:""; position:absolute; left:0; right:.15em; bottom:-.08em; height:3.5px; border-radius:0; background:linear-gradient(90deg,#0e9384,#5fd0c3 72%,var(--race)); clip-path:polygon(0 0,100% 0,calc(100% - 4px) 100%,0 100%); transform:scaleX(0); transform-origin:0 50%; transition:transform 1s cubic-bezier(.2,.7,.2,1) .25s; }
 .fx section h2.drawn .acc::after{ transform:scaleX(1); }
 .stage .player{ will-change:transform, opacity; transform-origin:50% 0; }
 .fx-spot{ position:relative; }
@@ -192,7 +193,7 @@ section h2 .acc{ position:relative; }
 .tab-note{ font-size:14px; color:#8e95a5; margin:14px 0 0; }
 .player{ position:relative; border-radius:16px; overflow:hidden; background:#eef0f5; box-shadow:0 0 0 1px rgba(14,147,132,.20), 0 30px 70px -30px rgba(14,147,132,.38), 0 18px 40px -28px rgba(15,39,48,.35); }
 .player video{ width:100%; height:auto; aspect-ratio:16/9; background:#eef0f5; transform-origin:50% 50%; transition:transform 1.4s cubic-bezier(.2,.7,.2,1); }
-/* the Fast Finance end card: zoom in close and hold there so visitors can read it and scan the codes */
+/* the F1 Finance end card: zoom in close and hold there so visitors can read it and scan the codes */
 .player video.card-zoom{ transform:scale(1.9); }
 .replay{ position:absolute; left:14px; bottom:14px; z-index:2; display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:9px 16px; background:#fff; color:var(--blue-d); border:1px solid var(--line); border-radius:999px; font:600 13px/1 var(--body); letter-spacing:.06em; text-transform:uppercase; cursor:pointer; box-shadow:0 8px 20px -10px rgba(15,39,48,.35); }
 .replay svg{ width:16px; height:16px; }
@@ -352,11 +353,11 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .ours-ff svg{ width:40px; height:40px; }
 .ours-ff b{ display:block; font:600 19px/1 var(--head); letter-spacing:.07em; color:#0c3b43; }
 .ours-ff small{ display:block; margin-top:5px; font:500 9px/1 var(--head); letter-spacing:.34em; color:#4f7a80; }
-.ours-div{ width:1px; height:34px; background:var(--line); }
-.ours-by{ font:600 11.5px/1 var(--body); letter-spacing:.14em; text-transform:uppercase; color:var(--text-2); }
-.ours-enasal{ height:30px; width:auto; }
-.ours-sophon{ height:52px; width:auto; margin:-6px 0; }
-@media (max-width:700px){ .ours{ gap:12px 18px; padding:14px; } .ours-div{ display:none; } .ours-ff svg{ width:34px; height:34px; } .ours-ff b{ font-size:16px; } .ours-enasal{ height:24px; } .ours-sophon{ height:44px; } .ours-by{ width:100%; text-align:center; order:2; } .ours-enasal{ order:3; } .ours-sophon{ order:4; } }
+.ours-div{ width:1px; height:38px; background:var(--line); }
+.ours-by{ font:600 11.5px/1 var(--body); letter-spacing:.14em; text-transform:uppercase; color:var(--text-2); flex-basis:100%; text-align:center; }
+.ours-enasal{ height:32px; width:auto; display:block; }
+.ours-sophon{ height:37px; width:auto; display:block; margin:0; }
+@media (max-width:700px){ .ours{ gap:12px 18px; padding:14px; } .ours-div{ height:30px; } .ours-ff svg{ width:34px; height:34px; } .ours-ff b{ font-size:16px; } .ours-enasal{ height:26px; } .ours-sophon{ height:30px; } .ours-by{ width:100%; text-align:center; order:2; } .ours-enasal{ order:3; } .ours-div{ order:4; } .ours-sophon{ order:5; } }
 
 /* service tabs: each category has its own colour and icon */
 .tab{ --c:#0e9384; --c2:#14a896; --ct:#e3f5f2; justify-content:flex-start; gap:15px; text-align:left; min-height:84px; padding:13px 21px; border-radius:15px; }
@@ -639,23 +640,23 @@ footer a:hover{ color:var(--blue); }
 
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Fast Finance","alternateName":"SophonFinance.com","url":"https://sophonfinance.com/","logo":"https://sophonfinance.com/assets/apple-touch-icon.png","image":"https://sophonfinance.com/assets/og.jpg","email":"contact@sophonfinance.com","description":"Digital AI accounting firm and AI engineering firm. AI machines for tax, accounting and audit; technology and AI division; marketing division.","address":[{"@type":"PostalAddress","streetAddress":"Rainier Square, 4th Ave & Union St","addressLocality":"Seattle","addressRegion":"WA","addressCountry":"US"}],"areaServed":"US","founder":{"@type":"Person","name":"Sophonnarith Hang"},"knowsAbout":["Tax preparation","Accounting","Audit","AI engineering","Local AI architecture","Mobile apps","Marketing"]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"F1 Finance","alternateName":"SophonFinance.com","url":"https://sophonfinance.com/","logo":"https://sophonfinance.com/assets/apple-touch-icon.png","image":"https://sophonfinance.com/assets/og.jpg","email":"contact@sophonfinance.com","description":"Digital AI accounting firm and AI engineering firm. AI machines for tax, accounting and audit; technology and AI division; marketing division.","address":[{"@type":"PostalAddress","streetAddress":"Rainier Square, 4th Ave & Union St","addressLocality":"Seattle","addressRegion":"WA","addressCountry":"US"}],"areaServed":"US","founder":{"@type":"Person","name":"Sophonnarith Hang"},"knowsAbout":["Tax preparation","Accounting","Audit","AI engineering","Local AI architecture","Mobile apps","Marketing"]}
 </script>
 </head>
 <body>
 <div class="ff-splash" aria-hidden="true">
   <div class="ffs-pair">
-    <div class="ffs-ff"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg><b><span>FAST</span><span>FINANCE</span></b></div>
+    <div class="ffs-ff"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg><b><span>F1</span><span>FINANCE</span></b></div>
     <i class="ffs-rule"></i>
     <img class="ffs-en" src="assets/enasal-logo-dark.png" alt="">
   </div>
-  <p class="ffs-say"><span class="ffs-logo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg><b><span>FAST</span><span>FINANCE</span></b></span>Built with enterprise-grade security, and held to the highest standards of compliance and safety.<span class="ffs-bar" aria-hidden="true"><i></i></span></p>
+  <p class="ffs-say"><span class="ffs-logo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg><b><span>F1</span><span>FINANCE</span></b></span>Built with enterprise-grade security, and held to the highest standards of compliance and safety.<span class="ffs-bar" aria-hidden="true"><i></i></span></p>
 </div>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="top">
   <div class="wrap top-in">
-    <a class="logo hl" href="/" aria-label="Fast Finance home"><h1 id="h1"><span class="h1-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span><span class="sr">The digital AI accounting, marketing and tech firm.</span><span class="hl-txt" aria-hidden="true"><span class="hl-pre">The digital AI</span> <span class="acc rot"><span>accounting firm.</span><span>marketing firm.</span><span>tech firm.</span></span></span></h1></a>
+    <a class="logo hl" href="/" aria-label="F1 Finance home"><h1 id="h1"><span class="h1-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg></span><span class="sr">The digital AI accounting, marketing and tech firm.</span><span class="hl-txt" aria-hidden="true"><span class="hl-pre">The digital AI</span> <span class="acc rot"><span>accounting firm.</span><span>marketing firm.</span><span>tech firm.</span></span></span></h1></a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0f2730" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -704,7 +705,7 @@ footer a:hover{ color:var(--blue); }
         </div>
         <div class="info" hidden>
           <div>
-            <h2 id="pTitle" class="mt"><span class="mt-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span><span class="mt-txt"><small>FAST FINANCE</small><b>Tax Machine</b></span></h2>
+            <h2 id="pTitle" class="mt"><span class="mt-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg></span><span class="mt-txt"><small>F1 FINANCE</small><b>Tax Machine</b></span></h2>
             <p class="sub" id="pSub">Partnership, state and payroll returns.</p>
           </div>
           <div class="pbar"><span id="pLen">Training video &middot; 2:25</span><button type="button" id="fs">Full screen</button></div>
@@ -731,7 +732,7 @@ footer a:hover{ color:var(--blue); }
           </div>
           <button class="demo-x" id="demoX" type="button" aria-label="Close the demo">&times;</button>
         </div>
-        <iframe id="demoFrame" title="Fast Finance machine demo" allow="fullscreen"></iframe>
+        <iframe id="demoFrame" title="F1 Finance machine demo" allow="fullscreen"></iframe>
         <div class="demo-cover" id="demoCover">
           <div class="demo-card">
             <span class="demo-ic" aria-hidden="true"><img id="demoIc" src="assets/icons/tax.jpg" alt="" width="72" height="72"></span>
@@ -799,8 +800,8 @@ footer a:hover{ color:var(--blue); }
           </div>
           <div class="cg cg-ff">
             <div class="cg-head">
-              <span class="cg-tile"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span>
-              <span><b>Sophonnarith Hang</b><small>Founder, Fast Finance &middot; AI Engineer</small></span>
+              <span class="cg-tile"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg></span>
+              <span><b>Sophonnarith Hang</b><small>Founder, F1 Finance &middot; AI Engineer</small></span>
             </div>
             <ul>
               <li><span class="bf"><b>20</b><small>Years</small></span><span class="bt">Accounting and finance</span></li>
@@ -816,7 +817,7 @@ footer a:hover{ color:var(--blue); }
 
   <section class="contact" id="contact">
     <div class="contact-film" aria-hidden="true">
-      <video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/team-reel-poster-v2.jpg" data-mobile="videos/team-reel-mobile-v2.mp4" aria-label="The Fast Finance team at work">
+      <video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/team-reel-poster-v2.jpg" data-mobile="videos/team-reel-mobile-v2.mp4" aria-label="The F1 Finance team at work">
         <source src="videos/team-reel-v2.mp4" type="video/mp4">
       </video>
     </div>
@@ -830,11 +831,11 @@ footer a:hover{ color:var(--blue); }
         </dl>
       </div>
       <form class="cf" action="https://formsubmit.co/cff69027fd01c775ac2e18c12b674597" method="POST">
-        <input type="hidden" name="_subject" value="New consultation request — Fast Finance">
+        <input type="hidden" name="_subject" value="New consultation request — F1 Finance">
         <input type="hidden" name="_next" value="https://sophonfinance.com/thanks.html">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_autoresponse" value="Thank you for contacting Fast Finance. We received your request and will reply within one business day.&#10;&#10;Fast Finance · SophonFinance.com · contact@sophonfinance.com">
+        <input type="hidden" name="_autoresponse" value="Thank you for contacting F1 Finance. We received your request and will reply within one business day.&#10;&#10;F1 Finance · SophonFinance.com · contact@sophonfinance.com">
         <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="two">
           <label>Name<input name="name" required autocomplete="name"></label>
@@ -861,11 +862,11 @@ footer a:hover{ color:var(--blue); }
       <span class="ours-by">Machines created by</span>
       <img src="assets/enasal-logo-dark.png" alt="ENASAL" class="ours-enasal">
       <i class="ours-div" aria-hidden="true"></i>
-      <img src="assets/sophon_finance_on_light.svg" alt="SophonFinance.com" class="ours-sophon">
+      <img src="assets/sophon_finance_lockup.svg" alt="Sophon Finance" class="ours-sophon">
     </div>
   </div>
   <div class="wrap f-base">
-    <span>&copy; 2026 Fast Finance</span>
+    <span>&copy; 2026 F1 Finance</span>
     <span>Training videos use an invented company. Logos show where our engineers previously worked; no endorsement implied.</span>
   </div>
 </footer>
@@ -924,12 +925,12 @@ footer a:hover{ color:var(--blue); }
     }
   }
 
-  // First entry: a voice says "Welcome to Fast Finance" (Higgsfield, voice Celine) over the trailer. The Tax video waits
+  // First entry: a voice says "Welcome to F1 Finance" (Higgsfield, voice Celine) over the trailer. The Tax video waits
   // at 0:00 and starts from the beginning with sound (75%) 3 seconds after the greeting ends.
   // Browsers that block sound before a tap: the video plays muted after the trailer, the first tap plays the greeting,
   // and 3 seconds after it the video restarts at 0:00 with sound. Tapping a tab first skips all of this.
   var MED = 0.75, GAP = 3000, intro = !document.documentElement.classList.contains('ffs-seen') && !reduced;
-  var hi = intro ? new Audio('assets/intro-voice-v2.mp3') : null; if (hi) hi.preload = 'auto';
+  var hi = intro ? new Audio('assets/intro-voice-v3.mp3') : null; if (hi) hi.preload = 'auto';
   var greeted = false, speaking = false, userTook = false, wait = 0, t0 = Date.now(), INTRO_END = 10400;
   function withSound(){
     wait = 0; if (userTook || cur !== 0) return;
@@ -1037,7 +1038,7 @@ footer a:hover{ color:var(--blue); }
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closePop(); });
   popV.addEventListener('ended', closePop);
 
-  // End card: in its last seconds the video zooms in on the Fast Finance card and stays there (no jump to the next video)
+  // End card: in its last seconds the video zooms in on the F1 Finance card and stays there (no jump to the next video)
   var zoomed = false, replay = document.getElementById('replay');
   function zoomCard(on){ if (!!zoomed === on || !replay) return; zoomed = on; v.classList.toggle('card-zoom', on); v.controls = !on; replay.hidden = !on; }
   v.addEventListener('timeupdate', function(){ var c = S[cur].card; if (c && v.duration) zoomCard(v.duration - v.currentTime <= c); });

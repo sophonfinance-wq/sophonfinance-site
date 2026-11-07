@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="55 44 545 120" role="img" aria-label="Sophon Finance">
+  <title>Sophon Finance</title>
+  <g transform="translate(0 -12)">
+    <path fill="#22C7E6" d="M59 64.3H139.5L176.5 101.3L143.4 134.4H114.1L145.3 103.3L129.7 87.7H59Z"/>
+    <path fill="#0A1733" d="M176.5 167.7H96L59 130.7L92.1 97.6H121.4L90.2 128.7L105.8 144.3H176.5Z"/>
+  </g>
+  <rect x="216" y="48" width="4" height="112" rx="2" fill="#22C7E6"/>
+  <text x="246" y="105" fill="#0A1733" font-family="Segoe UI, Arial, sans-serif" font-size="76" font-weight="600" letter-spacing="7">SOPHON</text>
+  <text x="250" y="156" fill="#0A1733" font-family="Segoe UI, Arial, sans-serif" font-size="31" font-weight="600" letter-spacing="10">FINANCE</text>
+</svg>

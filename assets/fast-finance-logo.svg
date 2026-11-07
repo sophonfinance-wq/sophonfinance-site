@@ -1,10 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" role="img" aria-label="Fast Finance, AI Engineering Firm">
-  <title>Fast Finance — AI Engineering Firm</title>
-  <rect width="64" height="64" rx="9" fill="#0c3b43"/>
-  <path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/>
-  <rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/>
-  <rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" role="img" aria-label="F1 Finance, AI Engineering Firm">
+  <title>F1 Finance — AI Engineering Firm</title>
+  <rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g>
   <rect x="80" y="10" width="1.5" height="44" fill="#cfe3df"/>
-  <text x="98" y="33" font-family="Jost, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="600" fill="#0c3b43" letter-spacing="1.9">FAST FINANCE</text>
+  <text x="98" y="33" font-family="Jost, 'Segoe UI', Arial, sans-serif" font-size="27" font-weight="600" fill="#0c3b43" letter-spacing="1.9">F1 FINANCE</text>
   <text x="99" y="51" font-family="Jost, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="500" fill="#4f7a80" letter-spacing="3.6">AI ENGINEERING FIRM</text>
 </svg>

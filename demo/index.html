@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Try the Machines | Fast Finance</title>
-<meta name="description" content="Try the Fast Finance Tax, Accounting and Audit machines in your browser. A recorded run of each real machine on an invented demo company.">
+<title>Try the Machines | F1 Finance</title>
+<meta name="description" content="Try the F1 Finance Tax, Accounting and Audit machines in your browser. A recorded run of each real machine on an invented demo company.">
 <link rel="canonical" href="https://sophonfinance.com/demo/">
-<meta property="og:title" content="Try the Fast Finance machines">
+<meta property="og:title" content="Try the F1 Finance machines">
 <meta property="og:description" content="Tax, Accounting and Audit machines, running in your browser.">
 <meta property="og:image" content="https://sophonfinance.com/assets/og.jpg">
 <meta name="theme-color" content="#ffffff">
@@ -62,9 +62,9 @@ a{ color:inherit; text-decoration:none; }
 </head>
 <body>
 <header class="bar">
-  <a class="brand" href="../" aria-label="Fast Finance home">
-    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg>
-    <span><b>Fast Finance</b><span>Try the machines</span></span>
+  <a class="brand" href="../" aria-label="F1 Finance home">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg>
+    <span><b>F1 Finance</b><span>Try the machines</span></span>
   </a>
   <nav class="tabs" role="tablist" aria-label="Machines">
     <button role="tab" id="m-tax" data-m="tax" aria-selected="true">Tax</button>
@@ -76,7 +76,7 @@ a{ color:inherit; text-decoration:none; }
 <nav class="subj" id="subj" aria-label="Choose what the machine works on"></nav>
 <p class="note">A recorded run of the real machine on an invented demo company. Press the run button to watch it work.</p>
 <main class="stage" id="stage" role="tabpanel">
-  <iframe id="frame" title="Fast Finance machine demo" allow="fullscreen"></iframe>
+  <iframe id="frame" title="F1 Finance machine demo" allow="fullscreen"></iframe>
   <div class="soon"><div><b>Coming soon</b>This machine's demo is being prepared.</div></div>
 </main>
 <script>
@@ -105,8 +105,8 @@ a{ color:inherit; text-decoration:none; }
     });
     tabs.forEach(function(t){ t.setAttribute('aria-selected', t.getAttribute('data-m') === m); });
     stage.setAttribute('aria-labelledby', 'm-' + m);
-    frame.title = 'Fast Finance ' + NAMES[m] + ' demo';
-    document.title = NAMES[m] + ' demo | Fast Finance';
+    frame.title = 'F1 Finance ' + NAMES[m] + ' demo';
+    document.title = NAMES[m] + ' demo | F1 Finance';
     var src = id + '/index.html';
     if (READY[m]) { stage.classList.remove('empty'); if (frame.getAttribute('src') !== src) frame.src = src; }
     else { stage.classList.add('empty'); frame.removeAttribute('src'); }
