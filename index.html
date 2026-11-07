@@ -162,7 +162,7 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 }
 /* Phones: the video runs edge to edge; the tabs use short names */
 @media (max-width:600px){
-  .stage .player{ margin:0 calc(-1 * max(var(--gut), env(safe-area-inset-left))); box-shadow:none; border-radius:0; }
+  .stage .player{ margin:0 calc(-1 * max(16px, env(safe-area-inset-left))) 0 calc(-1 * max(16px, env(safe-area-inset-left))); margin-right:calc(-1 * max(16px, env(safe-area-inset-right))); box-shadow:none; border-radius:0; }
   .tab{ font-size:12.5px; padding:12px 6px; min-height:48px; }
   .tab .lg{ display:none; }
   .snd{ top:8px; right:8px; min-height:34px; padding:7px 10px; font-size:11px; gap:6px; }
@@ -292,18 +292,19 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .bio-pic{ width:120px; height:120px; border-radius:16px; object-fit:cover; object-position:center 20%; }
 .bio h3{ font:500 22px/1.15 var(--head); color:var(--ink); margin:2px 0 4px; }
 .bio-role{ margin:0 0 12px; font:600 12.5px/1.3 var(--body); letter-spacing:.06em; text-transform:uppercase; color:var(--blue); }
-.bio-facts{ list-style:none; margin:0 0 14px; padding:0; display:grid; gap:7px; }
-.bio-facts li{ display:flex; align-items:center; gap:10px; font-size:15.5px; color:var(--text); }
-.bf-n{ flex:none; min-width:76px; padding:5px 9px; border-radius:8px; background:var(--teal-50); color:#0c3b43; font:600 12px/1 var(--head); letter-spacing:.04em; text-align:center; }
-.bf-logo{ flex:none; width:76px; height:22px; object-fit:contain; }
-.bf-i{ flex:none; display:inline-flex; width:76px; justify-content:center; }
-.bf-i svg{ width:24px; height:24px; }
+.bio-facts{ list-style:none; margin:0 0 14px; padding:0; display:grid; gap:8px; }
+.bio-facts li{ display:grid; grid-template-columns:92px 1fr; align-items:center; gap:12px; }
+.bf{ display:flex; align-items:center; justify-content:center; height:30px; border-radius:8px; background:var(--teal-50); border:1px solid #cfe8e3; color:#0c3b43; font:600 12px/1 var(--head); letter-spacing:.04em; white-space:nowrap; }
+.bf-w{ background:#fff; }
+.bf img{ height:15px; width:auto; }
+.bf svg{ width:20px; height:20px; }
+.bt{ font-size:15px; line-height:1.3; color:var(--text); }
 .bio-link{ display:inline-flex; align-items:center; gap:8px; padding:8px 14px 8px 6px; border:1px solid var(--line); border-radius:999px; font:600 13.5px/1 var(--body); color:#0c3b43; }
-.bio-link .bf-i{ width:auto; } .bio-link .bf-i svg{ width:22px; height:22px; }
+.bio-link .bf-i{ display:inline-flex; } .bio-link .bf-i svg{ width:22px; height:22px; }
 .bio-link:hover{ border-color:var(--blue); color:var(--blue); }
 .team-grid .team-film{ margin-top:0; }
 @media (max-width:980px){ .team-grid{ grid-template-columns:1fr; } }
-@media (max-width:520px){ .bio{ grid-template-columns:1fr; } .bio-pic{ width:96px; height:96px; } }
+@media (max-width:520px){ .bio{ grid-template-columns:1fr; padding:18px 16px; } .bio-pic{ width:96px; height:96px; } .bio-facts li{ grid-template-columns:82px 1fr; gap:10px; } .bf{ font-size:11px; } .bt{ font-size:14px; white-space:nowrap; } }
 
 /* contact */
 .contact{ padding:48px 0; }
@@ -499,11 +500,11 @@ footer a:hover{ color:var(--blue); }
               <h3>Sophonnarith Hang</h3>
               <p class="bio-role">Founder, Fast Finance &middot; AI engineer &middot; Accountant</p>
               <ul class="bio-facts">
-                <li><span class="bf-n">20 yrs</span>Accounting and finance</li>
-                <li><img src="assets/logos/kpmg.svg" alt="KPMG" class="bf-logo">KPMG-trained, Big Four</li>
-                <li><span class="bf-n">F100 &middot; F500</span>Fortune 100 and Fortune 500 companies</li>
-                <li><span class="bf-i"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span>Builds the Fast Finance AI machines</li>
-                <li><span class="bf-n">Founder</span>Entrepreneur and business owner</li>
+                <li><span class="bf">20 yrs</span><span class="bt">Accounting and finance</span></li>
+                <li><span class="bf bf-w"><img src="assets/logos/kpmg.svg" alt="KPMG"></span><span class="bt">KPMG-trained, Big Four</span></li>
+                <li><span class="bf">F100 &middot; F500</span><span class="bt">Fortune 100 and 500</span></li>
+                <li><span class="bf bf-w"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span><span class="bt">Builds our AI machines</span></li>
+                <li><span class="bf">Founder</span><span class="bt">Entrepreneur, business owner</span></li>
               </ul>
               <a class="bio-link" href="https://sophonfinance.com"><span class="bf-i"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span>SophonFinance.com</a>
             </div>
