@@ -539,11 +539,21 @@ form.cf{ background:var(--gray); border:1px solid var(--line); border-radius:18p
 .cf input:focus, .cf textarea:focus, .cf select:focus{ outline:2px solid var(--blue); outline-offset:-1px; border-color:var(--blue); }
 .cf .fine{ font-size:13.5px; color:var(--text-2); margin:0; }
 .hp{ position:absolute; left:-9999px; }
+@media (max-width:600px){
+  form.cf{ padding:16px; gap:10px; border-radius:16px; }
+  form.cf .two{ grid-template-columns:1fr 1fr; gap:10px; }
+  .cf label{ gap:5px; font-size:10.5px; letter-spacing:.07em; }
+  .cf input, .cf textarea, .cf select{ padding:9px 11px; border-radius:9px; }
+  .cf textarea{ min-height:84px; }
+  .cf .btn{ min-height:44px; padding:10px 20px; font-size:13px; }
+  .cf .fine{ font-size:12.5px; }
+}
+@media (max-width:359px){ form.cf .two{ grid-template-columns:1fr; } }
 @media (max-width:900px){ .contact{ padding:36px 0; } .c-grid{ grid-template-columns:1fr; gap:32px; } .cf .two{ grid-template-columns:1fr; } form.cf{ padding:22px; } .cf .btn{ width:100%; justify-content:center; } }
 
 /* footer */
 footer{ background:#f3faf8; color:var(--text-2); font-size:15px; border-top:1px solid var(--line); }
-.f-grid{ display:grid; grid-template-columns:1.2fr 1.5fr .8fr; gap:28px 40px; padding-top:36px; padding-bottom:26px; align-items:start; }
+.f-grid{ display:grid; grid-template-columns:1fr 1.4fr; gap:28px 40px; padding-top:36px; padding-bottom:26px; align-items:start; }
 footer h4{ font:600 12px/1 var(--head); letter-spacing:.18em; text-transform:uppercase; color:var(--ink); margin:4px 0 14px; }
 footer ul{ list-style:none; margin:0; padding:0; }
 footer a{ color:var(--ink); }
@@ -817,12 +827,6 @@ footer a:hover{ color:var(--blue); }
         <li><a href="#services" data-open="2">Audit</a></li>
         <li><a href="#services" data-open="3">Tech</a></li>
         <li><a href="#marketing">Marketing</a></li>
-      </ul>
-    </nav>
-    <nav class="f-firm" aria-label="Firm">
-      <h4>Firm</h4>
-      <ul>
-        <li><a href="#team">Credentials</a></li>
       </ul>
     </nav>
   </div>
