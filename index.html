@@ -215,7 +215,7 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 @keyframes dmSheen{ 0%,55%{ left:-60%; } 85%,100%{ left:130%; } }
 @media (prefers-reduced-motion:reduce){ .dm, .dm::after{ animation:none; } .dm{ box-shadow:0 0 0 3px rgba(255,140,90,.3), 0 0 16px rgba(255,91,79,.5); } }
 .demo{ scroll-margin-top:64px; padding:40px 0 36px; background:linear-gradient(180deg,#fff 0%,#f3faf8 100%); border-top:1px solid var(--line); }
-.demo h2{ font-size:clamp(30px, 3.6vw, 48px); line-height:1.08; margin:10px 0 8px; letter-spacing:-.01em; }
+.demo h2{ font-size:clamp(30px, 3.6vw, 48px); line-height:1.08; margin:0 0 8px; letter-spacing:-.01em; }
 .demo-head{ margin-bottom:18px; }
 .demo-eyebrow{ display:inline-flex; align-items:center; gap:8px; padding:6px 12px 6px 10px; border-radius:999px; background:rgba(14,147,132,.08); border:1px solid rgba(14,147,132,.22); font:600 11.5px/1 var(--body); letter-spacing:.16em; text-transform:uppercase; color:#0a7469; }
 .demo-eyebrow i{ position:relative; width:8px; height:8px; border-radius:50%; background:#0e9384; }
@@ -743,9 +743,8 @@ footer a:hover{ color:var(--blue); }
   <section class="demo demo-only" id="demo" aria-labelledby="demoH">
     <div class="wrap">
       <div class="demo-head">
-        <span class="demo-eyebrow"><i aria-hidden="true"></i>Live demos</span>
         <h2 id="demoH">Try the <span class="demo-grad">machines.</span></h2>
-        <p class="demo-count"><b id="demoCount">0</b> real recorded runs across tax, accounting and audit. Tap one to watch it work.</p>
+        <p class="demo-count"><b id="demoCount">0</b> real recorded runs across tax, accounting and audit.</p>
       </div>
       <div class="demo-sw" role="tablist" aria-label="Machines">
         <button role="tab" data-m="tax" aria-selected="true">Tax</button>
