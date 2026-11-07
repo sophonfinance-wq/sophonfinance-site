@@ -210,7 +210,7 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 @keyframes dmSheen{ 0%,55%{ left:-60%; } 85%,100%{ left:130%; } }
 @media (prefers-reduced-motion:reduce){ .dm, .dm::after{ animation:none; } .dm{ box-shadow:0 0 0 3px rgba(255,140,90,.3), 0 0 16px rgba(255,91,79,.5); } }
 .demo{ scroll-margin-top:64px; padding:40px 0 36px; background:linear-gradient(180deg,#fff 0%,#f3faf8 100%); border-top:1px solid var(--line); }
-.demo h2{ font-size:clamp(26px, 3vw, 40px); line-height:1.15; margin-bottom:8px; }
+.demo h2{ font-size:clamp(26px, 3vw, 40px); line-height:1.15; margin-bottom:16px; }
 .demo .intro{ color:var(--text-2); margin:0 0 16px; font-size:17px; }
 .demo-sw{ display:inline-flex; gap:4px; padding:4px; background:var(--teal-50); border:1px solid var(--line); border-radius:999px; }
 .demo-sw button{ appearance:none; border:0; background:none; cursor:pointer; padding:10px 20px; border-radius:999px; font:600 13px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--ink); }
@@ -695,7 +695,6 @@ footer a:hover{ color:var(--blue); }
   <section class="demo demo-only" id="demo" aria-labelledby="demoH">
     <div class="wrap">
       <h2 id="demoH">Try the <span class="acc">machines.</span></h2>
-      <p class="intro">The real machines, replaying a recorded run on an invented company.</p>
       <div class="demo-sw" role="tablist" aria-label="Machines">
         <button role="tab" data-m="tax" aria-selected="true">Tax</button>
         <button role="tab" data-m="accounting" aria-selected="false">Accounting</button>
