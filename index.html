@@ -226,10 +226,11 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 @media (max-width:600px){ .tab{ flex-direction:column; justify-content:center; text-align:center; gap:6px; min-height:0; padding:10px 4px; } .ti{ width:34px; height:34px; border-radius:9px; } .ti svg{ width:18px; height:18px; } .tl small{ display:none; } .tl b{ font-size:11.5px; letter-spacing:.06em; } }
 
 /* teal strip under the video: how we work */
-.promise{ display:grid; grid-template-columns:1fr 1fr auto; gap:14px 34px; align-items:center; margin-top:20px; padding:24px 30px; border-radius:18px; color:#fff; background:linear-gradient(135deg,#0c6f66 0%,#0e9384 45%,#13a896 100%); box-shadow:0 22px 46px -26px rgba(12,59,67,.55); position:relative; overflow:hidden; }
+.promise{ display:grid; grid-template-columns:1fr auto; gap:14px 34px; align-items:center; margin-top:20px; padding:24px 30px; border-radius:18px; color:#fff; background:linear-gradient(135deg,#0c6f66 0%,#0e9384 45%,#13a896 100%); box-shadow:0 22px 46px -26px rgba(12,59,67,.55); position:relative; overflow:hidden; }
 .promise::before{ content:""; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.14) 1px, transparent 1.3px); background-size:20px 20px; -webkit-mask-image:linear-gradient(90deg,transparent,#000); mask-image:linear-gradient(90deg,transparent,#000); pointer-events:none; }
 .promise p{ position:relative; margin:0; font-size:18px; line-height:1.45; }
-.promise p b{ font-weight:600; }
+.promise .pr-big{ font:500 clamp(20px, 2.1vw, 27px)/1.3 var(--head); letter-spacing:.005em; }
+.promise .pr-big span{ color:#c8f3ec; }
 .promise .more{ position:relative; color:#fff; white-space:nowrap; border:1px solid rgba(255,255,255,.55); border-radius:999px; padding:12px 20px; }
 .promise .more:hover{ background:rgba(255,255,255,.12); color:#fff; }
 @media (max-width:980px){ .promise{ grid-template-columns:1fr; gap:12px; padding:20px; margin-top:16px; } .promise .more{ justify-self:start; } }
@@ -396,8 +397,7 @@ footer a:hover{ color:var(--blue); }
           <div class="pbar"><span id="pLen">Training video &middot; 2:22</span><button type="button" id="fs">Full screen</button></div>
         </div>
         <div class="promise">
-          <p><b>We build AI machines that do your tax, accounting and audit work.</b></p>
-          <p>They prepare it. Your people approve it.</p>
+          <p class="pr-big">AI machines do your tax, accounting and audit work. <span>You just approve it.</span></p>
           <a class="more" href="#contact">Schedule a free consultation</a>
         </div>
       </div>
