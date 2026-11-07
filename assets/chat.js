@@ -30,7 +30,7 @@
     { id: 'localai', k: ['local', 'private', 'on-premise', 'onprem', 'premise', 'llm', 'model', 'models', 'gpt', 'chatgpt', 'own', 'server', 'servers', 'architecture', 'infrastructure', 'enterprise', 'expenses', 'costs', 'savings', 'scale'],
       a: 'We architect <b>local AI systems for large corporations</b>: the AI runs inside your own environment on the latest, smartest and lowest-cost models, to cut expenses while your data stays with you. We design the architecture, build it and hand it over. <a href="#services" data-open="4">Watch AI services</a>' },
     { id: 'techdiv', k: ['tech', 'technology', 'division', 'thush', 'cto', 'cloud', 'developer', 'developers', 'engineering'],
-      a: 'Our <b>Technology and Artificial Intelligence Division</b> covers local AI architecture, AI agents and applications, workflow automation, data-to-answers search, mobile apps, and cloud platforms built to scale. <a href="#tech">See the division</a>' },
+      a: 'Our <b>Technology and Artificial Intelligence Division</b> covers local AI architecture, AI agents and applications, workflow automation, data-to-answers search, mobile apps, and cloud platforms built to scale. <a href="#contact">Talk to us</a>' },
     { id: 'office', k: ['office', 'offices', 'where', 'located', 'location', 'address', 'seattle', 'washington', 'remote', 'local'],
       a: 'Our office is at <b>Rainier Square, 4th &amp; Union, Seattle, Washington</b>. We work with companies anywhere in the US. <a href="#contact">Book a consultation</a>' },
     { id: 'speed', k: ['fast', 'speed', 'long', 'quick', 'quickly', 'turnaround', 'time', 'minutes', 'days', 'hours'],
