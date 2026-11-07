@@ -199,8 +199,8 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 
 /* trust band: where the engineers come from */
 .trust{ background:#fff; border-top:1px solid var(--line); padding:26px 0 28px; }
-.topband{ background:linear-gradient(180deg,#eef8f6,#f6fbfa); border-bottom:1px solid var(--line); }
-.topbar{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px 38px; padding:10px 0; margin:0; }
+.topband{ margin-top:12px; background:linear-gradient(180deg,#f2faf8,#fbfdfd); border:1px solid var(--line); border-radius:16px; }
+.topbar{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px 38px; padding:12px 16px; margin:0; }
 .t-label{ text-align:center; font:600 12px/1.3 var(--body); letter-spacing:.14em; text-transform:uppercase; color:var(--text-2); margin:0; }
 .t-logos{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:16px 48px; }
 .t-logos img{ display:block; width:auto; }
@@ -437,20 +437,6 @@ footer a:hover{ color:var(--blue); }
 </div>
 <a class="skip" href="#main">Skip to content</a>
 
-<div class="topband">
-  <div class="wrap">
-    <div class="topbar">
-    <p class="t-label">Our AI engineers previously worked at</p>
-    <ul class="t-logos">
-      <li><img src="assets/logos/kpmg.svg" alt="KPMG" class="lg-kpmg"></li>
-      <li><img src="assets/logos/microsoft.svg" alt="Microsoft" class="lg-ms"></li>
-      <li><img src="assets/logos/general-dynamics.svg" alt="General Dynamics" class="lg-gd"></li>
-      <li><img src="assets/logos/uber.svg" alt="Uber" class="lg-uber"></li>
-    <li class="ins"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4 5.6v6.1c0 4.6 3.2 8.7 8 9.8 4.8-1.1 8-5.2 8-9.8V5.6z" fill="#0c3b43"/><path d="m8.2 12.2 2.6 2.6 5-5.2" fill="none" stroke="#5fd0c3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fully insured &middot; Every industry</span></li>
-    </ul>
-    </div>
-  </div>
-</div>
 <header class="top">
   <div class="wrap top-in">
     <a class="logo hl" href="/" aria-label="Fast Finance home"><h1 id="h1"><span class="h1-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg></span><span class="sr">The digital AI accounting, marketing and tech firm.</span><span aria-hidden="true">The digital AI <span class="acc rot"><span>accounting firm.</span><span>marketing firm.</span><span>tech firm.</span></span></span></h1></a>
@@ -488,6 +474,18 @@ footer a:hover{ color:var(--blue); }
           <button class="tab tab-tech" role="tab" aria-selected="false" aria-controls="panel" id="t3" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/tech.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Tech<span class="lg">&nbsp;services</span></b></span></button>
           <button class="tab tab-ai" role="tab" aria-selected="false" aria-controls="panel" id="t4" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/ai.jpg" alt="" width="72" height="72"></span><span class="tl"><b>AI<span class="lg">&nbsp;services</span></b></span></button>
           <button class="tab tab-app" role="tab" aria-selected="false" aria-controls="panel" id="t5" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/app.jpg" alt="" width="72" height="72"></span><span class="tl"><b>App<span class="lg">&nbsp;services</span></b></span></button>
+        </div>
+        <div class="topband">
+        <div class="topbar">
+        <p class="t-label">Our AI engineers previously worked at</p>
+        <ul class="t-logos">
+          <li><img src="assets/logos/kpmg.svg" alt="KPMG" class="lg-kpmg"></li>
+          <li><img src="assets/logos/microsoft.svg" alt="Microsoft" class="lg-ms"></li>
+          <li><img src="assets/logos/general-dynamics.svg" alt="General Dynamics" class="lg-gd"></li>
+          <li><img src="assets/logos/uber.svg" alt="Uber" class="lg-uber"></li>
+        <li class="ins"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4 5.6v6.1c0 4.6 3.2 8.7 8 9.8 4.8-1.1 8-5.2 8-9.8V5.6z" fill="#0c3b43"/><path d="m8.2 12.2 2.6 2.6 5-5.2" fill="none" stroke="#5fd0c3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fully insured &middot; Every industry</span></li>
+        </ul>
+        </div>
         </div>
         <div class="info">
           <div>
