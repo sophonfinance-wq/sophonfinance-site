@@ -251,7 +251,9 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .demo-sw button[aria-selected="true"]{ background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; box-shadow:0 6px 16px -8px rgba(14,147,132,.7); }
 .demo-box{ position:relative; margin-top:14px; height:min(78vh, 780px); border-radius:18px; overflow:hidden; background:#fff; box-shadow:0 0 0 1px rgba(14,147,132,.20), 0 30px 70px -34px rgba(14,147,132,.45), 0 18px 40px -30px rgba(15,39,48,.35); }
 .demo-box iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; background:#fff; }
-.demo-cover{ position:absolute; inset:0; display:grid; place-items:center; padding:20px; background:radial-gradient(700px 360px at 80% -10%, rgba(20,184,166,.16), transparent 60%), radial-gradient(600px 320px at 0% 110%, rgba(95,208,195,.18), transparent 60%), #f7fcfb; }
+.demo-cover{ position:absolute; inset:0; display:grid; place-items:center; padding:20px; background:url(assets/ui/demo-underlay.webp) center/cover no-repeat, #f7fcfb; }
+.demo-card{ padding:28px 30px 26px; border-radius:26px; background:rgba(255,255,255,.58); -webkit-backdrop-filter:blur(16px) saturate(1.2); backdrop-filter:blur(16px) saturate(1.2); border:1px solid rgba(255,255,255,.85); box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 30px 60px -30px rgba(12,59,67,.45), 0 0 0 1px rgba(12,59,67,.06); }
+@media (max-width:600px){ .demo-card{ padding:24px 20px 22px; margin:0 6px; } }
 .demo-box.live .demo-cover{ display:none; }
 .demo-card{ display:grid; justify-items:center; gap:8px; text-align:center; max-width:340px; }
 .demo-ic{ width:84px; height:84px; border-radius:22px; overflow:hidden; background:#fff; box-shadow:0 0 0 1px var(--line), 0 14px 30px -14px rgba(12,59,67,.45); margin-bottom:6px; }
@@ -742,9 +744,6 @@ footer a:hover{ color:var(--blue); }
           <button class="tab tab-tax" role="tab" aria-selected="true" aria-controls="panel" id="t0"><span class="ti" aria-hidden="true"><img src="assets/icons/tax.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Tax<span class="lg">&nbsp;services</span></b></span></button>
           <button class="tab tab-acc" role="tab" aria-selected="false" aria-controls="panel" id="t1" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/acc.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Accounting<span class="lg">&nbsp;services</span></b></span></button>
           <button class="tab tab-aud" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Audit<span class="lg">&nbsp;services</span></b></span></button>
-          <a class="tab dtab demo-only" href="#demo" data-demo="tax" aria-label="Tax Machine demo"><i class="dm"><img class="ui-ic " src="assets/ui/play.webp" alt="" aria-hidden="true" width="128" height="128">Demo</i></a>
-          <a class="tab dtab demo-only" href="#demo" data-demo="accounting" aria-label="Accounting Machine demo"><i class="dm"><img class="ui-ic " src="assets/ui/play.webp" alt="" aria-hidden="true" width="128" height="128">Demo</i></a>
-          <a class="tab dtab demo-only" href="#demo" data-demo="audit" aria-label="Audit Machine demo"><i class="dm"><img class="ui-ic " src="assets/ui/play.webp" alt="" aria-hidden="true" width="128" height="128">Demo</i></a>
         </div>
         <div class="info" hidden>
           <div>
@@ -760,7 +759,6 @@ footer a:hover{ color:var(--blue); }
   <section class="demo demo-only" id="demo" aria-labelledby="demoH">
     <div class="wrap">
       <div class="demo-head">
-        <img class="demo-live" src="assets/live-demo-badge.webp" alt="Live demo" width="520" height="146">
         <h2 id="demoH">Try the <span class="demo-grad">machines.</span></h2>
         <p class="demo-count"><b id="demoCount">0</b> real recorded runs across tax, accounting and audit.</p>
       </div>
@@ -1105,13 +1103,7 @@ footer a:hover{ color:var(--blue); }
   document.getElementById('demoGo').addEventListener('click', function(){ demoPick(dCur, true); });
   document.getElementById('demoX').addEventListener('click', function(){ demoPick(dCur, false); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && dBox.classList.contains('is-full')) demoPick(dCur, false); });
-  [].slice.call(document.querySelectorAll('.dtab')).forEach(function(a){
-    a.addEventListener('click', function(e){
-      e.preventDefault(); if (!v.paused) v.pause();
-      demoPick(a.getAttribute('data-demo'), true);
-      document.getElementById('demo').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block:'start' });
-    });
-  });
+  window.f1ShowDemo = function(m){ var b = document.querySelector('.demo-sw [data-m="' + m + '"]'); if (b) b.click(); document.getElementById('demo').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block:'start' }); };
   demoPick(DEMO.tax.ready ? 'tax' : 'accounting', false);
 
   // App pop-out
@@ -1190,7 +1182,7 @@ footer a:hover{ color:var(--blue); }
   nav.addEventListener('click', function(e){ if (e.target.closest('a')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); } });
 })();
 </script>
-<script src="assets/chat.js?v=f1c" defer></script>
+<script src="assets/chat.js?v=f1d" defer></script>
 <script src="assets/fx.js" defer></script>
 <!-- "Try it on your own files": small shell; libraries load only when a visitor uses it -->
 <script src="assets/analyze/analyze.js?v=1" defer></script>

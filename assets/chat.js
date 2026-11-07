@@ -151,7 +151,7 @@
     var o = a.getAttribute('data-open');
     if (o !== null) { var t = document.getElementById('t' + o); if (t) t.click(); }
     var dm = a.getAttribute('data-demo');
-    if (dm) { e.preventDefault(); close(); var d = document.querySelector('.dtab[data-demo="' + dm + '"]'); if (d) d.click(); return; }
+    if (dm) { e.preventDefault(); close(); if (window.f1ShowDemo) window.f1ShowDemo(dm); return; }
     if (window.matchMedia('(max-width:600px)').matches) close();
   });
   form.onsubmit = function (e) { e.preventDefault(); var q = inp.value.trim(); if (!q) return; inp.value = ''; ask(q); };
