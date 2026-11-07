@@ -353,6 +353,8 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .trust{ background:#fff; border-top:1px solid var(--line); padding:26px 0 28px; }
 .topband{ zoom:.9; margin:0 0 15.5px; background:none; border:0; border-radius:0; }
 @media (min-width:981px){ .topband{ margin-bottom:21px; } }
+/* phones: the band hugs the credentials, about 4px above and below (about 62px tall) */
+@media (max-width:600px){ .svc{ padding-top:4px; } .topband{ margin-bottom:4.5px; } .topband .topbar{ padding:0; } }
 /* the credentials line sits flush on the page: no card, muted logos */
 .topband .t-label{ color:#7d9499; font-weight:600; }
 .topband .t-logos img{ filter:none; opacity:1; }
