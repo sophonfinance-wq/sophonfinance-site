@@ -215,8 +215,12 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 @keyframes dmSheen{ 0%,55%{ left:-60%; } 85%,100%{ left:130%; } }
 @media (prefers-reduced-motion:reduce){ .dm, .dm::after{ animation:none; } .dm{ box-shadow:0 0 0 3px rgba(255,140,90,.3), 0 0 16px rgba(255,91,79,.5); } }
 .demo{ scroll-margin-top:64px; padding:40px 0 36px; background:linear-gradient(180deg,#fff 0%,#f3faf8 100%); border-top:1px solid var(--line); }
-.demo h2{ font-size:clamp(30px, 3.6vw, 48px); line-height:1.08; margin:0 0 8px; letter-spacing:-.01em; }
+.demo h2{ font-size:clamp(30px, 3.6vw, 48px); line-height:1.08; margin:12px 0 8px; letter-spacing:-.01em; }
 .demo-head{ margin-bottom:18px; }
+.demo-live{ display:block; height:36px; width:auto; animation:liveGlow 2.4s ease-in-out infinite; }
+@keyframes liveGlow{ 0%,100%{ filter:drop-shadow(0 4px 10px rgba(12,59,67,.25)) drop-shadow(0 0 0 rgba(40,230,120,0)); } 50%{ filter:drop-shadow(0 4px 12px rgba(12,59,67,.3)) drop-shadow(0 0 10px rgba(40,230,120,.45)); } }
+@media (max-width:600px){ .demo-live{ height:30px; } }
+@media (prefers-reduced-motion:reduce){ .demo-live{ animation:none; } }
 .demo-eyebrow{ display:inline-flex; align-items:center; gap:8px; padding:6px 12px 6px 10px; border-radius:999px; background:rgba(14,147,132,.08); border:1px solid rgba(14,147,132,.22); font:600 11.5px/1 var(--body); letter-spacing:.16em; text-transform:uppercase; color:#0a7469; }
 .demo-eyebrow i{ position:relative; width:8px; height:8px; border-radius:50%; background:#0e9384; }
 .demo-eyebrow i::after{ content:""; position:absolute; inset:-4px; border-radius:50%; border:2px solid #0e9384; opacity:0; animation:demoPing 1.8s cubic-bezier(.2,.7,.2,1) infinite; }
@@ -744,6 +748,7 @@ footer a:hover{ color:var(--blue); }
   <section class="demo demo-only" id="demo" aria-labelledby="demoH">
     <div class="wrap">
       <div class="demo-head">
+        <img class="demo-live" src="assets/live-demo-badge.webp" alt="Live demo" width="520" height="146">
         <h2 id="demoH">Try the <span class="demo-grad">machines.</span></h2>
         <p class="demo-count"><b id="demoCount">0</b> real recorded runs across tax, accounting and audit.</p>
       </div>
@@ -1071,6 +1076,8 @@ footer a:hover{ color:var(--blue); }
   function movePill(){ var on = swBox.querySelector('button[aria-selected="true"]'); if (!on) return; swPill.style.width = on.offsetWidth + 'px'; swPill.style.transform = 'translateX(' + on.offsetLeft + 'px)'; }
   dSw.forEach(function(b){ b.addEventListener('click', function(){ requestAnimationFrame(movePill); }); });
   window.__movePill = movePill; window.addEventListener('resize', movePill); requestAnimationFrame(movePill); setTimeout(movePill, 600);
+  if ('ResizeObserver' in window) new ResizeObserver(movePill).observe(swBox);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(movePill);
   // count the recorded runs up when the section comes into view
   var total = 0; Object.keys(DEMO).forEach(function(k){ total += DEMO[k].subjects.length; });
   var cEl = document.getElementById('demoCount'), counted = false;
