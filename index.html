@@ -51,19 +51,31 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .more{ display:inline-block; padding:12px 0; font:600 13.5px/1.2 var(--body); letter-spacing:.08em; text-transform:uppercase; }
 .more::after{ content:" \00BB"; }
 
-/* logo splash: about two seconds, once per visit, CSS only */
-.ff-splash{ position:fixed; inset:0; z-index:300; display:flex; align-items:center; justify-content:center; background:radial-gradient(700px 360px at 50% 50%, rgba(95,208,195,.16), transparent 70%), #fff; pointer-events:none; animation:ffsOut .5s ease 1.45s forwards; }
+/* grand entrance: white curtains part after the logos, CSS only, once per visit */
+.ff-splash{ position:fixed; inset:0; z-index:300; pointer-events:none; animation:ffsGone 0s linear 3.4s forwards; }
 .ffs-seen .ff-splash{ display:none; }
-.ffs-in{ position:relative; display:flex; align-items:center; gap:18px; }
-.ffs-in svg{ width:74px; height:74px; animation:ffsMark .6s cubic-bezier(.2,.9,.3,1.25) both; }
-.ffs-word b{ display:block; font:600 34px/1 var(--head); letter-spacing:.08em; color:#0c3b43; animation:ffsWord .5s ease .32s both; }
-.ffs-word span{ display:block; margin-top:9px; font:500 11px/1 var(--head); letter-spacing:.42em; color:#4f7a80; animation:ffsWord .5s ease .48s both; }
-.ffs-sweep{ position:absolute; left:8%; right:8%; top:50%; height:2px; background:linear-gradient(90deg, transparent, #5fd0c3, #0e9384, #5fd0c3, transparent); transform-origin:left center; animation:ffsSweep .9s ease .15s both; }
-@keyframes ffsMark{ from{ opacity:0; transform:scale(.55) rotate(-10deg); } to{ opacity:1; transform:none; } }
-@keyframes ffsWord{ from{ opacity:0; transform:translateX(-26px); filter:blur(5px); } to{ opacity:1; transform:none; filter:none; } }
-@keyframes ffsSweep{ 0%{ transform:scaleX(0); opacity:0; } 40%{ opacity:1; } 100%{ transform:scaleX(1); opacity:0; } }
-@keyframes ffsOut{ to{ opacity:0; visibility:hidden; } }
-@media (max-width:600px){ .ffs-in svg{ width:56px; height:56px; } .ffs-word b{ font-size:25px; } .ffs-word span{ font-size:9px; } }
+.ffs-c{ position:absolute; top:0; bottom:0; width:50.5%; background:radial-gradient(900px 520px at 100% 50%, rgba(95,208,195,.14), transparent 70%), #fff; }
+.ffs-c.l{ left:0; animation:ffsL 1s cubic-bezier(.7,0,.2,1) 2.35s forwards; box-shadow:12px 0 40px -20px rgba(12,59,67,0); }
+.ffs-c.r{ right:0; background:radial-gradient(900px 520px at 0% 50%, rgba(95,208,195,.14), transparent 70%), #fff; animation:ffsR 1s cubic-bezier(.7,0,.2,1) 2.35s forwards; }
+.ffs-c.l::after, .ffs-c.r::after{ content:""; position:absolute; top:0; bottom:0; width:1px; background:linear-gradient(180deg, transparent, rgba(14,147,132,.35), transparent); }
+.ffs-c.l::after{ right:0; } .ffs-c.r::after{ left:0; }
+.ffs-in{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; animation:ffsFade .45s ease 2.05s forwards; }
+.ffs-lock{ position:relative; display:flex; align-items:center; gap:20px; }
+.ffs-lock svg{ width:78px; height:78px; animation:ffsMark 1.1s cubic-bezier(.2,.8,.2,1) .15s both; border-radius:12px; }
+.ffs-shine{ position:absolute; inset:-6px -10px; background:linear-gradient(105deg, transparent 38%, rgba(255,255,255,.9) 50%, transparent 62%); background-size:250% 100%; background-position:120% 0; mix-blend-mode:screen; animation:ffsShine 1.1s ease .95s forwards; }
+.ffs-word b{ display:block; font:600 36px/1 var(--head); color:#0c3b43; animation:ffsTrack 1.3s cubic-bezier(.2,.8,.2,1) .35s both; }
+.ffs-word span{ display:block; margin-top:10px; font:500 11px/1 var(--head); letter-spacing:.42em; color:#4f7a80; animation:ffsUp .8s ease .8s both; }
+.ffs-partner{ margin-top:34px; display:flex; align-items:center; gap:12px; font:500 11px/1 var(--body); letter-spacing:.24em; text-transform:uppercase; color:#6b8a90; animation:ffsUp .8s ease 1.25s both; }
+.ffs-partner img{ height:22px; width:auto; }
+@keyframes ffsMark{ from{ opacity:0; transform:scale(.9); filter:blur(6px); } to{ opacity:1; transform:none; filter:none; } }
+@keyframes ffsTrack{ from{ opacity:0; letter-spacing:.55em; filter:blur(4px); } to{ opacity:1; letter-spacing:.08em; filter:none; } }
+@keyframes ffsUp{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:none; } }
+@keyframes ffsShine{ to{ background-position:-30% 0; } }
+@keyframes ffsFade{ to{ opacity:0; transform:scale(.985); } }
+@keyframes ffsL{ to{ transform:translateX(-101%); } }
+@keyframes ffsR{ to{ transform:translateX(101%); } }
+@keyframes ffsGone{ to{ visibility:hidden; } }
+@media (max-width:600px){ .ffs-lock{ gap:14px; } .ffs-lock svg{ width:56px; height:56px; } .ffs-word b{ font-size:25px; } .ffs-word span{ font-size:8.5px; letter-spacing:.36em; } .ffs-partner{ font-size:9.5px; letter-spacing:.18em; margin-top:26px; } .ffs-partner img{ height:18px; } }
 
 /* header */
 .top{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,.86); -webkit-backdrop-filter:saturate(1.4) blur(14px); backdrop-filter:saturate(1.4) blur(14px); box-shadow:0 1px 0 var(--line), 0 6px 18px -12px rgba(15,39,48,.25); }
@@ -268,7 +280,13 @@ footer a:hover{ color:var(--blue); }
 </style>
 </head>
 <body>
-<div class="ff-splash" aria-hidden="true"><i class="ffs-sweep"></i><div class="ffs-in"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg><div class="ffs-word"><b>FAST FINANCE</b><span>AI ENGINEERING FIRM</span></div></div></div>
+<div class="ff-splash" aria-hidden="true">
+  <div class="ffs-c l"></div><div class="ffs-c r"></div>
+  <div class="ffs-in">
+    <div class="ffs-lock"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#0c3b43"/><path d="M19 50V14h27v7.5H26.5v8H41v7.5H26.5V50z" fill="#fff"/><rect x="44" y="41" width="6" height="9" fill="#5fd0c3"/><rect x="36" y="45" width="6" height="5" fill="#5fd0c3"/></svg><div class="ffs-word"><b>FAST FINANCE</b><span>AI ENGINEERING FIRM</span></div><i class="ffs-shine"></i></div>
+    <div class="ffs-partner">AI engineering partners with <img src="assets/enasal-logo-dark.png" alt="ENASAL"></div>
+  </div>
+</div>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="top">
