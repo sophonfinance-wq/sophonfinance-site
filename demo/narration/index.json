@@ -1,0 +1,4 @@
+{
+ "about": "Demos with spoken narration. demo/narration.js only fetches demo/narration/<id>/cues.json for ids listed here.",
+ "demos": ["tax-941", "accounting"]
+}

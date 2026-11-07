@@ -1,0 +1,90 @@
+{
+ "demo": "accounting",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-07",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's accounting machine review October's bills for HANGS Construction. This is accounts payable: money the company owes its suppliers.",
+   "file": "01.mp3",
+   "duration": 9.81,
+   "breaks": [
+    5.52,
+    7.34
+   ]
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it reads five files, from the invoices received to the bills in the books. An invoice is simply a supplier's bill.",
+   "file": "02.mp3",
+   "duration": 8.22,
+   "breaks": [
+    5.08
+   ]
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, it matches every invoice to the books. This is called reconciliation. Four mismatches explain the whole $9,532 gap, including one bill entered twice.",
+   "file": "03.mp3",
+   "duration": 12.92,
+   "breaks": [
+    2.86,
+    4.6
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "An asset is equipment kept for years, and its delivery, setup and tax are part of its cost. Three were booked too low.",
+   "file": "04.mp3",
+   "duration": 9.08,
+   "breaks": [
+    6.72
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Then it checks each bill is charged to the right job and account. Two were not.",
+   "file": "05.mp3",
+   "duration": 4.73,
+   "breaks": [
+    3.32
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Next: is each bill in the right company, approved by the right person, with the vendor's W-9 tax form on file? Four need a different approver.",
+   "file": "06.mp3",
+   "duration": 10.26,
+   "breaks": [
+    7.92
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the workpapers and a draft memo for the controller, the company's head of accounting.",
+   "file": "07.mp3",
+   "duration": 6.32,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "Done. Fifteen findings on 13 of 28 documents, with $69,825 misstated in the books, including a $14,615 bill entered twice, caught before it was paid. Bills worth $90,810 wait for approval. Nothing was posted or paid; a person decides every item.",
+   "file": "08.mp3",
+   "duration": 30.56,
+   "breaks": [
+    11.08,
+    18.92,
+    24.56,
+    27.38
+   ]
+  }
+ ]
+}

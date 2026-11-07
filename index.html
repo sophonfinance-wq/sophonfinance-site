@@ -1082,7 +1082,7 @@ footer a:hover{ color:var(--blue); }
     document.getElementById('demoSoon').hidden = d.ready;
     document.getElementById('demoFull').hidden = true;
     document.getElementById('demoBarM').textContent = d.name; document.getElementById('demoBarS').textContent = x.label + ' · ' + x.note;
-    if (start && d.ready) { var src = 'demo/' + x.id + '/index.html'; if (dFrame.getAttribute('src') !== src) dFrame.src = src; dBox.classList.add('live'); demoFull(true); }
+    if (start && d.ready) { if (typeof v !== 'undefined' && v && !v.paused) v.pause(); var src = 'demo/' + x.id + '/index.html'; if (dFrame.getAttribute('src') !== src) dFrame.src = src; dBox.classList.add('live'); demoFull(true); }
     else { dFrame.removeAttribute('src'); dBox.classList.remove('live'); demoFull(false); }
   }
   dSw.forEach(function(b){ b.addEventListener('click', function(){ demoPick(b.getAttribute('data-m'), false); }); });

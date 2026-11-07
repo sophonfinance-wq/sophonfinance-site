@@ -91,3 +91,18 @@
   }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
   document.addEventListener('DOMContentLoaded', function () { fixNode(document.body); });
 })();
+
+// ---- 4. spoken narration with captions (demo/narration.js; plays only where demo/narration/<id>/cues.json exists) ----
+(function () {
+  var load = function () {
+    try {
+      if (document.querySelector('script[data-ff-narration]')) return;
+      var s = document.createElement('script');
+      s.src = '../narration.js';
+      s.async = true;
+      s.setAttribute('data-ff-narration', '');
+      (document.head || document.documentElement).appendChild(s);
+    } catch (e) { /* never block the demo */ }
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', load); else load();
+})();
