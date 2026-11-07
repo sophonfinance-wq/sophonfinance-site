@@ -229,6 +229,17 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .demo-go svg{ width:15px; height:15px; }
 .demo-card small{ color:var(--text-2); font-size:14px; }
 .demo-full{ margin-top:6px; }
+.demo-bar{ display:none; }
+/* iPhone: a started demo fills the whole screen like an app, with a slim switcher and a close button */
+@media (max-width:600px){
+  .demo-box.is-full{ position:fixed; inset:0; z-index:2147483000; height:auto; margin:0; border-radius:0; display:flex; flex-direction:column; padding-top:env(safe-area-inset-top); background:#fff; box-shadow:none; }
+  .demo-box.is-full .demo-bar{ display:flex; align-items:center; gap:8px; padding:8px 10px; background:#fff; border-bottom:1px solid var(--line); }
+  .demo-box.is-full iframe{ position:relative; inset:auto; flex:1; width:100%; height:auto; }
+  .demo-bar-sw{ flex:1; display:flex; gap:3px; padding:3px; background:var(--teal-50); border:1px solid var(--line); border-radius:999px; }
+  .demo-bar-sw button{ flex:1; appearance:none; border:0; background:none; cursor:pointer; padding:9px 4px; border-radius:999px; font:600 12px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--ink); touch-action:manipulation; }
+  .demo-bar-sw button[aria-selected="true"]{ background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; }
+  .demo-x{ flex:none; width:40px; height:40px; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--ink); font:300 28px/1 var(--head); cursor:pointer; touch-action:manipulation; }
+}
 @media (max-width:600px){
   .dm{ font-size:13px; padding:10px 8px; gap:6px; letter-spacing:.12em; } .dm svg{ width:12px; height:12px; }
   .demo{ padding:28px 0 26px; }
@@ -691,6 +702,14 @@ footer a:hover{ color:var(--blue); }
         <button role="tab" data-m="audit" aria-selected="false">Audit</button>
       </div>
       <div class="demo-box" id="demoBox">
+        <div class="demo-bar">
+          <div class="demo-bar-sw" role="tablist" aria-label="Machines">
+            <button role="tab" data-m="tax" aria-selected="true">Tax</button>
+            <button role="tab" data-m="accounting" aria-selected="false">Accounting</button>
+            <button role="tab" data-m="audit" aria-selected="false">Audit</button>
+          </div>
+          <button class="demo-x" id="demoX" type="button" aria-label="Close the demo">&times;</button>
+        </div>
         <iframe id="demoFrame" title="Fast Finance machine demo" allow="fullscreen"></iframe>
         <div class="demo-cover" id="demoCover">
           <div class="demo-card">
@@ -948,7 +967,9 @@ footer a:hover{ color:var(--blue); }
     audit:      { name:'Audit Machine',      sub:'Builds year-end audit workpapers.',          ic:'assets/icons/aud.jpg', ready:true }
   };
   var dBox = document.getElementById('demoBox'), dFrame = document.getElementById('demoFrame'), dCur = 'tax';
-  var dSw = [].slice.call(document.querySelectorAll('.demo-sw button'));
+  var dSw = [].slice.call(document.querySelectorAll('.demo-sw button, .demo-bar-sw button'));
+  var phone = matchMedia('(max-width:600px)');
+  function demoFull(on){ dBox.classList.toggle('is-full', on); document.documentElement.style.overflow = on ? 'hidden' : ''; }
   function demoPick(m, start){
     dCur = m; var d = DEMO[m];
     dSw.forEach(function(b){ b.setAttribute('aria-selected', b.getAttribute('data-m') === m); });
@@ -959,11 +980,13 @@ footer a:hover{ color:var(--blue); }
     document.getElementById('demoGo').hidden = !d.ready;
     document.getElementById('demoSoon').hidden = d.ready;
     document.getElementById('demoFull').hidden = !d.ready;
-    if (start && d.ready) { dFrame.src = 'demo/' + m + '/index.html'; dBox.classList.add('live'); }
-    else { dFrame.removeAttribute('src'); dBox.classList.remove('live'); }
+    if (start && d.ready) { dFrame.src = 'demo/' + m + '/index.html'; dBox.classList.add('live'); if (phone.matches) demoFull(true); }
+    else { dFrame.removeAttribute('src'); dBox.classList.remove('live'); demoFull(false); }
   }
   dSw.forEach(function(b){ b.addEventListener('click', function(){ demoPick(b.getAttribute('data-m'), dBox.classList.contains('live')); }); });
   document.getElementById('demoGo').addEventListener('click', function(){ demoPick(dCur, true); });
+  document.getElementById('demoX').addEventListener('click', function(){ demoPick(dCur, false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && dBox.classList.contains('is-full')) demoPick(dCur, false); });
   [].slice.call(document.querySelectorAll('.dtab')).forEach(function(a){
     a.addEventListener('click', function(e){
       e.preventDefault(); if (!v.paused) v.pause();
