@@ -1,0 +1,10 @@
+# keep documents and media byte-for-byte
+*.pdf binary
+*.xlsx binary
+*.docx binary
+*.eml -text
+*.png binary
+*.jpg binary
+*.webp binary
+*.mp4 binary
+*.mp3 binary
