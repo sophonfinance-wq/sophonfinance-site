@@ -251,7 +251,11 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .demo-sw button[aria-selected="true"]{ background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#0aa5c8); color:#fff; box-shadow:0 6px 16px -8px rgba(14,147,132,.7); }
 .demo-box{ position:relative; margin-top:14px; height:min(78vh, 780px); border-radius:18px; overflow:hidden; background:#fff; box-shadow:0 0 0 1px rgba(14,147,132,.20), 0 30px 70px -34px rgba(14,147,132,.45), 0 18px 40px -30px rgba(15,39,48,.35); }
 .demo-box iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; background:#fff; }
-.demo-cover{ position:absolute; inset:0; display:grid; place-items:center; padding:20px; background:url(assets/ui/demo-underlay.webp) center/cover no-repeat, #f7fcfb; }
+.demo-cover{ position:absolute; inset:0; display:grid; place-items:center; padding:20px; overflow:hidden; background:url(assets/ui/demo-backdrop.jpg) center/cover no-repeat, #f7fcfb; }
+/* cinematic light backdrop: the machines scanning documents, people at work; a white wash keeps the card readable */
+.demo-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none; }
+.demo-cover::before{ content:""; position:absolute; inset:0; z-index:1; pointer-events:none; background:radial-gradient(60% 55% at 50% 50%, rgba(247,252,251,.62), rgba(247,252,251,.18) 70%, rgba(247,252,251,.08)); }
+.demo-cover .demo-card{ position:relative; z-index:2; }
 .demo-card{ padding:28px 30px 26px; border-radius:26px; background:rgba(255,255,255,.58); -webkit-backdrop-filter:blur(16px) saturate(1.2); backdrop-filter:blur(16px) saturate(1.2); border:1px solid rgba(255,255,255,.85); box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 30px 60px -30px rgba(12,59,67,.45), 0 0 0 1px rgba(12,59,67,.06); }
 @media (max-width:600px){ .demo-card{ padding:24px 20px 22px; margin:0 6px; } }
 .demo-box.live .demo-cover{ display:none; }
@@ -777,6 +781,7 @@ footer a:hover{ color:var(--blue); }
         </div>
         <iframe id="demoFrame" title="F1 Finance machine demo" allow="fullscreen"></iframe>
         <div class="demo-cover" id="demoCover">
+          <video class="demo-bg" id="demoBg" muted loop playsinline webkit-playsinline preload="metadata" poster="assets/ui/demo-backdrop.jpg" aria-hidden="true" tabindex="-1"></video>
           <div class="demo-card">
             <span class="demo-ic" aria-hidden="true"><img id="demoIc" src="assets/icons/tax.jpg" alt="" width="72" height="72"></span>
             <b id="demoName">Tax Machine</b>
@@ -1101,6 +1106,17 @@ footer a:hover{ color:var(--blue); }
   function countUp(){ if (counted) return; counted = true; if (reduced) { cEl.textContent = total; return; } var t0 = performance.now(); (function step(t){ var k = Math.min(1, (t - t0) / 1200); cEl.textContent = Math.round(total * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); })(t0); }
   if ('IntersectionObserver' in window) new IntersectionObserver(function(es, o){ if (es[0].isIntersecting) { countUp(); o.disconnect(); } }, { threshold: .4 }).observe(cEl); else countUp();
   document.getElementById('demoGo').addEventListener('click', function(){ demoPick(dCur, true); });
+  (function(){
+    var bg = document.getElementById('demoBg'); if (!bg) return;
+    if (reduced) { bg.remove(); return; }
+    var tall = window.matchMedia('(max-aspect-ratio: 1/1)');
+    function pickSrc(){ var want = tall.matches ? 'assets/ui/demo-backdrop-portrait.mp4' : 'assets/ui/demo-backdrop.mp4'; if (bg.getAttribute('src') !== want) bg.setAttribute('src', want); }
+    var onScreen = false;
+    function sync(){ if (onScreen && !dBox.classList.contains('live')) { pickSrc(); var p = bg.play(); if (p && p.catch) p.catch(function(){}); } else bg.pause(); }
+    if (tall.addEventListener) tall.addEventListener('change', function(){ pickSrc(); sync(); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ onScreen = es[0].isIntersecting; sync(); }, { threshold: .15 }).observe(dBox); else { onScreen = true; sync(); }
+    new MutationObserver(sync).observe(dBox, { attributes: true, attributeFilter: ['class'] });
+  })();
   document.getElementById('demoX').addEventListener('click', function(){ demoPick(dCur, false); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && dBox.classList.contains('is-full')) demoPick(dCur, false); });
   window.f1ShowDemo = function(m){ var b = document.querySelector('.demo-sw [data-m="' + m + '"]'); if (b) b.click(); document.getElementById('demo').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block:'start' }); };
