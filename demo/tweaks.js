@@ -14,6 +14,7 @@
     var scaledNow = function () { return p0 + (realNow() - p0) * RATE; };
     perf.now = scaledNow;
     var RealDate = Date, d0 = RealDate.now(), dRealNow = RealDate.now;
+    window.__ffRealNow = function () { return dRealNow.call(RealDate); }; // wall-clock time for narration timing
     Date.now = function () { return d0 + (dRealNow() - d0) * RATE; };
     var rAF = window.requestAnimationFrame;
     if (rAF) window.requestAnimationFrame = function (cb) { return rAF.call(window, function () { cb(scaledNow()); }); };

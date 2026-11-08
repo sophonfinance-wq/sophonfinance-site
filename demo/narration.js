@@ -1,6 +1,8 @@
 /* F1 Finance demos: spoken narration with captions (loaded by tweaks.js).
    Each demo can have demo/narration/<id>/cues.json:
-     { "voice": "...", "cues": [ { "id", "trigger": "start"|"stage:N"|"end"|"skip", "text", "file", "duration" } ] }
+     { "voice": "...", "cues": [ { "id", "trigger": "start"|"stage:N"|"start@T"|"stage:N@T"|"end"|"skip", "text", "file", "duration" }
+     "stage:N@T" plays T seconds (wall clock, pauses excluded) after stage N began, so a stage can have several short lines.
+     A timed line waits for the line already speaking to finish; a new stage still cuts in at the next sentence break. ] }
    No cues file, no narration. Nothing here may ever stop the demo itself from working. */
 (function () {
   'use strict';
@@ -291,7 +293,7 @@
   // ---- one narration session per run ------------------------------------------------------------
   function begin(gesture) {
     S.session++; S.active = true; S.stage = 0; S.ended = false; S.played = []; S.current = null; S.pending = null; S.paused = false; S.sawPres = false; S.sawRun = false;
-    S.armedAt = Date.now();
+    S.armedAt = Date.now(); S.inStage = 0; S.lastT = realNow();
     stopAudio();
     showDock(true);
     log('begin ' + S.session);
@@ -317,6 +319,19 @@
     S.session++; S.current = null; S.pending = null;
     var c = S.ended ? (cueFor('end') || cueFor('skip')) : (S.stage ? cueFor('stage:' + S.stage) : cueFor('start'));
     if (c) { S.played = S.played.filter(function (x) { return x !== c.id; }); play(c); }
+  }
+
+  function realNow() { return window.__ffRealNow ? window.__ffRealNow() : Date.now(); }
+  // lines timed inside a stage ("stage:N@T" / "start@T"): due once the stage has run T seconds
+  function timed(stage) {
+    var key = stage > 0 ? "stage:" + stage : "start", secs = S.inStage / 1000;
+    for (var i = 0; i < S.cues.length; i++) {
+      var c = S.cues[i], m = /^(.+)@([0-9.]+)$/.exec(c.trigger || "");
+      if (!m || m[1] !== key || secs < +m[2] || S.played.indexOf(c.id) >= 0) continue;
+      if (S.current && S.current.id === c.id) continue;
+      if (S.current || S.pending) { if (!S.pending) S.pending = c; return; }
+      play(c); return;
+    }
   }
 
   // ---- reading the replay's state from the page ---------------------------------------------------
@@ -388,6 +403,10 @@
         else if (S.pending) { var n = S.pending; S.pending = null; play(n); }
       }
       var st = runningStage(d);
+      var nowT = realNow(), dt = Math.min(1000, Math.max(0, nowT - (S.lastT || nowT))); S.lastT = nowT;
+      if (!S.paused && !S.ended && !S.held) S.inStage += dt;
+      if (st > 0 && st !== S.stage) S.inStage = 0;
+      if (!S.ended && S.on && S.cues) timed(st > 0 ? st : S.stage);
       // after Skip the replay fast-forwards through the stages; the closing line is already speaking
       if (st > 0 && st !== S.stage) { S.stage = st; log('stage ' + st); if (!S.ended) enqueue(cueFor('stage:' + st)); }
     } catch (e) { }
