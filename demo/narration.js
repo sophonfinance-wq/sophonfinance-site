@@ -33,36 +33,57 @@
   var SILENT ='data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAAAAA=';
 
   // ---- captions + speaker toggle ----------------------------------------------------------------
-  var dock, cap, capText, toggle, built = false;
+  // While narration and captions are on, the captions sit in a bar docked at the bottom of the screen and the
+  // replay window is shortened by the bar's height (html.ffn-bar, --ffn-res), so a caption never covers the
+  // replay. Captions follow the voice one sentence at a time (cues.json "breaks"). Tapping the caption hides
+  // captions (the voice keeps going); the CC button brings them back. With captions or narration off, only
+  // the two round buttons remain, floating clear of the replay's own buttons.
+  var dock, cap, capText, toggle, ccBtn, ctl, built = false;
+  var CAPKEY = 'ffCaptions';
+  S.caps = true;
+  try { S.caps = localStorage.getItem(CAPKEY) !== 'off'; } catch (e) { }
   function css() {
     var st = document.createElement('style');
     st.id = 'ff-narration-css';
     st.textContent =
-      '.ffn-dock{position:fixed;left:0;right:0;bottom:0;z-index:2147483000;display:flex;justify-content:center;align-items:flex-end;gap:10px;' +
+      '.ffn-dock{position:fixed;left:0;right:0;bottom:0;z-index:2147483000;display:flex;justify-content:flex-end;align-items:flex-end;gap:10px;' +
       'padding:0 max(12px,env(safe-area-inset-right)) calc(12px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));pointer-events:none;' +
       'font:500 15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}' +
       '.ffn-dock[hidden]{display:none}' +
-      '.ffn-cap{pointer-events:auto;flex:1 1 auto;max-width:760px;min-width:0;display:flex;gap:10px;align-items:flex-start;padding:11px 16px 12px;border-radius:16px;' +
-      'background:rgba(9,47,53,.92);color:#f2fbf9;box-shadow:0 14px 34px -14px rgba(5,30,34,.55),0 0 0 1px rgba(95,212,196,.22) inset;' +
-      '-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);transition:opacity .28s ease,transform .28s ease}' +
-      '.ffn-cap.is-off{opacity:0;transform:translateY(8px);pointer-events:none}' +
-      '.ffn-cap i{flex:none;width:8px;height:8px;margin-top:7px;border-radius:50%;background:#5fd4c4;box-shadow:0 0 0 4px rgba(95,212,196,.18)}' +
-      '.ffn-cap.is-speaking i{animation:ffnPulse 1.6s ease-in-out infinite}' +
-      '.ffn-cap p{margin:0;min-width:0;overflow-wrap:break-word;text-wrap:pretty}' +
-      '.ffn-toggle{pointer-events:auto;flex:none;display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 13px 0 11px;border-radius:999px;border:0;cursor:pointer;' +
+      '.ffn-cap{display:none}' +
+      '.ffn-ctl{pointer-events:auto;flex:none;display:flex;align-items:center;gap:8px}' +
+      '.ffn-toggle,.ffn-cc{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:40px;padding:0 13px 0 11px;border-radius:999px;border:0;cursor:pointer;' +
       'background:rgba(9,47,53,.92);color:#e9f7f4;font:600 13px/1 inherit;font-family:inherit;box-shadow:0 10px 26px -12px rgba(5,30,34,.55),0 0 0 1px rgba(95,212,196,.25) inset;' +
       '-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);touch-action:manipulation;-webkit-tap-highlight-color:transparent}' +
+      '.ffn-cc{width:40px;padding:0;font:800 11.5px/1 inherit;font-family:inherit;letter-spacing:.04em}' +
+      '.ffn-cc b{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:17px;padding:0 3px;border:1.6px solid currentColor;border-radius:4px}' +
       '.ffn-toggle svg{width:18px;height:18px;flex:none}' +
-      '.ffn-toggle[aria-pressed="false"]{background:rgba(255,255,255,.94);color:#0c3b43;box-shadow:0 10px 26px -12px rgba(5,30,34,.4),0 0 0 1px rgba(12,59,67,.16) inset}' +
-      '.ffn-toggle:focus-visible{outline:2px solid #5fd4c4;outline-offset:2px}' +
+      '.ffn-toggle[aria-pressed="false"],.ffn-cc[aria-pressed="false"]{background:rgba(255,255,255,.94);color:#0c3b43;box-shadow:0 10px 26px -12px rgba(5,30,34,.4),0 0 0 1px rgba(12,59,67,.16) inset}' +
+      '.ffn-cc[aria-pressed="false"] b{opacity:.7;background:linear-gradient(to top right,transparent calc(50% - 1px),currentColor calc(50% - .5px),currentColor calc(50% + .5px),transparent calc(50% + 1px))}' +
+      '.ffn-toggle:focus-visible,.ffn-cc:focus-visible,.ffn-cap:focus-visible{outline:2px solid #5fd4c4;outline-offset:2px}' +
+      /* the docked caption bar */
+      '.ffn-dock.is-bar{justify-content:center;align-items:center;gap:16px;pointer-events:auto;bottom:0 !important;padding:10px max(16px,env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));' +
+      'background:#0b3036;color:#f2fbf9;box-shadow:0 -14px 34px -22px rgba(5,30,34,.6),0 -1px 0 rgba(95,212,196,.28)}' +
+      '.ffn-dock.is-bar .ffn-cap{display:flex;flex:1 1 auto;max-width:880px;min-width:0;min-height:2.9em;align-items:center;gap:12px;margin:0;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent}' +
+      '.ffn-cap i{flex:none;width:8px;height:8px;border-radius:50%;background:#5fd4c4;box-shadow:0 0 0 4px rgba(95,212,196,.18);transition:opacity .3s ease}' +
+      '.ffn-cap.is-speaking i{animation:ffnPulse 1.6s ease-in-out infinite}' +
+      '.ffn-cap p{margin:0;min-width:0;overflow-wrap:break-word;text-wrap:pretty;transition:opacity .3s ease}' +
+      '.ffn-cap.is-idle p,.ffn-cap.is-idle i{opacity:.5}' +
+      '.ffn-dock.is-bar .ffn-toggle,.ffn-dock.is-bar .ffn-cc{width:38px;height:38px;padding:0;background:rgba(95,212,196,.12);box-shadow:0 0 0 1px rgba(95,212,196,.32) inset;-webkit-backdrop-filter:none;backdrop-filter:none}' +
+      '.ffn-dock.is-bar .ffn-toggle span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}' +
+      '.ffn-dock.is-bar .ffn-toggle:hover,.ffn-dock.is-bar .ffn-cc:hover{background:rgba(95,212,196,.22)}' +
+      /* the replay window stops above the bar */
+      'html.ffn-bar .dialog-backdrop{bottom:var(--ffn-res,0px) !important}' +
+      'html.ffn-bar section.dialog.is-presentation{height:100% !important;max-height:100% !important;padding-bottom:0 !important}' +
       '@keyframes ffnPulse{0%,100%{box-shadow:0 0 0 3px rgba(95,212,196,.15)}50%{box-shadow:0 0 0 7px rgba(95,212,196,.32)}}' +
-      /* phones: the caption gets the full width; the round speaker button sits just above its right corner */
-      '@media (max-width:600px){.ffn-dock{flex-direction:column;align-items:stretch;gap:8px;padding-bottom:calc(8px + env(safe-area-inset-bottom))}' +
-      '.ffn-cap{max-width:none;padding:9px 13px 10px;border-radius:14px;font-size:14px;line-height:1.4}.ffn-cap.is-off{display:none}.ffn-cap i{margin-top:6px}' +
-      '.ffn-toggle{order:-1;align-self:flex-end;width:40px;padding:0;justify-content:center}.ffn-toggle span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}' +
-      /* while the narration bar is up on a phone, lift the pinned file graphic above it */
-      '@media (max-width:600px){html.ffn-up:has(.flight-layer .flight-card) .source-flow-route{bottom:calc(var(--ffn-h,0px) + 6px)}}' +
-      '@media (prefers-reduced-motion:reduce){.ffn-cap,.ffn-cap.is-off{transition:none;transform:none}.ffn-cap.is-speaking i{animation:none}}';
+      /* phones: a compact bar, the two buttons stacked at its right; the floating buttons show icons only */
+      '@media (max-width:600px){.ffn-dock{padding-bottom:calc(8px + env(safe-area-inset-bottom))}' +
+      '.ffn-toggle{width:40px;padding:0}.ffn-toggle span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}' +
+      '.ffn-dock.is-bar{gap:10px;padding:8px max(10px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));font-size:14px;line-height:1.4}' +
+      '.ffn-dock.is-bar .ffn-cap{min-height:4.2em;gap:10px}.ffn-dock.is-bar .ffn-ctl{flex-direction:column;gap:6px}.ffn-dock.is-bar .ffn-toggle,.ffn-dock.is-bar .ffn-cc{width:36px;height:36px}}' +
+      /* phones, with the buttons floating: lift the pinned file graphic above them */
+      '@media (max-width:600px){html.ffn-up:not(.ffn-bar):has(.flight-layer .flight-card) .source-flow-route{bottom:calc(var(--ffn-h,0px) + 6px)}}' +
+      '@media (prefers-reduced-motion:reduce){.ffn-cap i,.ffn-cap p{transition:none}.ffn-cap.is-speaking i{animation:none}}';
     (document.head || document.documentElement).appendChild(st);
   }
   var ICON_ON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
@@ -75,19 +96,31 @@
     dock.className = 'ffn-dock';
     dock.hidden = true;
     dock.setAttribute('data-ffn', '');
-    cap = document.createElement('div');
-    cap.className = 'ffn-cap is-off';
-    cap.setAttribute('role', 'status');
-    cap.setAttribute('aria-live', 'polite');
-    cap.innerHTML = '<i aria-hidden="true"></i><p></p>';
+    cap = document.createElement('button');
+    cap.type = 'button';
+    cap.className = 'ffn-cap is-idle';
+    cap.title = 'Hide captions (the narration keeps playing)';
+    cap.setAttribute('aria-label', 'Narration caption. Activate to hide captions; the narration keeps playing.');
+    cap.innerHTML = '<i aria-hidden="true"></i><p role="status" aria-live="polite"></p>';
     capText = cap.querySelector('p');
+    cap.addEventListener('click', function (e) { e.stopPropagation(); setCaps(false); try { ccBtn.focus(); } catch (x) { } });
+    ctl = document.createElement('div');
+    ctl.className = 'ffn-ctl';
+    ccBtn = document.createElement('button');
+    ccBtn.type = 'button';
+    ccBtn.className = 'ffn-cc';
+    ccBtn.innerHTML = '<b aria-hidden="true">CC</b>';
+    ccBtn.addEventListener('click', function (e) { e.stopPropagation(); setCaps(!S.caps); });
     toggle = document.createElement('button');
     toggle.type = 'button';
     toggle.className = 'ffn-toggle';
     toggle.addEventListener('click', function (e) { e.stopPropagation(); setOn(!S.on, true); });
+    ctl.appendChild(ccBtn);
+    ctl.appendChild(toggle);
     dock.appendChild(cap);
-    dock.appendChild(toggle);
+    dock.appendChild(ctl);
     document.body.appendChild(dock);
+    try { if (window.ResizeObserver) new ResizeObserver(function () { setRes(); }).observe(dock); } catch (e) { }
     paintToggle();
   }
   function paintToggle() {
@@ -96,25 +129,75 @@
     toggle.setAttribute('aria-label', S.on ? 'Narration on. Turn narration off' : 'Narration off. Turn narration on');
     toggle.title = S.on ? 'Narration on' : 'Narration off';
     toggle.innerHTML = (S.on ? ICON_ON : ICON_OFF) + '<span>' + (S.on ? 'Narration on' : 'Narration off') + '</span>';
+    ccBtn.setAttribute('aria-pressed', S.caps ? 'true' : 'false');
+    ccBtn.setAttribute('aria-label', S.caps ? 'Captions on. Hide captions' : 'Captions off. Show captions');
+    ccBtn.title = S.caps ? 'Hide captions' : 'Show captions';
+    ccBtn.hidden = !S.on;
+  }
+  // bar (captions docked, the replay window shortened) or float (just the round buttons)
+  function setRes() {
+    try { document.documentElement.style.setProperty('--ffn-res', (dock && !dock.hidden && dock.classList.contains('is-bar') ? dock.offsetHeight : 0) + 'px'); } catch (e) { }
+  }
+  function applyMode() {
+    if (!dock) return;
+    var bar = !dock.hidden && S.on && S.caps && !!S.capSeen;
+    if (dock.classList.contains('is-bar') !== bar) {
+      dock.classList.toggle('is-bar', bar);
+      document.documentElement.classList.toggle('ffn-bar', bar);
+      if (bar) dock.style.bottom = '';
+      lastLift = -1;
+    }
+    setRes(); measure();
+  }
+  function setCaps(v) {
+    S.caps = v;
+    try { localStorage.setItem(CAPKEY, v ? 'on' : 'off'); } catch (e) { }
+    paintToggle(); applyMode();
   }
   function measure() {
     try { if (dock && !dock.hidden) document.documentElement.style.setProperty('--ffn-h', (dock.offsetHeight + Math.max(0, lastLift)) + 'px'); } catch (e) { }
   }
-  function showCaption(text) {
+  // one sentence at a time, in step with the voice (cue "breaks" are the pauses between sentences, in seconds)
+  function sentences(t) {
+    var out = [], start = 0, re = /[.!?]["”’)]*\s+(?=[A-Z0-9$"“(])/g, m;
+    while ((m = re.exec(t))) { out.push(t.slice(start, m.index + m[0].length).trim()); start = m.index + m[0].length; }
+    out.push(t.slice(start).trim());
+    return out.filter(Boolean);
+  }
+  var syncT = 0;
+  function setLine(s) { if (capText && capText.textContent !== s) capText.textContent = s; }
+  function showCaption(c) {
     if (!cap) return;
-    capText.textContent = text;
-    cap.classList.remove('is-off');
+    clearInterval(syncT);
+    S.capSeen = true;
+    cap.classList.remove('is-idle');
     cap.classList.add('is-speaking');
-    measure();
+    var parts = sentences(c.text || ''), br = c.breaks || [];
+    if (parts.length < 2 || br.length < parts.length - 1) { setLine(c.text || ''); applyMode(); return; }
+    setLine(parts[0]);
+    applyMode();
+    var t0 = Date.now(), session = S.session;
+    syncT = setInterval(function () {
+      if (session !== S.session || S.current !== c) { clearInterval(syncT); return; }
+      var t = (audio && !S.fallback) ? audio.currentTime : (Date.now() - t0) / 1000;
+      var i = 0; while (i < parts.length - 1 && t >= br[i]) i++;
+      setLine(parts[i]);
+    }, 120);
   }
   var hideT = 0;
   function hideCaption(delay) {
     if (!cap) return;
     clearTimeout(hideT);
     cap.classList.remove('is-speaking');
-    hideT = setTimeout(function () { if (!S.current) { cap.classList.add('is-off'); measure(); } }, delay || 0);
+    hideT = setTimeout(function () { if (!S.current) { clearInterval(syncT); cap.classList.add('is-idle'); measure(); } }, delay || 0);
   }
-  function showDock(v) { build(); if (dock) dock.hidden = !v; document.documentElement.classList.toggle('ffn-up', !!v); if (!v) hideCaption(0); else measure(); }
+  function showDock(v) {
+    build();
+    if (dock) dock.hidden = !v;
+    document.documentElement.classList.toggle('ffn-up', !!v);
+    if (!v) { hideCaption(0); S.capSeen = false; setLine(''); }
+    applyMode();
+  }
 
   // ---- cue playback -------------------------------------------------------------------------------
   function cueFor(trigger) {
@@ -141,10 +224,11 @@
     S.current = c;
     var session = S.session;
     log('play ' + c.id);
-    showCaption(c.text);
+    S.fallback = false;
+    showCaption(c);
     clearTimeout(capTimer);
     // if the sound cannot play, the caption still shows for the clip's length and the queue moves on
-    var fallback = function () { clearTimeout(capTimer); capTimer = setTimeout(function () { finished(session); }, Math.max(2500, (c.duration || 6) * 1000)); };
+    var fallback = function () { S.fallback = true; clearTimeout(capTimer); capTimer = setTimeout(function () { finished(session); }, Math.max(2500, (c.duration || 6) * 1000)); };
     if (!audio || !c.file) { fallback(); return; }
     try {
       stopAudio();
@@ -226,7 +310,7 @@
   function setOn(v, gesture) {
     S.on = v;
     try { localStorage.setItem(KEY, v ? 'on' : 'off'); } catch (e) { }
-    paintToggle();
+    paintToggle(); applyMode();
     if (!v) { S.session++; S.current = null; S.pending = null; stopAudio(); hideCaption(0); return; }
     if (!S.active) return;
     // turned back on mid-run: speak where the replay is now
@@ -265,7 +349,7 @@
   // keep the captions and the speaker button clear of the replay's own buttons at the bottom of the screen
   var lastLift = -1;
   function lift(d) {
-    if (!dock) return;
+    if (!dock || dock.classList.contains('is-bar')) return;
     var h = window.innerHeight, top = h, bs = d.querySelectorAll('button, a.button, [role="button"]');
     for (var i = 0; i < bs.length; i++) {
       var b = bs[i]; if (b.closest('.flight-layer, .flight-card, [data-ffn]')) continue;

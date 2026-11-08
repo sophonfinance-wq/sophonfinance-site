@@ -166,11 +166,25 @@
         var start = APPS.some(function (a) { return a.id === app; }) ? app : 'ledgerwyn';
         var view = qs.get('app') === 'confirmations' ? 'documents' : '', arg = '';
         var want = (qs.get('file') || '').toLowerCase();
-        if (want) { var hit = S.charterfold.documents.filter(function (d) { return d.name.toLowerCase() === want; })[0] || S.charterfold.documents.filter(function (d) { return want.indexOf(d.name.toLowerCase()) >= 0 || d.name.toLowerCase().indexOf(want) >= 0; })[0]; start = 'charterfold'; view = hit ? 'doc' : 'documents'; arg = hit ? hit.id : ''; }
+        if (want) { var hit = S.charterfold.documents.filter(function (d) { return d.name.toLowerCase() === want; })[0] || S.charterfold.documents.filter(function (d) { return want.indexOf(d.name.toLowerCase()) >= 0 || d.name.toLowerCase().indexOf(want) >= 0; })[0] || bestDoc(want); start = 'charterfold'; view = hit ? 'doc' : 'documents'; arg = hit ? hit.id : ''; }
         history.replaceState(null, '', location.pathname + location.search + href(start, view, arg));
       }
       route();
     }).catch(function (e) { fail('The client systems for this demo could not be loaded (' + esc(e.message) + ').'); });
+  }
+  // a document named loosely (e.g. the title on a replay close-up, "BPW-5188 · Bluepine Concrete Works"):
+  // the file whose name and title share the most words with it, if most of the words match
+  function bestDoc(want) {
+    var words = function (s) { return (s || '').toLowerCase().replace(/\.[a-z0-9]{2,5}$/, '').split(/[^a-z0-9]+/).filter(function (w) { return w.length > 1; }); };
+    var ws = words(want); if (!ws.length) return null;
+    var best = null, top = 0;
+    S.charterfold.documents.forEach(function (d) {
+      var have = words(d.name + ' ' + (d.title || '')), n = 0;
+      ws.forEach(function (w) { if (have.indexOf(w) >= 0) n++; });
+      var sc = n / ws.length - have.length / 1000;
+      if (sc > top) { top = sc; best = d; }
+    });
+    return top >= 0.6 ? best : null;
   }
   function fail(msg) { document.getElementById('app').innerHTML = '<div class="err card"><h1>Client systems</h1><p class="lead">' + msg + '</p></div>'; }
   function index() {

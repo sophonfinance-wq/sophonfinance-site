@@ -27,15 +27,63 @@
     border-radius: 18px;
     box-shadow: 0 18px 40px -18px rgba(27, 42, 69, .45), 0 0 0 1px rgba(27, 42, 69, .08);
   }
-  /* spreadsheet cells wrap instead of cutting off with "…" */
+  /* with the narration caption bar docked at the bottom, the pinned graphic sits above the replay's buttons */
+  html.ffn-bar:has(.flight-layer .flight-card) .source-flow-route {
+    bottom: calc(var(--ffn-res, 0px) + 62px);
+  }
+  /* spreadsheet close-ups: slightly smaller type, and cells wrap at word breaks (hyphenated when a word
+     is longer than its column) instead of cutting off with "…" or splitting letters onto new lines */
+  .flight-excel {
+    font-size: 12px !important;
+  }
   .flight-excel th,
   .flight-excel td {
     white-space: normal;
     max-width: none;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
     text-overflow: clip;
+  }
+  /* the replay's own status toasts ("started", "draft package ready") stay small so they hide less of the page */
+  .toast-stack.is-dialog .toast {
+    font-size: 13px;
+    padding: 7px 12px;
+    border-radius: 9px;
   }
   /* comfortable taps and no sideways drift on iPhone */
   html, body { -webkit-text-size-adjust: 100%; overflow-x: hidden; }
   button { touch-action: manipulation; }
+}
+
+/* Worksheets and evidence tables on phones and small tablets: columns keep a readable width and the table
+   scrolls sideways inside its own frame (a soft edge shows there is more), instead of squeezing every
+   column to a few letters. Desktop is unchanged. */
+@media (max-width: 760px) {
+  .preparation-table {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    background:
+      linear-gradient(to right, var(--surface, #fff) 30%, transparent) left center / 28px 100% no-repeat local,
+      linear-gradient(to left, var(--surface, #fff) 30%, transparent) right center / 28px 100% no-repeat local,
+      radial-gradient(farthest-side at 0 50%, rgba(27, 42, 69, .16), transparent) left center / 12px 100% no-repeat scroll,
+      radial-gradient(farthest-side at 100% 50%, rgba(27, 42, 69, .16), transparent) right center / 12px 100% no-repeat scroll;
+  }
+  .preparation-table table {
+    width: max-content;
+    min-width: 100%;
+  }
+  .preparation-table td,
+  .preparation-table th {
+    min-width: 6.5em;
+    max-width: 17em;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .preparation-table th:first-child,
+  .preparation-table td.is-number,
+  .preparation-table td:first-child:empty {
+    min-width: 0;
+  }
 }

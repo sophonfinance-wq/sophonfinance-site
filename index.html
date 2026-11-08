@@ -560,6 +560,21 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .reels.h .reel:first-child{ grid-column:1/-1; }
 .reels.lw{ grid-template-columns:2fr 1fr 1fr; }
 .reel.site img{ width:100%; height:auto; aspect-ratio:9/8; object-fit:cover; object-position:top center; border:1px solid var(--line); }
+/* reels: poster or silent preview with a large play button; player controls only once a reel plays with sound */
+.reel-v{ position:relative; border-radius:12px; overflow:hidden; background:#0b0c10; }
+.reel-v video{ display:block; border-radius:0; }
+.reel-play{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; width:100%; padding:0; border:0; border-radius:inherit; cursor:pointer;
+  background:linear-gradient(180deg, rgba(6,18,22,0) 45%, rgba(6,18,22,.32)); transition:background .25s ease; -webkit-tap-highlight-color:transparent; }
+.reel-play .rp-i{ display:grid; place-items:center; width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,.92); color:#0c3b43;
+  box-shadow:0 12px 30px -10px rgba(0,0,0,.6), 0 0 0 6px rgba(255,255,255,.18); transition:transform .25s cubic-bezier(.2,.8,.2,1), background .25s ease, box-shadow .25s ease; }
+.reel-play svg{ width:26px; height:26px; margin-left:3px; fill:currentColor; }
+.reel-play:hover{ background:linear-gradient(180deg, rgba(6,18,22,.08) 30%, rgba(6,18,22,.4)); }
+.reel-play:hover .rp-i, .reel-play:focus-visible .rp-i{ transform:scale(1.09); background:#fff; box-shadow:0 14px 34px -10px rgba(0,0,0,.65), 0 0 0 8px rgba(95,208,195,.35); }
+.reel-play:active .rp-i{ transform:scale(.97); }
+.reel-play:focus-visible{ outline:3px solid #5fd0c3; outline-offset:-3px; }
+.reel.is-on .reel-play{ display:none; }
+.reels.h .reel:not(:first-child) .rp-i{ width:54px; height:54px; }
+@media (prefers-reduced-motion:reduce){ .reel-play, .reel-play .rp-i{ transition:none; } }
 @media (max-width:980px){ .case{ grid-template-columns:1fr; gap:22px; } .reels{ grid-template-columns:repeat(2,1fr); } .reels.lw{ grid-template-columns:1fr 1fr; } .reels.lw .site{ grid-column:1/-1; } .reel.site img{ aspect-ratio:16/10; } }
 /* Phones: compact, in proportion with the Tech tiles. All reels of a case sit in one row; a tap plays one full screen with sound */
 @media (max-width:600px){
@@ -575,6 +590,9 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
   .reels.h{ grid-template-columns:repeat(3, minmax(0,1fr)); }
   .reels.h .reel:first-child{ grid-column:auto; }
   .reel video{ border-radius:9px; cursor:pointer; }
+  .reel-v{ border-radius:9px; }
+  .reel-play .rp-i, .reels.h .reel:not(:first-child) .rp-i{ width:34px; height:34px; box-shadow:0 6px 16px -6px rgba(0,0,0,.6), 0 0 0 3px rgba(255,255,255,.2); }
+  .reel-play svg{ width:15px; height:15px; margin-left:2px; }
   .reel figcaption{ display:block; font-size:11px; line-height:1.25; margin-top:5px; }
   .reel figcaption span{ display:none; }
 }
@@ -863,10 +881,10 @@ footer a:hover{ color:var(--blue); }
           <a class="more" href="https://model-macros.expo.app" target="_blank" rel="noopener">See the Model Macros app</a>
         </div>
         <div class="reels">
-          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/mm-trailer.jpg" aria-label="Model Macros TikTok trailer"><source src="videos/marketing/mm-trailer.mp4" type="video/mp4"></video><figcaption><b>TikTok trailer</b><span>0:18</span></figcaption></figure>
-          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/mm-allday.jpg" aria-label="Model Macros All Day spot"><source src="videos/marketing/mm-allday.mp4" type="video/mp4"></video><figcaption><b>All Day spot</b><span>0:15</span></figcaption></figure>
-          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/mm-film.jpg" aria-label="Introducing Malik brand film"><source src="videos/marketing/mm-film.mp4" type="video/mp4"></video><figcaption><b>Brand film</b><span>0:39</span></figcaption></figure>
-          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/mm-app.jpg" aria-label="Model Macros app preview"><source src="videos/marketing/mm-app.mp4" type="video/mp4"></video><figcaption><b>App preview</b><span>0:39</span></figcaption></figure>
+          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-trailer.jpg" aria-label="Model Macros TikTok trailer"><source src="videos/marketing/mm-trailer.mp4" type="video/mp4"></video><figcaption><b>TikTok trailer</b><span>0:18</span></figcaption></figure>
+          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-allday.jpg" aria-label="Model Macros All Day spot"><source src="videos/marketing/mm-allday.mp4" type="video/mp4"></video><figcaption><b>All Day spot</b><span>0:15</span></figcaption></figure>
+          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-film.jpg" aria-label="Introducing Malik brand film"><source src="videos/marketing/mm-film.mp4" type="video/mp4"></video><figcaption><b>Brand film</b><span>0:39</span></figcaption></figure>
+          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-app.jpg" aria-label="Model Macros app preview"><source src="videos/marketing/mm-app.mp4" type="video/mp4"></video><figcaption><b>App preview</b><span>0:39</span></figcaption></figure>
         </div>
       </div>
 
@@ -877,9 +895,9 @@ footer a:hover{ color:var(--blue); }
           <p>Product films for GoPlay&rsquo;s accounting software. Landscape and vertical cuts for web and paid social.</p>
         </div>
         <div class="reels h">
-          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/gp-catch.jpg" aria-label="GoPlay: Would you catch this error?"><source src="videos/marketing/gp-catch.mp4" type="video/mp4"></video><figcaption><b>Would you catch this error?</b><span>0:45</span></figcaption></figure>
-          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/gp-sharper.jpg" aria-label="GoPlay: Give your spreadsheets a sharper eye"><source src="videos/marketing/gp-sharper.mp4" type="video/mp4"></video><figcaption><b>A sharper eye</b><span>0:15</span></figcaption></figure>
-          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline controls preload="none" poster="videos/marketing/gp-spreadsheet.jpg" aria-label="GoPlay: Less spreadsheet work"><source src="videos/marketing/gp-spreadsheet.mp4" type="video/mp4"></video><figcaption><b>Less spreadsheet work</b><span>0:18</span></figcaption></figure>
+          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/gp-catch.jpg" aria-label="GoPlay: Would you catch this error?"><source src="videos/marketing/gp-catch.mp4" type="video/mp4"></video><figcaption><b>Would you catch this error?</b><span>0:45</span></figcaption></figure>
+          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/gp-sharper.jpg" aria-label="GoPlay: Give your spreadsheets a sharper eye"><source src="videos/marketing/gp-sharper.mp4" type="video/mp4"></video><figcaption><b>A sharper eye</b><span>0:15</span></figcaption></figure>
+          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/gp-spreadsheet.jpg" aria-label="GoPlay: Less spreadsheet work"><source src="videos/marketing/gp-spreadsheet.mp4" type="video/mp4"></video><figcaption><b>Less spreadsheet work</b><span>0:18</span></figcaption></figure>
         </div>
       </div>
 
@@ -1240,23 +1258,44 @@ footer a:hover{ color:var(--blue); }
   // Team film and marketing reels: play muted while on screen, pause when off screen
   var autos = [].slice.call(document.querySelectorAll('video.auto'));
   autos.forEach(function(el){ if (small && el.dataset.mobile) el.querySelector('source').src = el.dataset.mobile; });
-  // Phones: the small reels have no controls; a tap plays the reel full screen from the start with sound
-  if (matchMedia('(max-width:600px)').matches) {
-    [].slice.call(document.querySelectorAll('.reel video')).forEach(function(el){
-      el.removeAttribute('controls');
-      var back = function(){ el.muted = true; el.loop = true; play(el); };
-      el.addEventListener('webkitendfullscreen', back);
-      el.addEventListener('fullscreenchange', function(){ if (!document.fullscreenElement) back(); });
-      el.addEventListener('click', function(){
-        if (el.preload === 'none') { el.preload = 'auto'; el.load(); }
-        el.loop = false; el.muted = false; el.volume = 1;
-        try { el.currentTime = 0; } catch (e) {}
-        play(el);
+  // Marketing reels: the poster (or a silent preview while on screen) carries a large play button; no player
+  // controls until a visitor plays a reel. Play starts it from the top with sound; controls show only then.
+  // Phones: the play button opens the reel full screen with sound. When a reel ends or another one is played,
+  // it goes back to its silent preview with the play button.
+  var phoneReels = matchMedia('(max-width:600px)').matches, reelFigs = [];
+  [].slice.call(document.querySelectorAll('.reel video')).forEach(function(el){
+    var fig = el.closest('.reel'); if (!fig) return;
+    el.removeAttribute('controls'); el.controls = false;
+    var box = document.createElement('div'); box.className = 'reel-v';
+    el.parentNode.insertBefore(box, el); box.appendChild(el);
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'reel-play';
+    b.setAttribute('aria-label', 'Play ' + (el.getAttribute('aria-label') || 'video') + ', with sound');
+    b.innerHTML = '<span class="rp-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 5.6v12.8a.8.8 0 0 0 1.2.7l10.1-6.4a.8.8 0 0 0 0-1.4L9.7 4.9a.8.8 0 0 0-1.2.7z"/></svg></span>';
+    box.appendChild(b);
+    var preview = function(){
+      fig.classList.remove('is-on'); el.controls = false; el.muted = true; el.loop = true;
+      var r = el.getBoundingClientRect();
+      if (!reduced && r.bottom > 0 && r.top < innerHeight) play(el); else el.pause();
+    };
+    var watch = function(){
+      reelFigs.forEach(function(o){ if (o.fig !== fig && o.fig.classList.contains('is-on')) o.preview(); });
+      if (el.preload === 'none') { el.preload = 'auto'; el.load(); }
+      el.loop = false; el.muted = false; el.volume = 1;
+      try { el.currentTime = 0; } catch (e) {}
+      fig.classList.add('is-on');
+      if (!phoneReels) el.controls = true;
+      play(el);
+      if (phoneReels) {
         if (el.webkitEnterFullscreen) { try { el.webkitEnterFullscreen(); } catch (e) {} }
         else if (el.requestFullscreen) { var f = el.requestFullscreen(); if (f && f.catch) f.catch(function(){}); }
-      });
-    });
-  }
+      }
+    };
+    b.addEventListener('click', watch);
+    el.addEventListener('ended', function(){ if (fig.classList.contains('is-on')) preview(); });
+    el.addEventListener('webkitendfullscreen', preview);
+    el.addEventListener('fullscreenchange', function(){ if (phoneReels && !document.fullscreenElement) preview(); });
+    reelFigs.push({ fig: fig, preview: preview });
+  });
   if (!reduced && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function(es){
       es.forEach(function(e){
@@ -1282,7 +1321,7 @@ footer a:hover{ color:var(--blue); }
 })();
 </script>
 <script src="assets/chat.js?v=f1d" defer></script>
-<script src="assets/fx.js" defer></script>
+<script src="assets/fx.js?v=2" defer></script>
 <!-- "Try it on your own files": small shell; libraries load only when a visitor uses it -->
 <script src="assets/analyze/analyze.js?v=1" defer></script>
 </body>

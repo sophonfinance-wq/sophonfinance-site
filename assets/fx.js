@@ -1,4 +1,4 @@
-/* Scroll experience: progress line, reveal on scroll, counters, heading underlines, depth, spotlight.
+/* Scroll experience: progress line, reveal on scroll, heading underlines, depth, spotlight.
    Everything is skipped when the visitor prefers reduced motion. */
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -45,24 +45,9 @@
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
   items.forEach(function (el) { io.observe(el); });
 
-  // 3. Counters for the numbers in the credentials
-  var nums = [].slice.call(document.querySelectorAll('.creds .bf b')).filter(function (b) { return /^\d+\+?$/.test(b.textContent.trim()); });
-  var cio = new IntersectionObserver(function (es) {
-    es.forEach(function (e) {
-      if (!e.isIntersecting) return;
-      cio.unobserve(e.target);
-      var el = e.target, txt = el.textContent.trim(), end = parseInt(txt, 10), plus = txt.slice(-1) === '+', t0 = null;
-      function step(t) {
-        if (!t0) t0 = t;
-        var p = Math.min(1, (t - t0) / 1100), v = Math.round(end * (1 - Math.pow(1 - p, 3)));
-        el.textContent = v + (plus ? '+' : '');
-        if (p < 1) requestAnimationFrame(step);
-      }
-      el.textContent = '0' + (plus ? '+' : '');
-      requestAnimationFrame(step);
-    });
-  }, { threshold: 0.6 });
-  nums.forEach(function (n) { cio.observe(n); });
+  // 3. Credentials numbers (30+ years, 20 years) are shown at their final value from the first paint.
+  //    They used to count up from 0 when scrolled into view, which read as figures changing on load.
+  //    The credentials cards already rise and fade in once as a group (section 2), which is the reveal.
 
   // 4. Heading underline draws in under the accent word
   var heads = [].slice.call(document.querySelectorAll('section h2'));
