@@ -214,6 +214,49 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 @keyframes dmGlow{ 0%,100%{ box-shadow:0 0 0 0 rgba(255,107,61,0), 0 6px 14px -8px rgba(242,61,90,.85); } 50%{ box-shadow:0 0 0 4px rgba(255,140,90,.30), 0 0 24px 3px rgba(255,91,79,.60); } }
 @keyframes dmSheen{ 0%,55%{ left:-60%; } 85%,100%{ left:130%; } }
 @media (prefers-reduced-motion:reduce){ .dm, .dm::after{ animation:none; } .dm{ box-shadow:0 0 0 3px rgba(255,140,90,.3), 0 0 16px rgba(255,91,79,.5); } }
+/* demo buttons drop down under the service tabs */
+.demo-sw{ display:none !important; }
+.sd-hint{ display:flex; align-items:center; justify-content:center; gap:9px; margin:12px 0 0; font:500 13.5px/1.35 var(--body); color:var(--text-2); text-align:center; transition:opacity .35s, transform .35s; }
+.sd-hint i{ flex:none; width:8px; height:8px; border-radius:50%; background:#0e9384; box-shadow:0 0 0 0 rgba(14,147,132,.5); animation:sdPing 1.8s ease-out infinite; }
+.sd-hint.gone{ opacity:0; transform:translateY(-6px); pointer-events:none; height:0; margin:0; overflow:hidden; }
+.svc-demos{ display:grid; grid-template-rows:0fr; opacity:0; transition:grid-template-rows .6s cubic-bezier(.2,.8,.2,1), opacity .45s ease; scroll-margin-top:72px; }
+.svc-demos.open{ grid-template-rows:1fr; opacity:1; }
+.sd-in{ position:relative; min-height:0; overflow:hidden; padding-top:11px; }
+.sd-notch{ position:absolute; top:3px; left:var(--nx,16%); width:18px; height:18px; margin-left:-9px; transform:rotate(45deg); background:#fff; border-left:1px solid var(--line); border-top:1px solid var(--line); border-radius:4px 0 0 0; z-index:2; transition:left .45s cubic-bezier(.2,.8,.2,1); }
+.sd-card{ position:relative; padding:20px 20px 18px; border-radius:22px; border:1px solid var(--line); background:radial-gradient(520px 220px at 100% 0%, rgba(95,208,195,.20), transparent 70%), linear-gradient(180deg,#fff 0%,#f4fbf9 100%); box-shadow:0 22px 50px -34px rgba(12,59,67,.55); overflow:hidden; transform:translateY(-10px); transition:transform .6s cubic-bezier(.2,.8,.2,1); }
+.svc-demos.open .sd-card{ transform:none; }
+.sd-card::before{ content:""; position:absolute; inset:0 0 auto 0; height:3px; background:linear-gradient(90deg,#0b7d71,#5fd0c3,#0aa5c8,#0b7d71); background-size:200% 100%; animation:demoFlow 4s linear infinite alternate; }
+.sd-head{ text-align:center; }
+.sd-live{ display:inline-flex; align-items:center; gap:8px; padding:6px 12px 6px 10px; border-radius:999px; background:#0c3b43; color:#fff; font:600 11px/1 var(--body); letter-spacing:.16em; text-transform:uppercase; box-shadow:0 8px 18px -10px rgba(12,59,67,.8); }
+.sd-live i{ position:relative; width:8px; height:8px; border-radius:50%; background:#3ee08a; box-shadow:0 0 8px #3ee08a; }
+.sd-live i::after{ content:""; position:absolute; inset:-4px; border-radius:50%; border:2px solid #3ee08a; opacity:0; animation:demoPing 1.6s cubic-bezier(.2,.7,.2,1) infinite; }
+.sd-title{ margin:12px 0 6px; font:500 clamp(21px,2.4vw,28px)/1.15 var(--head); color:var(--ink); letter-spacing:-.005em; }
+.sd-title span{ background:linear-gradient(100deg,#0b7d71 0%,#0e9384 30%,#5fd0c3 50%,#0aa5c8 70%,#0b7d71 100%); background-size:220% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:demoFlow 6s ease-in-out infinite alternate; }
+.sd-sub{ max-width:560px; margin:0 auto; color:var(--text-2); font-size:15px; line-height:1.5; }
+.sd-tap{ display:flex; align-items:center; justify-content:center; gap:6px; margin:14px 0 2px; font:600 12px/1 var(--body); letter-spacing:.12em; text-transform:uppercase; color:#0a7469; }
+.sd-tap svg{ width:18px; height:18px; animation:sdTap 1.4s ease-in-out infinite; transform-origin:50% 80%; }
+.svc-demos .demo-subj{ justify-content:center; margin-top:12px; }
+.svc-demos .demo-subj button{ position:relative; overflow:hidden; padding-right:34px; }
+.svc-demos .demo-subj button::after{ content:""; position:absolute; top:50%; right:9px; width:18px; height:18px; margin-top:-9px; border-radius:50%; background:#0e9384 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7v10l8-5z' fill='white'/%3E%3C/svg%3E") center/12px no-repeat; box-shadow:0 3px 8px -3px rgba(14,147,132,.8); transition:transform .2s; }
+.svc-demos .demo-subj button:hover::after{ transform:scale(1.15); }
+.svc-demos .demo-subj button::before{ content:""; position:absolute; top:0; bottom:0; left:-70%; width:45%; background:linear-gradient(100deg,transparent,rgba(95,208,195,.32),transparent); transform:skewX(-20deg); pointer-events:none; }
+.svc-demos.open .demo-subj button::before{ animation:sdSheen 6s ease-in-out infinite; animation-delay:calc(.9s + var(--i,0) * 110ms); }
+.svc-demos .demo-subj button[aria-pressed="true"]{ border-color:var(--line); box-shadow:none; color:var(--ink); }
+.svc-demos .demo-subj button[aria-pressed="true"] small{ color:var(--text-2); }
+.svc-demos .demo-subj button:focus-visible{ outline:2px solid #0e9384; outline-offset:2px; }
+.svc-demos .f1a{ margin-top:16px; }
+@keyframes sdPing{ 0%{ box-shadow:0 0 0 0 rgba(14,147,132,.5); } 100%{ box-shadow:0 0 0 10px rgba(14,147,132,0); } }
+@keyframes sdTap{ 0%,100%{ transform:translateY(0) rotate(0); } 45%{ transform:translateY(3px) rotate(-8deg); } 60%{ transform:translateY(1px) rotate(-4deg); } }
+@keyframes sdSheen{ 0%,70%{ left:-70%; } 100%{ left:140%; } }
+@media (max-width:600px){
+  .sd-card{ padding:16px 12px 14px; border-radius:18px; }
+  .sd-sub{ font-size:13.5px; }
+  .sd-hint{ font-size:12.5px; margin-top:10px; padding:0 8px; }
+  .svc-demos .demo-subj{ margin-top:10px; }
+  .svc-demos .demo-subj button{ padding:10px 26px 9px 10px; }
+  .svc-demos .demo-subj button::after{ top:8px; right:7px; margin-top:0; width:15px; height:15px; background-size:10px; }
+}
+@media (prefers-reduced-motion:reduce){ .svc-demos, .sd-card, .sd-notch{ transition:none; } .sd-hint i, .sd-live i::after, .sd-tap svg, .sd-card::before, .sd-title span{ animation:none; } .svc-demos.open .demo-subj button::before{ animation:none; } }
 .demo{ scroll-margin-top:64px; padding:40px 0 36px; background:linear-gradient(180deg,#fff 0%,#f3faf8 100%); border-top:1px solid var(--line); }
 .demo h2{ font-size:clamp(30px, 3.6vw, 48px); line-height:1.08; margin:12px 0 8px; letter-spacing:-.01em; }
 .demo-head{ margin-bottom:18px; }
@@ -749,6 +792,23 @@ footer a:hover{ color:var(--blue); }
           <button class="tab tab-acc" role="tab" aria-selected="false" aria-controls="panel" id="t1" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/acc.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Accounting<span class="lg">&nbsp;services</span></b></span></button>
           <button class="tab tab-aud" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Audit<span class="lg">&nbsp;services</span></b></span></button>
         </div>
+        <p class="sd-hint demo-only" id="sdHint"><i aria-hidden="true"></i>Tap a service to watch how it works, then run the real machine yourself.</p>
+        <div class="svc-demos demo-only" id="svcDemos" aria-hidden="true">
+          <div class="sd-in">
+            <i class="sd-notch" id="sdNotch" aria-hidden="true"></i>
+            <div class="sd-card">
+              <div class="sd-head">
+                <span class="sd-live"><i aria-hidden="true"></i>Live demos</span>
+                <h3 class="sd-title">Now run the real <span id="sdName">Tax Machine</span></h3>
+                <p class="sd-sub">These aren&rsquo;t videos. Each task below is a real, working demo: tap one and it runs by itself, full screen. Open the client&rsquo;s books, documents and email while it works.</p>
+              </div>
+              <p class="sd-tap" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11.5V5.8a1.6 1.6 0 0 1 3.2 0v5.2l3.9.7c1.3.2 2.2 1.4 2.1 2.7l-.4 4.1c-.1 1.4-1.3 2.5-2.7 2.5h-4.6c-.9 0-1.8-.5-2.3-1.2l-3-4.4a1.4 1.4 0 0 1 2-1.9z" fill="currentColor"/></svg>Tap a task to run it</p>
+              <div class="demo-subj" id="demoSubj" role="group" aria-label="Choose a demo to run"></div>
+              <!-- "Try it on your own files" card, filled by assets/analyze/analyze.js (files are analyzed in the browser only) -->
+              <div id="f1Analyze" class="f1a"></div>
+            </div>
+          </div>
+        </div>
         <div class="info" hidden>
           <div>
             <h2 id="pTitle" class="mt"><span class="mt-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg></span><span class="mt-txt"><small>F1 FINANCE</small><b>Tax Machine</b></span></h2>
@@ -760,20 +820,13 @@ footer a:hover{ color:var(--blue); }
     </div>
   </section>
 
-  <section class="demo demo-only" id="demo" aria-labelledby="demoH">
+  <section class="demo demo-only" id="demo" aria-label="Demo stage">
     <div class="wrap">
-      <div class="demo-head">
-        <h2 id="demoH">Try the <span class="demo-grad">machines.</span></h2>
-        <p class="demo-count"><b id="demoCount">0</b> real recorded runs across tax, accounting and audit.</p>
-      </div>
       <div class="demo-sw" role="tablist" aria-label="Machines">
         <button role="tab" data-m="tax" aria-selected="true">Tax</button>
         <button role="tab" data-m="accounting" aria-selected="false">Accounting</button>
         <button role="tab" data-m="audit" aria-selected="false">Audit</button>
       </div>
-      <div class="demo-subj" id="demoSubj" role="group" aria-label="Choose what the machine works on"></div>
-      <!-- "Try it on your own files" card, filled by assets/analyze/analyze.js (files are analyzed in the browser only) -->
-      <div id="f1Analyze" class="f1a"></div>
       <div class="demo-box" id="demoBox">
         <div class="demo-bar">
           <span class="demo-bar-t"><b id="demoBarM">Tax Machine</b><span id="demoBarS">Form 941</span></span>
@@ -1113,8 +1166,8 @@ footer a:hover{ color:var(--blue); }
   // count the recorded runs up when the section comes into view
   var total = 0; Object.keys(DEMO).forEach(function(k){ total += DEMO[k].subjects.length; });
   var cEl = document.getElementById('demoCount'), counted = false;
-  function countUp(){ if (counted) return; counted = true; if (reduced) { cEl.textContent = total; return; } var t0 = performance.now(); (function step(t){ var k = Math.min(1, (t - t0) / 1200); cEl.textContent = Math.round(total * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); })(t0); }
-  if ('IntersectionObserver' in window) new IntersectionObserver(function(es, o){ if (es[0].isIntersecting) { countUp(); o.disconnect(); } }, { threshold: .4 }).observe(cEl); else countUp();
+  function countUp(){ if (counted || !cEl) return; counted = true; if (reduced) { cEl.textContent = total; return; } var t0 = performance.now(); (function step(t){ var k = Math.min(1, (t - t0) / 1200); cEl.textContent = Math.round(total * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); })(t0); }
+  if (cEl) { if ('IntersectionObserver' in window) new IntersectionObserver(function(es, o){ if (es[0].isIntersecting) { countUp(); o.disconnect(); } }, { threshold: .4 }).observe(cEl); else countUp(); }
   document.getElementById('demoGo').addEventListener('click', function(){ demoPick(dCur, true); });
   (function(){
     var bg = document.getElementById('demoBg'); if (!bg) return;
@@ -1129,7 +1182,25 @@ footer a:hover{ color:var(--blue); }
   })();
   document.getElementById('demoX').addEventListener('click', function(){ demoPick(dCur, false); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && dBox.classList.contains('is-full')) demoPick(dCur, false); });
-  window.f1ShowDemo = function(m){ var b = document.querySelector('.demo-sw [data-m="' + m + '"]'); if (b) b.click(); document.getElementById('demo').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block:'start' }); };
+  // the demo buttons drop down under the service tab that was tapped
+  var sd = document.getElementById('svcDemos'), sdHint = document.getElementById('sdHint'), sdNotch = document.getElementById('sdNotch');
+  var SD_TAB = { tax:'t0', accounting:'t1', audit:'t2' };
+  function sdAim(m){
+    var t = document.getElementById(SD_TAB[m]); if (!t || !sd) return;
+    var a = t.getBoundingClientRect(), b = sd.getBoundingClientRect();
+    if (b.width) sd.style.setProperty('--nx', Math.max(18, Math.min(b.width - 18, a.left + a.width / 2 - b.left)) + 'px');
+  }
+  window.f1OpenDemos = function(m, scroll){
+    if (!sd || !DEMO[m]) return;
+    var wasOpen = sd.classList.contains('open'), same = dCur === m;
+    demoPick(m, false);
+    document.getElementById('sdName').textContent = DEMO[m].name;
+    sd.setAttribute('aria-hidden', 'false'); sd.classList.add('open'); if (sdHint) sdHint.classList.add('gone');
+    sdAim(m); requestAnimationFrame(function(){ sdAim(m); });
+    if (scroll) setTimeout(function(){ sd.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }); }, wasOpen ? 0 : 280);
+  };
+  window.addEventListener('resize', function(){ if (sd && sd.classList.contains('open')) sdAim(dCur); });
+  window.f1ShowDemo = function(m){ window.f1OpenDemos(m, true); };
   demoPick(DEMO.tax.ready ? 'tax' : 'accounting', false);
 
   // App pop-out
@@ -1153,7 +1224,7 @@ footer a:hover{ color:var(--blue); }
   v.addEventListener('ended', function(){ if (S[cur].card) zoomCard(true); else show((cur + 1) % tabs.length, true); });
   replay.addEventListener('click', function(){ zoomCard(false); try { v.currentTime = 0; } catch (e) {} play(v); });
   tabs.forEach(function(t, i){
-    t.addEventListener('click', function(){ show(i, 'user'); });
+    t.addEventListener('click', function(){ show(i, 'user'); var m = { t0:'tax', t1:'accounting', t2:'audit' }[t.id]; if (m && demosOn && window.f1OpenDemos) window.f1OpenDemos(m); });
     t.addEventListener('keydown', function(e){
       var n = (e.key === 'ArrowDown' || e.key === 'ArrowRight') ? 1 : (e.key === 'ArrowUp' || e.key === 'ArrowLeft') ? -1 : 0;
       if (n){ e.preventDefault(); var k = (i + n + tabs.length) % tabs.length; show(k, true); tabs[k].focus(); }
