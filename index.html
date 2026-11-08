@@ -811,7 +811,7 @@ footer a:hover{ color:var(--blue); }
         </div>
         <div class="panel" id="panel" role="tabpanel" aria-labelledby="t0">
           <div class="player">
-            <video id="v" autoplay muted playsinline webkit-playsinline controls preload="auto" poster="videos/tax-machine-poster.jpg">
+            <video id="v" autoplay muted playsinline webkit-playsinline controls preload="auto" poster="videos/tax-machine-poster-v2.jpg">
               <source type="video/mp4">
             </video>
             <button class="snd" id="snd" type="button" aria-label="Turn the sound on"><img class="ui-ic " src="assets/ui/sound.webp" alt="" aria-hidden="true" width="128" height="128">Sound on</button>
@@ -842,9 +842,9 @@ footer a:hover{ color:var(--blue); }
         <div class="info" hidden>
           <div>
             <h2 id="pTitle" class="mt"><span class="mt-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg></span><span class="mt-txt"><small>F1 FINANCE</small><b>Tax Machine</b></span></h2>
-            <p class="sub" id="pSub">Partnership, state and payroll returns.</p>
+            <p class="sub" id="pSub">Payroll, corporate and state returns.</p>
           </div>
-          <div class="pbar"><span id="pLen">Training video &middot; 2:25</span><button type="button" id="fs">Full screen</button></div>
+          <div class="pbar"><span id="pLen">Training video &middot; 2:45</span><button type="button" id="fs">Full screen</button></div>
         </div>
       </div>
     </div>
@@ -891,7 +891,7 @@ footer a:hover{ color:var(--blue); }
           <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-trailer.jpg" aria-label="Model Macros TikTok trailer"><source src="videos/marketing/mm-trailer.mp4" type="video/mp4"></video><figcaption><b>TikTok trailer</b><span>0:18</span></figcaption></figure>
           <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-allday.jpg" aria-label="Model Macros All Day spot"><source src="videos/marketing/mm-allday.mp4" type="video/mp4"></video><figcaption><b>All Day spot</b><span>0:15</span></figcaption></figure>
           <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-film.jpg" aria-label="Introducing Malik brand film"><source src="videos/marketing/mm-film.mp4" type="video/mp4"></video><figcaption><b>Brand film</b><span>0:39</span></figcaption></figure>
-          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-app.jpg" aria-label="Model Macros app preview"><source src="videos/marketing/mm-app.mp4" type="video/mp4"></video><figcaption><b>App preview</b><span>0:39</span></figcaption></figure>
+          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-app-v2.jpg" aria-label="Model Macros app preview"><source src="videos/marketing/mm-app-v2.mp4" type="video/mp4"></video><figcaption><b>App preview</b><span>0:39</span></figcaption></figure>
         </div>
       </div>
 
@@ -999,7 +999,7 @@ footer a:hover{ color:var(--blue); }
 
 <div class="pop" id="pop" hidden role="dialog" aria-modal="true" aria-label="Model Macros app preview">
   <div class="pop-in">
-    <video id="popV" controls playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-app.jpg"><source src="videos/marketing/mm-app.mp4" type="video/mp4"></video>
+    <video id="popV" controls playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-app-v2.jpg"><source src="videos/marketing/mm-app-v2.mp4" type="video/mp4"></video>
     <button class="pop-x" id="popX" type="button" aria-label="Close">&times;</button>
   </div>
 </div>
@@ -1007,18 +1007,18 @@ footer a:hover{ color:var(--blue); }
 <script>
 (function(){
   var S = [
-    { title:'Tax Machine', len:'2:25', kind:'Training video', sub:'Partnership, state and payroll returns.',
-      card:2.8, src:'videos/tax-machine-training.mp4', srcM:'videos/tax-machine-training-720.mp4', poster:'videos/tax-machine-poster.jpg' },
-    { title:'Accounting Machine', len:'3:35', kind:'Training video', sub:'Month-end invoice review.',
-      card:2.8, src:'videos/accounting-machine-training.mp4', srcM:'videos/accounting-machine-training-720.mp4', poster:'videos/accounting-machine-poster.jpg' },
-    { title:'Audit Machine', len:'3:00', kind:'Training video', sub:'Year-end audit workpapers.',
-      card:2.8, src:'videos/audit-machine-training.mp4', srcM:'videos/audit-machine-training-720.mp4', poster:'videos/audit-machine-poster.jpg' },
+    { title:'Tax Machine', len:'2:45', kind:'Training video', sub:'Payroll, corporate and state returns.',
+      card:2.8, src:'videos/tax-machine-training-v2.mp4', srcM:'videos/tax-machine-training-v2-720.mp4', poster:'videos/tax-machine-poster-v2.jpg' },
+    { title:'Accounting Machine', len:'3:15', kind:'Training video', sub:'Bank reconciliation and month-end close.',
+      card:2.8, src:'videos/accounting-machine-training-v2.mp4', srcM:'videos/accounting-machine-training-v2-720.mp4', poster:'videos/accounting-machine-poster-v2.jpg' },
+    { title:'Audit Machine', len:'3:03', kind:'Training video', sub:'Year-end audit and journal entry testing.',
+      card:2.8, src:'videos/audit-machine-training-v2.mp4', srcM:'videos/audit-machine-training-v2-720.mp4', poster:'videos/audit-machine-poster-v2.jpg' },
     { title:'Tech Services', len:'0:10', kind:'Showcase', music:true, sub:'Custom software, automation and integrations.',
-      src:'videos/tech-services.mp4', srcM:'videos/tech-services-720.mp4', poster:'videos/tech-services-poster.jpg' },
+      src:'videos/tech-services-v2.mp4', srcM:'videos/tech-services-v2-720.mp4', poster:'videos/tech-services-poster.jpg' },
     { title:'AI Services', len:'0:17', kind:'Showcase', music:true, sub:'Local AI architecture for large corporations, built to cut expenses.',
-      card:1.8, src:'videos/ai-services.mp4', srcM:'videos/ai-services-720.mp4', poster:'videos/ai-services-poster.jpg' },
+      card:1.8, src:'videos/ai-services-v2.mp4', srcM:'videos/ai-services-v2-720.mp4', poster:'videos/ai-services-poster-v2.jpg' },
     { title:'App Services', len:'0:39', kind:'Showcase', pop:true, sub:'Mobile apps for iPhone and Android.',
-      src:'videos/marketing/mm-app.mp4', srcM:'videos/marketing/mm-app.mp4', poster:'videos/marketing/mm-app.jpg' }
+      src:'videos/marketing/mm-app-v2.mp4', srcM:'videos/marketing/mm-app-v2.mp4', poster:'videos/marketing/mm-app-v2.jpg' }
   ];
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var small = Math.min(screen.width, screen.height) <= 820 || (navigator.connection && navigator.connection.saveData);
