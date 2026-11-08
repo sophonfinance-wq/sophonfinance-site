@@ -4,17 +4,6 @@
  "generated": "2026-11-08",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "Materiality, the size of mistake that matters: $350,000.",
-   "file": "02.mp3",
-   "duration": 6.55,
-   "breaks": [
-    1.14,
-    3.64
-   ]
-  },
-  {
    "id": "stage-2",
    "trigger": "stage:2",
    "text": "It ties the payroll register, the list of every paycheck, to all 2,493 paychecks. One flag: two employees are paid into the same bank account.",
@@ -84,6 +73,19 @@
    "duration": 5.28,
    "breaks": [],
    "why": "mentions old company/sale wording; re-take needed"
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "Materiality, the size of mistake that matters: $350,000.",
+   "file": "02.mp3",
+   "duration": 6.55,
+   "breaks": [
+    1.14,
+    3.64
+   ],
+   "why": "quotes the old materiality ($350,000); the FY2026 canonical materiality is $340,000 (demo/audit-canonical.json). Audio cannot be regenerated now; re-take needed",
+   "correctedText": "Materiality, the size of mistake that matters: $340,000."
   }
  ]
 }

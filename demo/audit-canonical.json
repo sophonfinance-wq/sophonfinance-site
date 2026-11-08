@@ -1,0 +1,43 @@
+{
+  "about": "The canonical FY2026 HANGS Construction Services LLC audit figures. Written by audcommon/hgc_canonical.py; every audit demo must show these and no other FY2026 revenue, net income or materiality.",
+  "entity": "HANGS Construction Services LLC",
+  "fiscalYear": "FY2026",
+  "period": "July 1, 2025 to June 30, 2026",
+  "yearEnd": "2026-06-30",
+  "revenue": "68989500.00",
+  "contractRevenue": "68928250.00",
+  "otherRevenue": "61250.00",
+  "netIncome": "1125090.40",
+  "openingEquity": "6524604.67",
+  "dividends": "360000.00",
+  "closingEquity": "7289695.07",
+  "plan": {
+    "benchmark": "Revenue for the year",
+    "rate": "0.005",
+    "roundDownTo": 10000,
+    "performance": "0.75",
+    "trivial": "0.05"
+  },
+  "rawMateriality": "344947.50",
+  "materiality": "340000.00",
+  "performanceMateriality": "255000.00",
+  "clearlyTrivial": "17000.00",
+  "interimReview": {
+    "engagement": "Q3 2026 Quarterly Review (interim review, quarter ended September 30, 2026)",
+    "label": "Interim review materiality",
+    "demo": "audit-review",
+    "revenue": "21696700.00",
+    "rawMateriality": "108483.50",
+    "materiality": "100000.00",
+    "performanceMateriality": "75000.00",
+    "clearlyTrivial": "5000.00",
+    "derivation": "The FY2026 audit plan\u2019s rates (0.5% of revenue, rounded down to $10,000; performance 75%; clearly trivial 5%) applied to the quarter\u2019s $21,696,700.00 of revenue. The FY2026 annual audit materiality stays $340,000.00."
+  },
+  "legacyDesign": {
+    "demos": [
+      "audit",
+      "audit-cash"
+    ],
+    "note": "Built on the older small-company design (9 accounts, book income $244,500.00, materiality $12,000.00). Not yet re-based; see the QA report."
+  }
+}
