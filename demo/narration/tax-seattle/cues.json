@@ -1,0 +1,85 @@
+{
+ "demo": "tax-seattle",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's tax machine prepare a Seattle city tax return.",
+   "file": "01.mp3",
+   "duration": 4.72,
+   "breaks": []
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it finds the jobs.",
+   "file": "02.mp3",
+   "duration": 2.35,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, the quarter's books: every billing agrees with the ledger and the state returns already filed. Seattle charges its own B&O tax, business and occupation tax, on gross receipts.",
+   "file": "03.mp3",
+   "duration": 13.93,
+   "breaks": [
+    1.78,
+    6.9
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Now it checks the city's rules. Four are confirmed online and six from a saved copy; three questions are left for a person.",
+   "file": "04.mp3",
+   "duration": 8.97,
+   "breaks": [
+    1.78,
+    6.06
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Apportionment means taxing only the work done in Seattle, so jobs in other cities are deducted. One invoice coded to Bellevue was really a Seattle job. The city tax is $44,166.",
+   "file": "05.mp3",
+   "duration": 16.15,
+   "breaks": [
+    3.74,
+    6.54,
+    11.08
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Ten checks pass, with one invoice moved to Seattle.",
+   "file": "06.mp3",
+   "duration": 4.41,
+   "breaks": []
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the draft return and its workpapers.",
+   "file": "07.mp3",
+   "duration": 3.87,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The draft shows $44,166 of Seattle tax for the quarter. Six items stay open, including a job that straddles the city line, a bad debt to confirm, and a late fee of about $3,975 the city will add. A person reviews, signs and files; nothing is filed or paid.",
+   "file": "08.mp3",
+   "duration": 24.52,
+   "breaks": [
+    7.06,
+    18.7,
+    22.18
+   ]
+  }
+ ]
+}

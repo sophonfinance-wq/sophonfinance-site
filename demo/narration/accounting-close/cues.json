@@ -1,0 +1,83 @@
+{
+ "demo": "accounting-close",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-07",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's accounting machine close October's books for HANGS Construction: making them complete and correct before anyone reports on them.",
+   "file": "01.mp3",
+   "duration": 10.62,
+   "breaks": []
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it reads the trial balance, a list of every account's balance. It balances.",
+   "file": "02.mp3",
+   "duration": 6.38,
+   "breaks": [
+    4.3
+   ]
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "A prepaid is a bill paid in advance, like insurance, used up month by month. September's insurance was used up twice, by $3,240.",
+   "file": "03.mp3",
+   "duration": 11.6,
+   "breaks": [
+    5.32
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Depreciation spreads equipment's cost over the years it's used. A new excavator was missing from the asset list, and the loan interest used last month's number of days.",
+   "file": "04.mp3",
+   "duration": 11.91,
+   "breaks": [
+    4.16
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "An accrual records a cost in the month it belongs to, like an October bill that only arrived in November.",
+   "file": "05.mp3",
+   "duration": 7.41,
+   "breaks": []
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "A journal entry is a correction to the books. It proposes eight, and the trial balance still balances.",
+   "file": "06.mp3",
+   "duration": 7.07,
+   "breaks": [
+    2.5
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the workpapers and an unsigned memo for the controller, the head of accounting.",
+   "file": "07.mp3",
+   "duration": 6.47,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. It proposes eight journal entries, including four corrections worth just under $18,000, and together they lower profit by about $33,800. Six items stay open, including four exceptions for a person and the controller's sign-off. Nothing is posted until a person approves.",
+   "file": "08.mp3",
+   "duration": 20.92,
+   "breaks": [
+    7.22,
+    11.38,
+    17.98
+   ]
+  }
+ ]
+}

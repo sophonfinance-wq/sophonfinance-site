@@ -1,0 +1,87 @@
+{
+ "demo": "audit-controls",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's machine test HANGS General Contracting's internal controls: the checks that stop mistakes and fraud.",
+   "file": "01.mp3",
+   "duration": 8.97,
+   "breaks": [
+    5.5
+   ]
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "It walks through eleven key controls.",
+   "file": "02.mp3",
+   "duration": 2.48,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Segregation of duties means one person shouldn't both set up a vendor and pay it. Here one person did both, for four payments of about $64,700.",
+   "file": "03.mp3",
+   "duration": 11.72,
+   "breaks": [
+    4.94
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Billing to cash works: every bill approved, every receipt posted on time.",
+   "file": "04.mp3",
+   "duration": 5.3,
+   "breaks": [
+    1.24,
+    2.74
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Payrolls are reviewed before release, but the payroll manager's own raise had no signed approval.",
+   "file": "05.mp3",
+   "duration": 6.93,
+   "breaks": []
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Thirty large journal entries, over $8 million, had no second review. No bank reconciliation is signed as reviewed.",
+   "file": "06.mp3",
+   "duration": 9.13,
+   "breaks": [
+    5.64
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "A significant deficiency is a weakness serious enough to report to those in charge. It proposes two.",
+   "file": "07.mp3",
+   "duration": 7.05,
+   "breaks": [
+    4.94
+   ]
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. Four of eleven key controls work as designed. Two significant deficiencies and two smaller deficiencies are proposed. Seven items stay open. This is not an opinion on controls: the CPA, a person, decides every level and signs.",
+   "file": "08.mp3",
+   "duration": 19.14,
+   "breaks": [
+    4.34,
+    9.32,
+    11.7,
+    14.24
+   ]
+  }
+ ]
+}

@@ -1,0 +1,82 @@
+{
+ "demo": "accounting-reporting",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's accounting machine build the October financial statements for HANGS Construction, and compare them with the budget.",
+   "file": "01.mp3",
+   "duration": 8.29,
+   "breaks": []
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it reads the adjusted trial balance: every account's balance, after the month-end corrections.",
+   "file": "02.mp3",
+   "duration": 6.45,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "The balance sheet lists what the company owns and owes. The income statement shows October's profit: about $14,600.",
+   "file": "03.mp3",
+   "duration": 8.85,
+   "breaks": [
+    3.22
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Then, where the cash came from and went.",
+   "file": "04.mp3",
+   "duration": 3.08,
+   "breaks": []
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Budget versus actual compares each line with the plan. Seven lines are off by more than $5,000 and 10 percent, and one has no explanation yet.",
+   "file": "05.mp3",
+   "duration": 11.63,
+   "breaks": [
+    3.64
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "A covenant is a limit the lender sets. All three are met, but one has just 4.5 percent of room.",
+   "file": "06.mp3",
+   "duration": 7.81,
+   "breaks": [
+    2.46
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the workpapers and a draft package for the controller, the head of accounting, unsigned and unsent.",
+   "file": "07.mp3",
+   "duration": 8.47,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. October's profit is about $14,600 against a $134,660 budget, mostly because a sale moved to November. The year so far shows about $167,000. Four items need a person, including an unexplained variance and thin room on one covenant. Nothing is posted or sent until the controller releases it.",
+   "file": "08.mp3",
+   "duration": 25.51,
+   "breaks": [
+    9.4,
+    12.6,
+    16,
+    21.48
+   ]
+  }
+ ]
+}

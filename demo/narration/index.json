@@ -1,4 +1,4 @@
 {
  "about": "Demos with spoken narration. demo/narration.js only fetches demo/narration/<id>/cues.json for ids listed here.",
- "demos": ["tax-941", "accounting"]
+ "demos": ["tax-941", "accounting", "accounting-ar", "accounting-bankrec", "accounting-cards", "accounting-close", "accounting-fixedassets", "accounting-payroll", "accounting-payrun", "accounting-reporting", "accounting-wip", "tax-940", "tax-1099", "tax-excise", "tax-lni", "tax-pfml", "tax-seattle", "tax-ui", "tax-w2", "audit", "audit-cash", "audit-review", "audit-covenant", "audit-assets", "audit-wip", "audit-ar", "audit-liabilities", "audit-payroll", "audit-controls"]
 }

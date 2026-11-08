@@ -1,0 +1,83 @@
+{
+ "demo": "audit-ar",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's audit machine check what customers owe HANGS General Contracting.",
+   "file": "01.mp3",
+   "duration": 6.28,
+   "breaks": []
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "Receivables are money customers still owe: just over $11 million.",
+   "file": "02.mp3",
+   "duration": 6.14,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "It picks ten customers, by size and by risk.",
+   "file": "03.mp3",
+   "duration": 4.4,
+   "breaks": []
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "A confirmation is a letter the customer answers straight to the auditors. Eight reply, and three differ from the books.",
+   "file": "04.mp3",
+   "duration": 7.48,
+   "breaks": [
+    4.12
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Two customers stay silent. One has since paid; one has not.",
+   "file": "05.mp3",
+   "duration": 6.18,
+   "breaks": [
+    2.02,
+    4.14
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "It explains each difference. A $28,600 credit was never recorded, and one customer hasn't paid since December.",
+   "file": "06.mp3",
+   "duration": 9.59,
+   "breaks": [
+    1.66
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it weighs the findings against materiality, the size of mistake that matters, and writes the workpapers for the CPA.",
+   "file": "07.mp3",
+   "duration": 9.06,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The one known mistake is the $28,600 credit, well under materiality. Add two judgment calls, about $41,000 held back by a customer and up to about $187,000 that may never be paid, and the total passes the auditors' working limit. Seven items stay open. The CPA, a person, concludes and signs. The machine gives no opinion.",
+   "file": "08.mp3",
+   "duration": 32.38,
+   "breaks": [
+    9.16,
+    22.7,
+    25.52,
+    29.82
+   ]
+  }
+ ]
+}

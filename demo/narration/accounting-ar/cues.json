@@ -1,0 +1,87 @@
+{
+ "demo": "accounting-ar",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's accounting machine review October's receivables for HANGS Construction: the money customers owe the company.",
+   "file": "01.mp3",
+   "duration": 8.53,
+   "breaks": [
+    5.8
+   ]
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it reads the aging: unpaid customer bills, by age. It ties to the books.",
+   "file": "02.mp3",
+   "duration": 7.08,
+   "breaks": [
+    1.8,
+    5.1
+   ]
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, October's payments. One customer's check, about $32,400, was never matched to its bill.",
+   "file": "03.mp3",
+   "duration": 9.11,
+   "breaks": [
+    1.7
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Retainage, money held back until a job is done, checks out. But a signed change order, $15,780 of extra work, was never billed.",
+   "file": "04.mp3",
+   "duration": 12.04,
+   "breaks": [
+    4.48
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "A promised credit was never issued. One customer is over 90 days late.",
+   "file": "05.mp3",
+   "duration": 5.26,
+   "breaks": [
+    2.1
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "The allowance, a reserve for bills that may go unpaid, is about $11,000 short. Three letters are drafted.",
+   "file": "06.mp3",
+   "duration": 8.33,
+   "breaks": [
+    5.88
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the workpapers and an unsigned memo for the controller, the head of accounting.",
+   "file": "07.mp3",
+   "duration": 6.47,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. It proposes four journal entries, corrections to the books worth about $65,700. Eight items stay open for a person to decide, and three letters and a call script are drafted. Nothing is posted or sent until the controller approves.",
+   "file": "08.mp3",
+   "duration": 18.57,
+   "breaks": [
+    7.78,
+    14.86
+   ]
+  }
+ ]
+}

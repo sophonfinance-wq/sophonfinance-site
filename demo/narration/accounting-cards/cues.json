@@ -1,0 +1,86 @@
+{
+ "demo": "accounting-cards",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's accounting machine check October's company card statement for HANGS Construction, charge by charge.",
+   "file": "01.mp3",
+   "duration": 9.11,
+   "breaks": [
+    2.88
+   ]
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it reads the statement and the books: 21 charges on four cards.",
+   "file": "02.mp3",
+   "duration": 6.55,
+   "breaks": [
+    2.98
+   ]
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, it matches each charge to its receipt. One was charged twice, and a hotel stay over $400 has no receipt.",
+   "file": "03.mp3",
+   "duration": 10.09,
+   "breaks": [
+    3.42
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "One charge is personal: groceries the employee will repay. And a software subscription renewed though nobody approved it.",
+   "file": "04.mp3",
+   "duration": 9.17,
+   "breaks": [
+    1.68,
+    4.28
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "One charge belongs to a job. And use tax, sales tax the seller didn't charge, is due on a tools order.",
+   "file": "05.mp3",
+   "duration": 9.21,
+   "breaks": []
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "A journal entry is a correction to the books. It proposes three, and drafts five requests, none sent.",
+   "file": "06.mp3",
+   "duration": 7.48,
+   "breaks": [
+    2.52
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the workpapers and an unsigned memo for the controller, the head of accounting.",
+   "file": "07.mp3",
+   "duration": 6.47,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The whole statement, just over $8,300, is coded to the cent. About $1,600 is held for a decision. Seven items stay open, and five requests are drafted for a person to send. Nothing is posted or sent until the controller approves.",
+   "file": "08.mp3",
+   "duration": 24.31,
+   "breaks": [
+    7.6,
+    12.76,
+    19.48
+   ]
+  }
+ ]
+}

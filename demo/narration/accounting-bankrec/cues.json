@@ -1,0 +1,90 @@
+{
+ "demo": "accounting-bankrec",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-07",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's accounting machine reconcile the October bank account for HANGS Construction: matching the books to the bank statement, line by line.",
+   "file": "01.mp3",
+   "duration": 11.53,
+   "breaks": [
+    6.68
+   ]
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it reads the bank statement and the books. Each adds up on its own.",
+   "file": "02.mp3",
+   "duration": 5.1,
+   "breaks": [
+    2.82
+   ]
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, it checks that October starts exactly where September's signed reconciliation ended. It does, to the cent.",
+   "file": "03.mp3",
+   "duration": 8.8,
+   "breaks": [
+    6.44,
+    7.46
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Four deposits match. One is in transit: too late for this statement.",
+   "file": "04.mp3",
+   "duration": 5.06,
+   "breaks": [
+    1.46,
+    2.98
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "An outstanding check is one written but not yet cashed; four are. One check was entered $27 short, two digits swapped.",
+   "file": "05.mp3",
+   "duration": 10.62,
+   "breaks": [
+    4.1,
+    5.22
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Bank fees and interest aren't in the books yet. Once they are, the bank and the books agree to the cent.",
+   "file": "06.mp3",
+   "duration": 7.32,
+   "breaks": [
+    2.9
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the workpapers, the math behind every figure, and an unsigned memo for the controller, the head of accounting.",
+   "file": "07.mp3",
+   "duration": 8.27,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The bank and the books agree at just over $1,029,000. Five items are open: three small journal entries, or corrections to the books, worth $70.47 in all, plus the $25,000 deposit in transit and a check over 90 days old that was never cashed. Nothing is posted; the controller reviews and signs.",
+   "file": "08.mp3",
+   "duration": 28.56,
+   "breaks": [
+    5.92,
+    23.92,
+    25.68
+   ]
+  }
+ ]
+}

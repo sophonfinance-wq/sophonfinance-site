@@ -1,0 +1,80 @@
+{
+ "demo": "accounting-fixedassets",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's accounting machine check the fixed assets for HANGS Construction: equipment and vehicles kept for years.",
+   "file": "01.mp3",
+   "duration": 9.42,
+   "breaks": []
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, the asset list agrees with the books.",
+   "file": "02.mp3",
+   "duration": 3.06,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, October's new assets. Delivery, setup and tax belong in an asset's cost, but a repair and some low-cost items don't: they're expenses.",
+   "file": "03.mp3",
+   "duration": 11.33,
+   "breaks": [
+    2.24,
+    9.96
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "A trailer sold for $12,000 was still on the books.",
+   "file": "04.mp3",
+   "duration": 3.45,
+   "breaks": []
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Depreciation spreads cost over the years of use.",
+   "file": "05.mp3",
+   "duration": 3.1,
+   "breaks": []
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "It carries last month's totals forward to October. They tie to the books.",
+   "file": "06.mp3",
+   "duration": 5.48,
+   "breaks": [
+    3.54
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the workpapers and an unsigned memo for the controller, the head of accounting.",
+   "file": "07.mp3",
+   "duration": 6.47,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The assets now cost just over $322,000, and are worth about $232,600 after depreciation. Three journal entries, corrections to the books worth about $63,800 in all, are proposed, including a $7,500 loss on the trailer sale. Five items are open. Nothing is posted until the controller approves.",
+   "file": "08.mp3",
+   "duration": 26.53,
+   "breaks": [
+    9.84,
+    21.88,
+    23.6
+   ]
+  }
+ ]
+}

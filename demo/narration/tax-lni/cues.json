@@ -1,0 +1,90 @@
+{
+ "demo": "tax-lni",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's workers' comp report: the state insurance for employees hurt on the job.",
+   "file": "01.mp3",
+   "duration": 9.75,
+   "breaks": [
+    6.1
+   ]
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it finds the six risk classes. A risk class groups jobs by danger; riskier work pays more per hour.",
+   "file": "02.mp3",
+   "duration": 9.98,
+   "breaks": [
+    3.1,
+    6.56
+   ]
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, the hours worked, because the premium is charged per hour. One individual billed 504 more hours as a vendor.",
+   "file": "03.mp3",
+   "duration": 8.72,
+   "breaks": [
+    4.62
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Now it checks the official rules online, including each risk class. All twenty-four checks are confirmed, and five questions are left for a person.",
+   "file": "04.mp3",
+   "duration": 13.07,
+   "breaks": [
+    5.52
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Then it multiplies each class's hours by its rate: $111,469 in all. Employees pay a small share, but payroll took $504 too much.",
+   "file": "05.mp3",
+   "duration": 14.81,
+   "breaks": [
+    8.4
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Eight checks pass: every hour is accounted for.",
+   "file": "06.mp3",
+   "duration": 4.35,
+   "breaks": [
+    1.12
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the draft report and its workpapers.",
+   "file": "07.mp3",
+   "duration": 3.84,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The draft shows $111,469 of premium for the quarter. Five items stay open: two questions about which risk class some staff belong in, $504 to refund to employees, a worker paid as a vendor, and the report itself, now past due. A person reviews, signs and files it; nothing is filed or paid yet.",
+   "file": "08.mp3",
+   "duration": 21.46,
+   "breaks": [
+    5.5,
+    7.18,
+    10.5,
+    16.9,
+    19.56
+   ]
+  }
+ ]
+}

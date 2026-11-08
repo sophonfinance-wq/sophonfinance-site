@@ -1,0 +1,89 @@
+{
+ "demo": "tax-ui",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-07",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's quarterly unemployment insurance report.",
+   "file": "01.mp3",
+   "duration": 7.8,
+   "breaks": []
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it reads this year's earlier reports, and finds a bonus payroll left off the last one.",
+   "file": "02.mp3",
+   "duration": 7.47,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, 560 paychecks for 96 employees. Unemployment insurance is a state tax that funds benefits for laid-off workers. The company's rate is 3.1 percent.",
+   "file": "03.mp3",
+   "duration": 15.04,
+   "breaks": [
+    4.72,
+    10.92
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Now it checks the state's official rules online. All fifteen checks are confirmed, and one question is left for a person.",
+   "file": "04.mp3",
+   "duration": 7.86,
+   "breaks": [
+    2.46,
+    4.86
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Then it works out the tax. The taxable wage base is a yearly cap: only each employee's first $78,200 of pay is taxed. The tax comes to $38,682.",
+   "file": "05.mp3",
+   "duration": 15.43,
+   "breaks": [
+    1.84,
+    5.16,
+    10.98
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Ten checks pass: every wage line agrees with payroll.",
+   "file": "06.mp3",
+   "duration": 3.92,
+   "breaks": [
+    1.16
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the draft report and its workpapers, the math behind every figure.",
+   "file": "07.mp3",
+   "duration": 5.84,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The draft shows $38,682 of unemployment tax for the quarter. Three items stay open. Last quarter's report left out a $55,500 bonus payroll, about $270 of tax. One worker paid as a vendor may really be an employee. And the report was due November 2: a person reviews, signs and files it, and pays. Nothing is filed or paid yet.",
+   "file": "08.mp3",
+   "duration": 32.47,
+   "breaks": [
+    6.94,
+    8.84,
+    17.12,
+    24.16,
+    28.44
+   ]
+  }
+ ]
+}

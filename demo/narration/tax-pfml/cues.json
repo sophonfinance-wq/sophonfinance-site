@@ -1,0 +1,93 @@
+{
+ "demo": "tax-pfml",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's Paid Leave and WA Cares report.",
+   "file": "01.mp3",
+   "duration": 7.61,
+   "breaks": [
+    6.7
+   ]
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it reads this year's earlier reports, and finds a bonus payroll left off the last one.",
+   "file": "02.mp3",
+   "duration": 6.19,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, payroll and exemptions: 560 paychecks for 96 employees. WA Cares is the state's long-term care insurance; two employees have approved exemptions from it.",
+   "file": "03.mp3",
+   "duration": 13.69,
+   "breaks": [
+    2.26,
+    6.5,
+    10.56
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Now it checks the official rules online. All eighteen checks are confirmed, and three questions are left for a person.",
+   "file": "04.mp3",
+   "duration": 7.79,
+   "breaks": [
+    2.36
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Then it works out the premiums. Paid family leave funds time off for a new child or a serious illness; its premium is 1.13 percent of wages. WA Cares adds 0.58 percent.",
+   "file": "05.mp3",
+   "duration": 15.88,
+   "breaks": [
+    2.02,
+    11.28
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Seven checks pass: every line agrees with payroll.",
+   "file": "06.mp3",
+   "duration": 3.9,
+   "breaks": [
+    1.3
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the draft report and its workpapers.",
+   "file": "07.mp3",
+   "duration": 3.96,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The draft shows $44,170 due, as two premiums. Four items stay open: a bonus payroll missing from last quarter's report, $176 of WA Cares premium not withheld, a worker paid as a vendor, and the report itself, due November 2. A person reviews, signs and files it; nothing is filed or paid yet.",
+   "file": "08.mp3",
+   "duration": 32.53,
+   "breaks": [
+    8.18,
+    10.52,
+    13.94,
+    18.98,
+    21.2,
+    23.38,
+    26.06,
+    29.74
+   ]
+  }
+ ]
+}

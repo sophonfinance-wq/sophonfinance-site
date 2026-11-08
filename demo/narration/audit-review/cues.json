@@ -1,0 +1,86 @@
+{
+ "demo": "audit-review",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's machine review HANGS General Contracting's quarter. A review is lighter than an audit.",
+   "file": "01.mp3",
+   "duration": 7.66,
+   "breaks": [
+    4.52
+   ]
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it sets materiality at $100,000.",
+   "file": "02.mp3",
+   "duration": 4.09,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Analytical procedures compare the quarter with the last one and the budget. Revenue is up 13%, but the margin fell.",
+   "file": "03.mp3",
+   "duration": 8.8,
+   "breaks": [
+    4.46
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "The controller answers every question in writing. One customer shares the same owners.",
+   "file": "04.mp3",
+   "duration": 6.2,
+   "breaks": [
+    2.76
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Now it rebuilds each job's revenue, and it ties to the books. But $259,200 comes from a change the customer has not signed.",
+   "file": "05.mp3",
+   "duration": 10.4,
+   "breaks": [
+    3.52
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Interest is booked only when paid, so $35,350 is missing. The loan covenants, promises made to the bank, are met, but net worth has only about $130,000 to spare.",
+   "file": "06.mp3",
+   "duration": 15.07,
+   "breaks": [
+    5.78
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it weighs what it found against materiality and writes the workpapers for the CPA.",
+   "file": "07.mp3",
+   "duration": 6.12,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. Interest expense is $6,685 short, well under materiality. The bigger question is the unsigned change, which also decides whether net worth still meets the covenant. Ten items stay open. This is not a review report: the CPA, a person, concludes and signs.",
+   "file": "08.mp3",
+   "duration": 22.62,
+   "breaks": [
+    7.24,
+    13.84,
+    16,
+    18.02
+   ]
+  }
+ ]
+}

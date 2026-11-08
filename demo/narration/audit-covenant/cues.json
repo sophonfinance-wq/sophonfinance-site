@@ -1,0 +1,82 @@
+{
+ "demo": "audit-covenant",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's machine check HANGS General Contracting's loan covenants: promises made to its bank.",
+   "file": "01.mp3",
+   "duration": 7.97,
+   "breaks": []
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it reads the loan agreement.",
+   "file": "02.mp3",
+   "duration": 2.88,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "These are agreed-upon procedures: specific checks the bank asked for. Every figure matches the books and the bank, except $28,665 of unbooked interest.",
+   "file": "03.mp3",
+   "duration": 12.65,
+   "breaks": [
+    4.48
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Tangible net worth is the owners' stake, minus what a sister company owes. It passes by about $497,000.",
+   "file": "04.mp3",
+   "duration": 10.69,
+   "breaks": [
+    4.94
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Working capital passes too, whichever way the office lease is counted.",
+   "file": "05.mp3",
+   "duration": 4.47,
+   "breaks": []
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Equipment spending is just $67,500 under its limit. Reports reached the bank on time.",
+   "file": "06.mp3",
+   "duration": 8.18,
+   "breaks": [
+    5.38
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it drafts the findings for the CPA, who writes the report.",
+   "file": "07.mp3",
+   "duration": 4.66,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. All three covenants and the spending limit are met, and the reports were on time. One exception: $28,665 of interest not in the books. Five items stay open, including how the bank reads the lease. The CPA, a person, issues and signs the report. The machine gives no opinion.",
+   "file": "08.mp3",
+   "duration": 26.54,
+   "breaks": [
+    6.7,
+    13.42,
+    18.16,
+    23.22
+   ]
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "demo": "tax-w2",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's tax machine prepare W-2s for HANGS: the yearly pay statement each employee gets.",
+   "file": "01.mp3",
+   "duration": 8.95,
+   "breaks": []
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it adds up the year's four quarterly payroll returns.",
+   "file": "02.mp3",
+   "duration": 4.53,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, the year's payroll: 101 employees and 27 pay runs. One new employee has no Social Security number on file yet.",
+   "file": "03.mp3",
+   "duration": 10.43,
+   "breaks": [
+    1.84,
+    5.82
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Now it checks the IRS rules online. Eleven checks are confirmed; one question is left for a person.",
+   "file": "04.mp3",
+   "duration": 7.42,
+   "breaks": [
+    2.42,
+    4.56
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Then it fills in each W-2. Box 1 is taxable pay; box 2 is income tax withheld. Boxes 3 to 6 are Social Security and Medicare wages and tax. Box 12 codes extras, like 401(k) savings.",
+   "file": "05.mp3",
+   "duration": 18.04,
+   "breaks": [
+    2.74,
+    5.1,
+    7.84,
+    13.48
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Twelve checks pass: the W-2 totals match the four quarterly returns exactly.",
+   "file": "06.mp3",
+   "duration": 7.61,
+   "breaks": [
+    1.6
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the draft forms and their workpapers.",
+   "file": "07.mp3",
+   "duration": 3.91,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. 101 draft W-2s report just under $11.2 million of wages in box 1. Five items stay open: personal use of two company pickups to add to pay, 13 cents of Social Security tax to refund, a missing Social Security number, a check on overtime, and the filing itself. A person reviews and e-files by February 1; nothing is filed yet.",
+   "file": "08.mp3",
+   "duration": 27.84,
+   "breaks": [
+    7.9,
+    9.82,
+    21.92,
+    26.18
+   ]
+  }
+ ]
+}

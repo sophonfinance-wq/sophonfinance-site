@@ -1,0 +1,77 @@
+{
+ "demo": "accounting-payroll",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's accounting machine check October's payroll for HANGS Construction against the books and the bank.",
+   "file": "01.mp3",
+   "duration": 8.07,
+   "breaks": []
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it reads both payroll registers, the list of every paycheck.",
+   "file": "02.mp3",
+   "duration": 7.05,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, it ties the pay to the books and to the bank withdrawals. Both agree to the cent.",
+   "file": "03.mp3",
+   "duration": 6.04,
+   "breaks": []
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Payroll taxes check out, and both deposits were on time.",
+   "file": "04.mp3",
+   "duration": 4.55,
+   "breaks": []
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "One required deduction, just over $300, was withheld but never sent to the state.",
+   "file": "05.mp3",
+   "duration": 6.8,
+   "breaks": []
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "One employee who had left was still paid. Another's overtime was paid at the normal rate.",
+   "file": "06.mp3",
+   "duration": 5.85,
+   "breaks": [
+    2.52
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the workpapers and an unsigned memo for the controller, the head of accounting.",
+   "file": "07.mp3",
+   "duration": 6.47,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. October's payroll, about $193,500, ties to the books and the bank. Three exceptions need a person, with three journal entries, corrections worth just over $3,000. Nothing is posted and no payroll is changed until the controller approves.",
+   "file": "08.mp3",
+   "duration": 23.02,
+   "breaks": [
+    9.06,
+    11.62,
+    16.88
+   ]
+  }
+ ]
+}

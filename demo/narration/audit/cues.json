@@ -1,0 +1,96 @@
+{
+ "demo": "audit",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's audit machine. An audit is an independent check of the books.",
+   "file": "01.mp3",
+   "duration": 5.8,
+   "breaks": [
+    2.5
+   ]
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "Materiality, the size of mistake that matters: $12,000.",
+   "file": "02.mp3",
+   "duration": 6.47,
+   "breaks": [
+    3.48
+   ]
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, a sample: thirty of the year's payments, picked at random and checked against their invoices. Twenty-nine agree. One invoice is only a scanned picture, so a person reads it.",
+   "file": "03.mp3",
+   "duration": 13.68,
+   "breaks": [
+    1.52,
+    3.48,
+    6.8,
+    8.54
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Next, unrecorded bills: work done by year end, missing from the books. It finds one, for $2,150.",
+   "file": "04.mp3",
+   "duration": 11.2,
+   "breaks": [
+    1.82,
+    4.06,
+    5.5
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Now it tests all 1,061 journal entries, the adjustments made to the books. Seven show warning signs, like being entered after year end. Three are supported. Two are estimates for the CPA to judge, and two payouts to the owners need their approval date checked.",
+   "file": "05.mp3",
+   "duration": 20.72,
+   "breaks": [
+    3.7,
+    6.52,
+    11.02,
+    12.8
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Next, a confirmation: the bank writes to the auditors directly. Cash ties, and there are no loans.",
+   "file": "06.mp3",
+   "duration": 9.72,
+   "breaks": [
+    2.14,
+    6.06
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it adds up what it found against materiality and writes the workpapers for the CPA.",
+   "file": "07.mp3",
+   "duration": 6.89,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. Known mistakes add up to $2,150, well under materiality. Fourteen items stay open, including two estimates and when two owner payouts were approved. The CPA, a person, decides each one, concludes and signs. The machine gives no opinion.",
+   "file": "08.mp3",
+   "duration": 21.53,
+   "breaks": [
+    7.34,
+    13.8,
+    19
+   ]
+  }
+ ]
+}

@@ -1,0 +1,88 @@
+{
+ "demo": "tax-excise",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-07",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's tax machine prepare October's excise tax return for HANGS General Contracting.",
+   "file": "01.mp3",
+   "duration": 6.85,
+   "breaks": []
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it finds the seven jobs and their permits.",
+   "file": "02.mp3",
+   "duration": 3.66,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, it reads October's books. Excise tax is simply Washington's tax on business sales. The bills to customers, the purchases and the general ledger, the company's main accounting record, all agree.",
+   "file": "03.mp3",
+   "duration": 14.12,
+   "breaks": [
+    2.46,
+    6.72
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Now it checks the state's published rules and tax rates online. All fifteen checks are confirmed, and three questions are left for a person.",
+   "file": "04.mp3",
+   "duration": 9.54,
+   "breaks": [
+    3.82
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Then it works out three taxes. B&O, the business and occupation tax, is charged on total sales. Sales tax uses each job site's rate. Use tax covers supplies bought without sales tax.",
+   "file": "05.mp3",
+   "duration": 17.17,
+   "breaks": [
+    2.52,
+    9.48,
+    13
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Eight checks pass; one invoice charged the wrong rate.",
+   "file": "06.mp3",
+   "duration": 4.55,
+   "breaks": [
+    1.16
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the draft return and its workpapers, the math behind every figure.",
+   "file": "07.mp3",
+   "duration": 6.34,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The draft shows just over $780,000 due for October. Four items stay open. One invoice undercharged sales tax by $284. A customer's reseller permit, which lets it buy without sales tax, is missing. October's books are not yet approved. And a person reviews, signs and files the return by November 25; nothing is filed or paid.",
+   "file": "08.mp3",
+   "duration": 28.85,
+   "breaks": [
+    6.22,
+    8.18,
+    12.9,
+    18.96,
+    26.9
+   ]
+  }
+ ]
+}

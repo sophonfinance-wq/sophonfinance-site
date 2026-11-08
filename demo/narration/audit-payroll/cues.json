@@ -1,0 +1,86 @@
+{
+ "demo": "audit-payroll",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's audit machine check HANGS General Contracting's payroll.",
+   "file": "01.mp3",
+   "duration": 5.28,
+   "breaks": []
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "Materiality, the size of mistake that matters: $350,000.",
+   "file": "02.mp3",
+   "duration": 6.55,
+   "breaks": [
+    1.14,
+    3.64
+   ]
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "It ties the payroll register, the list of every paycheck, to all 2,493 paychecks. One flag: two employees are paid into the same bank account.",
+   "file": "03.mp3",
+   "duration": 13.61,
+   "breaks": [
+    8.08
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "It rebuilds eight sample paychecks. A workers' insurance deduction is slightly too high on overtime.",
+   "file": "04.mp3",
+   "duration": 7.61,
+   "breaks": [
+    2.6
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "The payroll manager entered her own raise with no signed approval. The shared account belongs to a married couple.",
+   "file": "05.mp3",
+   "duration": 7.63,
+   "breaks": [
+    3.96
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "It ties payroll to the books and all four quarterly tax returns. But $22,864 of employer payroll tax for June was never booked in June.",
+   "file": "06.mp3",
+   "duration": 14.2,
+   "breaks": []
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it adds up what it found against materiality and writes the workpapers for the CPA.",
+   "file": "07.mp3",
+   "duration": 6.21,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. Known mistakes add up to just over $25,000, well under materiality, including about $2,500 owed back to the crews. The bigger issue is control: the unapproved raise. Seven items stay open. The CPA, a person, concludes and signs. The machine gives no opinion.",
+   "file": "08.mp3",
+   "duration": 24.16,
+   "breaks": [
+    11.64,
+    14.1,
+    16.28,
+    18.24,
+    21.8
+   ]
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "demo": "tax-1099",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's tax machine prepare Forms 1099-NEC for HANGS.",
+   "file": "01.mp3",
+   "duration": 7.12,
+   "breaks": []
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it checks each vendor's W-9 tax form.",
+   "file": "02.mp3",
+   "duration": 3.96,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, the year's 134 payments, about $2.3 million. A 1099-NEC reports what each independent contractor was paid.",
+   "file": "03.mp3",
+   "duration": 11.74,
+   "breaks": [
+    5.26
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Now it checks the IRS rules online: all ten confirmed, two questions left for a person.",
+   "file": "04.mp3",
+   "duration": 8.21,
+   "breaks": [
+    2.96,
+    5.22
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Then it sorts every payment, leaving nine contractors. Corporations, materials and card payments are left out. One vendor never gave a tax ID, so 24 percent is held back for the IRS: that's backup withholding.",
+   "file": "05.mp3",
+   "duration": 17.24,
+   "breaks": [
+    3.6,
+    8.5,
+    14.44
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Eight checks pass, with no differences.",
+   "file": "06.mp3",
+   "duration": 2.8,
+   "breaks": []
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the draft forms and their workpapers.",
+   "file": "07.mp3",
+   "duration": 4.33,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. Nine draft forms report $708,088 paid to contractors. Five items stay open, including a tax ID that doesn't match IRS records, $1,344 of withholding never taken, and a worker who may be an employee. A person reviews and e-files by February 1; nothing is filed yet.",
+   "file": "08.mp3",
+   "duration": 29.79,
+   "breaks": [
+    8.8,
+    15.48,
+    23.52
+   ]
+  }
+ ]
+}

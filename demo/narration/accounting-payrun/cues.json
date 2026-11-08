@@ -1,0 +1,85 @@
+{
+ "demo": "accounting-payrun",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's accounting machine prepare this week's supplier payments for HANGS Construction, checking every bill first.",
+   "file": "01.mp3",
+   "duration": 7.53,
+   "breaks": [
+    5.58
+   ]
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it reads the unpaid bills and the cash. About $682,000 is available for suppliers.",
+   "file": "02.mp3",
+   "duration": 7.89,
+   "breaks": [
+    2.88
+   ]
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "It picks the bills due before the next run, and three paid early to earn a discount.",
+   "file": "03.mp3",
+   "duration": 5.4,
+   "breaks": []
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Then it looks for repeats. One bill was entered twice, and one was already paid.",
+   "file": "04.mp3",
+   "duration": 6.34,
+   "breaks": [
+    1.92
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "One supplier's bank details changed by email, and no one called to confirm. That payment waits until someone does.",
+   "file": "05.mp3",
+   "duration": 8.49,
+   "breaks": [
+    5.3
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "A lien waiver is a subcontractor's signed promise not to claim against the property. One is missing, so that bill waits, along with a disputed bill and one that belongs to a sister company.",
+   "file": "06.mp3",
+   "duration": 12.05,
+   "breaks": [
+    4.72
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the workpapers and an approval packet for the controller and the CFO.",
+   "file": "07.mp3",
+   "duration": 5.41,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The proposed batch is just over $136,000: eleven bills in seven payments, leaving about $546,000 above the minimum balance. Four bills are held back and two are not paid at all, including a $14,615 bill entered twice. Nothing is paid until the controller and the CFO approve.",
+   "file": "08.mp3",
+   "duration": 28.95,
+   "breaks": [
+    7.54,
+    14.02,
+    24.32
+   ]
+  }
+ ]
+}

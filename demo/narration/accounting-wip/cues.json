@@ -1,0 +1,89 @@
+{
+ "demo": "accounting-wip",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's accounting machine build the work-in-progress schedule for HANGS Construction: how far along each job is.",
+   "file": "01.mp3",
+   "duration": 9.14,
+   "breaks": [
+    6.18
+   ]
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it reads five contracts and the books. Last month's schedule ties.",
+   "file": "02.mp3",
+   "duration": 5.89,
+   "breaks": [
+    3.14
+   ]
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "A change order changes a contract's price. One the owner hasn't signed is left out.",
+   "file": "03.mp3",
+   "duration": 6.02,
+   "breaks": [
+    2.48
+   ]
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Next, it checks every cost against its job's budget. An $18,750 framing bill was charged to the wrong job.",
+   "file": "04.mp3",
+   "duration": 9.63,
+   "breaks": [
+    3.7
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Next, how complete each job is. One estimate is out of date, and one job now shows a loss.",
+   "file": "05.mp3",
+   "duration": 7.59,
+   "breaks": [
+    2.8
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Earned revenue follows how complete each job is. Billing ahead of that is overbilling; behind it, underbilling. The whole expected loss is recorded now.",
+   "file": "06.mp3",
+   "duration": 11.72,
+   "breaks": [
+    3.36,
+    6.1,
+    8.24
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the workpapers and an unsigned memo for the controller, the head of accounting.",
+   "file": "07.mp3",
+   "duration": 6.47,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. Earned revenue is about $2.42 million against $2.38 million billed. Three journal entries, corrections to the books, are proposed, including a billing adjustment of about $96,100. Four items need a person. Nothing is posted until the controller approves.",
+   "file": "08.mp3",
+   "duration": 29.25,
+   "breaks": [
+    10.68,
+    21.74,
+    25.4
+   ]
+  }
+ ]
+}
