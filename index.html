@@ -793,9 +793,9 @@ footer a:hover{ color:var(--blue); }
           </div>
         </div>
         <div class="tabs" role="tablist" aria-label="Services">
-          <button class="tab tab-tax" role="tab" aria-selected="true" aria-controls="panel" id="t0"><span class="ti" aria-hidden="true"><img src="assets/icons/tax.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Tax<span class="lg">&nbsp;services</span></b></span></button>
-          <button class="tab tab-acc" role="tab" aria-selected="false" aria-controls="panel" id="t1" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/acc.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Accounting<span class="lg">&nbsp;services</span></b></span></button>
-          <button class="tab tab-aud" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.jpg" alt="" width="72" height="72"></span><span class="tl"><b>Audit<span class="lg">&nbsp;services</span></b></span></button>
+          <button class="tab tab-tax" role="tab" aria-selected="true" aria-controls="panel" id="t0"><span class="ti" aria-hidden="true"><img src="assets/icons/tax.svg" alt="" width="72" height="72"></span><span class="tl"><b>Tax<span class="lg">&nbsp;services</span></b></span></button>
+          <button class="tab tab-acc" role="tab" aria-selected="false" aria-controls="panel" id="t1" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/acc.svg" alt="" width="72" height="72"></span><span class="tl"><b>Accounting<span class="lg">&nbsp;services</span></b></span></button>
+          <button class="tab tab-aud" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.svg" alt="" width="72" height="72"></span><span class="tl"><b>Audit<span class="lg">&nbsp;services</span></b></span></button>
         </div>
         <p class="sd-hint demo-only" id="sdHint"><i aria-hidden="true"></i>Tap a service to watch how it works, then run the real machine yourself.</p>
         <div class="svc-demos demo-only" id="svcDemos" aria-hidden="true">
@@ -840,7 +840,7 @@ footer a:hover{ color:var(--blue); }
         <iframe id="demoFrame" title="F1 Finance machine demo" allow="fullscreen"></iframe>
         <div class="demo-cover" id="demoCover">
           <div class="demo-card">
-            <span class="demo-ic" aria-hidden="true"><img id="demoIc" src="assets/icons/tax.jpg" alt="" width="72" height="72"></span>
+            <span class="demo-ic" aria-hidden="true"><img id="demoIc" src="assets/icons/tax.svg" alt="" width="72" height="72"></span>
             <b id="demoName">Tax Machine</b>
             <span id="demoSub">Prepares the quarterly payroll tax return, Form 941.</span>
             <button class="demo-go" id="demoGo" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>Start the demo</button>
@@ -1071,7 +1071,7 @@ footer a:hover{ color:var(--blue); }
   v.addEventListener('volumechange', function(){ snd.hidden = !v.muted; });
   // Try the machines
   var DEMO = {
-    tax:        { name:'Tax Machine',        ic:'assets/icons/tax.jpg', ready:true, pick:0, subjects:[
+    tax:        { name:'Tax Machine',        ic:'assets/icons/tax.svg', ready:true, pick:0, subjects:[
       { id:'tax-941',            label:'Form 941',            note:'Quarterly payroll',  sub:'Prepares the quarterly payroll tax return, Form 941.' },
       { id:'tax-excise', label:'Sales & B&O tax', note:'WA excise, monthly', sub:'Prepares the Washington excise return: B&O, sales and use tax.' },
       { id:'tax-ui', label:'Unemployment', note:'WA ESD, quarterly', sub:'Prepares the Washington quarterly unemployment insurance report.' },
@@ -1085,7 +1085,7 @@ footer a:hover{ color:var(--blue); }
       { id:'tax-1040', label:'Form 1040', note:'Owner\'s personal return', sub:'Prepares the owner\'s 2025 personal return: wages and dividends from the company, itemized vs standard deduction, and the refund.' },
       { id:'tax-notice', label:'IRS notice', note:'Penalty & notice response', sub:'Reads an IRS penalty notice, rebuilds the deposit schedule, finds the right penalty and drafts the reply with the relief request.' },
       { id:'tax-estimates', label:'Estimated tax', note:'Quarterly payments', sub:'Plans the corporation\'s quarterly estimated tax: safe harbor, annualized method, penalty preview and the remaining payments.' } ] },
-    accounting: { name:'Accounting Machine', ic:'assets/icons/acc.jpg', ready:true, pick:0, subjects:[
+    accounting: { name:'Accounting Machine', ic:'assets/icons/acc.svg', ready:true, pick:0, subjects:[
       { id:'accounting',         label:'AP review',           note:'Vendor invoices',    sub:'Reviews a month of vendor invoices.' },
       { id:'accounting-bankrec', label:'Bank reconciliation', note:'Month end',          sub:'Reconciles a month of bank activity to the books.' },
       { id:'accounting-close', label:'Month-end close', note:'Accruals and entries', sub:'Closes the month: accruals, recurring and adjusting entries, and the checklist.' },
@@ -1099,7 +1099,7 @@ footer a:hover{ color:var(--blue); }
       { id:'accounting-cashflow', label:'13-week cash', note:'Cash forecast', sub:'Forecasts 13 weeks of cash from AR, AP, payroll and draws, finds the low week and checks the minimum-cash and covenant limits.' },
       { id:'accounting-budget', label:'Budget vs actual', note:'Variance analysis', sub:'Compares October and year to date with the budget by department and job, traces every big variance to the ledger, and writes CFO-ready commentary and a reforecast.' },
       { id:'accounting-billing', label:'Progress billing', note:'Pay apps & retainage', sub:'Builds the monthly pay applications on two commercial jobs: schedule of values, retainage, signed change orders only, lien waivers and invoices, tied to WIP.' } ] },
-    audit:      { name:'Audit Machine',      ic:'assets/icons/aud.jpg', ready:true, pick:0, subjects:[
+    audit:      { name:'Audit Machine',      ic:'assets/icons/aud.svg', ready:true, pick:0, subjects:[
       { id:'audit',              label:'Year-end audit',      note:'Full engagement',    sub:'Builds year-end audit workpapers.' },
       { id:'audit-cash',         label:'Cash audit',          note:'Bank confirmations', sub:'Tests cash with bank confirmations and reconciliations.' },
       { id:'audit-review', label:'Quarterly review', note:'Review engagement', sub:'Reviews the quarter: analytics, inquiries and covenants, with findings for the CPA.' },
