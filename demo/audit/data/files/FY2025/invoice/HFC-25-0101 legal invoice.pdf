@@ -1,74 +1,155 @@
 %PDF-1.3
-%“Œ‹ž ReportLab Generated PDF document (opensource)
+%âãÏÓ
 1 0 obj
 <<
-/F1 2 0 R /F2 3 0 R
+/PageMode /UseNone
+/Pages 2 0 R
+/Type /Catalog
 >>
 endobj
 2 0 obj
 <<
-/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+/Count 1
+/Kids [ 3 0 R ]
+/Type /Pages
 >>
 endobj
 3 0 obj
 <<
-/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+/Contents 4 0 R
+/MediaBox [ 0 0 612 792 ]
+/Parent 2 0 R
+/Resources <<
+/Font 5 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
 >>
 endobj
 4 0 obj
 <<
-/Contents 8 0 R /MediaBox [ 0 0 612 792 ] /Parent 7 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 /Trans <<
-
->> 
-  /Type /Page
+/Length 2606
 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 19 Tf 22.8 TL ET
+BT 1 0 0 1 48 748 Tm (HARBOR FIELD COUNSEL) Tj T* ET
+BT /F1 8 Tf 9.6 TL ET
+BT 1 0 0 1 48 731 Tm (Legal and project advisory services) Tj T* ET
+BT 1 0 0 1 48 717 Tm (billing@harborfield.example) Tj T* ET
+BT 1 0 0 1 48 681 Tm (HANGS Construction Services LLC) Tj T* ET
+BT 1 0 0 1 512.296 681 Tm (June 20, 2025) Tj T* ET
+BT /F2 9 Tf 10.8 TL ET
+BT 1 0 0 1 435.47 660 Tm (Invoice Number: HFC-25-0101) Tj T* ET
+BT 1 0 0 1 48 637 Tm (RE: HANGS Construction project close-out services) Tj T* ET
+BT 1 0 0 1 48 604 Tm (Time Details) Tj T* ET
+BT /F2 8 Tf 9.6 TL ET
+BT 1 0 0 1 48 583 Tm (Date) Tj T* ET
+BT 1 0 0 1 103 583 Tm (Staff) Tj T* ET
+BT 1 0 0 1 153 583 Tm (Description) Tj T* ET
+BT 1 0 0 1 394.888 583 Tm (Hours) Tj T* ET
+BT 1 0 0 1 446.664 583 Tm (Rate) Tj T* ET
+BT 1 0 0 1 532.784 583 Tm (Amount) Tj T* ET
+n 48 578 m 563 578 l S
+BT /F1 8 Tf 9.6 TL ET
+BT 1 0 0 1 48 558 Tm (06-04-2025) Tj T* ET
+BT 1 0 0 1 108 558 Tm (ML) Tj T* ET
+BT 1 0 0 1 153 558 Tm (Review project close-out agreement and related schedules.) Tj T* ET
+BT 1 0 0 1 397.984 558 Tm (12.00) Tj T* ET
+BT 1 0 0 1 435.088 558 Tm ($350.00) Tj T* ET
+BT 1 0 0 1 527.416 558 Tm ($4,200.00) Tj T* ET
+BT /F1 8 Tf 9.6 TL ET
+BT 1 0 0 1 48 504 Tm (06-10-2025) Tj T* ET
+BT 1 0 0 1 108 504 Tm (JP) Tj T* ET
+BT 1 0 0 1 153 504 Tm (Review project contracts and prepare title response.) Tj T* ET
+BT 1 0 0 1 397.984 504 Tm (16.00) Tj T* ET
+BT 1 0 0 1 435.088 504 Tm ($300.00) Tj T* ET
+BT 1 0 0 1 527.416 504 Tm ($4,800.00) Tj T* ET
+BT /F1 8 Tf 9.6 TL ET
+BT 1 0 0 1 48 450 Tm (06-17-2025) Tj T* ET
+BT 1 0 0 1 108 450 Tm (ML) Tj T* ET
+BT 1 0 0 1 153 450 Tm (Coordinate close-out documents and completion requirements.) Tj T* ET
+BT 1 0 0 1 397.984 450 Tm (12.00) Tj T* ET
+BT 1 0 0 1 435.088 450 Tm ($350.00) Tj T* ET
+BT 1 0 0 1 527.416 450 Tm ($4,200.00) Tj T* ET
+BT /F1 8 Tf 9.6 TL ET
+BT 1 0 0 1 48 396 Tm (06-20-2025) Tj T* ET
+BT 1 0 0 1 108 396 Tm (JP) Tj T* ET
+BT 1 0 0 1 153 396 Tm (Final project close-out review and supporting correspondence.) Tj T* ET
+BT 1 0 0 1 402.432 396 Tm (6.00) Tj T* ET
+BT 1 0 0 1 435.088 396 Tm ($300.00) Tj T* ET
+BT 1 0 0 1 527.416 396 Tm ($1,800.00) Tj T* ET
+n 390 315 m 563 315 l S
+BT /F2 10 Tf 12 TL ET
+BT 1 0 0 1 390 295 Tm (TOTAL DUE) Tj T* ET
+BT 1 0 0 1 512.96 295 Tm ($15,000.00) Tj T* ET
+BT /F1 8 Tf 9.6 TL ET
+BT 1 0 0 1 48 260 Tm (Reference: HFC-25-0101. No actual payment instructions are included.) Tj T* ET
+BT /F1 7 Tf 8.4 TL ET
+BT 1 0 0 1 48 30 Tm (FICTIONAL SAMPLE - NOT FOR FILING OR PAYMENT) Tj T* ET
+BT 1 0 0 1 527.195 30 Tm (Page 1 of 1) Tj T* ET
+ 
+
+endstream
 endobj
 5 0 obj
 <<
-/PageMode /UseNone /Pages 7 0 R /Type /Catalog
+/F1 6 0 R
+/F2 7 0 R
 >>
 endobj
 6 0 obj
 <<
-/Author (Harbor Field Counsel) /CreationDate (D:20261104163345-08'00') /Creator (anonymous) /Keywords () /ModDate (D:20261104163345-08'00') /Producer (ReportLab PDF Library - \(opensource\)) 
-  /Subject (unspecified) /Title (HFC-25-0101 fictional invoice) /Trapped /False
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 7 0 obj
 <<
-/Count 1 /Kids [ 4 0 R ] /Type /Pages
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 8 0 obj
 <<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 1021
+/Author (Harbor Field Counsel)
+/CreationDate (D\07220261104163345\05508\04700\047)
+/Creator (anonymous)
+/Keywords ()
+/ModDate (D\07220261104163345\05508\04700\047)
+/Producer (ReportLab PDF Library \055 \050opensource\051)
+/Subject (unspecified)
+/Title (HFC\05525\0550101 fictional invoice)
+/Trapped /False
 >>
-stream
-Gat=j966RV'SZ;W'mGd/gTd_'T'iV=+,McVHYg"OP(;n\!TXT,Rt"cgo5KRASrC]27Qqf3594$\!Jq>Q^O?T1kJHsR##)hg!nJ%p>T7;CN>s<r8&[G2MUd[GdR(:U'ONeR0+[+9h/Wtr`QXpjAGPS.B(f;Fhn]1kRpiN.YE<:a[o0K<ZK]Ym^e4a]F7r*%%(tL0VMr8W9)0Y&C&66Qe,u2gj!BYY0\QDPp%SpTgQ4mU6N;B%5,+VB)AXquEUGb>@7cpXgs8<Q^m#mR`:bo[19ajC*HXsh1,<U6a#p%\cp2u8r]^_k&h?FaZ)YC0R:$k&)D.*S'1IP;a"N\WJ;<r28G"(B#^=mp*]^<768.X2:.hIpq@Q@(V1,KMd\NEQ``0ap]J)t4-!ab]h,:)geB9n=!$emPD)-%Am?$RlCe@WuL\kP?cAU58VH?kTqZG#e=.,MN(ku'af:<GPX$e\E7QHK3Sn'5&6l'TB&;+l!ng]79<LZ8*O8B5$6_k1Gd:luGg*cb!WD^("LQMN2OFh6?]cF"MNYHi#dmt/o5jH,4+HL39FHJGG;$!A\5boKq%^I;)aD.=@<n1'F==9u?@A=EM"+o7tIZS,O"\=UK5aL-ENiam!QC8Fs]nKROER2tZZ=2.oa!kP-(/]W<h2<mPqZrM5f]X\b8oN6986Q-HYr8gM6Vu6/:!i5M=D9EWZ-l;_j$B&gPgp?SR%G0$4AtfSdALR9jn*a<Egb4e+BJ2;"L4+r'uX;RaWRVC9IMWY^*$J190oX9F+H#[[;p_TB7Ve^pNsod@ao&g(rh(QITIRJ6ki?Ao`Y55XHZf*YnlAC*#%iq!Yt$4a"4CYN[`gNO?>'cRr<9c)<o2ZC$CXpQp/j-cY)bRQ229^"8&#S,iu;DVH_1NS0(L:"WR`@+6:DpGjhr?L<Z3@#e4OY@H'e&5QdiG[961?S\BcJ7d2o(HnfUW91K].)*b7i)%=>a\hKK>?hV@I#B@-is*C+oDYKT-!MVDUGrmKFR:(E:LRWedgMWS~>endstream
 endobj
 xref
 0 9
 0000000000 65535 f 
-0000000061 00000 n 
-0000000102 00000 n 
-0000000209 00000 n 
-0000000321 00000 n 
-0000000514 00000 n 
-0000000582 00000 n 
-0000000875 00000 n 
-0000000934 00000 n 
+0000000015 00000 n 
+0000000083 00000 n 
+0000000142 00000 n 
+0000000331 00000 n 
+0000002989 00000 n 
+0000003030 00000 n 
+0000003137 00000 n 
+0000003249 00000 n 
 trailer
 <<
-/ID 
-[<3fb71a6e245708481e1c434815149157><3fb71a6e245708481e1c434815149157>]
-% ReportLab generated PDF document -- digest (opensource)
-
-/Info 6 0 R
-/Root 5 0 R
 /Size 9
+/Root 1 0 R
+/Info 8 0 R
+/ID [ <3fb71a6e245708481e1c434815149157> <3fb71a6e245708481e1c434815149157> ]
 >>
 startxref
-2046
+3576
 %%EOF
