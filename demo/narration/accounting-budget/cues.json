@@ -1,0 +1,123 @@
+{
+ "demo": "accounting-budget",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "style": "v2",
+ "cues": [
+  {
+   "id": "01-start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's accounting machine compare October's results to budget for HANGS Construction.",
+   "file": "01.mp3",
+   "duration": 6.93,
+   "breaks": []
+  },
+  {
+   "id": "02-stage1",
+   "trigger": "stage:1",
+   "text": "First it reads the closed books by department, and the budget the board approved.",
+   "file": "02.mp3",
+   "duration": 4.81,
+   "breaks": []
+  },
+  {
+   "id": "03-stage2",
+   "trigger": "stage:2",
+   "text": "Next it compares every department to its budget.",
+   "file": "03.mp3",
+   "duration": 3.27,
+   "breaks": []
+  },
+  {
+   "id": "04-stage3",
+   "trigger": "stage:3",
+   "text": "October came in about $168,000 below budget.",
+   "file": "04.mp3",
+   "duration": 4.49,
+   "breaks": []
+  },
+  {
+   "id": "05-stage3-5.8",
+   "trigger": "stage:3@5.8",
+   "text": "Then it resizes the budget to the work actually done.",
+   "file": "05.mp3",
+   "duration": 3.75,
+   "breaks": []
+  },
+  {
+   "id": "06-stage4",
+   "trigger": "stage:4",
+   "text": "Now it drills into the biggest variances, line by line in the ledger.",
+   "file": "06.mp3",
+   "duration": 4.56,
+   "breaks": []
+  },
+  {
+   "id": "07-stage4-6",
+   "trigger": "stage:4@6",
+   "text": "It tests each manager's explanation against what the ledger shows.",
+   "file": "07.mp3",
+   "duration": 4.28,
+   "breaks": []
+  },
+  {
+   "id": "08-stage4-12.6",
+   "trigger": "stage:4@12.6",
+   "text": "Most of the shortfall is one job whose costs ran far over plan.",
+   "file": "08.mp3",
+   "duration": 4.92,
+   "breaks": []
+  },
+  {
+   "id": "09-stage4-18.2",
+   "trigger": "stage:4@18.2",
+   "text": "A $16,800 software plan for next year was expensed all at once in October.",
+   "file": "09.mp3",
+   "duration": 7.21,
+   "breaks": []
+  },
+  {
+   "id": "10-stage5",
+   "trigger": "stage:5",
+   "text": "Then it reforecasts the rest of the year on signed work only.",
+   "file": "10.mp3",
+   "duration": 4.03,
+   "breaks": []
+  },
+  {
+   "id": "11-stage5-6.5",
+   "trigger": "stage:5@6.5",
+   "text": "An unsigned $640,000 job is shown as possible upside, not counted.",
+   "file": "11.mp3",
+   "duration": 8.14,
+   "breaks": []
+  },
+  {
+   "id": "12-stage6",
+   "trigger": "stage:6",
+   "text": "The full year now looks like a loss of about $154,000, against a budgeted profit.",
+   "file": "12.mp3",
+   "duration": 6.92,
+   "breaks": []
+  },
+  {
+   "id": "13-end",
+   "trigger": "end",
+   "text": "All done. The board pack is drafted, with commentary on every large variance and four items to settle first. Nothing was posted or sent; the CFO reviews and signs.",
+   "file": "13.mp3",
+   "duration": 12.45,
+   "breaks": [
+    7.81,
+    10.08
+   ]
+  },
+  {
+   "id": "14-skip",
+   "trigger": "skip",
+   "text": "Jumping to the results. A person still reviews every item before anything is posted, paid or sent.",
+   "file": "14.mp3",
+   "duration": 7.2,
+   "breaks": []
+  }
+ ]
+}

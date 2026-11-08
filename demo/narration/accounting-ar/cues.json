@@ -2,86 +2,116 @@
  "demo": "accounting-ar",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "start",
+   "id": "01-start",
    "trigger": "start",
-   "text": "Watch F1 Finance's accounting machine review October's receivables for HANGS Construction: the money customers owe the company.",
+   "text": "Watch F1 Finance's accounting machine review October's receivables for HANGS Construction.",
    "file": "01.mp3",
-   "duration": 8.53,
-   "breaks": [
-    5.8
-   ]
-  },
-  {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, it reads the aging: unpaid customer bills, by age. It ties to the books.",
-   "file": "02.mp3",
-   "duration": 7.08,
-   "breaks": [
-    1.8,
-    5.1
-   ]
-  },
-  {
-   "id": "stage-2",
-   "trigger": "stage:2",
-   "text": "Next, October's payments. One customer's check, about $32,400, was never matched to its bill.",
-   "file": "03.mp3",
-   "duration": 9.11,
-   "breaks": [
-    1.7
-   ]
-  },
-  {
-   "id": "stage-3",
-   "trigger": "stage:3",
-   "text": "Retainage, money held back until a job is done, checks out. But a signed change order, $15,780 of extra work, was never billed.",
-   "file": "04.mp3",
-   "duration": 12.04,
-   "breaks": [
-    4.48
-   ]
-  },
-  {
-   "id": "stage-4",
-   "trigger": "stage:4",
-   "text": "A promised credit was never issued. One customer is over 90 days late.",
-   "file": "05.mp3",
-   "duration": 5.26,
-   "breaks": [
-    2.1
-   ]
-  },
-  {
-   "id": "stage-5",
-   "trigger": "stage:5",
-   "text": "The allowance, a reserve for bills that may go unpaid, is about $11,000 short. Three letters are drafted.",
-   "file": "06.mp3",
-   "duration": 8.33,
-   "breaks": [
-    5.88
-   ]
-  },
-  {
-   "id": "stage-6",
-   "trigger": "stage:6",
-   "text": "Last, it writes the workpapers and an unsigned memo for the controller, the head of accounting.",
-   "file": "07.mp3",
-   "duration": 6.47,
+   "duration": 6.87,
    "breaks": []
   },
   {
-   "id": "end",
-   "trigger": "end",
-   "text": "All done. It proposes four journal entries, corrections to the books worth about $65,700. Eight items stay open for a person to decide, and three letters and a call script are drafted. Nothing is posted or sent until the controller approves.",
-   "file": "08.mp3",
-   "duration": 18.57,
+   "id": "02-stage1",
+   "trigger": "stage:1",
+   "text": "Receivables are the money customers owe. First it ties the open invoices and retainage to the ledger.",
+   "file": "02.mp3",
+   "duration": 7.31,
    "breaks": [
-    7.78,
-    14.86
+    2.66
    ]
+  },
+  {
+   "id": "03-stage2",
+   "trigger": "stage:2",
+   "text": "Next it applies October's customer payments to their invoices.",
+   "file": "03.mp3",
+   "duration": 3.79,
+   "breaks": []
+  },
+  {
+   "id": "04-stage2-6.0",
+   "trigger": "stage:2@6.0",
+   "text": "One check, about $32,000, sat unapplied.",
+   "file": "04.mp3",
+   "duration": 4.79,
+   "breaks": []
+  },
+  {
+   "id": "05-stage3",
+   "trigger": "stage:3",
+   "text": "Then retainage: the part of each bill a customer holds back until the job is done.",
+   "file": "05.mp3",
+   "duration": 4.69,
+   "breaks": []
+  },
+  {
+   "id": "06-stage3-7",
+   "trigger": "stage:3@7",
+   "text": "It recomputes retainage on six jobs and checks the latest pay application.",
+   "file": "06.mp3",
+   "duration": 5.02,
+   "breaks": []
+  },
+  {
+   "id": "07-stage3-14.6",
+   "trigger": "stage:3@14.6",
+   "text": "A change order went unbilled.",
+   "file": "07.mp3",
+   "duration": 2.12,
+   "breaks": []
+  },
+  {
+   "id": "08-stage4",
+   "trigger": "stage:4",
+   "text": "Now credits and collections.",
+   "file": "08.mp3",
+   "duration": 1.97,
+   "breaks": []
+  },
+  {
+   "id": "09-stage4-5.2",
+   "trigger": "stage:4@5.2",
+   "text": "An agreed credit was never issued.",
+   "file": "09.mp3",
+   "duration": 2.38,
+   "breaks": []
+  },
+  {
+   "id": "10-stage5-0.9",
+   "trigger": "stage:5@0.9",
+   "text": "One customer is past ninety days, owing about $48,000.",
+   "file": "10.mp3",
+   "duration": 6.45,
+   "breaks": []
+  },
+  {
+   "id": "11-stage6",
+   "trigger": "stage:6",
+   "text": "Three reminder letters are drafted but not sent, and the allowance for bad debts is raised to policy.",
+   "file": "11.mp3",
+   "duration": 6.62,
+   "breaks": []
+  },
+  {
+   "id": "12-end",
+   "trigger": "end",
+   "text": "All done. Corrected receivables are about $451,000, with four entries proposed and five exceptions. Nothing was posted or sent; the controller approves every entry and letter.",
+   "file": "12.mp3",
+   "duration": 14.11,
+   "breaks": [
+    8.6,
+    10.89
+   ]
+  },
+  {
+   "id": "13-skip",
+   "trigger": "skip",
+   "text": "Jumping to the results. A person still reviews every item before anything is posted, paid or sent.",
+   "file": "13.mp3",
+   "duration": 7.2,
+   "breaks": []
   }
  ]
 }

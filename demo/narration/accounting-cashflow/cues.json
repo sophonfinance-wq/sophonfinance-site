@@ -2,85 +2,130 @@
  "demo": "accounting-cashflow",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "start",
+   "id": "01-start",
    "trigger": "start",
-   "text": "Watch F1 Finance's accounting machine forecast the next 13 weeks of cash for HANGS Construction.",
+   "text": "Watch F1 Finance's accounting machine build HANGS Construction's thirteen-week cash forecast.",
    "file": "01.mp3",
-   "duration": 6.83,
+   "duration": 6.15,
    "breaks": []
   },
   {
-   "id": "stage-1",
+   "id": "02-stage1",
    "trigger": "stage:1",
-   "text": "First, it starts from the reconciled bank balance: just over $1,029,000.",
+   "text": "It starts from the reconciled bank balance, and checks last week's forecast against the bank.",
    "file": "02.mp3",
-   "duration": 7.89,
+   "duration": 5.65,
    "breaks": []
   },
   {
-   "id": "stage-2",
+   "id": "03-stage2",
    "trigger": "stage:2",
-   "text": "Next, the bills due in each weekly payment run, and seven payrolls.",
+   "text": "Next it schedules the payments: this week's supplier batch, every other open bill, and seven payrolls.",
    "file": "03.mp3",
-   "duration": 6.01,
+   "duration": 8.13,
    "breaks": []
   },
   {
-   "id": "stage-4",
-   "trigger": "stage:4",
-   "text": "Then building costs, loan payments and rent. A $552,000 steel bill is due in December, not January; it uses the earlier date.",
-   "file": "05.mp3",
-   "duration": 12.79,
-   "breaks": [
-    3.84,
-    10.56
-   ]
-  },
-  {
-   "id": "stage-5",
-   "trigger": "stage:5",
-   "text": "The lowest week, starting December 7, falls about $40,400 below the company's minimum. The lender's covenant, its cash limit, is still met.",
-   "file": "06.mp3",
-   "duration": 11.38,
-   "breaks": [
-    6.9
-   ]
-  },
-  {
-   "id": "stage-6",
-   "trigger": "stage:6",
-   "text": "Last, it writes the workpapers and an unsigned memo for the controller, the head of accounting.",
-   "file": "07.mp3",
-   "duration": 6.47,
-   "breaks": []
-  },
-  {
-   "id": "end",
-   "trigger": "end",
-   "text": "All done. Cash ends the 13 weeks at about $1,485,000. For the low week in December, a person chooses: delay a $94,800 loader, or draw on the construction loan. Two planned loan draws, about $764,000, must be confirmed. Five items are open. Nothing is paid, posted or drawn until the controller approves.",
-   "file": "08.mp3",
-   "duration": 28.7,
-   "breaks": [
-    6.56,
-    15.76,
-    21.88,
-    23.88
-   ]
-  }
- ],
- "parked": [
-  {
-   "id": "stage-3",
-   "trigger": "stage:3",
-   "text": "Then the money coming in: property sales with signed contracts, and construction loan draws. One sale has no signed contract, so it's left out.",
+   "id": "04-stage2-8.5",
+   "trigger": "stage:2@8.5",
+   "text": "Each bill lands in the run on or before its due date.",
    "file": "04.mp3",
-   "duration": 11.44,
+   "duration": 3.46,
+   "breaks": []
+  },
+  {
+   "id": "05-stage3",
+   "trigger": "stage:3",
+   "text": "Then receipts: contract payments count only with a signed contract.",
+   "file": "05.mp3",
+   "duration": 4.67,
+   "breaks": []
+  },
+  {
+   "id": "06-stage3-6",
+   "trigger": "stage:3@6",
+   "text": "It also adds the approved construction loan draws.",
+   "file": "06.mp3",
+   "duration": 3.57,
+   "breaks": []
+  },
+  {
+   "id": "07-stage4",
+   "trigger": "stage:4",
+   "text": "A site with no signed contract stays out.",
+   "file": "07.mp3",
+   "duration": 2.65,
+   "breaks": []
+  },
+  {
+   "id": "08-stage4-2.7",
+   "trigger": "stage:4@2.7",
+   "text": "Then construction costs, loan interest and rent.",
+   "file": "08.mp3",
+   "duration": 4.03,
+   "breaks": []
+  },
+  {
+   "id": "09-stage4-6.7",
+   "trigger": "stage:4@6.7",
+   "text": "The steel order, about $552,000, is due in December.",
+   "file": "09.mp3",
+   "duration": 6.84,
+   "breaks": []
+  },
+  {
+   "id": "10-stage5",
+   "trigger": "stage:5",
+   "text": "Now it rolls all thirteen weeks forward.",
+   "file": "10.mp3",
+   "duration": 3.36,
+   "breaks": []
+  },
+  {
+   "id": "11-stage5-3.9",
+   "trigger": "stage:5@3.9",
+   "text": "The lowest week, in early December, ends about $40,000 below the minimum balance.",
+   "file": "11.mp3",
+   "duration": 6.38,
+   "breaks": []
+  },
+  {
+   "id": "12-stage5-10.8",
+   "trigger": "stage:5@10.8",
+   "text": "It offers two ways to fix it.",
+   "file": "12.mp3",
+   "duration": 1.69,
+   "breaks": []
+  },
+  {
+   "id": "13-stage6-1.0",
+   "trigger": "stage:6@1.0",
+   "text": "Week thirteen ends near $1.48 million, with four flags for a person to decide.",
+   "file": "13.mp3",
+   "duration": 7.02,
+   "breaks": []
+  },
+  {
+   "id": "14-end",
+   "trigger": "end",
+   "text": "All done. The forecast is ready, with the lowest week flagged below the minimum. Nothing was paid, posted or drawn; the controller decides each flag and approves.",
+   "file": "14.mp3",
+   "duration": 14.36,
    "breaks": [
-    6.52
-   ],
-   "why": "mentions old company/sale wording; re-take needed"
+    3.74,
+    7
+   ]
+  },
+  {
+   "id": "15-skip",
+   "trigger": "skip",
+   "text": "Jumping to the results. A person still reviews every item before anything is posted, paid or sent.",
+   "file": "15.mp3",
+   "duration": 7.2,
+   "breaks": []
   }
  ]
 }

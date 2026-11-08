@@ -2,85 +2,106 @@
  "demo": "accounting-cards",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "start",
+   "id": "01-start",
    "trigger": "start",
-   "text": "Watch F1 Finance's accounting machine check October's company card statement for HANGS Construction, charge by charge.",
+   "text": "Watch F1 Finance's accounting machine reconcile the company card statement for HANGS Construction.",
    "file": "01.mp3",
-   "duration": 9.11,
-   "breaks": [
-    2.88
-   ]
+   "duration": 6.6,
+   "breaks": []
   },
   {
-   "id": "stage-1",
+   "id": "02-stage1",
    "trigger": "stage:1",
-   "text": "First, it reads the statement and the books: 21 charges on four cards.",
+   "text": "First it checks that the statement adds up, card by card, and ties last month's payment to the ledger.",
    "file": "02.mp3",
-   "duration": 6.55,
-   "breaks": [
-    2.98
-   ]
+   "duration": 6.16,
+   "breaks": []
   },
   {
-   "id": "stage-2",
+   "id": "03-stage2",
    "trigger": "stage:2",
-   "text": "Next, it matches each charge to its receipt. One was charged twice, and a hotel stay over $400 has no receipt.",
+   "text": "Next it matches every charge to its expense line and its receipt.",
    "file": "03.mp3",
-   "duration": 10.09,
-   "breaks": [
-    3.42
-   ]
+   "duration": 4.29,
+   "breaks": []
   },
   {
-   "id": "stage-3",
-   "trigger": "stage:3",
-   "text": "One charge is personal: groceries the employee will repay. And a software subscription renewed though nobody approved it.",
+   "id": "04-stage2-9.4",
+   "trigger": "stage:2@9.4",
+   "text": "One charge went through twice, and a hotel bill has no receipt.",
    "file": "04.mp3",
-   "duration": 9.17,
-   "breaks": [
-    1.68,
-    4.28
-   ]
+   "duration": 4.94,
+   "breaks": []
   },
   {
-   "id": "stage-4",
-   "trigger": "stage:4",
-   "text": "One charge belongs to a job. And use tax, sales tax the seller didn't charge, is due on a tools order.",
+   "id": "05-stage3",
+   "trigger": "stage:3",
+   "text": "Then personal charges and subscriptions.",
    "file": "05.mp3",
-   "duration": 9.21,
+   "duration": 2.72,
    "breaks": []
   },
   {
-   "id": "stage-5",
-   "trigger": "stage:5",
-   "text": "A journal entry is a correction to the books. It proposes three, and drafts five requests, none sent.",
+   "id": "06-stage3-5.5",
+   "trigger": "stage:3@5.5",
+   "text": "A grocery run was personal.",
    "file": "06.mp3",
-   "duration": 7.48,
-   "breaks": [
-    2.52
-   ]
-  },
-  {
-   "id": "stage-6",
-   "trigger": "stage:6",
-   "text": "Last, it writes the workpapers and an unsigned memo for the controller, the head of accounting.",
-   "file": "07.mp3",
-   "duration": 6.47,
+   "duration": 2.15,
    "breaks": []
   },
   {
-   "id": "end",
-   "trigger": "end",
-   "text": "All done. The whole statement, just over $8,300, is coded to the cent. About $1,600 is held for a decision. Seven items stay open, and five requests are drafted for a person to send. Nothing is posted or sent until the controller approves.",
+   "id": "07-stage3-7.9",
+   "trigger": "stage:3@7.9",
+   "text": "And a software renewal was never approved.",
+   "file": "07.mp3",
+   "duration": 3.17,
+   "breaks": []
+  },
+  {
+   "id": "08-stage4",
+   "trigger": "stage:4",
+   "text": "Next it codes each charge by what was bought, and catches use tax: tax owed on goods shipped from out of state.",
    "file": "08.mp3",
-   "duration": 24.31,
+   "duration": 7.47,
+   "breaks": []
+  },
+  {
+   "id": "09-stage5",
+   "trigger": "stage:5",
+   "text": "Then it codes the whole statement to the ledger, and drafts five requests for a person to send.",
+   "file": "09.mp3",
+   "duration": 6.95,
+   "breaks": []
+  },
+  {
+   "id": "10-stage6-1.6",
+   "trigger": "stage:6@1.6",
+   "text": "About $1,600 is held for a decision, until receipts and approvals arrive.",
+   "file": "10.mp3",
+   "duration": 7.26,
+   "breaks": []
+  },
+  {
+   "id": "11-end",
+   "trigger": "end",
+   "text": "All done. The statement ties to the cent, with six exceptions and five requests drafted. Nothing was posted or sent; the controller approves every entry and request.",
+   "file": "11.mp3",
+   "duration": 13.34,
    "breaks": [
-    7.6,
-    12.76,
-    19.48
+    7.23,
+    9.76
    ]
+  },
+  {
+   "id": "12-skip",
+   "trigger": "skip",
+   "text": "Jumping to the results. A person still reviews every item before anything is posted, paid or sent.",
+   "file": "12.mp3",
+   "duration": 7.2,
+   "breaks": []
   }
  ]
 }

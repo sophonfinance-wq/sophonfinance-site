@@ -1,90 +1,117 @@
 {
  "demo": "accounting",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
- "generated": "2026-11-07",
+ "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "start",
+   "id": "01-start",
    "trigger": "start",
-   "text": "Watch F1 Finance's accounting machine review October's bills for HANGS Construction. This is accounts payable: money the company owes its suppliers.",
+   "text": "Watch F1 Finance's accounting machine review October's supplier bills for HANGS Construction.",
    "file": "01.mp3",
-   "duration": 9.81,
-   "breaks": [
-    5.52,
-    7.34
-   ]
-  },
-  {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, it reads five files, from the invoices received to the bills in the books. An invoice is simply a supplier's bill.",
-   "file": "02.mp3",
-   "duration": 8.22,
-   "breaks": [
-    5.08
-   ]
-  },
-  {
-   "id": "stage-2",
-   "trigger": "stage:2",
-   "text": "Next, it matches every invoice to the books. This is called reconciliation. Four mismatches explain the whole $9,532 gap, including one bill entered twice.",
-   "file": "03.mp3",
-   "duration": 12.92,
-   "breaks": [
-    2.86,
-    4.6
-   ]
-  },
-  {
-   "id": "stage-3",
-   "trigger": "stage:3",
-   "text": "An asset is equipment kept for years, and its delivery, setup and tax are part of its cost. Three were booked too low.",
-   "file": "04.mp3",
-   "duration": 9.08,
-   "breaks": [
-    6.72
-   ]
-  },
-  {
-   "id": "stage-4",
-   "trigger": "stage:4",
-   "text": "Then it checks each bill is charged to the right job and account. Two were not.",
-   "file": "05.mp3",
-   "duration": 4.73,
-   "breaks": [
-    3.32
-   ]
-  },
-  {
-   "id": "stage-5",
-   "trigger": "stage:5",
-   "text": "Next: is each bill in the right company, approved by the right person, with the vendor's W-9 tax form on file? Four need a different approver.",
-   "file": "06.mp3",
-   "duration": 10.26,
-   "breaks": [
-    7.92
-   ]
-  },
-  {
-   "id": "stage-6",
-   "trigger": "stage:6",
-   "text": "Last, it writes the workpapers and a draft memo for the controller, the company's head of accounting.",
-   "file": "07.mp3",
-   "duration": 6.32,
+   "duration": 5.71,
    "breaks": []
   },
   {
-   "id": "end",
-   "trigger": "end",
-   "text": "Done. Fifteen findings on 13 of 28 documents, with $69,825 misstated in the books, including a $14,615 bill entered twice, caught before it was paid. Bills worth $90,810 wait for approval. Nothing was posted or paid; a person decides every item.",
+   "id": "02-stage1",
+   "trigger": "stage:1",
+   "text": "First it reads the month-end files: the invoice export, the bills already in the books, the vendor list and the policy book.",
+   "file": "02.mp3",
+   "duration": 8.18,
+   "breaks": []
+  },
+  {
+   "id": "03-stage2",
+   "trigger": "stage:2",
+   "text": "Now it opens each invoice and matches it to its bill in the books, by vendor and invoice number.",
+   "file": "03.mp3",
+   "duration": 7.16,
+   "breaks": []
+  },
+  {
+   "id": "04-stage2-9",
+   "trigger": "stage:2@9",
+   "text": "Accounts payable is simply the money a company owes its suppliers, so every bill must match its invoice.",
+   "file": "04.mp3",
+   "duration": 7.73,
+   "breaks": []
+  },
+  {
+   "id": "05-stage2-18",
+   "trigger": "stage:2@18",
+   "text": "Where a bill and its invoice disagree, the difference stays on screen to be explained.",
+   "file": "05.mp3",
+   "duration": 5.8,
+   "breaks": []
+  },
+  {
+   "id": "06-stage3",
+   "trigger": "stage:3",
+   "text": "All four mismatches are explained.",
+   "file": "06.mp3",
+   "duration": 2.61,
+   "breaks": []
+  },
+  {
+   "id": "07-stage3-3.4",
+   "trigger": "stage:3@3.4",
+   "text": "Then it checks that equipment is booked at its full cost, with delivery, setup and sales tax.",
+   "file": "07.mp3",
+   "duration": 6.64,
+   "breaks": []
+  },
+  {
+   "id": "08-stage4-0.3",
+   "trigger": "stage:4@0.3",
+   "text": "Next it checks that each bill sits on the right job and account, the way that vendor is usually coded.",
    "file": "08.mp3",
-   "duration": 30.56,
+   "duration": 6.14,
+   "breaks": []
+  },
+  {
+   "id": "09-stage5",
+   "trigger": "stage:5",
+   "text": "Then it checks the company, the approver and the W-9 on every bill.",
+   "file": "09.mp3",
+   "duration": 4.53,
+   "breaks": []
+  },
+  {
+   "id": "10-stage5-6.8",
+   "trigger": "stage:5@6.8",
+   "text": "About $91,000 of bills wait for approval.",
+   "file": "10.mp3",
+   "duration": 3.87,
+   "breaks": []
+  },
+  {
+   "id": "11-stage6-1.6",
+   "trigger": "stage:6@1.6",
+   "text": "In all, about $70,000 is misstated in the books. It writes the workpapers and a draft memo.",
+   "file": "11.mp3",
+   "duration": 7.24,
    "breaks": [
-    11.08,
-    18.92,
-    24.56,
-    27.38
+    4
    ]
+  },
+  {
+   "id": "12-end",
+   "trigger": "end",
+   "text": "All done. Fifteen findings on 13 of 28 documents, including a duplicate bill of about $14,600, stopped before it was paid. Nothing was posted or paid; the controller decides every item.",
+   "file": "12.mp3",
+   "duration": 18.09,
+   "breaks": [
+    13.06,
+    15.54
+   ]
+  },
+  {
+   "id": "13-skip",
+   "trigger": "skip",
+   "text": "Jumping to the results. A person still reviews every item before anything is posted, paid or sent.",
+   "file": "13.mp3",
+   "duration": 7.2,
+   "breaks": []
   }
  ]
 }

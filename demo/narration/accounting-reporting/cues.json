@@ -2,84 +2,97 @@
  "demo": "accounting-reporting",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "start",
+   "id": "01-start",
    "trigger": "start",
-   "text": "Watch F1 Finance's accounting machine build the October financial statements for HANGS Construction, and compare them with the budget.",
+   "text": "Watch F1 Finance's accounting machine build October's financial statements for HANGS Construction.",
    "file": "01.mp3",
-   "duration": 8.29,
+   "duration": 6.73,
    "breaks": []
   },
   {
-   "id": "stage-1",
+   "id": "02-stage1",
    "trigger": "stage:1",
-   "text": "First, it reads the adjusted trial balance: every account's balance, after the month-end corrections.",
+   "text": "First it reads the adjusted trial balance and maps each account to its line.",
    "file": "02.mp3",
-   "duration": 6.45,
+   "duration": 5.42,
    "breaks": []
   },
   {
-   "id": "stage-2",
+   "id": "03-stage2",
    "trigger": "stage:2",
-   "text": "The balance sheet lists what the company owns and owes. The income statement shows October's profit: about $14,600.",
+   "text": "Next it builds the income statement and the balance sheet.",
    "file": "03.mp3",
-   "duration": 8.85,
-   "breaks": [
-    3.22
-   ]
+   "duration": 3.67,
+   "breaks": []
   },
   {
-   "id": "stage-3",
-   "trigger": "stage:3",
-   "text": "Then, where the cash came from and went.",
+   "id": "04-stage2-7.3",
+   "trigger": "stage:2@7.3",
+   "text": "October's profit is about $15,000.",
    "file": "04.mp3",
-   "duration": 3.08,
+   "duration": 4.3,
    "breaks": []
   },
   {
-   "id": "stage-4",
-   "trigger": "stage:4",
-   "text": "Budget versus actual compares each line with the plan. Seven lines are off by more than $5,000 and 10 percent, and one has no explanation yet.",
+   "id": "05-stage3",
+   "trigger": "stage:3",
+   "text": "Then a cash flow summary, tied out exactly.",
    "file": "05.mp3",
-   "duration": 11.63,
-   "breaks": [
-    3.64
-   ]
-  },
-  {
-   "id": "stage-5",
-   "trigger": "stage:5",
-   "text": "A covenant is a limit the lender sets. All three are met, but one has just 4.5 percent of room.",
-   "file": "06.mp3",
-   "duration": 7.81,
-   "breaks": [
-    2.46
-   ]
-  },
-  {
-   "id": "stage-6",
-   "trigger": "stage:6",
-   "text": "Last, it writes the workpapers and a draft package for the controller, the head of accounting, unsigned and unsent.",
-   "file": "07.mp3",
-   "duration": 8.47,
+   "duration": 3.65,
    "breaks": []
-  }
- ],
- "parked": [
+  },
   {
-   "id": "end",
-   "trigger": "end",
-   "text": "All done. October's profit is about $14,600 against a $134,660 budget, mostly because a sale moved to November. The year so far shows about $167,000. Four items need a person, including an unexplained variance and thin room on one covenant. Nothing is posted or sent until the controller releases it.",
+   "id": "06-stage4",
+   "trigger": "stage:4",
+   "text": "Now budget versus actual: every large gap needs a written reason.",
+   "file": "06.mp3",
+   "duration": 4.97,
+   "breaks": []
+  },
+  {
+   "id": "07-stage4-9.2",
+   "trigger": "stage:4@9.2",
+   "text": "Profit is about $120,000 below budget, mostly from one delayed billing.",
+   "file": "07.mp3",
+   "duration": 6.41,
+   "breaks": []
+  },
+  {
+   "id": "08-stage5",
+   "trigger": "stage:5",
+   "text": "Then the key ratios, and the lender's covenants: the limits in the loan agreement.",
    "file": "08.mp3",
-   "duration": 25.51,
+   "duration": 7.45,
+   "breaks": []
+  },
+  {
+   "id": "09-stage6",
+   "trigger": "stage:6",
+   "text": "All three covenants are met, though the leverage limit has only 4.5% headroom.",
+   "file": "09.mp3",
+   "duration": 6.91,
+   "breaks": []
+  },
+  {
+   "id": "10-end",
+   "trigger": "end",
+   "text": "All done. The statements tie to the trial balance, with four items for the controller, including one variance that still needs an explanation. Nothing was posted or sent.",
+   "file": "10.mp3",
+   "duration": 13.26,
    "breaks": [
-    9.4,
-    12.6,
-    16,
-    21.48
-   ],
-   "why": "mentions old company/sale wording; re-take needed"
+    10
+   ]
+  },
+  {
+   "id": "11-skip",
+   "trigger": "skip",
+   "text": "Jumping to the results. A person still reviews every item before anything is posted, paid or sent.",
+   "file": "11.mp3",
+   "duration": 7.2,
+   "breaks": []
   }
  ]
 }

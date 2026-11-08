@@ -2,76 +2,98 @@
  "demo": "accounting-payroll",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "start",
+   "id": "01-start",
    "trigger": "start",
-   "text": "Watch F1 Finance's accounting machine check October's payroll for HANGS Construction against the books and the bank.",
+   "text": "Watch F1 Finance's accounting machine reconcile October's payroll for HANGS Construction.",
    "file": "01.mp3",
-   "duration": 8.07,
+   "duration": 6.39,
    "breaks": []
   },
   {
-   "id": "stage-1",
+   "id": "02-stage1",
    "trigger": "stage:1",
-   "text": "First, it reads both payroll registers, the list of every paycheck.",
+   "text": "First it recomputes both payroll registers, employee by employee.",
    "file": "02.mp3",
-   "duration": 7.05,
+   "duration": 5.58,
    "breaks": []
   },
   {
-   "id": "stage-2",
+   "id": "03-stage2",
    "trigger": "stage:2",
-   "text": "Next, it ties the pay to the books and to the bank withdrawals. Both agree to the cent.",
+   "text": "Next it ties October's payroll cost, about $193,000, to the ledger and to the bank.",
    "file": "03.mp3",
-   "duration": 6.04,
+   "duration": 7.83,
    "breaks": []
   },
   {
-   "id": "stage-3",
-   "trigger": "stage:3",
-   "text": "Payroll taxes check out, and both deposits were on time.",
+   "id": "04-stage2-7.9",
+   "trigger": "stage:2@7.9",
+   "text": "A register is the list of every paycheck.",
    "file": "04.mp3",
-   "duration": 4.55,
+   "duration": 3.5,
    "breaks": []
   },
   {
-   "id": "stage-4",
-   "trigger": "stage:4",
-   "text": "One required deduction, just over $300, was withheld but never sent to the state.",
+   "id": "05-stage3",
+   "trigger": "stage:3",
+   "text": "Then payroll taxes, recomputed and tied to the deposits.",
    "file": "05.mp3",
-   "duration": 6.8,
+   "duration": 5.44,
    "breaks": []
   },
   {
-   "id": "stage-5",
-   "trigger": "stage:5",
-   "text": "One employee who had left was still paid. Another's overtime was paid at the normal rate.",
+   "id": "06-stage4",
+   "trigger": "stage:4",
+   "text": "Then union dues, benefits and garnishments: wages withheld by court order.",
    "file": "06.mp3",
-   "duration": 5.85,
-   "breaks": [
-    2.52
-   ]
-  },
-  {
-   "id": "stage-6",
-   "trigger": "stage:6",
-   "text": "Last, it writes the workpapers and an unsigned memo for the controller, the head of accounting.",
-   "file": "07.mp3",
-   "duration": 6.47,
+   "duration": 5.62,
    "breaks": []
   },
   {
-   "id": "end",
-   "trigger": "end",
-   "text": "All done. October's payroll, about $193,500, ties to the books and the bank. Three exceptions need a person, with three journal entries, corrections worth just over $3,000. Nothing is posted and no payroll is changed until the controller approves.",
+   "id": "07-stage5",
+   "trigger": "stage:5",
+   "text": "One garnishment payment was never sent to the agency.",
+   "file": "07.mp3",
+   "duration": 3.26,
+   "breaks": []
+  },
+  {
+   "id": "08-stage5-5.9",
+   "trigger": "stage:5@5.9",
+   "text": "And an employee who had left was still paid.",
    "file": "08.mp3",
-   "duration": 23.02,
+   "duration": 2.94,
+   "breaks": []
+  },
+  {
+   "id": "09-stage6",
+   "trigger": "stage:6",
+   "text": "It proposes three small entries, about $3,000 in all, including overtime paid at the regular rate.",
+   "file": "09.mp3",
+   "duration": 6.81,
+   "breaks": []
+  },
+  {
+   "id": "10-end",
+   "trigger": "end",
+   "text": "All done. October payroll ties to the ledger and the bank, with three exceptions for a person. Nothing was posted and no payroll was changed; the controller approves each entry.",
+   "file": "10.mp3",
+   "duration": 12.39,
    "breaks": [
-    9.06,
-    11.62,
-    16.88
+    6.55,
+    9.87
    ]
+  },
+  {
+   "id": "11-skip",
+   "trigger": "skip",
+   "text": "Jumping to the results. A person still reviews every item before anything is posted, paid or sent.",
+   "file": "11.mp3",
+   "duration": 7.2,
+   "breaks": []
   }
  ]
 }

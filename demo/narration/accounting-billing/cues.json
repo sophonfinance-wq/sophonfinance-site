@@ -1,0 +1,123 @@
+{
+ "demo": "accounting-billing",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "style": "v2",
+ "cues": [
+  {
+   "id": "01-start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's accounting machine prepare HANGS Construction's progress billing for November.",
+   "file": "01.mp3",
+   "duration": 8.47,
+   "breaks": []
+  },
+  {
+   "id": "02-stage1",
+   "trigger": "stage:1",
+   "text": "First it rebuilds every earlier pay application and ties the history out exactly.",
+   "file": "02.mp3",
+   "duration": 5.27,
+   "breaks": []
+  },
+  {
+   "id": "03-stage2",
+   "trigger": "stage:2",
+   "text": "Next it ties each schedule of values, the line-by-line price list, to its contract.",
+   "file": "03.mp3",
+   "duration": 6.81,
+   "breaks": []
+  },
+  {
+   "id": "04-stage2-7",
+   "trigger": "stage:2@7",
+   "text": "Only change orders the owner has signed are billed.",
+   "file": "04.mp3",
+   "duration": 3.29,
+   "breaks": []
+  },
+  {
+   "id": "05-stage2-12",
+   "trigger": "stage:2@12",
+   "text": "One unsigned change order is left out.",
+   "file": "05.mp3",
+   "duration": 2.68,
+   "breaks": []
+  },
+  {
+   "id": "06-stage3",
+   "trigger": "stage:3",
+   "text": "Then retainage and stored materials.",
+   "file": "06.mp3",
+   "duration": 2.67,
+   "breaks": []
+  },
+  {
+   "id": "07-stage3-5.6",
+   "trigger": "stage:3@5.6",
+   "text": "Stored materials without insurance or approval are held back.",
+   "file": "07.mp3",
+   "duration": 4.3,
+   "breaks": []
+  },
+  {
+   "id": "08-stage3-10.4",
+   "trigger": "stage:3@10.4",
+   "text": "One job's retainage drops to the approved five percent.",
+   "file": "08.mp3",
+   "duration": 3.21,
+   "breaks": []
+  },
+  {
+   "id": "09-stage4",
+   "trigger": "stage:4",
+   "text": "Then it drafts the invoices and lien waivers.",
+   "file": "09.mp3",
+   "duration": 3.61,
+   "breaks": []
+  },
+  {
+   "id": "10-stage5",
+   "trigger": "stage:5",
+   "text": "Then it ties the billing to the WIP schedule and the ledger.",
+   "file": "10.mp3",
+   "duration": 4.12,
+   "breaks": []
+  },
+  {
+   "id": "11-stage5-5",
+   "trigger": "stage:5@5",
+   "text": "It also caught a lien waiver that would give up an unpaid invoice.",
+   "file": "11.mp3",
+   "duration": 4.42,
+   "breaks": []
+  },
+  {
+   "id": "12-stage6-0.3",
+   "trigger": "stage:6@0.3",
+   "text": "Two applications are ready, about $190,500 due, for the controller to sign.",
+   "file": "12.mp3",
+   "duration": 7.68,
+   "breaks": []
+  },
+  {
+   "id": "13-end",
+   "trigger": "end",
+   "text": "All done. Two pay applications, with their invoices and waivers, are drafted, with four items to settle first. Nothing was posted, signed or sent; the controller reviews and signs.",
+   "file": "13.mp3",
+   "duration": 15.82,
+   "breaks": [
+    6.84,
+    9.59
+   ]
+  },
+  {
+   "id": "14-skip",
+   "trigger": "skip",
+   "text": "Jumping to the results. A person still reviews every item before anything is posted, paid or sent.",
+   "file": "14.mp3",
+   "duration": 7.2,
+   "breaks": []
+  }
+ ]
+}
