@@ -56,6 +56,8 @@
     '.ffc-btn{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:250;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:12px 20px 12px 16px;border:0;border-radius:999px;background:linear-gradient(135deg,#0c3b43,#0e9384);color:#fff;font:600 13.5px/1 "Source Sans 3","Segoe UI",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;box-shadow:0 14px 34px -12px rgba(12,59,67,.6),0 0 0 4px rgba(95,208,195,.18)}',
     '.ffc-btn svg{width:22px;height:22px}.ffc-btn img{width:30px;height:30px;margin:-6px 0 -6px -6px;filter:drop-shadow(0 2px 5px rgba(0,0,0,.25))}',
     '.ffc-btn[aria-expanded="true"]{display:none}',
+    /* compact round widget: just the chat icon (label kept for screen readers and as a hover tip) */
+    '.ffc-btn{width:58px;height:58px;min-height:0;padding:0;gap:0;justify-content:center;border-radius:50%}.ffc-btn img{width:36px;height:36px;margin:0}.ffc-lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}',
     '.ffc{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:251;width:380px;max-width:calc(100vw - 36px);height:560px;max-height:calc(100vh - 110px);display:none;flex-direction:column;background:#fff;border:1px solid #dbe9e7;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px -24px rgba(12,59,67,.45);font-family:"Source Sans 3","Segoe UI",Arial,sans-serif}',
     '.ffc.open{display:flex}',
     '.ffc-head{display:flex;align-items:center;gap:12px;padding:14px 14px 14px 16px;background:linear-gradient(135deg,#eaf7f5,#fff);border-bottom:1px solid #dbe9e7}',
@@ -80,14 +82,14 @@
     '.ffc-form input{flex:1;min-width:0;font:400 16px/1.3 "Source Sans 3","Segoe UI",Arial,sans-serif;border:1px solid #cfe0dd;border-radius:999px;padding:11px 16px;color:#2c3a40}',
     '.ffc-form input:focus{outline:2px solid #0e9384;outline-offset:-1px}',
     '.ffc-form button{border:0;border-radius:999px;background:#0e9384;color:#fff;padding:0 18px;font:600 13px/1 "Source Sans 3","Segoe UI",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}',
-    '@media (max-width:600px){.ffc{right:0;left:0;bottom:0;width:100%;max-width:none;height:78vh;max-height:none;border-radius:20px 20px 0 0}.ffc-btn{padding:12px 16px 12px 14px}}'
+    '@media (max-width:600px){.ffc{right:0;left:0;bottom:0;width:100%;max-width:none;height:78vh;max-height:none;border-radius:20px 20px 0 0}.ffc-btn{width:52px;height:52px;padding:0}.ffc-btn img{width:32px;height:32px}}'
   ].join('\n');
   document.head.appendChild(css);
 
   var wrap = document.createElement('div');
   wrap.innerHTML =
-    '<button class="ffc-btn" id="ffcBtn" type="button" aria-expanded="false" aria-controls="ffc">' +
-      '<img src="assets/ui/chat.webp" alt="" aria-hidden="true" width="128" height="128">Ask F1 Finance</button>' +
+    '<button class="ffc-btn" id="ffcBtn" type="button" aria-expanded="false" aria-controls="ffc" aria-label="Ask F1 Finance" title="Ask F1 Finance">' +
+      '<img src="assets/ui/chat.webp" alt="" aria-hidden="true" width="128" height="128"><span class="ffc-lbl">Ask F1 Finance</span></button>' +
     '<section class="ffc" id="ffc" role="dialog" aria-label="F1 Finance assistant">' +
       '<div class="ffc-head">' + TILE + '<div><b>F1 Finance</b><span>Ask about our services</span></div>' +
       '<button class="ffc-x" id="ffcX" type="button" aria-label="Close chat">&times;</button></div>' +

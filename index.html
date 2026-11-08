@@ -152,7 +152,7 @@ section h2 .acc{ position:relative; }
 .hdr-ins .ins-br{ display:none; }
 .top-in .hdr-ins + .burger + .nav, .top-in .hdr-ins + .nav{ margin-left:0; }
 @media (max-width:980px){ .hdr-ins{ font-size:9.5px; letter-spacing:.14em; gap:6px; margin-right:-6px; } .hdr-ins img{ width:22px; height:22px; } .hdr-ins .ins-br{ display:inline; } }
-@media (max-width:600px){ .top-in{ gap:8px; } .hdr-ins{ font-size:8.5px; letter-spacing:.1em; gap:4px; margin-right:-4px; } .hdr-ins img{ width:18px; height:18px; } .burger{ padding:6px; flex:none; } }
+@media (max-width:600px){ .top-in{ gap:8px; height:60px !important; } .nav{ top:60px !important; } .hdr-ins{ font-size:8.5px; letter-spacing:.1em; gap:4px; margin-right:-4px; } .hdr-ins img{ width:18px; height:18px; } .burger{ padding:6px; flex:none; } }
 .burger{ display:none; background:none; border:0; padding:8px; cursor:pointer; }
 @media (min-width:981px) and (max-width:1180px){ .nav{ gap:22px; } }
 @media (max-width:980px){
@@ -1330,7 +1330,7 @@ footer a:hover{ color:var(--blue); }
   nav.addEventListener('click', function(e){ if (e.target.closest('a')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); } });
 })();
 </script>
-<script src="assets/chat.js?v=f1d" defer></script>
+<script src="assets/chat.js?v=f1e" defer></script>
 <script src="assets/fx.js?v=2" defer></script>
 <!-- "Try it on your own files": small shell; libraries load only when a visitor uses it -->
 <script src="assets/analyze/analyze.js?v=1" defer></script>
