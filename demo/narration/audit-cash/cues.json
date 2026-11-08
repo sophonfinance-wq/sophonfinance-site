@@ -2,103 +2,95 @@
  "demo": "audit-cash",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
    "id": "start",
    "trigger": "start",
-   "text": "Watch F1 Finance's audit machine check HANGS Construction's cash. An audit is an independent check of the books.",
+   "text": "Watch F1 Finance's Audit Machine test the year-end cash of HANGS Construction Services.",
    "file": "01.mp3",
-   "duration": 7.37,
-   "breaks": [
-    4.02
-   ]
+   "duration": 5.88,
+   "breaks": []
   },
   {
-   "id": "stage-5",
-   "trigger": "stage:5",
-   "text": "Cut-off: is each payment in the right year? Yes, and no cash is held back.",
+   "id": "stage-1-at5.4",
+   "trigger": "stage:1@5.4",
+   "text": "It recomputes cash from every line of the ledger and the bank reconciliations.",
+   "file": "02.mp3",
+   "duration": 4.8,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Materiality, the size of error that matters, is $340,000.",
+   "file": "03.mp3",
+   "duration": 6.98,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at8.8",
+   "trigger": "stage:2@8.8",
+   "text": "The bank reports about $188,000 more than the books.",
+   "file": "04.mp3",
+   "duration": 4.48,
+   "breaks": []
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Now it matches every June payment to the bank statement and redoes the reconciliations.",
+   "file": "05.mp3",
+   "duration": 6.3,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at3.2",
+   "trigger": "stage:4@3.2",
+   "text": "One old check was never cashed, and $4,065 of bank charges were never recorded.",
    "file": "06.mp3",
-   "duration": 6.2,
+   "duration": 6.87,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at0.4",
+   "trigger": "stage:5@0.4",
+   "text": "Cut-off: is each receipt and payment in the right year? Yes, and no cash is held back.",
+   "file": "07.mp3",
+   "duration": 7.53,
    "breaks": [
-    2.92,
-    3.98
+    4.02,
+    4.92
    ]
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it sets what it found against materiality and writes the workpapers for the CPA.",
-   "file": "07.mp3",
-   "duration": 5.95,
+   "text": "Now it adds up what it found and sets it against materiality.",
+   "file": "08.mp3",
+   "duration": 4.41,
    "breaks": []
-  }
- ],
- "parked": [
-  {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, materiality, the size of mistake that matters: $12,000. Cash agrees all through the books.",
-   "file": "02.mp3",
-   "duration": 9.27,
-   "breaks": [
-    1.88,
-    4.1,
-    6.3
-   ],
-   "why": "audio can't be regenerated now; it quotes the old materiality of $12,000 (the re-based run proposes $340,000)",
-   "correctedText": "First, materiality, the size of mistake that matters: $340,000. Cash agrees all through the books."
   },
   {
-   "id": "stage-2",
-   "trigger": "stage:2",
-   "text": "Next, a confirmation: the bank writes straight to the auditors. It reports $42,300, $12,400 more than the books.",
-   "file": "03.mp3",
-   "duration": 12.78,
-   "breaks": [
-    1.8,
-    5.02
-   ],
-   "why": "audio can't be regenerated now; it quotes the old confirmation of $42,300 and the $12,400 difference (now $5.72 million and $188,441)",
-   "correctedText": "Next, a confirmation: the bank writes straight to the auditors. It reports $5.72 million, $188,441 more than the books."
-  },
-  {
-   "id": "stage-3",
-   "trigger": "stage:3",
-   "text": "A bank reconciliation matches the books to the bank statement. Four June payments had not cleared yet.",
-   "file": "04.mp3",
-   "duration": 6.99,
-   "breaks": [
-    3.6
-   ],
-   "why": "audio can't be regenerated now; it says four June payments had not cleared (now eight checks of May and June)",
-   "correctedText": "A bank reconciliation matches the books to the bank statement. Eight recent checks had not cleared yet."
-  },
-  {
-   "id": "stage-4",
-   "trigger": "stage:4",
-   "text": "Then it follows each open item. One old check was never cashed, and a $700 bank fee was never recorded.",
-   "file": "05.mp3",
-   "duration": 8.44,
-   "breaks": [
-    2.44
-   ],
-   "why": "audio can't be regenerated now; it quotes the old $700 bank fee (now $4,065 of payroll account charges)",
-   "correctedText": "Then it follows each open item. One old check was never cashed, and $4,065 of bank fees were never recorded."
+   "id": "stage-6-at5.0",
+   "trigger": "stage:6@5.0",
+   "text": "Then it writes the workpapers and a draft findings memo for the CPA.",
+   "file": "09.mp3",
+   "duration": 4.42,
+   "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
-   "text": "All done. The gap with the bank is fully explained. The one known mistake is the $700 bank fee, well under materiality. Eight items stay open, including the uncashed check and a reconciliation no one has reviewed. The CPA, a person, concludes and signs. The machine gives no opinion.",
-   "file": "08.mp3",
-   "duration": 23.92,
+   "text": "All done. The gap with the bank is fully explained. The one error in income is $4,065 of bank charges, well under materiality. Eight items stay open, including two reconciliations no one has reviewed. The CPA, a person, concludes and signs. The machine gives no opinion.",
+   "file": "10.mp3",
+   "duration": 24.6,
    "breaks": [
-    3.52,
-    9.36,
-    16.74,
-    21.18
-   ],
-   "why": "audio can't be regenerated now; it quotes the old $700 bank fee and one reconciliation (now $4,065 of charges and two unreviewed reconciliations)",
-   "correctedText": "All done. The gap with the bank is fully explained. The one known mistake is $4,065 of bank fees, well under materiality. Eight items stay open, including the uncashed check and reconciliations no one has reviewed. The CPA, a person, concludes and signs. The machine gives no opinion."
+    3.82,
+    12.12,
+    18.04,
+    22.32
+   ]
   }
  ]
 }

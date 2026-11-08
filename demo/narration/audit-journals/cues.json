@@ -2,93 +2,111 @@
  "demo": "audit-journals",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "All 1,261 entries are there. One $48,000 entry was posted after the books were closed.",
-   "file": "02.mp3",
-   "duration": 9.07,
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Audit Machine test the journal entries of HANGS Construction Services, every change made to the books.",
+   "file": "01.mp3",
+   "duration": 8.7,
    "breaks": [
-    3.76
+    6.38
    ]
   },
   {
-   "id": "stage-2",
-   "trigger": "stage:2",
-   "text": "Sixty-four entries were keyed by hand. Two were posted on a weekend.",
+   "id": "stage-1-at12.5",
+   "trigger": "stage:1@12.5",
+   "text": "One $48,000 entry was posted after the books were closed.",
+   "file": "02.mp3",
+   "duration": 4.99,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at1.2",
+   "trigger": "stage:2@1.2",
+   "text": "Sixty-four entries were keyed by hand, and two were posted on a weekend.",
    "file": "03.mp3",
-   "duration": 5.14,
-   "breaks": [
-    2.96
-   ]
+   "duration": 5.03,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "Risk filters look for warning signs. Sixteen entries hit two or more, and the riskiest is the $48,000 revenue entry.",
+   "text": "Now risk filters look for warning signs, like round amounts or entries made at night.",
    "file": "04.mp3",
-   "duration": 9.15,
-   "breaks": [
-    2.4
-   ]
+   "duration": 5.71,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at8.2",
+   "trigger": "stage:3@8.2",
+   "text": "Sixteen entries hit two or more.",
+   "file": "05.mp3",
+   "duration": 2.35,
+   "breaks": []
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "It checks a sample of sixteen entries, eight risky and eight at random, against their paperwork. All sixteen agree.",
-   "file": "05.mp3",
-   "duration": 9.21,
-   "breaks": [
-    6.72
-   ]
+   "text": "Then it checks sixteen entries, eight risky and eight at random, against their paperwork.",
+   "file": "06.mp3",
+   "duration": 5.99,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at7.0",
+   "trigger": "stage:4@7.0",
+   "text": "All sixteen agree, including a Sunday entry from the July holiday weekend.",
+   "file": "07.mp3",
+   "duration": 5.19,
+   "breaks": []
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "Top-side entries are hand-made changes after the books close. Seven of eight are supported. The $48,000 revenue entry, posted on a Saturday night, is not.",
-   "file": "06.mp3",
-   "duration": 11.92,
+   "text": "Top-side entries are changes made by hand after the books close.",
+   "file": "08.mp3",
+   "duration": 4.64,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at4.6",
+   "trigger": "stage:5@4.6",
+   "text": "Seven of eight are supported. The $48,000 revenue entry, posted on a Saturday night, is not.",
+   "file": "09.mp3",
+   "duration": 7.64,
    "breaks": [
-    4,
-    6.16
+    1.74
    ]
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Management override means a manager going around the company's own controls. Whether that happened is for the CPA to judge.",
-   "file": "07.mp3",
-   "duration": 8.74,
-   "breaks": [
-    4.82
-   ]
+   "text": "Now it adds up what it found and sets it against materiality.",
+   "file": "10.mp3",
+   "duration": 4.41,
+   "breaks": []
+  },
+  {
+   "id": "stage-6-at5.0",
+   "trigger": "stage:6@5.0",
+   "text": "Then it writes the workpapers and a draft findings memo for the CPA.",
+   "file": "11.mp3",
+   "duration": 4.42,
+   "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
-   "text": "All done. One known mistake: $48,000 of unsupported revenue, about 14% of materiality, the size of mistake that matters. Small in amount, serious in kind. Ten items stay open. The CPA, a person, concludes and signs. The machine gives no opinion.",
-   "file": "08.mp3",
-   "duration": 22.64,
+   "text": "All done. One known error: $48,000 of unsupported revenue, about 14% of materiality, the size of error that matters. Small in amount, serious in kind. Ten items stay open. The CPA, a person, concludes and signs. The machine gives no opinion.",
+   "file": "12.mp3",
+   "duration": 22.55,
    "breaks": [
-    8.88,
-    14.58,
-    16.46,
-    20.1
+    10.9,
+    16.02,
+    19.82
    ]
-  }
- ],
- "parked": [
-  {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch as F1 Finance's audit machine tests HANGS General Contracting's journal entries: every change made to the books.",
-   "file": "01.mp3",
-   "duration": 9.69,
-   "breaks": [
-    6.66
-   ],
-   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

@@ -2,85 +2,103 @@
  "demo": "audit-ar",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "Receivables are money customers still owe: just over $11 million.",
-   "file": "02.mp3",
-   "duration": 6.14,
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Audit Machine test what customers owe HANGS Construction Services at the year end.",
+   "file": "01.mp3",
+   "duration": 7.12,
    "breaks": []
   },
   {
-   "id": "stage-2",
-   "trigger": "stage:2",
-   "text": "It picks ten customers, by size and by risk.",
+   "id": "stage-1-at5.6",
+   "trigger": "stage:1@5.6",
+   "text": "Receivables are money customers still owe.",
+   "file": "02.mp3",
+   "duration": 2.95,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at0.6",
+   "trigger": "stage:2@0.6",
+   "text": "It picks ten customers to confirm, by size and by risk.",
    "file": "03.mp3",
-   "duration": 4.4,
+   "duration": 4.37,
    "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "A confirmation is a letter the customer answers straight to the auditors. Eight reply, and three differ from the books.",
+   "text": "It sends confirmations, letters customers answer straight to the auditors.",
    "file": "04.mp3",
-   "duration": 7.48,
-   "breaks": [
-    4.12
-   ]
+   "duration": 5.1,
+   "breaks": []
   },
   {
-   "id": "stage-4",
-   "trigger": "stage:4",
-   "text": "Two customers stay silent. One has since paid; one has not.",
+   "id": "stage-3-at6.9",
+   "trigger": "stage:3@6.9",
+   "text": "Eight reply, and three differ from the books.",
    "file": "05.mp3",
-   "duration": 6.18,
+   "duration": 3.18,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at1.0",
+   "trigger": "stage:4@1.0",
+   "text": "Two customers stay silent. One has since paid; one has not.",
+   "file": "06.mp3",
+   "duration": 4.32,
    "breaks": [
-    2.02,
-    4.14
+    1.62
    ]
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "It explains each difference. A $28,600 credit was never recorded, and one customer hasn't paid since December.",
-   "file": "06.mp3",
-   "duration": 9.59,
-   "breaks": [
-    1.66
-   ]
+   "text": "Then it explains each difference and recomputes the retainage, the share owners hold back until a job is done.",
+   "file": "07.mp3",
+   "duration": 7.53,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at6.9",
+   "trigger": "stage:5@6.9",
+   "text": "A $28,600 credit was never recorded.",
+   "file": "08.mp3",
+   "duration": 4.7,
+   "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it weighs the findings against materiality, the size of mistake that matters, and writes the workpapers for the CPA.",
-   "file": "07.mp3",
-   "duration": 9.06,
+   "text": "Now it adds up what it found and sets it against materiality.",
+   "file": "09.mp3",
+   "duration": 4.41,
+   "breaks": []
+  },
+  {
+   "id": "stage-6-at5.0",
+   "trigger": "stage:6@5.0",
+   "text": "Then it writes the workpapers and a draft findings memo for the CPA.",
+   "file": "10.mp3",
+   "duration": 4.42,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
-   "text": "All done. The one known mistake is the $28,600 credit, well under materiality. Add two judgment calls, about $41,000 held back by a customer and up to about $187,000 that may never be paid, and the total passes the auditors' working limit. Seven items stay open. The CPA, a person, concludes and signs. The machine gives no opinion.",
-   "file": "08.mp3",
-   "duration": 32.38,
+   "text": "All done. The one known error is the $28,600 credit, well under materiality. Add two judgment calls, about $41,000 held back by a customer and up to about $187,000 that may never be paid, and the total passes the auditors' working limit. Seven items stay open. The CPA, a person, concludes and signs. The machine gives no opinion.",
+   "file": "11.mp3",
+   "duration": 31.29,
    "breaks": [
-    9.16,
-    22.7,
-    25.52,
-    29.82
+    8,
+    18.88,
+    22.1,
+    24.38,
+    28.54
    ]
-  }
- ],
- "parked": [
-  {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's audit machine check what customers owe HANGS General Contracting.",
-   "file": "01.mp3",
-   "duration": 6.28,
-   "breaks": [],
-   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

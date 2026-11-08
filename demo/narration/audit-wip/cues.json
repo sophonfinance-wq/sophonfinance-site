@@ -2,85 +2,94 @@
  "demo": "audit-wip",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "Materiality: $340,000.",
-   "file": "02.mp3",
-   "duration": 3.9,
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Audit Machine test the job schedule of HANGS Construction Services, its work in progress.",
+   "file": "01.mp3",
+   "duration": 7.92,
    "breaks": []
   },
   {
-   "id": "stage-2",
-   "trigger": "stage:2",
+   "id": "stage-2-at0.6",
+   "trigger": "stage:2@0.6",
    "text": "Percent complete is cost so far over expected total cost. Every job recomputes.",
-   "file": "03.mp3",
-   "duration": 7.49,
+   "file": "02.mp3",
+   "duration": 7.52,
    "breaks": [
-    4.8
+    4.88
    ]
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "A change order adds to a contract's price. One was booked $370,000 higher than the owner signed.",
+   "text": "A change order adds to a contract's price.",
+   "file": "03.mp3",
+   "duration": 2.93,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at4.5",
+   "trigger": "stage:3@4.5",
+   "text": "One was booked higher than the owner ever signed.",
    "file": "04.mp3",
-   "duration": 8.89,
-   "breaks": [
-    2.94
-   ]
+   "duration": 2.96,
+   "breaks": []
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "It tests each job's cost estimate against later bills. One job's costs jumped about $1.2 million, but only after year end.",
+   "text": "Then it tests each job's cost estimate.",
    "file": "05.mp3",
-   "duration": 9.97,
-   "breaks": [
-    3.74
-   ]
+   "duration": 3.09,
+   "breaks": []
   },
   {
-   "id": "stage-5",
-   "trigger": "stage:5",
-   "text": "One finished job lost $172,600.",
+   "id": "stage-4-at5.2",
+   "trigger": "stage:4@5.2",
+   "text": "One job's costs jumped about $1.2 million after the year end.",
    "file": "06.mp3",
-   "duration": 5.96,
+   "duration": 5.12,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at1.0",
+   "trigger": "stage:5@1.0",
+   "text": "One finished job lost about $173,000.",
+   "file": "07.mp3",
+   "duration": 5.49,
    "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it weighs the findings against materiality, the size of mistake that matters, and writes the workpapers for the CPA.",
-   "file": "07.mp3",
-   "duration": 8.76,
+   "text": "Now it adds up what it found and sets it against materiality.",
+   "file": "08.mp3",
+   "duration": 4.41,
+   "breaks": []
+  },
+  {
+   "id": "stage-6-at5.0",
+   "trigger": "stage:6@5.0",
+   "text": "Then it writes the workpapers and a draft findings memo for the CPA.",
+   "file": "09.mp3",
+   "duration": 4.42,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
-   "text": "All done. Known mistakes add up to $103,600 of revenue from that change order, under materiality. Bigger judgment calls go to the CPA: the $1.2 million cost jump and about $407,000 of shrinking profit on another job. Eight items stay open. The CPA, a person, concludes and signs. The machine gives no opinion.",
-   "file": "08.mp3",
-   "duration": 31.11,
+   "text": "All done. Known errors add up to $103,600 of revenue from that change order, under materiality. Bigger judgment calls go to the CPA: the $1.2 million cost jump and about $407,000 of shrinking profit on another job. Eight items stay open. The CPA, a person, concludes and signs. The machine gives no opinion.",
+   "file": "10.mp3",
+   "duration": 32.98,
    "breaks": [
-    10.04,
-    13.26,
-    22.02,
-    24.26,
-    28.4
+    11.28,
+    22.44,
+    25.3,
+    30.22
    ]
-  }
- ],
- "parked": [
-  {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch as F1 Finance's audit machine tests HANGS General Contracting's construction jobs.",
-   "file": "01.mp3",
-   "duration": 6.38,
-   "breaks": [],
-   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

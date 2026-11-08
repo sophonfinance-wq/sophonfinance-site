@@ -2,84 +2,110 @@
  "demo": "audit-covenant",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, it reads the loan agreement.",
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Audit Machine test the loan covenants of HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 6.25,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at5.2",
+   "trigger": "stage:1@5.2",
+   "text": "Covenants are promises made to the bank.",
    "file": "02.mp3",
-   "duration": 2.88,
+   "duration": 2.97,
    "breaks": []
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "These are agreed-upon procedures: specific checks the bank asked for. Every figure matches the books and the bank, except $28,665 of unbooked interest.",
+   "text": "These are agreed-upon procedures: specific checks the bank asked for. First it agrees every figure to the books.",
    "file": "03.mp3",
-   "duration": 12.65,
+   "duration": 7.29,
    "breaks": [
-    4.48
+    4.16
    ]
+  },
+  {
+   "id": "stage-2-at12.1",
+   "trigger": "stage:2@12.1",
+   "text": "The loans agree, but June's interest was never booked.",
+   "file": "04.mp3",
+   "duration": 3.71,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "Tangible net worth is the owners' stake, minus what a sister company owes. It passes by about $497,000.",
-   "file": "04.mp3",
-   "duration": 10.69,
-   "breaks": [
-    4.94
-   ]
-  },
-  {
-   "id": "stage-4",
-   "trigger": "stage:4",
-   "text": "Working capital passes too, whichever way the office lease is counted.",
+   "text": "Tangible net worth is the owners' stake, less what a sister company owes.",
    "file": "05.mp3",
-   "duration": 4.47,
+   "duration": 4.67,
    "breaks": []
   },
   {
-   "id": "stage-5",
-   "trigger": "stage:5",
-   "text": "Equipment spending is just $67,500 under its limit. Reports reached the bank on time.",
+   "id": "stage-3-at4.6",
+   "trigger": "stage:3@4.6",
+   "text": "It passes by about $497,000.",
    "file": "06.mp3",
-   "duration": 8.18,
-   "breaks": [
-    5.38
-   ]
+   "duration": 5.39,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at1.3",
+   "trigger": "stage:4@1.3",
+   "text": "Working capital passes too, whichever way the office lease is counted.",
+   "file": "07.mp3",
+   "duration": 4.82,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at2.6",
+   "trigger": "stage:5@2.6",
+   "text": "Equipment spending comes in just $67,500 under its limit.",
+   "file": "08.mp3",
+   "duration": 7.42,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at9.0",
+   "trigger": "stage:5@9.0",
+   "text": "Both reports reached the bank on time.",
+   "file": "09.mp3",
+   "duration": 2.75,
+   "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it drafts the findings for the CPA, who writes the report.",
-   "file": "07.mp3",
-   "duration": 4.66,
+   "text": "Now it lists what the procedures found.",
+   "file": "10.mp3",
+   "duration": 2.58,
+   "breaks": []
+  },
+  {
+   "id": "stage-6-at3.4",
+   "trigger": "stage:6@3.4",
+   "text": "Then it writes draft findings for the CPA, who issues the report.",
+   "file": "11.mp3",
+   "duration": 4.77,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
    "text": "All done. All three covenants and the spending limit are met, and the reports were on time. One exception: $28,665 of interest not in the books. Five items stay open, including how the bank reads the lease. The CPA, a person, issues and signs the report. The machine gives no opinion.",
-   "file": "08.mp3",
-   "duration": 26.54,
+   "file": "12.mp3",
+   "duration": 23.07,
    "breaks": [
-    6.7,
-    13.42,
-    18.16,
-    23.22
+    5.96,
+    11.92,
+    16.3,
+    20.68
    ]
-  }
- ],
- "parked": [
-  {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's machine check HANGS General Contracting's loan covenants: promises made to its bank.",
-   "file": "01.mp3",
-   "duration": 7.97,
-   "breaks": [],
-   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

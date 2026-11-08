@@ -2,107 +2,136 @@
  "demo": "audit",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
    "id": "start",
    "trigger": "start",
-   "text": "Watch F1 Finance's audit machine. An audit is an independent check of the books.",
+   "text": "Watch F1 Finance's Audit Machine prepare the year-end audit of HANGS Construction Services.",
    "file": "01.mp3",
-   "duration": 5.8,
-   "breaks": [
-    2.5
-   ]
+   "duration": 6.68,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at5.6",
+   "trigger": "stage:1@5.6",
+   "text": "It reads the ledger and the statements, and checks that every entry adds up.",
+   "file": "02.mp3",
+   "duration": 5.04,
+   "breaks": []
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "Next, a sample: thirty of the year's payments, picked at random and checked against their invoices. Twenty-nine agree. One invoice is only a scanned picture, so a person reads it.",
+   "text": "It proposes materiality, the size of error that would matter to a reader of the accounts: $340,000.",
    "file": "03.mp3",
-   "duration": 13.68,
+   "duration": 8.12,
    "breaks": [
-    1.52,
-    3.48,
-    6.8,
-    8.54
+    5.8
    ]
   },
   {
-   "id": "stage-6",
-   "trigger": "stage:6",
-   "text": "Last, it adds up what it found against materiality and writes the workpapers for the CPA.",
-   "file": "07.mp3",
-   "duration": 6.89,
-   "breaks": []
-  }
- ],
- "parked": [
-  {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "Materiality, the size of mistake that matters: $12,000.",
-   "file": "02.mp3",
-   "duration": 6.47,
+   "id": "stage-2-at7.5",
+   "trigger": "stage:2@7.5",
+   "text": "Then it draws a random sample of thirty bills and checks each against its invoice. Twenty-nine agree.",
+   "file": "04.mp3",
+   "duration": 8.99,
    "breaks": [
-    3.48
-   ],
-   "why": "quotes the old design's materiality ($12,000); the rebuilt run proposes the canonical FY2026 materiality, $340,000 (demo/audit-canonical.json). Audio cannot be regenerated now; re-take needed",
-   "correctedText": "Materiality, the size of mistake that matters: $340,000."
+    6.12
+   ]
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "Next, unrecorded bills: work done by year end, missing from the books. It finds one, for $2,150.",
-   "file": "04.mp3",
-   "duration": 11.2,
-   "breaks": [
-    1.82,
-    4.06,
-    5.5
-   ],
-   "why": "says the search finds one unrecorded bill, for $2,150; the rebuilt run finds four, $247,985 (the liabilities area's UL-01 to UL-04). Audio cannot be regenerated now; re-take needed",
-   "correctedText": "Next, unrecorded bills: work done by year end, missing from the books. It finds four, for $247,985."
+   "text": "Next it hunts for unrecorded bills: June work that was paid for after the year end.",
+   "file": "05.mp3",
+   "duration": 6.02,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at5.7",
+   "trigger": "stage:3@5.7",
+   "text": "It finds four, about $248,000 in all.",
+   "file": "06.mp3",
+   "duration": 4.33,
+   "breaks": []
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "Now it tests all 1,061 journal entries, the adjustments made to the books. Seven show warning signs, like being entered after year end. Three are supported. Two are estimates for the CPA to judge, and two payouts to the owners need their approval date checked.",
-   "file": "05.mp3",
-   "duration": 20.72,
-   "breaks": [
-    3.7,
-    6.52,
-    11.02,
-    12.8
-   ],
-   "why": "quotes the old journal count (1,061) and findings (seven flagged, two estimates, two owner payouts); the rebuilt run tests 1,261 entries, follows up 16, and the dividends agree with the board. Audio cannot be regenerated now; re-take needed",
-   "correctedText": "Now it tests all 1,261 journal entries, the adjustments made to the books. Sixteen show warning signs, like being entered after year end. Fourteen are supported. One has no support, one was approved by the person who made it, and the dividends agree with the board."
+   "text": "Now it tests all 1,261 journal entries, the adjustments made to the books.",
+   "file": "07.mp3",
+   "duration": 5.85,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at6.6",
+   "trigger": "stage:4@6.6",
+   "text": "Sixteen of them show two or more warning signs.",
+   "file": "08.mp3",
+   "duration": 3.17,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at12.5",
+   "trigger": "stage:4@12.5",
+   "text": "It checks the warranty reserve, then the dividends against the board's minutes and the bank.",
+   "file": "09.mp3",
+   "duration": 5.44,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at20.3",
+   "trigger": "stage:4@20.3",
+   "text": "Every dividend agrees with the board and the bank.",
+   "file": "10.mp3",
+   "duration": 3.01,
+   "breaks": []
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "Next, a confirmation: the bank writes to the auditors directly. Cash ties, and there are no loans.",
-   "file": "06.mp3",
-   "duration": 9.72,
-   "breaks": [
-    2.14,
-    6.06
-   ],
-   "why": "says there are no loans; the rebuilt run's bank confirms the term loan ($2,880,000) and the line of credit ($1,800,000). Audio cannot be regenerated now; re-take needed",
-   "correctedText": "Next, a confirmation: the bank writes to the auditors directly. Cash ties, and so do the two loans."
+   "text": "Next it ties cash and both loans to the bank's own letter.",
+   "file": "11.mp3",
+   "duration": 4.02,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at5.4",
+   "trigger": "stage:5@5.4",
+   "text": "The bank confirms both loans, about $4.7 million.",
+   "file": "12.mp3",
+   "duration": 5.52,
+   "breaks": []
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Now it adds up what it found and sets it against materiality.",
+   "file": "13.mp3",
+   "duration": 4.41,
+   "breaks": []
+  },
+  {
+   "id": "stage-6-at5.0",
+   "trigger": "stage:6@5.0",
+   "text": "Then it writes the workpapers and a draft findings memo for the CPA.",
+   "file": "14.mp3",
+   "duration": 4.42,
+   "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
-   "text": "All done. Known mistakes add up to $2,150, well under materiality. Fourteen items stay open, including two estimates and when two owner payouts were approved. The CPA, a person, decides each one, concludes and signs. The machine gives no opinion.",
-   "file": "08.mp3",
-   "duration": 21.53,
+   "text": "All done. Known errors across every area add up to about $560,000, more than materiality, so the CPA asks management to correct them. Recorded in full, they would take net worth about $63,000 below the bank loan's minimum. Seventeen items stay open. The CPA, a person, decides each one and signs. The machine gives no opinion.",
+   "file": "15.mp3",
+   "duration": 27.74,
    "breaks": [
-    7.34,
-    13.8,
-    19
-   ],
-   "why": "quotes the old total ($2,150, well under materiality) and owner payouts; the rebuilt run's known misstatements across every FY2026 area add up to $559,962.23, above the $340,000 materiality, with 16 open items. Audio cannot be regenerated now; re-take needed",
-   "correctedText": "All done. Known mistakes across every area add up to about $560,000, more than materiality, so the CPA asks management to correct them. Sixteen items stay open. The CPA, a person, decides each one, concludes and signs. The machine gives no opinion."
+    11.04,
+    17.66,
+    20.34,
+    25.06
+   ]
   }
  ]
 }

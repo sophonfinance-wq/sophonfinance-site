@@ -2,90 +2,108 @@
  "demo": "audit-payroll",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Audit Machine test the payroll of HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 6.4,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at5.4",
+   "trigger": "stage:1@5.4",
+   "text": "It ties the payroll ledger to the books, to the cent.",
+   "file": "02.mp3",
+   "duration": 3.66,
+   "breaks": []
+  },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "It ties the payroll register, the list of every paycheck, to all 2,493 paychecks. One flag: two employees are paid into the same bank account.",
+   "text": "Materiality, the size of error that matters, is $340,000.",
    "file": "03.mp3",
-   "duration": 13.61,
-   "breaks": [
-    8.08
-   ]
+   "duration": 6.98,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at12.0",
+   "trigger": "stage:2@12.0",
+   "text": "Every month lands within about four percent of its expectation.",
+   "file": "04.mp3",
+   "duration": 4.29,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "It rebuilds eight sample paychecks. A workers' insurance deduction is slightly too high on overtime.",
-   "file": "04.mp3",
-   "duration": 7.61,
-   "breaks": [
-    2.6
-   ]
+   "text": "Next it rebuilds eight sample paychecks from their timesheets and pay rates.",
+   "file": "05.mp3",
+   "duration": 4.59,
+   "breaks": []
   },
   {
-   "id": "stage-4",
-   "trigger": "stage:4",
-   "text": "The payroll manager entered her own raise with no signed approval. The shared account belongs to a married couple.",
-   "file": "05.mp3",
-   "duration": 7.63,
-   "breaks": [
-    3.96
-   ]
+   "id": "stage-3-at5.8",
+   "trigger": "stage:3@5.8",
+   "text": "One insurance deduction runs a little high on overtime.",
+   "file": "06.mp3",
+   "duration": 4.23,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at3.0",
+   "trigger": "stage:4@3.0",
+   "text": "The payroll manager entered her own raise, with no signed approval.",
+   "file": "07.mp3",
+   "duration": 5.86,
+   "breaks": []
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "It ties payroll to the books and all four quarterly tax returns. But $22,864 of employer payroll tax for June was never booked in June.",
-   "file": "06.mp3",
-   "duration": 14.2,
+   "text": "Now it ties payroll to the books and to all four quarterly payroll tax returns.",
+   "file": "08.mp3",
+   "duration": 6.42,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at6.4",
+   "trigger": "stage:5@6.4",
+   "text": "But about $23,000 of employer payroll tax for June was never recorded in June.",
+   "file": "09.mp3",
+   "duration": 7.03,
    "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it adds up what it found against materiality and writes the workpapers for the CPA.",
-   "file": "07.mp3",
-   "duration": 6.21,
+   "text": "Now it adds up what it found and sets it against materiality.",
+   "file": "10.mp3",
+   "duration": 4.41,
+   "breaks": []
+  },
+  {
+   "id": "stage-6-at5.0",
+   "trigger": "stage:6@5.0",
+   "text": "Then it writes the workpapers and a draft findings memo for the CPA.",
+   "file": "11.mp3",
+   "duration": 4.42,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
-   "text": "All done. Known mistakes add up to just over $25,000, well under materiality, including about $2,500 owed back to the crews. The bigger issue is control: the unapproved raise. Seven items stay open. The CPA, a person, concludes and signs. The machine gives no opinion.",
-   "file": "08.mp3",
-   "duration": 24.16,
+   "text": "All done. Known errors add up to just over $25,000, well under materiality, including about $2,500 owed back to the crews. The bigger issue is control: the unapproved raise. Seven items stay open. The CPA, a person, concludes and signs. The machine gives no opinion.",
+   "file": "12.mp3",
+   "duration": 26.3,
    "breaks": [
-    11.64,
-    14.1,
-    16.28,
-    18.24,
-    21.8
+    11.82,
+    16.98,
+    19.36,
+    23.44
    ]
-  }
- ],
- "parked": [
-  {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's audit machine check HANGS General Contracting's payroll.",
-   "file": "01.mp3",
-   "duration": 5.28,
-   "breaks": [],
-   "why": "mentions old company/sale wording; re-take needed"
-  },
-  {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "Materiality, the size of mistake that matters: $350,000.",
-   "file": "02.mp3",
-   "duration": 6.55,
-   "breaks": [
-    1.14,
-    3.64
-   ],
-   "why": "quotes the old materiality ($350,000); the FY2026 canonical materiality is $340,000 (demo/audit-canonical.json). Audio cannot be regenerated now; re-take needed",
-   "correctedText": "Materiality, the size of mistake that matters: $340,000."
   }
  ]
 }

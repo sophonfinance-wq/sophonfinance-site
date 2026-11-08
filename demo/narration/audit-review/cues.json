@@ -2,88 +2,107 @@
  "demo": "audit-review",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, it sets materiality at $100,000.",
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Audit Machine prepare the quarterly review of HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 6.7,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at6.2",
+   "trigger": "stage:1@6.2",
+   "text": "A review is lighter than an audit: questions and comparisons, not full testing.",
    "file": "02.mp3",
-   "duration": 4.09,
+   "duration": 5.79,
    "breaks": []
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "Analytical procedures compare the quarter with the last one and the budget. Revenue is up 13%, but the margin fell.",
+   "text": "Materiality, the size of error that matters, is $100,000 here.",
    "file": "03.mp3",
-   "duration": 8.8,
-   "breaks": [
-    4.46
-   ]
+   "duration": 5.57,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at6.4",
+   "trigger": "stage:2@6.4",
+   "text": "Revenue is up, but the margin fell.",
+   "file": "04.mp3",
+   "duration": 2.85,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "The controller answers every question in writing. One customer shares the same owners.",
-   "file": "04.mp3",
-   "duration": 6.2,
-   "breaks": [
-    2.76
-   ]
+   "text": "The controller answers every question in writing.",
+   "file": "05.mp3",
+   "duration": 3.07,
+   "breaks": []
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "Now it rebuilds each job's revenue, and it ties to the books. But $259,200 comes from a change the customer has not signed.",
-   "file": "05.mp3",
-   "duration": 10.4,
-   "breaks": [
-    3.52
-   ]
+   "text": "Now it rebuilds each job's revenue from its costs, and it ties to the books.",
+   "file": "06.mp3",
+   "duration": 5.52,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at10.4",
+   "trigger": "stage:4@10.4",
+   "text": "One job's profit fell after its cost estimate rose.",
+   "file": "07.mp3",
+   "duration": 3.74,
+   "breaks": []
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "Interest is booked only when paid, so $35,350 is missing. The loan covenants, promises made to the bank, are met, but net worth has only about $130,000 to spare.",
-   "file": "06.mp3",
-   "duration": 15.07,
-   "breaks": [
-    5.78
-   ]
+   "text": "Then it rebuilds the quarter's interest from each loan.",
+   "file": "08.mp3",
+   "duration": 3.62,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at9.5",
+   "trigger": "stage:5@9.5",
+   "text": "Interest is booked only when paid, so $35,350 is missing.",
+   "file": "09.mp3",
+   "duration": 6.22,
+   "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it weighs what it found against materiality and writes the workpapers for the CPA.",
-   "file": "07.mp3",
-   "duration": 6.12,
+   "text": "Now it adds up what it found and sets it against materiality.",
+   "file": "10.mp3",
+   "duration": 4.41,
+   "breaks": []
+  },
+  {
+   "id": "stage-6-at5.0",
+   "trigger": "stage:6@5.0",
+   "text": "Then it writes the workpapers and a draft review memo for the CPA.",
+   "file": "11.mp3",
+   "duration": 5.12,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
-   "text": "All done. Interest expense is $6,685 short, well under materiality. The bigger question is the unsigned change, which also decides whether net worth still meets the covenant. Ten items stay open. This is not a review report: the CPA, a person, concludes and signs.",
-   "file": "08.mp3",
-   "duration": 22.62,
+   "text": "All done. Interest expense is $6,685 short, well under materiality. The bigger question is a $259,200 change order the customer has not signed, which also decides whether net worth still meets the loan covenant. Ten items stay open. This is not a review report: the CPA, a person, concludes and signs.",
+   "file": "12.mp3",
+   "duration": 32.3,
    "breaks": [
-    7.24,
-    13.84,
-    16,
-    18.02
+    9.52,
+    22.38,
+    24.66
    ]
-  }
- ],
- "parked": [
-  {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's machine review HANGS General Contracting's quarter. A review is lighter than an audit.",
-   "file": "01.mp3",
-   "duration": 7.66,
-   "breaks": [
-    4.52
-   ],
-   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

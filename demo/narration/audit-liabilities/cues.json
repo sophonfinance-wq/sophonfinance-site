@@ -2,77 +2,98 @@
  "demo": "audit-liabilities",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
    "id": "start",
    "trigger": "start",
-   "text": "Watch as F1 Finance's audit machine looks for bills missing from the books.",
+   "text": "Watch F1 Finance's Audit Machine hunt for bills missing from HANGS Construction's books.",
    "file": "01.mp3",
-   "duration": 4.65,
-   "breaks": []
-  },
-  {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "Materiality: $340,000.",
-   "file": "02.mp3",
-   "duration": 3.95,
+   "duration": 6.22,
    "breaks": []
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "It reads the payments made after year end. A $186,400 bill for June work is missing.",
+   "text": "First it reads every payment made after the year end.",
+   "file": "02.mp3",
+   "duration": 4.26,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at4.4",
+   "trigger": "stage:2@4.4",
+   "text": "About $206,000 of June costs are missing from the books.",
    "file": "03.mp3",
-   "duration": 9.18,
-   "breaks": [
-    2.74
-   ]
+   "duration": 4.07,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "Unpaid bills too: a $23,480 legal bill for May and June is missing.",
+   "text": "Next it reads the unpaid bills.",
    "file": "04.mp3",
-   "duration": 7.81,
+   "duration": 2.81,
    "breaks": []
   },
   {
-   "id": "stage-4",
-   "trigger": "stage:4",
-   "text": "Four late June bills missed the year.",
+   "id": "stage-3-at2.9",
+   "trigger": "stage:3@2.9",
+   "text": "An unpaid legal bill for May and June is missing too.",
    "file": "05.mp3",
-   "duration": 3.41,
+   "duration": 4.23,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at1.0",
+   "trigger": "stage:4@1.0",
+   "text": "Four June bills missed the year.",
+   "file": "06.mp3",
+   "duration": 2.35,
    "breaks": []
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "An accrual books a cost in its own month. June's interest, $28,665, was never accrued.",
-   "file": "06.mp3",
-   "duration": 8.72,
-   "breaks": [
-    2.5
-   ]
+   "text": "An accrual records a cost in the month it belongs to.",
+   "file": "07.mp3",
+   "duration": 3.43,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at5.8",
+   "trigger": "stage:5@5.8",
+   "text": "June's interest was never accrued.",
+   "file": "08.mp3",
+   "duration": 2.55,
+   "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it adds up what it found against materiality, the size of mistake that matters, and writes the workpapers for the CPA.",
-   "file": "07.mp3",
-   "duration": 8.69,
+   "text": "Now it adds up what it found and sets it against materiality.",
+   "file": "09.mp3",
+   "duration": 4.41,
+   "breaks": []
+  },
+  {
+   "id": "stage-6-at5.0",
+   "trigger": "stage:6@5.0",
+   "text": "Then it writes the workpapers and a draft findings memo for the CPA.",
+   "file": "10.mp3",
+   "duration": 4.42,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
    "text": "All done. The missing bills add up to almost $248,000, just under the auditors' working limit, so the CPA weighs them with the rest of the audit. Eight items stay open. The CPA, a person, concludes and signs. The machine gives no opinion.",
-   "file": "08.mp3",
-   "duration": 18.86,
+   "file": "11.mp3",
+   "duration": 20.07,
    "breaks": [
-    10.74,
-    12.56,
-    16.22
+    11.62,
+    13.92,
+    17.9
    ]
   }
  ]

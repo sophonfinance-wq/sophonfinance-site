@@ -2,85 +2,119 @@
  "demo": "audit-assets",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "Materiality: $340,000.",
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Audit Machine test the equipment and leases of HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 6.35,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at6.3",
+   "trigger": "stage:1@6.3",
+   "text": "It agrees the equipment register to the books.",
    "file": "02.mp3",
-   "duration": 4.31,
+   "duration": 2.63,
    "breaks": []
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "The equipment list rolls forward, with one odd entry.",
+   "text": "Then it rolls the register forward, asset by asset.",
    "file": "03.mp3",
-   "duration": 4.53,
+   "duration": 4.1,
    "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "It checks every purchase against its invoice. A $41,250 repair was booked as equipment, and one buy had no approval. A crane sold in March is still on the books.",
+   "text": "Now it checks every purchase against its invoice, line by line.",
    "file": "04.mp3",
-   "duration": 13.37,
-   "breaks": [
-    2.58,
-    10.04
-   ]
+   "duration": 4.34,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at6.6",
+   "trigger": "stage:3@6.6",
+   "text": "A repair of about $41,000 was booked as equipment.",
+   "file": "05.mp3",
+   "duration": 4.62,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at12.6",
+   "trigger": "stage:3@12.6",
+   "text": "One purchase had no signed approval.",
+   "file": "06.mp3",
+   "duration": 2.44,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at15.1",
+   "trigger": "stage:3@15.1",
+   "text": "A crane sold in March is still on the books.",
+   "file": "07.mp3",
+   "duration": 2.78,
+   "breaks": []
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "Depreciation spreads an asset's cost over its working life. One excavator's life is half the policy's.",
-   "file": "05.mp3",
-   "duration": 7.19,
+   "text": "Depreciation spreads cost over an asset's life. One excavator's life is half the policy's.",
+   "file": "08.mp3",
+   "duration": 6.96,
    "breaks": [
-    3.86
+    3.8
    ]
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "Lease accounting puts long rentals on the balance sheet, as a right-of-use asset and a debt. Two leases are missing.",
-   "file": "06.mp3",
-   "duration": 7.73,
+   "text": "Then it reads every rental. Under the lease rules, a long rental goes on the balance sheet as a debt.",
+   "file": "09.mp3",
+   "duration": 6.76,
    "breaks": [
-    5.76
+    1.48
    ]
+  },
+  {
+   "id": "stage-5-at9.3",
+   "trigger": "stage:5@9.3",
+   "text": "One crane rental is really a lease, a debt missing from the books.",
+   "file": "10.mp3",
+   "duration": 5.04,
+   "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it weighs the findings against materiality, the size of mistake that matters, and writes the workpapers for the CPA.",
-   "file": "07.mp3",
-   "duration": 8.96,
+   "text": "Now it adds up what it found and sets it against materiality.",
+   "file": "11.mp3",
+   "duration": 4.41,
+   "breaks": []
+  },
+  {
+   "id": "stage-6-at5.0",
+   "trigger": "stage:6@5.0",
+   "text": "Then it writes the workpapers and a draft findings memo for the CPA.",
+   "file": "12.mp3",
+   "duration": 4.42,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
-   "text": "All done. In profit, the mistakes nearly cancel out. But over $2.1 million of lease debt is missing from the balance sheet, and the sold crane is still on the books. Ten items stay open. The CPA, a person, concludes and signs. The machine gives no opinion.",
-   "file": "08.mp3",
-   "duration": 22.28,
+   "text": "All done. In profit, the errors nearly cancel out. But over $2.1 million of lease debt is missing from the balance sheet, and the sold crane is still on the books. Ten items stay open. The CPA, a person, concludes and signs. The machine gives no opinion.",
+   "file": "13.mp3",
+   "duration": 22.16,
    "breaks": [
-    9,
-    12.76,
+    12.9,
     15.26,
-    19.64
+    19.8
    ]
-  }
- ],
- "parked": [
-  {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's audit machine check HANGS General Contracting's equipment and leases.",
-   "file": "01.mp3",
-   "duration": 6.98,
-   "breaks": [],
-   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

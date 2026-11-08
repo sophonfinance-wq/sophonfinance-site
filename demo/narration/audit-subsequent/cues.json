@@ -1,0 +1,113 @@
+{
+ "demo": "audit-subsequent",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "style": "v2",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Audit Machine as it reviews events after the year end at HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 7.45,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Subsequent events happen after the year end. It reads the minutes and the lawyers' letter.",
+   "file": "02.mp3",
+   "duration": 6.75,
+   "breaks": [
+    2.96
+   ]
+  },
+  {
+   "id": "stage-2-at7.6",
+   "trigger": "stage:2@7.6",
+   "text": "A customer lawsuit settled for $110,000.",
+   "file": "03.mp3",
+   "duration": 4.76,
+   "breaks": []
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Then it reads every receipt and payment after the year end.",
+   "file": "04.mp3",
+   "duration": 3.93,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at9.6",
+   "trigger": "stage:3@9.6",
+   "text": "Two June costs were paid later; one customer paid nothing.",
+   "file": "05.mp3",
+   "duration": 3.99,
+   "breaks": []
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Next it sorts the events: books or notes, depending on when the cause arose.",
+   "file": "06.mp3",
+   "duration": 5.38,
+   "breaks": []
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Then the going-concern test: can the company keep paying its bills for the next year?",
+   "file": "07.mp3",
+   "duration": 5.15,
+   "breaks": [
+    1.66
+   ]
+  },
+  {
+   "id": "stage-5-at7.5",
+   "trigger": "stage:5@7.5",
+   "text": "Even after its adjustments, June 30 net worth clears the bank's minimum by about $379,000.",
+   "file": "08.mp3",
+   "duration": 7.06,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at14.6",
+   "trigger": "stage:5@14.6",
+   "text": "Without the bank's renewal of the credit line, the cash would run out.",
+   "file": "09.mp3",
+   "duration": 3.95,
+   "breaks": []
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Now it adds up what it found and sets it against materiality.",
+   "file": "10.mp3",
+   "duration": 4.41,
+   "breaks": []
+  },
+  {
+   "id": "stage-6-at5.0",
+   "trigger": "stage:6@5.0",
+   "text": "Then it writes the workpapers and a draft findings memo for the CPA.",
+   "file": "11.mp3",
+   "duration": 4.42,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. This review adds about $118,000 of adjustments, under materiality. The bigger issue is the notes: they leave out most later events and misstate the going-concern finding. Eleven items stay open. The CPA, a person, decides each one and signs. The machine gives no opinion.",
+   "file": "12.mp3",
+   "duration": 23.71,
+   "breaks": [
+    7.2,
+    14.84,
+    16.96,
+    20.88
+   ]
+  }
+ ]
+}

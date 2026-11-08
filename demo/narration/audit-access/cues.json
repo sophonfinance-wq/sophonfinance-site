@@ -1,0 +1,95 @@
+{
+ "demo": "audit-access",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "style": "v2",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Audit Machine check user access at HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 6.7,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "First it matches every user account in four systems to the staff list from HR.",
+   "file": "02.mp3",
+   "duration": 5.64,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at13.5",
+   "trigger": "stage:2@13.5",
+   "text": "Two people who left can still sign in.",
+   "file": "03.mp3",
+   "duration": 2.69,
+   "breaks": []
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Segregation of duties means no one person can both start and approve a payment.",
+   "file": "04.mp3",
+   "duration": 5.52,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at6.6",
+   "trigger": "stage:3@6.6",
+   "text": "One person approved about $65,000 of their own payments.",
+   "file": "05.mp3",
+   "duration": 5.2,
+   "breaks": []
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Next it lists every administrator account and compares the sign-in settings with the policy.",
+   "file": "06.mp3",
+   "duration": 6.68,
+   "breaks": []
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Then it traces every system change to its approval. One had none.",
+   "file": "07.mp3",
+   "duration": 6.15,
+   "breaks": [
+    3.5
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Now it rates each weakness by what it could let through.",
+   "file": "08.mp3",
+   "duration": 3.18,
+   "breaks": []
+  },
+  {
+   "id": "stage-6-at5.0",
+   "trigger": "stage:6@5.0",
+   "text": "Then it writes the workpapers and a draft findings memo for the CPA.",
+   "file": "09.mp3",
+   "duration": 4.42,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. It proposes one material weakness, a gap that could let a large error through: the controller's unchecked administrator rights. It also proposes one significant deficiency, payments approved by the person who made them. Ten items stay open. The CPA, a person, decides and signs. The machine gives no opinion.",
+   "file": "10.mp3",
+   "duration": 21.04,
+   "breaks": [
+    5.56,
+    13.86,
+    15.6,
+    18.9
+   ]
+  }
+ ]
+}

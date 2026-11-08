@@ -2,89 +2,122 @@
  "demo": "audit-controls",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "It walks through eleven key controls.",
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Audit Machine walk through the key controls of HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 7,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at6.0",
+   "trigger": "stage:1@6.0",
+   "text": "A control is a routine check, like a second person approving a payment.",
    "file": "02.mp3",
-   "duration": 2.48,
+   "duration": 4.46,
    "breaks": []
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "Segregation of duties means one person shouldn't both set up a vendor and pay it. Here one person did both, for four payments of about $64,700.",
+   "text": "First, purchasing to pay: it follows a new vendor and its first payment from start to finish.",
    "file": "03.mp3",
-   "duration": 11.72,
+   "duration": 7.04,
    "breaks": [
-    4.94
+    2.16
    ]
+  },
+  {
+   "id": "stage-2-at8.2",
+   "trigger": "stage:2@8.2",
+   "text": "Four payments, about $65,000, were prepared and approved by the same person.",
+   "file": "04.mp3",
+   "duration": 8.03,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "Billing to cash works: every bill approved, every receipt posted on time.",
-   "file": "04.mp3",
-   "duration": 5.3,
+   "text": "Then billing to cash: pay applications and receipts.",
+   "file": "05.mp3",
+   "duration": 4.45,
    "breaks": [
-    1.24,
-    2.74
+    1.9
    ]
+  },
+  {
+   "id": "stage-3-at7.8",
+   "trigger": "stage:3@7.8",
+   "text": "Both billing controls work.",
+   "file": "06.mp3",
+   "duration": 1.74,
+   "breaks": []
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "Payrolls are reviewed before release, but the payroll manager's own raise had no signed approval.",
-   "file": "05.mp3",
-   "duration": 6.93,
+   "text": "Next, payroll: it walks a pay run from processing to release.",
+   "file": "07.mp3",
+   "duration": 4.87,
+   "breaks": [
+    1.32
+   ]
+  },
+  {
+   "id": "stage-4-at9.0",
+   "trigger": "stage:4@9.0",
+   "text": "The manager's own raise was never signed.",
+   "file": "08.mp3",
+   "duration": 2.91,
    "breaks": []
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "Thirty large journal entries, over $8 million, had no second review. No bank reconciliation is signed as reviewed.",
-   "file": "06.mp3",
-   "duration": 9.13,
-   "breaks": [
-    5.64
-   ]
+   "text": "Then the close: manual entries and bank reconciliations.",
+   "file": "09.mp3",
+   "duration": 4.98,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at5.0",
+   "trigger": "stage:5@5.0",
+   "text": "About $8 million of entries were posted with no second review.",
+   "file": "10.mp3",
+   "duration": 4.58,
+   "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "A significant deficiency is a weakness serious enough to report to those in charge. It proposes two.",
-   "file": "07.mp3",
-   "duration": 7.05,
-   "breaks": [
-    4.94
-   ]
+   "text": "Now it rates each weakness by what it could let through.",
+   "file": "11.mp3",
+   "duration": 3.18,
+   "breaks": []
+  },
+  {
+   "id": "stage-6-at3.5",
+   "trigger": "stage:6@3.5",
+   "text": "Then it writes the workpapers and a draft findings memo for the CPA.",
+   "file": "12.mp3",
+   "duration": 4.42,
+   "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
-   "text": "All done. Four of eleven key controls work as designed. Two significant deficiencies and two smaller deficiencies are proposed. Seven items stay open. This is not an opinion on controls: the CPA, a person, decides every level and signs.",
-   "file": "08.mp3",
-   "duration": 19.14,
+   "text": "All done. Four of eleven key controls work as designed. Two gaps look significant: payments approved by the person who made them, and entries posted with no review. Seven items stay open. The CPA, a person, decides how serious each one is. The machine gives no opinion.",
+   "file": "13.mp3",
+   "duration": 23.65,
    "breaks": [
-    4.34,
-    9.32,
-    11.7,
-    14.24
+    4.36,
+    13.32,
+    15.58,
+    20.96
    ]
-  }
- ],
- "parked": [
-  {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's machine test HANGS General Contracting's internal controls: the checks that stop mistakes and fraud.",
-   "file": "01.mp3",
-   "duration": 8.97,
-   "breaks": [
-    5.5
-   ],
-   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }
