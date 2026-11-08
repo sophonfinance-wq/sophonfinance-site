@@ -1,0 +1,20 @@
+{
+  "name": "sophonfinance-site-tests",
+  "private": true,
+  "description": "Regression tests for the F1 Finance site and its demos. The site itself is static and loads nothing from here.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node tests/run.mjs",
+    "test:static": "node tests/run.mjs --no-playback",
+    "test:content": "node tests/content.test.mjs",
+    "test:consistency": "node tests/consistency.test.mjs",
+    "test:reconcile": "node tests/reconcile.test.mjs",
+    "test:live": "node tests/live/run-all.cjs",
+    "test:playback": "node tests/playback/playback.mjs --demos=all"
+  },
+  "devDependencies": {
+    "@babel/parser": "7.29.13"
+  }
+}

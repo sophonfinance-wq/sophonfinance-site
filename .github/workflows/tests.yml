@@ -1,0 +1,33 @@
+# Regression tests for the site and its demos (tests/README.md). GitHub Pages keeps serving the site from the branch
+# as before; nothing here is part of the site.
+name: tests
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install the test dependency (@babel/parser)
+        run: npm ci
+
+      - name: npm test
+        env:
+          CI: 'true'
+          # Google Chrome comes preinstalled on GitHub's Ubuntu runners
+          CHROME_PATH: /usr/bin/google-chrome
+        run: npm test

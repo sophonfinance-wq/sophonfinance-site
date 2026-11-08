@@ -3,3 +3,4 @@ Thumbs.db
 .DS_Store
 draft-*
 preview-*
+node_modules/
