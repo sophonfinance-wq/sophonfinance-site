@@ -1,0 +1,83 @@
+{
+ "demo": "accounting-cashflow",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's accounting machine forecast the next 13 weeks of cash for HANGS Construction.",
+   "file": "01.mp3",
+   "duration": 6.83,
+   "breaks": []
+  },
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, it starts from the reconciled bank balance: just over $1,029,000.",
+   "file": "02.mp3",
+   "duration": 7.89,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, the bills due in each weekly payment run, and seven payrolls.",
+   "file": "03.mp3",
+   "duration": 6.01,
+   "breaks": []
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Then the money coming in: property sales with signed contracts, and construction loan draws. One sale has no signed contract, so it's left out.",
+   "file": "04.mp3",
+   "duration": 11.44,
+   "breaks": [
+    6.52
+   ]
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Then building costs, loan payments and rent. A $552,000 steel bill is due in December, not January; it uses the earlier date.",
+   "file": "05.mp3",
+   "duration": 12.79,
+   "breaks": [
+    3.84,
+    10.56
+   ]
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "The lowest week, starting December 7, falls about $40,400 below the company's minimum. The lender's covenant, its cash limit, is still met.",
+   "file": "06.mp3",
+   "duration": 11.38,
+   "breaks": [
+    6.9
+   ]
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the workpapers and an unsigned memo for the controller, the head of accounting.",
+   "file": "07.mp3",
+   "duration": 6.47,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. Cash ends the 13 weeks at about $1,485,000. For the low week in December, a person chooses: delay a $94,800 loader, or draw on the construction loan. Two planned loan draws, about $764,000, must be confirmed. Five items are open. Nothing is paid, posted or drawn until the controller approves.",
+   "file": "08.mp3",
+   "duration": 28.7,
+   "breaks": [
+    6.56,
+    15.76,
+    21.88,
+    23.88
+   ]
+  }
+ ]
+}
