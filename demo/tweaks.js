@@ -485,3 +485,35 @@
 // ---- 7. "Try your own numbers" (demo/live/, by agent LIVE): the loader adds its buttons and panel on the demos it
 //         supports and does nothing elsewhere. Escape closes its panel through window.__ffLive (section 6). ----
 (function(){try{var s=document.createElement('script');s.src='../live/loader.js';s.async=true;(document.head||document.documentElement).appendChild(s);}catch(e){}})();
+
+// ---- 8. never show a broken image or film (retry once, then a clean fallback) ----
+(function () {
+  var LOGO = /HANGS-Construction-(color|reverse)\.svg/i;
+  var css = document.createElement('style');
+  css.textContent = '.ff-logo-text{display:inline-flex;align-items:center;font:700 15px/1 system-ui,sans-serif;letter-spacing:.04em;color:currentColor;white-space:nowrap}';
+  (document.head || document.documentElement).appendChild(css);
+  document.addEventListener('error', function (e) {
+    var el = e.target; if (!el || !el.tagName) return;
+    var tag = el.tagName;
+    if (tag === 'IMG') {
+      var src = el.getAttribute('src') || '';
+      if (!el.getAttribute('data-ff-retry') && src && src.indexOf('data:') !== 0) {
+        el.setAttribute('data-ff-retry', '1');
+        el.src = src.split('?')[0] + '?r=' + Date.now();
+        return;
+      }
+      if (LOGO.test(src)) {
+        var span = document.createElement('span'); span.className = 'ff-logo-text ' + (el.className || '');
+        span.textContent = 'HANGS Construction'; span.style.height = (el.height || 28) + 'px';
+        el.replaceWith(span); return;
+      }
+      if (!el.getAttribute('alt')) { el.hidden = true; return; }
+      var t = document.createElement('span'); t.textContent = el.getAttribute('alt'); t.className = el.className; el.replaceWith(t);
+    } else if (tag === 'VIDEO' || tag === 'SOURCE') {
+      var v = tag === 'VIDEO' ? el : el.parentElement; if (!v) return;
+      // keep the poster frame; drop the film so no broken player shows
+      try { v.removeAttribute('src'); [].slice.call(v.querySelectorAll('source')).forEach(function (s) { s.remove(); }); v.load(); } catch (x) {}
+      if (!v.getAttribute('poster')) v.style.visibility = 'hidden';
+    }
+  }, true);
+})();
