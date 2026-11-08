@@ -919,11 +919,6 @@ footer a:hover{ color:var(--blue); }
   </section>
 
   <section class="contact" id="contact">
-    <div class="contact-film" aria-hidden="true">
-      <video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/team-reel-poster-v2.jpg" data-mobile="videos/team-reel-mobile-v2.mp4" aria-label="The F1 Finance team at work">
-        <source src="videos/team-reel-v2.mp4" type="video/mp4">
-      </video>
-    </div>
     <div class="wrap c-grid">
       <div>
         <h2>Schedule a <span class="acc">free consultation.</span></h2>
@@ -1204,6 +1199,8 @@ footer a:hover{ color:var(--blue); }
   window.addEventListener('resize', function(){ if (sd && sd.classList.contains('open')) sdAim(dCur); });
   window.f1ShowDemo = function(m){ window.f1OpenDemos(m, true); };
   demoPick(DEMO.tax.ready ? 'tax' : 'accounting', false);
+  // the Tax demos are already open under the tabs when the page loads, so visitors see there is something to press
+  if (demosOn && sd) { window.f1OpenDemos(dCur); window.addEventListener('load', function(){ sdAim(dCur); }); if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ sdAim(dCur); }); }
 
   // App pop-out
   var pop = document.getElementById('pop'), popV = document.getElementById('popV');
