@@ -1,93 +1,132 @@
 {
  "demo": "tax-941",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
- "generated": "2026-11-07",
+ "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, it reads the returns already filed this year. Pay since January shows who has reached the Social Security wage limit.",
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Tax Machine prepare Form 941, the quarterly payroll tax return, for HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 10.34,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at-9-6",
+   "trigger": "stage:1@9.6",
+   "text": "It reads the company's details and this year's earlier returns.",
    "file": "02.mp3",
-   "duration": 8.35,
-   "breaks": [
-    3.3
-   ]
+   "duration": 4.23,
+   "breaks": []
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "Next, the quarter's payroll. The payroll register lists every paycheck: 560 of them, for 96 employees. It also reads the tax deposits and the general ledger, the company's main accounting record.",
+   "text": "Next, the quarter's payroll: the employee roster, and every paycheck from six paydays.",
    "file": "03.mp3",
-   "duration": 14.56,
-   "breaks": [
-    1.62,
-    8.4
-   ]
+   "duration": 7.3,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-9-6",
+   "trigger": "stage:2@9.6",
+   "text": "Then the tax deposits sent to the IRS, and the general ledger, the company's main accounting record.",
+   "file": "04.mp3",
+   "duration": 6.92,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-18-6",
+   "trigger": "stage:2@18.6",
+   "text": "It confirms everyone paid is on the roster.",
+   "file": "05.mp3",
+   "duration": 3.6,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "Now it checks the official tax rules online: tax rates, the Social Security wage limit and deposit deadlines. All sixteen checks are confirmed, and one question is left for a person.",
-   "file": "04.mp3",
-   "duration": 15.51,
-   "breaks": [
-    3.58,
-    9.14
-   ]
+   "text": "Now it checks the official rules online: tax rates, the wage limit and deposit deadlines.",
+   "file": "06.mp3",
+   "duration": 8.16,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-8-9",
+   "trigger": "stage:3@8.9",
+   "text": "Each rule is matched to the client's records.",
+   "file": "07.mp3",
+   "duration": 3.06,
+   "breaks": []
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "Then it works out the return. Withholding is the tax taken out of each paycheck; the employer adds its own matching share. Schedule B lists the tax owed on each payday. The quarter's total is $690,018, and the deposits cover it in full.",
-   "file": "05.mp3",
-   "duration": 19.44,
-   "breaks": [
-    1.62,
-    5.3,
-    8.28,
-    12.34
-   ]
+   "text": "Then it works out the return, starting with wages and the income tax withheld.",
+   "file": "08.mp3",
+   "duration": 5.12,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-9-4",
+   "trigger": "stage:4@9.4",
+   "text": "Next, Social Security and Medicare: the employee's share plus the employer's match.",
+   "file": "09.mp3",
+   "duration": 5.98,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-19-6",
+   "trigger": "stage:4@19.6",
+   "text": "The quarter's total tax comes to just over $690,000.",
+   "file": "10.mp3",
+   "duration": 4.96,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-26-4",
+   "trigger": "stage:4@26.4",
+   "text": "The deposits cover every payday, so nothing more is due.",
+   "file": "11.mp3",
+   "duration": 4.08,
+   "breaks": []
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "Twelve checks pass: every paycheck and the ledger agree to the cent.",
-   "file": "06.mp3",
-   "duration": 5.73,
-   "breaks": [
-    1.36
-   ]
+   "text": "Every paycheck ties to the ledger, to the cent.",
+   "file": "12.mp3",
+   "duration": 3.49,
+   "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it writes the draft return and its workpapers, the math behind every figure.",
-   "file": "07.mp3",
-   "duration": 6.3,
+   "text": "Last, it writes the draft return and the workpapers behind it.",
+   "file": "13.mp3",
+   "duration": 4.28,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
    "text": "All done. The draft shows just over $690,000 of tax for the quarter, all deposited, so nothing more is due. Two items stay open: whether one worker paid as a vendor is really an employee, and the filing date that depends on it. A person reviews and signs before anything is filed.",
-   "file": "08.mp3",
+   "file": "14.mp3",
    "duration": 21.12,
    "breaks": [
     8.56,
     10.72,
     17.3
    ]
-  }
- ],
- "parked": [
+  },
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's tax machine prepare Form 941, the quarterly payroll tax return, for HANGS General Contracting.",
-   "file": "01.mp3",
-   "duration": 8.49,
-   "breaks": [],
-   "why": "mentions old company/sale wording; re-take needed"
+   "id": "skip",
+   "trigger": "skip",
+   "text": "Here are the results: just over $690,000 of tax for the quarter, all deposited, and two open items for a person to decide.",
+   "file": "15.mp3",
+   "duration": 10.36,
+   "breaks": []
   }
  ]
 }

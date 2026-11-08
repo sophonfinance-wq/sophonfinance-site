@@ -2,83 +2,109 @@
  "demo": "tax-1099",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
    "id": "start",
    "trigger": "start",
-   "text": "Watch F1 Finance's tax machine prepare Forms 1099-NEC for HANGS.",
+   "text": "Watch F1 Finance's Tax Machine prepare Forms 1099-NEC, the yearly report of contractor pay, for HANGS Construction Services.",
    "file": "01.mp3",
-   "duration": 7.12,
-   "breaks": []
-  },
-  {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, it checks each vendor's W-9 tax form.",
-   "file": "02.mp3",
-   "duration": 3.96,
+   "duration": 11.08,
    "breaks": []
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "Next, the year's 134 payments, about $2.3 million. A 1099-NEC reports what each independent contractor was paid.",
+   "text": "Next, every payment made to vendors this year, checked against the accounts payable ledger.",
+   "file": "02.mp3",
+   "duration": 6.26,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-8-8",
+   "trigger": "stage:2@8.8",
+   "text": "In all, about $2.3 million went to 18 vendors.",
    "file": "03.mp3",
-   "duration": 11.74,
-   "breaks": [
-    5.26
-   ]
+   "duration": 6.04,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "Now it checks the IRS rules online: all ten confirmed, two questions left for a person.",
+   "text": "Now it checks the official rules online, including this year's higher reporting threshold.",
    "file": "04.mp3",
-   "duration": 8.21,
-   "breaks": [
-    2.96,
-    5.22
-   ]
+   "duration": 5.72,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-6-1",
+   "trigger": "stage:3@6.1",
+   "text": "Each rule is matched to the client's records.",
+   "file": "05.mp3",
+   "duration": 3.06,
+   "breaks": []
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "Then it sorts every payment, leaving nine contractors. Corporations, materials and card payments are left out. One vendor never gave a tax ID, so 24 percent is held back for the IRS: that's backup withholding.",
-   "file": "05.mp3",
-   "duration": 17.24,
+   "text": "Then it sorts every payment. Corporations, materials and card charges are left out.",
+   "file": "06.mp3",
+   "duration": 6.32,
    "breaks": [
-    3.6,
-    8.5,
-    14.44
+    1.88
    ]
+  },
+  {
+   "id": "stage-4-at-6-6",
+   "trigger": "stage:4@6.6",
+   "text": "Nine contractors get a form, for about $708,000 in all.",
+   "file": "07.mp3",
+   "duration": 5.86,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-12-8",
+   "trigger": "stage:4@12.8",
+   "text": "One vendor never gave a tax ID, so tax should have been withheld from its payments.",
+   "file": "08.mp3",
+   "duration": 6.22,
+   "breaks": []
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "Eight checks pass, with no differences.",
-   "file": "06.mp3",
-   "duration": 2.8,
+   "text": "Every payment ties back to the year's total.",
+   "file": "09.mp3",
+   "duration": 3.21,
    "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it writes the draft forms and their workpapers.",
-   "file": "07.mp3",
-   "duration": 4.33,
+   "text": "Last, it writes the draft forms and the workpapers behind them.",
+   "file": "10.mp3",
+   "duration": 4.58,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
    "text": "All done. Nine draft forms report $708,088 paid to contractors. Five items stay open, including a tax ID that doesn't match IRS records, $1,344 of withholding never taken, and a worker who may be an employee. A person reviews and e-files by February 1; nothing is filed yet.",
-   "file": "08.mp3",
+   "file": "11.mp3",
    "duration": 29.79,
    "breaks": [
     8.8,
     15.48,
     23.52
    ]
+  },
+  {
+   "id": "skip",
+   "trigger": "skip",
+   "text": "Here are the results: nine draft forms reporting $708,088, and five open items for a person to decide.",
+   "file": "12.mp3",
+   "duration": 11.39,
+   "breaks": []
   }
  ]
 }

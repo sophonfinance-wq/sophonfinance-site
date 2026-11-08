@@ -2,81 +2,125 @@
  "demo": "tax-w2",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
    "id": "start",
    "trigger": "start",
-   "text": "Watch F1 Finance's tax machine prepare W-2s for HANGS: the yearly pay statement each employee gets.",
+   "text": "Watch F1 Finance's Tax Machine prepare W-2s, each employee's yearly pay statement, for HANGS Construction Services.",
    "file": "01.mp3",
-   "duration": 8.95,
+   "duration": 9.07,
    "breaks": []
   },
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, it adds up the year's four quarterly payroll returns.",
+   "id": "stage-1-at-9-4",
+   "trigger": "stage:1@9.4",
+   "text": "It starts from this year's four payroll returns.",
    "file": "02.mp3",
-   "duration": 4.53,
+   "duration": 3.14,
    "breaks": []
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "Next, the year's payroll: 101 employees and 27 pay runs. One new employee has no Social Security number on file yet.",
+   "text": "Next, the year's payroll: every employee's earnings, the roster, and the payroll ledger.",
    "file": "03.mp3",
-   "duration": 10.43,
-   "breaks": [
-    1.84,
-    5.82
-   ]
+   "duration": 7.08,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-9-4",
+   "trigger": "stage:2@9.4",
+   "text": "It also reads the company vehicle log, since personal use of a company truck counts as pay.",
+   "file": "04.mp3",
+   "duration": 5.95,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-16-2",
+   "trigger": "stage:2@16.2",
+   "text": "It confirms everyone paid is on the roster.",
+   "file": "05.mp3",
+   "duration": 3.6,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "Now it checks the IRS rules online. Eleven checks are confirmed; one question is left for a person.",
-   "file": "04.mp3",
-   "duration": 7.42,
-   "breaks": [
-    2.42,
-    4.56
-   ]
+   "text": "Now it checks the official W-2 rules online, from wage limits to the box 12 codes.",
+   "file": "06.mp3",
+   "duration": 7,
+   "breaks": []
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "Then it fills in each W-2. Box 1 is taxable pay; box 2 is income tax withheld. Boxes 3 to 6 are Social Security and Medicare wages and tax. Box 12 codes extras, like 401(k) savings.",
-   "file": "05.mp3",
-   "duration": 18.04,
-   "breaks": [
-    2.74,
-    5.1,
-    7.84,
-    13.48
-   ]
+   "text": "Then it builds a W-2 for each of the 101 employees.",
+   "file": "07.mp3",
+   "duration": 4.98,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-5-4",
+   "trigger": "stage:4@5.4",
+   "text": "Box 1 wages come to just under $11.2 million.",
+   "file": "08.mp3",
+   "duration": 4.55,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-14-5",
+   "trigger": "stage:4@14.5",
+   "text": "It adds the box 12 codes for retirement savings and overtime pay.",
+   "file": "09.mp3",
+   "duration": 4.92,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-19-6",
+   "trigger": "stage:4@19.6",
+   "text": "It flags personal use of two company pickups, missing from pay.",
+   "file": "10.mp3",
+   "duration": 4.45,
+   "breaks": []
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "Twelve checks pass: the W-2 totals match the four quarterly returns exactly.",
-   "file": "06.mp3",
-   "duration": 7.61,
-   "breaks": [
-    1.6
-   ]
+   "text": "Now the checks: the W-3 summary matches the four quarterly returns exactly.",
+   "file": "11.mp3",
+   "duration": 6.2,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at-6-4",
+   "trigger": "stage:5@6.4",
+   "text": "The payroll ledger agrees as well.",
+   "file": "12.mp3",
+   "duration": 2.19,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at-10-6",
+   "trigger": "stage:5@10.6",
+   "text": "Thirteen cents of extra Social Security tax gets refunded.",
+   "file": "13.mp3",
+   "duration": 4,
+   "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it writes the draft forms and their workpapers.",
-   "file": "07.mp3",
-   "duration": 3.91,
+   "text": "Last, it writes the draft forms and the workpapers behind them.",
+   "file": "14.mp3",
+   "duration": 4.58,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
    "text": "All done. 101 draft W-2s report just under $11.2 million of wages in box 1. Five items stay open: personal use of two company pickups to add to pay, 13 cents of Social Security tax to refund, a missing Social Security number, a check on overtime, and the filing itself. A person reviews and e-files by February 1; nothing is filed yet.",
-   "file": "08.mp3",
+   "file": "15.mp3",
    "duration": 27.84,
    "breaks": [
     7.9,
@@ -84,6 +128,14 @@
     21.92,
     26.18
    ]
+  },
+  {
+   "id": "skip",
+   "trigger": "skip",
+   "text": "Here are the results: 101 draft W-2s with just under $11.2 million of wages, and five open items for a person to decide.",
+   "file": "16.mp3",
+   "duration": 11.48,
+   "breaks": []
   }
  ]
 }

@@ -2,71 +2,127 @@
  "demo": "tax-lni",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, it finds the six risk classes. A risk class groups jobs by danger; riskier work pays more per hour.",
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Tax Machine prepare the workers' comp report, the state insurance for employees hurt on the job, for HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 10.41,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at-10-8",
+   "trigger": "stage:1@10.8",
+   "text": "It reads the company's risk classes and rates. Riskier work pays a higher rate for every hour.",
    "file": "02.mp3",
-   "duration": 9.98,
+   "duration": 6.5,
    "breaks": [
-    3.1,
-    6.56
+    2.9
    ]
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "Next, the hours worked, because the premium is charged per hour. One individual billed 504 more hours as a vendor.",
+   "text": "Next, the hours worked, because the premium is charged per hour.",
    "file": "03.mp3",
-   "duration": 8.72,
-   "breaks": [
-    4.62
-   ]
+   "duration": 4.83,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-4-8",
+   "trigger": "stage:2@4.8",
+   "text": "It reads the payroll register and the payments to outside labor.",
+   "file": "04.mp3",
+   "duration": 3.94,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-9-6",
+   "trigger": "stage:2@9.6",
+   "text": "One individual also billed hours as a vendor.",
+   "file": "05.mp3",
+   "duration": 3.58,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "Now it checks the official rules online, including each risk class. All twenty-four checks are confirmed, and five questions are left for a person.",
-   "file": "04.mp3",
-   "duration": 13.07,
-   "breaks": [
-    5.52
-   ]
+   "text": "Now it checks the official rules online, from the state's rate tables to its class rules.",
+   "file": "06.mp3",
+   "duration": 6.18,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-7",
+   "trigger": "stage:3@7",
+   "text": "Each rule is matched to the client's records.",
+   "file": "07.mp3",
+   "duration": 3.06,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-12-2",
+   "trigger": "stage:3@12.2",
+   "text": "Each risk class has its own rules about who belongs in it, such as office staff or supervisors.",
+   "file": "08.mp3",
+   "duration": 6.78,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-19-8",
+   "trigger": "stage:3@19.8",
+   "text": "It also reads the rules on overtime hours and late filing.",
+   "file": "09.mp3",
+   "duration": 4.15,
+   "breaks": []
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "Then it multiplies each class's hours by its rate: $111,469 in all. Employees pay a small share, but payroll took $504 too much.",
-   "file": "05.mp3",
-   "duration": 14.81,
-   "breaks": [
-    8.4
-   ]
+   "text": "Then it works out the premium: each class's hours times its hourly rate.",
+   "file": "10.mp3",
+   "duration": 6.51,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-7-8",
+   "trigger": "stage:4@7.8",
+   "text": "The premium for the quarter comes to just over $111,000.",
+   "file": "11.mp3",
+   "duration": 5.31,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-14-6",
+   "trigger": "stage:4@14.6",
+   "text": "Then it checks the share taken from workers' pay.",
+   "file": "12.mp3",
+   "duration": 2.93,
+   "breaks": []
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "Eight checks pass: every hour is accounted for.",
-   "file": "06.mp3",
-   "duration": 4.35,
-   "breaks": [
-    1.12
-   ]
+   "text": "Just over $500 too much came out of workers' pay for overtime.",
+   "file": "13.mp3",
+   "duration": 5.12,
+   "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it writes the draft report and its workpapers.",
-   "file": "07.mp3",
-   "duration": 3.84,
+   "text": "Last, it writes the draft report and the workpapers behind it.",
+   "file": "14.mp3",
+   "duration": 4.21,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
    "text": "All done. The draft shows $111,469 of premium for the quarter. Five items stay open: two questions about which risk class some staff belong in, $504 to refund to employees, a worker paid as a vendor, and the report itself, now past due. A person reviews, signs and files it; nothing is filed or paid yet.",
-   "file": "08.mp3",
+   "file": "15.mp3",
    "duration": 21.46,
    "breaks": [
     5.5,
@@ -75,19 +131,14 @@
     16.9,
     19.56
    ]
-  }
- ],
- "parked": [
+  },
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's workers' comp report: the state insurance for employees hurt on the job.",
-   "file": "01.mp3",
-   "duration": 9.75,
-   "breaks": [
-    6.1
-   ],
-   "why": "mentions old company/sale wording; re-take needed"
+   "id": "skip",
+   "trigger": "skip",
+   "text": "Here are the results: just over $111,000 of premium for the quarter, and five open items for a person to decide.",
+   "file": "16.mp3",
+   "duration": 9.71,
+   "breaks": []
   }
  ]
 }

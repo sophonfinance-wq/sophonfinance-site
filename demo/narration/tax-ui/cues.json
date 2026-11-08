@@ -1,73 +1,118 @@
 {
  "demo": "tax-ui",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
- "generated": "2026-11-07",
+ "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, it reads this year's earlier reports, and finds a bonus payroll left off the last one.",
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Tax Machine prepare the state unemployment insurance report for HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 7.42,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at-9",
+   "trigger": "stage:1@9",
+   "text": "It finds a bonus payroll missing from last quarter's report.",
    "file": "02.mp3",
-   "duration": 7.47,
+   "duration": 4.48,
    "breaks": []
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "Next, 560 paychecks for 96 employees. Unemployment insurance is a state tax that funds benefits for laid-off workers. The company's rate is 3.1 percent.",
+   "text": "Next, this year's tax rate notice, the employee roster and the quarter's payroll register.",
    "file": "03.mp3",
-   "duration": 15.04,
-   "breaks": [
-    4.72,
-    10.92
-   ]
+   "duration": 7.46,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-7-6",
+   "trigger": "stage:2@7.6",
+   "text": "It also reads the payments to outside labor, and the client's email.",
+   "file": "04.mp3",
+   "duration": 4.4,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-13-9",
+   "trigger": "stage:2@13.9",
+   "text": "It confirms everyone paid is on the roster.",
+   "file": "05.mp3",
+   "duration": 3.6,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "Now it checks the state's official rules online. All fifteen checks are confirmed, and one question is left for a person.",
-   "file": "04.mp3",
-   "duration": 7.86,
-   "breaks": [
-    2.46,
-    4.86
-   ]
+   "text": "Now it checks the official rules online, straight from the state: the rate table, the taxable wage limit and the filing rules.",
+   "file": "06.mp3",
+   "duration": 7.96,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-9-6",
+   "trigger": "stage:3@9.6",
+   "text": "Each rule is matched to the client's records.",
+   "file": "07.mp3",
+   "duration": 3.06,
+   "breaks": []
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "Then it works out the tax. The taxable wage base is a yearly cap: only each employee's first $78,200 of pay is taxed. The tax comes to $38,682.",
-   "file": "05.mp3",
-   "duration": 15.43,
-   "breaks": [
-    1.84,
-    5.16,
-    10.98
-   ]
+   "text": "Then it works out the tax, which applies only up to a yearly wage limit for each person.",
+   "file": "08.mp3",
+   "duration": 5.49,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-8",
+   "trigger": "stage:4@8",
+   "text": "Pay above that is reported, but not taxed.",
+   "file": "09.mp3",
+   "duration": 3.52,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-11-9",
+   "trigger": "stage:4@11.9",
+   "text": "The tax for the quarter comes to just under $39,000.",
+   "file": "10.mp3",
+   "duration": 4.51,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-17-8",
+   "trigger": "stage:4@17.8",
+   "text": "It also reports the hours each employee worked.",
+   "file": "11.mp3",
+   "duration": 2.85,
+   "breaks": []
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "Ten checks pass: every wage line agrees with payroll.",
-   "file": "06.mp3",
-   "duration": 3.92,
-   "breaks": [
-    1.16
-   ]
+   "text": "Every employee line ties to the payroll register.",
+   "file": "12.mp3",
+   "duration": 4.4,
+   "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it writes the draft report and its workpapers, the math behind every figure.",
-   "file": "07.mp3",
-   "duration": 5.84,
+   "text": "Last, it writes the draft report and the workpapers behind it.",
+   "file": "13.mp3",
+   "duration": 4.21,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
    "text": "All done. The draft shows $38,682 of unemployment tax for the quarter. Three items stay open. Last quarter's report left out a $55,500 bonus payroll, about $270 of tax. One worker paid as a vendor may really be an employee. And the report was due November 2: a person reviews, signs and files it, and pays. Nothing is filed or paid yet.",
-   "file": "08.mp3",
+   "file": "14.mp3",
    "duration": 32.47,
    "breaks": [
     6.94,
@@ -76,17 +121,14 @@
     24.16,
     28.44
    ]
-  }
- ],
- "parked": [
+  },
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's quarterly unemployment insurance report.",
-   "file": "01.mp3",
-   "duration": 7.8,
-   "breaks": [],
-   "why": "mentions old company/sale wording; re-take needed"
+   "id": "skip",
+   "trigger": "skip",
+   "text": "Here are the results: $38,682 of unemployment tax for the quarter, and three open items for a person to decide.",
+   "file": "15.mp3",
+   "duration": 11.11,
+   "breaks": []
   }
  ]
 }

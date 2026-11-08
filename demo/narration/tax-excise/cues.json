@@ -1,72 +1,110 @@
 {
  "demo": "tax-excise",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
- "generated": "2026-11-07",
+ "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, it finds the seven jobs and their permits.",
-   "file": "02.mp3",
-   "duration": 3.66,
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Tax Machine prepare October's state excise tax return for HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 7.8,
    "breaks": []
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "Next, it reads October's books. Excise tax is simply Washington's tax on business sales. The bills to customers, the purchases and the general ledger, the company's main accounting record, all agree.",
+   "text": "Next, October's books: the billing register, the general ledger and the purchases.",
+   "file": "02.mp3",
+   "duration": 6.05,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-6-6",
+   "trigger": "stage:2@6.6",
+   "text": "An excise return combines the state's business tax with the sales tax collected on each job.",
    "file": "03.mp3",
-   "duration": 14.12,
-   "breaks": [
-    2.46,
-    6.72
-   ]
+   "duration": 6.31,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-13-6",
+   "trigger": "stage:2@13.6",
+   "text": "The client's email says October's books are not yet approved.",
+   "file": "04.mp3",
+   "duration": 4.09,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "Now it checks the state's published rules and tax rates online. All fifteen checks are confirmed, and three questions are left for a person.",
-   "file": "04.mp3",
-   "duration": 9.54,
-   "breaks": [
-    3.82
-   ]
+   "text": "Now it checks the official rules online: tax rates, local rates by job site, and due dates.",
+   "file": "05.mp3",
+   "duration": 7.31,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-7-4",
+   "trigger": "stage:3@7.4",
+   "text": "Each rule is matched to the client's records.",
+   "file": "06.mp3",
+   "duration": 3.06,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-11-6",
+   "trigger": "stage:3@11.6",
+   "text": "Sales tax on construction follows the job site, not the invoice.",
+   "file": "07.mp3",
+   "duration": 4.3,
+   "breaks": []
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "Then it works out three taxes. B&O, the business and occupation tax, is charged on total sales. Sales tax uses each job site's rate. Use tax covers supplies bought without sales tax.",
-   "file": "05.mp3",
-   "duration": 17.17,
-   "breaks": [
-    2.52,
-    9.48,
-    13
-   ]
+   "text": "Then it works out the business tax, and the sales tax at each job site's rate.",
+   "file": "08.mp3",
+   "duration": 5.54,
+   "breaks": []
   },
   {
-   "id": "stage-5",
-   "trigger": "stage:5",
-   "text": "Eight checks pass; one invoice charged the wrong rate.",
-   "file": "06.mp3",
-   "duration": 4.55,
-   "breaks": [
-    1.16
-   ]
+   "id": "stage-4-at-8-5",
+   "trigger": "stage:4@8.5",
+   "text": "It adds use tax on two purchases where no sales tax was paid.",
+   "file": "09.mp3",
+   "duration": 4.46,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-13-05",
+   "trigger": "stage:4@13.05",
+   "text": "In all, just over $780,000 is due.",
+   "file": "10.mp3",
+   "duration": 4.52,
+   "breaks": []
+  },
+  {
+   "id": "stage-5-at-0-4",
+   "trigger": "stage:5@0.4",
+   "text": "One invoice charged too little sales tax.",
+   "file": "11.mp3",
+   "duration": 3.29,
+   "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it writes the draft return and its workpapers, the math behind every figure.",
-   "file": "07.mp3",
-   "duration": 6.34,
+   "text": "Last, it writes the draft return and the workpapers behind it.",
+   "file": "12.mp3",
+   "duration": 4.28,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
    "text": "All done. The draft shows just over $780,000 due for October. Four items stay open. One invoice undercharged sales tax by $284. A customer's reseller permit, which lets it buy without sales tax, is missing. October's books are not yet approved. And a person reviews, signs and files the return by November 25; nothing is filed or paid.",
-   "file": "08.mp3",
+   "file": "13.mp3",
    "duration": 28.85,
    "breaks": [
     6.22,
@@ -75,17 +113,14 @@
     18.96,
     26.9
    ]
-  }
- ],
- "parked": [
+  },
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's tax machine prepare October's excise tax return for HANGS General Contracting.",
-   "file": "01.mp3",
-   "duration": 6.85,
-   "breaks": [],
-   "why": "mentions old company/sale wording; re-take needed"
+   "id": "skip",
+   "trigger": "skip",
+   "text": "Here are the results: just over $780,000 due for October, and four open items for a person to decide.",
+   "file": "14.mp3",
+   "duration": 8.9,
+   "breaks": []
   }
  ]
 }

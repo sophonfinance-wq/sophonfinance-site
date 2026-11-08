@@ -2,71 +2,119 @@
  "demo": "tax-pfml",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, it reads this year's earlier reports, and finds a bonus payroll left off the last one.",
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Tax Machine prepare the Paid Leave and WA Cares report for HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 7.68,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at-8-6",
+   "trigger": "stage:1@8.6",
+   "text": "It finds a bonus payroll missing from last quarter's report.",
    "file": "02.mp3",
-   "duration": 6.19,
+   "duration": 4.48,
    "breaks": []
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "Next, payroll and exemptions: 560 paychecks for 96 employees. WA Cares is the state's long-term care insurance; two employees have approved exemptions from it.",
+   "text": "Next, the payroll, and the approvals that exempt two employees from WA Cares, the state's long-term care insurance.",
    "file": "03.mp3",
-   "duration": 13.69,
-   "breaks": [
-    2.26,
-    6.5,
-    10.56
-   ]
+   "duration": 7.8,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-9-4",
+   "trigger": "stage:2@9.4",
+   "text": "Then the payroll register, the payments to outside labor, and the client's email.",
+   "file": "04.mp3",
+   "duration": 4.9,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-15-4",
+   "trigger": "stage:2@15.4",
+   "text": "It confirms everyone paid is on the roster.",
+   "file": "05.mp3",
+   "duration": 3.6,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "Now it checks the official rules online. All eighteen checks are confirmed, and three questions are left for a person.",
-   "file": "04.mp3",
-   "duration": 7.79,
+   "text": "Now it checks the official rules online: the Paid Leave rules first, then WA Cares.",
+   "file": "06.mp3",
+   "duration": 7.42,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-7-6",
+   "trigger": "stage:3@7.6",
+   "text": "Each rule is matched to the client's records.",
+   "file": "07.mp3",
+   "duration": 3.06,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-11-6",
+   "trigger": "stage:3@11.6",
+   "text": "Paid Leave pays for time off for a new child or a serious illness. WA Cares funds long-term care.",
+   "file": "08.mp3",
+   "duration": 7.09,
    "breaks": [
-    2.36
+    4.08
    ]
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "Then it works out the premiums. Paid family leave funds time off for a new child or a serious illness; its premium is 1.13 percent of wages. WA Cares adds 0.58 percent.",
-   "file": "05.mp3",
-   "duration": 15.88,
-   "breaks": [
-    2.02,
-    11.28
-   ]
+   "text": "Then it works out the two premiums, starting with Paid Leave, which stops at a yearly wage cap.",
+   "file": "09.mp3",
+   "duration": 6.16,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-9-3",
+   "trigger": "stage:4@9.3",
+   "text": "About $176 of WA Cares premium was not withheld.",
+   "file": "10.mp3",
+   "duration": 5.45,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-15",
+   "trigger": "stage:4@15",
+   "text": "It also reports the hours each employee worked.",
+   "file": "11.mp3",
+   "duration": 2.85,
+   "breaks": []
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "Seven checks pass: every line agrees with payroll.",
-   "file": "06.mp3",
-   "duration": 3.9,
-   "breaks": [
-    1.3
-   ]
+   "text": "Together, the premiums come to just over $44,000.",
+   "file": "12.mp3",
+   "duration": 4.98,
+   "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it writes the draft report and its workpapers.",
-   "file": "07.mp3",
-   "duration": 3.96,
+   "text": "Last, it writes the draft report and the workpapers behind it.",
+   "file": "13.mp3",
+   "duration": 4.21,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
    "text": "All done. The draft shows $44,170 due, as two premiums. Four items stay open: a bonus payroll missing from last quarter's report, $176 of WA Cares premium not withheld, a worker paid as a vendor, and the report itself, due November 2. A person reviews, signs and files it; nothing is filed or paid yet.",
-   "file": "08.mp3",
+   "file": "14.mp3",
    "duration": 32.53,
    "breaks": [
     8.18,
@@ -78,19 +126,14 @@
     26.06,
     29.74
    ]
-  }
- ],
- "parked": [
+  },
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's Paid Leave and WA Cares report.",
-   "file": "01.mp3",
-   "duration": 7.61,
-   "breaks": [
-    6.7
-   ],
-   "why": "mentions old company/sale wording; re-take needed"
+   "id": "skip",
+   "trigger": "skip",
+   "text": "Here are the results: $44,170 due as two premiums, and four open items for a person to decide.",
+   "file": "15.mp3",
+   "duration": 10.61,
+   "breaks": []
   }
  ]
 }

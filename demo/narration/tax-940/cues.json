@@ -2,72 +2,117 @@
  "demo": "tax-940",
  "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
  "generated": "2026-11-08",
+ "style": "v2",
  "cues": [
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, it reads the year's earlier returns. One state report missed a bonus payroll.",
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Tax Machine prepare Form 940, the yearly federal unemployment tax return, for HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 10.44,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at-10-4",
+   "trigger": "stage:1@10.4",
+   "text": "It reads the wages paid in the first half, and checks them against the returns already filed.",
    "file": "02.mp3",
-   "duration": 7.45,
-   "breaks": [
-    3.36
-   ]
+   "duration": 5.76,
+   "breaks": []
   },
   {
    "id": "stage-2",
    "trigger": "stage:2",
-   "text": "Next, the year's payroll: 101 people paid in 2026. The last quarter isn't finished yet, so it uses a projection from the pay schedule.",
+   "text": "Next, the rest of the year: the third-quarter payroll register, and a projection for the fourth quarter.",
    "file": "03.mp3",
-   "duration": 10.38,
-   "breaks": [
-    1.62,
-    4.6
-   ]
+   "duration": 6.81,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-9-3",
+   "trigger": "stage:2@9.3",
+   "text": "Then the payments to outside labor, and the unemployment tax deposits already made.",
+   "file": "04.mp3",
+   "duration": 5.44,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-16-2",
+   "trigger": "stage:2@16.2",
+   "text": "The fourth quarter is still a projection, so it gets refreshed in January.",
+   "file": "05.mp3",
+   "duration": 4.85,
+   "breaks": []
   },
   {
    "id": "stage-3",
    "trigger": "stage:3",
-   "text": "Now it checks the IRS rules online. All eighteen checks are confirmed; four questions are left for a person.",
-   "file": "04.mp3",
-   "duration": 8.64,
-   "breaks": [
-    2.82,
-    5.68
-   ]
+   "text": "Now it checks the official rules online: the rate, the $7,000 wage base and the state credit.",
+   "file": "06.mp3",
+   "duration": 7.47,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-8-4",
+   "trigger": "stage:3@8.4",
+   "text": "Each rule is matched to the client's records.",
+   "file": "07.mp3",
+   "duration": 3.06,
+   "breaks": []
   },
   {
    "id": "stage-4",
    "trigger": "stage:4",
-   "text": "Then it works out the tax. FUTA is charged only on each employee's first $7,000 of pay. Paying state unemployment tax earns the FUTA credit, which cuts the rate from 6 percent to 0.6 percent. The tax is $4,242.",
-   "file": "05.mp3",
-   "duration": 21.28,
-   "breaks": [
-    1.6,
-    7.7,
-    17.08
-   ]
+   "text": "Then it works out the tax, on each person's pay up to that wage base.",
+   "file": "08.mp3",
+   "duration": 4.77,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-5-8",
+   "trigger": "stage:4@5.8",
+   "text": "It tracks when each employee reaches that limit, quarter by quarter.",
+   "file": "09.mp3",
+   "duration": 4.82,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-12-2",
+   "trigger": "stage:4@12.2",
+   "text": "The tax for the year comes to $4,242.",
+   "file": "10.mp3",
+   "duration": 5.31,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-20-3",
+   "trigger": "stage:4@20.3",
+   "text": "Most is deposited; about $186 is left to pay.",
+   "file": "11.mp3",
+   "duration": 4.23,
+   "breaks": []
   },
   {
    "id": "stage-5",
    "trigger": "stage:5",
-   "text": "Eleven checks pass, all to the cent.",
-   "file": "06.mp3",
-   "duration": 3.01,
+   "text": "Every figure agrees with the payroll system, to the cent.",
+   "file": "12.mp3",
+   "duration": 4.07,
    "breaks": []
   },
   {
    "id": "stage-6",
    "trigger": "stage:6",
-   "text": "Last, it writes the draft return and its workpapers.",
-   "file": "07.mp3",
-   "duration": 4.14,
+   "text": "Last, it writes the draft return and the workpapers behind it.",
+   "file": "13.mp3",
+   "duration": 4.28,
    "breaks": []
   },
   {
    "id": "end",
    "trigger": "end",
    "text": "All done. The draft shows $4,242 of tax for the year. Most of it is already deposited, leaving about $186 to pay. Six items stay open, including a deposit made one day late, a worker paid as a vendor, and a fourth quarter that is still projected. A person reviews, signs and files; nothing is filed or paid.",
-   "file": "08.mp3",
+   "file": "14.mp3",
    "duration": 28.43,
    "breaks": [
     6.52,
@@ -75,17 +120,14 @@
     21.78,
     25.56
    ]
-  }
- ],
- "parked": [
+  },
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's 2026 Form 940: the yearly federal unemployment tax return, called FUTA.",
-   "file": "01.mp3",
-   "duration": 11.78,
-   "breaks": [],
-   "why": "mentions old company/sale wording; re-take needed"
+   "id": "skip",
+   "trigger": "skip",
+   "text": "Here are the results: $4,242 of tax for the year, about $186 still to pay, and six open items for a person to decide.",
+   "file": "15.mp3",
+   "duration": 12.75,
+   "breaks": []
   }
  ]
 }
