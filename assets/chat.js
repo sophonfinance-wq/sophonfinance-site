@@ -40,7 +40,7 @@
     { id: 'data', k: ['data', 'security', 'secure', 'privacy', 'private', 'confidential', 'safe', 'safety', 'compliance'],
       a: 'Every machine produces drafts for a person to approve. We go through your data and access requirements in the consultation. Please don&rsquo;t put client data in the website form.' },
     { id: 'enasal', k: ['enasal', 'partner', 'partners', 'partnership', 'built', 'creator', 'created'],
-      a: 'ENASAL AI Engineering is our AI engineering partner. The F1 Finance machines are created by ENASAL | SophonFinance.com.' },
+      a: 'ENASAL AI Engineering is our AI engineering partner. The F1 Finance machines are created by ENASAL with F1 Finance.' },
     { id: 'hi', k: ['hi', 'hello', 'hey', 'yo', 'sup', 'morning', 'afternoon', 'evening', 'thanks', 'thank'],
       a: 'Hi! Ask me anything about F1 Finance: the machines, marketing, industries, the team or how to get started.',
       c: ['What do you do?', 'Which industries?', 'Who are your engineers?', 'Book a consultation'] }
