@@ -24,13 +24,10 @@ const IDS = only.length ? only : demos();
 // missing file is never seen as a broken frame.
 const ASSET_OK = new Map([[/^demo\/(tax|accounting)[^/]*\/brand\/hero-loop\.mp4$/, 'brand/hero-loop.mp4 is not shipped on purpose: demo/tweaks.js falls back to the poster image']]);
 // Sentences split into text nodes on purpose: short field labels in the mail views ("To " + recipient).
-const MAKER_FAMILIES = /^(accounting|tax)/;
+const MAKER_FAMILIES = /^(accounting|tax|audit)/;
 const SPLIT_OK = [/^"(To|Send to) ",/];
 // A word and its plural ending (" invoice" + (n > 1 ? "s" : "")) are meant to touch.
 const GLUE_OK = [/,\s*[\w$.]+\s*[><=!]+=?\s*[\w$.]+\s*\?\s*"e?s"\s*:\s*""$/];
-// Listed terms still present in the audit demos, which Agent AUDIT owns (scratchpad audcommon). Strict (they fail the run),
-// labelled until the audit design data takes the same renames as the tax demos.
-const TERMS_PENDING = id => /^audit/.test(id) ? 'owned by Agent AUDIT (scratchpad audcommon): the audit design data still has the J-2619 and J-2625 job names the tax demos renamed (Rainier Commons Building B, Juniper Ridge Business Park, 9 flex buildings) and one listed word in the audit intro' : null;
 
 export function run(ids = IDS) {
   const t = suite('content: typos, sentence joins, assets, listed terms');
@@ -112,7 +109,7 @@ export function run(ids = IDS) {
     const cues = path.join(DEMO, 'narration', id, 'cues.json');
     if (exists(cues)) for (const c of (readJSON(cues).cues || [])) scan(`narration ${id}/${c.id}`, c.text || '');
     const uniq = [...new Set(hits)];
-    (TERMS_PENDING(id) ? (c, m, d) => t.expected(c, m, TERMS_PENDING(id), d) : t.ok)(!uniq.length, `${id}: no listed terms (${uniq.length} hit${uniq.length === 1 ? '' : 's'})`, (VERBOSE ? uniq : uniq.slice(0, 6)).join('\n') + (!VERBOSE && uniq.length > 6 ? `\n… ${uniq.length - 6} more (--verbose)` : ''));
+    t.ok(!uniq.length, `${id}: no listed terms (${uniq.length} hit${uniq.length === 1 ? '' : 's'})`, (VERBOSE ? uniq : uniq.slice(0, 6)).join('\n') + (!VERBOSE && uniq.length > 6 ? `\n… ${uniq.length - 6} more (--verbose)` : ''));
   }
   // new files of a rebuild are untracked until the next commit (in CI everything checked out is tracked)
   if (uncommitted.length) t.note(`${uncommitted.length} referenced files exist but are not committed yet (${uncommitted.slice(0, 3).join(', ')}${uncommitted.length > 3 ? ', …' : ''}): commit them with the rebuild`);
