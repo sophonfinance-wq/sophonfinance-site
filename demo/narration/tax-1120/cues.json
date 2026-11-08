@@ -1,0 +1,156 @@
+{
+ "demo": "tax-1120",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "style": "v2",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Tax Machine prepare Form 1120, the corporate income tax return, for HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 9.72,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at-9-6",
+   "trigger": "stage:1@9.6",
+   "text": "It starts from last year's return, which had a loss to carry forward.",
+   "file": "02.mp3",
+   "duration": 4.13,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, the fiscal year's books: the audited trial balance and the ledger.",
+   "file": "03.mp3",
+   "duration": 5.58,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-7-4",
+   "trigger": "stage:2@7.4",
+   "text": "Then the equipment register, the tax payments, and the board's resolution on officer pay.",
+   "file": "04.mp3",
+   "duration": 6.13,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-14-2",
+   "trigger": "stage:2@14.2",
+   "text": "That resolution is still unsigned.",
+   "file": "05.mp3",
+   "duration": 2.39,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-19-2",
+   "trigger": "stage:2@19.2",
+   "text": "Book income for the year is about $1.13 million.",
+   "file": "06.mp3",
+   "duration": 4.8,
+   "breaks": []
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Now it checks the official rules online: the 21% rate, depreciation, and how much of a past loss can be used.",
+   "file": "07.mp3",
+   "duration": 8.66,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-8-8",
+   "trigger": "stage:3@8.8",
+   "text": "Each rule is matched to the client's records.",
+   "file": "08.mp3",
+   "duration": 3.06,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-12-4",
+   "trigger": "stage:3@12.4",
+   "text": "Tax rules don't always follow the books, so some items are adjusted.",
+   "file": "09.mp3",
+   "duration": 4.54,
+   "breaks": []
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Then it works out the return, starting from the company's income and its costs.",
+   "file": "10.mp3",
+   "duration": 5.28,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-5-6",
+   "trigger": "stage:4@5.6",
+   "text": "New equipment is written off faster for tax than in the books.",
+   "file": "11.mp3",
+   "duration": 3.7,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-19-9",
+   "trigger": "stage:4@19.9",
+   "text": "Last year's loss can cover up to 80% of this year's income.",
+   "file": "12.mp3",
+   "duration": 4.14,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-24-6",
+   "trigger": "stage:4@24.6",
+   "text": "That leaves about $60,000 of taxable income, and about $12,650 of tax.",
+   "file": "13.mp3",
+   "duration": 7.36,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-32-6",
+   "trigger": "stage:4@32.6",
+   "text": "No estimated payments were made, so a small penalty applies.",
+   "file": "14.mp3",
+   "duration": 4.6,
+   "breaks": []
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Every schedule ties back to the books.",
+   "file": "15.mp3",
+   "duration": 2.55,
+   "breaks": []
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the draft return and the workpapers behind it.",
+   "file": "16.mp3",
+   "duration": 4.28,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The draft shows about $12,650 of tax for the year, covered by the payment made with the extension. Six items stay open, including the excavator's depreciation and the unsigned officer pay approval. An officer signs and a person files; nothing is filed yet.",
+   "file": "17.mp3",
+   "duration": 21.68,
+   "breaks": [
+    0.64,
+    9.12,
+    16.58
+   ]
+  },
+  {
+   "id": "skip",
+   "trigger": "skip",
+   "text": "Here are the results: about $12,650 of tax for the fiscal year, and six open items for a person to decide.",
+   "file": "18.mp3",
+   "duration": 9.24,
+   "breaks": []
+  }
+ ]
+}

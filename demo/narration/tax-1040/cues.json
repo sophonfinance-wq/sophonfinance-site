@@ -1,0 +1,156 @@
+{
+ "demo": "tax-1040",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "style": "v2",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Tax Machine prepare a married couple's 2025 personal tax return, Form 1040.",
+   "file": "01.mp3",
+   "duration": 8.04,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at-7-4",
+   "trigger": "stage:1@7.4",
+   "text": "It starts from last year's return.",
+   "file": "02.mp3",
+   "duration": 2.22,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, the year's tax documents: two W-2s, and the dividend and interest forms.",
+   "file": "03.mp3",
+   "duration": 7.24,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-7-6",
+   "trigger": "stage:2@7.6",
+   "text": "One spouse runs HANGS Construction Services, so the company's letter on her pay and dividends is read too.",
+   "file": "04.mp3",
+   "duration": 7.57,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-15-6",
+   "trigger": "stage:2@15.6",
+   "text": "Then the mortgage interest, property and sales taxes, and charitable gifts.",
+   "file": "05.mp3",
+   "duration": 6.53,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-22-4",
+   "trigger": "stage:2@22.4",
+   "text": "And the estimated payments, checked against the IRS account.",
+   "file": "06.mp3",
+   "duration": 4.38,
+   "breaks": []
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Now it checks the official rules online: tax brackets, the standard deduction and the deduction limits.",
+   "file": "07.mp3",
+   "duration": 8.81,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-9-1",
+   "trigger": "stage:3@9.1",
+   "text": "Each rule is matched to the client's records.",
+   "file": "08.mp3",
+   "duration": 3.06,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-12-5",
+   "trigger": "stage:3@12.5",
+   "text": "Deductions for state and local taxes are capped.",
+   "file": "09.mp3",
+   "duration": 3.06,
+   "breaks": []
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Then it works out the return: income, itemized deductions, and the tax.",
+   "file": "10.mp3",
+   "duration": 6.39,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-6-6",
+   "trigger": "stage:4@6.6",
+   "text": "Most of the income is wages and company dividends.",
+   "file": "11.mp3",
+   "duration": 4.23,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-11-2",
+   "trigger": "stage:4@11.2",
+   "text": "The dividends get lower rates, which cuts the tax.",
+   "file": "12.mp3",
+   "duration": 4.01,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-15-6",
+   "trigger": "stage:4@15.6",
+   "text": "It adds the extra Medicare and investment income taxes.",
+   "file": "13.mp3",
+   "duration": 3.67,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-25",
+   "trigger": "stage:4@25",
+   "text": "Total tax comes to about $138,000.",
+   "file": "14.mp3",
+   "duration": 4.94,
+   "breaks": []
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "About $7,500 is still owed after payments.",
+   "file": "15.mp3",
+   "duration": 4.78,
+   "breaks": []
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the draft return and the workpapers behind it.",
+   "file": "16.mp3",
+   "duration": 4.28,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The draft shows about $138,000 of tax, with about $7,500 still owed. Four items stay open, including a missing mortgage form and a payment the IRS put in the wrong year. Both spouses review and sign; nothing is filed yet.",
+   "file": "17.mp3",
+   "duration": 20.65,
+   "breaks": [
+    0.66,
+    8.8,
+    16.06
+   ]
+  },
+  {
+   "id": "skip",
+   "trigger": "skip",
+   "text": "Here are the results: about $138,000 of tax, about $7,500 still owed, and four open items for a person to decide.",
+   "file": "18.mp3",
+   "duration": 11.08,
+   "breaks": []
+  }
+ ]
+}

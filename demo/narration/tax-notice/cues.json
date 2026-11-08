@@ -1,0 +1,148 @@
+{
+ "demo": "tax-notice",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "style": "v2",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Tax Machine answer an IRS penalty notice for HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 6.61,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at-6-4",
+   "trigger": "stage:1@6.4",
+   "text": "It reads the notice and the client's email.",
+   "file": "02.mp3",
+   "duration": 2.93,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "The notice proposes a penalty of about $4,500 for late payroll tax deposits.",
+   "file": "03.mp3",
+   "duration": 6.3,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-6-6",
+   "trigger": "stage:2@6.6",
+   "text": "Then it pulls the quarter's payroll return, every tax deposit, and the account history.",
+   "file": "04.mp3",
+   "duration": 6.53,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-13-5",
+   "trigger": "stage:2@13.5",
+   "text": "It lines up each payday with its deposit.",
+   "file": "05.mp3",
+   "duration": 2.99,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-18",
+   "trigger": "stage:2@18",
+   "text": "Every deposit is found and matched to the return.",
+   "file": "06.mp3",
+   "duration": 3.33,
+   "breaks": []
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Now it checks the official rules online: deposit schedules, due dates, and penalty relief.",
+   "file": "07.mp3",
+   "duration": 6.66,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-7-4",
+   "trigger": "stage:3@7.4",
+   "text": "Each rule is matched to the client's records.",
+   "file": "08.mp3",
+   "duration": 3.06,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-11-6",
+   "trigger": "stage:3@11.6",
+   "text": "Payroll tax due on a big payday is owed the very next business day.",
+   "file": "09.mp3",
+   "duration": 4.25,
+   "breaks": []
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Then it rebuilds the deposit schedule, payday by payday.",
+   "file": "10.mp3",
+   "duration": 4.65,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-5",
+   "trigger": "stage:4@5",
+   "text": "The notice spread the tax over the wrong dates, which made on-time deposits look late.",
+   "file": "11.mp3",
+   "duration": 6.26,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-11-5",
+   "trigger": "stage:4@11.5",
+   "text": "Only one bonus deposit was really late, by eight days.",
+   "file": "12.mp3",
+   "duration": 4.27,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-16",
+   "trigger": "stage:4@16",
+   "text": "The correct penalty is about $1,010.",
+   "file": "13.mp3",
+   "duration": 4.02,
+   "breaks": []
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Every figure ties to the return and the deposits.",
+   "file": "14.mp3",
+   "duration": 3.13,
+   "breaks": []
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the draft reply and the workpapers behind it.",
+   "file": "15.mp3",
+   "duration": 4.4,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The draft reply shows the correct penalty is about $1,010, not the $4,534 proposed, and asks for automatic relief. Five items stay open. HANGS signs and mails the reply by December 10; nothing is mailed or paid yet.",
+   "file": "16.mp3",
+   "duration": 19.36,
+   "breaks": [
+    0.76,
+    11.4,
+    13.52
+   ]
+  },
+  {
+   "id": "skip",
+   "trigger": "skip",
+   "text": "Here are the results: a correct penalty of about $1,010 instead of $4,534, and five open items for a person to decide.",
+   "file": "17.mp3",
+   "duration": 10.84,
+   "breaks": []
+  }
+ ]
+}

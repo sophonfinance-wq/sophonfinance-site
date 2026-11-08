@@ -1,0 +1,148 @@
+{
+ "demo": "tax-estimates",
+ "voice": "Vesper (Higgsfield seed_audio preset), speech_rate -6",
+ "generated": "2026-11-08",
+ "style": "v2",
+ "cues": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's Tax Machine plan next year's estimated tax payments for HANGS Construction Services.",
+   "file": "01.mp3",
+   "duration": 7.04,
+   "breaks": []
+  },
+  {
+   "id": "stage-1-at-8",
+   "trigger": "stage:1@8",
+   "text": "It starts from last year's tax, and finds that HANGS counts as a large corporation, with stricter rules.",
+   "file": "02.mp3",
+   "duration": 6.67,
+   "breaks": []
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, this year's numbers: the first quarter's actual income, and a projection for the rest of the year.",
+   "file": "03.mp3",
+   "duration": 7.37,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-7-4",
+   "trigger": "stage:2@7.4",
+   "text": "Then the payments already made, and the client's email.",
+   "file": "04.mp3",
+   "duration": 3.7,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-11-4",
+   "trigger": "stage:2@11.4",
+   "text": "The company's fiscal year ends in June, not December.",
+   "file": "05.mp3",
+   "duration": 3.99,
+   "breaks": []
+  },
+  {
+   "id": "stage-2-at-17-8",
+   "trigger": "stage:2@17.8",
+   "text": "One payment was filed under the wrong tax year.",
+   "file": "06.mp3",
+   "duration": 2.94,
+   "breaks": []
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Now it checks the official rules online: the due dates, the large corporation rules and the penalty rates.",
+   "file": "07.mp3",
+   "duration": 7.41,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-8",
+   "trigger": "stage:3@8",
+   "text": "Each rule is matched to the client's records.",
+   "file": "08.mp3",
+   "duration": 3.06,
+   "breaks": []
+  },
+  {
+   "id": "stage-3-at-11-8",
+   "trigger": "stage:3@11.8",
+   "text": "The four payments fall due in October, December, March and June.",
+   "file": "09.mp3",
+   "duration": 4.99,
+   "breaks": []
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Then it works out the year's projected tax: about $71,000.",
+   "file": "10.mp3",
+   "duration": 6.74,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-6-8",
+   "trigger": "stage:4@6.8",
+   "text": "A large corporation can base only the first payment on last year's tax.",
+   "file": "11.mp3",
+   "duration": 4.91,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-11-9",
+   "trigger": "stage:4@11.9",
+   "text": "Taxing income as it is actually earned lowers the next payment.",
+   "file": "12.mp3",
+   "duration": 5.62,
+   "breaks": []
+  },
+  {
+   "id": "stage-4-at-17-7",
+   "trigger": "stage:4@17.7",
+   "text": "That payment, due December 15, is about $18,300.",
+   "file": "13.mp3",
+   "duration": 5.7,
+   "breaks": []
+  },
+  {
+   "id": "stage-5",
+   "trigger": "stage:5",
+   "text": "Every payment ties to the projected tax.",
+   "file": "14.mp3",
+   "duration": 3.29,
+   "breaks": []
+  },
+  {
+   "id": "stage-6",
+   "trigger": "stage:6",
+   "text": "Last, it writes the payment plan and the workpapers behind it.",
+   "file": "15.mp3",
+   "duration": 4.34,
+   "breaks": []
+  },
+  {
+   "id": "end",
+   "trigger": "end",
+   "text": "All done. The plan projects about $71,000 of tax for the year, with about $18,300 due December 15. Five items stay open, including an October payment filed under the wrong tax year. A person approves the plan; nothing has been paid yet.",
+   "file": "16.mp3",
+   "duration": 19.84,
+   "breaks": [
+    0.58,
+    10.22,
+    15.96
+   ]
+  },
+  {
+   "id": "skip",
+   "trigger": "skip",
+   "text": "Here are the results: about $18,300 due December 15, and five open items for a person to decide.",
+   "file": "17.mp3",
+   "duration": 9.62,
+   "breaks": []
+  }
+ ]
+}
