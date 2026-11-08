@@ -50,8 +50,12 @@ commit; GitHub runs `npm test` on every push and pull request (`.github/workflow
   parts are base x experience factor, the client-systems copy shows the same tables, and the run's premium uses those
   rates ($111,469.07 premium, $92,296.72 employer share).
 - Ties between demos from the client-systems datasets: Form 941 Q3 ledger wages and deposits, the W-2 ledger's Q3 pay
-  runs vs the 941, W-3 box 1, the 940 ledger vs the W-2 ledger, Form 1120 dividends to Celeste Whitford = her Form
-  1040 dividends, and one entity record across every demo.
+  runs vs the 941, W-3 box 1, the 940 ledger vs the W-2 ledger; Form 1120 (FY July 1, 2025 - June 30, 2026) on the
+  audited figures in `demo/audit-canonical.json` (line 1a = revenue, Schedule M-1 line 1 = net income, ledger 3100 =
+  dividends); HANGS's calendar-2025 dividends (FY2025 return dates + FY2026 ledger) = the 1040 letter's board total and
+  dates, and Form 1040 line 3b = 60% of them; the FY2027 estimates' prior-year tax and credit = Form 1120 lines 31 and
+  36; HANGS's fiscal year reads "Fiscal year ending June 30" everywhere and no tax or accounting data still says
+  "FY2026 period 10"; and one entity record across every demo.
 
 **(c) Reconciliation** (`reconcile.test.mjs`), recomputed from `demo/<id>/systems.json` and the recorded workpapers
 - Trial balances foot (debits = credits, balance columns net to zero, opening + activity = closing per account,

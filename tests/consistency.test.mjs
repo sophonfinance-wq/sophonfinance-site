@@ -5,7 +5,8 @@
 //      qa/content/check_940_w2.py), and the 940 demo flags it (figures-panel note, "Projected ·" tape rows);
 //   3. workers' comp (tax-lni): the rates document adds up and the run used its rates (port of check_lni_rates.py);
 //   4. tie-outs between demos from the client-systems datasets: Form 941 vs the W-2 ledger, W-3 box 1, 940 vs W-2
-//      ledger, 1120 dividends = 1040 dividends, one entity record everywhere (port of systems/ties.js).
+//      ledger, 1120 on the audited FY2026 figures, 1040 dividends = 60% of HANGS's calendar-2025 dividends, estimates' prior-year
+//      tax = 1120 total tax, the June 30 fiscal year everywhere, one entity record everywhere (port of systems/ties.js).
 //
 //   node tests/consistency.test.mjs [--verbose]
 import path from 'node:path';
@@ -269,11 +270,45 @@ function ties(t) {
   const wages = sumLines(w2, (j, l) => l.no === '5110' || l.no === '6110'), k401 = -sumLines(w2, (j, l) => l.no === '2250'), s125 = -sumLines(w2, (j, l) => l.no === '2260');
   tie('Forms W-2: 2026 ledger wages less 401(k) (2250) and Section 125 (2260) = Form W-3 box 1', wages - k401 - s125, box1);
   tie('Form 940 shows the same 2026 payroll ledger as the Forms W-2 demo (wage postings)', sumLines(t940, (j, l) => l.no === '5110' || l.no === '6110'), wages);
-  const div = t1120.ledgerwyn.journals.reduce((s, j) => s + j.lines.filter(l => l.no === '3200' && /Celeste/.test(l.memo || j.memo)).reduce((a, l) => a + l.dr - l.cr, 0), 0);
-  const line3b = (t1040.taxrules.checks.find(c => /dividend/i.test(c.title) && c.left) || {}).left;
-  tie('Form 1120 vs Form 1040: dividends paid to Celeste Whitford (3200) = her qualified dividends from HANGS', div, line3b);
-  tie('Form 1120: dividends paid (3200) = $60,000.00, all shareholders', sumLines(t1120, (j, l) => l.no === '3200'), 60000);
-  // the dividend line of the 1040 workpapers names the same amount
+  // Form 1120 (FY July 1, 2025 - June 30, 2026) on the audited FY2026 books: page 1 and Schedule M-1 start from the
+  // canonical audit figures, and the board's dividends in account 3100 are the canonical dividends.
+  const canon = readJSON(path.join(DEMO, 'audit-canonical.json'));
+  const run = id => { const dir = path.join(DEMO, id, 'data'), m = readJSON(path.join(dir, 'manifest.json'));
+    const get = rx => { const k = Object.keys(m).find(k => rx.test(k)); return k ? readJSON(path.join(dir, ...m[k].f.split('/'))) : null; };
+    const prep = get(/\/preparation$/) || { items: [] };
+    return { item: id2 => (prep.items.find(i => i.id === id2) || {}).value, ev: name => get(new RegExp('/preparation/evidence/' + name + '$')) }; };
+  const rowOf = (ev, label) => ((ev && ev.rows || []).find(r => Array.isArray(r) && r[0] === label) || [])[1];
+  const r1120 = run('tax-1120'), r1040 = run('tax-1040'), rEst = run('tax-estimates');
+  tie('Form 1120 line 1a gross receipts = the audited FY2026 revenue (audit-canonical)', r1120.item('line1a'), num(canon.revenue));
+  tie('Form 1120 Schedule M-1 line 1 net income per books = the audited FY2026 net income (audit-canonical)', r1120.item('m1-1'), num(canon.netIncome));
+  const div3100 = sumLines(t1120, (j, l) => l.no === '3100');
+  tie('Form 1120: board dividends in the FY2026 ledger (3100) = the audited FY2026 dividends (audit-canonical)', div3100, num(canon.dividends));
+  // Calendar 2025 = the FY2026 ledger's 2025 dividends + the FY2025 dividends dated in 2025 (from the FY2025 return).
+  const prior = r1120.ev('E02 Prior Return');
+  const priorDates = String(rowOf(prior, 'Dividend dates') || '').split(/,\s*/).filter(Boolean);
+  const priorEach = priorDates.length ? Number(rowOf(prior, 'Schedule M-2 line 5a dividends')) / priorDates.length : null;
+  const ledgerDiv = t1120.ledgerwyn.journals.filter(j => j.lines.some(l => l.no === '3100' && l.dr > 0));
+  const dates2025 = [...priorDates.filter(d => d.startsWith('2025-')), ...ledgerDiv.filter(j => j.date.startsWith('2025-')).map(j => j.date)].sort();
+  const cal2025 = priorDates.filter(d => d.startsWith('2025-')).length * priorEach + sumLines(t1120, (j, l) => l.no === '3100' && j.date.startsWith('2025-'));
+  tie('HANGS dividends paid in calendar 2025 (FY2025 return dates + FY2026 ledger 3100) = the board total in the 1040 letter', cal2025, Number(rowOf(r1040.ev('E05 HANGS Letter'), 'Dividends paid, all shareholders')));
+  tie('Form 1040 line 3b qualified dividends = 60% of HANGS calendar-2025 dividends', r1040.item('line3b'), round2(cal2025 * 0.6));
+  const letterDates = String(rowOf(r1040.ev('E05 HANGS Letter'), 'Board dividend dates') || '').split(/,\s*/).filter(Boolean).sort();
+  t.ok(letterDates.length === 4 && JSON.stringify(letterDates) === JSON.stringify(dates2025), `the 1040 letter's dividend dates = HANGS's 2025 dividend dates [${letterDates.join(', ')} vs ${dates2025.join(', ')}]`);
+  // FY2027 estimates: the prior-year tax and the FY2026 credit come from the new Form 1120.
+  tie('Estimates: FY2027 prior-year tax = Form 1120 line 31 total tax', rEst.item('prior-tax'), r1120.item('line31'));
+  tie('Estimates: FY2026 overpayment credited to FY2027 = Form 1120 line 36', rEst.item('credit'), r1120.item('line36'));
+  // fiscal-year labels: the company's fiscal year ends June 30 in every demo; the accounting periods follow it.
+  const FYE = 'Fiscal year ending June 30', bad = [], stale = [];
+  for (const id of fs.readdirSync(DEMO)) {
+    const S = load(id); if (!S || !S.charterfold || !S.company || !/^HANGS Construction Services/.test(S.company.name)) continue;
+    const f = S.charterfold.fields.find(x => x.key === 'fiscalYear'); if (!f || f.value !== FYE) bad.push(`${id}: ${f ? f.value : '-'}`);
+  }
+  t.ok(!bad.length, `HANGS's fiscal year reads "${FYE}" in every demo`, bad.join('\n'));
+  for (const id of fs.readdirSync(DEMO).filter(d => /^(tax|accounting)/.test(d))) {
+    const dir = path.join(DEMO, id); if (!fs.statSync(dir).isDirectory()) continue;
+    for (const f of walk(dir).filter(f => f.endsWith('.json'))) if (readText(f).includes('FY2026 period 10')) stale.push(path.relative(DEMO, f));
+  }
+  t.ok(!stale.length, 'tax and accounting data use the June 30 fiscal calendar (November 2026 = "FY2027 period 4", no "FY2026 period 10")', stale.join('\n'));
   // one entity record across every demo of the company
   const recs = new Map();
   for (const id of fs.readdirSync(DEMO)) { const S = load(id); if (!S || !S.company || !S.charterfold) continue; const k = JSON.stringify(S.charterfold.fields.map(f => [f.label, f.value])); if (!recs.has(S.company.name)) recs.set(S.company.name, new Map()); const m = recs.get(S.company.name); m.set(k, (m.get(k) || []).concat(id)); }
