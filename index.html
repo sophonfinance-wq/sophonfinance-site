@@ -1029,7 +1029,9 @@ footer a:hover{ color:var(--blue); }
       { id:'tax-w2', label:'W-2 / W-3', note:'Year-end wages', sub:'Prepares year-end W-2s and the W-3, tied to the four quarterly 941s.' },
       { id:'tax-1099', label:'1099-NEC', note:'Contractor forms', sub:'Prepares the year\'s contractor 1099s: who gets one, W-9 and TIN checks, and backup withholding.' },
       { id:'tax-1120', label:'Form 1120', note:'Corporate return', sub:'Prepares the 2025 corporate income tax return: book-to-tax reconciliation, depreciation, the 21% tax and the estimated-tax penalty check.' },
-      { id:'tax-1040', label:'Form 1040', note:'Owner\'s personal return', sub:'Prepares the owner\'s 2025 personal return: wages and dividends from the company, itemized vs standard deduction, and the refund.' } ] },
+      { id:'tax-1040', label:'Form 1040', note:'Owner\'s personal return', sub:'Prepares the owner\'s 2025 personal return: wages and dividends from the company, itemized vs standard deduction, and the refund.' },
+      { id:'tax-notice', label:'IRS notice', note:'Penalty & notice response', sub:'Reads an IRS penalty notice, rebuilds the deposit schedule, finds the right penalty and drafts the reply with the relief request.' },
+      { id:'tax-estimates', label:'Estimated tax', note:'Quarterly payments', sub:'Plans the corporation\'s quarterly estimated tax: safe harbor, annualized method, penalty preview and the remaining payments.' } ] },
     accounting: { name:'Accounting Machine', ic:'assets/icons/acc.jpg', ready:true, pick:0, subjects:[
       { id:'accounting',         label:'AP review',           note:'Vendor invoices',    sub:'Reviews a month of vendor invoices.' },
       { id:'accounting-bankrec', label:'Bank reconciliation', note:'Month end',          sub:'Reconciles a month of bank activity to the books.' },
