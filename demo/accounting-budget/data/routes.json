@@ -1,0 +1,194 @@
+{
+"/api/runs/RUN/preparation": {
+"file": "json/api-runs-run-preparation-c579af6e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E01 Department Actuals": {
+"file": "json/api-runs-run-preparation-evidence-e01-department-actuals-8e6c1bab.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E02 GL Detail October": {
+"file": "json/api-runs-run-preparation-evidence-e02-gl-detail-october-d82409ca.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E03 Department Budget": {
+"file": "json/api-runs-run-preparation-evidence-e03-department-budget-8cc2ab96.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E04 Job Revenue Budget": {
+"file": "json/api-runs-run-preparation-evidence-e04-job-revenue-budget-4c9becb5.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E05 Flex Rules": {
+"file": "json/api-runs-run-preparation-evidence-e05-flex-rules-0b35b3f6.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E06 WIP Schedule": {
+"file": "json/api-runs-run-preparation-evidence-e06-wip-schedule-a29feade.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E07 Job Results": {
+"file": "json/api-runs-run-preparation-evidence-e07-job-results-42bd4bc7.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E08 Variance Notes": {
+"file": "json/api-runs-run-preparation-evidence-e08-variance-notes-6484751e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E09 Backlog Schedule": {
+"file": "json/api-runs-run-preparation-evidence-e09-backlog-schedule-d2012a2b.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E10 New Awards": {
+"file": "json/api-runs-run-preparation-evidence-e10-new-awards-63c3f392.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E11 Known Changes": {
+"file": "json/api-runs-run-preparation-evidence-e11-known-changes-0c5510fa.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E12 Software Invoice TS-44817": {
+"file": "json/api-runs-run-preparation-evidence-e12-software-invoice-ts-44-6e611840.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E13 Repair Invoice 2291": {
+"file": "json/api-runs-run-preparation-evidence-e13-repair-invoice-2291-2d1199f4.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/SW Page 1": {
+"file": "json/api-runs-run-preparation-evidence-sw-page-1-f9c9fdf1.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/EQ Page 1": {
+"file": "json/api-runs-run-preparation-evidence-eq-page-1-aa55059f.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E14 Variance Policy": {
+"file": "json/api-runs-run-preparation-evidence-e14-variance-policy-ee66507f.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Summary": {
+"file": "json/api-runs-run-preparation-worksheet-summary-6597996c.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Board Pack": {
+"file": "json/api-runs-run-preparation-worksheet-board-pack-efe8348b.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/By Department": {
+"file": "json/api-runs-run-preparation-worksheet-by-department-88f5fba5.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/By Job": {
+"file": "json/api-runs-run-preparation-worksheet-by-job-9d4aa638.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Flex Budget": {
+"file": "json/api-runs-run-preparation-worksheet-flex-budget-ade76cf9.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Variances": {
+"file": "json/api-runs-run-preparation-worksheet-variances-39873eda.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/GL Drill-Down": {
+"file": "json/api-runs-run-preparation-worksheet-gl-drill-down-4f4c473b.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Reforecast": {
+"file": "json/api-runs-run-preparation-worksheet-reforecast-fd4a9f0a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Proposed Entries": {
+"file": "json/api-runs-run-preparation-worksheet-proposed-entries-518648a2.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Findings": {
+"file": "json/api-runs-run-preparation-worksheet-findings-568ee16a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/workbook": {
+"file": "files/7fda540d/October 2026 Budget vs Actual Workpapers.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/return": {
+"file": "files/600cd15c/October 2026 Board Pack and Variance Memo DRAFT.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/actuals": {
+"file": "files/ea7fea4a/Department Actuals and GL Detail - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/budget": {
+"file": "files/6c3df828/FY2027 Operating Budget - Board Approved.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/jobs": {
+"file": "files/e25c7b4a/WIP Schedule and Job Results - October 31, 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/notes": {
+"file": "files/40de8df6/Department Variance Notes - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/reforecast": {
+"file": "files/3cb94db9/Reforecast Inputs - November 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/software": {
+"file": "files/4572b8c5/Tallyset Invoice TS-44817.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/repair": {
+"file": "files/bafb79e5/Tamarack Invoice 2291.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/policy": {
+"file": "files/332d5205/HANGS Budget and Variance Policy v2.0.docx",
+"type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+},
+"/api/runs/RUN/output-page.png": {
+"file": "img/api-runs-run-output-page-png-f5beeb5e.png",
+"type": "image/png"
+},
+"/api/runs/RUN/output-summary": {
+"file": "json/api-runs-run-output-summary-05e012fc.json",
+"type": "application/json"
+},
+"/api/bv/documents/list": {
+"file": "json/api-bv-documents-list-580d4bd0.json",
+"type": "application/json"
+},
+"/api/bv/documents/preview?file=01 Ledger/Department Actuals and GL Detail - October 2026.xlsx": {
+"file": "json/api-bv-documents-preview-file-01-ledger-department-actuals-a-e9c5794c.json",
+"type": "application/json"
+},
+"/api/bv/documents/preview?file=02 Budget/FY2027 Operating Budget - Board Approved.xlsx": {
+"file": "json/api-bv-documents-preview-file-02-budget-fy2027-operating-bud-7df4e0fd.json",
+"type": "application/json"
+},
+"/api/bv/documents/preview?file=07 Policy/HANGS Budget and Variance Policy v2.0.docx": {
+"file": "json/api-bv-documents-preview-file-07-policy-hangs-budget-and-var-62ba1e1b.json",
+"type": "application/json"
+},
+"/api/bv/documents/preview?file=03 Jobs/WIP Schedule and Job Results - October 31, 2026.xlsx": {
+"file": "json/api-bv-documents-preview-file-03-jobs-wip-schedule-and-job-r-d307aefe.json",
+"type": "application/json"
+},
+"/api/bv/documents/preview?file=04 Commentary/Department Variance Notes - October 2026.xlsx": {
+"file": "json/api-bv-documents-preview-file-04-commentary-department-varia-d4169503.json",
+"type": "application/json"
+},
+"/api/bv/documents/page.png?file=05 Invoices/Tallyset Invoice TS-44817.pdf": {
+"file": "img/api-bv-documents-page-png-file-05-invoices-tallyset-invoice--ed13bc1d.png",
+"type": "image/png"
+},
+"/api/bv/documents/page.png?file=05 Invoices/Tamarack Invoice 2291.pdf": {
+"file": "img/api-bv-documents-page-png-file-05-invoices-tamarack-invoice--e57b1153.png",
+"type": "image/png"
+},
+"/api/bv/documents/preview?file=06 Reforecast/Reforecast Inputs - November 2026.xlsx": {
+"file": "json/api-bv-documents-preview-file-06-reforecast-reforecast-input-2a4f3090.json",
+"type": "application/json"
+}
+}
