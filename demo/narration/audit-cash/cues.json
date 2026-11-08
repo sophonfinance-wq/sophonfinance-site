@@ -14,49 +14,6 @@
    ]
   },
   {
-   "id": "stage-1",
-   "trigger": "stage:1",
-   "text": "First, materiality, the size of mistake that matters: $12,000. Cash agrees all through the books.",
-   "file": "02.mp3",
-   "duration": 9.27,
-   "breaks": [
-    1.88,
-    4.1,
-    6.3
-   ]
-  },
-  {
-   "id": "stage-2",
-   "trigger": "stage:2",
-   "text": "Next, a confirmation: the bank writes straight to the auditors. It reports $42,300, $12,400 more than the books.",
-   "file": "03.mp3",
-   "duration": 12.78,
-   "breaks": [
-    1.8,
-    5.02
-   ]
-  },
-  {
-   "id": "stage-3",
-   "trigger": "stage:3",
-   "text": "A bank reconciliation matches the books to the bank statement. Four June payments had not cleared yet.",
-   "file": "04.mp3",
-   "duration": 6.99,
-   "breaks": [
-    3.6
-   ]
-  },
-  {
-   "id": "stage-4",
-   "trigger": "stage:4",
-   "text": "Then it follows each open item. One old check was never cashed, and a $700 bank fee was never recorded.",
-   "file": "05.mp3",
-   "duration": 8.44,
-   "breaks": [
-    2.44
-   ]
-  },
-  {
    "id": "stage-5",
    "trigger": "stage:5",
    "text": "Cut-off: is each payment in the right year? Yes, and no cash is held back.",
@@ -74,6 +31,59 @@
    "file": "07.mp3",
    "duration": 5.95,
    "breaks": []
+  }
+ ],
+ "parked": [
+  {
+   "id": "stage-1",
+   "trigger": "stage:1",
+   "text": "First, materiality, the size of mistake that matters: $12,000. Cash agrees all through the books.",
+   "file": "02.mp3",
+   "duration": 9.27,
+   "breaks": [
+    1.88,
+    4.1,
+    6.3
+   ],
+   "why": "audio can't be regenerated now; it quotes the old materiality of $12,000 (the re-based run proposes $340,000)",
+   "correctedText": "First, materiality, the size of mistake that matters: $340,000. Cash agrees all through the books."
+  },
+  {
+   "id": "stage-2",
+   "trigger": "stage:2",
+   "text": "Next, a confirmation: the bank writes straight to the auditors. It reports $42,300, $12,400 more than the books.",
+   "file": "03.mp3",
+   "duration": 12.78,
+   "breaks": [
+    1.8,
+    5.02
+   ],
+   "why": "audio can't be regenerated now; it quotes the old confirmation of $42,300 and the $12,400 difference (now $5.72 million and $188,441)",
+   "correctedText": "Next, a confirmation: the bank writes straight to the auditors. It reports $5.72 million, $188,441 more than the books."
+  },
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "A bank reconciliation matches the books to the bank statement. Four June payments had not cleared yet.",
+   "file": "04.mp3",
+   "duration": 6.99,
+   "breaks": [
+    3.6
+   ],
+   "why": "audio can't be regenerated now; it says four June payments had not cleared (now eight checks of May and June)",
+   "correctedText": "A bank reconciliation matches the books to the bank statement. Eight recent checks had not cleared yet."
+  },
+  {
+   "id": "stage-4",
+   "trigger": "stage:4",
+   "text": "Then it follows each open item. One old check was never cashed, and a $700 bank fee was never recorded.",
+   "file": "05.mp3",
+   "duration": 8.44,
+   "breaks": [
+    2.44
+   ],
+   "why": "audio can't be regenerated now; it quotes the old $700 bank fee (now $4,065 of payroll account charges)",
+   "correctedText": "Then it follows each open item. One old check was never cashed, and $4,065 of bank fees were never recorded."
   },
   {
    "id": "end",
@@ -86,7 +96,9 @@
     9.36,
     16.74,
     21.18
-   ]
+   ],
+   "why": "audio can't be regenerated now; it quotes the old $700 bank fee and one reconciliation (now $4,065 of charges and two unreviewed reconciliations)",
+   "correctedText": "All done. The gap with the bank is fully explained. The one known mistake is $4,065 of bank fees, well under materiality. Eight items stay open, including the uncashed check and reconciliations no one has reviewed. The CPA, a person, concludes and signs. The machine gives no opinion."
   }
  ]
 }

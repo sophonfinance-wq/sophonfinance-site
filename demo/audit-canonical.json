@@ -32,12 +32,5 @@
     "performanceMateriality": "75000.00",
     "clearlyTrivial": "5000.00",
     "derivation": "The FY2026 audit plan\u2019s rates (0.5% of revenue, rounded down to $10,000; performance 75%; clearly trivial 5%) applied to the quarter\u2019s $21,696,700.00 of revenue. The FY2026 annual audit materiality stays $340,000.00."
-  },
-  "legacyDesign": {
-    "demos": [
-      "audit",
-      "audit-cash"
-    ],
-    "note": "Built on the older small-company design (9 accounts, book income $244,500.00, materiality $12,000.00). Not yet re-based; see the QA report."
   }
 }
