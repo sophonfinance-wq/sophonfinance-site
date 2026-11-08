@@ -87,3 +87,14 @@
     min-width: 0;
   }
 }
+
+/* Replay controls on phones: a tidy grid of equal, outlined buttons (some bundles set the row to nowrap,
+   which squeezed six buttons into ~63px each so their labels overlapped). */
+@media (max-width: 760px) {
+  .property-play-controls { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 6px !important; flex-wrap: initial !important; align-items: stretch !important; }
+  .property-play-controls > .button { height: auto !important; margin: 0 !important; }
+  .property-play-controls > .button { min-width: 0 !important; max-width: none !important; flex: none !important; width: 100% !important; white-space: normal !important; overflow-wrap: anywhere; line-height: 1.15 !important; min-height: 42px; padding: 7px 6px !important; font-size: 13px !important; display: inline-flex !important; align-items: center; justify-content: center; gap: 5px; text-align: center; border-radius: 12px !important; border: 1px solid rgba(29, 43, 54, .16) !important; background: var(--surface, #fff) !important; box-shadow: 0 1px 2px rgba(29, 43, 54, .06); }
+  .property-play-controls > .button svg { width: 15px; height: 15px; flex: none; }
+  .property-play-controls > .button[hidden] { display: none !important; }
+}
+@media (max-width: 360px) { .property-play-controls > .button { font-size: 12px !important; } }
