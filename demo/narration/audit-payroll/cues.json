@@ -4,14 +4,6 @@
  "generated": "2026-11-08",
  "cues": [
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's audit machine check HANGS General Contracting's payroll.",
-   "file": "01.mp3",
-   "duration": 5.28,
-   "breaks": []
-  },
-  {
    "id": "stage-1",
    "trigger": "stage:1",
    "text": "Materiality, the size of mistake that matters: $350,000.",
@@ -81,6 +73,17 @@
     18.24,
     21.8
    ]
+  }
+ ],
+ "parked": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's audit machine check HANGS General Contracting's payroll.",
+   "file": "01.mp3",
+   "duration": 5.28,
+   "breaks": [],
+   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

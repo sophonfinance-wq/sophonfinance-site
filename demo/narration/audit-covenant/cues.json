@@ -4,14 +4,6 @@
  "generated": "2026-11-08",
  "cues": [
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's machine check HANGS General Contracting's loan covenants: promises made to its bank.",
-   "file": "01.mp3",
-   "duration": 7.97,
-   "breaks": []
-  },
-  {
    "id": "stage-1",
    "trigger": "stage:1",
    "text": "First, it reads the loan agreement.",
@@ -77,6 +69,17 @@
     18.16,
     23.22
    ]
+  }
+ ],
+ "parked": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's machine check HANGS General Contracting's loan covenants: promises made to its bank.",
+   "file": "01.mp3",
+   "duration": 7.97,
+   "breaks": [],
+   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

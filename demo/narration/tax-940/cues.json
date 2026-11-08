@@ -4,14 +4,6 @@
  "generated": "2026-11-08",
  "cues": [
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's 2026 Form 940: the yearly federal unemployment tax return, called FUTA.",
-   "file": "01.mp3",
-   "duration": 11.78,
-   "breaks": []
-  },
-  {
    "id": "stage-1",
    "trigger": "stage:1",
    "text": "First, it reads the year's earlier returns. One state report missed a bonus payroll.",
@@ -83,6 +75,17 @@
     21.78,
     25.56
    ]
+  }
+ ],
+ "parked": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's 2026 Form 940: the yearly federal unemployment tax return, called FUTA.",
+   "file": "01.mp3",
+   "duration": 11.78,
+   "breaks": [],
+   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

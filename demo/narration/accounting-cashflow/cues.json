@@ -28,16 +28,6 @@
    "breaks": []
   },
   {
-   "id": "stage-3",
-   "trigger": "stage:3",
-   "text": "Then the money coming in: property sales with signed contracts, and construction loan draws. One sale has no signed contract, so it's left out.",
-   "file": "04.mp3",
-   "duration": 11.44,
-   "breaks": [
-    6.52
-   ]
-  },
-  {
    "id": "stage-4",
    "trigger": "stage:4",
    "text": "Then building costs, loan payments and rent. A $552,000 steel bill is due in December, not January; it uses the earlier date.",
@@ -78,6 +68,19 @@
     21.88,
     23.88
    ]
+  }
+ ],
+ "parked": [
+  {
+   "id": "stage-3",
+   "trigger": "stage:3",
+   "text": "Then the money coming in: property sales with signed contracts, and construction loan draws. One sale has no signed contract, so it's left out.",
+   "file": "04.mp3",
+   "duration": 11.44,
+   "breaks": [
+    6.52
+   ],
+   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

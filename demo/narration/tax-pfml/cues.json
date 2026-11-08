@@ -4,16 +4,6 @@
  "generated": "2026-11-08",
  "cues": [
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's Paid Leave and WA Cares report.",
-   "file": "01.mp3",
-   "duration": 7.61,
-   "breaks": [
-    6.7
-   ]
-  },
-  {
    "id": "stage-1",
    "trigger": "stage:1",
    "text": "First, it reads this year's earlier reports, and finds a bonus payroll left off the last one.",
@@ -88,6 +78,19 @@
     26.06,
     29.74
    ]
+  }
+ ],
+ "parked": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's Paid Leave and WA Cares report.",
+   "file": "01.mp3",
+   "duration": 7.61,
+   "breaks": [
+    6.7
+   ],
+   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

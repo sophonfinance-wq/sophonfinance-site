@@ -4,14 +4,6 @@
  "generated": "2026-11-07",
  "cues": [
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's quarterly unemployment insurance report.",
-   "file": "01.mp3",
-   "duration": 7.8,
-   "breaks": []
-  },
-  {
    "id": "stage-1",
    "trigger": "stage:1",
    "text": "First, it reads this year's earlier reports, and finds a bonus payroll left off the last one.",
@@ -84,6 +76,17 @@
     24.16,
     28.44
    ]
+  }
+ ],
+ "parked": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's quarterly unemployment insurance report.",
+   "file": "01.mp3",
+   "duration": 7.8,
+   "breaks": [],
+   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

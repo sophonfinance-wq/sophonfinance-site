@@ -4,16 +4,6 @@
  "generated": "2026-11-08",
  "cues": [
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's workers' comp report: the state insurance for employees hurt on the job.",
-   "file": "01.mp3",
-   "duration": 9.75,
-   "breaks": [
-    6.1
-   ]
-  },
-  {
    "id": "stage-1",
    "trigger": "stage:1",
    "text": "First, it finds the six risk classes. A risk class groups jobs by danger; riskier work pays more per hour.",
@@ -85,6 +75,19 @@
     16.9,
     19.56
    ]
+  }
+ ],
+ "parked": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's tax machine prepare HANGS General Contracting's workers' comp report: the state insurance for employees hurt on the job.",
+   "file": "01.mp3",
+   "duration": 9.75,
+   "breaks": [
+    6.1
+   ],
+   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

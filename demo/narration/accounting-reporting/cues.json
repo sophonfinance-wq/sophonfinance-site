@@ -64,7 +64,9 @@
    "file": "07.mp3",
    "duration": 8.47,
    "breaks": []
-  },
+  }
+ ],
+ "parked": [
   {
    "id": "end",
    "trigger": "end",
@@ -76,7 +78,8 @@
     12.6,
     16,
     21.48
-   ]
+   ],
+   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

@@ -4,16 +4,6 @@
  "generated": "2026-11-08",
  "cues": [
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's machine test HANGS General Contracting's internal controls: the checks that stop mistakes and fraud.",
-   "file": "01.mp3",
-   "duration": 8.97,
-   "breaks": [
-    5.5
-   ]
-  },
-  {
    "id": "stage-1",
    "trigger": "stage:1",
    "text": "It walks through eleven key controls.",
@@ -82,6 +72,19 @@
     11.7,
     14.24
    ]
+  }
+ ],
+ "parked": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's machine test HANGS General Contracting's internal controls: the checks that stop mistakes and fraud.",
+   "file": "01.mp3",
+   "duration": 8.97,
+   "breaks": [
+    5.5
+   ],
+   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }

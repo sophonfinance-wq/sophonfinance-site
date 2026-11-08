@@ -4,16 +4,6 @@
  "generated": "2026-11-08",
  "cues": [
   {
-   "id": "start",
-   "trigger": "start",
-   "text": "Watch F1 Finance's machine review HANGS General Contracting's quarter. A review is lighter than an audit.",
-   "file": "01.mp3",
-   "duration": 7.66,
-   "breaks": [
-    4.52
-   ]
-  },
-  {
    "id": "stage-1",
    "trigger": "stage:1",
    "text": "First, it sets materiality at $100,000.",
@@ -81,6 +71,19 @@
     16,
     18.02
    ]
+  }
+ ],
+ "parked": [
+  {
+   "id": "start",
+   "trigger": "start",
+   "text": "Watch F1 Finance's machine review HANGS General Contracting's quarter. A review is lighter than an audit.",
+   "file": "01.mp3",
+   "duration": 7.66,
+   "breaks": [
+    4.52
+   ],
+   "why": "mentions old company/sale wording; re-take needed"
   }
  ]
 }
