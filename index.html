@@ -145,6 +145,13 @@ section h2 .acc{ position:relative; }
 .nav a{ font:500 13px/1 var(--head); letter-spacing:.12em; text-transform:uppercase; color:var(--ink); white-space:nowrap; }
 .nav a:hover{ color:var(--blue); }
 .nav .btn{ color:#fff; min-height:42px; padding:10px 18px; font-size:12.5px; }
+/* Fully insured: a small badge in the header (moved out of the credentials banner) */
+.hdr-ins{ margin-left:auto; display:inline-flex; align-items:center; gap:8px; font:600 11px/1.15 var(--body); letter-spacing:.16em; text-transform:uppercase; color:#5f7a80; white-space:nowrap; }
+.hdr-ins img{ width:26px; height:26px; flex:none; filter:drop-shadow(0 2px 4px rgba(12,59,67,.18)); }
+.hdr-ins .ins-br{ display:none; }
+.top-in .hdr-ins + .burger + .nav, .top-in .hdr-ins + .nav{ margin-left:0; }
+@media (max-width:980px){ .hdr-ins{ font-size:9.5px; letter-spacing:.14em; gap:6px; margin-right:-6px; } .hdr-ins img{ width:22px; height:22px; } .hdr-ins .ins-br{ display:inline; } }
+@media (max-width:600px){ .top-in{ gap:8px; } .hdr-ins{ font-size:8.5px; letter-spacing:.1em; gap:4px; margin-right:-4px; } .hdr-ins img{ width:18px; height:18px; } .burger{ padding:6px; flex:none; } }
 .burger{ display:none; background:none; border:0; padding:8px; cursor:pointer; }
 @media (min-width:981px) and (max-width:1180px){ .nav{ gap:22px; } }
 @media (max-width:980px){
@@ -772,6 +779,7 @@ footer a:hover{ color:var(--blue); }
 <header class="top">
   <div class="wrap top-in">
     <a class="logo hl" href="/" aria-label="F1 Finance home"><h1 id="h1"><span class="h1-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg></span><span class="sr">The digital AI accounting, marketing and tech firm.</span><span class="hl-txt" aria-hidden="true"><span class="hl-pre">The digital AI</span> <span class="acc rot"><span>accounting firm.</span><span>marketing firm.</span><span>tech firm.</span></span></span></h1></a>
+    <span class="hdr-ins"><img src="assets/ui/shield.webp" alt="" aria-hidden="true" width="128" height="128"><span>Fully<br class="ins-br"> insured</span></span>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0f2730" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -797,7 +805,6 @@ footer a:hover{ color:var(--blue); }
           <li><img src="assets/logos/microsoft.svg" alt="Microsoft" class="lg-ms"></li>
           <li><img src="assets/logos/general-dynamics.svg" alt="General Dynamics" class="lg-gd"></li>
           <li><img src="assets/logos/uber.svg" alt="Uber" class="lg-uber"></li>
-        <li class="ins"><img class="ui-ic " src="assets/ui/shield.webp" alt="" aria-hidden="true" width="128" height="128"><span>Fully insured</span></li>
         </ul>
         </div>
         </div>
