@@ -22,7 +22,8 @@ commit; GitHub runs `npm test` on every push and pull request (`.github/workflow
   readers show as "andfile". Two deliberate patterns are allowed: the mail labels "To " / "Send to " + recipient, and
   plural endings (" invoice" + "s").
 - Double spaces in each demo's page title and description and in its intro and home-note sentences.
-- The accounting demos' maker line reads "Built by Enasal, with F1 Finance".
+- The maker line reads "Built by Enasal, with F1 Finance" (page, bundles and recorded data) in the tax and accounting
+  demos (`MAKER_FAMILIES`; the audit family joins once its demos carry the new line).
 - Every image, video, document and bundle a demo references (index.html, bundles, CSS, systems.json) exists with the
   exact same case and is tracked by git, because GitHub Pages is case-sensitive. Known absence:
   `brand/hero-loop.mp4` in the tax and accounting demos is not shipped on purpose; `demo/tweaks.js` catches the
@@ -83,6 +84,5 @@ A check that is known to fail until another piece of work lands stays strict (it
 
 ## Known, not tested
 
-- The tax and audit demos' footer and intro still read "Built by Enasal, with Sophon Finance" (it comes from each
-  engine's brand record); the accounting demos read "with F1 Finance". The content check enforces it for the
-  accounting family only.
+- The audit demos' footer and intro still read "Built by Enasal, with Sophon Finance" until they are rebuilt; add
+  audit to `MAKER_FAMILIES` in content.test.mjs then.

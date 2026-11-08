@@ -24,6 +24,7 @@ const IDS = only.length ? only : demos();
 // missing file is never seen as a broken frame.
 const ASSET_OK = new Map([[/^demo\/(tax|accounting)[^/]*\/brand\/hero-loop\.mp4$/, 'brand/hero-loop.mp4 is not shipped on purpose: demo/tweaks.js falls back to the poster image']]);
 // Sentences split into text nodes on purpose: short field labels in the mail views ("To " + recipient).
+const MAKER_FAMILIES = /^(accounting|tax)/;
 const SPLIT_OK = [/^"(To|Send to) ",/];
 // A word and its plural ending (" invoice" + (n > 1 ? "s" : "")) are meant to touch.
 const GLUE_OK = [/,\s*[\w$.]+\s*[><=!]+=?\s*[\w$.]+\s*\?\s*"e?s"\s*:\s*""$/];
@@ -63,9 +64,12 @@ export function run(ids = IDS) {
     const prose = visible.filter(([w, s]) => (w.endsWith('index.html') || /This web demo|Built by Enasal|Prepares a draft|recorded run|plays back/i.test(s)) && !/\n/.test(s));
     const dbl = prose.filter(([, s]) => /\S {2,}\S/.test(s));
     t.ok(!dbl.length, `${id}: no double spaces in the intro and page description`, dbl.slice(0, 3).map(([w, s]) => `${w}: ${JSON.stringify(s.slice(0, 160))}`).join('\n'));
-    // the maker line names the brand (accounting family; see tests/README.md for the tax and audit footers)
-    if (/^accounting/.test(id)) {
-      const old = visible.filter(([, s]) => /with Sophon Finance/.test(s)).concat(exists(path.join(base, 'data', 'demo.json')) && /with Sophon Finance/.test(readText(path.join(base, 'data', 'demo.json'))) ? [['data/demo.json', 'footer']] : []);
+    // the maker line names the brand: "Built by Enasal, with F1 Finance" in the page, the bundles and the recorded
+    // data (the footer comes from the engine's brand record). Enforced for the tax and accounting families; the audit
+    // family joins MAKER_FAMILIES once its demos are rebuilt with the new line.
+    if (MAKER_FAMILIES.test(id)) {
+      const data = walk(path.join(base, 'data')).filter(f => f.endsWith('.json')).filter(f => readText(f).includes('with Sophon Finance')).map(f => [rel(f), 'footer']);
+      const old = visible.filter(([, s]) => /with Sophon Finance/.test(s)).concat(/with Sophon Finance/.test(html) ? [['index.html', 'meta']] : [], data);
       t.ok(!old.length, `${id}: maker line reads "Built by Enasal, with F1 Finance"`, old.slice(0, 3).map(([w, s]) => `${w}: ${s.slice(0, 120)}`).join('\n'));
     }
 
