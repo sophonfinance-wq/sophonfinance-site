@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <script>try{if(sessionStorage.getItem("ffSplash")||matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("ffs-seen")}else{sessionStorage.setItem("ffSplash","1")}}catch(e){}</script>
-<script>/* intro voice: start downloading it first, before the page and the training video */try{if(!document.documentElement.classList.contains("ffs-seen")){var a=new Audio("assets/intro-voice-v4.mp3");a.preload="auto";a.load();window.__ffVoice=a;}}catch(e){}</script>
+<script>/* intro voice: start downloading it first, before the page and the training video */try{if(!document.documentElement.classList.contains("ffs-seen")){var a=new Audio();a.preload="auto";window.__ffVoice=a;var u="assets/intro-voice-v4.mp3";/* fetch is not held back until a tap (iPhone holds media preloads), so the voice is in memory and plays instantly */window.__ffVoiceReady=fetch(u).then(function(r){if(!r.ok)throw 0;return r.blob()}).then(function(b){a.src=URL.createObjectURL(b)}).catch(function(){a.src=u}).then(function(){try{a.load()}catch(e){}});}}catch(e){}</script>
 <script>document.documentElement.classList.add("fx")</script>
 <style>
 :root{ --race:#ff5b4f; --race-2:#f23d76; 
@@ -1087,8 +1087,9 @@ footer a:hover{ color:var(--blue); }
     v.autoplay = false; // hold at 0:00 behind the trailer
     // the big training video waits until the voice has loaded, so the greeting isn't stuck behind it on phones
     var goVid = function(){ if (goVid.done) return; goVid.done = true; show(0, 'intro'); };
-    if (hi && hi.readyState < 4) { hi.addEventListener('canplaythrough', goVid, { once: true }); setTimeout(goVid, 2500); } else goVid();
-    setTimeout(greet, 500); // the voice says the name over the logos, then reads the statement as it appears
+    if (window.__ffVoiceReady) { window.__ffVoiceReady.then(goVid); setTimeout(goVid, 2500); } else goVid();
+    // the voice says the name over the logos (timed for 0.5 s; if the file arrives later the visuals slide to match)
+    (window.__ffVoiceReady || Promise.resolve()).then(function(){ setTimeout(greet, Math.max(0, 500 - (Date.now() - t0))); });
     setTimeout(function(){ // as the curtains open: if the greeting is blocked, show the video moving, muted
       if (cur !== 0 || userTook || speaking || wait) return;
       v.autoplay = true; v.muted = true; play(v);
