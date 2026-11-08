@@ -1057,7 +1057,9 @@ footer a:hover{ color:var(--blue); }
       { id:'audit-liabilities', label:'Unrecorded bills', note:'Search for liabilities', sub:'Searches after year end for bills and accruals that belong in the year.' },
       { id:'audit-payroll', label:'Payroll testing', note:'Rates and accruals', sub:'Tests payroll: samples to time and rate records, recomputes pay, and ties to the GL and the 941s.' },
       { id:'audit-controls', label:'Control walkthroughs', note:'Key controls', sub:'Walks through the key controls in purchasing, billing, payroll and the close, and reports deficiencies.' },
-      { id:'audit-journals', label:'Journal entries', note:'Fraud-risk testing', sub:'Tests every journal entry for management override and finds a $48,000 top-side revenue entry posted on a Saturday night after the close.' } ] }
+      { id:'audit-journals', label:'Journal entries', note:'Fraud-risk testing', sub:'Tests every journal entry for management override and finds a $48,000 top-side revenue entry posted on a Saturday night after the close.' },
+      { id:'audit-subsequent', label:'Subsequent events', note:'Going concern review', sub:'Reads the board minutes, lawyers\' letter and cash after year end, decides which events change the books or need disclosure, and tests going concern.' },
+      { id:'audit-access', label:'User access review', note:'IT general controls', sub:'Checks who can do what in the ledger, payables, payroll and email systems: leavers still active, conflicting duties, admins and weak passwords.' } ] }
   };
   var dSubj = document.getElementById('demoSubj');
   function demoSubjects(m){
