@@ -1038,7 +1038,8 @@ footer a:hover{ color:var(--blue); }
       { id:'accounting-payroll', label:'Payroll rec', note:'Register to GL to bank', sub:'Ties payroll to the ledger, the tax reports and the bank, and catches pay errors.' },
       { id:'accounting-fixedassets', label:'Fixed assets', note:'Roll-forward', sub:'Rolls the asset register forward, recomputes depreciation and catches capitalisation errors.' },
       { id:'accounting-wip', label:'Job cost & WIP', note:'Over/under billings', sub:'Builds the job schedule: percent complete, earned revenue, over/under billings and fade.' },
-      { id:'accounting-cards', label:'Card & expenses', note:'Receipts and coding', sub:'Reconciles company cards to receipts and coding, and catches personal, duplicate and unapproved charges.' } ] },
+      { id:'accounting-cards', label:'Card & expenses', note:'Receipts and coding', sub:'Reconciles company cards to receipts and coding, and catches personal, duplicate and unapproved charges.' },
+      { id:'accounting-cashflow', label:'13-week cash', note:'Cash forecast', sub:'Forecasts 13 weeks of cash from AR, AP, payroll and draws, finds the low week and checks the minimum-cash and covenant limits.' } ] },
     audit:      { name:'Audit Machine',      ic:'assets/icons/aud.jpg', ready:true, pick:0, subjects:[
       { id:'audit',              label:'Year-end audit',      note:'Full engagement',    sub:'Builds year-end audit workpapers.' },
       { id:'audit-cash',         label:'Cash audit',          note:'Bank confirmations', sub:'Tests cash with bank confirmations and reconciliations.' },

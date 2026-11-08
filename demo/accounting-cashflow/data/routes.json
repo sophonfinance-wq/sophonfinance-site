@@ -1,0 +1,286 @@
+{
+"/api/runs/RUN/preparation": {
+"file": "json/api-runs-run-preparation-c579af6e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E01 Bank Rec Summary": {
+"file": "json/api-runs-run-preparation-evidence-e01-bank-rec-summary-2a0d70ef.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E02 Register Oct 26-31": {
+"file": "json/api-runs-run-preparation-evidence-e02-register-oct-26-31-93999258.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E03 Last Week Forecast": {
+"file": "json/api-runs-run-preparation-evidence-e03-last-week-forecast-612f7d98.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E04 Last Week Oct 26 Lines": {
+"file": "json/api-runs-run-preparation-evidence-e04-last-week-oct-26-lines-0abce447.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E05 AP Aging Nov 2": {
+"file": "json/api-runs-run-preparation-evidence-e05-ap-aging-nov-2-b10b87c6.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E06 November 5 Batch": {
+"file": "json/api-runs-run-preparation-evidence-e06-november-5-batch-e19d6e3e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E07 Payroll Calendar": {
+"file": "json/api-runs-run-preparation-evidence-e07-payroll-calendar-061e32b2.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E08 Closing Schedule": {
+"file": "json/api-runs-run-preparation-evidence-e08-closing-schedule-1e9c1dfd.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E09 Broker Terms": {
+"file": "json/api-runs-run-preparation-evidence-e09-broker-terms-fd113c8e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E10 Loans": {
+"file": "json/api-runs-run-preparation-evidence-e10-loans-0024a969.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E11 Loan Terms": {
+"file": "json/api-runs-run-preparation-evidence-e11-loan-terms-760f6edc.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E12 Draw Log": {
+"file": "json/api-runs-run-preparation-evidence-e12-draw-log-5fe549eb.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E13 October Loan Balances": {
+"file": "json/api-runs-run-preparation-evidence-e13-october-loan-balances-04f12282.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E14 Covenants": {
+"file": "json/api-runs-run-preparation-evidence-e14-covenants-5caa453f.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E15 Billing Forecast": {
+"file": "json/api-runs-run-preparation-evidence-e15-billing-forecast-445a64fc.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E16 Planned Purchases": {
+"file": "json/api-runs-run-preparation-evidence-e16-planned-purchases-78bc0a44.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E17 Equipment Loan Terms": {
+"file": "json/api-runs-run-preparation-evidence-e17-equipment-loan-terms-e5ca244a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E18 Equipment Loan Interest": {
+"file": "json/api-runs-run-preparation-evidence-e18-equipment-loan-interes-4bcd190a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E19 Recurring Entries": {
+"file": "json/api-runs-run-preparation-evidence-e19-recurring-entries-2e0becbe.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E20 Prepaid Insurance": {
+"file": "json/api-runs-run-preparation-evidence-e20-prepaid-insurance-88f7146e.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E21 Prepaid Rent": {
+"file": "json/api-runs-run-preparation-evidence-e21-prepaid-rent-0a43b6c5.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E22 Pad 22 Settlement": {
+"file": "json/api-runs-run-preparation-evidence-e22-pad-22-settlement-64a89463.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E23 PO-27-0511": {
+"file": "json/api-runs-run-preparation-evidence-e23-po-27-0511-0c0fa59c.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/SET Page 1": {
+"file": "json/api-runs-run-preparation-evidence-set-page-1-7013e793.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/PO Page 1": {
+"file": "json/api-runs-run-preparation-evidence-po-page-1-43e60c41.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E24 Forecast Procedures": {
+"file": "json/api-runs-run-preparation-evidence-e24-forecast-procedures-dee28e35.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/evidence/E25 Payment Procedures": {
+"file": "json/api-runs-run-preparation-evidence-e25-payment-procedures-41ec81d6.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Summary": {
+"file": "json/api-runs-run-preparation-worksheet-summary-6597996c.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Forecast": {
+"file": "json/api-runs-run-preparation-worksheet-forecast-8ade8a3a.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Cash Lines": {
+"file": "json/api-runs-run-preparation-worksheet-cash-lines-d39c1c04.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Receipts": {
+"file": "json/api-runs-run-preparation-worksheet-receipts-407ef343.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Payables": {
+"file": "json/api-runs-run-preparation-worksheet-payables-5257fe57.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Construction": {
+"file": "json/api-runs-run-preparation-worksheet-construction-84fac3d0.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Debt and Recurring": {
+"file": "json/api-runs-run-preparation-worksheet-debt-and-recurring-4db99d8f.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Minimum and Covenant": {
+"file": "json/api-runs-run-preparation-worksheet-minimum-and-covenant-52fea120.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Variance": {
+"file": "json/api-runs-run-preparation-worksheet-variance-adab0b82.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/worksheet/Assumptions": {
+"file": "json/api-runs-run-preparation-worksheet-assumptions-754deb43.json",
+"type": "application/json"
+},
+"/api/runs/RUN/preparation/workbook": {
+"file": "files/7fda540d/13-Week Cash Forecast Workpapers.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/return": {
+"file": "files/600cd15c/13-Week Cash Forecast Memo DRAFT.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/bankrec": {
+"file": "files/62ecff4b/Bank Rec Summary x4417 - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/prior": {
+"file": "files/c418c794/Cash Forecast - Week of October 26.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/aging": {
+"file": "files/f969b7aa/AP Aging and Batch - November 2.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/payroll": {
+"file": "files/900ec82f/Payroll Calendar - Brookline.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/closings": {
+"file": "files/8936b006/Closing Schedule - November 2.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/debt": {
+"file": "files/f03ffdf7/Debt Schedule and Draws - November 2.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/commitments": {
+"file": "files/78916a78/Billing Forecast - November 2.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/equip": {
+"file": "files/746ecfa7/Ridgeway Equipment Loan Schedule.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/recurring": {
+"file": "files/9d781ad6/Recurring Entries - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/prepaid": {
+"file": "files/905f6738/Prepaid Schedule - October 2026.xlsx",
+"type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+},
+"/api/runs/RUN/preparation/source/settlement": {
+"file": "files/21194071/Pad 22 Estimated Settlement.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/po": {
+"file": "files/7c73dcd1/PO-27-0511 Ironvale Steel.pdf",
+"type": "application/pdf"
+},
+"/api/runs/RUN/preparation/source/cfproc": {
+"file": "files/380bc0e8/HANGS Cash Forecast Procedures v1.0.docx",
+"type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+},
+"/api/runs/RUN/preparation/source/payproc": {
+"file": "files/e73b2bf3/HANGS Payment Procedures v2.1.docx",
+"type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+},
+"/api/runs/RUN/output-page.png": {
+"file": "img/api-runs-run-output-page-png-f5beeb5e.png",
+"type": "image/png"
+},
+"/api/runs/RUN/output-summary": {
+"file": "json/api-runs-run-output-summary-05e012fc.json",
+"type": "application/json"
+},
+"/api/cf/documents/list": {
+"file": "json/api-cf-documents-list-d0aa02fd.json",
+"type": "application/json"
+},
+"/api/cf/documents/preview?file=01 Cash/Bank Rec Summary x4417 - October 2026.xlsx": {
+"file": "json/api-cf-documents-preview-file-01-cash-bank-rec-summary-x4417-1ae29b2a.json",
+"type": "application/json"
+},
+"/api/cf/documents/preview?file=01 Cash/Cash Forecast - Week of October 26.xlsx": {
+"file": "json/api-cf-documents-preview-file-01-cash-cash-forecast-week-of--096697f0.json",
+"type": "application/json"
+},
+"/api/cf/documents/preview?file=08 Procedures/HANGS Cash Forecast Procedures v1.0.docx": {
+"file": "json/api-cf-documents-preview-file-08-procedures-hangs-cash-forec-7468b75f.json",
+"type": "application/json"
+},
+"/api/cf/documents/preview?file=08 Procedures/HANGS Payment Procedures v2.1.docx": {
+"file": "json/api-cf-documents-preview-file-08-procedures-hangs-payment-pr-029901d6.json",
+"type": "application/json"
+},
+"/api/cf/documents/preview?file=02 Payables/AP Aging and Batch - November 2.xlsx": {
+"file": "json/api-cf-documents-preview-file-02-payables-ap-aging-and-batch-ee48748f.json",
+"type": "application/json"
+},
+"/api/cf/documents/preview?file=03 Payroll/Payroll Calendar - Brookline.xlsx": {
+"file": "json/api-cf-documents-preview-file-03-payroll-payroll-calendar-br-b8d2e26f.json",
+"type": "application/json"
+},
+"/api/cf/documents/preview?file=04 Sales/Closing Schedule - November 2.xlsx": {
+"file": "json/api-cf-documents-preview-file-04-sales-closing-schedule-nove-5bb3f0af.json",
+"type": "application/json"
+},
+"/api/cf/documents/page.png?file=04 Sales/Pad 22 Estimated Settlement.pdf": {
+"file": "img/api-cf-documents-page-png-file-04-sales-pad-22-estimated-set-cf9e3e06.png",
+"type": "image/png"
+},
+"/api/cf/documents/preview?file=05 Debt/Debt Schedule and Draws - November 2.xlsx": {
+"file": "json/api-cf-documents-preview-file-05-debt-debt-schedule-and-draw-a84340d4.json",
+"type": "application/json"
+},
+"/api/cf/documents/preview?file=06 Construction/Billing Forecast - November 2.xlsx": {
+"file": "json/api-cf-documents-preview-file-06-construction-billing-foreca-85834231.json",
+"type": "application/json"
+},
+"/api/cf/documents/page.png?file=06 Construction/PO-27-0511 Ironvale Steel.pdf": {
+"file": "img/api-cf-documents-page-png-file-06-construction-po-27-0511-ir-7e374734.png",
+"type": "image/png"
+},
+"/api/cf/documents/preview?file=05 Debt/Ridgeway Equipment Loan Schedule.xlsx": {
+"file": "json/api-cf-documents-preview-file-05-debt-ridgeway-equipment-loa-0dbe2a99.json",
+"type": "application/json"
+},
+"/api/cf/documents/preview?file=07 Recurring/Recurring Entries - October 2026.xlsx": {
+"file": "json/api-cf-documents-preview-file-07-recurring-recurring-entries-00bc8d16.json",
+"type": "application/json"
+},
+"/api/cf/documents/preview?file=07 Recurring/Prepaid Schedule - October 2026.xlsx": {
+"file": "json/api-cf-documents-preview-file-07-recurring-prepaid-schedule--de3355a1.json",
+"type": "application/json"
+}
+}
