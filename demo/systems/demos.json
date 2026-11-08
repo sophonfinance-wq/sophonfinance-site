@@ -1,0 +1,192 @@
+{
+ "accounting": {
+  "title": "HANGS Construction · October 2026 AP Review",
+  "family": "accounting",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "accounting-ar": {
+  "title": "HANGS Construction · October 2026 Receivables and Collections",
+  "family": "accounting",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "accounting-bankrec": {
+  "title": "HANGS Construction · October 2026 Bank Reconciliation",
+  "family": "accounting",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "accounting-cards": {
+  "title": "HANGS Construction · October 2026 Company Card and Expense Reconciliation",
+  "family": "accounting",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "accounting-cashflow": {
+  "title": "HANGS Construction · 13-Week Cash Flow Forecast, Week of November 2, 2026",
+  "family": "accounting",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "accounting-close": {
+  "title": "HANGS Construction · October 2026 Month-End Close",
+  "family": "accounting",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "accounting-fixedassets": {
+  "title": "HANGS Construction · October 2026 Fixed Asset Roll-Forward",
+  "family": "accounting",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "accounting-payroll": {
+  "title": "HANGS Construction · October 2026 Payroll Reconciliation",
+  "family": "accounting",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "accounting-payrun": {
+  "title": "HANGS Construction · Vendor Payment Run, Week of November 2, 2026",
+  "family": "accounting",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "accounting-reporting": {
+  "title": "HANGS Construction · October 2026 Financial Statements and Budget vs Actual",
+  "family": "accounting",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "accounting-wip": {
+  "title": "HANGS Construction · October 2026 Job Cost and WIP Schedule",
+  "family": "accounting",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "audit": {
+  "title": "HANGS Construction · FY2026 Year-End Audit",
+  "family": "audit",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "audit-ar": {
+  "title": "HANGS Construction Services · FY2026 Receivables Confirmations",
+  "family": "audit",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "audit-assets": {
+  "title": "HANGS Construction Services · FY2026 Equipment and Leases Audit",
+  "family": "audit",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "audit-cash": {
+  "title": "HANGS Construction · FY2026 Cash Audit",
+  "family": "audit",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "audit-controls": {
+  "title": "HANGS Construction Services · FY2026 Internal Control Walkthroughs",
+  "family": "audit",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "audit-covenant": {
+  "title": "HANGS Construction Services · FY2026 Loan Covenant Procedures",
+  "family": "audit",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "audit-journals": {
+  "title": "HANGS Construction Services · FY2026 Journal Entry Testing",
+  "family": "audit",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "audit-liabilities": {
+  "title": "HANGS Construction Services · FY2026 Search for Unrecorded Liabilities",
+  "family": "audit",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "audit-payroll": {
+  "title": "HANGS Construction Services · FY2026 Payroll Audit",
+  "family": "audit",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "audit-review": {
+  "title": "HANGS Construction Services · Q3 2026 Quarterly Review",
+  "family": "audit",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "audit-wip": {
+  "title": "HANGS Construction Services · FY2026 Work-in-Progress Schedule Testing",
+  "family": "audit",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "tax-1099": {
+  "title": "HANGS Construction Services · 2026 Forms 1099-NEC",
+  "family": "tax",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "tax-1120": {
+  "title": "HANGS Construction Services · 2025 Form 1120",
+  "family": "tax",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "tax-940": {
+  "title": "HANGS Construction Services · 2026 Form 940",
+  "family": "tax",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "tax-941": {
+  "title": "HANGS Construction Services · Q3 2026 Form 941",
+  "family": "tax",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "tax-excise": {
+  "title": "HANGS Construction Services · October 2026 Combined Excise Tax Return",
+  "family": "tax",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "tax-lni": {
+  "title": "HANGS Construction Services · Q3 2026 Workers' Compensation Quarterly Report",
+  "family": "tax",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "tax-pfml": {
+  "title": "HANGS Construction Services · Q3 2026 Paid Leave and WA Cares Report",
+  "family": "tax",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "tax-seattle": {
+  "title": "HANGS Construction Services · Q3 2026 Seattle Business License Tax Return",
+  "family": "tax",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "tax-ui": {
+  "title": "HANGS Construction Services · Q3 2026 Unemployment Insurance Tax and Wage Report",
+  "family": "tax",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "tax-w2": {
+  "title": "HANGS Construction Services · 2026 Forms W-2 and W-3",
+  "family": "tax",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "accounting-budget": {
+  "title": "HANGS Construction Services · October 2026 Budget vs Actual",
+  "family": "accounting",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "tax-1040": {
+  "title": "Celeste and Brennan Whitford · 2025 Form 1040",
+  "family": "tax",
+  "entity": "Celeste and Brennan Whitford"
+ },
+ "tax-notice": {
+  "title": "HANGS Construction Services · IRS Notice CP207 Reply",
+  "family": "tax",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "audit-subsequent": {
+  "title": "HANGS Construction Services · FY2026 Subsequent Events and Going Concern",
+  "family": "audit",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "accounting-billing": {
+  "title": "HANGS Construction Services · November 2026 Progress Billing",
+  "family": "accounting",
+  "entity": "HANGS Construction Services LLC"
+ },
+ "tax-estimates": {
+  "title": "HANGS Construction Services · 2026 Estimated Tax",
+  "family": "tax",
+  "entity": "HANGS Construction Services LLC"
+ }
+}

@@ -50,8 +50,7 @@
   // ---- 3. web-demo polish: replay wording, and hide controls that only work in the desktop machine ----
   var hide = document.createElement('style');
   hide.textContent =
-    '.sys-restore, .simple-filing:has(.simple-filing-badge.is-coming), a[href*="/api/hangs/accounting/export/"], .ff-hidden{ display:none !important; }' +
-    (/audit-covenant/.test(location.pathname) ? '.app-button[data-app="ledgerwyn"], .app-button[data-app="charterfold"], .app-button[data-app="vellumrow"], .app-button[data-app="quillpost"]{ display:none !important; }' : '');
+    '.sys-restore, .simple-filing:has(.simple-filing-badge.is-coming), a[href*="/api/hangs/accounting/export/"], .ff-hidden{ display:none !important; }';
   (document.head || document.documentElement).appendChild(hide);
   var WORDS = [
     [/^Watch the Live (.+)$/, 'Watch the $1'],
@@ -105,4 +104,127 @@
     } catch (e) { /* never block the demo */ }
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', load); else load();
+})();
+
+// ---- 5. client systems: the system buttons open the shared systems app (demo/systems/) in a panel over the replay.
+//         The replay keeps playing underneath; nothing here touches its clock or its state. ----
+(function () {
+  try {
+    var m = /\/demo\/([a-z0-9-]+)\/(index\.html)?$/i.exec(location.pathname);
+    if (!m || m[1] === 'systems') return;
+    var DEMO = m[1];
+    var APP = { ledgerwyn: 'ledgerwyn', charterfold: 'charterfold', vellumrow: 'vellumrow', quillpost: 'quillpost', taxrules: 'taxrules', confirmations: 'charterfold', accounting: 'ledgerwyn', records: 'charterfold', invoices: 'vellumrow', email: 'quillpost' };
+    var ready = false, ov = null, frame = null, lastFocus = null;
+    var css = document.createElement('style');
+    css.textContent =
+      '.ffs-ov{position:fixed;inset:0;z-index:2147483600;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(6,24,28,.58);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}' +
+      '.ffs-ov[hidden]{display:none}' +
+      '.ffs-panel{width:min(1280px,100%);height:min(920px,100%);display:flex;flex-direction:column;background:#f3f6f8;border-radius:16px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,0,0,.55)}' +
+      '.ffs-head{display:flex;align-items:center;gap:8px;padding:6px 8px 6px 14px;padding-top:calc(6px + env(safe-area-inset-top));background:#082d33;color:#cfe9e5;font:600 13px/1.2 "Segoe UI",-apple-system,BlinkMacSystemFont,system-ui,sans-serif}' +
+      '.ffs-head span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}' +
+      '.ffs-head a,.ffs-head button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:0 12px;border-radius:9px;border:1px solid rgba(95,208,195,.35);background:transparent;color:#fff;font:inherit;text-decoration:none;cursor:pointer}' +
+      '.ffs-head a:hover,.ffs-head button:hover{background:rgba(95,208,195,.15)}' +
+      '.ffs-head button.ffs-x{width:40px;padding:0;font-size:22px;line-height:1}' +
+      '.ffs-panel iframe{flex:1;width:100%;border:0;background:#f3f6f8}' +
+      '.ff-sys-open{display:inline-flex !important;align-items:center;gap:6px}' +
+      '.ff-sys-open svg{width:16px;height:16px;flex:none}' +
+      'html.ffs-lock,html.ffs-lock body{overflow:hidden !important}' +
+      '@media (max-width:640px){.ffs-ov{padding:0}.ffs-panel{width:100%;height:100%;border-radius:0}.ffs-head .ffs-new{display:none}.ff-sys-open .ffs-word{display:none}}' +
+      '@media (max-width:440px){.ff-sys-hdr>span{display:none}.ff-sys-hdr{min-width:40px;justify-content:center}}';
+    (document.head || document.documentElement).appendChild(css);
+
+    var url = function (app, extra) { return '../systems/?d=' + encodeURIComponent(DEMO) + '&app=' + encodeURIComponent(app) + (extra || ''); };
+    var close = function () {
+      if (!ov || ov.hidden) return;
+      ov.hidden = true;
+      document.documentElement.classList.remove('ffs-lock');
+      if (frame) frame.src = 'about:blank';
+      if (lastFocus && lastFocus.focus) { try { lastFocus.focus(); } catch (e) {} }
+    };
+    var open = function (app, extra) {
+      lastFocus = document.activeElement;
+      if (!ov) {
+        ov = document.createElement('div');
+        ov.className = 'ffs-ov';
+        ov.setAttribute('role', 'dialog');
+        ov.setAttribute('aria-modal', 'true');
+        ov.setAttribute('aria-label', 'F1 Finance client systems');
+        ov.innerHTML = '<div class="ffs-panel"><div class="ffs-head"><span>F1 Finance · Client systems</span><a class="ffs-new" target="_blank" rel="noopener">Open in a new tab</a><button type="button" class="ffs-x" aria-label="Close the client systems">×</button></div><iframe title="F1 Finance client systems"></iframe></div>';
+        frame = ov.querySelector('iframe');
+        ov.querySelector('.ffs-x').addEventListener('click', close);
+        ov.addEventListener('click', function (e) { if (e.target === ov) close(); });
+        document.body.appendChild(ov);
+      }
+      var u = url(app, extra);
+      frame.src = u;
+      ov.querySelector('.ffs-new').href = u;
+      ov.hidden = false;
+      document.documentElement.classList.add('ffs-lock');
+      setTimeout(function () { var x = ov.querySelector('.ffs-x'); if (x) x.focus(); }, 30);
+    };
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && ov && !ov.hidden) close(); });
+    window.addEventListener('message', function (e) { if (e.origin === location.origin && e.data && e.data.ffSystems === 'close') close(); });
+
+    // the file a dead download link belongs to, so the document opens in the cabinet instead
+    var fileNear = function (a) {
+      for (var el = a; el && el !== document.body; el = el.parentElement) {
+        var t = (el.textContent || '').slice(0, 2000);
+        var mm = /([^\/\\\n]+?\.(pdf|xlsx|xls|docx|doc|eml|csv))\b/i.exec(t);
+        if (mm) return mm[1].replace(/^.*?(\d{2} [A-Z][^\/]*\/)?/, '').trim();
+      }
+      return '';
+    };
+
+    document.addEventListener('click', function (e) {
+      if (!ready || !e.target || !e.target.closest) return;
+      var btn = e.target.closest('.app-button[data-app], .ff-sys-open');
+      var link = btn ? null : e.target.closest('a[href]');
+      var app = null, extra = '';
+      if (btn) app = btn.classList.contains('ff-sys-open') ? 'ledgerwyn' : APP[btn.getAttribute('data-app')];
+      else if (link) {
+        var h = link.getAttribute('href') || '';
+        var sm = /systems\.html\?(?:[^#]*&)?(?:system|s)=([a-z]+)/i.exec(h) || /^(?:https?:\/\/(?:localhost|127\.0\.0\.1)[^\/]*)?\/systems\/([a-z]+)/i.exec(h);
+        if (sm) app = APP[sm[1].toLowerCase()];
+        else if (/unavailable\.html$/i.test(h)) { app = 'charterfold'; var f = fileNear(link); extra = f ? '&file=' + encodeURIComponent(f) : ''; }
+      }
+      if (!app) return;
+      e.preventDefault(); e.stopPropagation(); if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+      open(app, extra);
+    }, true);
+
+    // a "Client Systems" entry in the header, so demos without system buttons reach the systems too
+    var ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>';
+    var entry = function (cls, extra) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = cls + ' ff-sys-open ' + extra;
+      b.title = 'The client’s ledger, records, invoices, mail and rule checks. The replay keeps playing.';
+      b.setAttribute('aria-label', 'Client systems');
+      b.innerHTML = ICON + '<span><span class="ffs-word">Client </span>Systems</span>';
+      return b;
+    };
+    var placeEntry = function () {
+      if (!ready) return;
+      // on the start page, next to History
+      if (!document.querySelector('.ff-sys-hdr')) {
+        var hist = [].slice.call(document.querySelectorAll('button.simple-nav-link, a.simple-nav-link')).filter(function (x) { return /^History$/i.test((x.textContent || '').trim()); })[0];
+        if (hist && hist.parentNode) hist.parentNode.insertBefore(entry(hist.className, 'ff-sys-hdr'), hist);
+      }
+      // while a replay plays, in its controls (the run covers the header)
+      var ctl = document.querySelector('.property-play-controls');
+      if (ctl && !ctl.querySelector('.ff-sys-run')) {
+        var ref = [].slice.call(ctl.querySelectorAll('button')).filter(function (x) { return /^Details$/i.test((x.textContent || '').trim()); })[0];
+        var nb = entry(ref ? ref.className : 'button is-quiet', 'ff-sys-run');
+        if (ref && ref.nextSibling) ctl.insertBefore(nb, ref.nextSibling); else ctl.appendChild(nb);
+      }
+    };
+    var waiting = false;
+    new MutationObserver(function () { if (waiting) return; waiting = true; setTimeout(function () { waiting = false; placeEntry(); }, 150); }).observe(document.documentElement, { childList: true, subtree: true });
+
+    // take over only when this demo's systems dataset exists
+    var x = new XMLHttpRequest();
+    x.open('HEAD', 'systems.json', true);
+    x.onload = function () { if (x.status >= 200 && x.status < 300) { ready = true; placeEntry(); } };
+    x.send();
+  } catch (e) { /* never block the demo */ }
 })();
