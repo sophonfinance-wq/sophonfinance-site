@@ -201,10 +201,13 @@ section h2 .acc{ position:relative; }
 .panel .sub, .info .sub{ color:var(--text-2); margin:0; max-width:46em; font-size:15px; }
 .tab-note{ font-size:14px; color:#8e95a5; margin:14px 0 0; }
 .player{ position:relative; border-radius:16px; overflow:hidden; background:#eef0f5; box-shadow:0 0 0 1px rgba(14,147,132,.20), 0 30px 70px -30px rgba(14,147,132,.38), 0 18px 40px -28px rgba(15,39,48,.35); }
-/* Nov 9: the player is 10% taller than 16:9 (the video fills it, trimming a little off the sides) and the picture is zoomed in another 10%, so the machine screens read bigger; zoom anchored low so the caption bar stays in view */
-.player video{ display:block; width:100%; height:auto; aspect-ratio:160/99; object-fit:cover; background:#eef0f5; transform:scale(1.1); transform-origin:50% 70%; transition:transform 1.4s cubic-bezier(.2,.7,.2,1); }
+/* Nov 9: the video fills a taller player (object-fit:cover trims a little off the sides), which zooms the picture in without scaling the
+   video element, so the phone's own controls (full screen, scrubber) are never cut off. Phones: 21% taller than 16:9 (picture 1.21x);
+   computers: 10% taller (1.1x), so it still fits the screen. Never put a transform on this video except the end-card zoom (controls are off then). */
+.player video{ display:block; width:100%; height:auto; aspect-ratio:160/99; object-fit:cover; object-position:50% 50%; background:#eef0f5; transform-origin:50% 50%; transition:transform 1.4s cubic-bezier(.2,.7,.2,1); }
+@media (max-width:600px){ .player video{ aspect-ratio:1600/1089; } }
 /* the F1 Finance end card: zoom in close and hold there so visitors can read it and scan the codes */
-.player video.card-zoom{ transform:scale(1.9); transform-origin:50% 50%; }
+.player video.card-zoom{ transform:scale(1.9); }
 .replay{ position:absolute; left:14px; bottom:14px; z-index:2; display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:9px 16px; background:#fff; color:var(--blue-d); border:1px solid var(--line); border-radius:999px; font:600 13px/1 var(--body); letter-spacing:.06em; text-transform:uppercase; cursor:pointer; box-shadow:0 8px 20px -10px rgba(15,39,48,.35); }
 .replay svg{ width:16px; height:16px; }
 /* Try the machines: demo shortcuts replace Tech, AI and App in the tab grid, and the demo sits under the banner */
