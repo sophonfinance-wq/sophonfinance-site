@@ -22,11 +22,15 @@
   };
   try { S.on = localStorage.getItem(KEY) !== 'off'; } catch (e) { }
   var log = function (s) { try { S.log.push(Math.round(performance.now()) + ' ' + s); if (S.log.length > 200) S.log.shift(); } catch (e) { } };
+  // the run button was tapped before this file loaded (tweaks.js notes the tap): narrate this run once the cues are in
+  try { if (window.__ffRunTapAt && realNow() - window.__ffRunTapAt < 60000) { S.wantBegin = true; S.wantAt = window.__ffRunTapAt; log('tap before load'); } } catch (e) { }
 
   // ---- audio: one element, unlocked inside the visitor's tap (iPhone Safari needs that) ----------
   var audio = null;
   try {
-    audio = new Audio();
+    // tweaks.js unlocked this one inside the visitor's tap if the run started before this file had loaded
+    audio = window.__ffAudio || new Audio();
+    if (window.__ffAudio) S.unlocked = true;
     audio.preload = 'auto';
     audio.setAttribute('playsinline', '');
     audio.setAttribute('webkit-playsinline', '');
@@ -377,6 +381,12 @@
   }
   function tick() {
     try {
+      // the run button was tapped before the cues were ready: start as soon as the replay window is up
+      if (!S.active && S.wantBegin) {
+        if (pres()) { S.wantBegin = false; log('late start'); begin(false); }
+        else if (realNow() - (S.wantAt || 0) > 15000) S.wantBegin = false;
+        return;
+      }
       if (!S.active) return;
       var d = pres();
       if (!d) {
@@ -424,7 +434,7 @@
       var act = b.getAttribute('data-action') || '';
       // the run button, or Replay / Run Again: start narrating, inside this tap
       if ((b.matches('button.simple-primary, .simple-primary button') && !pres()) || /^(run-again|replay)$/.test(act) || (/^Replay/i.test(label) && pres())) {
-        if (S.cues) begin(true); else { S.wantBegin = true; if (audio && !S.unlocked) { try { audio.src = SILENT; var p = audio.play(); if (p && p.catch) p.catch(function () { }); S.unlocked = true; } catch (x) { } } }
+        if (S.cues) begin(true); else { S.wantBegin = true; S.wantAt = realNow(); if (audio && !S.unlocked) { try { audio.src = SILENT; var p = audio.play(); if (p && p.catch) p.catch(function () { }); S.unlocked = true; } catch (x) { } } }
         return;
       }
       if (!S.active) return;
@@ -461,7 +471,7 @@
       S.cues = list;
       if (document.body) build(); else document.addEventListener('DOMContentLoaded', build);
       setInterval(tick, 200);
-      if (S.wantBegin && pres()) { S.wantBegin = false; begin(false); }
+      tick();
       // warm the cache so clips start without a gap
       var i = 0, warm = function () { if (i >= list.length) return; var f = list[i++].file; if (!f) return warm(); fetch(BASE + f).then(warm, warm); };
       setTimeout(warm, 1500);

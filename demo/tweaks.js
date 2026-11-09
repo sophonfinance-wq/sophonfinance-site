@@ -35,8 +35,24 @@
   (document.head || document.documentElement).appendChild(css);
   document.addEventListener('click', function (e) {
     var b = e.target && e.target.closest && e.target.closest('button.simple-primary, .simple-primary button');
-    if (b) { armed = dRealNow(); document.documentElement.classList.add('ff-autostart'); }
+    if (b) { armed = dRealNow(); document.documentElement.classList.add('ff-autostart'); lateNarration(); }
   }, true);
+  // A tap that lands before demo/narration.js has loaded (it arrives a moment after the page, with its cue files) must
+  // still get the narration: note the tap, and unlock a sound element inside it (iPhone Safari only lets sound start
+  // inside a tap) for narration.js to take over when it is ready.
+  var lateNarration = function () {
+    try {
+      window.__ffRunTapAt = dRealNow();
+      if (window.__ffNarration || window.__ffAudio) return;
+      var a = new Audio();
+      a.preload = 'auto';
+      a.setAttribute('playsinline', '');
+      a.setAttribute('webkit-playsinline', '');
+      a.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAAAAA=';
+      var p = a.play(); if (p && p.catch) p.catch(function () { });
+      window.__ffAudio = a;
+    } catch (e) { /* never block the demo */ }
+  };
   var accept = function () {
     if (!armed) return;
     if (dRealNow() - armed > 4000) { armed = 0; document.documentElement.classList.remove('ff-autostart'); return; }
@@ -107,7 +123,9 @@
       (document.head || document.documentElement).appendChild(s);
     } catch (e) { /* never block the demo */ }
   };
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', load); else load();
+  // load it now, alongside the demo itself, not after it: a visitor who taps the run button the moment it shows
+  // should not have to wait for the narration to arrive (narration.js waits for the page body where it needs it)
+  load();
 })();
 
 // ---- 5. client systems: the system buttons open the shared systems app (demo/systems/) in a panel over the replay.
