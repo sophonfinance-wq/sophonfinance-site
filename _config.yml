@@ -1,0 +1,6 @@
+# GitHub Pages: keep the test suite and its tooling in the repo (CI uses them) but off the public website
+exclude:
+  - tests/
+  - package.json
+  - package-lock.json
+  - node_modules/
