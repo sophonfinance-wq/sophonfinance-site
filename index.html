@@ -1050,10 +1050,9 @@ footer a:hover{ color:var(--blue); }
     }
   }
 
-  // First entry: a voice says "Welcome to F1 Finance" (Higgsfield, voice Celine) over the trailer. The Tax video waits
-  // at 0:00 and starts from the beginning with sound (75%) 3 seconds after the greeting ends.
-  // Browsers that block sound before a tap: the video plays muted after the trailer, the first tap plays the greeting,
-  // and 3 seconds after it the video restarts at 0:00 with sound. Tapping a tab first skips all of this.
+  // Every visit: the Tax video plays on its own with sound (75%). First visit: it waits at 0:00 behind the intro and
+  // starts as the intro clears (8.2s). Browsers that block sound before a tap (iPhone Safari, some Chrome) play it
+  // muted and the first tap anywhere turns the sound on. Tapping a tab first skips all of this. (No spoken intro since Nov 8.)
   var MED = 0.75, GAP = 3000, intro = !document.documentElement.classList.contains('ffs-seen') && !reduced;
   var hi = null; // the spoken intro was removed (Nov 8); the video starts with sound as the intro clears
   var greeted = false, speaking = false, userTook = false, wait = 0, t0 = Date.now(), INTRO_END = 8200;
@@ -1093,7 +1092,7 @@ footer a:hover{ color:var(--blue); }
       if (cur !== 0 || userTook || speaking || wait) return;
       withSound();
     }, INTRO_END);
-  } else show(0, true); // later visits: autoplay starts muted at 0:00
+  } else { v.autoplay = false; show(0, 'intro'); if (!reduced) withSound(); } // later visits: plays at once from 0:00 with sound (muted until the first tap only where the browser blocks sound)
   snd.addEventListener('click', soundOn);
   v.addEventListener('volumechange', function(){ snd.hidden = !v.muted; });
   // Try the machines
