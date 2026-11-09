@@ -25,7 +25,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <script>try{if(sessionStorage.getItem("ffSplash")||matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("ffs-seen")}else{sessionStorage.setItem("ffSplash","1")}}catch(e){}</script>
-<script>/* intro voice: start downloading it first, before the page and the training video */try{if(!document.documentElement.classList.contains("ffs-seen")){var a=new Audio();a.preload="auto";window.__ffVoice=a;var u="assets/intro-voice-v4.mp3";/* fetch is not held back until a tap (iPhone holds media preloads), so the voice is in memory and plays instantly */window.__ffVoiceReady=fetch(u).then(function(r){if(!r.ok)throw 0;return r.blob()}).then(function(b){a.src=URL.createObjectURL(b)}).catch(function(){a.src=u}).then(function(){try{a.load()}catch(e){}});}}catch(e){}</script>
 <script>document.documentElement.classList.add("fx")</script>
 <style>
 :root{ --race:#ff5b4f; --race-2:#f23d76; 
@@ -57,17 +56,17 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 .more::after{ content:" \00BB"; }
 
 /* grand entrance: F1 Finance and Enasal side by side at equal size, then the security statement, then a slow fade into the page. CSS only, once per visit */
-.ff-splash{ --h:min(72px, 11.5vw); position:fixed; inset:0; z-index:300; pointer-events:none; display:flex; align-items:center; justify-content:center; background:radial-gradient(1100px 600px at 50% 46%, rgba(95,208,195,.10), transparent 70%), #fff; animation:ffsOut 1.9s cubic-bezier(.4,0,.2,1) 10.4s forwards, ffsGone 0s linear 12.3s forwards; }
+.ff-splash{ --h:min(72px, 11.5vw); position:fixed; inset:0; z-index:300; pointer-events:none; display:flex; align-items:center; justify-content:center; background:radial-gradient(1100px 600px at 50% 46%, rgba(95,208,195,.10), transparent 70%), #fff; animation:ffsOut 1.9s cubic-bezier(.4,0,.2,1) 8.2s forwards, ffsGone 0s linear 10.1s forwards; }
 .ffs-seen .ff-splash{ display:none; }
 .ffs-pair{ display:flex; align-items:center; gap:calc(var(--h) * .5); animation:ffsPairOut .7s ease 3s forwards; }
-.ffs-say{ position:absolute; left:50%; top:50%; width:min(15.5em, calc(100vw - 40px)); margin:0; transform:translate(-50%,-50%); font:400 clamp(27px, 7.6vw, 54px)/1.12 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; letter-spacing:-.012em; color:#15181c; text-align:left; opacity:0; animation:ffsSay 1.1s cubic-bezier(.2,.8,.2,1) 3.75s forwards, ffsSayOut 1.5s cubic-bezier(.5,0,.2,1) 10.3s forwards; }
-/* progress bar under the statement: fills while the voice reads it */
+.ffs-say{ position:absolute; left:50%; top:50%; width:min(15.5em, calc(100vw - 40px)); margin:0; transform:translate(-50%,-50%); font:400 clamp(27px, 7.6vw, 54px)/1.12 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; letter-spacing:-.012em; color:#15181c; text-align:left; opacity:0; animation:ffsSay .75s cubic-bezier(.2,.8,.2,1) 3.75s forwards, ffsSayOut 1s cubic-bezier(.5,0,.2,1) 8.1s forwards; }
+/* progress bar under the statement: fills while it is on screen */
 .ffs-bar{ display:block; position:relative; margin-top:.85em; height:4px; border-radius:2px; background:rgba(12,59,67,.10); margin-right:16px; }
 .ffs-bar::after{ content:""; position:absolute; right:-15px; top:-3px; width:10px; height:10px; background:conic-gradient(#0c3b43 25%, #fff 0 50%, #0c3b43 0 75%, #fff 0) 0 0/5px 5px; box-shadow:0 0 0 1px rgba(12,59,67,.25); }
-.ffs-bar i{ position:absolute; inset:0; border-radius:inherit; background:linear-gradient(90deg,#0b7d71,#0e9384 55%,#5fd0c3 85%,var(--race)); transform-origin:0 50%; transform:scaleX(0); box-shadow:0 0 12px rgba(95,208,195,.7); animation:ffsBar 6.3s linear 3.85s forwards; }
+.ffs-bar i{ position:absolute; inset:0; border-radius:inherit; background:linear-gradient(90deg,#0b7d71,#0e9384 55%,#5fd0c3 85%,var(--race)); transform-origin:0 50%; transform:scaleX(0); box-shadow:0 0 12px rgba(95,208,195,.7); animation:ffsBar 4.2s linear 3.85s forwards; }
 .ffs-bar i::after{ content:""; position:absolute; inset:0; background:linear-gradient(90deg, transparent, rgba(255,255,255,.75), transparent); background-size:40% 100%; background-repeat:no-repeat; animation:ffsSheen 1.4s linear infinite; }
 /* the first screen settles into place as the intro clears */
-html:not(.ffs-seen) .top, html:not(.ffs-seen) #services{ animation:ffsReveal 2.3s cubic-bezier(.16,.8,.2,1) 10.4s backwards; transform-origin:50% 30%; }
+html:not(.ffs-seen) .top, html:not(.ffs-seen) #services{ animation:ffsReveal 2.3s cubic-bezier(.16,.8,.2,1) 8.2s backwards; transform-origin:50% 30%; }
 .ffs-ff{ display:flex; align-items:center; gap:calc(var(--h) * .24); height:var(--h); animation:ffsIn 1.1s cubic-bezier(.2,.8,.2,1) .25s both; }
 .ffs-ff svg{ width:var(--h); height:var(--h); flex:none; border-radius:calc(var(--h) * .14); }
 .ffs-ff b{ display:flex; flex-direction:column; justify-content:center; gap:calc(var(--h) * .07); font:700 calc(var(--h) * .43)/.9 var(--head); letter-spacing:.07em; color:#0c3b43; white-space:nowrap; }
@@ -1056,8 +1055,8 @@ footer a:hover{ color:var(--blue); }
   // Browsers that block sound before a tap: the video plays muted after the trailer, the first tap plays the greeting,
   // and 3 seconds after it the video restarts at 0:00 with sound. Tapping a tab first skips all of this.
   var MED = 0.75, GAP = 3000, intro = !document.documentElement.classList.contains('ffs-seen') && !reduced;
-  var hi = intro ? (window.__ffVoice || new Audio('assets/intro-voice-v4.mp3')) : null; if (hi) hi.preload = 'auto';
-  var greeted = false, speaking = false, userTook = false, wait = 0, t0 = Date.now(), INTRO_END = 10400;
+  var hi = null; // the spoken intro was removed (Nov 8); the video starts with sound as the intro clears
+  var greeted = false, speaking = false, userTook = false, wait = 0, t0 = Date.now(), INTRO_END = 8200;
   function withSound(){
     wait = 0; if (userTook || cur !== 0) return;
     v.autoplay = true;
@@ -1081,7 +1080,7 @@ footer a:hover{ color:var(--blue); }
     var p = hi.play(); if (p && p.catch) p.catch(function(){ greeted = false; speaking = false; armTap(); });
   }
   function soundOn(){ clearTimeout(wait); v.muted = false; v.volume = speaking ? 0.3 : MED; play(v); }
-  function onFirstTap(){ document.removeEventListener('pointerdown', onFirstTap, true); document.removeEventListener('keydown', onFirstTap, true); if (!greeted) greet(); else if (v.muted && !wait) soundOn(); }
+  function onFirstTap(){ document.removeEventListener('pointerdown', onFirstTap, true); document.removeEventListener('keydown', onFirstTap, true); if (hi && !greeted) greet(); else if (v.muted && !wait) soundOn(); }
   function armTap(){ document.addEventListener('pointerdown', onFirstTap, true); document.addEventListener('keydown', onFirstTap, true); }
   if (intro) {
     v.autoplay = false; // hold at 0:00 behind the trailer
@@ -1090,9 +1089,9 @@ footer a:hover{ color:var(--blue); }
     if (window.__ffVoiceReady) { window.__ffVoiceReady.then(goVid); setTimeout(goVid, 2500); } else goVid();
     // the voice says the name over the logos (timed for 0.5 s; if the file arrives later the visuals slide to match)
     (window.__ffVoiceReady || Promise.resolve()).then(function(){ setTimeout(greet, Math.max(0, 500 - (Date.now() - t0))); });
-    setTimeout(function(){ // as the curtains open: if the greeting is blocked, show the video moving, muted
+    setTimeout(function(){ // as the curtains open: the video starts from 0:00 with sound, or muted until the first tap if the browser blocks sound
       if (cur !== 0 || userTook || speaking || wait) return;
-      v.autoplay = true; v.muted = true; play(v);
+      withSound();
     }, INTRO_END);
   } else show(0, true); // later visits: autoplay starts muted at 0:00
   snd.addEventListener('click', soundOn);
