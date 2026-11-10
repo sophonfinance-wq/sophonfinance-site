@@ -932,6 +932,16 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
 }
 .reel video, .reel-v{ background:#dcefeb; }
 .f-base{ border-top:0; padding-top:0; }
+/* from the check of the live build */
+@media (max-width:640px){ .cg-head{ gap:10px; } .cg-head small{ font-size:10.5px; letter-spacing:.04em; text-wrap:balance; } .cg-go{ width:26px; height:26px; } } /* the role under each name stays on one line on iPhones */
+@media (max-width:374px){ .case-tag::before{ display:none; } }
+@media (min-width:1100px){ .creds .bt{ text-wrap:balance; } }
+@media (min-width:1181px) and (max-width:1330px){ /* the three service tabs stay the same width on 1280-wide laptops */
+  .tabs{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .tab{ gap:12px; padding-left:16px; padding-right:16px; }
+  .tl b{ font-size:17px; letter-spacing:.05em; }
+  .tab .tm{ gap:6px; padding:7px 10px 7px 9px; font-size:12px; }
+}
 
 </style>
 <script type="application/ld+json">
@@ -993,7 +1003,7 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
         <div class="tabs" role="tablist" aria-label="Services">
           <button class="tab tab-tax" role="tab" aria-selected="true" aria-controls="panel" id="t0"><span class="ti" aria-hidden="true"><img src="assets/icons/tax.svg" alt="" width="72" height="72"></span><span class="tl"><b>Tax<span class="lg">&nbsp;services</span></b></span><span class="tm" aria-hidden="true"><span class="eq"><i></i><i></i><i></i></span><em>2:45</em></span></button>
           <button class="tab tab-acc" role="tab" aria-selected="false" aria-controls="panel" id="t1" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/acc.svg" alt="" width="72" height="72"></span><span class="tl"><b>Accounting<span class="lg">&nbsp;services</span></b></span><span class="tm" aria-hidden="true"><span class="eq"><i></i><i></i><i></i></span><em>3:15</em></span></button>
-          <button class="tab tab-aud" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.svg" alt="" width="72" height="72"></span><span class="tl"><b>Audit<span class="lg">&nbsp;services</span></b></span><span class="tm" aria-hidden="true"><span class="eq"><i></i><i></i><i></i></span><em>3:03</em></span></button>
+          <button class="tab tab-aud" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.svg" alt="" width="72" height="72"></span><span class="tl"><b>Audit<span class="lg">&nbsp;services</span></b></span><span class="tm" aria-hidden="true"><span class="eq"><i></i><i></i><i></i></span><em>3:02</em></span></button>
         </div>
         <p class="sd-hint demo-only" id="sdHint"><i aria-hidden="true"></i>Tap a service to watch how it works, then run the real machine yourself.</p>
         <div class="svc-demos demo-only" id="svcDemos" aria-hidden="true">
