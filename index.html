@@ -268,7 +268,11 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 @keyframes sdTap{ 0%,100%{ transform:translateY(0) rotate(0); } 45%{ transform:translateY(3px) rotate(-8deg); } 60%{ transform:translateY(1px) rotate(-4deg); } }
 @keyframes sdSheen{ 0%,70%{ left:-70%; } 100%{ left:140%; } }
 @media (max-width:600px){
-  .sd-card{ padding:16px 12px 14px; border-radius:18px; }
+  /* owner: no unused white space. On phones the card runs edge to edge (it cancels the page's side gutter),
+     the task buttons reach the edges, and an odd last task fills its whole row. */
+  .svc-demos{ margin-left:calc(-1 * max(16px, env(safe-area-inset-left))); margin-right:calc(-1 * max(16px, env(safe-area-inset-right))); }
+  .sd-card{ padding:16px 6px 10px; border-radius:0; border-left:0; border-right:0; }
+  .svc-demos .demo-subj button:last-child:nth-child(odd){ grid-column:1 / -1; }
   .sd-sub{ font-size:13.5px; }
   .sd-hint{ font-size:12.5px; margin-top:10px; padding:0 8px; }
   .svc-demos .demo-subj{ margin-top:10px; }
