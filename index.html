@@ -25,8 +25,12 @@
 <meta name="format-detection" content="telephone=no">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<!-- fonts load without holding back the first paint (on a slow phone connection they used to keep the screen white for seconds) -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&family=Source+Sans+3:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet"></noscript>
 <script>try{if(sessionStorage.getItem("ffSplash")||matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("ffs-seen")}else{sessionStorage.setItem("ffSplash","1")}}catch(e){}</script>
+<!-- the intro's clock starts at the first frame the phone actually draws, not when the page starts loading, so a slow load can't eat the logos and the security statement -->
+<script>(function(){var d=document.documentElement,done=false;window.__ffsGo=new Promise(function(res){function go(){if(done)return;done=true;d.classList.add("ffs-go");res();}requestAnimationFrame(function(){requestAnimationFrame(go);});setTimeout(go,4000);});})();</script>
 <script>document.documentElement.classList.add("fx")</script>
 <style>
 :root{ --race:#ff5b4f; --race-2:#f23d76; 
@@ -60,6 +64,8 @@ a, button, .tab{ -webkit-tap-highlight-color:rgba(14,147,132,.18); touch-action:
 /* grand entrance: F1 Finance and Enasal side by side at equal size, then the security statement, then a slow fade into the page. CSS only, once per visit */
 .ff-splash{ --h:min(72px, 11.5vw); position:fixed; inset:0; z-index:300; pointer-events:none; display:flex; align-items:center; justify-content:center; background:radial-gradient(1100px 600px at 50% 46%, rgba(95,208,195,.10), transparent 70%), #fff; animation:ffsOut 1.9s cubic-bezier(.4,0,.2,1) 8.2s forwards, ffsGone 0s linear 10.1s forwards; }
 .ffs-seen .ff-splash{ display:none; }
+/* held at the start until the first frame is on screen (see __ffsGo in the head) */
+html:not(.ffs-go) .ff-splash, html:not(.ffs-go) .ff-splash *, html:not(.ffs-go) .ff-splash *::after, html:not(.ffs-go) .top, html:not(.ffs-go) #services{ animation-play-state:paused !important; }
 .ffs-pair{ display:flex; align-items:center; gap:calc(var(--h) * .5); animation:ffsPairOut .7s ease 3s forwards; }
 .ffs-say{ position:absolute; left:50%; top:50%; width:min(15.5em, calc(100vw - 40px)); margin:0; transform:translate(-50%,-50%); font:400 clamp(27px, 7.6vw, 54px)/1.12 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; letter-spacing:-.012em; color:#15181c; text-align:left; opacity:0; animation:ffsSay .75s cubic-bezier(.2,.8,.2,1) 3.75s forwards, ffsSayOut 1s cubic-bezier(.5,0,.2,1) 8.1s forwards; }
 /* progress bar under the statement: fills while it is on screen */
@@ -1102,10 +1108,13 @@ footer a:hover{ color:var(--blue); }
     if (window.__ffVoiceReady) { window.__ffVoiceReady.then(goVid); setTimeout(goVid, 2500); } else goVid();
     // the voice says the name over the logos (timed for 0.5 s; if the file arrives later the visuals slide to match)
     (window.__ffVoiceReady || Promise.resolve()).then(function(){ setTimeout(greet, Math.max(0, 500 - (Date.now() - t0))); });
-    setTimeout(function(){ // as the curtains open: the video starts from 0:00 with sound, or muted until the first tap if the browser blocks sound
-      if (cur !== 0 || userTook || speaking || wait) return;
-      withSound();
-    }, INTRO_END);
+    (window.__ffsGo || Promise.resolve()).then(function(){ // timed from the intro's first drawn frame, like the CSS
+      t0 = Date.now();
+      setTimeout(function(){ // as the curtains open: the video starts from 0:00 with sound, or muted until the first tap if the browser blocks sound
+        if (cur !== 0 || userTook || speaking || wait) return;
+        withSound();
+      }, INTRO_END);
+    });
   } else { v.autoplay = false; show(0, 'intro'); if (!reduced) withSound(); } // later visits: plays at once from 0:00 with sound (muted until the first tap only where the browser blocks sound)
   snd.addEventListener('click', soundOn);
   v.addEventListener('volumechange', function(){ snd.hidden = !v.muted; });
