@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://sophonfinance.com/">
 <meta property="og:site_name" content="F1 Finance">
 <meta property="og:title" content="F1 Finance | Digital AI Accounting Firm">
-<meta property="og:description" content="AI machines that do tax, accounting and audit work. Technology and AI division, marketing division. F1 Finance, AI engineering firm.">
+<meta property="og:description" content="AI machines that do tax, accounting and audit work, approved by your people. Marketing division for brands and founders.">
 <meta property="og:image" content="https://sophonfinance.com/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -783,8 +783,10 @@ footer a:hover{ color:var(--blue); }
 /* ===== Nov 10: finish pass. Light, depth and motion on what is already here; no new sections or copy. ===== */
 ::selection{ background:rgba(14,147,132,.22); color:var(--ink); }
 h1,h2,h3{ text-wrap:balance; }
-section[id]{ scroll-margin-top:84px; }
-@media (max-width:600px){ section[id]{ scroll-margin-top:66px; } }
+/* menu jumps stop with the heading clear of the fixed header (each section already has its own top padding) */
+#services{ scroll-margin-top:80px; }
+#marketing, #team, #contact{ scroll-margin-top:62px; }
+@media (max-width:600px){ #marketing, #team, #contact{ scroll-margin-top:44px; } }
 
 /* buttons: teal gradient with a soft lift */
 .btn{ background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#13a896); box-shadow:0 10px 22px -12px rgba(14,147,132,.85), inset 0 1px 0 rgba(255,255,255,.24); transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s, filter .25s; }
@@ -841,7 +843,7 @@ section[id]{ scroll-margin-top:84px; }
 @media (prefers-reduced-motion:reduce){ .stage.playing .tab[aria-selected="true"] .tm .eq i{ animation:none; } }
 
 /* section headings: the accent word carries the same teal gradient as the title */
-section h2 .acc{ background:linear-gradient(95deg,#0b7d71 0%,#0e9384 45%,#0aa5c8 100%); -webkit-background-clip:text; background-clip:text; color:transparent; padding-bottom:.06em; }
+section h2 .acc{ display:inline-block; background:linear-gradient(95deg,#0b7d71 0%,#0e9384 45%,#0aa5c8 100%); -webkit-background-clip:text; background-clip:text; color:transparent; padding-bottom:.06em; }
 
 /* client films: depth, and a lift under the pointer */
 .reel-v{ box-shadow:0 0 0 1px rgba(12,59,67,.07), 0 22px 40px -26px rgba(12,59,67,.6); transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s; }
@@ -904,9 +906,36 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
 .cf select{ -webkit-appearance:none; appearance:none; padding-right:40px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6' fill='none' stroke='%230e9384' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 13px center; background-size:16px; }
 .cf .fine a{ text-decoration:underline; text-underline-offset:2px; }
 
+/* fit and legibility fixes from the review */
+@media (min-width:981px) and (max-width:1180px){ /* the consultation button was cut off at the right edge on small laptops */
+  .top-in{ gap:12px; }
+  .nav{ gap:16px; }
+  .nav .btn{ padding:10px 14px; font-size:11.5px; letter-spacing:.05em; }
+  .top .hl h1 .rot{ font-size:26px; }
+  .hdr-ins{ letter-spacing:.1em; }
+}
+@media (max-width:389px){ .contact h2{ font-size:7.2vw; } }
+@media (max-width:374px){ /* small phones: the header row was wider than the screen */
+  .top .hl .h1-mark svg{ width:40px; height:40px; margin-right:8px; }
+  .top .hl h1 .rot{ font-size:5.6vw; }
+  .top .top-in.wrap{ padding-left:16px; padding-right:12px; }
+}
+.creds .bf small{ font-size:8px; letter-spacing:.1em; }
+.topband .t-label{ color:#5b6d73; }
+@media (max-width:640px){ .creds li .bt{ text-wrap:balance; } .creds .bf small{ font-size:9px; letter-spacing:.1em; } }
+@media (max-width:600px){
+  .topband .t-label{ font-size:11.2px; }
+  .case .more{ padding:13px 0; margin:-7px 0 -13px; }
+  .cg-li{ min-height:40px; }
+  .snd{ min-height:40px; }
+  .mkt{ padding-bottom:30px; }
+}
+.reel video, .reel-v{ background:#dcefeb; }
+.f-base{ border-top:0; padding-top:0; }
+
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"F1 Finance","alternateName":"SophonFinance.com","url":"https://sophonfinance.com/","logo":"https://sophonfinance.com/assets/apple-touch-icon.png","image":"https://sophonfinance.com/assets/og.jpg","email":"contact@sophonfinance.com","description":"Digital AI accounting firm and AI engineering firm. AI machines for tax, accounting and audit; technology and AI division; marketing division.","address":[{"@type":"PostalAddress","streetAddress":"Rainier Square, 4th Ave & Union St","addressLocality":"Seattle","addressRegion":"WA","addressCountry":"US"}],"areaServed":"US","founder":{"@type":"Person","name":"Sophonnarith Hang"},"knowsAbout":["Tax preparation","Accounting","Audit","AI engineering","Local AI architecture","Mobile apps","Marketing"]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"F1 Finance","alternateName":"SophonFinance.com","url":"https://sophonfinance.com/","logo":"https://sophonfinance.com/assets/apple-touch-icon.png","image":"https://sophonfinance.com/assets/og.jpg","email":"contact@sophonfinance.com","description":"Digital AI accounting firm and AI engineering firm. AI machines for tax, accounting and audit; marketing division.","address":[{"@type":"PostalAddress","streetAddress":"Rainier Square, 4th Ave & Union St","addressLocality":"Seattle","addressRegion":"WA","addressCountry":"US"}],"areaServed":"US","founder":{"@type":"Person","name":"Sophonnarith Hang"},"knowsAbout":["Tax preparation","Accounting","Audit","AI engineering","Local AI architecture","Mobile apps","Marketing"]}
 </script>
 </head>
 <body>
@@ -1486,7 +1515,7 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
   }
 })();
 </script>
-<script src="assets/chat.js?v=f1f" defer></script>
+<script src="assets/chat.js?v=f1g" defer></script>
 <script src="assets/fx.js?v=2" defer></script>
 </body>
 </html>
