@@ -17,8 +17,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#12141a">
+<meta name="theme-color" content="#f0faf8">
 <link rel="icon" href="assets/fast-finance-mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-title" content="F1 Finance">
@@ -781,6 +780,130 @@ footer a:hover{ color:var(--blue); }
 }
 .contact dd a{ display:inline-block; padding:10px 0; margin:-10px 0; }
 
+/* ===== Nov 10: finish pass. Light, depth and motion on what is already here; no new sections or copy. ===== */
+::selection{ background:rgba(14,147,132,.22); color:var(--ink); }
+h1,h2,h3{ text-wrap:balance; }
+section[id]{ scroll-margin-top:84px; }
+@media (max-width:600px){ section[id]{ scroll-margin-top:66px; } }
+
+/* buttons: teal gradient with a soft lift */
+.btn{ background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#13a896); box-shadow:0 10px 22px -12px rgba(14,147,132,.85), inset 0 1px 0 rgba(255,255,255,.24); transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s, filter .25s; }
+.btn:hover{ background:linear-gradient(95deg,#0b7d71,#0e9384 55%,#13a896); filter:brightness(1.06) saturate(1.05); transform:translateY(-1px); box-shadow:0 16px 30px -14px rgba(14,147,132,.95), inset 0 1px 0 rgba(255,255,255,.28); }
+.btn:active{ transform:translateY(0) scale(.98); }
+.more::after{ content:"\00BB"; display:inline-block; margin-left:.4em; transition:transform .25s cubic-bezier(.2,.8,.2,1); }
+.more:hover::after{ transform:translateX(4px); }
+
+/* menu: the section on screen is underlined */
+@media (min-width:981px){
+  .nav a:not(.btn){ position:relative; padding:9px 0; transition:color .2s; }
+  .nav a:not(.btn)::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:2px; border-radius:2px; background:linear-gradient(90deg,#0e9384,#5fd0c3); transform:scaleX(0); transform-origin:0 50%; transition:transform .4s cubic-bezier(.2,.8,.2,1); }
+  .nav a:not(.btn):hover::after, .nav a.on:not(.btn)::after{ transform:scaleX(1); }
+  .nav a.on:not(.btn){ color:var(--blue-d); }
+}
+
+/* first screen: slow light behind the stage; the video's glow and corner brackets take the colour of the service that is playing */
+.svc{ overflow:hidden; overflow:clip; }
+.svc > .wrap{ z-index:1; }
+.svc::after{ content:""; position:absolute; z-index:0; inset:0 0 auto 0; height:640px; pointer-events:none; background:radial-gradient(36% 58% at 20% 38%, rgba(95,208,195,.30), transparent 70%), radial-gradient(34% 54% at 80% 28%, rgba(10,165,200,.17), transparent 70%); animation:svcLight 16s ease-in-out infinite alternate; will-change:transform; }
+@keyframes svcLight{ from{ transform:translate3d(-4%,0,0) scale(1); } to{ transform:translate3d(4%,16px,0) scale(1.1); } }
+@media (prefers-reduced-motion:reduce){ .svc::after{ animation:none; } }
+.stage{ --sg:14,147,132; }
+.stage[data-svc="acc"]{ --sg:23,105,170; }
+.stage[data-svc="aud"]{ --sg:74,70,184; }
+.player{ box-shadow:0 0 0 1px rgba(var(--sg),.22), 0 36px 80px -34px rgba(var(--sg),.5), 0 18px 40px -28px rgba(15,39,48,.35); transition:box-shadow .7s ease; }
+.panel::before, .panel::after{ border-color:rgba(var(--sg),.6); transition:border-color .7s ease; }
+
+/* service tabs: lift on hover, and each one shows the length of its video; the one playing shows moving bars */
+.tab{ transition:background .2s, border-color .2s, transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s; }
+.ti{ transition:transform .35s cubic-bezier(.2,.8,.2,1); }
+.tab:active{ transform:scale(.985); }
+@media (hover:hover){
+  .tab:hover{ transform:translateY(-2px); box-shadow:0 16px 30px -20px rgba(12,59,67,.5); }
+  .tab[aria-selected="true"]:hover{ box-shadow:0 18px 34px -14px var(--c); }
+  .tab:hover .ti{ transform:scale(1.06) rotate(-2deg); }
+}
+.tm{ display:none; }
+@media (min-width:981px){
+  .tab .tm{ display:inline-flex; align-items:center; gap:8px; margin-left:auto; padding:8px 13px 8px 11px; border-radius:999px; background:var(--ct); color:var(--c); font:600 13px/1 var(--body); letter-spacing:.04em; font-variant-numeric:tabular-nums; transition:background .25s, color .25s; }
+  .tm em{ font-style:normal; }
+  .tm::before{ content:""; width:0; height:0; border-left:8px solid currentColor; border-top:5px solid transparent; border-bottom:5px solid transparent; }
+  .tm .eq{ display:none; align-items:flex-end; gap:2.5px; height:12px; }
+  .tm .eq i{ display:block; width:3px; height:12px; border-radius:2px; background:currentColor; transform-origin:50% 100%; transform:scaleY(.45); }
+  .tm .eq i:nth-child(2){ transform:scaleY(1); } .tm .eq i:nth-child(3){ transform:scaleY(.7); }
+  .tab[aria-selected="true"] .tm{ background:rgba(255,255,255,.2); color:#fff; }
+  .tab[aria-selected="true"] .tm::before{ display:none; }
+  .tab[aria-selected="true"] .tm .eq{ display:inline-flex; }
+  .stage.playing .tab[aria-selected="true"] .tm .eq i{ animation:tmEq 1s ease-in-out infinite; }
+  .stage.playing .tab[aria-selected="true"] .tm .eq i:nth-child(2){ animation-delay:-.35s; }
+  .stage.playing .tab[aria-selected="true"] .tm .eq i:nth-child(3){ animation-delay:-.7s; }
+}
+@keyframes tmEq{ 0%,100%{ transform:scaleY(.35); } 50%{ transform:scaleY(1); } }
+@media (prefers-reduced-motion:reduce){ .stage.playing .tab[aria-selected="true"] .tm .eq i{ animation:none; } }
+
+/* section headings: the accent word carries the same teal gradient as the title */
+section h2 .acc{ background:linear-gradient(95deg,#0b7d71 0%,#0e9384 45%,#0aa5c8 100%); -webkit-background-clip:text; background-clip:text; color:transparent; padding-bottom:.06em; }
+
+/* client films: depth, and a lift under the pointer */
+.reel-v{ box-shadow:0 0 0 1px rgba(12,59,67,.07), 0 22px 40px -26px rgba(12,59,67,.6); transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s; }
+@media (hover:hover){ .reel-v:hover{ transform:translateY(-4px); box-shadow:0 0 0 1px rgba(14,147,132,.25), 0 30px 50px -26px rgba(12,59,67,.7); } }
+@media (min-width:981px){
+  .reel-v, .reel video{ border-radius:16px; }
+  .reel-v video{ border-radius:0; }
+  /* the client's name stays beside its films while they scroll past */
+  .case > div:first-child{ position:sticky; top:104px; }
+}
+.case-tag{ display:inline-flex; align-items:center; gap:8px; }
+.case-tag::before{ content:""; width:7px; height:7px; border-radius:50%; background:linear-gradient(135deg,#0e9384,#5fd0c3); box-shadow:0 0 0 3px rgba(14,147,132,.14); }
+
+/* credentials: one card for each founder */
+.creds{ padding:0; gap:16px; background:none; border:0; box-shadow:none; }
+.creds.fx-spot::after{ display:none; }
+.cg{ --gg:14,147,132; position:relative; display:flex; flex-direction:column; padding:22px 22px 20px; background:#fff; border:1px solid var(--line); border-radius:20px; overflow:hidden; box-shadow:0 1px 0 #fff inset, 0 26px 50px -36px rgba(12,59,67,.55); }
+.cg-en{ --gg:10,165,200; }
+.cg::before{ content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--g1),var(--g2)); }
+.cg::after{ content:""; position:absolute; right:-90px; top:-90px; width:260px; height:260px; border-radius:50%; pointer-events:none; background:radial-gradient(closest-side, rgba(var(--gg),.16), transparent); }
+.cg > *{ position:relative; z-index:1; }
+.cg-head{ gap:12px; padding-bottom:13px; margin-bottom:13px; }
+.cg-head b{ font:500 19px/1.15 var(--head); letter-spacing:.005em; }
+.cg-head small{ margin-top:4px; font-size:11px; letter-spacing:.08em; }
+.cg-logo{ height:26px; }
+.cg-tile svg{ width:36px; height:36px; filter:drop-shadow(0 4px 8px rgba(12,59,67,.22)); }
+.cg-li{ align-self:flex-start; margin-top:14px; transition:border-color .2s, background .2s, transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s; }
+.cg-li:hover{ transform:translateY(-1px); box-shadow:0 8px 16px -10px rgba(10,102,194,.55); }
+.cg-go{ flex:none; margin-left:auto; width:30px; height:30px; border-radius:50%; border:1px solid var(--line); background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7h8v8M17 7 7.5 16.5' fill='none' stroke='%230b6f9c' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat; transition:transform .3s cubic-bezier(.2,.8,.2,1), border-color .2s, box-shadow .3s; }
+a.cg-head:hover .cg-go{ transform:translate(2px,-2px); border-color:#0aa5c8; box-shadow:0 8px 16px -10px rgba(10,165,200,.7); }
+.creds li.cg-link{ display:flex; align-items:center; }
+.creds li.cg-link .cg-li{ margin-top:0; }
+@media (min-width:641px){
+  .creds li.cg-link{ padding:0; border:0; background:none; }
+  .creds li:not(.cg-link){ padding:7px 10px 7px 7px; border:1px solid #e4f0ee; border-radius:12px; background:linear-gradient(180deg,#f6fbfa,#fff); transition:border-color .25s, transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s; }
+  .creds .bf{ height:38px; }
+}
+@media (min-width:1100px){
+  .creds ul{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px 12px; }
+  .creds .bt{ font-size:14.2px; }
+  /* the years of experience lead each card, full width */
+  .creds li:first-child{ grid-column:1 / -1; background:linear-gradient(90deg, rgba(var(--gg),.10), rgba(var(--gg),.02) 70%, #fff); border-color:rgba(var(--gg),.22); }
+  .creds li:first-child .bt{ font:500 16px/1.2 var(--head); letter-spacing:.01em; }
+  .creds li:first-child .bf b{ font-size:15px; }
+}
+@media (hover:hover){
+  .fx .cg[data-r].in{ transition:opacity .8s cubic-bezier(.2,.7,.2,1) var(--rd,0ms), filter .8s ease var(--rd,0ms), transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .35s, border-color .35s; }
+  .cg{ transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .35s, border-color .35s; }
+  .cg:hover, .fx .cg[data-r].in:hover{ transform:translateY(-3px); border-color:rgba(var(--gg),.45); box-shadow:0 1px 0 #fff inset, 0 34px 60px -36px rgba(var(--gg),.75); }
+  .creds li:not(.cg-link):hover{ border-color:rgba(var(--gg),.4); transform:translateY(-1px); box-shadow:0 8px 16px -12px rgba(12,59,67,.45); }
+}
+@media (max-width:640px){ .cg{ padding:18px 16px 16px; border-radius:18px; } .creds li.cg-link{ width:100%; flex-direction:row; justify-content:flex-start; margin-top:2px; } }
+
+/* contact: the two columns sit level; fields light up when in use */
+@media (min-width:901px){ .c-grid{ align-items:center; } }
+form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(12,59,67,.55); }
+.cf input, .cf textarea, .cf select{ transition:border-color .2s, box-shadow .2s, background-color .2s; }
+@media (hover:hover){ .cf input:hover, .cf textarea:hover, .cf select:hover{ border-color:#a6d5ce; } }
+.cf input:focus, .cf textarea:focus, .cf select:focus{ outline:0; border-color:var(--blue); background-color:#fff; box-shadow:0 0 0 4px rgba(14,147,132,.16); }
+.cf select{ -webkit-appearance:none; appearance:none; padding-right:40px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6' fill='none' stroke='%230e9384' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 13px center; background-size:16px; }
+.cf .fine a{ text-decoration:underline; text-underline-offset:2px; }
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"F1 Finance","alternateName":"SophonFinance.com","url":"https://sophonfinance.com/","logo":"https://sophonfinance.com/assets/apple-touch-icon.png","image":"https://sophonfinance.com/assets/og.jpg","email":"contact@sophonfinance.com","description":"Digital AI accounting firm and AI engineering firm. AI machines for tax, accounting and audit; technology and AI division; marketing division.","address":[{"@type":"PostalAddress","streetAddress":"Rainier Square, 4th Ave & Union St","addressLocality":"Seattle","addressRegion":"WA","addressCountry":"US"}],"areaServed":"US","founder":{"@type":"Person","name":"Sophonnarith Hang"},"knowsAbout":["Tax preparation","Accounting","Audit","AI engineering","Local AI architecture","Mobile apps","Marketing"]}
@@ -839,9 +962,9 @@ footer a:hover{ color:var(--blue); }
           </div>
         </div>
         <div class="tabs" role="tablist" aria-label="Services">
-          <button class="tab tab-tax" role="tab" aria-selected="true" aria-controls="panel" id="t0"><span class="ti" aria-hidden="true"><img src="assets/icons/tax.svg" alt="" width="72" height="72"></span><span class="tl"><b>Tax<span class="lg">&nbsp;services</span></b></span></button>
-          <button class="tab tab-acc" role="tab" aria-selected="false" aria-controls="panel" id="t1" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/acc.svg" alt="" width="72" height="72"></span><span class="tl"><b>Accounting<span class="lg">&nbsp;services</span></b></span></button>
-          <button class="tab tab-aud" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.svg" alt="" width="72" height="72"></span><span class="tl"><b>Audit<span class="lg">&nbsp;services</span></b></span></button>
+          <button class="tab tab-tax" role="tab" aria-selected="true" aria-controls="panel" id="t0"><span class="ti" aria-hidden="true"><img src="assets/icons/tax.svg" alt="" width="72" height="72"></span><span class="tl"><b>Tax<span class="lg">&nbsp;services</span></b></span><span class="tm" aria-hidden="true"><span class="eq"><i></i><i></i><i></i></span><em>2:45</em></span></button>
+          <button class="tab tab-acc" role="tab" aria-selected="false" aria-controls="panel" id="t1" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/acc.svg" alt="" width="72" height="72"></span><span class="tl"><b>Accounting<span class="lg">&nbsp;services</span></b></span><span class="tm" aria-hidden="true"><span class="eq"><i></i><i></i><i></i></span><em>3:15</em></span></button>
+          <button class="tab tab-aud" role="tab" aria-selected="false" aria-controls="panel" id="t2" tabindex="-1"><span class="ti" aria-hidden="true"><img src="assets/icons/aud.svg" alt="" width="72" height="72"></span><span class="tl"><b>Audit<span class="lg">&nbsp;services</span></b></span><span class="tm" aria-hidden="true"><span class="eq"><i></i><i></i><i></i></span><em>3:03</em></span></button>
         </div>
         <p class="sd-hint demo-only" id="sdHint"><i aria-hidden="true"></i>Tap a service to watch how it works, then run the real machine yourself.</p>
         <div class="svc-demos demo-only" id="svcDemos" aria-hidden="true">
@@ -931,13 +1054,13 @@ footer a:hover{ color:var(--blue); }
 
   <section class="team" id="team" aria-labelledby="teamH">
     <div class="wrap team-in">
-      <h2 id="teamH">Our credentials</h2>
+      <h2 id="teamH">Our <span class="acc">credentials.</span></h2>
       <div class="team-grid">
         <div class="creds">
           <div class="cg cg-en">
             <a class="cg-head" href="https://app.enasal.dev" target="_blank" rel="noopener">
               <img src="assets/enasal-logo-dark.png" alt="ENASAL" class="cg-logo">
-              <span><b>Thush W.</b><small>Founder, Enasal &middot; AI Engineer</small></span>
+              <span><b>Thush W.</b><small>Founder, Enasal &middot; AI Engineer</small></span><i class="cg-go" aria-hidden="true"></i>
             </a>
             <ul>
               <li><span class="bf"><b>30+</b><small>Years</small></span><span class="bt">Engineering experience</span></li>
@@ -957,8 +1080,8 @@ footer a:hover{ color:var(--blue); }
               <li><span class="bf bf-w"><img src="assets/logos/kpmg.svg" alt="KPMG"></span><span class="bt">KPMG-trained, Big Four</span></li>
               <li><span class="bf"><b>F500</b><small>Fortune</small></span><span class="bt">Fortune 100 and 500</span></li>
               <li><span class="bf"><b>AI</b><small>Engineer</small></span><span class="bt">Accountant and AI engineer</span></li>
+              <li class="cg-link"><a class="cg-li" href="https://www.linkedin.com/in/sophonnarith/" target="_blank" rel="noopener" aria-label="Sophonnarith Hang on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#0a66c2"/><path d="M7.1 9.6h2.6V18H7.1zM8.4 5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM11.3 9.6h2.5v1.2c.4-.7 1.3-1.4 2.7-1.4 2.7 0 3.2 1.8 3.2 4.1V18h-2.6v-4c0-1 0-2.2-1.4-2.2s-1.6 1-1.6 2.1V18h-2.6z" fill="#fff"/></svg>LinkedIn</a></li>
             </ul>
-            <a class="cg-li" href="https://www.linkedin.com/in/sophonnarith/" target="_blank" rel="noopener" aria-label="Sophonnarith Hang on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#0a66c2"/><path d="M7.1 9.6h2.6V18H7.1zM8.4 5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM11.3 9.6h2.5v1.2c.4-.7 1.3-1.4 2.7-1.4 2.7 0 3.2 1.8 3.2 4.1V18h-2.6v-4c0-1 0-2.2-1.4-2.2s-1.6 1-1.6 2.1V18h-2.6z" fill="#fff"/></svg>LinkedIn</a>
           </div>
         </div>
       </div>
@@ -994,8 +1117,7 @@ footer a:hover{ color:var(--blue); }
         </div>
         <label>How can we help?<textarea name="message" required></textarea></label>
         <div><button class="btn btn-send" type="submit">Request consultation<img class="ui-ic " src="assets/ui/send.webp" alt="" aria-hidden="true" width="128" height="128"></button></div>
-        <p class="fine">By sending this you agree to our <a href="privacy.html">Privacy notice</a>.</p>
-        <p class="fine">Please don&rsquo;t include client data in this form.</p>
+        <p class="fine">By sending this you agree to our <a href="privacy.html">Privacy notice</a>. Please don&rsquo;t include client data in this form.</p>
       </form>
     </div>
   </section>
@@ -1051,6 +1173,7 @@ footer a:hover{ color:var(--blue); }
   var demosOn = document.documentElement.getAttribute('data-demos') === 'on';
   function show(i, load){
     cur = i; var s = S[i];
+    var stg = document.querySelector(".stage"); if (stg) stg.setAttribute("data-svc", ["tax","acc","aud","tech","ai","app"][i]);
     tabs.forEach(function(t, j){ var on = j === i; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
     document.getElementById('panel').setAttribute('aria-labelledby', 't' + i);
     document.getElementById('pTitle').querySelector('b').textContent = s.title;
@@ -1121,6 +1244,8 @@ footer a:hover{ color:var(--blue); }
     });
   } else { v.autoplay = false; show(0, 'intro'); if (!reduced) withSound(); } // later visits: plays at once from 0:00 with sound (muted until the first tap only where the browser blocks sound)
   snd.addEventListener('click', soundOn);
+  // the tab of the video that is playing shows moving bars
+  (function(){ var stg = document.querySelector('.stage'); if (!stg) return; function st(){ stg.classList.toggle('playing', !v.paused && !v.ended); } ['play', 'playing', 'pause', 'ended', 'emptied'].forEach(function(e){ v.addEventListener(e, st); }); st(); })();
   v.addEventListener('volumechange', function(){ snd.hidden = !v.muted; });
   // Try the machines
   var DEMO = {
@@ -1353,6 +1478,12 @@ footer a:hover{ color:var(--blue); }
   var burger = document.getElementById('burger'), nav = document.getElementById('nav');
   burger.addEventListener('click', function(){ var o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', o); });
   nav.addEventListener('click', function(e){ if (e.target.closest('a')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); } });
+  // the menu underlines the section that is on screen
+  if ('IntersectionObserver' in window) {
+    var navA = {}; [].slice.call(nav.querySelectorAll('a[href^="#"]')).forEach(function(a){ navA[a.getAttribute('href').slice(1)] = a; });
+    var navIO = new IntersectionObserver(function(es){ es.forEach(function(e){ if (!e.isIntersecting) return; Object.keys(navA).forEach(function(k){ navA[k].classList.toggle('on', k === e.target.id); }); }); }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(navA).forEach(function(k){ var sec = document.getElementById(k); if (sec) navIO.observe(sec); });
+  }
 })();
 </script>
 <script src="assets/chat.js?v=f1f" defer></script>
