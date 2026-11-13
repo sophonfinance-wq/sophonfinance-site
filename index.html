@@ -919,6 +919,24 @@ a.cg-head:hover .cg-go{ transform:translate(2px,-2px); border-color:#0aa5c8; box
   .creds li .bt{ display:flex; align-items:center; justify-content:center; min-height:2.5em; font-size:11.5px; line-height:1.25; }
 }
 
+/* Nov 13 (owner): "We are partners". One badge over both cards, and each card ends with the partnership tile
+   ("Partner, F1 Finance" on Thush's, "Partner, Enasal" on Sophonnarith's). On wide screens that tile runs the full
+   width at the bottom, like the years tile at the top. */
+.cg-partners{ grid-column:1 / -1; justify-self:center; display:inline-flex; align-items:center; gap:9px; margin:0 0 2px; padding:8px 16px;
+  border:1px solid #cfe8e3; border-radius:999px; background:#fff; box-shadow:0 1px 2px rgba(15,39,48,.06), 0 10px 22px -16px rgba(12,59,67,.45);
+  font:600 11.5px/1 var(--body); letter-spacing:.12em; text-transform:uppercase; color:#0c3b43; white-space:nowrap; }
+.cg-pl{ padding-right:10px; border-right:1px solid #cfe8e3; color:#0e9384; }
+.cg-x{ color:#0aa5c8; font-weight:400; letter-spacing:0; }
+.creds .cg-pt .bf-w img{ height:12px; max-width:58px; }
+.creds .cg-pt .bf-w svg{ width:20px; height:20px; border-radius:4px; }
+@media (min-width:1100px){
+  .creds li.cg-pt{ grid-column:1 / -1; }
+}
+@media (max-width:640px){
+  .cg-partners{ gap:7px; padding:7px 12px; font-size:10px; letter-spacing:.1em; }
+  .cg-pl{ padding-right:8px; }
+}
+
 /* contact: the two columns sit level; fields light up when in use */
 @media (min-width:901px){ .c-grid{ align-items:center; } }
 form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(12,59,67,.55); }
@@ -1199,6 +1217,8 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
       <h2 id="teamH">Our <span class="acc">credentials.</span></h2>
       <div class="team-grid">
         <div class="creds">
+          <!-- Nov 13 (owner): "We are partners". One badge over both cards, and each card ends with the partnership. -->
+          <p class="cg-partners" aria-label="Partners: Enasal and F1 Finance"><span class="cg-pl">Partners</span><span class="cg-pn">Enasal</span><span class="cg-x" aria-hidden="true">&times;</span><span class="cg-pn">F1 Finance</span></p>
           <div class="cg cg-en">
             <a class="cg-head" href="https://app.enasal.dev" target="_blank" rel="noopener">
               <img src="assets/enasal-logo-dark.png" alt="ENASAL" class="cg-logo">
@@ -1210,11 +1230,12 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
               <li><span class="bf bf-w"><img src="assets/logos/microsoft.svg" alt="Microsoft"></span><span class="bt">Software engineer, 6 yrs</span></li>
               <li><span class="bf"><b>SOLO</b><small>Seattle</small></span><span class="bt">Head of Engineering</span></li>
               <li><span class="bf"><b>UW</b><small>Alumnus</small></span><span class="bt">University of Washington</span></li>
+              <li class="cg-pt"><span class="bf bf-w"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg></span><span class="bt">Partner, F1 Finance</span></li>
             </ul>
           </div>
           <div class="cg cg-ff">
             <!-- Nov 13 (owner): "both equal". The same parts as Thush's card: a linked head with the round arrow (to
-                 LinkedIn, which was a separate button) and five credentials. -->
+                 LinkedIn, which was a separate button), five credentials and the partnership: six tiles each. -->
             <a class="cg-head" href="https://www.linkedin.com/in/sophonnarith/" target="_blank" rel="noopener" aria-label="Sophonnarith Hang, Founder, F1 Finance, AI Engineer, on LinkedIn">
               <span class="cg-tile"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg></span>
               <span><b>Sophonnarith Hang</b><small><span>Founder, F1 Finance</span><span class="cg-dot"> &middot; </span><span>AI Engineer</span></small></span><i class="cg-go" aria-hidden="true"></i>
@@ -1225,6 +1246,7 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
               <li><span class="bf"><b>F500</b><small>Fortune</small></span><span class="bt">Fortune 100 and 500</span></li>
               <li><span class="bf"><b>AI</b><small>Engineer</small></span><span class="bt">Accountant and AI engineer</span></li>
               <li><span class="bf"><b>3</b><small>AI machines</small></span><span class="bt">Tax, accounting and audit</span></li>
+              <li class="cg-pt"><span class="bf bf-w"><img src="assets/enasal-logo-dark.png" alt="Enasal"></span><span class="bt">Partner, Enasal</span></li>
             </ul>
           </div>
         </div>
