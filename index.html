@@ -943,6 +943,14 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
   .tab .tm{ gap:6px; padding:7px 10px 7px 9px; font-size:12px; }
 }
 
+/* Nov 12: custom mobile app building, shown with the Model Macros v2 screens (no photos of Malik, at his request) */
+.apps-h{ font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif !important; font-size:46px !important; line-height:1 !important; letter-spacing:.01em; color:var(--ink) !important; }
+.apps-ex{ color:var(--text-2); font-size:15.5px; }
+.apps-ex b{ color:var(--ink); font-weight:600; }
+.apps-cta{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 22px; margin-top:4px; }
+.reel.shot img{ display:block; width:100%; height:auto; aspect-ratio:9/16; object-fit:cover; object-position:top center; border-radius:12px; background:#fff;
+  border:1px solid var(--line); box-shadow:0 18px 40px -26px rgba(12,59,67,.45); }
+@media (max-width:600px){ .apps-h{ font-size:32px !important; margin-bottom:8px !important; } .apps-cta{ gap:8px 18px; } .apps-cta .btn{ min-height:44px; padding:10px 20px; } }
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"F1 Finance","alternateName":"SophonFinance.com","url":"https://sophonfinance.com/","logo":"https://sophonfinance.com/assets/apple-touch-icon.png","image":"https://sophonfinance.com/assets/og.jpg","email":"contact@sophonfinance.com","description":"Digital AI accounting firm and AI engineering firm. AI machines for tax, accounting and audit; marketing division.","address":[{"@type":"PostalAddress","streetAddress":"Rainier Square, 4th Ave & Union St","addressLocality":"Seattle","addressRegion":"WA","addressCountry":"US"}],"areaServed":"US","founder":{"@type":"Person","name":"Sophonnarith Hang"},"knowsAbout":["Tax preparation","Accounting","Audit","AI engineering","Local AI architecture","Mobile apps","Marketing"]}
@@ -968,6 +976,7 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
     </button>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#services">Services</a>
+      <a href="#apps">Apps</a>
       <a href="#marketing">Marketing</a>
       <a href="#team">Credentials</a>
       <a class="btn" href="#contact">Schedule a consultation</a>
@@ -1060,18 +1069,25 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
   <section class="mkt" id="marketing" aria-labelledby="otherH">
     <div class="wrap">
       <h2 class="mkt-title" id="otherH">Other <span class="acc">services.</span></h2>
-      <div class="case">
+      <div class="case" id="apps">
         <div>
-          <p class="case-tag">Client work &middot; Fitness</p>
-          <h3 class="mm-logo" aria-label="Model Macros">MODEL MACROS.</h3>
-          <p>Launch campaign for Malik&rsquo;s fitness app.</p>
-          <a class="more" href="https://model-macros.expo.app" target="_blank" rel="noopener">See the Model Macros app</a>
+          <p class="case-tag">App building &middot; Custom made</p>
+          <h3 class="apps-h">Custom mobile apps.</h3>
+          <p>We design and build your own app for iPhone, Android and the web, made to order around your business and your brand.</p>
+          <ul>
+            <li>One build for iPhone, Android and web</li>
+            <li>Sign-in, payments and memberships, chat, coaching, games</li>
+            <li>App Store and Google Play launch handled for you</li>
+            <li>Updates and support after launch</li>
+          </ul>
+          <p class="apps-ex"><b>Latest build: Model Macros.</b> A nutrition and fitness app with meal logging by voice and photo, step challenges, daily lessons and a members&rsquo; community.</p>
+          <div class="apps-cta"><a class="btn" href="#contact" data-service="App services">Start your app</a><a class="more" href="https://www.modelmacros.com" target="_blank" rel="noopener">Try the Model Macros app</a></div>
         </div>
         <div class="reels">
-          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-trailer-v2.jpg" aria-label="Model Macros TikTok trailer"><source src="videos/marketing/mm-trailer-v2.mp4" type="video/mp4"></video><figcaption><b>TikTok trailer</b><span>0:18</span></figcaption></figure>
-          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-allday-v2.jpg" aria-label="Model Macros All Day spot"><source src="videos/marketing/mm-allday-v2.mp4" type="video/mp4"></video><figcaption><b>All Day spot</b><span>0:15</span></figcaption></figure>
-          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-film-v2.jpg" aria-label="Introducing Malik brand film"><source src="videos/marketing/mm-film-v2.mp4" type="video/mp4"></video><figcaption><b>Brand film</b><span>0:39</span></figcaption></figure>
-          <figure class="reel"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-app-v2.jpg" aria-label="Model Macros app preview"><source src="videos/marketing/mm-app-v2.mp4" type="video/mp4"></video><figcaption><b>App preview</b><span>0:39</span></figcaption></figure>
+          <figure class="reel shot"><img loading="lazy" src="assets/mm-v2/mm-home.jpg" alt="Model Macros home screen: today's calories and protein, and the lesson of the day" width="600" height="1298"><figcaption><b>Home</b></figcaption></figure>
+          <figure class="reel shot"><img loading="lazy" src="assets/mm-v2/mm-plan.jpg" alt="Model Macros meal plan screen" width="600" height="1298"><figcaption><b>Meal plan</b></figcaption></figure>
+          <figure class="reel shot"><img loading="lazy" src="assets/mm-v2/mm-steps.jpg" alt="Model Macros steps screen" width="600" height="1298"><figcaption><b>Steps</b></figcaption></figure>
+          <figure class="reel shot"><img loading="lazy" src="assets/mm-v2/mm-learn.jpg" alt="Model Macros lessons and games screen" width="600" height="1298"><figcaption><b>Lessons and games</b></figcaption></figure>
         </div>
       </div>
 
@@ -1524,6 +1540,10 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
     Object.keys(navA).forEach(function(k){ var sec = document.getElementById(k); if (sec) navIO.observe(sec); });
   }
 })();
+</script>
+<script>
+// "Start your app" opens the contact form with App services picked.
+document.querySelectorAll('[data-service]').forEach(function(a){ a.addEventListener('click', function(){ var sel = document.querySelector('select[name="service"]'); if (sel) sel.value = a.getAttribute('data-service'); }); });
 </script>
 <script src="assets/chat.js?v=f1g" defer></script>
 <script src="assets/fx.js?v=2" defer></script>
