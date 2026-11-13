@@ -897,6 +897,28 @@ a.cg-head:hover .cg-go{ transform:translate(2px,-2px); border-color:#0aa5c8; box
 }
 @media (max-width:640px){ .cg{ padding:18px 16px 16px; border-radius:18px; } .creds li.cg-link{ width:100%; flex-direction:row; justify-content:flex-start; margin-top:2px; } }
 
+/* Nov 13 (owner): "Let's move where we are both equal" and "Mobile optimized". Both cards have the same parts (logo, name,
+   role, the same round link, five credentials). On phones they sit side by side too, the same width and height, like on
+   a computer: logo, name and role centred, then one credential per row, the badge over its label. */
+.cg-head small span{ white-space:nowrap; }
+@media (max-width:640px){
+  .creds{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px; align-items:stretch; }
+  .cg{ padding:16px 10px 12px; border-radius:16px; }
+  .cg::after{ right:-120px; top:-120px; }
+  .cg-head{ flex-direction:column; align-items:center; justify-content:flex-start; gap:8px; text-align:center; padding:0 0 11px; margin-bottom:11px; }
+  .cg-logo{ height:22px; margin:4px 0; }
+  .cg-tile svg{ width:30px; height:30px; }
+  .cg-head b{ font-size:clamp(13.5px, 3.9vw, 16px); white-space:nowrap; }
+  .cg-head small{ margin-top:5px; font-size:8.6px; letter-spacing:.06em; line-height:1.35; }
+  .cg-head small span{ display:block; }
+  .cg-head small .cg-dot{ display:none; }
+  .cg-go{ position:absolute; top:-6px; right:-2px; width:24px; height:24px; margin:0; background-size:12px; }
+  .creds ul{ display:flex; flex-direction:column; gap:9px; }
+  .creds li{ width:100%; display:flex; flex-direction:column; align-items:stretch; gap:4px; text-align:center; }
+  .creds li .bf{ width:100%; height:34px; }
+  .creds li .bt{ display:flex; align-items:center; justify-content:center; min-height:2.5em; font-size:11.5px; line-height:1.25; }
+}
+
 /* contact: the two columns sit level; fields light up when in use */
 @media (min-width:901px){ .c-grid{ align-items:center; } }
 form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(12,59,67,.55); }
@@ -1180,7 +1202,7 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
           <div class="cg cg-en">
             <a class="cg-head" href="https://app.enasal.dev" target="_blank" rel="noopener">
               <img src="assets/enasal-logo-dark.png" alt="ENASAL" class="cg-logo">
-              <span><b>Thush W.</b><small>Founder, Enasal &middot; AI Engineer</small></span><i class="cg-go" aria-hidden="true"></i>
+              <span><b>Thush W.</b><small><span>Founder, Enasal</span><span class="cg-dot"> &middot; </span><span>AI Engineer</span></small></span><i class="cg-go" aria-hidden="true"></i>
             </a>
             <ul>
               <li><span class="bf"><b>30+</b><small>Years</small></span><span class="bt">Engineering experience</span></li>
@@ -1191,16 +1213,18 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
             </ul>
           </div>
           <div class="cg cg-ff">
-            <div class="cg-head">
+            <!-- Nov 13 (owner): "both equal". The same parts as Thush's card: a linked head with the round arrow (to
+                 LinkedIn, which was a separate button) and five credentials. -->
+            <a class="cg-head" href="https://www.linkedin.com/in/sophonnarith/" target="_blank" rel="noopener" aria-label="Sophonnarith Hang, Founder, F1 Finance, AI Engineer, on LinkedIn">
               <span class="cg-tile"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0c3b43"/><g transform="translate(7.2 0) skewX(-12)"><path d="M13 14h22.5v6.8H20.6v6.6H32.4v6.8H20.6V48H13z" fill="#fff"/><path d="M38.6 20.2 45 14h6.6v34H44V23.6l-5.4 3.6z" fill="#fff"/><path d="M13 52.5h41v4H13z" fill="#5fd0c3"/></g></svg></span>
-              <span><b>Sophonnarith Hang</b><small>Founder, F1 Finance &middot; AI Engineer</small></span>
-            </div>
+              <span><b>Sophonnarith Hang</b><small><span>Founder, F1 Finance</span><span class="cg-dot"> &middot; </span><span>AI Engineer</span></small></span><i class="cg-go" aria-hidden="true"></i>
+            </a>
             <ul>
               <li><span class="bf"><b>20</b><small>Years</small></span><span class="bt">Accounting and finance</span></li>
               <li><span class="bf bf-w"><img src="assets/logos/kpmg.svg" alt="KPMG"></span><span class="bt">KPMG-trained, Big Four</span></li>
               <li><span class="bf"><b>F500</b><small>Fortune</small></span><span class="bt">Fortune 100 and 500</span></li>
               <li><span class="bf"><b>AI</b><small>Engineer</small></span><span class="bt">Accountant and AI engineer</span></li>
-              <li class="cg-link"><a class="cg-li" href="https://www.linkedin.com/in/sophonnarith/" target="_blank" rel="noopener" aria-label="Sophonnarith Hang on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#0a66c2"/><path d="M7.1 9.6h2.6V18H7.1zM8.4 5.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM11.3 9.6h2.5v1.2c.4-.7 1.3-1.4 2.7-1.4 2.7 0 3.2 1.8 3.2 4.1V18h-2.6v-4c0-1 0-2.2-1.4-2.2s-1.6 1-1.6 2.1V18h-2.6z" fill="#fff"/></svg>LinkedIn</a></li>
+              <li><span class="bf"><b>3</b><small>AI machines</small></span><span class="bt">Tax, accounting and audit</span></li>
             </ul>
           </div>
         </div>
