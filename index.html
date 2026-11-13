@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; frame-src 'self'; worker-src 'self' blob:; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; frame-src 'self' https://v2.model-macros.pages.dev; worker-src 'self' blob:; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'">
 <title>F1 Finance | Digital AI Accounting Firm</title>
 <meta name="description" content="F1 Finance is a digital AI accounting firm. Tax filings, month-end accounting review and audit workpapers prepared by machine from your own files and approved by your people. Marketing division for brands and founders.">
 <link rel="canonical" href="https://sophonfinance.com/">
@@ -951,6 +951,47 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
 .reel.shot img{ display:block; width:100%; height:auto; aspect-ratio:9/16; object-fit:cover; object-position:top center; border-radius:12px; background:#fff;
   border:1px solid var(--line); box-shadow:0 18px 40px -26px rgba(12,59,67,.45); }
 @media (max-width:600px){ .apps-h{ font-size:32px !important; margin-bottom:8px !important; } .apps-cta{ gap:8px 18px; } .apps-cta .btn{ min-height:44px; padding:10px 20px; } }
+/* Nov 12: Model Macros showcase, as big as the finance machines (live demo + app, website and launch). No photos of Malik. */
+.mmx{ position:relative; padding:56px 0 64px; background:radial-gradient(900px 480px at 92% 0%, rgba(20,184,166,.12), transparent 62%), radial-gradient(800px 420px at 0% 100%, rgba(255,122,47,.08), transparent 60%); scroll-margin-top:62px; }
+.mmx h2{ font-size:clamp(30px, 3.4vw, 46px); line-height:1.1; margin:0 0 12px; }
+.mmx h2 .acc{ color:var(--blue); }
+.mmx-head{ max-width:760px; margin:0 0 32px; }
+.mmx-lead{ font-size:19px; color:var(--text-2); margin:0 0 18px; }
+.mmx-stage{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:44px; align-items:start; }
+.mmx-demo{ display:flex; flex-direction:column; align-items:center; gap:12px; position:sticky; top:96px; }
+.mmx-phone{ position:relative; width:340px; height:700px; border:10px solid #1d1d1f; border-radius:48px; overflow:hidden; background:#fff; box-sizing:content-box;
+  box-shadow:0 40px 90px -30px rgba(12,59,67,.5), 0 0 0 1px #3a3a3d; isolation:isolate; -webkit-mask-image:-webkit-radial-gradient(white, black); }
+.mmx-phone iframe{ position:absolute; left:0; top:0; width:390px; height:844px; border:0; transform-origin:0 0; background:#fff; }
+.mmx-live{ position:absolute; z-index:2; top:0; left:50%; transform:translateX(-50%); height:var(--mmx-inset, 38px); display:inline-flex; align-items:center; gap:7px; pointer-events:none; white-space:nowrap;
+  font:500 10px/1 ui-monospace, "DM Mono", monospace; letter-spacing:1.6px; text-transform:uppercase; color:#6f6f73; }
+.mmx-live i{ width:6px; height:6px; border-radius:50%; background:#2fb36a; animation:mmx-led 2.2s ease-in-out infinite; box-shadow:0 0 6px rgba(47,179,106,.8); }
+@keyframes mmx-led{ 0%,100%{ opacity:1; } 50%{ opacity:.35; } }
+@media (prefers-reduced-motion: reduce){ .mmx-live i{ animation:none; } }
+.mmx-note{ margin:0; font-size:14px; color:var(--text-2); }
+.mmx-panels{ display:flex; flex-direction:column; gap:18px; min-width:0; }
+.mmx-pair{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.mmx-card{ background:#fff; border:1px solid var(--line); border-radius:20px; padding:22px; box-shadow:0 24px 50px -36px rgba(12,59,67,.45); min-width:0; }
+.mmx-card h3{ font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif; font-weight:400; font-size:30px; line-height:1.05; letter-spacing:.01em; color:var(--ink); margin:0 0 8px; }
+.mmx-card p{ margin:0 0 12px; color:var(--text-2); font-size:15.5px; }
+.mmx-card p:last-child{ margin-bottom:0; }
+.mmx-card .mmx-n{ font:600 12px/1 var(--body); letter-spacing:.12em; text-transform:uppercase; color:var(--blue); margin:0 0 10px; }
+.mmx-shots{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:10px; margin-top:6px; }
+.mmx-shots figure{ margin:0; }
+.mmx-shots img{ display:block; width:100%; height:auto; aspect-ratio:9/16; object-fit:cover; object-position:top center; border-radius:12px; border:1px solid var(--line); background:#fff; }
+.mmx-shots figcaption{ font-size:13px; color:var(--text-2); margin-top:6px; }
+.mmx-site{ display:block; margin:0 0 12px; border-radius:12px; overflow:hidden; border:1px solid var(--line); }
+.mmx-site img{ display:block; width:100%; height:auto; }
+.mmx-film{ margin:0 0 12px; border-radius:12px; overflow:hidden; background:#fff; border:1px solid var(--line); }
+.mmx-film video{ display:block; width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; object-position:center 78%; }
+@media (max-width:1180px){ .mmx-stage{ grid-template-columns:1fr; } .mmx-demo{ position:static; } }
+@media (max-width:760px){ .mmx-pair{ grid-template-columns:1fr; } }
+@media (max-width:600px){
+  .mmx{ padding:34px 0 40px; scroll-margin-top:44px; }
+  .mmx-head{ margin-bottom:20px; } .mmx-lead{ font-size:16.5px; }
+  .mmx-phone{ width:min(300px, 78vw); height:min(calc(min(300px, 78vw) * 2.1), calc(100svh - 150px)); border-width:8px; border-radius:42px; }
+  .mmx-card{ padding:16px; border-radius:16px; } .mmx-card h3{ font-size:26px; }
+  .mmx-shots{ gap:6px; } .mmx-shots figcaption{ font-size:11.5px; }
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"F1 Finance","alternateName":"SophonFinance.com","url":"https://sophonfinance.com/","logo":"https://sophonfinance.com/assets/apple-touch-icon.png","image":"https://sophonfinance.com/assets/og.jpg","email":"contact@sophonfinance.com","description":"Digital AI accounting firm and AI engineering firm. AI machines for tax, accounting and audit; marketing division.","address":[{"@type":"PostalAddress","streetAddress":"Rainier Square, 4th Ave & Union St","addressLocality":"Seattle","addressRegion":"WA","addressCountry":"US"}],"areaServed":"US","founder":{"@type":"Person","name":"Sophonnarith Hang"},"knowsAbout":["Tax preparation","Accounting","Audit","AI engineering","Local AI architecture","Mobile apps","Marketing"]}
@@ -1066,31 +1107,56 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
     </div>
   </section>
 
+  <section class="mmx" id="apps" aria-labelledby="mmxH">
+    <div class="wrap">
+      <div class="mmx-head">
+        <p class="case-tag">App building &middot; Custom made</p>
+        <h2 id="mmxH">Custom mobile <span class="acc">apps.</span></h2>
+        <p class="mmx-lead">We design and build your own app for iPhone, Android and the web, made to order around your business and your brand. Our latest is Model Macros: the app, the website and the launch.</p>
+        <div class="apps-cta"><a class="btn" href="#contact" data-service="App services">Start your app</a><a class="more" href="https://www.modelmacros.com" target="_blank" rel="noopener">Visit modelmacros.com</a></div>
+      </div>
+      <div class="mmx-stage">
+        <div class="mmx-demo">
+          <div class="mmx-phone">
+            <span class="mmx-live"><i aria-hidden="true"></i>Try it live</span>
+            <iframe src="https://v2.model-macros.pages.dev/?from=site" title="Model Macros live demo" loading="lazy" allow="clipboard-write"></iframe>
+          </div>
+          <p class="mmx-note">The real app, running live. Tap around.</p>
+        </div>
+        <div class="mmx-panels">
+          <article class="mmx-card">
+            <p class="mmx-n">01 &middot; The app</p>
+            <h3>iPhone, Android and web.</h3>
+            <p>A calorie and protein calculator, meal plans sized to each member, step counting with crews, daily lessons and games, and a members&rsquo; community with coach answers.</p>
+            <div class="mmx-shots">
+              <figure><img loading="lazy" src="assets/mm-v2/mm-home.jpg" alt="Model Macros home screen with today's calories and protein" width="600" height="1298"><figcaption>Home</figcaption></figure>
+              <figure><img loading="lazy" src="assets/mm-v2/mm-plan.jpg" alt="Model Macros meal plan" width="600" height="1298"><figcaption>Meal plan</figcaption></figure>
+              <figure><img loading="lazy" src="assets/mm-v2/mm-steps.jpg" alt="Model Macros steps screen" width="600" height="1298"><figcaption>Steps</figcaption></figure>
+              <figure><img loading="lazy" src="assets/mm-v2/mm-learn.jpg" alt="Model Macros lessons and games" width="600" height="1298"><figcaption>Lessons</figcaption></figure>
+            </div>
+          </article>
+          <div class="mmx-pair">
+            <article class="mmx-card">
+              <p class="mmx-n">02 &middot; The website</p>
+              <h3>modelmacros.com</h3>
+              <a class="mmx-site" href="https://www.modelmacros.com" target="_blank" rel="noopener"><img loading="lazy" src="assets/mm-v2/mm-site.jpg" alt="The modelmacros.com home page with the live demo phone" width="1100" height="642"></a>
+              <p>A live demo visitors can tap, App Store and Google Play badges, and Stripe checkout for memberships.</p>
+            </article>
+            <article class="mmx-card">
+              <p class="mmx-n">03 &middot; The launch</p>
+              <h3>Brand film and campaign.</h3>
+              <div class="mmx-film"><video class="auto" muted loop playsinline webkit-playsinline preload="none" poster="videos/marketing/mm-bowl.jpg" aria-label="Model Macros brand film: ingredients falling into the glass bowl"><source src="videos/marketing/mm-bowl.mp4" type="video/mp4"></video></div>
+              <p>Brand film, TikTok trailer and app preview for a launch on daily TikTok LIVEs.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="mkt" id="marketing" aria-labelledby="otherH">
     <div class="wrap">
       <h2 class="mkt-title" id="otherH">Other <span class="acc">services.</span></h2>
-      <div class="case" id="apps">
-        <div>
-          <p class="case-tag">App building &middot; Custom made</p>
-          <h3 class="apps-h">Custom mobile apps.</h3>
-          <p>We design and build your own app for iPhone, Android and the web, made to order around your business and your brand.</p>
-          <ul>
-            <li>One build for iPhone, Android and web</li>
-            <li>Sign-in, payments and memberships, chat, coaching, games</li>
-            <li>App Store and Google Play launch handled for you</li>
-            <li>Updates and support after launch</li>
-          </ul>
-          <p class="apps-ex"><b>Latest build: Model Macros.</b> A nutrition and fitness app with meal logging by voice and photo, step challenges, daily lessons and a members&rsquo; community.</p>
-          <div class="apps-cta"><a class="btn" href="#contact" data-service="App services">Start your app</a><a class="more" href="https://www.modelmacros.com" target="_blank" rel="noopener">Try the Model Macros app</a></div>
-        </div>
-        <div class="reels">
-          <figure class="reel shot"><img loading="lazy" src="assets/mm-v2/mm-home.jpg" alt="Model Macros home screen: today's calories and protein, and the lesson of the day" width="600" height="1298"><figcaption><b>Home</b></figcaption></figure>
-          <figure class="reel shot"><img loading="lazy" src="assets/mm-v2/mm-plan.jpg" alt="Model Macros meal plan screen" width="600" height="1298"><figcaption><b>Meal plan</b></figcaption></figure>
-          <figure class="reel shot"><img loading="lazy" src="assets/mm-v2/mm-steps.jpg" alt="Model Macros steps screen" width="600" height="1298"><figcaption><b>Steps</b></figcaption></figure>
-          <figure class="reel shot"><img loading="lazy" src="assets/mm-v2/mm-learn.jpg" alt="Model Macros lessons and games screen" width="600" height="1298"><figcaption><b>Lessons and games</b></figcaption></figure>
-        </div>
-      </div>
-
       <div class="case">
         <div>
           <p class="case-tag">Client work &middot; Corporate software</p>
@@ -1544,6 +1610,13 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
 <script>
 // "Start your app" opens the contact form with App services picked.
 document.querySelectorAll('[data-service]').forEach(function(a){ a.addEventListener('click', function(){ var sel = document.querySelector('select[name="service"]'); if (sel) sel.value = a.getAttribute('data-service'); }); });
+</script>
+<script>
+// Model Macros live demo: lay the app out at the phone's own height, starting where the frame's corner curve ends.
+(function(){ var d=document.querySelector('.mmx-phone'); if(!d) return; var f=d.querySelector('iframe');
+  function fit(){ var k=d.clientWidth/390, cs=getComputedStyle(d), inset=Math.ceil(Math.max(0, parseFloat(cs.borderTopLeftRadius)-parseFloat(cs.borderTopWidth)));
+    f.style.top=inset+'px'; f.style.height=Math.round((d.clientHeight-inset*2)/k)+'px'; f.style.transform='scale('+k+')'; d.style.setProperty('--mmx-inset', inset+'px'); }
+  fit(); addEventListener('resize', fit); if('ResizeObserver' in window) new ResizeObserver(fit).observe(d); })();
 </script>
 <script src="assets/chat.js?v=f1g" defer></script>
 <script src="assets/fx.js?v=2" defer></script>
