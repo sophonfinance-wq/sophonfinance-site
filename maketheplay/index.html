@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#111113">
 <link rel="canonical" href="https://sophonfinance.com/maketheplay/">
 <meta property="og:url" content="https://sophonfinance.com/maketheplay/">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://maketheplay.pages.dev; media-src 'self' https://maketheplay.pages.dev; frame-src https://sideline-9t3.pages.dev; connect-src 'self'; base-uri 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://maketheplay.pages.dev https://a.espncdn.com; media-src 'self' https://maketheplay.pages.dev; frame-src https://sideline-9t3.pages.dev; connect-src 'self'; base-uri 'self'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -72,7 +72,10 @@ img,video{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 .brand b{color:var(--green);font-weight:inherit}
 
 .hero{padding:26px 0 44px;background:linear-gradient(#FCF3E4,var(--canvas) 78%)}
-.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;grid-template-areas:"a v" "b v";column-gap:40px;row-gap:0;align-items:center}
+.hero-a{grid-area:a;align-self:end}
+.hero-b{grid-area:b;align-self:start}
+#heroPhone{grid-area:v}
 h1{font-size:clamp(56px,6.6vw,84px);font-weight:800;letter-spacing:-.04em;line-height:.95;margin-top:16px;white-space:nowrap}
 .hero .lead{margin:20px 0 28px}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
@@ -111,11 +114,13 @@ section.band{padding:64px 0}
 .shot{flex:none;width:228px;padding:7px;border-radius:34px;background:#111113;box-shadow:var(--float);scroll-snap-align:center}
 .shot img{width:100%;height:auto;border-radius:27px}
 
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
-.step{padding:24px;border-radius:28px;background:linear-gradient(120deg,#fff 30%,var(--champagne));border:1px solid var(--gold-line)}
-.step i{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--gold);font:800 21px/1 var(--display);font-style:normal;margin-bottom:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
-.step h3{font-size:25px;font-weight:700}
-.step p{color:var(--ink-2);font-size:17px;margin-top:6px}
+.steps{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.steps li{display:flex;align-items:center;gap:14px;min-height:76px;padding:0 20px;border-radius:24px;background:linear-gradient(120deg,#fff 30%,var(--champagne));border:1px solid var(--gold-line)}
+.steps i{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--gold);font:800 19px/1 var(--display);font-style:normal;box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+.steps b{font:700 22px/1.1 var(--display);letter-spacing:-.01em}
+.leagues{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 30px;margin-top:12px;padding:18px 20px;border-radius:24px;background:var(--paper);border:1px solid var(--line)}
+.leagues img{height:46px;width:auto}
+.leagues span{display:inline-flex;align-items:center;height:36px;padding:0 14px;border-radius:999px;background:var(--ink);color:#fff;font:700 14px/1 var(--display);letter-spacing:.04em}
 
 .night{position:relative;overflow:hidden;border-radius:34px;padding:44px 30px;color:#fff;background:radial-gradient(110% 80% at 100% 0%,rgba(221,184,98,.28),rgba(221,184,98,0) 58%),#131315;box-shadow:var(--float)}
 .night>*{position:relative;z-index:1}
@@ -163,9 +168,9 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 .dock{display:none}
 @media (max-width:860px){
   .top .wrap{height:60px}
-  .hero-in{gap:22px}
+  .hero-in{grid-template-areas:"a" "v" "b";row-gap:16px}
   h1{margin-top:12px;font-size:clamp(36px,calc((100vw - 44px)/6.5),72px)}
-  .hero .lead{margin:14px 0 20px}
+  .hero .lead{margin:6px 0 18px}
   .coins{margin-top:18px}
   .cta .btn{flex:1}
   #heroPhone{width:100%;aspect-ratio:4/5;padding:0;border-radius:30px;background:none;box-shadow:var(--float)}
@@ -178,6 +183,9 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
   .dock .btn{width:100%}
   .only-phone{display:inline-flex}
   .only-desk{display:none}
+  .steps li{min-height:64px}
+  .leagues{gap:14px 22px;padding:16px}
+  .leagues img{height:38px}
   footer{padding-bottom:calc(112px + env(safe-area-inset-bottom))}
 }
 @media (max-width:420px){.btn{padding:0 24px}.cta .btn{flex:1}.brand{font-size:21px}}
@@ -193,17 +201,19 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 
 <main id="top">
 <section class="hero"><div class="wrap hero-in">
-  <div>
+  <div class="hero-a">
     <p class="cap">Free to play</p>
     <h1>Make the <b>play.</b></h1>
-    <p class="lead">Pick real games with free PlayCoins. Beat your crew.</p>
-    <div class="cta"><a class="btn gold" href="https://sideline-9t3.pages.dev/" data-play>Play free</a><button class="btn line" id="watch" type="button">Watch the trailer</button></div>
-    <p class="coins"><img src="https://maketheplay.pages.dev/art/coin.webp" alt="" width="96" height="96"><b>5,000</b>free PlayCoins to start</p>
   </div>
   <div class="phone" id="heroPhone"><div class="screen">
     <video id="film" muted loop autoplay playsinline webkit-playsinline preload="metadata" poster="https://maketheplay.pages.dev/trailer.jpg" aria-label="The MakeThePlay trailer"><source src="https://maketheplay.pages.dev/trailer.mp4" type="video/mp4"></video>
     <button class="pill" id="sound" type="button">Tap for sound</button>
   </div></div>
+  <div class="hero-b">
+    <p class="lead">Pick real games with free PlayCoins. Beat your crew.</p>
+    <div class="cta"><a class="btn gold" href="https://sideline-9t3.pages.dev/" data-play>Play free</a><button class="btn line" id="watch" type="button">Watch the trailer</button></div>
+    <p class="coins"><img src="https://maketheplay.pages.dev/art/coin.webp" alt="" width="96" height="96"><b>5,000</b>free PlayCoins to start</p>
+  </div>
 </div></section>
 
 <section class="facts" aria-label="At a glance">
@@ -229,19 +239,6 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
   </div></div>
 </div></section>
 
-<section class="band" style="padding-top:0"><div class="wrap">
-  <p class="cap">What you get</p>
-  <h2 style="margin-top:14px">Built for <b>the crew.</b></h2>
-  <div class="cards">
-    <article class="card"><img src="https://maketheplay.pages.dev/art/ticket.webp" alt="" width="420" height="293" loading="lazy"><h3>One-tap picks</h3><p>Winner, spread or total. Tap a side and set your bet.</p></article>
-    <article class="card"><img src="https://maketheplay.pages.dev/art/bolt.webp" alt="" width="230" height="340" loading="lazy"><h3>Parlays and props</h3><p>Stack your picks for a bigger payout. Player props and live odds on the big leagues.</p></article>
-    <article class="card"><img src="https://maketheplay.pages.dev/art/trophy.webp" alt="" width="325" height="380" loading="lazy"><h3>Your crew, your board</h3><p>Invite friends with a code. Climb the board. Tail their bets.</p></article>
-    <article class="card"><img src="https://maketheplay.pages.dev/art/pile.webp" alt="" width="460" height="443" loading="lazy"><h3>Free coins every day</h3><p>A daily bonus, free refills, and a gift when luck runs cold.</p></article>
-    <article class="card"><img class="wide" src="https://maketheplay.pages.dev/art/medals.webp" alt="" width="1344" height="168" loading="lazy"><h3>Medals to earn</h3><p>Eight of them, from First Play to High Roller.</p></article>
-    <article class="card"><img src="https://maketheplay.pages.dev/gift.webp" alt="" width="420" height="420" loading="lazy"><h3>Never real money</h3><p>PlayCoins are free. Nothing to buy, nothing to cash out.</p></article>
-  </div>
-</div></section>
-
 <section aria-label="Screens from the app">
   <div class="wrap"><p class="cap">Inside the app</p><h2 style="margin-top:14px">Big, clean, <b>fast.</b></h2></div>
   <div class="rail">
@@ -258,10 +255,20 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 <section class="band"><div class="wrap">
   <p class="cap">How it works</p>
   <h2 style="margin-top:14px">In the game in <b>10 seconds.</b></h2>
-  <div class="steps">
-    <div class="step"><i>1</i><h3>Name and PIN</h3><p>That's the whole sign-up.</p></div>
-    <div class="step"><i>2</i><h3>Pick your games</h3><p>NFL, NBA, MLB, NHL, soccer and college.</p></div>
-    <div class="step"><i>3</i><h3>Win PlayCoins</h3><p>Bets settle when the game ends.</p></div>
+  <ol class="steps">
+    <li><i>1</i><b>Name and PIN</b></li>
+    <li><i>2</i><b>Pick your games</b></li>
+    <li><i>3</i><b>Win PlayCoins</b></li>
+  </ol>
+  <div class="leagues" aria-label="Leagues you can pick">
+    <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png" alt="NFL" width="500" height="500" loading="lazy">
+    <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nba.png" alt="NBA" width="500" height="500" loading="lazy">
+    <img src="https://a.espncdn.com/i/teamlogos/leagues/500/mlb.png" alt="MLB" width="500" height="500" loading="lazy">
+    <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nhl.png" alt="NHL" width="500" height="500" loading="lazy">
+    <img src="https://a.espncdn.com/i/leaguelogos/soccer/500/23.png" alt="Premier League" width="500" height="500" loading="lazy">
+    <img src="https://a.espncdn.com/i/leaguelogos/soccer/500/2.png" alt="Champions League" width="500" height="500" loading="lazy">
+    <img src="https://a.espncdn.com/i/leaguelogos/soccer/500/19.png" alt="MLS" width="500" height="500" loading="lazy">
+    <span>College</span>
   </div>
 </div></section>
 
@@ -290,6 +297,7 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 
 <footer><div class="wrap">
   <span>Free to play. PlayCoins have no cash value. 18+.</span>
+  <span>League names and logos belong to their owners. MakeThePlay is not affiliated with any league.</span>
   <span><i class="star" aria-hidden="true"></i>Designed by Starz</span>
   <span>Built by <a href="/">sophonfinance.com</a></span>
 </div></footer>
