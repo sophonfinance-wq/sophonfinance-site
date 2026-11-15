@@ -317,6 +317,7 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
     var p = film.play(); if (p && p.catch) p.catch(function(){ film.muted = true; var q = film.play(); if (q && q.catch) q.catch(function(){}); });
   }
   sound.addEventListener('click', function(){ if (film.muted || film.paused) withSound(); else film.muted = true; });
+  film.addEventListener('click', function(){ if (film.muted || film.paused) withSound(); });   // a tap on the video itself gives it sound too
   ['volumechange', 'play', 'pause'].forEach(function(e){ film.addEventListener(e, label); });
   film.addEventListener('timeupdate', function(){ if (!film.muted && film.currentTime > 3) heard = true; });
   if (calm) { film.removeAttribute('autoplay'); film.pause(); }
