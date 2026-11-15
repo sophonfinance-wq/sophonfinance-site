@@ -579,6 +579,14 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .reel figcaption{ display:flex; justify-content:space-between; gap:8px; font-size:14px; color:var(--text-2); margin-top:8px; }
 .reel figcaption b{ color:var(--ink); font-weight:600; }
 .case + .case{ margin-top:30px; }
+/* MakeThePlay case (Nov 14): the app we built, with a link to it. Share as sophonfinance.com/#maketheplay */
+#maketheplay{ scroll-margin-top:70px; }
+.mtp-logo{ display:flex; align-items:center; gap:10px; font-weight:700 !important; letter-spacing:-.02em; }
+.mtp-logo svg{ width:38px; height:38px; flex:none; border-radius:10px; }
+.mtp-logo b{ color:#15803D; font-weight:inherit; }
+.mtp-shot{ display:block; border-radius:18px; overflow:hidden; border:1px solid var(--line); background:#ECE9E1; }
+.mtp-shot img{ display:block; width:100%; height:auto; }
+#maketheplay .btn{ margin-top:4px; }
 .reels.h{ grid-template-columns:1fr 1fr; }
 .reels.h .reel video{ aspect-ratio:16/9; }
 .reels.h .reel:first-child{ grid-column:1/-1; }
@@ -1209,6 +1217,15 @@ form.cf{ box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 36px 70px -46px rgba(1
         </div>
       </div>
 
+      <div class="case" id="maketheplay">
+        <div>
+          <p class="case-tag">Client work &middot; Game app</p>
+          <h3 class="mtp-logo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#111113"/><path d="M23 15.5v33a2 2 0 0 0 3.05 1.7l26.4-16.5a2 2 0 0 0 0-3.4L26.05 13.8A2 2 0 0 0 23 15.5z" fill="#C4F82A"/><path d="M36.5 20 27 34h6.2l-2.2 10 9.8-14h-6.3z" fill="#111113"/></svg><span>MakeThe<b>Play</b></span></h3>
+          <p>A free-to-play sports picks game for a crew of friends. PlayCoins only, never cash.</p>
+          <a class="btn" href="https://sideline-9t3.pages.dev" target="_blank" rel="noopener">Open the app</a>
+        </div>
+        <a class="mtp-shot" href="https://sideline-9t3.pages.dev" target="_blank" rel="noopener"><img loading="lazy" src="assets/maketheplay/screens.jpg" alt="MakeThePlay app screens: sign-in, home and bet slip" width="1760" height="1245"></a>
+      </div>
     </div>
   </section>
 
