@@ -128,6 +128,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;justif
 footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-underline-offset:4px}
 .star{display:inline-block;width:9px;height:9px;margin-right:7px;background:#C99A3E;clip-path:polygon(50% 0,63% 37%,100% 50%,63% 63%,50% 100%,37% 63%,0 50%,37% 37%)}
 
+/* get the app: a QR code for people on a computer, an Add to Home Screen button for people on a phone */
+.inst{display:flex;flex-direction:column;gap:10px;margin:24px 0 4px;max-width:460px}
+.inst-row{display:flex;align-items:center;gap:14px;min-height:64px;padding:8px 18px;border-radius:18px;background:var(--paper);border:1px solid var(--line)}
+.inst-row i{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--gold);font:800 18px/1 var(--display);font-style:normal;box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+.inst-row b{font:600 18px/1.25 var(--body)}
+.qr{justify-self:center;text-align:center;padding:24px 24px 20px;border-radius:34px;background:var(--paper);border:1px solid var(--gold-line);box-shadow:var(--shadow)}
+.qr img{width:min(300px,60vw);height:auto;border-radius:10px}
+.qr p{margin-top:16px;font:700 14px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep)}
+.only-phone{display:none}
 /* the trailer, full screen, when someone taps Play */
 .tr{position:fixed;inset:0;z-index:110;display:grid;place-items:center;background:#F6F5F1 url(https://maketheplay.pages.dev/trailer.jpg) center/auto 100% no-repeat}
 .tr video{display:block;width:100%;height:100%;max-width:calc(100vh*9/16);object-fit:cover;background:#F6F5F1}
@@ -167,6 +176,8 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
   .dock{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:14px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,var(--canvas) 64%,rgba(246,245,241,0));transform:translateY(115%);transition:transform .28s cubic-bezier(.2,.9,.2,1)}
   .dock.on{transform:none}
   .dock .btn{width:100%}
+  .only-phone{display:inline-flex}
+  .only-desk{display:none}
   footer{padding-bottom:calc(112px + env(safe-area-inset-bottom))}
 }
 @media (max-width:420px){.btn{padding:0 24px}.cta .btn{flex:1}.brand{font-size:21px}}
@@ -252,6 +263,19 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
     <div class="step"><i>2</i><h3>Pick your games</h3><p>NFL, NBA, MLB, NHL, soccer and college.</p></div>
     <div class="step"><i>3</i><h3>Win PlayCoins</h3><p>Bets settle when the game ends.</p></div>
   </div>
+</div></section>
+
+<section class="band" id="get" style="padding-top:0"><div class="wrap two">
+  <div>
+    <p class="cap">Get the app</p>
+    <h2>On your phone in <b>two taps.</b></h2>
+    <div class="inst">
+      <div class="inst-row"><i>1</i><b>Open MakeThePlay on your phone</b></div>
+      <div class="inst-row"><i>2</i><b>Tap Share, then Add to Home Screen</b></div>
+    </div>
+    <a class="btn gold only-phone" href="https://sideline-9t3.pages.dev/?install=1">Add to Home Screen</a>
+  </div>
+  <div class="qr only-desk"><img src="https://maketheplay.pages.dev/qr.png" alt="QR code that opens MakeThePlay on your phone" width="720" height="720" loading="lazy"><p>Scan with your phone camera</p></div>
 </div></section>
 
 <section class="band" style="padding-top:0"><div class="wrap">
