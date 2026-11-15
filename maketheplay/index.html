@@ -72,9 +72,10 @@ img,video{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 .brand b{color:var(--green);font-weight:inherit}
 
 .hero{padding:26px 0 44px;background:linear-gradient(#FCF3E4,var(--canvas) 78%)}
-.hero-in{display:grid;grid-template-columns:1.05fr .95fr;grid-template-areas:"a v" "b v";column-gap:40px;row-gap:0;align-items:center}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;grid-template-areas:"b v";column-gap:40px;row-gap:0;align-items:center}
 .hero-a{grid-area:a;align-self:end}
-.hero-b{grid-area:b;align-self:start}
+.hero-b{grid-area:b;align-self:center}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 #heroPhone{grid-area:v}
 h1{font-size:clamp(56px,6.6vw,84px);font-weight:800;letter-spacing:-.04em;line-height:.95;margin-top:16px;white-space:nowrap}
 .hero .lead{margin:20px 0 28px;white-space:nowrap}
@@ -168,7 +169,7 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 .dock{display:none}
 @media (max-width:860px){
   .top .wrap{height:60px}
-  .hero-in{grid-template-areas:"a" "v" "b";row-gap:16px}
+  .hero-in{grid-template-areas:"v" "b";row-gap:18px}
   h1{margin-top:12px;font-size:clamp(36px,calc((100vw - 44px)/6.5),72px)}
   .hero .lead{margin:6px 0 18px;white-space:nowrap;font-size:min(20px,calc((100vw - 44px)/16.6))}
   .coins{margin-top:18px}
@@ -201,10 +202,7 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 
 <main id="top">
 <section class="hero"><div class="wrap hero-in">
-  <div class="hero-a">
-    <p class="cap">Free to play</p>
-    <h1>Make the <b>play.</b></h1>
-  </div>
+  <h1 class="sr">MakeThePlay: free-to-play sports picks with your crew</h1>
   <div class="phone" id="heroPhone"><div class="screen">
     <video id="film" muted loop autoplay playsinline webkit-playsinline preload="metadata" poster="https://maketheplay.pages.dev/trailer.jpg" aria-label="The MakeThePlay trailer"><source src="https://maketheplay.pages.dev/trailer.mp4" type="video/mp4"></video>
   </div></div>
@@ -224,13 +222,7 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
   </div>
 </section>
 
-<section class="band demo" id="try"><div class="wrap two">
-  <div>
-    <p class="cap">Try it live</p>
-    <h2>The real app, <b>right here.</b></h2>
-    <p class="lead">Type a name, pick a PIN, and you're in.</p>
-    <a class="btn gold" href="https://sideline-9t3.pages.dev/" data-play>Play free</a>
-  </div>
+<section class="band demo" id="try"><div class="wrap">
   <div class="phone"><div class="screen" id="demoScreen">
     <img src="https://maketheplay.pages.dev/shots/home.webp" alt="The MakeThePlay home screen with a PlayCoins balance and a boosted game" width="480" height="1039" loading="lazy">
     <button class="pill" id="demoGo" type="button">Tap to try it</button>
@@ -238,13 +230,6 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 </div></section>
 
 <section class="band"><div class="wrap">
-  <p class="cap">How it works</p>
-  <h2 style="margin-top:14px">In the game in <b>10 seconds.</b></h2>
-  <ol class="steps">
-    <li><i>1</i><b>Name and PIN</b></li>
-    <li><i>2</i><b>Pick your games</b></li>
-    <li><i>3</i><b>Win PlayCoins</b></li>
-  </ol>
   <div class="leagues" aria-label="Leagues you can pick">
     <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png" alt="NFL" width="500" height="500" loading="lazy">
     <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nba.png" alt="NBA" width="500" height="500" loading="lazy">
