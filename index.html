@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; frame-src 'self' https://v2.model-macros.pages.dev; worker-src 'self' blob:; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://sideline-9t3.pages.dev; media-src 'self' blob: https://sideline-9t3.pages.dev; connect-src 'self'; frame-src 'self' https://v2.model-macros.pages.dev; worker-src 'self' blob:; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'">
 <title>F1 Finance | Digital AI Accounting Firm</title>
 <meta name="description" content="F1 Finance is a digital AI accounting firm. Tax filings, month-end accounting review and audit workpapers prepared by machine from your own files and approved by your people. Marketing division for brands and founders.">
 <link rel="canonical" href="https://sophonfinance.com/">
@@ -586,6 +586,10 @@ html[data-demos="on"] .tab-tech, html[data-demos="on"] .tab-ai, html[data-demos=
 .mtp-logo b{ color:#15803D; font-weight:inherit; }
 .mtp-shot{ display:block; border-radius:18px; overflow:hidden; border:1px solid var(--line); background:#ECE9E1; }
 .mtp-shot img{ display:block; width:100%; height:auto; }
+/* the app's welcome film, played over this page when "Open the app" is tapped */
+.mtpx{ position:fixed; inset:0; z-index:500; display:grid; place-items:center; background:#F6F5F1; }
+.mtpx video{ display:block; width:100%; height:100%; max-width:calc(100vh * 9 / 16); object-fit:cover; background:#F6F5F1; }
+.mtpx-skip{ position:absolute; top:calc(12px + env(safe-area-inset-top)); right:14px; min-height:44px; padding:0 18px; border:0; border-radius:999px; background:rgba(17,17,19,.5); color:#fff; font:600 15px/1 var(--body); cursor:pointer; }
 #maketheplay .btn{ margin-top:4px; }
 .reels.h{ grid-template-columns:1fr 1fr; }
 .reels.h .reel video{ aspect-ratio:16/9; }
@@ -1684,5 +1688,32 @@ document.querySelectorAll('[data-service]').forEach(function(a){ a.addEventListe
 </script>
 <script src="assets/chat.js?v=f1g" defer></script>
 <script src="assets/fx.js?v=2" defer></script>
+<script>
+/* MakeThePlay: a tap on "Open the app" plays the app's welcome film right here with its sound (the tap is what lets a
+   phone play sound), then opens the app, which skips its own copy of the film (?seen=1). */
+(function(){
+  var APP = 'https://sideline-9t3.pages.dev/';
+  var links = document.querySelectorAll('#maketheplay a[href^="https://sideline-9t3.pages.dev"]');
+  if (!links.length) return;
+  function open(e){
+    e.preventDefault();
+    var hero = document.getElementById('v'); if (hero) { try { hero.pause(); } catch (x) {} }
+    var box = document.createElement('div'); box.className = 'mtpx';
+    box.innerHTML = '<video playsinline webkit-playsinline preload="auto" poster="' + APP + 'trailer.jpg" src="' + APP + 'trailer.mp4"></video><button type="button" class="mtpx-skip">Skip</button>';
+    document.body.appendChild(box);
+    var vid = box.firstChild, done = false, started = false;
+    function leave(seen){ if (done) return; done = true; clearTimeout(t); location.href = APP + (seen ? '?seen=1' : ''); }
+    var t = setTimeout(function(){ if (!started) leave(false); }, 5000); // the film did not start: open the app, which shows it itself
+    vid.addEventListener('playing', function(){ started = true; });
+    vid.addEventListener('ended', function(){ leave(true); });
+    vid.addEventListener('error', function(){ leave(false); });
+    box.querySelector('.mtpx-skip').addEventListener('click', function(){ leave(true); });
+    var p = vid.play(); if (p && p.catch) p.catch(function(){ leave(false); });
+  }
+  for (var i = 0; i < links.length; i++) { links[i].removeAttribute('target'); links[i].addEventListener('click', open); }
+  // back from the app with the Back button: clear the film so this page is usable again
+  window.addEventListener('pageshow', function(){ var b = document.querySelector('.mtpx'); if (b) b.remove(); });
+})();
+</script>
 </body>
 </html>
