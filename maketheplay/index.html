@@ -209,7 +209,7 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
     <video id="film" muted loop autoplay playsinline webkit-playsinline preload="metadata" poster="https://maketheplay.pages.dev/trailer.jpg" aria-label="The MakeThePlay trailer"><source src="https://maketheplay.pages.dev/trailer.mp4" type="video/mp4"></video>
   </div></div>
   <div class="hero-b">
-    <div class="cta"><a class="btn gold" href="https://sideline-9t3.pages.dev/" data-play>Play free</a><button class="btn line" id="watch" type="button">Watch the trailer</button></div>
+    <div class="cta"><a class="btn gold" href="https://sideline-9t3.pages.dev/" data-play>Play free</a></div>
     <p class="coins"><img src="https://maketheplay.pages.dev/art/coin.webp" alt="" width="96" height="96"><b>5,000</b>free PlayCoins to start</p>
   </div>
 </div></section>
@@ -337,9 +337,6 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
     document.addEventListener('touchmove', function(){ moved = true; }, { passive: true, capture: true });
     TAPS.forEach(function(n){ document.addEventListener(n, firstTap, true); });
   }
-  document.getElementById('watch').addEventListener('click', function(){
-    document.getElementById('heroPhone').scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'center' }); withSound();
-  });
   document.addEventListener('visibilitychange', function(){ if (document.hidden) film.pause(); else if (!calm && !document.querySelector('.tr')) { var p = film.play(); if (p && p.catch) p.catch(function(){}); } });
 
   // Play free: the tap plays the trailer full screen WITH its sound (a phone only allows sound from a tap), then opens the app,
