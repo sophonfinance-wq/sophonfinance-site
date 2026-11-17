@@ -187,7 +187,7 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 @media (max-width:420px){.btn{padding:0 24px}.cta .btn{flex:1}.brand{font-size:21px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 #try{scroll-margin-top:76px}
-#film{transition:transform 1s ease}
+#film{transition:transform 1s ease;cursor:pointer}
 #demoScreen{position:absolute;inset:0;opacity:0;pointer-events:none;transform:scale(1.05);transition:opacity .9s ease,transform 1.3s cubic-bezier(.2,.8,.2,1);background:#F6F5F1}
 #demoScreen iframe{display:block;width:100%;height:100%;border:0}
 .veil{position:absolute;inset:0;display:grid;place-items:center;background:#0B0B0D;opacity:0;pointer-events:none;transition:opacity .6s ease}
@@ -291,7 +291,8 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
     film.muted = false; try { film.currentTime = 0; } catch (x) {}
     var p = film.play(); if (p && p.then) p.then(disarm).catch(quiet);
   }
-  film.addEventListener('click', function(){ if (film.muted || film.paused) { withSound(); disarm(); } });
+  // A tap on her goes straight to the demo (owner, Nov 16: 'If they click on her it should take them to the demo').
+  film.addEventListener('click', function(){ toDemo(); });
   film.addEventListener('ended', function(){ if (!film.muted) disarm(); toDemo(); });
   film.addEventListener('error', function(){ toDemo(); }, true);
   if (calm) { film.removeAttribute('autoplay'); film.pause(); }
