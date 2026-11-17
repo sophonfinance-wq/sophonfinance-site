@@ -186,6 +186,7 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 }
 @media (max-width:420px){.btn{padding:0 24px}.cta .btn{flex:1}.brand{font-size:21px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+#try{scroll-margin-top:76px}
 </style>
 </head>
 <body>
@@ -220,7 +221,6 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 <section class="band demo" id="try"><div class="wrap">
   <div class="phone"><div class="screen" id="demoScreen">
     <img src="https://maketheplay.pages.dev/shots/home.webp" alt="The MakeThePlay home screen with a PlayCoins balance and a boosted game" width="480" height="1039" loading="lazy">
-    <button class="pill" id="demoGo" type="button">Tap to try it</button>
   </div></div>
 </div></section>
 
@@ -282,7 +282,7 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
     var p = film.play(); if (p && p.then) p.then(disarm).catch(quiet);
   }
   film.addEventListener('click', function(){ if (film.muted || film.paused) { withSound(); disarm(); } });
-  film.addEventListener('ended', function(){ if (!film.muted) disarm(); if (!calm) quiet(); });
+  film.addEventListener('ended', function(){ if (!film.muted) disarm(); if (!calm) quiet(); toDemo(); });
   if (calm) { film.removeAttribute('autoplay'); film.pause(); }
   else {
     film.muted = false;
@@ -297,10 +297,30 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 
   // Tap to try it: the real app runs right here, on phones and computers, with no sign-up (owner, Nov 16: fully functional,
   // like the finance machines). ?demo=1 gives the visitor a throwaway crew of one with 5,000 PlayCoins.
-  document.getElementById('demoGo').addEventListener('click', function(){
+  var demoOn = false, taken = false;
+  function startDemo(){
+    if (demoOn) return; demoOn = true;
     var f = document.createElement('iframe'); f.src = APP + '?demo=1'; f.title = 'MakeThePlay, the real app';
     var s = document.getElementById('demoScreen'); s.textContent = ''; s.appendChild(f);
-  });
+  }
+  // No 'Tap to try it' button (owner, Nov 16: 'Remove'): the demo is simply running by the time the visitor gets to it.
+  var tryEl = document.getElementById('try');
+  if ('IntersectionObserver' in window) {
+    var dio = new IntersectionObserver(function(es){ if (es.some(function(e){ return e.isIntersecting; })) { dio.disconnect(); startDemo(); } }, { rootMargin: '300px 0px' });
+    dio.observe(tryEl);
+  } else startDemo();
+  // When her intro finishes, the page moves on to the demo and starts it (owner, Nov 16: 'after the intro is done it should
+  // take user to the demo'). Once only, and only if the visitor is still watching her: someone who scrolled away is left alone.
+  function toDemo(){
+    if (taken || calm) return; taken = true;
+    var r = film.getBoundingClientRect();
+    if (r.bottom < 80 || r.top > innerHeight - 80) return;
+    disarm(); startDemo();
+    var sec = document.getElementById('try');
+    sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // a browser that skips the glide (in-app browsers, a hidden tab) still gets there
+    setTimeout(function(){ if (Math.abs(sec.getBoundingClientRect().top) > innerHeight / 2) sec.scrollIntoView({ behavior: 'instant', block: 'start' }); }, 1200);
+  }
   // phones: a Play button slides up at the bottom once the first one has scrolled away, and steps aside for the last one
   var dock = document.getElementById('dock');
   if (dock && 'IntersectionObserver' in window) {
