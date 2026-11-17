@@ -157,7 +157,7 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
   .card img.wide{height:34px;margin:0;flex-basis:100%;object-fit:contain;object-position:0 50%}
   .card h3{flex:1;min-width:0}
   .card p{flex-basis:100%}
-  .night{padding:34px 22px 150px}
+  .night{padding:34px 22px 236px}
   .night .deco{width:210px;right:50%;transform:translateX(50%);bottom:0}
   footer .wrap{flex-direction:column;align-items:flex-start}
 }
@@ -187,6 +187,27 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 @media (max-width:420px){.btn{padding:0 24px}.cta .btn{flex:1}.brand{font-size:21px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 #try{scroll-margin-top:76px}
+#film{transition:transform 1s ease}
+#demoScreen{position:absolute;inset:0;opacity:0;pointer-events:none;transform:scale(1.05);transition:opacity .9s ease,transform 1.3s cubic-bezier(.2,.8,.2,1);background:#F6F5F1}
+#demoScreen iframe{display:block;width:100%;height:100%;border:0}
+.veil{position:absolute;inset:0;display:grid;place-items:center;background:#0B0B0D;opacity:0;pointer-events:none;transition:opacity .6s ease}
+.veil svg{width:92px;height:92px;opacity:0;transform:scale(.7);transition:opacity .5s ease .15s,transform 1s cubic-bezier(.2,.8,.2,1) .15s;filter:drop-shadow(0 0 30px rgba(221,184,98,.6))}
+#heroPhone.cut1 #film{transform:scale(1.1)}
+#heroPhone.cut1 .veil{opacity:1}
+#heroPhone.cut1 .veil svg{opacity:1;transform:none}
+#heroPhone.cut2 #film{visibility:hidden}
+#heroPhone.cut2 #demoScreen{opacity:1;transform:none;pointer-events:auto}
+.hero-in>*{min-width:0}
+.feeds{max-width:100%;display:flex;align-items:center;gap:14px;margin-bottom:18px;padding:10px 0 10px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--line);overflow:hidden}
+.feeds .live{flex:none;display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px;border-radius:999px;background:var(--ink);color:#fff;font:800 14px/1 var(--display);letter-spacing:.08em;text-transform:uppercase}
+.feeds .live i{width:9px;height:9px;border-radius:50%;background:#C4F82A;animation:pulse 1.4s ease-in-out infinite}
+.feeds .reel{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 22px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,transparent,#000 22px,#000 calc(100% - 28px),transparent)}
+.feeds .track{display:flex;align-items:center;gap:26px;width:max-content;padding-right:26px;animation:reel 26s linear infinite}
+.feeds .track img{height:36px;width:auto;flex:none}
+.feeds .track span{flex:none;display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:999px;background:var(--ink);color:#fff;font:700 13px/1 var(--display);letter-spacing:.04em}
+@keyframes reel{to{transform:translateX(-50%)}}
+@keyframes pulse{50%{opacity:.35;transform:scale(.8)}}
+@media (prefers-reduced-motion:reduce){.feeds .track{width:auto;flex-wrap:wrap;gap:12px 20px}.feeds{border-radius:24px}.feeds .track [alt=""],.feeds .track [aria-hidden]{display:none}}
 </style>
 </head>
 <body>
@@ -201,32 +222,38 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
   <h1 class="sr">MakeThePlay: free-to-play sports picks with your crew</h1>
   <div class="phone" id="heroPhone"><div class="screen">
     <video id="film" muted autoplay playsinline webkit-playsinline preload="metadata" poster="https://maketheplay.pages.dev/welcome.jpg" aria-label="A host welcomes you to MakeThePlay"><source src="welcome.mp4" type="video/mp4"></video>
+    <div id="demoScreen"></div>
+    <div class="veil" aria-hidden="true"><svg viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#111113"/><path d="M23 15.5v33a2 2 0 0 0 3.05 1.7l26.4-16.5a2 2 0 0 0 0-3.4L26.05 13.8A2 2 0 0 0 23 15.5z" fill="#C4F82A"/><path d="M36.5 20 27 34h6.2l-2.2 10 9.8-14h-6.3z" fill="#111113"/></svg></div>
   </div></div>
   <div class="hero-b">
+    <div class="feeds" aria-label="Live lines from eight leagues">
+      <span class="live"><i></i>Live</span>
+      <div class="reel"><div class="track">
+        <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png" alt="NFL" width="500" height="500">
+        <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nba.png" alt="NBA" width="500" height="500">
+        <img src="https://a.espncdn.com/i/teamlogos/leagues/500/mlb.png" alt="MLB" width="500" height="500">
+        <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nhl.png" alt="NHL" width="500" height="500">
+        <img src="https://a.espncdn.com/i/leaguelogos/soccer/500/23.png" alt="Premier League" width="500" height="500">
+        <img src="https://a.espncdn.com/i/leaguelogos/soccer/500/2.png" alt="Champions League" width="500" height="500">
+        <img src="https://a.espncdn.com/i/leaguelogos/soccer/500/19.png" alt="MLS" width="500" height="500">
+        <span>College</span>
+        <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png" alt="" width="500" height="500">
+        <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nba.png" alt="" width="500" height="500">
+        <img src="https://a.espncdn.com/i/teamlogos/leagues/500/mlb.png" alt="" width="500" height="500">
+        <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nhl.png" alt="" width="500" height="500">
+        <img src="https://a.espncdn.com/i/leaguelogos/soccer/500/23.png" alt="" width="500" height="500">
+        <img src="https://a.espncdn.com/i/leaguelogos/soccer/500/2.png" alt="" width="500" height="500">
+        <img src="https://a.espncdn.com/i/leaguelogos/soccer/500/19.png" alt="" width="500" height="500">
+        <span aria-hidden="true">College</span>
+      </div></div>
+    </div>
     <div class="cta"><a class="btn gold" href="https://sideline-9t3.pages.dev/">Play free</a></div>
     <p class="coins"><img src="https://maketheplay.pages.dev/art/coin.webp" alt="" width="96" height="96"><b>5,000</b>free PlayCoins to start</p>
   </div>
 </div></section>
 
 
-<section class="band demo" id="try"><div class="wrap">
-  <div class="phone"><div class="screen" id="demoScreen">
-    <img src="https://maketheplay.pages.dev/shots/home.webp" alt="The MakeThePlay home screen with a PlayCoins balance and a boosted game" width="480" height="1039" loading="lazy">
-  </div></div>
-</div></section>
 
-<section class="band" style="padding-top:0"><div class="wrap">
-  <div class="leagues" aria-label="Leagues you can pick">
-    <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png" alt="NFL" width="500" height="500" loading="lazy">
-    <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nba.png" alt="NBA" width="500" height="500" loading="lazy">
-    <img src="https://a.espncdn.com/i/teamlogos/leagues/500/mlb.png" alt="MLB" width="500" height="500" loading="lazy">
-    <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nhl.png" alt="NHL" width="500" height="500" loading="lazy">
-    <img src="https://a.espncdn.com/i/leaguelogos/soccer/500/23.png" alt="Premier League" width="500" height="500" loading="lazy">
-    <img src="https://a.espncdn.com/i/leaguelogos/soccer/500/2.png" alt="Champions League" width="500" height="500" loading="lazy">
-    <img src="https://a.espncdn.com/i/leaguelogos/soccer/500/19.png" alt="MLS" width="500" height="500" loading="lazy">
-    <span>College</span>
-  </div>
-</div></section>
 
 <section class="band only-desk" id="get" style="padding-top:0"><div class="wrap two">
   <div>
@@ -273,7 +300,8 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
     var p = film.play(); if (p && p.then) p.then(disarm).catch(quiet);
   }
   film.addEventListener('click', function(){ if (film.muted || film.paused) { withSound(); disarm(); } });
-  film.addEventListener('ended', function(){ if (!film.muted) disarm(); if (!calm) quiet(); toDemo(); });
+  film.addEventListener('ended', function(){ if (!film.muted) disarm(); toDemo(); });
+  film.addEventListener('error', function(){ toDemo(); }, true);
   if (calm) { film.removeAttribute('autoplay'); film.pause(); }
   else {
     film.muted = false;
@@ -284,7 +312,7 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
     document.addEventListener('touchmove', function(){ moved = true; }, { passive: true, capture: true });
     TAPS.forEach(function(n){ document.addEventListener(n, firstTap, true); });
   }
-  document.addEventListener('visibilitychange', function(){ if (document.hidden) film.pause(); else if (!calm) { var p = film.play(); if (p && p.catch) p.catch(function(){}); } });
+  document.addEventListener('visibilitychange', function(){ if (document.hidden) film.pause(); else if (!calm && !taken) { var p = film.play(); if (p && p.catch) p.catch(function(){}); } });
 
   // Tap to try it: the real app runs right here, on phones and computers, with no sign-up (owner, Nov 16: fully functional,
   // like the finance machines). ?demo=1 gives the visitor a throwaway crew of one with 5,000 PlayCoins.
@@ -294,30 +322,28 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
     var f = document.createElement('iframe'); f.src = APP + '?demo=1'; f.title = 'MakeThePlay, the real app';
     var s = document.getElementById('demoScreen'); s.textContent = ''; s.appendChild(f);
   }
-  // No 'Tap to try it' button (owner, Nov 16: 'Remove'): the demo is simply running by the time the visitor gets to it.
-  var tryEl = document.getElementById('try');
-  if ('IntersectionObserver' in window) {
-    var dio = new IntersectionObserver(function(es){ if (es.some(function(e){ return e.isIntersecting; })) { dio.disconnect(); startDemo(); } }, { rootMargin: '300px 0px' });
-    dio.observe(tryEl);
-  } else startDemo();
-  // When her intro finishes, the page moves on to the demo and starts it (owner, Nov 16: 'after the intro is done it should
-  // take user to the demo'). Once only, and only if the visitor is still watching her: someone who scrolled away is left alone.
+  // No 'Tap to try it' button (owner, Nov 16: 'Remove'). The real app loads quietly under her film while she talks.
+  setTimeout(startDemo, calm ? 0 : 1500);
+  // When she has said it, the film cuts into the app, in the same frame (owner, Nov 16: 'After she talks it should take
+  // user to the demo cinematic type'): the picture pushes in and goes dark, the mark glows, and the app comes up out of
+  // the dark. Once only.
+  var hero = document.getElementById('heroPhone');
   function toDemo(){
-    if (taken || calm) return; taken = true;
-    var r = film.getBoundingClientRect();
-    if (r.bottom < 80 || r.top > innerHeight - 80) return;
+    if (taken) return; taken = true;
     disarm(); startDemo();
-    var sec = document.getElementById('try');
-    sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    // a browser that skips the glide (in-app browsers, a hidden tab) still gets there
-    setTimeout(function(){ if (Math.abs(sec.getBoundingClientRect().top) > innerHeight / 2) sec.scrollIntoView({ behavior: 'instant', block: 'start' }); }, 1200);
+    if (calm) { film.pause(); hero.classList.add('cut2'); return; }
+    hero.classList.add('cut1');
+    setTimeout(function(){ film.pause(); hero.classList.add('cut2'); hero.classList.remove('cut1'); }, 1100);
   }
-  // phones: a Play button slides up at the bottom once the first one has scrolled away, and steps aside for the last one
+  // A phone that will not start a film by itself (Low Power Mode) still gets the app: nobody is left on a still picture.
+  if (calm) toDemo();
+  else setTimeout(function(){ if (!taken && film.paused && film.currentTime < 0.2) toDemo(); }, 4000);
+  // phones: a Play button slides up at the bottom once the first one has scrolled away
   var dock = document.getElementById('dock');
   if (dock && 'IntersectionObserver' in window) {
-    var inView = { cta: true, night: false };
-    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ inView[e.target === document.querySelector('.cta') ? 'cta' : 'night'] = e.isIntersecting; }); dock.classList.toggle('on', !inView.cta && !inView.night); });
-    io.observe(document.querySelector('.cta')); io.observe(document.querySelector('.night'));
+    var inView = { cta: true, night: false }, nightEl = document.querySelector('.night');
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ inView[e.target === nightEl ? 'night' : 'cta'] = e.isIntersecting; }); dock.classList.toggle('on', !inView.cta && !inView.night); });
+    io.observe(document.querySelector('.cta')); if (nightEl) io.observe(nightEl);
   }
 })();
 </script>
