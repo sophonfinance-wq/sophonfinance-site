@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#111113">
 <link rel="canonical" href="https://sophonfinance.com/maketheplay/">
 <meta property="og:url" content="https://sophonfinance.com/maketheplay/">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://maketheplay.pages.dev https://a.espncdn.com; media-src 'none'; frame-src https://sideline-9t3.pages.dev; connect-src 'self'; base-uri 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://maketheplay.pages.dev https://a.espncdn.com; media-src https://maketheplay.pages.dev; frame-src https://sideline-9t3.pages.dev; connect-src 'self'; base-uri 'self'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -83,6 +83,8 @@ h1{font-size:clamp(56px,6.6vw,84px);font-weight:800;letter-spacing:-.04em;line-h
 .coins img{width:36px;height:36px}
 .coins b{font:800 36px/1 var(--display);letter-spacing:-.03em;color:var(--ink)}
 
+/* the welcome film is 9:16; its phone is cut to fit so the small marks in its corners are not cropped */
+#heroPhone{aspect-ratio:330/571}
 /* the phone that holds the live demo */
 .phone{position:relative;width:min(330px,76vw);aspect-ratio:9/18.4;margin:0 auto;padding:10px;border-radius:48px;background:#111113;box-shadow:0 30px 64px rgba(17,17,19,.26),inset 0 0 0 2px #2B2B30}
 .screen{position:relative;height:100%;border-radius:38px;overflow:hidden;background:var(--canvas)}
@@ -167,7 +169,10 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
   .hero .lead{margin:6px 0 18px;white-space:nowrap;font-size:min(20px,calc((100vw - 44px)/16.6))}
   .coins{margin-top:18px}
   .cta .btn{flex:1}
-  #heroPhone{width:min(264px,68vw)}
+  #heroPhone{width:100%;aspect-ratio:9/16;padding:0;border-radius:30px;background:none;box-shadow:var(--float)}
+  #heroPhone .screen{border-radius:30px}
+  .demo .phone{width:100%;aspect-ratio:9/16;padding:0;border-radius:30px;background:none;box-shadow:var(--float)}
+  .demo .screen{border-radius:30px}
   .shot{width:66vw;max-width:260px}
   .dock{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:14px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,var(--canvas) 64%,rgba(246,245,241,0));transform:translateY(115%);transition:transform .28s cubic-bezier(.2,.9,.2,1)}
   .dock.on{transform:none}
@@ -193,9 +198,8 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 <main id="top">
 <section class="hero"><div class="wrap hero-in">
   <h1 class="sr">MakeThePlay: free-to-play sports picks with your crew</h1>
-  <div class="phone" id="heroPhone"><div class="screen" id="demoScreen">
-    <img src="https://maketheplay.pages.dev/shots/home.webp" alt="The MakeThePlay home screen with a PlayCoins balance and a boosted game" width="480" height="1039" fetchpriority="high">
-    <button class="pill" id="demoGo" type="button">Tap to try it</button>
+  <div class="phone" id="heroPhone"><div class="screen">
+    <video id="film" muted autoplay playsinline webkit-playsinline preload="metadata" poster="https://maketheplay.pages.dev/welcome.jpg" aria-label="A host welcomes you to MakeThePlay"><source src="https://maketheplay.pages.dev/welcome.mp4" type="video/mp4"></video>
   </div></div>
   <div class="hero-b">
     <div class="cta"><a class="btn gold" href="https://sideline-9t3.pages.dev/">Play free</a></div>
@@ -213,7 +217,14 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
   </div>
 </section>
 
-<section class="band"><div class="wrap">
+<section class="band demo" id="try"><div class="wrap">
+  <div class="phone"><div class="screen" id="demoScreen">
+    <img src="https://maketheplay.pages.dev/shots/home.webp" alt="The MakeThePlay home screen with a PlayCoins balance and a boosted game" width="480" height="1039" loading="lazy">
+    <button class="pill" id="demoGo" type="button">Tap to try it</button>
+  </div></div>
+</div></section>
+
+<section class="band" style="padding-top:0"><div class="wrap">
   <div class="leagues" aria-label="Leagues you can pick">
     <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png" alt="NFL" width="500" height="500" loading="lazy">
     <img src="https://a.espncdn.com/i/teamlogos/leagues/500/nba.png" alt="NBA" width="500" height="500" loading="lazy">
@@ -255,10 +266,39 @@ footer a{text-decoration:underline;text-decoration-color:var(--gold-soft);text-u
 <script>
 (function(){
   var APP = 'https://sideline-9t3.pages.dev/';
-  // Tap to try it: on a computer the real app loads inside the phone; on a phone the button opens the app.
+  // The welcome film: it tries to start WITH her voice. A phone that refuses sound before a touch plays it silent, and her
+  // voice then comes on, from the start, at the first tap on the page. She says it once; after that it keeps moving silently.
+  var film = document.getElementById('film');
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var heardOn = false, moved = false, TAPS = ['click', 'touchend', 'keydown'];
+  function quiet(){ film.muted = true; var q = film.play(); if (q && q.catch) q.catch(function(){}); }
+  function disarm(){ heardOn = true; TAPS.forEach(function(n){ document.removeEventListener(n, firstTap, true); }); }
+  function withSound(){ film.muted = false; try { film.currentTime = 0; } catch (e) {} var p = film.play(); if (p && p.catch) p.catch(quiet); }
+  function firstTap(e){
+    if (heardOn || (e.type === 'touchend' && moved)) return;                       // a scroll is not a tap
+    var t = e.target; if (t && t.closest && t.closest('a, button, #film')) return;   // buttons do their own job
+    if (!film.muted && !film.paused) { disarm(); return; }
+    film.muted = false; try { film.currentTime = 0; } catch (x) {}
+    var p = film.play(); if (p && p.then) p.then(disarm).catch(quiet);
+  }
+  film.addEventListener('click', function(){ if (film.muted || film.paused) { withSound(); disarm(); } });
+  film.addEventListener('ended', function(){ if (!film.muted) disarm(); if (!calm) quiet(); });
+  if (calm) { film.removeAttribute('autoplay'); film.pause(); }
+  else {
+    film.muted = false;
+    var first = film.play();
+    if (first && first.then) first.then(function(){ if (!film.muted) heardOn = true; }).catch(quiet);
+    setTimeout(function(){ if (film.paused) quiet(); }, 500);
+    document.addEventListener('touchstart', function(){ moved = false; }, { passive: true, capture: true });
+    document.addEventListener('touchmove', function(){ moved = true; }, { passive: true, capture: true });
+    TAPS.forEach(function(n){ document.addEventListener(n, firstTap, true); });
+  }
+  document.addEventListener('visibilitychange', function(){ if (document.hidden) film.pause(); else if (!calm) { var p = film.play(); if (p && p.catch) p.catch(function(){}); } });
+
+  // Tap to try it: the real app runs right here, on phones and computers, with no sign-up (owner, Nov 16: fully functional,
+  // like the finance machines). ?demo=1 gives the visitor a throwaway crew of one with 5,000 PlayCoins.
   document.getElementById('demoGo').addEventListener('click', function(){
-    if (!matchMedia('(min-width:861px)').matches) { location.href = APP; return; }
-    var f = document.createElement('iframe'); f.src = APP; f.title = 'MakeThePlay, the real app';
+    var f = document.createElement('iframe'); f.src = APP + '?demo=1'; f.title = 'MakeThePlay, the real app';
     var s = document.getElementById('demoScreen'); s.textContent = ''; s.appendChild(f);
   });
   // phones: a Play button slides up at the bottom once the first one has scrolled away, and steps aside for the last one
